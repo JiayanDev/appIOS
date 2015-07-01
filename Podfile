@@ -3,6 +3,14 @@ platform :ios, '7.0'
 
 target 'meiLiTianShi' do
   pod "AFNetworking", "~> 2.0"
+  pod 'JSONModel'
+  pod 'XLPagerTabStrip', '~> 1.0.0'
+pod 'AXRatingView', :git => 'https://github.com/xmartlabs/AXRatingView.git'
+pod "TSMessages"
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'UICKeyChainStore'
+pod 'JMImageCache'
+pod 'MJRefresh'
 end
 
 target 'meiLiTianShiTests' do
