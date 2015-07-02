@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
+@property(nonatomic,strong)UITabBarController* tabBarController;
 
 @end
 
@@ -17,6 +18,51 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController.delegate = self;
+    UINavigationController* vc1=[[UINavigationController alloc]
+            initWithRootViewController:[[UIViewController alloc]init]];
+    vc1.title=@"伴美";
+
+    UINavigationController *vc2= [[UINavigationController alloc] initWithRootViewController:
+            [[UIViewController alloc]init]];
+    vc2.title=@"发现";
+
+    UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:
+            [[UITableViewController alloc] initWithStyle:UITableViewStyleGrouped]];
+    vc3.title=@"活动";
+
+    UINavigationController *vc4= [[UINavigationController alloc] initWithRootViewController:
+            [[UITableViewController alloc] initWithStyle:UITableViewStylePlain]];
+    vc4.title=@"我的";
+
+//
+//    //[vc1.tabBarController.tabBarItem setImage:[SYLSession imageWithColor:UIColorFromRGB(0xcccccc)]];
+//    [vc2.tabBarController.tabBarItem setImage:[SYLSession imageWithColor:UIColorFromRGB(0x777777)]];
+
+
+    self.tabBarController.viewControllers = @[vc1,vc2,vc3,vc4];
+    vc1.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"伴美"
+                                                  image:[UIImage imageNamed:@"black.png"]
+                                          selectedImage:[UIImage imageNamed:@"blue.png"]];
+    vc2.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"发现"
+                                                  image:[UIImage imageNamed:@"black.png"]
+                                          selectedImage:[UIImage imageNamed:@"blue.png"]];
+    vc3.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"活动"
+                                                  image:[UIImage imageNamed:@"black.png"]
+                                          selectedImage:[UIImage imageNamed:@"blue.png"]];
+    vc4.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"我的"
+                                                  image:[UIImage imageNamed:@"black.png"]
+                                          selectedImage:[UIImage imageNamed:@"blue.png"]];
+
+
+
+
+
+    self.window.rootViewController = self.tabBarController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

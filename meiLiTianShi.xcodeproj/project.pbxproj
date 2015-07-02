@@ -11,11 +11,12 @@
 		072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC3D1B43A1CE0091CBDE /* AppDelegate.m */; };
 		072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC401B43A1CE0091CBDE /* FirstViewController.m */; };
 		072DCC441B43A1CE0091CBDE /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC431B43A1CE0091CBDE /* SecondViewController.m */; };
-		072DCC471B43A1CE0091CBDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 072DCC451B43A1CE0091CBDE /* Main.storyboard */; };
 		072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072DCC481B43A1CE0091CBDE /* Images.xcassets */; };
 		072DCC4C1B43A1CE0091CBDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072DCC4A1B43A1CE0091CBDE /* LaunchScreen.xib */; };
 		072DCC581B43A1CE0091CBDE /* meiLiTianShiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC571B43A1CE0091CBDE /* meiLiTianShiTests.m */; };
 		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
+		3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B63426FE4A04BE7F99C /* blue@2x.png */; };
+		3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */; };
 		707B061389615A8BCE04BC32 /* libPods-meiLiTianShi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */; };
 /* End PBXBuildFile section */
 
@@ -40,14 +41,15 @@
 		072DCC401B43A1CE0091CBDE /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
 		072DCC421B43A1CE0091CBDE /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		072DCC431B43A1CE0091CBDE /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		072DCC461B43A1CE0091CBDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		072DCC481B43A1CE0091CBDE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		072DCC4B1B43A1CE0091CBDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		072DCC511B43A1CE0091CBDE /* meiLiTianShiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meiLiTianShiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		072DCC561B43A1CE0091CBDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		072DCC571B43A1CE0091CBDE /* meiLiTianShiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = meiLiTianShiTests.m; sourceTree = "<group>"; };
 		3CDC51143C40C1176B84D9DD /* MLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRequestManager.h; sourceTree = "<group>"; };
+		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
 		3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRequestManager.m; sourceTree = "<group>"; };
+		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meiLiTianShi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6119EACC3758C4C93EEB3EE /* Pods-meiLiTianShi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiLiTianShi.release.xcconfig"; path = "Pods/Target Support Files/Pods-meiLiTianShi/Pods-meiLiTianShi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,13 +102,13 @@
 				072DCC401B43A1CE0091CBDE /* FirstViewController.m */,
 				072DCC421B43A1CE0091CBDE /* SecondViewController.h */,
 				072DCC431B43A1CE0091CBDE /* SecondViewController.m */,
-				072DCC451B43A1CE0091CBDE /* Main.storyboard */,
 				072DCC481B43A1CE0091CBDE /* Images.xcassets */,
 				072DCC4A1B43A1CE0091CBDE /* LaunchScreen.xib */,
 				072DCC381B43A1CE0091CBDE /* Supporting Files */,
 				3CDC575B2A1B7426034141CE /* UI */,
 				3CDC5A509067EF810B6FBBAA /* Service */,
 				3CDC559B4CE010BC7BF3BFCE /* Model */,
+				3CDC57AAD7EE7BF85356F427 /* Resource */,
 			);
 			path = meiLiTianShi;
 			sourceTree = "<group>";
@@ -149,6 +151,15 @@
 			children = (
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		3CDC57AAD7EE7BF85356F427 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */,
+				3CDC5B63426FE4A04BE7F99C /* blue@2x.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		3CDC5A509067EF810B6FBBAA /* Service */ = {
@@ -259,9 +270,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				072DCC471B43A1CE0091CBDE /* Main.storyboard in Resources */,
 				072DCC4C1B43A1CE0091CBDE /* LaunchScreen.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
+				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
+				3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,14 +351,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		072DCC451B43A1CE0091CBDE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				072DCC461B43A1CE0091CBDE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		072DCC4A1B43A1CE0091CBDE /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
