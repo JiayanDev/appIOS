@@ -15,6 +15,7 @@
 		072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 072DCC481B43A1CE0091CBDE /* Images.xcassets */; };
 		072DCC4C1B43A1CE0091CBDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072DCC4A1B43A1CE0091CBDE /* LaunchScreen.xib */; };
 		072DCC581B43A1CE0091CBDE /* meiLiTianShiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC571B43A1CE0091CBDE /* meiLiTianShiTests.m */; };
+		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
 		707B061389615A8BCE04BC32 /* libPods-meiLiTianShi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		072DCC511B43A1CE0091CBDE /* meiLiTianShiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meiLiTianShiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		072DCC561B43A1CE0091CBDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		072DCC571B43A1CE0091CBDE /* meiLiTianShiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = meiLiTianShiTests.m; sourceTree = "<group>"; };
+		3CDC51143C40C1176B84D9DD /* MLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRequestManager.h; sourceTree = "<group>"; };
+		3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRequestManager.m; sourceTree = "<group>"; };
 		681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meiLiTianShi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6119EACC3758C4C93EEB3EE /* Pods-meiLiTianShi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiLiTianShi.release.xcconfig"; path = "Pods/Target Support Files/Pods-meiLiTianShi/Pods-meiLiTianShi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +104,9 @@
 				072DCC481B43A1CE0091CBDE /* Images.xcassets */,
 				072DCC4A1B43A1CE0091CBDE /* LaunchScreen.xib */,
 				072DCC381B43A1CE0091CBDE /* Supporting Files */,
+				3CDC575B2A1B7426034141CE /* UI */,
+				3CDC5A509067EF810B6FBBAA /* Service */,
+				3CDC559B4CE010BC7BF3BFCE /* Model */,
 			);
 			path = meiLiTianShi;
 			sourceTree = "<group>";
@@ -129,6 +135,29 @@
 				072DCC561B43A1CE0091CBDE /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3CDC559B4CE010BC7BF3BFCE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3CDC575B2A1B7426034141CE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3CDC5A509067EF810B6FBBAA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */,
+				3CDC51143C40C1176B84D9DD /* MLRequestManager.h */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		95D2971EB71D4877724850F5 /* Pods */ = {
@@ -287,6 +316,7 @@
 				072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */,
 				072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */,
 				072DCC3B1B43A1CE0091CBDE /* main.m in Sources */,
+				3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
