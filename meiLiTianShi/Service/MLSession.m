@@ -5,7 +5,8 @@
 
 #import "MLSession.h"
 #import "MLRequestManager.h"
-#import "RespondModel.h"#import "AFHTTPRequestOperationManager.h"
+#import "RespondModel.h"
+#import "AFHTTPRequestOperationManager.h"
 #import "UICKeyChainStore.h"
 
 static MLSession *session;
@@ -37,7 +38,7 @@ static MLSession *session;
 -(void)handleManager:(AFHTTPRequestOperationManager*)manager{
     if(self.token){
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
-        [manager.requestSerializer setValue:_token forHTTPHeaderField:@"auth"];
+        [manager.requestSerializer setValue:_token forHTTPHeaderField:@"AUTHORIZATION"];
     }
 }
 
@@ -114,7 +115,7 @@ static MLSession *session;
 }
 
 -(void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
-    [self sendGet:@"user/register"
+    [self sendPost:@"user/register"
             param:nil
           success:^(NSDictionary * user){
               self.token=user[@"token"];
