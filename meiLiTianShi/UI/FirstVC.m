@@ -10,6 +10,7 @@
 #import "MLSession.h"
 #import "AppDelegate.h"
 #import "TSMessage.h"
+#import "TopicListVC.h"
 
 @interface FirstVC ()
 
@@ -36,7 +37,7 @@
     vc1.title=@"伴美";
 
     UINavigationController *vc2= [[UINavigationController alloc] initWithRootViewController:
-            [[UIViewController alloc]init]];
+            [[TopicListVC alloc]init]];
     vc2.title=@"发现";
 
     UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:

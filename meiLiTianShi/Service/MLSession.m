@@ -41,7 +41,7 @@ static MLSession *session;
     if(self.token){
         //manager.requestSerializer = [AFJSONRequestSerializer serializer];
         [manager.requestSerializer setValue:_token forHTTPHeaderField:@"AUTHORIZATION"];
-        NSLog(@"token: %@",_token);
+        //NSLog(@"token: %@",_token);
     }
 }
 
