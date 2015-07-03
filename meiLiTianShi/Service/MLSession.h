@@ -10,4 +10,6 @@
 + (MLSession *)current;
 
 - (void)handleManager:(AFHTTPRequestOperationManager *)manager;- (void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)restoreLoginOrRegister_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 @end

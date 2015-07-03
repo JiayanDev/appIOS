@@ -6,10 +6,11 @@
 #import "MLSession.h"
 #import "MLRequestManager.h"
 #import "RespondModel.h"#import "AFHTTPRequestOperationManager.h"
+#import "UICKeyChainStore.h"
 
 static MLSession *session;
 @interface MLSession()
-@property NSString *token;
+@property (nonatomic, strong) NSString *token;
 @end
 @implementation MLSession {
 
@@ -17,6 +18,7 @@ static MLSession *session;
 
 #define SESSION_OUT_OF_DATE -40
 #define keyChainId @"MLLogin"
+#define kToken @"token"
 
 
 + (MLSession *)current {
@@ -24,6 +26,12 @@ static MLSession *session;
         session=[[MLSession alloc]init];
     }
     return session;
+}
+
+- (void)setToken:(NSString *)token {
+    _token=token;
+    UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:keyChainId];
+    keychain[kToken]=token;
 }
 
 -(void)handleManager:(AFHTTPRequestOperationManager*)manager{
@@ -114,5 +122,31 @@ static MLSession *session;
           }
           failure:failure];
 }
+
+-(void)quickLoginSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"user/quick_login"
+            param:nil
+          success:^(NSDictionary * user){
+              if(user[@"token"]){
+                  self.token=user[@"token"];
+              }
+              success();
+          }
+          failure:failure];
+}
+
+
+-(void)restoreLoginOrRegister_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+    UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:keyChainId];
+    NSString *token=keychain[kToken];
+    if(token){
+        [self quickLoginSuccess:success
+                           fail:failure];
+    }else{
+        [self registerSuccess:success
+                         fail:failure];
+    }
+}
+
 
 @end
