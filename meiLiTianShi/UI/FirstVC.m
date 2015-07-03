@@ -23,7 +23,7 @@
         [self gotoMainInterface];
     } fail:^(NSInteger i, id o) {
         [TSMessage showNotificationWithTitle:@"出错了"
-                                    subtitle:o
+                                    subtitle:[NSString stringWithFormat:@"%d - %@",i,o]
                                         type:TSMessageNotificationTypeError];
     }];
 }

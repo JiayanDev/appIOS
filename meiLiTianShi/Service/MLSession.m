@@ -35,10 +35,13 @@ static MLSession *session;
     keychain[kToken]=token;
 }
 
+
+
 -(void)handleManager:(AFHTTPRequestOperationManager*)manager{
     if(self.token){
-        manager.requestSerializer = [AFJSONRequestSerializer serializer];
+        //manager.requestSerializer = [AFJSONRequestSerializer serializer];
         [manager.requestSerializer setValue:_token forHTTPHeaderField:@"AUTHORIZATION"];
+        NSLog(@"token: %@",_token);
     }
 }
 
@@ -126,7 +129,7 @@ static MLSession *session;
 
 -(void)quickLoginSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
     [self sendPost:@"user/quick_login"
-            param:nil
+            param:@{@"configVersion":@0}
           success:^(NSDictionary * user){
               if(user[@"token"]){
                   self.token=user[@"token"];
@@ -139,8 +142,10 @@ static MLSession *session;
 
 -(void)restoreLoginOrRegister_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
     UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:keyChainId];
+
     NSString *token=keychain[kToken];
-    if(token){
+    self.token=token;
+    if(token && [token isKindOfClass:[NSString class]] &&token.length>0 ){
         [self quickLoginSuccess:success
                            fail:failure];
     }else{
