@@ -1,8 +1,9 @@
 
 
 #import "MLRequestManager.h"
+#import "MLSession.h"
 
-static NSString* BASE_URL = @"http://120.24.157.147:8080/";
+static NSString* BASE_URL = @"http://112.74.73.33:9188/";
 
 
 static MLRequestManager* instance = nil;
@@ -37,6 +38,7 @@ static MLRequestManager* instance = nil;
 }
 
 - (void)GET:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id))success failure:(void (^)(NSInteger, id))failure {
+    [[MLSession current] handleManager:_manager];
     NSLog(@"GET %@   param:%@", url,parameters);
     AFHTTPRequestOperation* operation = [_manager
             GET:url
@@ -53,6 +55,7 @@ static MLRequestManager* instance = nil;
 - (void)POST:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(id))success failure:(void (^)(NSInteger, id))failure {
     NSLog(@"POST %@", url);
     NSLog(@"POST DATA %@", parameters);
+    [[MLSession current] handleManager:_manager];
     AFHTTPRequestOperation* operation = [_manager
             POST:url
       parameters:parameters
