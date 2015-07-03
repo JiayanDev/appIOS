@@ -3,7 +3,8 @@
 // Copyright (c) 2015 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>@class AFHTTPRequestOperationManager;
+#import <Foundation/Foundation.h>
+@class AFHTTPRequestOperationManager;
 
 
 @interface MLSession : NSObject
