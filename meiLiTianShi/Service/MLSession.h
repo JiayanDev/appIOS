@@ -5,6 +5,7 @@
 
 #import <Foundation/Foundation.h>
 @class AFHTTPRequestOperationManager;
+@class PageIndicator;
 
 
 @interface MLSession : NSObject
@@ -15,4 +16,6 @@
 - (void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)restoreLoginOrRegister_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)getTopicListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 @end

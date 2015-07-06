@@ -11,6 +11,7 @@ pod 'MBProgressHUD', '~> 0.9.1'
 pod 'UICKeyChainStore'
 pod 'JMImageCache'
 pod 'MJRefresh'
+  pod 'UITableView+FDTemplateLayoutCell'
 end
 
 target 'meiLiTianShiTests' do

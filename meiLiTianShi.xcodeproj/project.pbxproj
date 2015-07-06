@@ -18,10 +18,15 @@
 		072F30AF1B46427B001A14E6 /* FirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30AD1B46427B001A14E6 /* FirstVC.xib */; };
 		072F30B31B468536001A14E6 /* TopicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30B11B468536001A14E6 /* TopicListVC.m */; };
 		072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30B21B468536001A14E6 /* TopicListVC.xib */; };
+		072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30B61B4A702E001A14E6 /* TopicListCell.m */; };
+		072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30B71B4A702E001A14E6 /* TopicListCell.xib */; };
 		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
+		3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582A761F21A9AC5CC46F /* MLRandom.m */; };
+		3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50439D6B18F000354CD6 /* TopicModel.m */; };
 		3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B63426FE4A04BE7F99C /* blue@2x.png */; };
 		3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */; };
 		3CDC5BA55D30C7A9D6399196 /* MLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC592229E51A7D98EA62D8 /* MLSession.m */; };
+		3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */; };
 		3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EDE45048E6EBD0D401C /* RespondModel.m */; };
 		707B061389615A8BCE04BC32 /* libPods-meiLiTianShi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */; };
 /* End PBXBuildFile section */
@@ -58,13 +63,22 @@
 		072F30B01B468536001A14E6 /* TopicListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListVC.h; sourceTree = "<group>"; };
 		072F30B11B468536001A14E6 /* TopicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListVC.m; sourceTree = "<group>"; };
 		072F30B21B468536001A14E6 /* TopicListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListVC.xib; sourceTree = "<group>"; };
+		072F30B51B4A702E001A14E6 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
+		072F30B61B4A702E001A14E6 /* TopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListCell.m; sourceTree = "<group>"; };
+		072F30B71B4A702E001A14E6 /* TopicListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListCell.xib; sourceTree = "<group>"; };
+		3CDC50439D6B18F000354CD6 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
 		3CDC50AD67ABE27D12768D02 /* RespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondModel.h; sourceTree = "<group>"; };
 		3CDC51143C40C1176B84D9DD /* MLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRequestManager.h; sourceTree = "<group>"; };
 		3CDC53152925CBAA23FE43E6 /* MLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSession.h; sourceTree = "<group>"; };
 		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
 		3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRequestManager.m; sourceTree = "<group>"; };
+		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
+		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
+		3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
+		3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
+		3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
 		3CDC5EDE45048E6EBD0D401C /* RespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondModel.m; sourceTree = "<group>"; };
 		681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meiLiTianShi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6119EACC3758C4C93EEB3EE /* Pods-meiLiTianShi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiLiTianShi.release.xcconfig"; path = "Pods/Target Support Files/Pods-meiLiTianShi/Pods-meiLiTianShi.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,11 +169,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3CDC5083716725CB11D168CD /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC582A761F21A9AC5CC46F /* MLRandom.m */,
+				3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		3CDC559B4CE010BC7BF3BFCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				3CDC5EDE45048E6EBD0D401C /* RespondModel.m */,
 				3CDC50AD67ABE27D12768D02 /* RespondModel.h */,
+				3CDC50439D6B18F000354CD6 /* TopicModel.m */,
+				3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */,
+				3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */,
+				3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +197,9 @@
 				072F30B01B468536001A14E6 /* TopicListVC.h */,
 				072F30B11B468536001A14E6 /* TopicListVC.m */,
 				072F30B21B468536001A14E6 /* TopicListVC.xib */,
+				072F30B51B4A702E001A14E6 /* TopicListCell.h */,
+				072F30B61B4A702E001A14E6 /* TopicListCell.m */,
+				072F30B71B4A702E001A14E6 /* TopicListCell.xib */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -201,6 +231,7 @@
 				3CDC51143C40C1176B84D9DD /* MLRequestManager.h */,
 				3CDC592229E51A7D98EA62D8 /* MLSession.m */,
 				3CDC53152925CBAA23FE43E6 /* MLSession.h */,
+				3CDC5083716725CB11D168CD /* Util */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -305,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072DCC4C1B43A1CE0091CBDE /* LaunchScreen.xib in Resources */,
+				072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
@@ -365,10 +397,14 @@
 				072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */,
 				072DCC3B1B43A1CE0091CBDE /* main.m in Sources */,
 				3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */,
+				072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */,
 				072F30AE1B46427B001A14E6 /* FirstVC.m in Sources */,
 				072F30B31B468536001A14E6 /* TopicListVC.m in Sources */,
 				3CDC5BA55D30C7A9D6399196 /* MLSession.m in Sources */,
 				3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */,
+				3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */,
+				3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */,
+				3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopicListVC : UIViewController
+@interface TopicListVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

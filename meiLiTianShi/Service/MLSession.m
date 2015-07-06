@@ -8,6 +8,8 @@
 #import "RespondModel.h"
 #import "AFHTTPRequestOperationManager.h"
 #import "UICKeyChainStore.h"
+#import "PageIndicator.h"
+#import "TopicModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -20,6 +22,8 @@ static MLSession *session;
 #define SESSION_OUT_OF_DATE -40
 #define keyChainId @"MLLogin"
 #define kToken @"token"
+
+#define USE_DEBUG_MOCK 1
 
 
 + (MLSession *)current {
@@ -152,6 +156,26 @@ static MLSession *session;
         [self registerSuccess:success
                          fail:failure];
     }
+}
+
+
+-(void)getTopicListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+    #if USE_DEBUG_MOCK
+        NSMutableArray *r=[NSMutableArray array];
+    for (int i = 0; i < 10; ++i) {
+        [r addObject:[TopicModel randomOne]];
+    }
+    success(r);
+    #else
+    [self sendGet:@"topic/getTopicList"
+            param:[pi toDictionary]
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[TopicModel alloc] initWithDictionary:oned error:nil]];
+              }
+          } failure:failure];
+#endif
 }
 
 
