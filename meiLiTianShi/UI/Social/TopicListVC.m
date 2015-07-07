@@ -26,12 +26,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"话题列表";
     self.tableData=[NSMutableArray array];
     [self.tableView registerClass:[TopicListCell class] forCellReuseIdentifier:kCellTopic];
     [self.tableView registerNib:[UINib nibWithNibName:@"TopicListCell" bundle:nil]
          forCellReuseIdentifier:kCellTopic];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
+    self.tableView.estimatedRowHeight=142;
     self.pageIndicator= [[PageIndicator alloc] init];
     [self getData];
 }
@@ -72,15 +74,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [tableView fd_heightForCellWithIdentifier:kCellTopic configuration:^(id cell) {
-        TopicModel *data=self.tableData[indexPath.row];
-        TopicListCell * c=(TopicListCell *)cell;
-        c.contentLabel.text=data.content;
+    return [tableView fd_heightForCellWithIdentifier:kCellTopic cacheByIndexPath:indexPath configuration:^(id cell) {
+        TopicModel *data = self.tableData[indexPath.row];
+        TopicListCell *c = (TopicListCell *) cell;
+        c.contentLabel.text = data.content;
         //cell.image1
 
-        c.downLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",@(data.commentCount),@(data.likeCount)];
+        c.downLabel.text = [NSString stringWithFormat:@"评论:%@ 赞:%@", @(data.commentCount), @(data.likeCount)];
 
-        cell=c;
+        cell = c;
     }];
 }
 

@@ -12,6 +12,7 @@ pod 'UICKeyChainStore'
 pod 'JMImageCache'
 pod 'MJRefresh'
   pod 'UITableView+FDTemplateLayoutCell'
+  pod 'XLForm', '~> 3.0.0'
 end
 
 target 'meiLiTianShiTests' do

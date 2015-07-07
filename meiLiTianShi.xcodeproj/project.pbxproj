@@ -20,6 +20,12 @@
 		072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30B21B468536001A14E6 /* TopicListVC.xib */; };
 		072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30B61B4A702E001A14E6 /* TopicListCell.m */; };
 		072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30B71B4A702E001A14E6 /* TopicListCell.xib */; };
+		074607871B4BB5540035E08D /* MyIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 074607851B4BB5540035E08D /* MyIndexVC.m */; };
+		074607881B4BB5540035E08D /* MyIndexVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074607861B4BB5540035E08D /* MyIndexVC.xib */; };
+		0746078C1B4BBAF40035E08D /* MyDiaryBookListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0746078A1B4BBAF40035E08D /* MyDiaryBookListTVC.m */; };
+		0746078D1B4BBAF40035E08D /* MyDiaryBookListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */; };
+		3CDC510F9DCC5DA5D9919E72 /* DiaryBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */; };
+		3CDC5244C6BB89534D89AB15 /* DiaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */; };
 		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
 		3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582A761F21A9AC5CC46F /* MLRandom.m */; };
 		3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50439D6B18F000354CD6 /* TopicModel.m */; };
@@ -66,11 +72,18 @@
 		072F30B51B4A702E001A14E6 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
 		072F30B61B4A702E001A14E6 /* TopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListCell.m; sourceTree = "<group>"; };
 		072F30B71B4A702E001A14E6 /* TopicListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListCell.xib; sourceTree = "<group>"; };
+		074607841B4BB5540035E08D /* MyIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIndexVC.h; sourceTree = "<group>"; };
+		074607851B4BB5540035E08D /* MyIndexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIndexVC.m; sourceTree = "<group>"; };
+		074607861B4BB5540035E08D /* MyIndexVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyIndexVC.xib; sourceTree = "<group>"; };
+		074607891B4BBAF40035E08D /* MyDiaryBookListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDiaryBookListTVC.h; sourceTree = "<group>"; };
+		0746078A1B4BBAF40035E08D /* MyDiaryBookListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDiaryBookListTVC.m; sourceTree = "<group>"; };
+		0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDiaryBookListTVC.xib; sourceTree = "<group>"; };
 		3CDC50439D6B18F000354CD6 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
 		3CDC50AD67ABE27D12768D02 /* RespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondModel.h; sourceTree = "<group>"; };
 		3CDC51143C40C1176B84D9DD /* MLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRequestManager.h; sourceTree = "<group>"; };
 		3CDC53152925CBAA23FE43E6 /* MLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSession.h; sourceTree = "<group>"; };
 		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
+		3CDC566F3C9693A1C8D52D1B /* DiaryBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryBookModel.h; sourceTree = "<group>"; };
 		3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRequestManager.m; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
@@ -78,8 +91,11 @@
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
 		3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
+		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
+		3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryBookModel.m; sourceTree = "<group>"; };
 		3CDC5EDE45048E6EBD0D401C /* RespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondModel.m; sourceTree = "<group>"; };
+		3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryModel.m; sourceTree = "<group>"; };
 		681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meiLiTianShi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6119EACC3758C4C93EEB3EE /* Pods-meiLiTianShi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiLiTianShi.release.xcconfig"; path = "Pods/Target Support Files/Pods-meiLiTianShi/Pods-meiLiTianShi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +203,10 @@
 				3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */,
 				3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */,
 				3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */,
+				3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */,
+				3CDC566F3C9693A1C8D52D1B /* DiaryBookModel.h */,
+				3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */,
+				3CDC5DF899CEC90E17742F7C /* DiaryModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +231,7 @@
 				072F30AC1B46427B001A14E6 /* FirstVC.m */,
 				072F30AD1B46427B001A14E6 /* FirstVC.xib */,
 				3CDC55E15650651E6EE584A6 /* Social */,
+				3CDC5E90FA7401823429E2FB /* My */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -234,6 +255,19 @@
 				3CDC5083716725CB11D168CD /* Util */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		3CDC5E90FA7401823429E2FB /* My */ = {
+			isa = PBXGroup;
+			children = (
+				074607841B4BB5540035E08D /* MyIndexVC.h */,
+				074607851B4BB5540035E08D /* MyIndexVC.m */,
+				074607861B4BB5540035E08D /* MyIndexVC.xib */,
+				074607891B4BBAF40035E08D /* MyDiaryBookListTVC.h */,
+				0746078A1B4BBAF40035E08D /* MyDiaryBookListTVC.m */,
+				0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */,
+			);
+			path = My;
 			sourceTree = "<group>";
 		};
 		95D2971EB71D4877724850F5 /* Pods */ = {
@@ -335,11 +369,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0746078D1B4BBAF40035E08D /* MyDiaryBookListTVC.xib in Resources */,
 				072DCC4C1B43A1CE0091CBDE /* LaunchScreen.xib in Resources */,
 				072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
+				074607881B4BB5540035E08D /* MyIndexVC.xib in Resources */,
 				3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */,
 				072F30AF1B46427B001A14E6 /* FirstVC.xib in Resources */,
 			);
@@ -393,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072DCC441B43A1CE0091CBDE /* SecondViewController.m in Sources */,
+				074607871B4BB5540035E08D /* MyIndexVC.m in Sources */,
 				072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */,
 				072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */,
 				072DCC3B1B43A1CE0091CBDE /* main.m in Sources */,
@@ -402,9 +439,12 @@
 				072F30B31B468536001A14E6 /* TopicListVC.m in Sources */,
 				3CDC5BA55D30C7A9D6399196 /* MLSession.m in Sources */,
 				3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */,
+				0746078C1B4BBAF40035E08D /* MyDiaryBookListTVC.m in Sources */,
 				3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */,
 				3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */,
 				3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */,
+				3CDC510F9DCC5DA5D9919E72 /* DiaryBookModel.m in Sources */,
+				3CDC5244C6BB89534D89AB15 /* DiaryModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

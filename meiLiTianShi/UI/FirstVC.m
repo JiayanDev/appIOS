@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "TSMessage.h"
 #import "TopicListVC.h"
+#import "MyIndexVC.h"
 
 @interface FirstVC ()
 
@@ -45,7 +46,7 @@
     vc3.title=@"活动";
 
     UINavigationController *vc4= [[UINavigationController alloc] initWithRootViewController:
-            [[UITableViewController alloc] initWithStyle:UITableViewStylePlain]];
+            [[MyIndexVC alloc] init]];
     vc4.title=@"我的";
 
 //

@@ -30,6 +30,7 @@ PODS:
     - HexColors
   - UICKeyChainStore (2.0.6)
   - UITableView+FDTemplateLayoutCell (1.3)
+  - XLForm (3.0.0)
   - XLPagerTabStrip (1.0.0)
 
 DEPENDENCIES:
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - TSMessages
   - UICKeyChainStore
   - UITableView+FDTemplateLayoutCell
+  - XLForm (~> 3.0.0)
   - XLPagerTabStrip (~> 1.0.0)
 
 EXTERNAL SOURCES:
@@ -64,6 +66,7 @@ SPEC CHECKSUMS:
   TSMessages: 2a52642128d7ab15b46930c810b9c9403a2b58f3
   UICKeyChainStore: c5719c814e8bd69e74e4a0fc09daf8f4d6257a59
   UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d
+  XLForm: 10fc7eb9e2d5df21a515fa3a794f4e26319abd0e
   XLPagerTabStrip: 1614c2a5a078e0ef378a825e84534d56066bea88
 
 COCOAPODS: 0.36.0
