@@ -12,4 +12,6 @@
 @property (nonatomic, strong)NSNumber <Optional>*maxId;
 
 + (PageIndicator *)initWithSinceId:(NSNumber *)sinceId maxId:(NSNumber *)maxId;
+
++ (PageIndicator *)initWithMaxId:(NSNumber *)maxId;
 @end

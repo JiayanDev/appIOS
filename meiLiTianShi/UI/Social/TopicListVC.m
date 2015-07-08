@@ -14,6 +14,9 @@
 #import "PageIndicator.h"
 #import "TSMessage.h"
 #import "DiaryBookModel.h"
+#import "MBProgressHUD.h"
+#import "MJRefreshAutoNormalFooter.h"
+#import "UIScrollView+MJRefresh.h"
 
 @interface TopicListVC ()
 @property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -42,7 +45,9 @@
     self.tableView.dataSource=self;
     self.tableView.estimatedRowHeight=142;
     self.pageIndicator= [[PageIndicator alloc] init];
-    [self getData];
+    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
+                                                                 refreshingAction:@selector(dragUp)];
+    [self getDataWithScrollingToTop:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,20 +59,42 @@
     self.type=self.typeSwitcher.selectedSegmentIndex;
     self.tableData=[NSMutableArray array];
     self.pageIndicator=[[PageIndicator alloc]init];
-    [self getData];
+    [self getDataWithScrollingToTop:YES];
+
 }
 
 
-- (void)getData {
+-(void)dragUp{
+    [self getDataWithScrollingToTop:NO];
+
+}
+
+- (void)getDataWithScrollingToTop:(BOOL)gotoTop {
+    [MBProgressHUD showHUDAddedTo:self.view
+                         animated:YES];
     if (self.type == TYPE_DIARY) {
 
         [[MLSession current] getDiaryBookListWithPageIndicator:self.pageIndicator
                                                        success:^(NSArray *array) {
+                                                           [MBProgressHUD hideHUDForView:self.view
+                                                                                animated:YES];
+                                                           [self.tableView.footer endRefreshing];
+
                                                            if (self.type == TYPE_DIARY) {
                                                                [self.tableData addObjectsFromArray:array];
+                                                               if(array.count==0){[self.tableView.footer noticeNoMoreData];}
+                                                               self.pageIndicator=[PageIndicator initWithMaxId:@(((DiaryBookModel *)self.tableData[self.tableData.count-1]).id)];
+
                                                                [self.tableView reloadData];
+                                                               if (gotoTop){
+                                                                   self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
+                                                               }
                                                            }
                                                        } fail:^(NSInteger i, id o) {
+                    [MBProgressHUD hideHUDForView:self.view
+                                         animated:YES];
+                    [self.tableView.footer endRefreshing];
+
                     [TSMessage showNotificationWithTitle:@"出错了"
                                                 subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                                     type:TSMessageNotificationTypeError];
@@ -76,11 +103,24 @@
 
         [[MLSession current] getTopicListWithPageIndicator:self.pageIndicator
                                                    success:^(NSArray *array) {
+                                                       [MBProgressHUD hideHUDForView:self.view
+                                                                            animated:YES];
+                                                       [self.tableView.footer endRefreshing];
+
                                                        if (self.type == TYPE_TOPIC) {
                                                            [self.tableData addObjectsFromArray:array];
+                                                           if(array.count==0){[self.tableView.footer noticeNoMoreData];}
+                                                           self.pageIndicator=[PageIndicator initWithMaxId:@(((TopicModel *)self.tableData[self.tableData.count-1]).id)];
                                                            [self.tableView reloadData];
+                                                           if (gotoTop){
+                                                               self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
+                                                           }
                                                        }
                                                    } fail:^(NSInteger i, id o) {
+                    [MBProgressHUD hideHUDForView:self.view
+                                         animated:YES];
+                    [self.tableView.footer endRefreshing];
+
                     [TSMessage showNotificationWithTitle:@"出错了"
                                                 subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                                     type:TSMessageNotificationTypeError];
@@ -106,7 +146,7 @@
         }else if([data isKindOfClass:[DiaryBookModel class]]){
             DiaryBookModel *diaryBook=(DiaryBookModel *)data;
             tcell.contentLabel.text=[NSString stringWithFormat:@"医生：%@\n医院：%@",diaryBook.doctorName,diaryBook.hospitalName];
-            //tcell.downLabel.text=
+            tcell.downLabel.text=@"这是一个日记本";
         }
     }
 }

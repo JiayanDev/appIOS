@@ -161,13 +161,13 @@ static MLSession *session;
 
 
 -(void)getTopicListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
-    #if USE_DEBUG_MOCK
-        NSMutableArray *r=[NSMutableArray array];
-    for (int i = 0; i < 10; ++i) {
-        [r addObject:[TopicModel randomOne]];
-    }
-    success(r);
-    #else
+//    #if USE_DEBUG_MOCK
+//        NSMutableArray *r=[NSMutableArray array];
+//    for (int i = 0; i < 10; ++i) {
+//        [r addObject:[TopicModel randomOne]];
+//    }
+//    success(r);
+//    #else
     [self sendGet:@"topic/getTopicList"
             param:[pi toDictionary]
           success:^(id o) {
@@ -177,7 +177,7 @@ static MLSession *session;
               }
               success(r);
           } failure:failure];
-#endif
+//#endif
 }
 
 -(void)getDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{

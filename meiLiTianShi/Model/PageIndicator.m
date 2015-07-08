@@ -14,4 +14,10 @@
     return [[self alloc] initWithDictionary:@{@"sinceId":sinceId,@"maxId":maxId}
                                       error:nil];
 }
+
++(PageIndicator *)initWithMaxId:(NSNumber *)maxId{
+    PageIndicator *p= [[PageIndicator alloc] init];
+    p.maxId=maxId;
+    return p;
+}
 @end
