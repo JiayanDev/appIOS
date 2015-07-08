@@ -10,6 +10,7 @@
 #import "UICKeyChainStore.h"
 #import "PageIndicator.h"
 #import "TopicModel.h"
+#import "DiaryBookModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -108,7 +109,7 @@ static MLSession *session;
         }
     }
     @catch (NSException *exception) {
-        failure(0, responseObject);
+        failure(0, [NSString stringWithFormat:@"EXCEPTION: %@ \n RESPOND:%@",exception,responseObject] );
     }
 
 }
@@ -174,8 +175,29 @@ static MLSession *session;
               for (NSDictionary *oned in (NSArray *) o) {
                   [r addObject:[[TopicModel alloc] initWithDictionary:oned error:nil]];
               }
+              success(r);
           } failure:failure];
 #endif
+}
+
+-(void)getDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+//#if USE_DEBUG_MOCK
+//    NSMutableArray *r=[NSMutableArray array];
+//    for (int i = 0; i < 10; ++i) {
+//        [r addObject:[DiaryBookModel randomOne]];
+//    }
+//    success(r);
+//#else
+    [self sendGet:@"diary/getHeaderList"
+            param:[pi toDictionary]
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[DiaryBookModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+//#endif
 }
 
 

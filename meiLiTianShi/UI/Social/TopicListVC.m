@@ -13,20 +13,27 @@
 #import "MLSession.h"
 #import "PageIndicator.h"
 #import "TSMessage.h"
+#import "DiaryBookModel.h"
 
 @interface TopicListVC ()
+@property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *tableData;
 @property (nonatomic, strong)PageIndicator *pageIndicator;
+@property (nonatomic, assign)NSInteger type;
 @end
 
 #define kCellTopic @"topic_cell"
+#define TYPE_DIARY 0
+#define TYPE_TOPIC 1
 
 @implementation TopicListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"话题列表";
+    self.navigationItem.titleView=self.typeSwitcher;
+
     self.tableData=[NSMutableArray array];
     [self.tableView registerClass:[TopicListCell class] forCellReuseIdentifier:kCellTopic];
     [self.tableView registerNib:[UINib nibWithNibName:@"TopicListCell" bundle:nil]
@@ -43,16 +50,42 @@
 }
 
 
--(void)getData{
-    [[MLSession current] getTopicListWithPageIndicator:self.pageIndicator
-                                               success:^(NSArray *array) {
-                                                   [self.tableData addObjectsFromArray:array];
-                                                   [self.tableView reloadData];
-                                               } fail:^(NSInteger i, id o) {
+- (IBAction)typeChanged:(id)sender {
+    self.type=self.typeSwitcher.selectedSegmentIndex;
+    self.tableData=[NSMutableArray array];
+    self.pageIndicator=[[PageIndicator alloc]init];
+    [self getData];
+}
+
+
+- (void)getData {
+    if (self.type == TYPE_DIARY) {
+
+        [[MLSession current] getDiaryBookListWithPageIndicator:self.pageIndicator
+                                                       success:^(NSArray *array) {
+                                                           if (self.type == TYPE_DIARY) {
+                                                               [self.tableData addObjectsFromArray:array];
+                                                               [self.tableView reloadData];
+                                                           }
+                                                       } fail:^(NSInteger i, id o) {
                     [TSMessage showNotificationWithTitle:@"出错了"
-                                                subtitle:[NSString stringWithFormat:@"%d - %@",i,o]
+                                                subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                                     type:TSMessageNotificationTypeError];
-            }];
+                }];
+    } else {
+
+        [[MLSession current] getTopicListWithPageIndicator:self.pageIndicator
+                                                   success:^(NSArray *array) {
+                                                       if (self.type == TYPE_TOPIC) {
+                                                           [self.tableData addObjectsFromArray:array];
+                                                           [self.tableView reloadData];
+                                                       }
+                                                   } fail:^(NSInteger i, id o) {
+                    [TSMessage showNotificationWithTitle:@"出错了"
+                                                subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                    type:TSMessageNotificationTypeError];
+                }];
+    }
 }
 
 
@@ -60,13 +93,28 @@
     return self.tableData.count;
 }
 
+
+-(void)setTheCell:(UITableViewCell *)cell withData:(id)data{
+    if([cell isKindOfClass:[TopicListCell class]]){
+        TopicListCell *tcell=((TopicListCell *) cell);
+
+        if([data isKindOfClass:[TopicModel class]]){
+            TopicModel * topic=(TopicModel *)data;
+            tcell.contentLabel.text=topic.content;
+            tcell.downLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",@(topic.commentCount),@(topic.likeCount)];
+
+        }else if([data isKindOfClass:[DiaryBookModel class]]){
+            DiaryBookModel *diaryBook=(DiaryBookModel *)data;
+            tcell.contentLabel.text=[NSString stringWithFormat:@"医生：%@\n医院：%@",diaryBook.doctorName,diaryBook.hospitalName];
+            //tcell.downLabel.text=
+        }
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TopicModel *data=self.tableData[indexPath.row];
     TopicListCell *cell= [self.tableView dequeueReusableCellWithIdentifier:kCellTopic];
-    cell.contentLabel.text=data.content;
-    //cell.image1
-
-    cell.downLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",@(data.commentCount),@(data.likeCount)];
+    [self setTheCell:cell withData:data];
 
     return cell;
 
@@ -77,10 +125,7 @@
     return [tableView fd_heightForCellWithIdentifier:kCellTopic cacheByIndexPath:indexPath configuration:^(id cell) {
         TopicModel *data = self.tableData[indexPath.row];
         TopicListCell *c = (TopicListCell *) cell;
-        c.contentLabel.text = data.content;
-        //cell.image1
-
-        c.downLabel.text = [NSString stringWithFormat:@"评论:%@ 赞:%@", @(data.commentCount), @(data.likeCount)];
+        [self setTheCell:c withData:data];
 
         cell = c;
     }];

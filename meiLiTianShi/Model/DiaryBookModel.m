@@ -9,4 +9,7 @@
 @implementation DiaryBookModel {
 
 }
++ (id)randomOne {
+    return nil;
+}
 @end

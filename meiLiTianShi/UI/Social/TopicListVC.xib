@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopicListVC">
             <connections>
                 <outlet property="tableView" destination="6Sm-V5-Me7" id="Yos-iq-0Ku"/>
+                <outlet property="typeSwitcher" destination="PPb-Ll-kPW" id="ce6-25-Eb1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,6 +31,18 @@
             </constraints>
             <point key="canvasLocation" x="235" y="219"/>
         </view>
+        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="PPb-Ll-kPW">
+            <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <segments>
+                <segment title="日记"/>
+                <segment title="话题"/>
+            </segments>
+            <connections>
+                <action selector="typeChanged:" destination="-1" eventType="valueChanged" id="qNx-8f-cwL"/>
+            </connections>
+            <point key="canvasLocation" x="-118.5" y="106"/>
+        </segmentedControl>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
