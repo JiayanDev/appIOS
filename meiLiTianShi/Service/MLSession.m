@@ -11,6 +11,7 @@
 #import "PageIndicator.h"
 #import "TopicModel.h"
 #import "DiaryBookModel.h"
+#import "CategoryModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -122,11 +123,22 @@ static MLSession *session;
     }
 }
 
+-(void)handleCategories:(NSDictionary *)user{
+    if(user[@"projectCategory"] &&user[@"projectCategory"][@"data"]){
+        self.categories=[NSMutableArray array];
+        for (NSString *number in user[@"projectCategory"][@"data"]) {
+            [self.categories addObject:[[CategoryModel alloc] initWithId:(NSUInteger) [number integerValue]
+                                                                    name:user[@"projectCategory"][@"data"][number]]];
+        }
+    }
+}
+
 -(void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
     [self sendPost:@"user/register"
             param:nil
           success:^(NSDictionary * user){
               self.token=user[@"token"];
+              [self handleCategories:user];
               success();
           }
           failure:failure];
@@ -139,6 +151,9 @@ static MLSession *session;
               if(user[@"token"]){
                   self.token=user[@"token"];
               }
+
+              [self handleCategories:user];
+
               success();
           }
           failure:failure];

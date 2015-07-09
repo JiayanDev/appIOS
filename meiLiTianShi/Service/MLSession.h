@@ -9,6 +9,10 @@
 
 
 @interface MLSession : NSObject
+
+@property (nonatomic, strong)NSMutableArray *categories;
+
+
 + (MLSession *)current;
 
 - (void)handleManager:(AFHTTPRequestOperationManager *)manager;

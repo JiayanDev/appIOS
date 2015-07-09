@@ -17,6 +17,8 @@
 #import "MBProgressHUD.h"
 #import "MJRefreshAutoNormalFooter.h"
 #import "UIScrollView+MJRefresh.h"
+#import "CreateDiaryBookFVC.h"
+#import "ProjectSelectVC.h"
 
 @interface TopicListVC ()
 @property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -47,6 +49,9 @@
     self.pageIndicator= [[PageIndicator alloc] init];
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
+    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                                         target:self
+                                                                                         action:@selector(gotoCreate)];
     [self getDataWithScrollingToTop:YES];
 }
 
@@ -66,6 +71,16 @@
 
 -(void)dragUp{
     [self getDataWithScrollingToTop:NO];
+
+}
+
+-(void)gotoCreate{
+    if(self.type== TYPE_DIARY){
+        ProjectSelectVC *bvc=[[ProjectSelectVC alloc]init];
+        bvc.isFirstStep=YES;
+        [self.navigationController pushViewController:bvc
+                                             animated:YES];
+    }
 
 }
 

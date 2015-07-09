@@ -9,6 +9,6 @@
 
 @interface RespondModel : JSONModel
 @property NSInteger code;
-@property NSDictionary <Optional>*data;
+@property id <Optional>data;
 @property NSString <Optional>*msg;
 @end

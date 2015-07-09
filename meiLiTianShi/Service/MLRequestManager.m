@@ -60,6 +60,7 @@ static MLRequestManager* instance = nil;
             POST:url
       parameters:parameters
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             NSLog(@"POST SUCC %@", responseObject);
              [self onSuccess:operation responseObject:responseObject success:success];                                         }
          failure:^(AFHTTPRequestOperation *operation, NSError *error) {
              [self onFailure:operation error:error failure:failure];
