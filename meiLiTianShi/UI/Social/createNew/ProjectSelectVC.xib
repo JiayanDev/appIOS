@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProjectSelectVC">
             <connections>
+                <outlet property="spliterWidthConstraint" destination="AXT-Ie-mvR" id="ImA-vS-AaO"/>
                 <outlet property="tableLeft" destination="QgP-QJ-8FS" id="ZoC-6R-bsY"/>
                 <outlet property="tableRight" destination="WnI-Cw-W6k" id="SXx-FI-h3D"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -17,24 +18,34 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="QgP-QJ-8FS">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                </tableView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WnI-Cw-W6k">
                     <rect key="frame" x="300" y="0.0" width="300" height="600"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QgP-QJ-8FS">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6u-NA-tyR">
+                    <rect key="frame" x="300" y="0.0" width="10" height="600"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="AXT-Ie-mvR"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="QgP-QJ-8FS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Aqm-10-BUH"/>
                 <constraint firstAttribute="trailing" secondItem="WnI-Cw-W6k" secondAttribute="trailing" id="CjU-Pd-vo7"/>
                 <constraint firstItem="WnI-Cw-W6k" firstAttribute="leading" secondItem="QgP-QJ-8FS" secondAttribute="trailing" id="DKT-7R-zRW"/>
+                <constraint firstItem="o6u-NA-tyR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IFV-IX-v17"/>
                 <constraint firstItem="WnI-Cw-W6k" firstAttribute="width" secondItem="QgP-QJ-8FS" secondAttribute="width" id="OwQ-EI-1Df"/>
                 <constraint firstAttribute="bottom" secondItem="WnI-Cw-W6k" secondAttribute="bottom" id="XRb-0z-kcO"/>
                 <constraint firstItem="WnI-Cw-W6k" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Xjz-2X-12R"/>
                 <constraint firstAttribute="bottom" secondItem="QgP-QJ-8FS" secondAttribute="bottom" id="iEv-Vn-Ik7"/>
+                <constraint firstItem="o6u-NA-tyR" firstAttribute="leading" secondItem="QgP-QJ-8FS" secondAttribute="trailing" id="qu8-aB-334"/>
+                <constraint firstAttribute="bottom" secondItem="o6u-NA-tyR" secondAttribute="bottom" id="uO0-BO-h2L"/>
                 <constraint firstItem="QgP-QJ-8FS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xGj-Fs-VMi"/>
             </constraints>
         </view>

@@ -9,12 +9,14 @@
 #import "ProjectSelectVC.h"
 #import "MLSession.h"
 #import "CategoryModel.h"
+#import "CreateDiaryBookFVC.h"
 
 @interface ProjectSelectVC ()
 @property (weak, nonatomic) IBOutlet UITableView *tableLeft;
 @property (weak, nonatomic) IBOutlet UITableView *tableRight;
 @property (nonatomic, strong)NSMutableArray *firstLevelCates;
 @property (nonatomic, strong)CategoryModel *selectedFirstLevelCate;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *spliterWidthConstraint;
 @property (nonatomic, strong)NSMutableSet *selectedCates;
 @end
 
@@ -37,6 +39,15 @@
     self.tableLeft.contentInset = UIEdgeInsetsMake(topLayoutGuide, 0, 0, 0);
     self.tableRight.contentInset = UIEdgeInsetsMake(topLayoutGuide, 0, 0, 0);
     self.selectedCates=[NSMutableSet set];
+    self.spliterWidthConstraint.constant = 1.f/[UIScreen mainScreen].scale;//enforces it to be a true 1 pixel line
+
+    if(self.isFirstStep){
+        self.title=@"请先选择项目分类";
+        self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"下一步"
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:self
+                                                                                action:@selector(gotoNewDiaryBook)];
+    }
 }
 
 -(BOOL)hidesBottomBarWhenPushed
@@ -58,6 +69,13 @@
     }
 }
 
+-(void)gotoNewDiaryBook{
+    CreateDiaryBookFVC *fvc= [[CreateDiaryBookFVC alloc] init];
+    fvc.categories=self.selectedCates;
+    [self.navigationController pushViewController:fvc
+                                         animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -73,6 +91,21 @@
             return [self.selectedFirstLevelCate chidren].count;
         }
     }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if([tableView isEqual:self.tableLeft]){
+        return 1;
+    }else{
+        return 3;
+    }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if([tableView isEqual:self.tableRight]){
+        return @"二级分类";
+    }
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

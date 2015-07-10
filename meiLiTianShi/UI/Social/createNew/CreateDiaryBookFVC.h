@@ -8,6 +8,8 @@
 
 #import "XLFormViewController.h"
 
-@interface CreateDiaryBookFVC : XLFormViewController
+@class CategoryModel;
 
+@interface CreateDiaryBookFVC : XLFormViewController
+@property (nonatomic, strong) NSMutableSet *categories;
 @end

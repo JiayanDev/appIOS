@@ -8,6 +8,7 @@
 
 #import "CreateDiaryBookFVC.h"
 #import "XLForm.h"
+#import "CategoryModel.h"
 
 @interface CreateDiaryBookFVC ()
 
