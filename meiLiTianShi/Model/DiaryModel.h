@@ -4,9 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JSONModel/JSONModel.h>
 
 
-@interface DiaryModel : NSObject
+@interface DiaryModel : JSONModel
 @property (nonatomic, assign) NSUInteger commentCount;
 @property (nonatomic, assign) NSUInteger id;
 @property (nonatomic, strong) NSString *content;

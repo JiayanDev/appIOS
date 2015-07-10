@@ -32,6 +32,7 @@
 		07FB9C3C1B4E1471000CCC45 /* CreateDiaryFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FB9C3A1B4E1471000CCC45 /* CreateDiaryFVC.xib */; };
 		07FB9C401B4E1486000CCC45 /* CreateTopicFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB9C3E1B4E1486000CCC45 /* CreateTopicFVC.m */; };
 		07FB9C411B4E1486000CCC45 /* CreateTopicFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FB9C3F1B4E1486000CCC45 /* CreateTopicFVC.xib */; };
+		3CDC50AA8E495BE766AB5C4A /* CategoriesArrayWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */; };
 		3CDC510F9DCC5DA5D9919E72 /* DiaryBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */; };
 		3CDC5244C6BB89534D89AB15 /* DiaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */; };
 		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
@@ -110,6 +111,7 @@
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
 		3CDC597108C0E2C1526D42BA /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		3CDC59EE7615C1F88295DE29 /* CategoriesArrayWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesArrayWrap.h; sourceTree = "<group>"; };
 		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
 		3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryBookModel.m; sourceTree = "<group>"; };
+		3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesArrayWrap.m; sourceTree = "<group>"; };
 		3CDC5EDE45048E6EBD0D401C /* RespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondModel.m; sourceTree = "<group>"; };
 		3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryModel.m; sourceTree = "<group>"; };
 		681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meiLiTianShi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +235,8 @@
 				3CDC5DF899CEC90E17742F7C /* DiaryModel.h */,
 				3CDC597108C0E2C1526D42BA /* CategoryModel.m */,
 				3CDC50FFF325119EDE8210C5 /* CategoryModel.h */,
+				3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */,
+				3CDC59EE7615C1F88295DE29 /* CategoriesArrayWrap.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -499,6 +504,7 @@
 				3CDC510F9DCC5DA5D9919E72 /* DiaryBookModel.m in Sources */,
 				3CDC5244C6BB89534D89AB15 /* DiaryModel.m in Sources */,
 				3CDC5EEFE2EFD58CD35EC6B9 /* CategoryModel.m in Sources */,
+				3CDC50AA8E495BE766AB5C4A /* CategoriesArrayWrap.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

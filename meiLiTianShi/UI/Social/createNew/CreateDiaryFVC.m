@@ -7,16 +7,26 @@
 //
 
 #import "CreateDiaryFVC.h"
+#import "XLForm.h"
+#import "ProjectSelectVC.h"
+#import "CategoriesArrayWrap.h"
 
 @interface CreateDiaryFVC ()
 
 @end
 
 @implementation CreateDiaryFVC
-
+#define kcates @"categoryIds"
+#define kcontent @"content"
+#define kDate @"date"
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title=@"创建日记";
+
+    //set value
+    [self.form formRowWithTag:kcates].value=[CategoriesArrayWrap wrapWithCates:self.categories];
+    [self.tableView reloadData];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +34,44 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(id)init
+{
+    XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptor];
+    XLFormSectionDescriptor * section;
+    XLFormRowDescriptor * row;
+
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+
+    [formDescriptor addFormSection:section];
+
+
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kcates rowType:XLFormRowDescriptorTypeSelectorPush title:@"项目"];
+    row.required = YES;
+    row.action.viewControllerClass=[ProjectSelectVC class];
+    //row.value=
+    [section addFormRow:row];
+
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDate rowType:XLFormRowDescriptorTypeDate title:@"手术日期"];
+    row.value = [NSDate new];
+    [row.cellConfigAtConfigure setObject:[NSDate new] forKey:@"maximumDate"];
+    [section addFormRow:row];
+
+
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kcontent rowType:XLFormRowDescriptorTypeTextView];
+    row.cellConfigAtConfigure[@"textView.placeholder"] = @"日记内容";
+    [section addFormRow:row];
+
+
+
+
+
+
+    return [super initWithForm:formDescriptor];
+
 }
-*/
 
 @end

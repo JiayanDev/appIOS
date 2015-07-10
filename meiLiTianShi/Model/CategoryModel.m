@@ -37,4 +37,8 @@
     }
     return r;
 }
+
+- (NSString *)description {
+    return self.name;
+}
 @end

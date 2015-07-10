@@ -12,6 +12,7 @@
 #import "TopicModel.h"
 #import "DiaryBookModel.h"
 #import "CategoryModel.h"
+#import "DiaryModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -209,6 +210,47 @@ static MLSession *session;
               NSMutableArray *r=[NSMutableArray array];
               for (NSDictionary *oned in (NSArray *) o) {
                   [r addObject:[[DiaryBookModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+//#endif
+}
+
+
+-(void)getMyDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+//#if USE_DEBUG_MOCK
+//    NSMutableArray *r=[NSMutableArray array];
+//    for (int i = 0; i < 10; ++i) {
+//        [r addObject:[DiaryBookModel randomOne]];
+//    }
+//    success(r);
+//#else
+    [self sendGet:@"diary/my_header"
+            param:[pi toDictionary]
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[DiaryBookModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+//#endif
+}
+
+-(void)getDiaryList_underDiaryBook:(NSUInteger)diaryBookId success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+//#if USE_DEBUG_MOCK
+//    NSMutableArray *r=[NSMutableArray array];
+//    for (int i = 0; i < 10; ++i) {
+//        [r addObject:[DiaryBookModel randomOne]];
+//    }
+//    success(r);
+//#else
+    [self sendGet:@"diary/my_diaries"
+            param:@{@"headerId":@(diaryBookId)}
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[DiaryModel alloc] initWithDictionary:oned error:nil]];
               }
               success(r);
           } failure:failure];

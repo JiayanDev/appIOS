@@ -10,6 +10,8 @@
 #import "MLSession.h"
 #import "CategoryModel.h"
 #import "CreateDiaryBookFVC.h"
+#import "CategoriesArrayWrap.h"
+#import "CreateDiaryFVC.h"
 
 @interface ProjectSelectVC ()
 @property (weak, nonatomic) IBOutlet UITableView *tableLeft;
@@ -47,6 +49,18 @@
                                                                                  style:UIBarButtonItemStylePlain
                                                                                 target:self
                                                                                 action:@selector(gotoNewDiaryBook)];
+        self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    }else{
+        self.title=@"项目";
+        if(self.rowDescriptor && [self.rowDescriptor.value isKindOfClass:[CategoriesArrayWrap class]] &&
+                ((CategoriesArrayWrap *) self.rowDescriptor.value).categories){
+            self.selectedCates= [((CategoriesArrayWrap *) self.rowDescriptor.value).categories mutableCopy];
+        }
+
+        self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"完成"
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:self
+                                                                                action:@selector(finishReSelect)];
     }
 }
 
@@ -70,10 +84,18 @@
 }
 
 -(void)gotoNewDiaryBook{
-    CreateDiaryBookFVC *fvc= [[CreateDiaryBookFVC alloc] init];
+    CreateDiaryFVC *fvc= [[CreateDiaryFVC alloc] init];
     fvc.categories=self.selectedCates;
+    fvc.needToCreateNewDiaryBookLater=YES;
     [self.navigationController pushViewController:fvc
                                          animated:YES];
+}
+
+-(void)finishReSelect{
+
+    self.rowDescriptor.value=[CategoriesArrayWrap wrapWithCates:self.selectedCates];
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
