@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HospitalSelectVC">
             <connections>
+                <outlet property="input" destination="2oZ-Vo-3E6" id="1Yw-3P-b2y"/>
                 <outlet property="onePixel" destination="SgL-fs-N2X" id="A31-Nm-VaO"/>
+                <outlet property="tableView" destination="NzX-3f-vxp" id="qf4-hZ-ny3"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,6 +25,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textChanged:" destination="-1" eventType="valueChanged" id="6av-rA-dti"/>
+                    </connections>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="搜索.png" translatesAutoresizingMaskIntoConstraints="NO" id="4lb-DX-j0P">
                     <rect key="frame" x="8" y="89" width="35" height="32"/>

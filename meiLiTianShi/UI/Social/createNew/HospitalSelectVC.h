@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XLFormRowDescriptor.h"
 
-@interface HospitalSelectVC : UIViewController
+@interface HospitalSelectVC : UIViewController <UITableViewDataSource, UITableViewDelegate,XLFormRowDescriptorViewController>
 
 @end
