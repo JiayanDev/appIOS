@@ -54,6 +54,7 @@
 		3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50439D6B18F000354CD6 /* TopicModel.m */; };
 		3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */; };
 		3CDC5905A16A26BD5353DFD3 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5F8533E195A6E27B562E /* ELCAssetCell.m */; };
+		3CDC5913A3F7535FD2DF3E91 /* NSArray+toJsonString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */; };
 		3CDC5A1DBE7BDF9E283E9716 /* ELCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */; };
 		3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B63426FE4A04BE7F99C /* blue@2x.png */; };
 		3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */; };
@@ -135,6 +136,7 @@
 		3CDC50FFF325119EDE8210C5 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
 		3CDC51143C40C1176B84D9DD /* MLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRequestManager.h; sourceTree = "<group>"; };
 		3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAssetPicker.xib; sourceTree = "<group>"; };
+		3CDC52507956A25261AC332B /* NSArray+toJsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+toJsonString.h"; sourceTree = "<group>"; };
 		3CDC5303D4AA91E14F4EFCDA /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
 		3CDC53152925CBAA23FE43E6 /* MLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSession.h; sourceTree = "<group>"; };
 		3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
 		3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
 		3CDC5D89AE02239E92F501AC /* DoctorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorModel.h; sourceTree = "<group>"; };
+		3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+toJsonString.m"; sourceTree = "<group>"; };
 		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
 		3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryBookModel.m; sourceTree = "<group>"; };
@@ -304,6 +307,15 @@
 			path = ELCImagePicker;
 			sourceTree = "<group>";
 		};
+		3CDC53AF979AFCB7505AD411 /* NSArray+toJsonString */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */,
+				3CDC52507956A25261AC332B /* NSArray+toJsonString.h */,
+			);
+			path = "NSArray+toJsonString";
+			sourceTree = "<group>";
+		};
 		3CDC55461C99D4074F6B469C /* AFTabledCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +404,7 @@
 			children = (
 				3CDC55461C99D4074F6B469C /* AFTabledCollectionView */,
 				3CDC525C9B9F287934C6FBF1 /* ELCImagePicker */,
+				3CDC53AF979AFCB7505AD411 /* NSArray+toJsonString */,
 			);
 			path = frameworks;
 			sourceTree = "<group>";
@@ -651,6 +664,7 @@
 				3CDC5A1DBE7BDF9E283E9716 /* ELCImagePickerController.m in Sources */,
 				3CDC53EED13C3D9EF6B72632 /* DoctorModel.m in Sources */,
 				3CDC52AB252856C7EBF31FAF /* HospitalModel.m in Sources */,
+				3CDC5913A3F7535FD2DF3E91 /* NSArray+toJsonString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
