@@ -196,4 +196,9 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
 }
 
 
+- (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker
+{
+    [self.formViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

@@ -11,5 +11,5 @@
 @class CategoryModel;
 
 @interface CreateDiaryBookFVC : XLFormViewController
-@property (nonatomic, strong) NSMutableSet *categories;
+@property (nonatomic, strong) NSMutableOrderedSet *categories;
 @end

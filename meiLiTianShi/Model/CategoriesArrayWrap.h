@@ -7,7 +7,7 @@
 
 
 @interface CategoriesArrayWrap : NSObject
-@property (nonatomic, strong)NSMutableSet *categories;
+@property (nonatomic, strong)NSMutableOrderedSet *categories;
 
-+ (CategoriesArrayWrap *)wrapWithCates:(NSMutableSet *)cates;
++ (CategoriesArrayWrap *)wrapWithCates:(NSMutableOrderedSet *)cates;
 @end

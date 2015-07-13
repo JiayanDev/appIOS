@@ -4,6 +4,7 @@
 //
 
 #import "CategoriesArrayWrap.h"
+#import "JSONValueTransformer.h"
 
 
 @implementation CategoriesArrayWrap {
@@ -15,7 +16,7 @@
     if(!self.categories || self.categories.count==0){
         return @"未选择";
     }
-    return [[self.categories allObjects] componentsJoinedByString:@"，"];
+    return [[self.categories array] componentsJoinedByString:@"，"];
 }
 
 -(id)valueData
@@ -23,11 +24,21 @@
     return self;
 }
 
-+(CategoriesArrayWrap *)wrapWithCates:(NSMutableSet *)cates{
++(CategoriesArrayWrap *)wrapWithCates:(NSMutableOrderedSet *)cates{
     CategoriesArrayWrap *c=[[CategoriesArrayWrap alloc]init];
     c.categories= [cates mutableCopy];
     return c;
 }
+
+//@implementation JSONValueTransformer(CategoriesArrayWrap  )
+//
+//-(CategoriesArrayWrap*)CategoriesArrayWrapFromNSArray:(NSString*)string{
+//    CategoriesArrayWrap* w=[[CategoriesArrayWrap alloc]init];
+//    w.categories=
+//}
+//-(id)JSONObjectFromCategoriesArrayWrap:(CategoriesArrayWrap*)siteset{
+//    return [siteset name];
+//}
 
 
 @end

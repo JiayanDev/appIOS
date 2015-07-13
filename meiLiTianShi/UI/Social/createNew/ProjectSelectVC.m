@@ -19,7 +19,7 @@
 @property (nonatomic, strong)NSMutableArray *firstLevelCates;
 @property (nonatomic, strong)CategoryModel *selectedFirstLevelCate;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *spliterWidthConstraint;
-@property (nonatomic, strong)NSMutableSet *selectedCates;
+@property (nonatomic, strong)NSMutableOrderedSet *selectedCates;
 @end
 
 @implementation ProjectSelectVC
@@ -40,7 +40,7 @@
     CGFloat topLayoutGuide = self.topLayoutGuide.length + self.navigationController.navigationBar.frame.size.height+[[UIApplication sharedApplication] statusBarFrame].size.height;
     self.tableLeft.contentInset = UIEdgeInsetsMake(topLayoutGuide, 0, 0, 0);
     self.tableRight.contentInset = UIEdgeInsetsMake(topLayoutGuide, 0, 0, 0);
-    self.selectedCates=[NSMutableSet set];
+    self.selectedCates=[NSMutableOrderedSet orderedSet];
     self.spliterWidthConstraint.constant = 1.f/[UIScreen mainScreen].scale;//enforces it to be a true 1 pixel line
 
     if(self.isFirstStep){

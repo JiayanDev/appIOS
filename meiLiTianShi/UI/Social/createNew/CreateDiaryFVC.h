@@ -10,6 +10,6 @@
 
 @interface CreateDiaryFVC : XLFormViewController
 @property (nonatomic, assign)BOOL needToCreateNewDiaryBookLater;
-@property (nonatomic, strong) NSMutableSet *categories;
+@property (nonatomic, strong) NSMutableOrderedSet *categories;
 
 @end
