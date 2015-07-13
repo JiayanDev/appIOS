@@ -26,6 +26,8 @@
 		0746078D1B4BBAF40035E08D /* MyDiaryBookListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */; };
 		076767A81B4E601500F73D00 /* ProjectSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 076767A61B4E601500F73D00 /* ProjectSelectVC.m */; };
 		076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076767A71B4E601500F73D00 /* ProjectSelectVC.xib */; };
+		077C67351B52C6BB00619740 /* ImageRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077C67341B52C6BB00619740 /* ImageRowCell.m */; };
+		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
 		07FB9C361B4E145B000CCC45 /* CreateDiaryBookFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB9C341B4E145B000CCC45 /* CreateDiaryBookFVC.m */; };
 		07FB9C371B4E145B000CCC45 /* CreateDiaryBookFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FB9C351B4E145B000CCC45 /* CreateDiaryBookFVC.xib */; };
 		07FB9C3B1B4E1471000CCC45 /* CreateDiaryFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB9C391B4E1471000CCC45 /* CreateDiaryFVC.m */; };
@@ -34,13 +36,27 @@
 		07FB9C411B4E1486000CCC45 /* CreateTopicFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FB9C3F1B4E1486000CCC45 /* CreateTopicFVC.xib */; };
 		3CDC50AA8E495BE766AB5C4A /* CategoriesArrayWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */; };
 		3CDC510F9DCC5DA5D9919E72 /* DiaryBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */; };
+		3CDC51E018A987664AEA4AAC /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AF995573CBE78549469 /* ELCAsset.m */; };
 		3CDC5244C6BB89534D89AB15 /* DiaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */; };
+		3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */; };
+		3CDC533D2D65BCF84FA750E4 /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5E8F9D0269EEB4D0330A /* Overlay@2x.png */; };
 		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
+		3CDC5359F757287D7F6B3AD7 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */; };
+		3CDC53CED6F3C6CD978266D4 /* AFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */; };
+		3CDC548F92694470DE7BCA4E /* ELCAssetTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */; };
+		3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */; };
 		3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582A761F21A9AC5CC46F /* MLRandom.m */; };
+		3CDC58648BFC255C4F9030EF /* ELCOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */; };
 		3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50439D6B18F000354CD6 /* TopicModel.m */; };
+		3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */; };
+		3CDC5905A16A26BD5353DFD3 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5F8533E195A6E27B562E /* ELCAssetCell.m */; };
+		3CDC5A1DBE7BDF9E283E9716 /* ELCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */; };
 		3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B63426FE4A04BE7F99C /* blue@2x.png */; };
 		3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */; };
+		3CDC5B1F9934E1D796FC253E /* ELCAssetPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */; };
+		3CDC5B3E7652B2E644165ABD /* ELCConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5C92C7FFBCA9C773725A /* ELCConsole.m */; };
 		3CDC5BA55D30C7A9D6399196 /* MLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC592229E51A7D98EA62D8 /* MLSession.m */; };
+		3CDC5BE729287BA50D2C1AD7 /* selectPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */; };
 		3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */; };
 		3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EDE45048E6EBD0D401C /* RespondModel.m */; };
 		3CDC5EEFE2EFD58CD35EC6B9 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC597108C0E2C1526D42BA /* CategoryModel.m */; };
@@ -91,6 +107,9 @@
 		076767A51B4E601500F73D00 /* ProjectSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectSelectVC.h; sourceTree = "<group>"; };
 		076767A61B4E601500F73D00 /* ProjectSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectVC.m; sourceTree = "<group>"; };
 		076767A71B4E601500F73D00 /* ProjectSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectSelectVC.xib; sourceTree = "<group>"; };
+		077C67331B52C6BB00619740 /* ImageRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRowCell.h; sourceTree = "<group>"; };
+		077C67341B52C6BB00619740 /* ImageRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRowCell.m; sourceTree = "<group>"; };
+		077C67361B536B6E00619740 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		07FB9C331B4E145B000CCC45 /* CreateDiaryBookFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDiaryBookFVC.h; sourceTree = "<group>"; };
 		07FB9C341B4E145B000CCC45 /* CreateDiaryBookFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDiaryBookFVC.m; sourceTree = "<group>"; };
 		07FB9C351B4E145B000CCC45 /* CreateDiaryBookFVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateDiaryBookFVC.xib; sourceTree = "<group>"; };
@@ -100,28 +119,53 @@
 		07FB9C3D1B4E1486000CCC45 /* CreateTopicFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateTopicFVC.h; sourceTree = "<group>"; };
 		07FB9C3E1B4E1486000CCC45 /* CreateTopicFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTopicFVC.m; sourceTree = "<group>"; };
 		07FB9C3F1B4E1486000CCC45 /* CreateTopicFVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTopicFVC.xib; sourceTree = "<group>"; };
+		3CDC5011C0DC667206AB0190 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		3CDC50439D6B18F000354CD6 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
+		3CDC506D5F81122F80F2A68D /* ELCOverlayImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCOverlayImageView.h; sourceTree = "<group>"; };
 		3CDC50AD67ABE27D12768D02 /* RespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondModel.h; sourceTree = "<group>"; };
 		3CDC50FFF325119EDE8210C5 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
 		3CDC51143C40C1176B84D9DD /* MLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRequestManager.h; sourceTree = "<group>"; };
+		3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAssetPicker.xib; sourceTree = "<group>"; };
+		3CDC5303D4AA91E14F4EFCDA /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
 		3CDC53152925CBAA23FE43E6 /* MLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSession.h; sourceTree = "<group>"; };
+		3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
+		3CDC5404A89048EC837DAB69 /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetTablePicker.h; sourceTree = "<group>"; };
+		3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTableViewCell.h; sourceTree = "<group>"; };
+		3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTableViewCell.m; sourceTree = "<group>"; };
 		3CDC566F3C9693A1C8D52D1B /* DiaryBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryBookModel.h; sourceTree = "<group>"; };
+		3CDC567BD9741BC4DAB98D48 /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
+		3CDC5686ADA71FE33A952649 /* ELCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCConsole.h; sourceTree = "<group>"; };
+		3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCOverlayImageView.m; sourceTree = "<group>"; };
 		3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRequestManager.m; sourceTree = "<group>"; };
+		3CDC56ECA18528CB2AAB633B /* ELCAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetCell.h; sourceTree = "<group>"; };
+		3CDC5780F7EA37FAFF250204 /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
+		3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
+		3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
+		3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectPhoto@2x.png"; sourceTree = "<group>"; };
 		3CDC597108C0E2C1526D42BA /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAssetTablePicker.xib; sourceTree = "<group>"; };
+		3CDC59AC37FF813066BEC7AF /* ELCAssetPickerFilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetPickerFilterDelegate.h; sourceTree = "<group>"; };
+		3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAlbumPickerController.xib; sourceTree = "<group>"; };
 		3CDC59EE7615C1F88295DE29 /* CategoriesArrayWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesArrayWrap.h; sourceTree = "<group>"; };
 		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
+		3CDC5AF995573CBE78549469 /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
+		3CDC5C92C7FFBCA9C773725A /* ELCConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCConsole.m; sourceTree = "<group>"; };
 		3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
+		3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
 		3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
 		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
 		3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryBookModel.m; sourceTree = "<group>"; };
 		3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesArrayWrap.m; sourceTree = "<group>"; };
+		3CDC5E8F9D0269EEB4D0330A /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
 		3CDC5EDE45048E6EBD0D401C /* RespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondModel.m; sourceTree = "<group>"; };
+		3CDC5EF4E3D8E1054B3C731A /* ELCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerController.h; sourceTree = "<group>"; };
 		3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryModel.m; sourceTree = "<group>"; };
+		3CDC5F8533E195A6E27B562E /* ELCAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetCell.m; sourceTree = "<group>"; };
 		681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meiLiTianShi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6119EACC3758C4C93EEB3EE /* Pods-meiLiTianShi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiLiTianShi.release.xcconfig"; path = "Pods/Target Support Files/Pods-meiLiTianShi/Pods-meiLiTianShi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */,
 				707B061389615A8BCE04BC32 /* libPods-meiLiTianShi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +226,7 @@
 				3CDC5A509067EF810B6FBBAA /* Service */,
 				3CDC559B4CE010BC7BF3BFCE /* Model */,
 				3CDC57AAD7EE7BF85356F427 /* Resource */,
+				3CDC59D8FFE7FA743F30F5FB /* frameworks */,
 			);
 			path = meiLiTianShi;
 			sourceTree = "<group>";
@@ -220,6 +266,40 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		3CDC525C9B9F287934C6FBF1 /* ELCImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC55F3BBA1CE789ADBFA1A /* Resources */,
+				3CDC5303D4AA91E14F4EFCDA /* ELCAsset.h */,
+				3CDC5AF995573CBE78549469 /* ELCAsset.m */,
+				3CDC5686ADA71FE33A952649 /* ELCConsole.h */,
+				3CDC5C92C7FFBCA9C773725A /* ELCConsole.m */,
+				3CDC56ECA18528CB2AAB633B /* ELCAssetCell.h */,
+				3CDC5F8533E195A6E27B562E /* ELCAssetCell.m */,
+				3CDC5404A89048EC837DAB69 /* ELCAssetTablePicker.h */,
+				3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */,
+				3CDC506D5F81122F80F2A68D /* ELCOverlayImageView.h */,
+				3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */,
+				3CDC5780F7EA37FAFF250204 /* ELCImagePickerHeader.h */,
+				3CDC5011C0DC667206AB0190 /* ELCAlbumPickerController.h */,
+				3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */,
+				3CDC5EF4E3D8E1054B3C731A /* ELCImagePickerController.h */,
+				3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */,
+				3CDC567BD9741BC4DAB98D48 /* ELCAssetSelectionDelegate.h */,
+				3CDC59AC37FF813066BEC7AF /* ELCAssetPickerFilterDelegate.h */,
+			);
+			path = ELCImagePicker;
+			sourceTree = "<group>";
+		};
+		3CDC55461C99D4074F6B469C /* AFTabledCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */,
+				3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */,
+			);
+			path = AFTabledCollectionView;
+			sourceTree = "<group>";
+		};
 		3CDC559B4CE010BC7BF3BFCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +335,18 @@
 			path = Social;
 			sourceTree = "<group>";
 		};
+		3CDC55F3BBA1CE789ADBFA1A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */,
+				3CDC5E8F9D0269EEB4D0330A /* Overlay@2x.png */,
+				3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */,
+				3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */,
+				3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		3CDC575B2A1B7426034141CE /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,8 +364,18 @@
 			children = (
 				3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */,
 				3CDC5B63426FE4A04BE7F99C /* blue@2x.png */,
+				3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		3CDC59D8FFE7FA743F30F5FB /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC55461C99D4074F6B469C /* AFTabledCollectionView */,
+				3CDC525C9B9F287934C6FBF1 /* ELCImagePicker */,
+			);
+			path = frameworks;
 			sourceTree = "<group>";
 		};
 		3CDC5A509067EF810B6FBBAA /* Service */ = {
@@ -316,6 +418,8 @@
 				076767A51B4E601500F73D00 /* ProjectSelectVC.h */,
 				076767A61B4E601500F73D00 /* ProjectSelectVC.m */,
 				076767A71B4E601500F73D00 /* ProjectSelectVC.xib */,
+				077C67331B52C6BB00619740 /* ImageRowCell.h */,
+				077C67341B52C6BB00619740 /* ImageRowCell.m */,
 			);
 			path = createNew;
 			sourceTree = "<group>";
@@ -332,6 +436,7 @@
 		D12D4EF717231CEA68B73D48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				077C67361B536B6E00619740 /* AssetsLibrary.framework */,
 				681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */,
 			);
 			name = Frameworks;
@@ -432,6 +537,12 @@
 				3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */,
 				072F30AF1B46427B001A14E6 /* FirstVC.xib in Resources */,
 				076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */,
+				3CDC5BE729287BA50D2C1AD7 /* selectPhoto@2x.png in Resources */,
+				3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */,
+				3CDC533D2D65BCF84FA750E4 /* Overlay@2x.png in Resources */,
+				3CDC5B1F9934E1D796FC253E /* ELCAssetPicker.xib in Resources */,
+				3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */,
+				3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +597,7 @@
 				074607871B4BB5540035E08D /* MyIndexVC.m in Sources */,
 				072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */,
 				072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */,
+				077C67351B52C6BB00619740 /* ImageRowCell.m in Sources */,
 				072DCC3B1B43A1CE0091CBDE /* main.m in Sources */,
 				3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */,
 				072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */,
@@ -505,6 +617,14 @@
 				3CDC5244C6BB89534D89AB15 /* DiaryModel.m in Sources */,
 				3CDC5EEFE2EFD58CD35EC6B9 /* CategoryModel.m in Sources */,
 				3CDC50AA8E495BE766AB5C4A /* CategoriesArrayWrap.m in Sources */,
+				3CDC53CED6F3C6CD978266D4 /* AFTableViewCell.m in Sources */,
+				3CDC51E018A987664AEA4AAC /* ELCAsset.m in Sources */,
+				3CDC5B3E7652B2E644165ABD /* ELCConsole.m in Sources */,
+				3CDC5905A16A26BD5353DFD3 /* ELCAssetCell.m in Sources */,
+				3CDC548F92694470DE7BCA4E /* ELCAssetTablePicker.m in Sources */,
+				3CDC58648BFC255C4F9030EF /* ELCOverlayImageView.m in Sources */,
+				3CDC5359F757287D7F6B3AD7 /* ELCAlbumPickerController.m in Sources */,
+				3CDC5A1DBE7BDF9E283E9716 /* ELCImagePickerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import "XLForm.h"
 #import "ProjectSelectVC.h"
 #import "CategoriesArrayWrap.h"
+#import "ImageRowCell.h"
 
 @interface CreateDiaryFVC ()
 
@@ -19,6 +20,7 @@
 #define kcates @"categoryIds"
 #define kcontent @"content"
 #define kDate @"date"
+#define kImages @"images"
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"创建日记";
@@ -66,6 +68,8 @@
     [section addFormRow:row];
 
 
+    row= [XLFormRowDescriptor formRowDescriptorWithTag:kcontent rowType:XLFormRowDescriptorTypeImageRow];
+    [section addFormRow:row];
 
 
 
