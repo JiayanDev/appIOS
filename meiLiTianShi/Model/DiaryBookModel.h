@@ -8,19 +8,20 @@
 
 
 @interface DiaryBookModel : JSONModel
-@property (nonatomic, assign) NSUInteger id;
-@property (nonatomic, strong) NSNumber <Optional>*hospitalId;
-@property (nonatomic, strong) NSString <Optional>*hospitalName;
-@property (nonatomic, strong) NSArray <Optional>*previousPhotoes;
+@property(nonatomic, assign) NSUInteger id;
+@property(nonatomic, strong) NSNumber <Optional> *hospitalId;
+@property(nonatomic, strong) NSString <Optional> *hospitalName;
+@property(nonatomic, strong) NSArray <Optional> *previousPhotoes;
 //@property (nonatomic, strong) NSNumber <Optional>*projectId;
 
-@property (nonatomic, assign) NSNumber <Optional>* price;
-@property (nonatomic, strong) NSArray *categoryIds;
-@property (nonatomic, strong) NSNumber <Optional>*doctorId;
-@property (nonatomic, strong) NSString <Optional>*doctorName;
-@property (nonatomic, strong) NSString <Optional>*currentPhoto;
-@property (nonatomic, assign) NSNumber <Optional>* createTime;
-@property (nonatomic, assign) NSNumber <Optional>* operationTime;
+@property(nonatomic, assign) NSNumber <Optional> *price;
+@property(nonatomic, strong) NSArray *categoryIds;
+@property(nonatomic, strong) NSArray <Ignore> *categories;
+@property(nonatomic, strong) NSNumber <Optional> *doctorId;
+@property(nonatomic, strong) NSString <Optional> *doctorName;
+@property(nonatomic, strong) NSString <Optional> *currentPhoto;
+@property(nonatomic, assign) NSNumber <Optional> *createTime;
+@property(nonatomic, assign) NSNumber <Optional> *operationTime;
 
 + (id)randomOne;
 @end

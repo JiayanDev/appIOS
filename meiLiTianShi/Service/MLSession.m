@@ -13,6 +13,8 @@
 #import "DiaryBookModel.h"
 #import "CategoryModel.h"
 #import "DiaryModel.h"
+#import "HospitalModel.h"
+#import "DoctorModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -257,5 +259,44 @@ static MLSession *session;
 //#endif
 }
 
+
+-(void)getHospitalWithBlurName:(NSString *)blurName pageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d=[NSMutableDictionary dictionary];
+    [d addEntriesFromDictionary:[pi toDictionary]];
+    if(blurName){
+        d[@"blurName"]=blurName;
+    }
+
+    [self sendGet:@"hospital/option"
+            param:d
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[HospitalModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+
+}
+
+
+-(void)getDoctorWithBlurName:(NSString *)blurName pageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d=[NSMutableDictionary dictionary];
+    [d addEntriesFromDictionary:[pi toDictionary]];
+    if(blurName){
+        d[@"blurName"]=blurName;
+    }
+
+    [self sendGet:@"hospital/option"
+            param:d
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[DoctorModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+
+}
 
 @end
