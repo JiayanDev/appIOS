@@ -7,7 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DoctorSelectVC">
             <connections>
+                <outlet property="input" destination="NWd-Ub-TZI" id="KX1-sX-THI"/>
                 <outlet property="onePixel" destination="lhv-Od-BZp" id="bPT-1q-sB1"/>
+                <outlet property="tableView" destination="LCK-0g-Dup" id="dfB-r3-ZdG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,14 +25,6 @@
                         <constraint firstAttribute="height" constant="32" id="yPM-Dy-4O3"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-Ub-TZI">
-                    <rect key="frame" x="43" y="89" width="269" height="32"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="32" id="kaT-vo-BJ6"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LCK-0g-Dup">
                     <rect key="frame" x="8" y="134" width="304" height="434"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,6 +36,17 @@
                         <constraint firstAttribute="height" constant="5" id="lhv-Od-BZp"/>
                     </constraints>
                 </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NWd-Ub-TZI">
+                    <rect key="frame" x="43" y="89" width="269" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="kaT-vo-BJ6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textChanged:" destination="-1" eventType="editingChanged" id="M1e-2X-y5H"/>
+                    </connections>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

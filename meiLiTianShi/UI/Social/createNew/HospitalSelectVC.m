@@ -28,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"医院选择";
     self.onePixel.constant = 1.f/[UIScreen mainScreen].scale;//enforces it to be a true 1 pixel line
     self.tableData=[NSMutableArray array];
     self.pageIndicator=[[PageIndicator alloc]init];
@@ -37,6 +38,8 @@
     self.tableView.dataSource=self;
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"cell"];
+    [self getDataWithScrollingToTop:YES];
+    [self.input becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,7 +65,9 @@
 
                                              [self.tableData addObjectsFromArray:array];
                                              [self.tableView reloadData];
-                                             self.pageIndicator=[PageIndicator initWithMaxId:@(((HospitalModel *)self.tableData[self.tableData.count-1]).id)];
+                                             if (array.count > 0) {
+                                                 self.pageIndicator = [PageIndicator initWithMaxId:@(((HospitalModel *) self.tableData[self.tableData.count - 1]).id)];
+                                             }
                                              if (gotoTop){
                                                  self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
                                              }
@@ -93,6 +98,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.rowDescriptor.value=self.tableData[indexPath.row];
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.input resignFirstResponder];
 }
 
 @end

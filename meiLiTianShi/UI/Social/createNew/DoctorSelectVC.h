@@ -12,5 +12,6 @@
 
 @interface DoctorSelectVC : UIViewController<UITableViewDataSource, UITableViewDelegate,XLFormRowDescriptorViewController>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *onePixel;
+@property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 
 @end

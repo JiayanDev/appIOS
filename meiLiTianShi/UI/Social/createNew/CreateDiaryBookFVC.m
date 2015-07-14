@@ -14,6 +14,9 @@
 #import "ProjectSelectVC.h"
 #import "MLSession.h"
 #import "TSMessage.h"
+#import "DoctorSelectVC.h"
+#import "HospitalSelectVC.h"
+#import "XLFormRatingCell.h"
 
 @interface CreateDiaryBookFVC ()
 @property (nonatomic, assign)BOOL uploadFinished;
@@ -22,12 +25,23 @@
 
 @implementation CreateDiaryBookFVC
 #define kcates @"categoryIds"
+#define kDate @"date"
+#define kDoctor @"doctor"
+#define kHospital @"hospital"
+#define kRate @"rate"
+
+#define setValue(tagV,valueV)     [self.form formRowWithTag:tagV].value=valueV;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.form formRowWithTag:kcates].value=self.diaryBookWithOnlyCates.categories;
+    self.title=@"手术信息";
+    //[self.form formRowWithTag:kcates].value=self.diaryBookWithOnlyCates.categories;
     self.uploadFinished=NO;
     [self uploadImages];
+    setValue(kcates,self.diaryBookWithOnlyCates.categories);
+    [self.tableView reloadData];
+    //setValue(kDate, self.di)
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,7 +92,30 @@
     row.action.viewControllerClass=[ProjectSelectVC class];
     [section addFormRow:row];
 
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDate rowType:XLFormRowDescriptorTypeDate title:@"时间"];
+    row.value = [NSDate new];
+    [row.cellConfigAtConfigure setObject:[NSDate new] forKey:@"maximumDate"];
+    [section addFormRow:row];
 
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDoctor rowType:XLFormRowDescriptorTypeSelectorPush title:@"医生"];
+    row.required = YES;
+    row.action.viewControllerClass=[DoctorSelectVC class];
+    [section addFormRow:row];
+
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kHospital rowType:XLFormRowDescriptorTypeSelectorPush title:@"医院"];
+    row.required = YES;
+    row.action.viewControllerClass=[HospitalSelectVC class];
+    [section addFormRow:row];
+
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+
+    [formDescriptor addFormSection:section];
+
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kRate rowType:XLFormRowDescriptorTypeRate title:@"评价"];
+    row.value = @(0);
+    [section addFormRow:row];
 
     return [super initWithForm:formDescriptor];
 

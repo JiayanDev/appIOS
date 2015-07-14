@@ -308,7 +308,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
         d[@"blurName"]=blurName;
     }
 
-    [self sendGet:@"hospital/option"
+    [self sendGet:@"doctor/option"
             param:d
           success:^(id o) {
               NSMutableArray *r=[NSMutableArray array];

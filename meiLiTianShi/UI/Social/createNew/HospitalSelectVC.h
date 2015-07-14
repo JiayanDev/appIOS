@@ -10,5 +10,6 @@
 #import "XLFormRowDescriptor.h"
 
 @interface HospitalSelectVC : UIViewController <UITableViewDataSource, UITableViewDelegate,XLFormRowDescriptorViewController>
+@property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 
 @end

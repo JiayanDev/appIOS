@@ -26,7 +26,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <connections>
-                        <action selector="textChanged:" destination="-1" eventType="valueChanged" id="6av-rA-dti"/>
+                        <action selector="textChanged:" destination="-1" eventType="editingChanged" id="XzI-wb-j5Y"/>
                     </connections>
                 </textField>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="搜索.png" translatesAutoresizingMaskIntoConstraints="NO" id="4lb-DX-j0P">
