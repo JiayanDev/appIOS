@@ -68,7 +68,7 @@ static MLRequestManager* instance = nil;
     [operation resume];
 }
 
-- (void)POST:(NSString *)url parameters:(NSDictionary *)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))constructingBodyWithBlock success:(void (^)(id))success failure:(void (^)(NSInteger, id))failure {
+- (void)POST_NON_AUTH:(NSString *)url parameters:(NSDictionary *)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))constructingBodyWithBlock success:(void (^)(id))success failure:(void (^)(NSInteger, id))failure {
     NSLog(@"POST %@", url);
     AFHTTPRequestOperation* operation = [_manager
                      POST:url

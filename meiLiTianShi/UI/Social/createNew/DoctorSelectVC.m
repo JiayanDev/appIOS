@@ -1,30 +1,28 @@
 //
-//  HospitalSelectVC.m
+//  DoctorSelectVC.m
 //  meiLiTianShi
 //
-//  Created by zcw on 15/7/13.
+//  Created by zcw on 15/7/14.
 //  Copyright (c) 2015年 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
 #import <MJRefresh/MJRefreshAutoNormalFooter.h>
-#import "HospitalSelectVC.h"
-#import "MLSession.h"
+#import "DoctorSelectVC.h"
 #import "PageIndicator.h"
-#import "HospitalModel.h"
+#import "MLSession.h"
+#import "DoctorModel.h"
 #import "TSMessage.h"
 #import "UIScrollView+MJRefresh.h"
 
 
-@interface HospitalSelectVC ()
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *onePixel;
+@interface DoctorSelectVC ()
 @property (weak, nonatomic) IBOutlet UITextField *input;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)PageIndicator *pageIndicator;
 @property (nonatomic, strong)NSMutableArray *tableData;
-
 @end
 
-@implementation HospitalSelectVC
+@implementation DoctorSelectVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,14 +53,14 @@
 }
 
 - (void)getDataWithScrollingToTop:(BOOL)gotoTop {
-    [[MLSession current] getHospitalWithBlurName:self.input.text
+    [[MLSession current] getDoctorWithBlurName:self.input.text
                                    pageIndicator:self.pageIndicator
                                          success:^(NSArray *array) {
                                              [self.tableView.footer endRefreshing];
 
                                              [self.tableData addObjectsFromArray:array];
                                              [self.tableView reloadData];
-                                             self.pageIndicator=[PageIndicator initWithMaxId:@(((HospitalModel *)self.tableData[self.tableData.count-1]).id)];
+                                             self.pageIndicator=[PageIndicator initWithMaxId:@(((DoctorModel *)self.tableData[self.tableData.count-1]).id)];
                                              if (gotoTop){
                                                  self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
                                              }
@@ -84,7 +82,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HospitalModel *data=self.tableData[indexPath.row];
+    DoctorModel *data=self.tableData[indexPath.row];
     UITableViewCell *cell= [self.tableView dequeueReusableCellWithIdentifier:@"cell"];
     cell.textLabel.text=data.name;
     return cell;

@@ -9,7 +9,12 @@
 #import "XLFormViewController.h"
 
 @class CategoryModel;
+@class DiaryBookModel;
+@class DiaryModel;
 
 @interface CreateDiaryBookFVC : XLFormViewController
 @property (nonatomic, strong) NSMutableOrderedSet *categories;
+@property (nonatomic, strong)DiaryBookModel *diaryBookWithOnlyCates;
+@property (nonatomic, strong)DiaryModel *diaryWithoutImage;
+@property (nonatomic, strong)NSArray *imagesToUpload;
 @end

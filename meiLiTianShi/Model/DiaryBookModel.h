@@ -6,6 +6,8 @@
 #import <Foundation/Foundation.h>
 #import <JSONModel/JSONModel.h>
 
+@class CategoriesArrayWrap;
+
 
 @interface DiaryBookModel : JSONModel
 @property(nonatomic, assign) NSUInteger id;
@@ -16,12 +18,16 @@
 
 @property(nonatomic, assign) NSNumber <Optional> *price;
 @property(nonatomic, strong) NSArray *categoryIds;
-@property(nonatomic, strong) NSArray <Ignore> *categories;
+
+@property(nonatomic, strong) CategoriesArrayWrap <Ignore> *categories;
 @property(nonatomic, strong) NSNumber <Optional> *doctorId;
 @property(nonatomic, strong) NSString <Optional> *doctorName;
 @property(nonatomic, strong) NSString <Optional> *currentPhoto;
 @property(nonatomic, assign) NSNumber <Optional> *createTime;
 @property(nonatomic, assign) NSNumber <Optional> *operationTime;
+
+
+@property(nonatomic, assign) NSDate <Ignore> *operationTimeNSDate;
 
 + (id)randomOne;
 @end

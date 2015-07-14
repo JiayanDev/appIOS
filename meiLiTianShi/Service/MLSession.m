@@ -15,10 +15,13 @@
 #import "DiaryModel.h"
 #import "HospitalModel.h"
 #import "DoctorModel.h"
+#import "UploadTokenModel.h"
 
 static MLSession *session;
 @interface MLSession()
 @property (nonatomic, strong) NSString *token;
+//@property (nonatomic, strong) dispatch_queue_t uploadQueue;
+
 @end
 @implementation MLSession {
 
@@ -96,6 +99,24 @@ static MLSession *session;
                                         [self onFailure:code responseObject:responseObject failure:failure];
 
                                     }];
+}
+
+- (void)sendPost_nonAuth:(NSString*)url
+              parameters:(NSDictionary*)parameters
+        constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))constructingBodyWithBlock
+        successWithoutPreDecode:(void (^)(id responseObject))success failure:(void (^)(NSInteger code, id responseObject))failure {
+    NSDate* requestTime = [NSDate new];
+    [[MLRequestManager sharedInstance]
+            POST_NON_AUTH:url
+               parameters:parameters
+constructingBodyWithBlock:constructingBodyWithBlock
+                  success:^(id responseObject) {
+                      success(responseObject);
+                  }
+                  failure:^(NSInteger code, id responseObject) {
+                      [self onFailure:code responseObject:responseObject failure:failure];
+
+                  }];
 }
 
 
@@ -298,5 +319,153 @@ static MLSession *session;
           } failure:failure];
 
 }
+
+
+-(void)getImageUploadPolicyAndSignatureWithMod:(NSString *)mod
+                                       Success:(void (^)(UploadTokenModel *))success fail:(void (^)(NSInteger, id))failure{
+    [self sendGet:@"uploader/sign"
+             param:@{@"mod":mod}
+           success:^(NSDictionary * po){
+
+               UploadTokenModel *t= [[UploadTokenModel alloc] initWithDictionary:po
+                                                                           error:nil];
+
+
+               success(t);
+           }
+           failure:failure];
+}
+
+
+- (void)uploadImages:(NSArray *)imageDatas
+         uploadToken:(UploadTokenModel *)uploadToken
+           allFinish:(void (^)(NSArray *urls, NSArray *fails, NSArray *remainImageDatas))allFinish {
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
+
+    NSMutableArray *mImages = [imageDatas mutableCopy];
+    NSMutableArray *mutableOperations = [NSMutableArray array];
+    NSMutableArray *imageUrls = [NSMutableArray array];
+    NSMutableArray *fails = [NSMutableArray array];
+    for (id image in mImages) {
+        NSData *imageData;
+        if ([image isKindOfClass:[UIImage class]]) {
+            imageData = UIImageJPEGRepresentation((UIImage *) image, 85);
+
+        } else {
+            imageData = (NSData *) image;
+        }
+//        NSURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:@"http://example.com/upload" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//            [formData appendPartWithFileURL:fileURL name:@"images[]" error:nil];
+//        }];
+
+
+        NSError *serializationError = nil;
+        NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer]
+                multipartFormRequestWithMethod:@"POST"
+                                     URLString:[[NSURL URLWithString:@"http://v0.api.upyun.com/jiayanimg/"] absoluteString]
+                                    parameters:@{
+                                            @"policy" : uploadToken.policy,
+                                            @"signature" : uploadToken.signature
+                                    }
+                     constructingBodyWithBlock:^(id <AFMultipartFormData> formData) {
+
+                         [formData appendPartWithFileData:imageData name:@"file" fileName:@"file" mimeType:@"image/jpeg"];
+
+                     }
+                                         error:&serializationError];
+
+
+        AFHTTPRequestOperationManager *m=[AFHTTPRequestOperationManager manager];
+        m.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+
+        AFHTTPRequestOperation *operation = [m
+                HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                    if ([responseObject[@"code"] integerValue] == 200) {
+                        [imageUrls addObject:[NSString stringWithFormat:@"http://jiayanimg.b0.upaiyun.com/%@", responseObject[@"url"]]];
+                    }else{
+                        NSHTTPURLResponse *response = [operation response];
+                        NSString *contentType = [response MIMEType];
+                        NSInteger statusCode = [response statusCode];
+                        NSLog(@"Error to POST %@ - [%d] %@", [[operation request] URL], statusCode, [operation responseString]);
+                        [fails addObject:[NSString stringWithFormat:@"CODE:%d RESPONSE:%@", statusCode, [operation responseString]]];
+                    }
+
+                    [mImages removeObject:image];
+                }                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                    NSHTTPURLResponse *response = [operation response];
+                    NSString *contentType = [response MIMEType];
+                    NSInteger statusCode = [response statusCode];
+
+                    if (([contentType compare:@"text/plain"] == NSOrderedSame)
+                            || ([contentType compare:@"text/html"] == NSOrderedSame)) {
+                        NSLog(@"Error to POST %@ - [%d] %@", [[operation request] URL], statusCode, [operation responseString]);
+                        [fails addObject:[NSString stringWithFormat:@"CODE:%d RESPONSE:%@", statusCode, [operation responseString]]];
+
+                    }
+                    else if ([contentType compare:@"application/json"] == NSOrderedSame) {
+                        NSLog(@"Error to POST %@ - [%d] %@", [[operation request] URL], statusCode, [operation responseObject]);
+                        [fails addObject:[NSString stringWithFormat:@"CODE:%d RESPONSE:%@", statusCode, [operation responseObject]]];
+                    }
+                    else {
+                        NSLog(@"Error to POST %@ - [%d]", [[operation request] URL], statusCode);
+                        [fails addObject:[NSString stringWithFormat:@"CODE:%d RESPONSE:%@", statusCode, [operation responseString]]];
+                    }
+                }];
+
+
+//
+//        AFHTTPRequestOperation *operation = [manager POST:@"http://v0.api.upyun.com/jiayanimg/"
+//                                               parameters:@{
+//                                                       @"policy" : uploadToken.policy,
+//                                                       @"signature" : uploadToken.signature
+//                                               }
+//                                constructingBodyWithBlock:^(id <AFMultipartFormData> formData) {
+//                                    [formData appendPartWithFormData:imageData name:@"file"];
+//                                }
+//                                                  success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//                                                      if ([responseObject[@"mImages"] integerValue] == 200) {
+//                                                          [imageUrls addObject:[NSString stringWithFormat:@"http://jiayanimg.b0.upaiyun.com/%@", responseObject[@"url"]]];
+//                                                      }
+//
+//                                                      [mImages removeObject:image];
+//                                                  }
+//                                                  failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//                                                      NSHTTPURLResponse *response = [operation response];
+//                                                      NSString *contentType = [response MIMEType];
+//                                                      NSInteger statusCode = [response statusCode];
+//
+//                                                      if (([contentType compare:@"text/plain"] == NSOrderedSame)
+//                                                              || ([contentType compare:@"text/html"] == NSOrderedSame)) {
+//                                                          NSLog(@"Error to POST %@ - [%d] %@", [[operation request] URL], statusCode, [operation responseString]);
+//                                                          [fails addObject:[NSString stringWithFormat:@"CODE:%d RESPONSE:%@", statusCode, [operation responseString]]];
+//
+//                                                      }
+//                                                      else if ([contentType compare:@"application/json"] == NSOrderedSame) {
+//                                                          NSLog(@"Error to POST %@ - [%d] %@", [[operation request] URL], statusCode, [operation responseObject]);
+//                                                          [fails addObject:[NSString stringWithFormat:@"CODE:%d RESPONSE:%@", statusCode, [operation responseObject]]];
+//                                                      }
+//                                                      else {
+//                                                          NSLog(@"Error to POST %@ - [%d]", [[operation request] URL], statusCode);
+//                                                          [fails addObject:[NSString stringWithFormat:@"CODE:%d RESPONSE:%@", statusCode, [operation responseString]]];
+//                                                      }
+//                                                  }];
+//
+        //AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+
+        [mutableOperations addObject:operation];
+    }
+
+
+    NSArray *operations = [AFURLConnectionOperation batchOfRequestOperations:mutableOperations
+                                                               progressBlock:^(NSUInteger numberOfFinishedOperations, NSUInteger totalNumberOfOperations) {
+                                                                   NSLog(@"%lu of %lu complete", numberOfFinishedOperations, totalNumberOfOperations);
+                                                               }
+                                                             completionBlock:^(NSArray *operations) {
+                                                                 NSLog(@"All operations in batch complete");
+                                                                 allFinish(imageUrls,fails,mImages);
+                                                             }];
+    [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
+}
+
 
 @end

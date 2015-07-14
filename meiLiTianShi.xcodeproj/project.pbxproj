@@ -28,6 +28,8 @@
 		076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076767A71B4E601500F73D00 /* ProjectSelectVC.xib */; };
 		077C67351B52C6BB00619740 /* ImageRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077C67341B52C6BB00619740 /* ImageRowCell.m */; };
 		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
+		07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */; };
+		07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D301B54AAA50069470E /* DoctorSelectVC.xib */; };
 		07CFFDD71B53AC6400B2560E /* HospitalSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CFFDD51B53AC6400B2560E /* HospitalSelectVC.m */; };
 		07CFFDD81B53AC6400B2560E /* HospitalSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CFFDD61B53AC6400B2560E /* HospitalSelectVC.xib */; };
 		07FB9C361B4E145B000CCC45 /* CreateDiaryBookFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB9C341B4E145B000CCC45 /* CreateDiaryBookFVC.m */; };
@@ -66,6 +68,7 @@
 		3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EDE45048E6EBD0D401C /* RespondModel.m */; };
 		3CDC5DCBE4B73F95085734C1 /* 搜索@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B23C177FE8EFE2343E6 /* 搜索@2x.png */; };
 		3CDC5EEFE2EFD58CD35EC6B9 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC597108C0E2C1526D42BA /* CategoryModel.m */; };
+		3CDC5FD01D56F1C1EAEDE681 /* UploadTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A13DF6D9E0204EF8D36 /* UploadTokenModel.m */; };
 		707B061389615A8BCE04BC32 /* libPods-meiLiTianShi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +119,9 @@
 		077C67331B52C6BB00619740 /* ImageRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRowCell.h; sourceTree = "<group>"; };
 		077C67341B52C6BB00619740 /* ImageRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRowCell.m; sourceTree = "<group>"; };
 		077C67361B536B6E00619740 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSelectVC.h; sourceTree = "<group>"; };
+		07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSelectVC.m; sourceTree = "<group>"; };
+		07C91D301B54AAA50069470E /* DoctorSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSelectVC.xib; sourceTree = "<group>"; };
 		07CFFDD41B53AC6400B2560E /* HospitalSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalSelectVC.h; sourceTree = "<group>"; };
 		07CFFDD51B53AC6400B2560E /* HospitalSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalSelectVC.m; sourceTree = "<group>"; };
 		07CFFDD61B53AC6400B2560E /* HospitalSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalSelectVC.xib; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 		3CDC5404A89048EC837DAB69 /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetTablePicker.h; sourceTree = "<group>"; };
 		3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTableViewCell.h; sourceTree = "<group>"; };
 		3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTableViewCell.m; sourceTree = "<group>"; };
+		3CDC55C23738550774AB748D /* UploadTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTokenModel.h; sourceTree = "<group>"; };
 		3CDC55FFFD232DA56A21E1BA /* HospitalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalModel.h; sourceTree = "<group>"; };
 		3CDC566F3C9693A1C8D52D1B /* DiaryBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryBookModel.h; sourceTree = "<group>"; };
 		3CDC567BD9741BC4DAB98D48 /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
@@ -163,6 +170,7 @@
 		3CDC59AFC59FCBBC3CCCDD58 /* HospitalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalModel.m; sourceTree = "<group>"; };
 		3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAlbumPickerController.xib; sourceTree = "<group>"; };
 		3CDC59EE7615C1F88295DE29 /* CategoriesArrayWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesArrayWrap.h; sourceTree = "<group>"; };
+		3CDC5A13DF6D9E0204EF8D36 /* UploadTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTokenModel.m; sourceTree = "<group>"; };
 		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
 		3CDC5AF995573CBE78549469 /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
 		3CDC5B23C177FE8EFE2343E6 /* 搜索@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索@2x.png"; sourceTree = "<group>"; };
@@ -346,6 +354,8 @@
 				3CDC5D89AE02239E92F501AC /* DoctorModel.h */,
 				3CDC59AFC59FCBBC3CCCDD58 /* HospitalModel.m */,
 				3CDC55FFFD232DA56A21E1BA /* HospitalModel.h */,
+				3CDC5A13DF6D9E0204EF8D36 /* UploadTokenModel.m */,
+				3CDC55C23738550774AB748D /* UploadTokenModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -454,6 +464,9 @@
 				07CFFDD41B53AC6400B2560E /* HospitalSelectVC.h */,
 				07CFFDD51B53AC6400B2560E /* HospitalSelectVC.m */,
 				07CFFDD61B53AC6400B2560E /* HospitalSelectVC.xib */,
+				07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */,
+				07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */,
+				07C91D301B54AAA50069470E /* DoctorSelectVC.xib */,
 			);
 			path = createNew;
 			sourceTree = "<group>";
@@ -575,6 +588,7 @@
 				3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */,
 				3CDC533D2D65BCF84FA750E4 /* Overlay@2x.png in Resources */,
 				3CDC5B1F9934E1D796FC253E /* ELCAssetPicker.xib in Resources */,
+				07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */,
 				3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */,
 				07CFFDD81B53AC6400B2560E /* HospitalSelectVC.xib in Resources */,
 				3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */,
@@ -664,7 +678,9 @@
 				3CDC5A1DBE7BDF9E283E9716 /* ELCImagePickerController.m in Sources */,
 				3CDC53EED13C3D9EF6B72632 /* DoctorModel.m in Sources */,
 				3CDC52AB252856C7EBF31FAF /* HospitalModel.m in Sources */,
+				07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */,
 				3CDC5913A3F7535FD2DF3E91 /* NSArray+toJsonString.m in Sources */,
+				3CDC5FD01D56F1C1EAEDE681 /* UploadTokenModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

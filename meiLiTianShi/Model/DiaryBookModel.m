@@ -4,6 +4,7 @@
 //
 
 #import "DiaryBookModel.h"
+#import "CategoriesArrayWrap.h"
 
 
 @implementation DiaryBookModel {

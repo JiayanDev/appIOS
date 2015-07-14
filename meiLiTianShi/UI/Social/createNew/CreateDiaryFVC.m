@@ -11,6 +11,9 @@
 #import "ProjectSelectVC.h"
 #import "CategoriesArrayWrap.h"
 #import "ImageRowCell.h"
+#import "DiaryBookModel.h"
+#import "DiaryModel.h"
+#import "CreateDiaryBookFVC.h"
 
 @interface CreateDiaryFVC ()
 
@@ -21,6 +24,10 @@
 #define kcontent @"content"
 #define kDate @"date"
 #define kImages @"images"
+
+#define getValue(k) [self.form formRowWithTag:k].value
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"创建日记";
@@ -29,11 +36,33 @@
     [self.form formRowWithTag:kcates].value=[CategoriesArrayWrap wrapWithCates:self.categories];
     [self.tableView reloadData];
 
+    if(self.needToCreateNewDiaryBookLater){
+        self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"下一步"
+                                                                                 style:UIBarButtonItemStylePlain
+                                                                                target:self
+                                                                                action:@selector(gotoDiaryBookCreate)];
+    }
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)gotoDiaryBookCreate{
+    DiaryBookModel *book= [[DiaryBookModel alloc] init];
+    book.categories= getValue(kcates);
+    book.operationTimeNSDate= getValue(kDate);
+
+    DiaryModel *diary=[[DiaryModel alloc]init];
+    diary.content= getValue(kcontent);
+
+    NSArray *images= getValue(kImages);
+
+    CreateDiaryBookFVC *bookFVC= [[CreateDiaryBookFVC alloc] init];
+    bookFVC.diaryBookWithOnlyCates=book;
+    bookFVC.diaryWithoutImage=diary;
+    bookFVC.imagesToUpload=images;
+
+    [self.navigationController pushViewController:bookFVC
+                                         animated:YES];
+
 }
 
 
@@ -68,7 +97,7 @@
     [section addFormRow:row];
 
 
-    row= [XLFormRowDescriptor formRowDescriptorWithTag:kcontent rowType:XLFormRowDescriptorTypeImageRow];
+    row= [XLFormRowDescriptor formRowDescriptorWithTag:kImages rowType:XLFormRowDescriptorTypeImageRow];
     [section addFormRow:row];
 
 
