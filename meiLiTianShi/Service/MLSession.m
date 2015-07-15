@@ -222,13 +222,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 -(void)getDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
-//#if USE_DEBUG_MOCK
-//    NSMutableArray *r=[NSMutableArray array];
-//    for (int i = 0; i < 10; ++i) {
-//        [r addObject:[DiaryBookModel randomOne]];
-//    }
-//    success(r);
-//#else
+
     [self sendGet:@"diary/getHeaderList"
             param:[pi toDictionary]
           success:^(id o) {
@@ -238,18 +232,43 @@ constructingBodyWithBlock:constructingBodyWithBlock
               }
               success(r);
           } failure:failure];
-//#endif
+
 }
 
 
+-(void)getPostListWithPageIndicator:(PageIndicator *)pi type:(NSString *)diaryOrTopic
+                         categoryId:(NSNumber *)cate
+                            success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d=[NSMutableDictionary dictionary];
+    [d addEntriesFromDictionary:[pi toDictionary]];
+    if(diaryOrTopic){
+        d[@"type"]=diaryOrTopic;
+    }
+    if(cate){
+        d[@"categoryId"]=cate;
+    }
+
+    [self sendGet:@"post/list"
+            param:d
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  if([oned[@"type"] isEqualToString:@"diary"]){
+                      [r addObject:[[DiaryModel alloc] initWithDictionary:oned error:nil]];
+                  }else{
+                      [r addObject:[[TopicModel alloc] initWithDictionary:oned error:nil]];
+                  }
+
+              }
+              success(r);
+          } failure:failure];
+
+}
+
+
+
 -(void)getMyDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
-//#if USE_DEBUG_MOCK
-//    NSMutableArray *r=[NSMutableArray array];
-//    for (int i = 0; i < 10; ++i) {
-//        [r addObject:[DiaryBookModel randomOne]];
-//    }
-//    success(r);
-//#else
+
     [self sendGet:@"diary/my_header"
             param:[pi toDictionary]
           success:^(id o) {
@@ -259,28 +278,9 @@ constructingBodyWithBlock:constructingBodyWithBlock
               }
               success(r);
           } failure:failure];
-//#endif
 }
 
--(void)getDiaryList_underDiaryBook:(NSUInteger)diaryBookId success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
-//#if USE_DEBUG_MOCK
-//    NSMutableArray *r=[NSMutableArray array];
-//    for (int i = 0; i < 10; ++i) {
-//        [r addObject:[DiaryBookModel randomOne]];
-//    }
-//    success(r);
-//#else
-    [self sendGet:@"diary/my_diaries"
-            param:@{@"headerId":@(diaryBookId)}
-          success:^(id o) {
-              NSMutableArray *r=[NSMutableArray array];
-              for (NSDictionary *oned in (NSArray *) o) {
-                  [r addObject:[[DiaryModel alloc] initWithDictionary:oned error:nil]];
-              }
-              success(r);
-          } failure:failure];
-//#endif
-}
+
 
 
 -(void)getHospitalWithBlurName:(NSString *)blurName pageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
@@ -407,7 +407,8 @@ constructingBodyWithBlock:constructingBodyWithBlock
                     }
 
                     [mImages removeObject:image];
-                }                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                }
+                                        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                     NSHTTPURLResponse *response = [operation response];
                     NSString *contentType = [response MIMEType];
                     NSInteger statusCode = [response statusCode];

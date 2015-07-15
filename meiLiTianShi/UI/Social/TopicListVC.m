@@ -19,6 +19,7 @@
 #import "UIScrollView+MJRefresh.h"
 #import "CreateDiaryBookFVC.h"
 #import "ProjectSelectVC.h"
+#import "DiaryModel.h"
 
 @interface TopicListVC ()
 @property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -89,23 +90,25 @@
                          animated:YES];
     if (self.type == TYPE_DIARY) {
 
-        [[MLSession current] getDiaryBookListWithPageIndicator:self.pageIndicator
-                                                       success:^(NSArray *array) {
-                                                           [MBProgressHUD hideHUDForView:self.view
-                                                                                animated:YES];
-                                                           [self.tableView.footer endRefreshing];
+        [[MLSession current] getPostListWithPageIndicator:self.pageIndicator
+                                                     type:@"diary"
+                                               categoryId:nil
+                                                  success:^(NSArray *array) {
+                                                      [MBProgressHUD hideHUDForView:self.view
+                                                                           animated:YES];
+                                                      [self.tableView.footer endRefreshing];
 
-                                                           if (self.type == TYPE_DIARY) {
-                                                               [self.tableData addObjectsFromArray:array];
-                                                               if(array.count==0){[self.tableView.footer noticeNoMoreData];}
-                                                               self.pageIndicator=[PageIndicator initWithMaxId:@(((DiaryBookModel *)self.tableData[self.tableData.count-1]).id)];
+                                                      if (self.type == TYPE_DIARY) {
+                                                          [self.tableData addObjectsFromArray:array];
+                                                          if(array.count==0){[self.tableView.footer noticeNoMoreData];}
+                                                          self.pageIndicator=[PageIndicator initWithMaxId:@(((DiaryBookModel *)self.tableData[self.tableData.count-1]).id)];
 
-                                                               [self.tableView reloadData];
-                                                               if (gotoTop){
-                                                                   self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
-                                                               }
-                                                           }
-                                                       } fail:^(NSInteger i, id o) {
+                                                          [self.tableView reloadData];
+                                                          if (gotoTop){
+                                                              self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
+                                                          }
+                                                      }
+                                                  } fail:^(NSInteger i, id o) {
                     [MBProgressHUD hideHUDForView:self.view
                                          animated:YES];
                     [self.tableView.footer endRefreshing];
@@ -114,6 +117,32 @@
                                                 subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                                     type:TSMessageNotificationTypeError];
                 }];
+
+//        [[MLSession current] getDiaryBookListWithPageIndicator:self.pageIndicator
+//                                                       success:^(NSArray *array) {
+//                                                           [MBProgressHUD hideHUDForView:self.view
+//                                                                                animated:YES];
+//                                                           [self.tableView.footer endRefreshing];
+//
+//                                                           if (self.type == TYPE_DIARY) {
+//                                                               [self.tableData addObjectsFromArray:array];
+//                                                               if(array.count==0){[self.tableView.footer noticeNoMoreData];}
+//                                                               self.pageIndicator=[PageIndicator initWithMaxId:@(((DiaryBookModel *)self.tableData[self.tableData.count-1]).id)];
+//
+//                                                               [self.tableView reloadData];
+//                                                               if (gotoTop){
+//                                                                   self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
+//                                                               }
+//                                                           }
+//                                                       } fail:^(NSInteger i, id o) {
+//                    [MBProgressHUD hideHUDForView:self.view
+//                                         animated:YES];
+//                    [self.tableView.footer endRefreshing];
+//
+//                    [TSMessage showNotificationWithTitle:@"出错了"
+//                                                subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+//                                                    type:TSMessageNotificationTypeError];
+//                }];
     } else {
 
         [[MLSession current] getTopicListWithPageIndicator:self.pageIndicator
@@ -158,10 +187,10 @@
             tcell.contentLabel.text=topic.content;
             tcell.downLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",@(topic.commentCount),@(topic.likeCount)];
 
-        }else if([data isKindOfClass:[DiaryBookModel class]]){
-            DiaryBookModel *diaryBook=(DiaryBookModel *)data;
-            tcell.contentLabel.text=[NSString stringWithFormat:@"医生：%@\n医院：%@",diaryBook.doctorName,diaryBook.hospitalName];
-            tcell.downLabel.text=@"这是一个日记本";
+        }else if([data isKindOfClass:[DiaryModel class]]){
+            DiaryModel *diary=(DiaryModel *)data;
+            tcell.contentLabel.text=diary.content;
+            tcell.downLabel.text=@"这是一个日记";
         }
     }
 }
