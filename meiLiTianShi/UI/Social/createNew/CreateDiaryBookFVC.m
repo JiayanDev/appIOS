@@ -17,6 +17,8 @@
 #import "DoctorSelectVC.h"
 #import "HospitalSelectVC.h"
 #import "XLFormRatingCell.h"
+#import "DoctorModel.h"
+#import "HospitalModel.h"
 
 @interface CreateDiaryBookFVC ()
 @property (nonatomic, assign)BOOL uploadFinished;
@@ -29,8 +31,10 @@
 #define kDoctor @"doctor"
 #define kHospital @"hospital"
 #define kRate @"rate"
+#define kPrice @"price"
 
 #define setValue(tagV,valueV)     [self.form formRowWithTag:tagV].value=valueV;
+#define getValue(k) [self.form formRowWithTag:k].value
 
 
 - (void)viewDidLoad {
@@ -41,6 +45,9 @@
     [self uploadImages];
     setValue(kcates,self.diaryBookWithOnlyCates.categories);
     [self.tableView reloadData];
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"保存"
+                                                                            style:UIBarButtonItemStylePlain target:self
+                                                                           action:@selector(submit)];
     //setValue(kDate, self.di)
 }
 
@@ -76,6 +83,48 @@
 
 }
 
+
+-(void)submit{
+    DiaryBookModel *diaryBook= self.diaryBookWithOnlyCates ;
+    diaryBook.operationTimeNSDate= getValue(kDate);
+    DoctorModel *doctor= getValue(kDoctor);
+    if(doctor.id){
+        diaryBook.doctorId=@(doctor.id);
+    }else{
+        diaryBook.doctorName=doctor.name;
+    }
+
+    HospitalModel *hospital= getValue(kHospital);
+    if(hospital.id){
+        diaryBook.hospitalId=@(hospital.id);
+    }else{
+        diaryBook.hospitalName=hospital.name;
+    }
+
+    diaryBook.categories= getValue(kcates);
+    diaryBook.price= getValue(kPrice);
+    diaryBook.satisfyLevel= getValue(kRate);
+    //diaryBook.previousPhotoes=self.imageUrls;
+
+    DiaryModel* diary=self.diaryWithoutImage;
+    diary.photoes=self.imageUrls;
+
+    [[MLSession current] createDiaryBookWithDiaryBook:diaryBook
+                                                diary:diary
+                                              success:^(NSUInteger id) {
+                                                  [TSMessage showNotificationWithTitle:@"创建成功"
+                                                                              subtitle:@"哈哈"
+                                                                                  type:TSMessageNotificationTypeSuccess];
+                                                  [self.navigationController popToRootViewControllerAnimated:YES];
+                                              } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
+            }];
+
+
+}
+
 -(id)init
 {
     XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptor];
@@ -106,6 +155,9 @@
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kHospital rowType:XLFormRowDescriptorTypeSelectorPush title:@"医院"];
     row.required = YES;
     row.action.viewControllerClass=[HospitalSelectVC class];
+    [section addFormRow:row];
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kPrice rowType:XLFormRowDescriptorTypeInteger title:@"价格"];
     [section addFormRow:row];
 
     section = [XLFormSectionDescriptor formSectionWithTitle:@""];

@@ -5,9 +5,10 @@
 
 #import <Foundation/Foundation.h>
 #import <JSONModel/JSONModel.h>
+#import "MLJsonModel.h"
 
 
-@interface DiaryModel : JSONModel
+@interface DiaryModel : MLJsonModel
 @property (nonatomic, assign) NSUInteger commentCount;
 @property (nonatomic, assign) NSUInteger id;
 @property (nonatomic, strong) NSString *content;

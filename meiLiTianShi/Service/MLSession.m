@@ -16,6 +16,7 @@
 #import "HospitalModel.h"
 #import "DoctorModel.h"
 #import "UploadTokenModel.h"
+#import "NSArray+toJsonString.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -53,6 +54,7 @@ static MLSession *session;
     if(self.token){
         //manager.requestSerializer = [AFJSONRequestSerializer serializer];
         [manager.requestSerializer setValue:_token forHTTPHeaderField:@"AUTHORIZATION"];
+
         //NSLog(@"token: %@",_token);
     }
 }
@@ -303,7 +305,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 -(void)getDoctorWithBlurName:(NSString *)blurName pageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d=[NSMutableDictionary dictionary];
-    [d addEntriesFromDictionary:[pi toDictionary]];
+    [d setValuesForKeysWithDictionary:[pi toDictionary]];
     if(blurName){
         d[@"blurName"]=blurName;
     }
@@ -334,6 +336,20 @@ constructingBodyWithBlock:constructingBodyWithBlock
                success(t);
            }
            failure:failure];
+}
+
+
+-(void)createDiaryBookWithDiaryBook:(DiaryBookModel *)book diary:(DiaryModel *)diary
+                            success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d=[NSMutableDictionary dictionary];
+    [d setValuesForKeysWithDictionary:[book toDictionaryWithNSArrayToJSONString]];
+    d[@"post_content"]=diary.content;
+    d[@"post_photoes"]= [diary.photoes toJsonString];
+    [d removeObjectForKey:@"id"];
+    [self sendPost:@"diary/create" param:d success:^(id o) {
+        NSUInteger id= [o[@"id"] unsignedIntValue];
+        success(id);
+    } failure:failure];
 }
 
 
