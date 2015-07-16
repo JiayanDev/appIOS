@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FirstVC.h"
+#import "DiaryDetailVC.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong)UITabBarController* tabBarController;
@@ -22,7 +23,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
 
-    self.window.rootViewController = [[FirstVC alloc] init];
+    self.window.rootViewController = [[DiaryDetailVC alloc] init];
     [self.window makeKeyAndVisible];
 
     return YES;

@@ -75,9 +75,9 @@
     }else{
         _firstLevelCates=[NSMutableArray array];
         for (CategoryModel *model in [MLSession current].categories) {
-            if([model isLevel1]){
+//            if([model isLevel1]){
                 [_firstLevelCates addObject:model];
-            }
+//            }
         }
         return _firstLevelCates;
     }
@@ -110,7 +110,7 @@
         if(!self.selectedFirstLevelCate){
             return 0;
         }else{
-            return [self.selectedFirstLevelCate chidren].count;
+            return [self.selectedFirstLevelCate sub].count;
         }
     }
 }
@@ -141,7 +141,7 @@
             return nil;
         }else{
             UITableViewCell *cell=[self.tableRight dequeueReusableCellWithIdentifier:kCell];
-            CategoryModel *model=((CategoryModel *)self.selectedFirstLevelCate.chidren[indexPath.row]);
+            CategoryModel *model=((CategoryModel *)self.selectedFirstLevelCate.sub[indexPath.row]);
             cell.textLabel.text=model.name;
             //cell.selectionStyle=UITableViewCellSelectionStyleNone;
             if ([self.selectedCates containsObject:model]){
@@ -159,7 +159,7 @@
         self.selectedFirstLevelCate=self.firstLevelCates[indexPath.row];
         [self.tableRight reloadData];
     }else{
-        CategoryModel *model=((CategoryModel *)self.selectedFirstLevelCate.chidren[indexPath.row]);
+        CategoryModel *model=((CategoryModel *)self.selectedFirstLevelCate.sub[indexPath.row]);
         if([self.selectedCates containsObject:model]){
             [self.selectedCates removeObject:model];
         }else{

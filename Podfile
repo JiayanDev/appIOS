@@ -13,6 +13,7 @@ pod 'JMImageCache'
 pod 'MJRefresh'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'XLForm', '~> 3.0.0'
+  pod 'Masonry'
 end
 
 target 'meiLiTianShiTests' do

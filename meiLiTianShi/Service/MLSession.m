@@ -152,11 +152,14 @@ constructingBodyWithBlock:constructingBodyWithBlock
 -(void)handleCategories:(NSDictionary *)user{
     if(user[@"projectCategory"] &&user[@"projectCategory"][@"data"]){
         self.categories=[NSMutableArray array];
-        for (NSString *number in user[@"projectCategory"][@"data"]) {
-            [self.categories addObject:[[CategoryModel alloc] initWithId:(NSUInteger) [number integerValue]
-                                                                    name:user[@"projectCategory"][@"data"][number]]];
+        for (NSDictionary *one in user[@"projectCategory"][@"data"]) {
+//            [self.categories addObject:[[CategoryModel alloc] initWithId:(NSUInteger) [number integerValue]
+//                                                                    name:user[@"projectCategory"][@"data"][number]]];
+            [self.categories addObject:[[CategoryModel alloc] initWithDictionary:one
+                                                                           error:nil]];
         }
     }
+
 }
 
 -(void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{

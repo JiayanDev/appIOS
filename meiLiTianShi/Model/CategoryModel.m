@@ -19,24 +19,33 @@
     return self;
 }
 
--(BOOL)isLevel1{
-    return self.id<100;
-}
+//-(id)initWithDetail:(NSDictionary *)d{
+//    if(self =[super init]){
+//        self.id= [d[@"id"] unsignedIntegerValue];
+//        self.name=d[@"name"];
+//        if(d[@""])
+//    }
+//    return self;
+//}
 
--(NSArray *)chidren{
+//-(BOOL)isLevel1{
+//    return self.id<100;
+//}
 
-    if(self.id>100){
-        return nil;
-    }
-
-    NSMutableArray *r=[NSMutableArray array];
-    for (CategoryModel *model in [MLSession current].categories) {
-        if(model.id>self.id*100 && model.id<(self.id+1)*100){
-            [r addObject:model];
-        }
-    }
-    return r;
-}
+//-(NSArray *)chidren{
+//
+//    if(self.id>100){
+//        return nil;
+//    }
+//
+//    NSMutableArray *r=[NSMutableArray array];
+//    for (CategoryModel *model in [MLSession current].categories) {
+//        if(model.id>self.id*100 && model.id<(self.id+1)*100){
+//            [r addObject:model];
+//        }
+//    }
+//    return r;
+//}
 
 - (NSString *)description {
     return self.name;

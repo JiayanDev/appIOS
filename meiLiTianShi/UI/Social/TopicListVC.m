@@ -20,6 +20,7 @@
 #import "CreateDiaryBookFVC.h"
 #import "ProjectSelectVC.h"
 #import "DiaryModel.h"
+#import "DiaryDetailVC.h"
 
 @interface TopicListVC ()
 @property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -215,7 +216,18 @@
     }];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    id data=self.tableData[indexPath.row];
+    if([data isKindOfClass:[DiaryModel class]]){
+        [self gotoDiaryDetail:data];
+    }
+}
 
 
+-(void)gotoDiaryDetail:(DiaryModel *)diary{
+
+    DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 @end

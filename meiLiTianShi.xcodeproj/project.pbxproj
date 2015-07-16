@@ -30,6 +30,9 @@
 		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
 		07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */; };
 		07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D301B54AAA50069470E /* DoctorSelectVC.xib */; };
+		07C91D361B5612770069470E /* DiaryDetailWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D341B5612770069470E /* DiaryDetailWVC.m */; };
+		07C91D371B5612770069470E /* DiaryDetailWVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D351B5612770069470E /* DiaryDetailWVC.xib */; };
+		07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D461B56497C0069470E /* DiaryDetailVC.m */; };
 		07CFFDD71B53AC6400B2560E /* HospitalSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CFFDD51B53AC6400B2560E /* HospitalSelectVC.m */; };
 		07CFFDD81B53AC6400B2560E /* HospitalSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CFFDD61B53AC6400B2560E /* HospitalSelectVC.xib */; };
 		07FB9C361B4E145B000CCC45 /* CreateDiaryBookFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB9C341B4E145B000CCC45 /* CreateDiaryBookFVC.m */; };
@@ -38,12 +41,15 @@
 		07FB9C3C1B4E1471000CCC45 /* CreateDiaryFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FB9C3A1B4E1471000CCC45 /* CreateDiaryFVC.xib */; };
 		07FB9C401B4E1486000CCC45 /* CreateTopicFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB9C3E1B4E1486000CCC45 /* CreateTopicFVC.m */; };
 		07FB9C411B4E1486000CCC45 /* CreateTopicFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FB9C3F1B4E1486000CCC45 /* CreateTopicFVC.xib */; };
+		3CDC502645DD3E76B08331AD /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D3B8732CB0F18558B30 /* UIView+SLKAdditions.m */; };
+		3CDC503458B508F3F1A206A6 /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC545CA79CC064904E5255 /* SLKTextView.m */; };
 		3CDC50AA8E495BE766AB5C4A /* CategoriesArrayWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */; };
 		3CDC510F9DCC5DA5D9919E72 /* DiaryBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */; };
 		3CDC51E018A987664AEA4AAC /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AF995573CBE78549469 /* ELCAsset.m */; };
 		3CDC5244C6BB89534D89AB15 /* DiaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */; };
 		3CDC52AB252856C7EBF31FAF /* HospitalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC59AFC59FCBBC3CCCDD58 /* HospitalModel.m */; };
 		3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */; };
+		3CDC52E26D2ADD492E3AFDBE /* UIResponder+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DD1ABCAE261D249F615 /* UIResponder+SLKAdditions.m */; };
 		3CDC533D2D65BCF84FA750E4 /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5E8F9D0269EEB4D0330A /* Overlay@2x.png */; };
 		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
 		3CDC5359F757287D7F6B3AD7 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */; };
@@ -53,6 +59,7 @@
 		3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */; };
 		3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582A761F21A9AC5CC46F /* MLRandom.m */; };
 		3CDC571B97992D204B2458B5 /* XLFormRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC539503866142E846D7C9 /* XLFormRatingCell.m */; };
+		3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */; };
 		3CDC58648BFC255C4F9030EF /* ELCOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */; };
 		3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50439D6B18F000354CD6 /* TopicModel.m */; };
 		3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */; };
@@ -68,10 +75,15 @@
 		3CDC5BE729287BA50D2C1AD7 /* selectPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */; };
 		3CDC5CB35C89A248328BF64C /* MLJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FFDC7CE5565D2D71E0C /* MLJsonModel.m */; };
 		3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */; };
+		3CDC5D6E3479C55CDFB955D0 /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5218D7E23FB9BB172D9C /* SLKTextViewController.m */; };
 		3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EDE45048E6EBD0D401C /* RespondModel.m */; };
 		3CDC5DCBE4B73F95085734C1 /* 搜索@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B23C177FE8EFE2343E6 /* 搜索@2x.png */; };
+		3CDC5DD9E3216F755CE44989 /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DBDEFAA0714824AF0B9 /* SLKTypingIndicatorView.m */; };
 		3CDC5DE51352BF9C4B81C12C /* XLRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5F7AE5260A30F5A88CE3 /* XLRatingView.m */; };
+		3CDC5DFB489609637AE3625F /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EE28E8625F6FAC9F486 /* SLKTextView+SLKAdditions.m */; };
+		3CDC5E81EA016B78E6623E89 /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */; };
 		3CDC5EEFE2EFD58CD35EC6B9 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC597108C0E2C1526D42BA /* CategoryModel.m */; };
+		3CDC5F96E8A8CA83AAAAFA96 /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B17BB76E6736829D551 /* UIScrollView+SLKAdditions.m */; };
 		3CDC5FD01D56F1C1EAEDE681 /* UploadTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A13DF6D9E0204EF8D36 /* UploadTokenModel.m */; };
 		707B061389615A8BCE04BC32 /* libPods-meiLiTianShi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */; };
 /* End PBXBuildFile section */
@@ -126,6 +138,11 @@
 		07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSelectVC.h; sourceTree = "<group>"; };
 		07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSelectVC.m; sourceTree = "<group>"; };
 		07C91D301B54AAA50069470E /* DoctorSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSelectVC.xib; sourceTree = "<group>"; };
+		07C91D331B5612770069470E /* DiaryDetailWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailWVC.h; sourceTree = "<group>"; };
+		07C91D341B5612770069470E /* DiaryDetailWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailWVC.m; sourceTree = "<group>"; };
+		07C91D351B5612770069470E /* DiaryDetailWVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryDetailWVC.xib; sourceTree = "<group>"; };
+		07C91D451B56497C0069470E /* DiaryDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailVC.h; sourceTree = "<group>"; };
+		07C91D461B56497C0069470E /* DiaryDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailVC.m; sourceTree = "<group>"; };
 		07CFFDD41B53AC6400B2560E /* HospitalSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalSelectVC.h; sourceTree = "<group>"; };
 		07CFFDD51B53AC6400B2560E /* HospitalSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalSelectVC.m; sourceTree = "<group>"; };
 		07CFFDD61B53AC6400B2560E /* HospitalSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HospitalSelectVC.xib; sourceTree = "<group>"; };
@@ -143,51 +160,70 @@
 		3CDC506D5F81122F80F2A68D /* ELCOverlayImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCOverlayImageView.h; sourceTree = "<group>"; };
 		3CDC5073432FD1F9A136B5D4 /* DoctorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorModel.m; sourceTree = "<group>"; };
 		3CDC50AD67ABE27D12768D02 /* RespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondModel.h; sourceTree = "<group>"; };
+		3CDC50CCE1665AAD44EBB742 /* UIView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SLKAdditions.h"; sourceTree = "<group>"; };
 		3CDC50FFF325119EDE8210C5 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
 		3CDC51143C40C1176B84D9DD /* MLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRequestManager.h; sourceTree = "<group>"; };
 		3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAssetPicker.xib; sourceTree = "<group>"; };
+		3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextInputbar.m; sourceTree = "<group>"; };
+		3CDC51E4DF2E06D32E164600 /* SLKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextView.h; sourceTree = "<group>"; };
 		3CDC52045F7DBE1CD674E091 /* MLJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLJsonModel.h; sourceTree = "<group>"; };
+		3CDC5218D7E23FB9BB172D9C /* SLKTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextViewController.m; sourceTree = "<group>"; };
+		3CDC5250389104C21DC3BBF7 /* UIResponder+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+SLKAdditions.h"; sourceTree = "<group>"; };
 		3CDC52507956A25261AC332B /* NSArray+toJsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+toJsonString.h"; sourceTree = "<group>"; };
 		3CDC5303D4AA91E14F4EFCDA /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
 		3CDC53152925CBAA23FE43E6 /* MLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSession.h; sourceTree = "<group>"; };
 		3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		3CDC539503866142E846D7C9 /* XLFormRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFormRatingCell.m; sourceTree = "<group>"; };
 		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
+		3CDC53CAAB6150275227214A /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
 		3CDC5404A89048EC837DAB69 /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetTablePicker.h; sourceTree = "<group>"; };
+		3CDC545CA79CC064904E5255 /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextView.m; sourceTree = "<group>"; };
 		3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTableViewCell.h; sourceTree = "<group>"; };
 		3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTableViewCell.m; sourceTree = "<group>"; };
+		3CDC55BF2784166CA4EE1E1A /* SLKTextInputbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextInputbar.h; sourceTree = "<group>"; };
 		3CDC55C23738550774AB748D /* UploadTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTokenModel.h; sourceTree = "<group>"; };
 		3CDC55FFFD232DA56A21E1BA /* HospitalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalModel.h; sourceTree = "<group>"; };
 		3CDC566F3C9693A1C8D52D1B /* DiaryBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryBookModel.h; sourceTree = "<group>"; };
 		3CDC567BD9741BC4DAB98D48 /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
 		3CDC5686ADA71FE33A952649 /* ELCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCConsole.h; sourceTree = "<group>"; };
+		3CDC56A44FDF489C213CC41E /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorView.h; sourceTree = "<group>"; };
 		3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCOverlayImageView.m; sourceTree = "<group>"; };
 		3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRequestManager.m; sourceTree = "<group>"; };
 		3CDC56ECA18528CB2AAB633B /* ELCAssetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetCell.h; sourceTree = "<group>"; };
 		3CDC5780F7EA37FAFF250204 /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
 		3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
+		3CDC58DD20D38D9D818A26BB /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKInputAccessoryView.h; sourceTree = "<group>"; };
 		3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
 		3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectPhoto@2x.png"; sourceTree = "<group>"; };
 		3CDC597108C0E2C1526D42BA /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAssetTablePicker.xib; sourceTree = "<group>"; };
+		3CDC5987BB34C7D719ADD99D /* SLKTextView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLKTextView+SLKAdditions.h"; sourceTree = "<group>"; };
 		3CDC59AC37FF813066BEC7AF /* ELCAssetPickerFilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetPickerFilterDelegate.h; sourceTree = "<group>"; };
 		3CDC59AFC59FCBBC3CCCDD58 /* HospitalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalModel.m; sourceTree = "<group>"; };
 		3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAlbumPickerController.xib; sourceTree = "<group>"; };
 		3CDC59EE7615C1F88295DE29 /* CategoriesArrayWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesArrayWrap.h; sourceTree = "<group>"; };
 		3CDC5A13DF6D9E0204EF8D36 /* UploadTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTokenModel.m; sourceTree = "<group>"; };
+		3CDC5A5B60184E3A29F42C81 /* UIScrollView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SLKAdditions.h"; sourceTree = "<group>"; };
 		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
 		3CDC5AF995573CBE78549469 /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
+		3CDC5B17BB76E6736829D551 /* UIScrollView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5B23C177FE8EFE2343E6 /* 搜索@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索@2x.png"; sourceTree = "<group>"; };
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
+		3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKInputAccessoryView.m; sourceTree = "<group>"; };
+		3CDC5C66F577C3D0E2962D8A /* SLKUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKUIConstants.h; sourceTree = "<group>"; };
+		3CDC5C67F8FA8AC83D99E300 /* SLKTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextViewController.h; sourceTree = "<group>"; };
 		3CDC5C92C7FFBCA9C773725A /* ELCConsole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCConsole.m; sourceTree = "<group>"; };
 		3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
 		3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
+		3CDC5D3B8732CB0F18558B30 /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
 		3CDC5D544238B38E305442DD /* XLFormRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XLFormRatingCell.xib; sourceTree = "<group>"; };
 		3CDC5D89AE02239E92F501AC /* DoctorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorModel.h; sourceTree = "<group>"; };
 		3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+toJsonString.m"; sourceTree = "<group>"; };
+		3CDC5DBDEFAA0714824AF0B9 /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
+		3CDC5DD1ABCAE261D249F615 /* UIResponder+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5DE2C6E64CD4CAE79464 /* XLFormRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormRatingCell.h; sourceTree = "<group>"; };
 		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
@@ -196,6 +232,7 @@
 		3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesArrayWrap.m; sourceTree = "<group>"; };
 		3CDC5E8F9D0269EEB4D0330A /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
 		3CDC5EDE45048E6EBD0D401C /* RespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondModel.m; sourceTree = "<group>"; };
+		3CDC5EE28E8625F6FAC9F486 /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5EF4E3D8E1054B3C731A /* ELCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerController.h; sourceTree = "<group>"; };
 		3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryModel.m; sourceTree = "<group>"; };
 		3CDC5F7AE5260A30F5A88CE3 /* XLRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLRatingView.m; sourceTree = "<group>"; };
@@ -303,6 +340,24 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		3CDC51F805AEAAD3EFDBA6EE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC51E4DF2E06D32E164600 /* SLKTextView.h */,
+				3CDC545CA79CC064904E5255 /* SLKTextView.m */,
+				3CDC55BF2784166CA4EE1E1A /* SLKTextInputbar.h */,
+				3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */,
+				3CDC58DD20D38D9D818A26BB /* SLKInputAccessoryView.h */,
+				3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */,
+				3CDC5C67F8FA8AC83D99E300 /* SLKTextViewController.h */,
+				3CDC5218D7E23FB9BB172D9C /* SLKTextViewController.m */,
+				3CDC56A44FDF489C213CC41E /* SLKTypingIndicatorView.h */,
+				3CDC5DBDEFAA0714824AF0B9 /* SLKTypingIndicatorView.m */,
+				3CDC53CAAB6150275227214A /* SLKTypingIndicatorProtocol.h */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		3CDC525C9B9F287934C6FBF1 /* ELCImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +390,31 @@
 				3CDC52507956A25261AC332B /* NSArray+toJsonString.h */,
 			);
 			path = "NSArray+toJsonString";
+			sourceTree = "<group>";
+		};
+		3CDC54216A2D4023C1EA0988 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5C66F577C3D0E2962D8A /* SLKUIConstants.h */,
+				3CDC50CCE1665AAD44EBB742 /* UIView+SLKAdditions.h */,
+				3CDC5D3B8732CB0F18558B30 /* UIView+SLKAdditions.m */,
+				3CDC5987BB34C7D719ADD99D /* SLKTextView+SLKAdditions.h */,
+				3CDC5EE28E8625F6FAC9F486 /* SLKTextView+SLKAdditions.m */,
+				3CDC5250389104C21DC3BBF7 /* UIResponder+SLKAdditions.h */,
+				3CDC5DD1ABCAE261D249F615 /* UIResponder+SLKAdditions.m */,
+				3CDC5A5B60184E3A29F42C81 /* UIScrollView+SLKAdditions.h */,
+				3CDC5B17BB76E6736829D551 /* UIScrollView+SLKAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		3CDC5461470D4355A4271D0F /* SlackTextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC51F805AEAAD3EFDBA6EE /* Classes */,
+				3CDC54216A2D4023C1EA0988 /* Additions */,
+			);
+			path = SlackTextViewController;
 			sourceTree = "<group>";
 		};
 		3CDC55461C99D4074F6B469C /* AFTabledCollectionView */ = {
@@ -383,6 +463,11 @@
 				072F30B61B4A702E001A14E6 /* TopicListCell.m */,
 				072F30B71B4A702E001A14E6 /* TopicListCell.xib */,
 				3CDC5F82A36890DC46E43AAC /* createNew */,
+				07C91D331B5612770069470E /* DiaryDetailWVC.h */,
+				07C91D341B5612770069470E /* DiaryDetailWVC.m */,
+				07C91D351B5612770069470E /* DiaryDetailWVC.xib */,
+				07C91D451B56497C0069470E /* DiaryDetailVC.h */,
+				07C91D461B56497C0069470E /* DiaryDetailVC.m */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -449,6 +534,7 @@
 				3CDC525C9B9F287934C6FBF1 /* ELCImagePicker */,
 				3CDC53AF979AFCB7505AD411 /* NSArray+toJsonString */,
 				3CDC59D62DA7D9806843A31F /* Rating */,
+				3CDC5461470D4355A4271D0F /* SlackTextViewController */,
 			);
 			path = frameworks;
 			sourceTree = "<group>";
@@ -628,6 +714,7 @@
 				3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */,
 				3CDC5DCBE4B73F95085734C1 /* 搜索@2x.png in Resources */,
 				3CDC5A7CAC520E8C0CF19641 /* XLFormRatingCell.xib in Resources */,
+				07C91D371B5612770069470E /* DiaryDetailWVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,10 +774,12 @@
 				3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */,
 				072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */,
 				072F30AE1B46427B001A14E6 /* FirstVC.m in Sources */,
+				07C91D361B5612770069470E /* DiaryDetailWVC.m in Sources */,
 				072F30B31B468536001A14E6 /* TopicListVC.m in Sources */,
 				076767A81B4E601500F73D00 /* ProjectSelectVC.m in Sources */,
 				3CDC5BA55D30C7A9D6399196 /* MLSession.m in Sources */,
 				07FB9C3B1B4E1471000CCC45 /* CreateDiaryFVC.m in Sources */,
+				07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */,
 				3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */,
 				0746078C1B4BBAF40035E08D /* MyDiaryBookListTVC.m in Sources */,
 				07FB9C401B4E1486000CCC45 /* CreateTopicFVC.m in Sources */,
@@ -719,6 +808,15 @@
 				3CDC5DE51352BF9C4B81C12C /* XLRatingView.m in Sources */,
 				3CDC571B97992D204B2458B5 /* XLFormRatingCell.m in Sources */,
 				3CDC5CB35C89A248328BF64C /* MLJsonModel.m in Sources */,
+				3CDC503458B508F3F1A206A6 /* SLKTextView.m in Sources */,
+				3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */,
+				3CDC5E81EA016B78E6623E89 /* SLKInputAccessoryView.m in Sources */,
+				3CDC5D6E3479C55CDFB955D0 /* SLKTextViewController.m in Sources */,
+				3CDC5DD9E3216F755CE44989 /* SLKTypingIndicatorView.m in Sources */,
+				3CDC502645DD3E76B08331AD /* UIView+SLKAdditions.m in Sources */,
+				3CDC5DFB489609637AE3625F /* SLKTextView+SLKAdditions.m in Sources */,
+				3CDC52E26D2ADD492E3AFDBE /* UIResponder+SLKAdditions.m in Sources */,
+				3CDC5F96E8A8CA83AAAAFA96 /* UIScrollView+SLKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

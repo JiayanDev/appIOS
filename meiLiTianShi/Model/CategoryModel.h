@@ -4,15 +4,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JSONModel/JSONModel.h>
+
+@protocol CategoryModel
+@end
 
 
-@interface CategoryModel : NSObject
+@interface CategoryModel : JSONModel
 @property (nonatomic, assign)NSUInteger id;
 @property (nonatomic, strong)NSString *name;
+@property (nonatomic, strong)NSArray <Optional, CategoryModel>*sub;
 
 - (id)initWithId:(NSUInteger)id1 name:(NSString *)name;
 
-- (BOOL)isLevel1;
+//- (BOOL)isLevel1;
 
-- (NSArray *)chidren;
 @end
