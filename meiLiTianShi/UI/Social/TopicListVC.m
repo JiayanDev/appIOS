@@ -227,6 +227,7 @@
 -(void)gotoDiaryDetail:(DiaryModel *)diary{
 
     DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
+    vc.diary=diary;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

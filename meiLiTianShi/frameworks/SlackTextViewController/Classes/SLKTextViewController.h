@@ -146,6 +146,8 @@ NS_CLASS_AVAILABLE_IOS(7_0) @interface SLKTextViewController : UIViewController 
  */
 - (instancetype)initWithScrollView:(UIScrollView *)scrollView SLK_DESIGNATED_INITIALIZER;
 
+- (instancetype)initWithWebView:(UIWebView *)webview;
+
 /**
  Initializes either a table or collection view controller.
  You must override either +tableViewStyleForCoder: or +collectionViewLayoutForCoder: to define witch view to be layed out.

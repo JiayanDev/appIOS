@@ -8,6 +8,8 @@
 
 #import "SLKTextViewController.h"
 
-@interface DiaryDetailVC : SLKTextViewController
+@class DiaryModel;
 
+@interface DiaryDetailVC : SLKTextViewController
+@property (nonatomic, strong)DiaryModel *diary;
 @end

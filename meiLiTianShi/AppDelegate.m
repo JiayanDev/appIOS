@@ -23,7 +23,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
 
-    self.window.rootViewController = [[DiaryDetailVC alloc] init];
+    self.window.rootViewController = [[FirstVC alloc] init];
     [self.window makeKeyAndVisible];
 
     return YES;

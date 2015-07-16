@@ -9,7 +9,7 @@
 #import "DiaryDetailVC.h"
 #import "Masonry.h"
 #import "HexColor.h"
-#import "SLKTextViewController.m"
+#import "DiaryModel.h"
 
 @interface DiaryDetailVC ()
 //@property (strong, nonatomic) IBOutlet UIScrollView *scroll;
@@ -32,35 +32,28 @@
     //[[NSBundle mainBundle] loadNibNamed:@"DiaryDetailVC" owner:self options:nil];
     self.webView = [[UIWebView alloc] init];
 
-    if (self = [super initWithNibName:nil bundle:nil])
-    {
-//        _scrollView = scrollView;
-//        _scrollView.translatesAutoresizingMaskIntoConstraints = NO; // Makes sure the scrollView plays nice with auto-layout
-
-        self.scrollViewProxy = self.webView.scrollView;
-        [self slk_commonInit];
-    }
-    return self;
+    return (self= [super initWithWebView:self.webView]);
 
 }
 
 - (void)viewDidLoad {
-    //[super viewDidLoad];
-    self.inverted=NO;
+    [super viewDidLoad];
+//    self.inverted=NO;
+//
+//
+//
+//        //[[super super] viewDidLoad];
+//
+//        [self.view addSubview:self.webView];
+////        [self.view addSubview:self.autoCompletionView];
+////        [self.view addSubview:self.typingIndicatorView];
+////        [self.view addSubview:self.textInputbar];
+//
+//        [self slk_setupViewConstraints];
 
 
-
-        //[[super super] viewDidLoad];
-
-        [self.view addSubview:self.webView];
-//        [self.view addSubview:self.autoCompletionView];
-//        [self.view addSubview:self.typingIndicatorView];
-//        [self.view addSubview:self.textInputbar];
-
-        [self slk_setupViewConstraints];
-
-
-    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"http://m.qq.com/"]]];
+    [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:
+    @"http://app.jiayantech.com/app/html/diary.html?id=%@",@(self.diary.id)]]]];
 }
 
 - (void)viewDidLayoutSubviews {

@@ -40,6 +40,8 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
 
 // Auto-Layout height constraints used for updating their constants
 @property (nonatomic, strong) NSLayoutConstraint *scrollViewHC;
+@property (nonatomic, strong) NSLayoutConstraint *webVHC;
+
 @property (nonatomic, strong) NSLayoutConstraint *textInputbarHC;
 @property (nonatomic, strong) NSLayoutConstraint *typingIndicatorViewHC;
 @property (nonatomic, strong) NSLayoutConstraint *autoCompletionViewHC;
@@ -69,6 +71,9 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
 // Optional classes to be used instead of the default ones.
 @property (nonatomic, strong) Class textViewClass;
 @property (nonatomic, strong) Class typingIndicatorViewClass;
+
+
+@property (nonatomic, strong)UIWebView *webV;
 
 @end
 
@@ -134,6 +139,24 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
     return self;
 }
 
+
+- (instancetype)initWithWebView:(UIWebView *)webview
+{
+    NSAssert([self class] != [SLKTextViewController class], @"Oops! You must subclass SLKTextViewController.");
+
+    if (self = [super initWithNibName:nil bundle:nil])
+    {
+        self.webV=webview;
+        self.webV.translatesAutoresizingMaskIntoConstraints = NO;
+        _scrollView = webview.scrollView;
+//        _scrollView.translatesAutoresizingMaskIntoConstraints = NO; // Makes sure the scrollView plays nice with auto-layout
+
+        self.scrollViewProxy = webview.scrollView;
+        [self slk_commonInit];
+    }
+    return self;
+}
+
 - (instancetype)initWithCoder:(NSCoder *)decoder
 {
     NSAssert([self class] != [SLKTextViewController class], @"Oops! You must subclass SLKTextViewController.");
@@ -160,7 +183,7 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
     [self slk_registerNotifications];
     
     self.bounces = YES;
-    self.inverted = YES;
+//    self.inverted = YES;
     self.shakeToClearEnabled = NO;
     self.keyboardPanningEnabled = YES;
     self.shouldClearTextAtRightButtonPress = YES;
@@ -174,12 +197,22 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
 {
     [super viewDidLoad];
 
-    [self.view addSubview:self.scrollViewProxy];
+//    self.webV.frame= CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    [self.view addSubview:self.webV];
+//    [self.view addSubview:self.scrollViewProxy];
     [self.view addSubview:self.autoCompletionView];
     [self.view addSubview:self.typingIndicatorProxyView];
     [self.view addSubview:self.textInputbar];
 
     [self slk_setupViewConstraints];
+    self.webV.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+//    [self loadViews];
+//    [self constrainViews];
+
+
+//
+//    [self.webV needsUpdateConstraints];
+//    [self.webV layoutIfNeeded];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -995,13 +1028,13 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
 {
     // When inverted, we need to substract the top bars height (generally status bar + navigation bar's) to align the top of the
     // scrollView correctly to its top edge.
-    if (self.inverted) {
+//    if (self.inverted) {
         UIEdgeInsets contentInset = self.scrollViewProxy.contentInset;
-        contentInset.bottom = [self slk_topBarsHeight];
+        contentInset.top = [self slk_topBarsHeight];
         
         self.scrollViewProxy.contentInset = contentInset;
         self.scrollViewProxy.scrollIndicatorInsets = contentInset;
-    }
+//    }
     
     // Substracts the bottom edge rect if present. This fixes the text input layout when using inside of a view controller container
     // such as a UITabBarController or a custom container.
@@ -1802,15 +1835,18 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
                             @"autoCompletionView": self.autoCompletionView,
                             @"typingIndicatorView": self.typingIndicatorProxyView,
                             @"textInputbar": self.textInputbar,
+            @"webView":self.webV,
                             };
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[scrollView(0@750)][autoCompletionView(0@750)][typingIndicatorView(0)]-0@999-[textInputbar(>=0)]|" options:0 metrics:nil views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scrollView]|" options:0 metrics:nil views:views]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[webView(0@750)][autoCompletionView(0@750)][typingIndicatorView(0)]-0@999-[textInputbar(>=0)]|" options:0 metrics:nil views:views]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[webView]|" options:0 metrics:nil views:views]];
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[scrollView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[autoCompletionView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[typingIndicatorView]|" options:0 metrics:nil views:views]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[textInputbar]|" options:0 metrics:nil views:views]];
     
     self.scrollViewHC = [self.view slk_constraintForAttribute:NSLayoutAttributeHeight firstItem:self.scrollViewProxy secondItem:nil];
+    self.webVHC= [self.view slk_constraintForAttribute:NSLayoutAttributeHeight firstItem:self.webV secondItem:nil];
     self.autoCompletionViewHC = [self.view slk_constraintForAttribute:NSLayoutAttributeHeight firstItem:self.autoCompletionView secondItem:nil];
     self.typingIndicatorViewHC = [self.view slk_constraintForAttribute:NSLayoutAttributeHeight firstItem:self.typingIndicatorProxyView secondItem:nil];
     self.textInputbarHC = [self.view slk_constraintForAttribute:NSLayoutAttributeHeight firstItem:self.textInputbar secondItem:nil];
@@ -1818,6 +1854,7 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
     
     self.textInputbarHC.constant = self.textInputbar.minimumInputbarHeight;
     self.scrollViewHC.constant = [self slk_appropriateScrollViewHeight];
+    self.webVHC.constant = [self slk_appropriateScrollViewHeight];
 
     if (self.textInputbar.isEditing) {
         self.textInputbarHC.constant += self.textInputbar.editorContentViewHeight;
