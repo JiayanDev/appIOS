@@ -10,6 +10,6 @@
 
 @class DiaryModel;
 
-@interface DiaryDetailVC : SLKTextViewController
+@interface DiaryDetailVC : SLKTextViewController <UIWebViewDelegate>
 @property (nonatomic, strong)DiaryModel *diary;
 @end
