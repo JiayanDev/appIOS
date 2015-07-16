@@ -4,17 +4,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Masonry/MASConstraintMaker.h>
+
 @class AFHTTPRequestOperationManager;
 @class PageIndicator;
 @class UploadTokenModel;
 @class DiaryBookModel;
 @class DiaryModel;
+@class UserModel;
 
 
 @interface MLSession : NSObject
 
 @property (nonatomic, strong)NSMutableArray *categories;
 
+
+@property (nonatomic, strong) UserModel *currentUser;
 
 + (MLSession *)current;
 
@@ -41,6 +46,8 @@
 - (void)getImageUploadPolicyAndSignatureWithMod:(NSString *)mod Success:(void (^)(UploadTokenModel *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)createDiaryBookWithDiaryBook:(DiaryBookModel *)book diary:(DiaryModel *)diary success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)createCommentWithSubject:(NSString *)subject subjectId:(NSNumber *)subjectId content:(NSString *)content success:(void (^)(NSUInteger, NSDictionary *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)uploadImages:(NSArray *)imageDatas uploadToken:(UploadTokenModel *)uploadToken allFinish:(void (^)(NSArray *urls, NSArray *fails, NSArray *remainImageDatas))success;
 @end

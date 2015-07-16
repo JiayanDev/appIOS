@@ -16,7 +16,9 @@
 #import "HospitalModel.h"
 #import "DoctorModel.h"
 #import "UploadTokenModel.h"
+#import "UserModel.h"
 #import "NSArray+toJsonString.h"
+#import "UserModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -168,6 +170,8 @@ constructingBodyWithBlock:constructingBodyWithBlock
           success:^(NSDictionary * user){
               self.token=user[@"token"];
               [self handleCategories:user];
+              self.currentUser= [[UserModel alloc] initWithDictionary:user
+                                                                error:nil];
               success();
           }
           failure:failure];
@@ -180,6 +184,9 @@ constructingBodyWithBlock:constructingBodyWithBlock
               if(user[@"token"]){
                   self.token=user[@"token"];
               }
+
+              self.currentUser= [[UserModel alloc] initWithDictionary:user
+                                                                error:nil];
 
               [self handleCategories:user];
 
@@ -353,6 +360,23 @@ constructingBodyWithBlock:constructingBodyWithBlock
         NSUInteger id= [o[@"id"] unsignedIntValue];
         success(id);
     } failure:failure];
+}
+
+
+-(void)createCommentWithSubject:(NSString *)subject
+                      subjectId:(NSNumber *)subjectId
+                        content:(NSString *)content
+        success:(void (^)(NSUInteger id,NSDictionary *respondObject))success fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"post/comment"
+             param:@{
+                     @"subject":subject,
+                     @"subjectId":subjectId,
+                     @"content":content,
+             } success:^(id o) {
+                NSUInteger id= [o[@"id"] unsignedIntValue];
+                success(id,o);
+            } failure:failure];
+
 }
 
 

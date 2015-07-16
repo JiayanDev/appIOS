@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <TSMessages/TSMessage.h>
 #import "DiaryDetailVC.h"
 #import "Masonry.h"
 #import "HexColor.h"
@@ -13,6 +14,8 @@
 #import "URLParser.h"
 #import "WebviewRequestModel.h"
 #import "WebviewRespondModel.h"
+#import "MLSession.h"
+#import "UserModel.h"
 
 @interface DiaryDetailVC ()
 //@property (strong, nonatomic) IBOutlet UIScrollView *scroll;
@@ -20,6 +23,7 @@
 //@property (weak, nonatomic) IBOutlet UIWebView *webview;
 @property(strong, nonatomic) UIWebView *webView;
 @property (strong, nonatomic)NSURL *url;
+@property (strong, nonatomic)WebviewRequestModel *commentRequest;
 
 @end
 
@@ -57,7 +61,7 @@
 //        [self slk_setupViewConstraints];
 
     self.url=[NSURL URLWithString:[NSString stringWithFormat:
-            @"http://app.jiayantech.com/app/html/diary.html?id=%@&test=1",@(self.diary.id)]];
+            @"http://app.jiayantech.com/app/html/diary.html?id=%@",@(self.diary.id)]];
 
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
 }
@@ -113,6 +117,9 @@
                                          }] respondToWebview:self.webView
                                                  withReqeust:requestModel
                                                    isSuccess:YES];
+    }else if([requestModel.action isEqualToString:@"openCommentPanel"]){
+        self.commentRequest=requestModel;
+        [self.textInputbar.textView becomeFirstResponder];
     }
 
     return NO;
@@ -126,6 +133,68 @@
 
 #pragma mark - specific handles
 
+- (void)didPressRightButton:(id)sender {
+    NSString *comment= self.textInputbar.textView.text;
+    if([comment length]==0){
+        [TSMessage showNotificationWithTitle:@"请输入评论内容"
+                                        type:TSMessageNotificationTypeWarning];
+        return;
+    }
+
+    WebviewRequestModel *request=self.commentRequest;
+    UIWebView *webView=self.webView;
+    __weak DiaryDetailVC* weakSelf = self;
+
+    NSString *subject=request.data ? request.data[@"subject"] : @"diary";
+    NSNumber *subjectId=request.data ? request.data[@"subjectId"] : @(self.diary.id);
+
+
+    [[MLSession current] createCommentWithSubject:subject
+                                        subjectId:subjectId
+                                          content:comment
+                                          success:^(NSUInteger id, NSDictionary *respondObject) {
+                                              NSMutableDictionary *d = [@{
+                                                      @"subject" : subject,
+                                                      @"subjectId" : subjectId,
+                                                      @"userName" : [[MLSession current] currentUser].name?[[MLSession current] currentUser].name:@"",
+                                                      @"userId" : @([[MLSession current] currentUser].id),
+                                                      @"createTime" : respondObject[@"createTime"],
+                                                      @"content" : comment,
+                                                      @"id" : @(id),
+                                              } mutableCopy];
+                                              if (request&&request.data[@"toUserName"]) {
+                                                  d[@"toUserName"] = request.data[@"toUserName"];
+                                              }
+
+                                              if(request&&request.data[@"toUserId"]){
+                                                  d[@"toUserId"]=request.data[@"toUserId"];
+                                              }
+
+                                              [[WebviewRespondModel respondWithCode:@0
+                                                                                msg:@"ok"
+                                                                               data:d] respondToWebview:webView
+                                                                                       withReqeust:request
+                                                                                         isSuccess:YES];
+                                              [weakSelf.textView slk_clearText:YES];
+                                              [weakSelf clearCachedText];
+                                              [weakSelf.textInputbar.textView resignFirstResponder];
+
+                                          } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
+            }];
+
+
+//    if (self.shouldClearTextAtRightButtonPress) {
+//        // Clears the text and the undo manager
+//        [self.textView slk_clearText:YES];
+//    }
+//
+//    // Clears cache
+//    [self clearCachedText];
+
+}
 
 
 @end
