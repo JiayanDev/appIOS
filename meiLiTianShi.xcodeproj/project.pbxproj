@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070E2ECC1B58E7800041847A /* EventListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E2ECA1B58E7800041847A /* EventListTVC.m */; };
+		070E2ECD1B58E7800041847A /* EventListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E2ECB1B58E7800041847A /* EventListTVC.xib */; };
+		070E2ED11B58E7A20041847A /* EventCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E2ECF1B58E7A20041847A /* EventCell.m */; };
+		070E2ED21B58E7A20041847A /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E2ED01B58E7A20041847A /* EventCell.xib */; };
 		072DCC3B1B43A1CE0091CBDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC3A1B43A1CE0091CBDE /* main.m */; };
 		072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC3D1B43A1CE0091CBDE /* AppDelegate.m */; };
 		072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC401B43A1CE0091CBDE /* FirstViewController.m */; };
@@ -30,8 +34,6 @@
 		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
 		07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */; };
 		07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D301B54AAA50069470E /* DoctorSelectVC.xib */; };
-		07C91D361B5612770069470E /* DiaryDetailWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D341B5612770069470E /* DiaryDetailWVC.m */; };
-		07C91D371B5612770069470E /* DiaryDetailWVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D351B5612770069470E /* DiaryDetailWVC.xib */; };
 		07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D461B56497C0069470E /* DiaryDetailVC.m */; };
 		07CFFDD71B53AC6400B2560E /* HospitalSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07CFFDD51B53AC6400B2560E /* HospitalSelectVC.m */; };
 		07CFFDD81B53AC6400B2560E /* HospitalSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07CFFDD61B53AC6400B2560E /* HospitalSelectVC.xib */; };
@@ -104,6 +106,12 @@
 
 /* Begin PBXFileReference section */
 		04824D0C260B948B14E70861 /* Pods-meiLiTianShi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiLiTianShi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-meiLiTianShi/Pods-meiLiTianShi.debug.xcconfig"; sourceTree = "<group>"; };
+		070E2EC91B58E7800041847A /* EventListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventListTVC.h; sourceTree = "<group>"; };
+		070E2ECA1B58E7800041847A /* EventListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventListTVC.m; sourceTree = "<group>"; };
+		070E2ECB1B58E7800041847A /* EventListTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListTVC.xib; sourceTree = "<group>"; };
+		070E2ECE1B58E7A20041847A /* EventCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventCell.h; sourceTree = "<group>"; };
+		070E2ECF1B58E7A20041847A /* EventCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventCell.m; sourceTree = "<group>"; };
+		070E2ED01B58E7A20041847A /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		072DCC351B43A1CE0091CBDE /* meiLiTianShi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meiLiTianShi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072DCC391B43A1CE0091CBDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		072DCC3A1B43A1CE0091CBDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -142,9 +150,6 @@
 		07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSelectVC.h; sourceTree = "<group>"; };
 		07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSelectVC.m; sourceTree = "<group>"; };
 		07C91D301B54AAA50069470E /* DoctorSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSelectVC.xib; sourceTree = "<group>"; };
-		07C91D331B5612770069470E /* DiaryDetailWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailWVC.h; sourceTree = "<group>"; };
-		07C91D341B5612770069470E /* DiaryDetailWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailWVC.m; sourceTree = "<group>"; };
-		07C91D351B5612770069470E /* DiaryDetailWVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryDetailWVC.xib; sourceTree = "<group>"; };
 		07C91D451B56497C0069470E /* DiaryDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailVC.h; sourceTree = "<group>"; };
 		07C91D461B56497C0069470E /* DiaryDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailVC.m; sourceTree = "<group>"; };
 		07CFFDD41B53AC6400B2560E /* HospitalSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalSelectVC.h; sourceTree = "<group>"; };
@@ -440,6 +445,19 @@
 			path = AFTabledCollectionView;
 			sourceTree = "<group>";
 		};
+		3CDC554C8E12B30D27EFC5D2 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				070E2EC91B58E7800041847A /* EventListTVC.h */,
+				070E2ECA1B58E7800041847A /* EventListTVC.m */,
+				070E2ECB1B58E7800041847A /* EventListTVC.xib */,
+				070E2ECE1B58E7A20041847A /* EventCell.h */,
+				070E2ECF1B58E7A20041847A /* EventCell.m */,
+				070E2ED01B58E7A20041847A /* EventCell.xib */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		3CDC559B4CE010BC7BF3BFCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,9 +498,6 @@
 				072F30B61B4A702E001A14E6 /* TopicListCell.m */,
 				072F30B71B4A702E001A14E6 /* TopicListCell.xib */,
 				3CDC5F82A36890DC46E43AAC /* createNew */,
-				07C91D331B5612770069470E /* DiaryDetailWVC.h */,
-				07C91D341B5612770069470E /* DiaryDetailWVC.m */,
-				07C91D351B5612770069470E /* DiaryDetailWVC.xib */,
 				07C91D451B56497C0069470E /* DiaryDetailVC.h */,
 				07C91D461B56497C0069470E /* DiaryDetailVC.m */,
 			);
@@ -509,6 +524,7 @@
 				072F30AD1B46427B001A14E6 /* FirstVC.xib */,
 				3CDC55E15650651E6EE584A6 /* Social */,
 				3CDC5E90FA7401823429E2FB /* My */,
+				3CDC554C8E12B30D27EFC5D2 /* Event */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -727,6 +743,7 @@
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
+				070E2ED21B58E7A20041847A /* EventCell.xib in Resources */,
 				074607881B4BB5540035E08D /* MyIndexVC.xib in Resources */,
 				07FB9C411B4E1486000CCC45 /* CreateTopicFVC.xib in Resources */,
 				3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */,
@@ -739,10 +756,10 @@
 				07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */,
 				3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */,
 				07CFFDD81B53AC6400B2560E /* HospitalSelectVC.xib in Resources */,
+				070E2ECD1B58E7800041847A /* EventListTVC.xib in Resources */,
 				3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */,
 				3CDC5DCBE4B73F95085734C1 /* 搜索@2x.png in Resources */,
 				3CDC5A7CAC520E8C0CF19641 /* XLFormRatingCell.xib in Resources */,
-				07C91D371B5612770069470E /* DiaryDetailWVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -802,10 +819,10 @@
 				3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */,
 				072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */,
 				072F30AE1B46427B001A14E6 /* FirstVC.m in Sources */,
-				07C91D361B5612770069470E /* DiaryDetailWVC.m in Sources */,
 				072F30B31B468536001A14E6 /* TopicListVC.m in Sources */,
 				076767A81B4E601500F73D00 /* ProjectSelectVC.m in Sources */,
 				3CDC5BA55D30C7A9D6399196 /* MLSession.m in Sources */,
+				070E2ECC1B58E7800041847A /* EventListTVC.m in Sources */,
 				07FB9C3B1B4E1471000CCC45 /* CreateDiaryFVC.m in Sources */,
 				07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */,
 				3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */,
@@ -824,6 +841,7 @@
 				07CFFDD71B53AC6400B2560E /* HospitalSelectVC.m in Sources */,
 				3CDC5B3E7652B2E644165ABD /* ELCConsole.m in Sources */,
 				3CDC5905A16A26BD5353DFD3 /* ELCAssetCell.m in Sources */,
+				070E2ED11B58E7A20041847A /* EventCell.m in Sources */,
 				3CDC548F92694470DE7BCA4E /* ELCAssetTablePicker.m in Sources */,
 				3CDC58648BFC255C4F9030EF /* ELCOverlayImageView.m in Sources */,
 				3CDC5359F757287D7F6B3AD7 /* ELCAlbumPickerController.m in Sources */,
