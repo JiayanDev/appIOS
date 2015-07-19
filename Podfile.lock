@@ -21,12 +21,17 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AXRatingView (1.0.3)
+  - DACircularProgress (2.3.1)
   - HexColors (2.2.1)
   - JMImageCache (0.4.0)
   - JSONModel (1.1.0)
   - Masonry (0.6.2)
   - MBProgressHUD (0.9.1)
   - MJRefresh (2.0.4)
+  - pop (1.0.7)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
   - TSMessages (0.9.12):
     - HexColors (~> 2.2.0)
   - UICKeyChainStore (2.0.6)
@@ -37,11 +42,14 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - AXRatingView (from `https://github.com/xmartlabs/AXRatingView.git`)
+  - DACircularProgress
   - JMImageCache
   - JSONModel
   - Masonry
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh
+  - pop
+  - SDWebImage
   - TSMessages
   - UICKeyChainStore
   - UITableView+FDTemplateLayoutCell
@@ -60,12 +68,15 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AXRatingView: ccaadc1bbda99a4b7e1d556059482d2b933a9f4e
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   JMImageCache: fac25eb168a25b29ac130fee6a6b17ea463c1d86
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: ea153717001d3c02444bd22b75c111d2937d2104
+  pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
   UICKeyChainStore: c5719c814e8bd69e74e4a0fc09daf8f4d6257a59
   UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d

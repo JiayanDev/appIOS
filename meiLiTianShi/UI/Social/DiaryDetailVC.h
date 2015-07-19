@@ -7,9 +7,10 @@
 //
 
 #import "SLKTextViewController.h"
+#import "IDMPhotoBrowser.h"
 
 @class DiaryModel;
 
-@interface DiaryDetailVC : SLKTextViewController <UIWebViewDelegate>
+@interface DiaryDetailVC : SLKTextViewController <UIWebViewDelegate, IDMPhotoBrowserDelegate>
 @property (nonatomic, strong)DiaryModel *diary;
 @end

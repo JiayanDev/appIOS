@@ -14,6 +14,10 @@ pod 'MJRefresh'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'XLForm', '~> 3.0.0'
   pod 'Masonry'
+  pod 'SDWebImage'
+  pod 'DACircularProgress'
+  pod 'pop'
+
 end
 
 target 'meiLiTianShiTests' do

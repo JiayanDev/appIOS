@@ -16,6 +16,8 @@
 #import "WebviewRespondModel.h"
 #import "MLSession.h"
 #import "UserModel.h"
+#import "IDMPhoto.h"
+#import "IDMPhotoBrowser.h"
 
 @interface DiaryDetailVC ()
 //@property (strong, nonatomic) IBOutlet UIScrollView *scroll;
@@ -38,6 +40,13 @@
 
 - (instancetype)init {
     //[[NSBundle mainBundle] loadNibNamed:@"DiaryDetailVC" owner:self options:nil];
+
+    NSString * userAgent = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    userAgent=[NSString stringWithFormat:@"%@ jiayantech",userAgent];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent" : userAgent}];
+    //NSUserDefaults.standardUserDefaults().registerDefaults(["UserAgent" : userAgent])
+
+
     self.webView = [[UIWebView alloc] init];
     self.webView.delegate=self;
 
@@ -107,6 +116,8 @@
     NSString *dataString= [[parser valueForVariable:@"options"] stringByRemovingPercentEncoding];
     NSError* err = nil;
 
+    NSLog(@"%@",dataString);
+
     WebviewRequestModel *requestModel= [[WebviewRequestModel alloc] initWithString:dataString error:&err];
     if([requestModel.action isEqualToString:@"testForCallNativePleaseGiveBackWhatIHadSend"]){
         [[WebviewRespondModel respondWithCode:@0
@@ -120,6 +131,13 @@
     }else if([requestModel.action isEqualToString:@"openCommentPanel"]){
         self.commentRequest=requestModel;
         [self.textInputbar.textView becomeFirstResponder];
+    }else if([requestModel.action isEqualToString:@"setNavigationBarTitle"]){
+
+        self.title=requestModel.data[@"title"];
+    }else if([requestModel.action isEqualToString:@"playImg"]){
+        [self showImageBrowserWithImages:(NSArray *)requestModel.data];
+    }else if([requestModel.action isEqualToString:@"scrollBottomToPosY"]){
+
     }
 
     return NO;
@@ -193,6 +211,18 @@
 //
 //    // Clears cache
 //    [self clearCachedText];
+
+}
+
+
+-(void)showImageBrowserWithImages:(NSArray *)imageUrls{
+    NSArray *photosWithURL = [IDMPhoto photosWithURLs:imageUrls];
+
+    NSMutableArray * photos = [NSMutableArray arrayWithArray:photosWithURL];
+// Create and setup browser
+    IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+    browser.delegate = self;
+    [self presentViewController:browser animated:YES completion:nil];
 
 }
 

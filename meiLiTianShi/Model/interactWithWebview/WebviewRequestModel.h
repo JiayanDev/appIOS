@@ -8,8 +8,8 @@
 
 
 @interface WebviewRequestModel : JSONModel
-@property (nonatomic, strong) NSString *success;
+@property (nonatomic, strong) NSString <Optional>*success;
 @property (nonatomic, strong) NSDictionary<Optional>* data;
-@property (nonatomic, strong) NSString *error;
+@property (nonatomic, strong) NSString <Optional>*error;
 @property (nonatomic, strong) NSString *action;
 @end
