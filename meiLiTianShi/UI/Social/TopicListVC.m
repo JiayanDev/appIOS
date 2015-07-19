@@ -59,6 +59,9 @@
     self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                                                                          target:self
                                                                                          action:@selector(gotoCreate)];
+//    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+
     [self getDataWithScrollingToTop:YES];
 }
 
@@ -196,6 +199,8 @@
         DiaryListCell *dcell=((DiaryListCell *) cell);
         DiaryModel *diary=(DiaryModel *)data;
         //[dcell.avatarView sd_setImageWithURL:diary.];
+
+        dcell.splitLineHeightConstraint.constant=1.0 / [UIScreen mainScreen].scale;
         dcell.userNameLabel.text=diary.userName;
         dcell.userDescLabel.text=@"用户地址 用户年龄";
         dcell.diaryContentLabel.text=diary.content;
@@ -244,6 +249,26 @@
 
         [dcell.likeButton setTitle:[NSString stringWithFormat:@"%@",@(diary.likeCount)] forState:UIControlStateNormal];
         [dcell.commentButton setTitle:[NSString stringWithFormat:@"%@",@(diary.commentCount)] forState:UIControlStateNormal];
+
+
+        // Remove seperator inset
+        if ([dcell respondsToSelector:@selector(setSeparatorInset:)]) {
+            [dcell setSeparatorInset:UIEdgeInsetsZero];
+        }
+
+        // Prevent the cell from inheriting the Table View's margin settings
+        if ([dcell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+            [dcell setPreservesSuperviewLayoutMargins:NO];
+        }
+
+        // Explictly set your cell's layout margins
+        if ([dcell respondsToSelector:@selector(setLayoutMargins:)]) {
+            [dcell setLayoutMargins:UIEdgeInsetsZero];
+        }
+
+//        dcell.separatorInset = UIEdgeInsetsMake(0.0f, cell.frame.size.width, 0.0f, 0.0f);
+
+//        dcell.separatorInset
 
     }else if([cell isKindOfClass:[TopicListCell class]]){
         TopicListCell *tcell=((TopicListCell *) cell);
