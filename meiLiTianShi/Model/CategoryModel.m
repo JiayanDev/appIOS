@@ -50,4 +50,25 @@
 - (NSString *)description {
     return self.name;
 }
+
+-(NSString *)stringWithId:(NSUInteger)id{
+    if (self.id==id){
+        return self.name;
+    }
+    for (CategoryModel *category in self.sub) {
+        if([category stringWithId:id]){
+            return [category stringWithId:id];
+        }
+    }
+    return nil;
+}
+
++(NSString *)stringWithId:(NSUInteger)id{
+    for (CategoryModel *category in [MLSession current].categories) {
+        if([category stringWithId:id]){
+            return [category stringWithId:id];
+        }
+    }
+    return [NSString stringWithFormat:@"未知:%@",@(id)];
+}
 @end

@@ -35,6 +35,7 @@ static MLSession *session;
 #define kToken @"token"
 
 #define USE_DEBUG_MOCK 1
+#define USE_TRY_FOR_SUCCESS 0
 
 
 + (MLSession *)current {
@@ -125,7 +126,9 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
 - (void)onSuccess:(NSDate *)requestTime responseObject:(id)responseObject success:(void (^)(id responseObject))success failure:(void (^)(NSInteger, id))failure {
+    #if USE_TRY_FOR_SUCCESS
     @try {
+        #endif
         NSError *error = nil;
         RespondModel *failData = [[RespondModel alloc] initWithDictionary:responseObject
                                                                     error:&error];
@@ -136,10 +139,12 @@ constructingBodyWithBlock:constructingBodyWithBlock
                 success(failData.data);
             }
         }
+#if USE_TRY_FOR_SUCCESS
     }
     @catch (NSException *exception) {
         failure(0, [NSString stringWithFormat:@"EXCEPTION: %@ \n RESPOND:%@",exception,responseObject] );
     }
+    #endif
 
 }
 
@@ -263,6 +268,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
           success:^(id o) {
               NSMutableArray *r=[NSMutableArray array];
               for (NSDictionary *oned in (NSArray *) o) {
+                  NSLog(@"getPostListWithPageIndicator: %@",oned);
                   if([oned[@"type"] isEqualToString:@"diary"]){
                       [r addObject:[[DiaryModel alloc] initWithDictionary:oned error:nil]];
                   }else{

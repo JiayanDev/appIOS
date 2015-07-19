@@ -11,8 +11,12 @@
 @interface DiaryModel : MLJsonModel
 @property (nonatomic, assign) NSUInteger commentCount;
 @property (nonatomic, assign) NSUInteger id;
-@property (nonatomic, strong) NSString *content;
-@property (nonatomic, strong) NSArray *photoes;
+@property (nonatomic, strong) NSString <Optional>*content;
+@property (nonatomic, strong) NSArray <Optional>*photoes;
 @property (nonatomic, assign) NSUInteger likeCount;
 @property (nonatomic, assign) NSUInteger createTime;
+
+@property (nonatomic, strong) NSString <Optional>*userName;
+@property (nonatomic, strong) NSNumber<Optional> *userId;
+@property (nonatomic, strong) NSArray <Optional> *categoryIds;
 @end

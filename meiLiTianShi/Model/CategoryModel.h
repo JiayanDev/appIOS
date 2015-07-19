@@ -19,4 +19,7 @@
 
 //- (BOOL)isLevel1;
 
++ (NSString *)stringWithId:(NSUInteger)id1;
+
+- (NSString *)stringWithId:(NSUInteger)id1;
 @end
