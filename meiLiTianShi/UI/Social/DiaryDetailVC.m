@@ -137,6 +137,10 @@
     }else if([requestModel.action isEqualToString:@"playImg"]){
         [self showImageBrowserWithImages:(NSArray *)requestModel.data];
     }else if([requestModel.action isEqualToString:@"scrollBottomToPosY"]){
+        NSUInteger posY= [requestModel.data[@"posY"] unsignedIntegerValue];
+        NSUInteger posYtop=posY-self.webView.frame.size.height;
+        [self.webView.scrollView setContentOffset:CGPointMake(0, posYtop) animated:YES];
+
 
     }
 
