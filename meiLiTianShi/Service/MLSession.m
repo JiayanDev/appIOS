@@ -19,6 +19,7 @@
 #import "UserModel.h"
 #import "NSArray+toJsonString.h"
 #import "UserModel.h"
+#import "EventModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -384,6 +385,26 @@ constructingBodyWithBlock:constructingBodyWithBlock
             } failure:failure];
 
 }
+
+
+
+-(void)getEventsWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d=[NSMutableDictionary dictionary];
+    [d setValuesForKeysWithDictionary:[pi toDictionary]];
+
+
+    [self sendGet:@"event/list"
+            param:d
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[EventModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+
+}
+
 
 
 - (void)uploadImages:(NSArray *)imageDatas

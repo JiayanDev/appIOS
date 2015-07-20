@@ -67,6 +67,7 @@
 		3CDC53EED13C3D9EF6B72632 /* DoctorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5073432FD1F9A136B5D4 /* DoctorModel.m */; };
 		3CDC548F92694470DE7BCA4E /* ELCAssetTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */; };
 		3CDC54DA84EB95BCD68FB62B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC536DAEAAFC54554AAAF0 /* Localizable.strings */; };
+		3CDC5502C8A843C6A8AE403C /* EventModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC52B3040B7888C183D7E6 /* EventModel.m */; };
 		3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */; };
 		3CDC5520549F22F1F2808900 /* IDMZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B1A2E06FCD1915E202A /* IDMZoomingScrollView.m */; };
 		3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582A761F21A9AC5CC46F /* MLRandom.m */; };
@@ -209,6 +210,7 @@
 		3CDC5234C7D23458862F12DE /* IDMPhotoBrowser_arrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDMPhotoBrowser_arrowRight@2x.png"; sourceTree = "<group>"; };
 		3CDC5250389104C21DC3BBF7 /* UIResponder+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+SLKAdditions.h"; sourceTree = "<group>"; };
 		3CDC52507956A25261AC332B /* NSArray+toJsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+toJsonString.h"; sourceTree = "<group>"; };
+		3CDC52B3040B7888C183D7E6 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		3CDC5301039E95A45EE8950E /* IDMPhotoBrowser_arrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDMPhotoBrowser_arrowRight.png; sourceTree = "<group>"; };
 		3CDC5303D4AA91E14F4EFCDA /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
 		3CDC53152925CBAA23FE43E6 /* MLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSession.h; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		3CDC540705E8F0F483699CA9 /* WebviewRespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebviewRespondModel.h; sourceTree = "<group>"; };
 		3CDC545CA79CC064904E5255 /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextView.m; sourceTree = "<group>"; };
 		3CDC548152DD405F41F0A607 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
+		3CDC54DED21B78D259F20122 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		3CDC552F991F2F3361BF0908 /* pt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = pt; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTableViewCell.h; sourceTree = "<group>"; };
 		3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTableViewCell.m; sourceTree = "<group>"; };
@@ -533,6 +536,8 @@
 				3CDC5A5929760E12F4499079 /* interactWithWebview */,
 				3CDC5A3594D3209A128BC4A2 /* UserModel.m */,
 				3CDC56C59011FEC1D7E2B5E6 /* UserModel.h */,
+				3CDC52B3040B7888C183D7E6 /* EventModel.m */,
+				3CDC54DED21B78D259F20122 /* EventModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1045,6 +1050,7 @@
 				3CDC5520549F22F1F2808900 /* IDMZoomingScrollView.m in Sources */,
 				3CDC56EF3CBC555F8761A729 /* IDMTapDetectingImageView.m in Sources */,
 				070E2ED61B5B76A40041847A /* DiaryListCell.m in Sources */,
+				3CDC5502C8A843C6A8AE403C /* EventModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

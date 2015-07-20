@@ -135,7 +135,7 @@
 
         self.title=requestModel.data[@"title"];
     }else if([requestModel.action isEqualToString:@"playImg"]){
-        [self showImageBrowserWithImages:(NSArray *)requestModel.data];
+        [self showImageBrowserWithImages:requestModel.data[@"imgList"] startIndex:[requestModel.data[@"defaultIndex"] unsignedIntegerValue]];
     }else if([requestModel.action isEqualToString:@"scrollBottomToPosY"]){
         NSUInteger posY= [requestModel.data[@"posY"] unsignedIntegerValue];
         NSUInteger posYtop=posY-self.webView.frame.size.height;
@@ -219,12 +219,13 @@
 }
 
 
--(void)showImageBrowserWithImages:(NSArray *)imageUrls{
+-(void)showImageBrowserWithImages:(NSArray *)imageUrls startIndex:(NSUInteger)index{
     NSArray *photosWithURL = [IDMPhoto photosWithURLs:imageUrls];
 
     NSMutableArray * photos = [NSMutableArray arrayWithArray:photosWithURL];
 // Create and setup browser
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
+    [browser setInitialPageIndex:index];
     browser.delegate = self;
     [self presentViewController:browser animated:YES completion:nil];
 

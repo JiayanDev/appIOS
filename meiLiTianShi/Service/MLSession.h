@@ -49,5 +49,7 @@
 
 - (void)createCommentWithSubject:(NSString *)subject subjectId:(NSNumber *)subjectId content:(NSString *)content success:(void (^)(NSUInteger, NSDictionary *))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)getEventsWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)uploadImages:(NSArray *)imageDatas uploadToken:(UploadTokenModel *)uploadToken allFinish:(void (^)(NSArray *urls, NSArray *fails, NSArray *remainImageDatas))success;
 @end

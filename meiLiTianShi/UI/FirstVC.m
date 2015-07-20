@@ -12,6 +12,7 @@
 #import "TSMessage.h"
 #import "TopicListVC.h"
 #import "MyIndexVC.h"
+#import "EventListTVC.h"
 
 @interface FirstVC ()
 
@@ -42,7 +43,7 @@
     vc2.title=@"发现";
 
     UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:
-            [[UITableViewController alloc] initWithStyle:UITableViewStyleGrouped]];
+            [[EventListTVC alloc]init]];
     vc3.title=@"活动";
 
     UINavigationController *vc4= [[UINavigationController alloc] initWithRootViewController:
