@@ -71,6 +71,7 @@
 		3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */; };
 		3CDC5520549F22F1F2808900 /* IDMZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B1A2E06FCD1915E202A /* IDMZoomingScrollView.m */; };
 		3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582A761F21A9AC5CC46F /* MLRandom.m */; };
+		3CDC55EB3E37279B48E96DCE /* InfoIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC568DD217DBE46686D38B /* InfoIndexVC.m */; };
 		3CDC56BBCA2BD635C460E01C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC585F2F487C220B3AAF16 /* Localizable.strings */; };
 		3CDC56EF3CBC555F8761A729 /* IDMTapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51C6D8284563362D9860 /* IDMTapDetectingImageView.m */; };
 		3CDC57163F14B372FAB7014E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E0C3A66E170A06E7D3F /* URLParser.m */; };
@@ -236,6 +237,7 @@
 		3CDC56724B9E715849E35A98 /* IDMPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMPhoto.m; sourceTree = "<group>"; };
 		3CDC567BD9741BC4DAB98D48 /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
 		3CDC5686ADA71FE33A952649 /* ELCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCConsole.h; sourceTree = "<group>"; };
+		3CDC568DD217DBE46686D38B /* InfoIndexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoIndexVC.m; sourceTree = "<group>"; };
 		3CDC56A44FDF489C213CC41E /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorView.h; sourceTree = "<group>"; };
 		3CDC56C59011FEC1D7E2B5E6 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCOverlayImageView.m; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
 		3CDC5D544238B38E305442DD /* XLFormRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XLFormRatingCell.xib; sourceTree = "<group>"; };
 		3CDC5D686863830874C138DD /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
+		3CDC5D82708C13EB121EDDBD /* InfoIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoIndexVC.h; sourceTree = "<group>"; };
 		3CDC5D89AE02239E92F501AC /* DoctorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorModel.h; sourceTree = "<group>"; };
 		3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+toJsonString.m"; sourceTree = "<group>"; };
 		3CDC5DBDEFAA0714824AF0B9 /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
@@ -723,6 +726,15 @@
 			path = interactWithWebview;
 			sourceTree = "<group>";
 		};
+		3CDC5B6E8D940EA486FD464D /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC568DD217DBE46686D38B /* InfoIndexVC.m */,
+				3CDC5D82708C13EB121EDDBD /* InfoIndexVC.h */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
 		3CDC5CD7140F630F8D7B3398 /* zh-Hans.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -759,6 +771,7 @@
 				074607891B4BBAF40035E08D /* MyDiaryBookListTVC.h */,
 				0746078A1B4BBAF40035E08D /* MyDiaryBookListTVC.m */,
 				0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */,
+				3CDC5B6E8D940EA486FD464D /* Info */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1051,6 +1064,7 @@
 				3CDC56EF3CBC555F8761A729 /* IDMTapDetectingImageView.m in Sources */,
 				070E2ED61B5B76A40041847A /* DiaryListCell.m in Sources */,
 				3CDC5502C8A843C6A8AE403C /* EventModel.m in Sources */,
+				3CDC55EB3E37279B48E96DCE /* InfoIndexVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
