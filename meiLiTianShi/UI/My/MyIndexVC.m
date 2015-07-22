@@ -35,11 +35,11 @@
 
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"user" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的资料"];
-    row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    row.action.viewControllerClass=[InfoIndexVC class];
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tongzhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的通知"];
-    row.action.viewControllerClass=[InfoIndexVC class];
+//    row.action.viewControllerClass=[InfoIndexVC class];
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"fabu" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的发布"];

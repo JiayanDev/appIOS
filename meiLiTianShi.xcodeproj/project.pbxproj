@@ -880,6 +880,7 @@
 				TargetAttributes = {
 					072DCC341B43A1CE0091CBDE = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = DT9Q52RQ97;
 					};
 					072DCC501B43A1CE0091CBDE = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -1231,6 +1232,7 @@
 			baseConfigurationReference = 04824D0C260B948B14E70861 /* Pods-meiLiTianShi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = meiLiTianShi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1244,6 +1246,7 @@
 			baseConfigurationReference = B6119EACC3758C4C93EEB3EE /* Pods-meiLiTianShi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = meiLiTianShi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
