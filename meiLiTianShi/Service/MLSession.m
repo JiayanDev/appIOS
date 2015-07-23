@@ -20,6 +20,7 @@
 #import "NSArray+toJsonString.h"
 #import "UserModel.h"
 #import "EventModel.h"
+#import "UserDetailModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -401,6 +402,20 @@ constructingBodyWithBlock:constructingBodyWithBlock
                   [r addObject:[[EventModel alloc] initWithDictionary:oned error:nil]];
               }
               success(r);
+          } failure:failure];
+
+}
+
+
+-(void)getUserDetail_success:(void(^)(UserDetailModel *))success  fail:(void (^)(NSInteger, id))failure{
+
+
+
+    [self sendGet:@"user/detail"
+            param:nil
+          success:^(id o) {
+
+              success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
           } failure:failure];
 
 }

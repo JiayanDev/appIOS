@@ -7,6 +7,8 @@
 //
 
 #import "AvatarTCell.h"
+#import "UIImageView+WebCache.h"
+
 NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar";
 
 @implementation AvatarTCell
@@ -34,7 +36,11 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
     if([self.rowDescriptor.value isKindOfClass:[UIImage class]]){
         self.imageView.image=self.rowDescriptor.value;
     }else{
-//        [self.imageView.image sd_setImageWith
+        [self.imageView sd_setImageWithURL:self.rowDescriptor.value
+                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                     self.imageView.image=image;
+                                     [self setNeedsDisplay];
+                                 }];
     }
 }
 

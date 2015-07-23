@@ -8,6 +8,8 @@
 #import "MLSession.h"
 #import "UserModel.h"
 #import "AvatarTCell.h"
+#import "TSMessage.h"
+#import "UserDetailModel.h"
 
 
 @implementation InfoIndexVC {
@@ -21,6 +23,7 @@
 #define kBirthday @"birthday"
 #define kCellphone @"cellphone"
 #define kWeixin @"weixin"
+#define setValue(tagV,valueV)     [self.form formRowWithTag:tagV].value=valueV;
 
 
 -(id)init
@@ -74,6 +77,22 @@
 
     return [super initWithForm:formDescriptor];
 
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
+
+        setValue(kAvatar, model.avatar);
+        [self.tableView reloadData];
+
+    } fail:^(NSInteger i, id o) {
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
+    }];
 }
 
 
