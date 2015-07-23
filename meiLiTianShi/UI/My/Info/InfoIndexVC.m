@@ -7,6 +7,7 @@
 #import "InfoIndexVC.h"
 #import "MLSession.h"
 #import "UserModel.h"
+#import "AvatarTCell.h"
 
 
 @implementation InfoIndexVC {
@@ -33,7 +34,7 @@
     [formDescriptor addFormSection:section];
 
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kAvatar rowType:XLFormRowDescriptorTypeSelectorPush title:@"头像"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kAvatar rowType:XLFormRowDescriptorTypeAvatar title:@"头像"];
     //row.action.viewControllerClass=[MyDiaryBookListTVC class];
     [section addFormRow:row];
 

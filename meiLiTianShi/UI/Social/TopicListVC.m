@@ -210,7 +210,13 @@
         dcell.diaryImage3.hidden=diary.photoes.count<3;
 
         if(diary.photoes.count>=1){
-            [dcell.diaryImage1 sd_setImageWithURL:diary.photoes[0]];
+//            [dcell.diaryImage1 sd_setImageWithURL:diary.photoes[0]];
+            [dcell.diaryImage1 sd_setImageWithURL:diary.photoes[0]
+                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                            dcell.diaryImage1.image=image;
+                                            [dcell.diaryImage1 setNeedsDisplay];
+                                            [dcell setNeedsDisplay];
+                                        }];
             dcell.noImageConstraint.priority=500;
             dcell.pic1up.priority=999;
             dcell.pic2up.priority=999;
@@ -233,11 +239,23 @@
         [dcell layoutIfNeeded];
 
         if(diary.photoes.count>=2){
-            [dcell.diaryImage2 sd_setImageWithURL:diary.photoes[1]];
+//            [dcell.diaryImage2 sd_setImageWithURL:diary.photoes[1]];
+            [dcell.diaryImage2 sd_setImageWithURL:diary.photoes[1]
+                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                            dcell.diaryImage2.image=image;
+                                            [dcell.diaryImage2 setNeedsDisplay];
+                                            [dcell setNeedsDisplay];
+                                        }];
         }
 
         if(diary.photoes.count>=3){
-            [dcell.diaryImage3 sd_setImageWithURL:diary.photoes[2]];
+//            [dcell.diaryImage3 sd_setImageWithURL:diary.photoes[2]];
+            [dcell.diaryImage3 sd_setImageWithURL:diary.photoes[2]
+                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                            dcell.diaryImage3.image=image;
+                                            [dcell.diaryImage3 setNeedsDisplay];
+                                            [dcell setNeedsDisplay];
+                                        }];
         }
 
         NSMutableArray *cates=[NSMutableArray array];
