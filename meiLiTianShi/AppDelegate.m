@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FirstVC.h"
 #import "DiaryDetailVC.h"
+#import "UMessage.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong)UITabBarController* tabBarController;
@@ -19,6 +20,45 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    //set AppKey and AppSecret
+    [UMessage startWithAppkey:@"55b090b467e58eb80500958c" launchOptions:launchOptions];
+
+    //register remoteNotification types
+
+    //register remoteNotification types (iOS 8.0以下)
+    [UMessage registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge
+            |UIRemoteNotificationTypeSound
+            |UIRemoteNotificationTypeAlert];
+
+    //register remoteNotification types （iOS 8.0及其以上版本）
+//    UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
+//    action1.identifier = @"action1_identifier";
+//    action1.title=@"Accept";
+//    action1.activationMode = UIUserNotificationActivationModeForeground;//当点击的时候启动程序
+//
+//    UIMutableUserNotificationAction *action2 = [[UIMutableUserNotificationAction alloc] init];  //第二按钮
+//    action2.identifier = @"action2_identifier";
+//    action2.title=@"Reject";
+//    action2.activationMode = UIUserNotificationActivationModeBackground;//当点击的时候不启动程序，在后台处理
+//    action2.authenticationRequired = YES;//需要解锁才能处理，如果action.activationMode = UIUserNotificationActivationModeForeground;则这个属性被忽略；
+//    action2.destructive = YES;
+//
+//    UIMutableUserNotificationCategory *categorys = [[UIMutableUserNotificationCategory alloc] init];
+//    categorys.identifier = @"category1";//这组动作的唯一标示
+//    [categorys setActions:@[action1,action2] forContext:(UIUserNotificationActionContextDefault)];
+//
+//    UIUserNotificationSettings *userSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge|UIUserNotificationTypeSound|UIUserNotificationTypeAlert
+//                                                                                 categories:[NSSet setWithObject:categorys]];
+//    [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];
+
+
+    //for log（optional）
+    [UMessage setLogEnabled:NO];
+
+
+
+
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
@@ -27,6 +67,15 @@
     [self.window makeKeyAndVisible];
 
     return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [UMessage registerDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [UMessage didReceiveRemoteNotification:userInfo];
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
