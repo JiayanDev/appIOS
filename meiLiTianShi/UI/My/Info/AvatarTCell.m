@@ -44,6 +44,11 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
     }
 }
 
+-(void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller
+{
+    [self.formViewController.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:YES];
+}
+
 
 +(CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor{
     return 88;

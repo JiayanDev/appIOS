@@ -86,6 +86,10 @@
     [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
 
         setValue(kAvatar, model.avatar);
+        setValue(kNickname, model.name);
+        setValue(kSex, <#valueV#>);
+
+
         [self.tableView reloadData];
 
     } fail:^(NSInteger i, id o) {
