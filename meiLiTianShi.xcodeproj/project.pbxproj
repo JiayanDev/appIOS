@@ -17,6 +17,11 @@
 		070E2EDB1B5B8E1F0041847A /* 点赞@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070E2EDA1B5B8E1F0041847A /* 点赞@2x.png */; };
 		071AE18C1B60D25900CF149F /* AvatarTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AE18A1B60D25900CF149F /* AvatarTCell.m */; };
 		071AE18D1B60D25900CF149F /* AvatarTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071AE18B1B60D25900CF149F /* AvatarTCell.xib */; };
+		072C3A991B64D6500032849C /* ConfigIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A981B64D6500032849C /* ConfigIndexVC.m */; };
+		072C3A9D1B653D820032849C /* SuggestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A9B1B653D820032849C /* SuggestionsVC.m */; };
+		072C3A9E1B653D820032849C /* SuggestionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072C3A9C1B653D820032849C /* SuggestionsVC.xib */; };
+		072C3AA21B653EBD0032849C /* AboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3AA01B653EBD0032849C /* AboutUsVC.m */; };
+		072C3AA31B653EBD0032849C /* AboutUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072C3AA11B653EBD0032849C /* AboutUsVC.xib */; };
 		072DCC3B1B43A1CE0091CBDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC3A1B43A1CE0091CBDE /* main.m */; };
 		072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC3D1B43A1CE0091CBDE /* AppDelegate.m */; };
 		072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC401B43A1CE0091CBDE /* FirstViewController.m */; };
@@ -146,6 +151,14 @@
 		071AE1891B60D25900CF149F /* AvatarTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarTCell.h; sourceTree = "<group>"; };
 		071AE18A1B60D25900CF149F /* AvatarTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarTCell.m; sourceTree = "<group>"; };
 		071AE18B1B60D25900CF149F /* AvatarTCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarTCell.xib; sourceTree = "<group>"; };
+		072C3A971B64D6500032849C /* ConfigIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigIndexVC.h; sourceTree = "<group>"; };
+		072C3A981B64D6500032849C /* ConfigIndexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigIndexVC.m; sourceTree = "<group>"; };
+		072C3A9A1B653D820032849C /* SuggestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsVC.h; sourceTree = "<group>"; };
+		072C3A9B1B653D820032849C /* SuggestionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsVC.m; sourceTree = "<group>"; };
+		072C3A9C1B653D820032849C /* SuggestionsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionsVC.xib; sourceTree = "<group>"; };
+		072C3A9F1B653EBD0032849C /* AboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsVC.h; sourceTree = "<group>"; };
+		072C3AA01B653EBD0032849C /* AboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsVC.m; sourceTree = "<group>"; };
+		072C3AA11B653EBD0032849C /* AboutUsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsVC.xib; sourceTree = "<group>"; };
 		072DCC351B43A1CE0091CBDE /* meiLiTianShi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meiLiTianShi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072DCC391B43A1CE0091CBDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		072DCC3A1B43A1CE0091CBDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -769,6 +782,21 @@
 			path = en.lproj;
 			sourceTree = "<group>";
 		};
+		3CDC5E0CC04E661D26F74BB0 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				072C3A971B64D6500032849C /* ConfigIndexVC.h */,
+				072C3A981B64D6500032849C /* ConfigIndexVC.m */,
+				072C3A9A1B653D820032849C /* SuggestionsVC.h */,
+				072C3A9B1B653D820032849C /* SuggestionsVC.m */,
+				072C3A9C1B653D820032849C /* SuggestionsVC.xib */,
+				072C3A9F1B653EBD0032849C /* AboutUsVC.h */,
+				072C3AA01B653EBD0032849C /* AboutUsVC.m */,
+				072C3AA11B653EBD0032849C /* AboutUsVC.xib */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		3CDC5E7E2959D25A36AD8C21 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +818,7 @@
 				0746078A1B4BBAF40035E08D /* MyDiaryBookListTVC.m */,
 				0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */,
 				3CDC5B6E8D940EA486FD464D /* Info */,
+				3CDC5E0CC04E661D26F74BB0 /* Config */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -953,7 +982,9 @@
 				07FB9C411B4E1486000CCC45 /* CreateTopicFVC.xib in Resources */,
 				3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */,
 				072F30AF1B46427B001A14E6 /* FirstVC.xib in Resources */,
+				072C3A9E1B653D820032849C /* SuggestionsVC.xib in Resources */,
 				076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */,
+				072C3AA31B653EBD0032849C /* AboutUsVC.xib in Resources */,
 				3CDC5BE729287BA50D2C1AD7 /* selectPhoto@2x.png in Resources */,
 				3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */,
 				3CDC533D2D65BCF84FA750E4 /* Overlay@2x.png in Resources */,
@@ -1033,6 +1064,7 @@
 				072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */,
 				072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */,
 				077C67351B52C6BB00619740 /* ImageRowCell.m in Sources */,
+				072C3AA21B653EBD0032849C /* AboutUsVC.m in Sources */,
 				072DCC3B1B43A1CE0091CBDE /* main.m in Sources */,
 				3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */,
 				072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */,
@@ -1046,7 +1078,9 @@
 				3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */,
 				0746078C1B4BBAF40035E08D /* MyDiaryBookListTVC.m in Sources */,
 				07FB9C401B4E1486000CCC45 /* CreateTopicFVC.m in Sources */,
+				072C3A991B64D6500032849C /* ConfigIndexVC.m in Sources */,
 				07FB9C361B4E145B000CCC45 /* CreateDiaryBookFVC.m in Sources */,
+				072C3A9D1B653D820032849C /* SuggestionsVC.m in Sources */,
 				3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */,
 				3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */,
 				3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */,

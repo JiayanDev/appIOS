@@ -171,6 +171,19 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 }
 
+-(void)appInitGetSessionSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"app/init"
+             param:nil
+           success:^(NSDictionary * user){
+               self.token=user[@"token"];
+               [self handleCategories:user];
+               self.currentUser= [[UserModel alloc] initWithDictionary:user
+                                                                 error:nil];
+               success();
+           }
+           failure:failure];
+}
+
 -(void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
     [self sendPost:@"user/register"
             param:nil
@@ -209,11 +222,16 @@ constructingBodyWithBlock:constructingBodyWithBlock
     NSString *token=keychain[kToken];
     self.token=token;
     if(token && [token isKindOfClass:[NSString class]] &&token.length>0 ){
+//        [self quickLoginSuccess:success
+//                           fail:failure];
         [self quickLoginSuccess:success
-                           fail:failure];
+                           fail:^(NSInteger i, id o) {
+                               [self appInitGetSessionSuccess:success
+                                                fail:failure];
+                           }];
     }else{
-        [self registerSuccess:success
-                         fail:failure];
+        [self appInitGetSessionSuccess:success
+                                  fail:failure];
     }
 }
 

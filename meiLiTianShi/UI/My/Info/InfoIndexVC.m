@@ -46,19 +46,25 @@
     row.value=[MLSession current].currentUser.name;
     [section addFormRow:row];
 
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSex rowType:XLFormRowDescriptorTypeSelectorPush title:@"性别"];
+// Selector Push
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kSex rowType:XLFormRowDescriptorTypeSelectorPush title:@"性别"];
-//    row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"男"],
+            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"女"],
+    ];
     [section addFormRow:row];
+
+    //row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"];    [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kArea rowType:XLFormRowDescriptorTypeSelectorPush title:@"地区"];
 //    row.action.viewControllerClass=[MyDiaryBookListTVC class];
     [section addFormRow:row];
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kBirthday rowType:XLFormRowDescriptorTypeSelectorPush title:@"生日"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kBirthday rowType:XLFormRowDescriptorTypeDate title:@"生日"];
 //    row.action.viewControllerClass=[MyDiaryBookListTVC class];
     [section addFormRow:row];
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCellphone rowType:XLFormRowDescriptorTypeSelectorPush title:@"手机"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCellphone rowType:XLFormRowDescriptorTypePhone title:@"手机"];
 //    row.action.viewControllerClass=[MyDiaryBookListTVC class];
     [section addFormRow:row];
 
@@ -87,7 +93,13 @@
 
         setValue(kAvatar, model.avatar);
         setValue(kNickname, model.name);
-        setValue(kSex, <#valueV#>);
+        setValue(kSex, [model.gender boolValue]
+                ?
+                [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"男"]
+                :
+                [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"女"]);
+
+
 
 
         [self.tableView reloadData];

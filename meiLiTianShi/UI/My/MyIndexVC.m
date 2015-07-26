@@ -10,6 +10,7 @@
 #import "XLForm.h"
 #import "MyDiaryBookListTVC.h"
 #import "InfoIndexVC.h"
+#import "ConfigIndexVC.h"
 
 @interface MyIndexVC ()
 
@@ -59,7 +60,7 @@
     [formDescriptor addFormSection:section];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"shezhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"设置"];
-//    row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    row.action.viewControllerClass=[ConfigIndexVC class];
     [section addFormRow:row];
 
 
