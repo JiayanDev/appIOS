@@ -22,9 +22,13 @@
 
 @property (nonatomic, strong) UserModel *currentUser;
 
+@property (nonatomic, strong)NSString *deviceToken;
+
 + (MLSession *)current;
 
 - (void)handleManager:(AFHTTPRequestOperationManager *)manager;
+
+- (void)appInitGetSessionSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 

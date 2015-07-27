@@ -172,13 +172,20 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 -(void)appInitGetSessionSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d= [@{@"configVersion" : @0} mutableCopy];
+    if(self.deviceToken){
+        d[@"deviceToken"]=self.deviceToken;
+    }
     [self sendPost:@"app/init"
-             param:nil
+             param:d
            success:^(NSDictionary * user){
-               self.token=user[@"token"];
+
+               if(user[@"token"]){
+                   self.token=user[@"token"];
+               }
                [self handleCategories:user];
-               self.currentUser= [[UserModel alloc] initWithDictionary:user
-                                                                 error:nil];
+//               self.currentUser= [[UserModel alloc] initWithDictionary:user
+//                                                                 error:nil];
                success();
            }
            failure:failure];
@@ -224,11 +231,10 @@ constructingBodyWithBlock:constructingBodyWithBlock
     if(token && [token isKindOfClass:[NSString class]] &&token.length>0 ){
 //        [self quickLoginSuccess:success
 //                           fail:failure];
-        [self quickLoginSuccess:success
-                           fail:^(NSInteger i, id o) {
+
                                [self appInitGetSessionSuccess:success
                                                 fail:failure];
-                           }];
+
     }else{
         [self appInitGetSessionSuccess:success
                                   fail:failure];
