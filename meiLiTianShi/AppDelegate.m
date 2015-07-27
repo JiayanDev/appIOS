@@ -32,6 +32,9 @@
             |UIRemoteNotificationTypeSound
             |UIRemoteNotificationTypeAlert];
 
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= _IPHONE80_
+
     if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1) {
         //register remoteNotification types （iOS 8.0及其以上版本）
         UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
@@ -54,6 +57,7 @@
                                                                                      categories:[NSSet setWithObject:categorys]];
         [UMessage registerRemoteNotificationAndUserNotificationSettings:userSettings];
     }
+#endif
 
     //for log（optional）
     [UMessage setLogEnabled:NO];
