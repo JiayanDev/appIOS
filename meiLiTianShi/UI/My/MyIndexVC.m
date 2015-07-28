@@ -11,12 +11,17 @@
 #import "MyDiaryBookListTVC.h"
 #import "InfoIndexVC.h"
 #import "ConfigIndexVC.h"
+#import "MLSession.h"
+#import "LoginWaySelectVC.h"
 
 @interface MyIndexVC ()
-
+@property (nonatomic, strong)XLFormDescriptor *logginedFormDescriptor;
+@property (nonatomic, strong)XLFormDescriptor *noLoginFormDescriptor;
 @end
 
 @implementation MyIndexVC
+
+#define kLogin @"login"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,13 +31,13 @@
 
 -(id)init
 {
-    XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptor];
+    XLFormDescriptor *logginedFormDescriptor = [XLFormDescriptor formDescriptor];
     XLFormSectionDescriptor * section;
     XLFormRowDescriptor * row;
 
     section = [XLFormSectionDescriptor formSectionWithTitle:@""];
 
-    [formDescriptor addFormSection:section];
+    [logginedFormDescriptor addFormSection:section];
 
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"user" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的资料"];
@@ -57,15 +62,53 @@
 
 
     section = [XLFormSectionDescriptor formSectionWithTitle:@""];
-    [formDescriptor addFormSection:section];
+    [logginedFormDescriptor addFormSection:section];
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"shezhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"设置"];
+    row.action.viewControllerClass=[ConfigIndexVC class];
+    [section addFormRow:row];
+
+    self.logginedFormDescriptor=logginedFormDescriptor;
+
+
+    self.noLoginFormDescriptor= [XLFormDescriptor formDescriptor];
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+
+    [self.noLoginFormDescriptor addFormSection:section];
+
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kLogin rowType:XLFormRowDescriptorTypeButton title:@"登陆"];
+    //row.action.viewControllerClass=[InfoIndexVC class];
+    [section addFormRow:row];
+
+
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+    [self.noLoginFormDescriptor addFormSection:section];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"shezhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"设置"];
     row.action.viewControllerClass=[ConfigIndexVC class];
     [section addFormRow:row];
 
 
-    return [super initWithForm:formDescriptor];
+if([MLSession current].isLogined){
+    return [super initWithForm:logginedFormDescriptor];
+}else{
+    return [super initWithForm:self.noLoginFormDescriptor];
+}
 
+}
+
+
+- (void)didSelectFormRow:(XLFormRowDescriptor *)formRow {
+    [super didSelectFormRow:formRow];
+    if([formRow.tag isEqualToString:kLogin]){
+        LoginWaySelectVC *vc= [[LoginWaySelectVC alloc] init];
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:vc]
+                           animated:YES
+                         completion:^{
+
+                         }];
+    }
 }
 
 

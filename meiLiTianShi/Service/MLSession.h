@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong)NSString *deviceToken;
 
+@property (nonatomic, assign)BOOL isLogined;
+
 + (MLSession *)current;
 
 - (void)handleManager:(AFHTTPRequestOperationManager *)manager;

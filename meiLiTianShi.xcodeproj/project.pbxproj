@@ -43,6 +43,9 @@
 		076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076767A71B4E601500F73D00 /* ProjectSelectVC.xib */; };
 		077C67351B52C6BB00619740 /* ImageRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077C67341B52C6BB00619740 /* ImageRowCell.m */; };
 		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
+		07A6992B1B67626C00A9D2EF /* LoginWaySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */; };
+		07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */; };
+		07A6992E1B67628A00A9D2EF /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A6992D1B67628A00A9D2EF /* logo@2x.png */; };
 		07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */; };
 		07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D301B54AAA50069470E /* DoctorSelectVC.xib */; };
 		07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D461B56497C0069470E /* DiaryDetailVC.m */; };
@@ -194,6 +197,10 @@
 		077C67331B52C6BB00619740 /* ImageRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRowCell.h; sourceTree = "<group>"; };
 		077C67341B52C6BB00619740 /* ImageRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRowCell.m; sourceTree = "<group>"; };
 		077C67361B536B6E00619740 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		07A699281B67626C00A9D2EF /* LoginWaySelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWaySelectVC.h; sourceTree = "<group>"; };
+		07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWaySelectVC.m; sourceTree = "<group>"; };
+		07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWaySelectVC.xib; sourceTree = "<group>"; };
+		07A6992D1B67628A00A9D2EF /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSelectVC.h; sourceTree = "<group>"; };
 		07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSelectVC.m; sourceTree = "<group>"; };
 		07C91D301B54AAA50069470E /* DoctorSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSelectVC.xib; sourceTree = "<group>"; };
@@ -439,6 +446,16 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		3CDC51AFB7C56EA4C5229BA5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				07A699281B67626C00A9D2EF /* LoginWaySelectVC.h */,
+				07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */,
+				07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		3CDC51F805AEAAD3EFDBA6EE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +637,7 @@
 				3CDC55E15650651E6EE584A6 /* Social */,
 				3CDC5E90FA7401823429E2FB /* My */,
 				3CDC554C8E12B30D27EFC5D2 /* Event */,
+				3CDC51AFB7C56EA4C5229BA5 /* Login */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -627,6 +645,7 @@
 		3CDC57AAD7EE7BF85356F427 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				07A6992D1B67628A00A9D2EF /* logo@2x.png */,
 				070E2EDA1B5B8E1F0041847A /* 点赞@2x.png */,
 				070E2ED81B5B8DBA0041847A /* 回复@2x.png */,
 				3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */,
@@ -991,6 +1010,7 @@
 				3CDC5B1F9934E1D796FC253E /* ELCAssetPicker.xib in Resources */,
 				07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */,
 				3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */,
+				07A6992E1B67628A00A9D2EF /* logo@2x.png in Resources */,
 				07CFFDD81B53AC6400B2560E /* HospitalSelectVC.xib in Resources */,
 				070E2ECD1B58E7800041847A /* EventListTVC.xib in Resources */,
 				3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */,
@@ -1008,6 +1028,7 @@
 				3CDC5AFA966109CD9934B1EB /* Localizable.strings in Resources */,
 				070E2EDB1B5B8E1F0041847A /* 点赞@2x.png in Resources */,
 				3CDC5269EC26AC2CD7B3C513 /* Localizable.strings in Resources */,
+				07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */,
 				070E2ED71B5B76A40041847A /* DiaryListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,6 +1080,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A6992B1B67626C00A9D2EF /* LoginWaySelectVC.m in Sources */,
 				072DCC441B43A1CE0091CBDE /* SecondViewController.m in Sources */,
 				074607871B4BB5540035E08D /* MyIndexVC.m in Sources */,
 				072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */,
