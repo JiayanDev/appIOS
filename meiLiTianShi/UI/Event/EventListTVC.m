@@ -12,22 +12,25 @@
 #import "TSMessage.h"
 #import "DiaryBookModel.h"
 #import "PageIndicator.h"
+#import "EventModel.h"
 
 @interface EventListTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
 @property (nonatomic, strong)PageIndicator *pageIndicator;
 @end
 
+#define kCell @"cell"
+
 @implementation EventListTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"活动";
     [self getDataWithScrollingToTop:YES];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableData=[NSMutableArray array];
+    [self.tableView registerClass:[UITableViewCell class]
+           forCellReuseIdentifier:kCell];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,15 +41,19 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+
+    return self.tableData.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    EventModel *d=self.tableData[indexPath.section];
+    UITableViewCell *cell= [self.tableView dequeueReusableCellWithIdentifier:kCell];
+    cell.textLabel.text= [[d description] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return cell;
 }
 
 
@@ -55,6 +62,11 @@
                          animated:YES];
     [[MLSession current] getEventsWithPageIndicator:self.pageIndicator
                                             success:^(NSArray *array) {
+                                                [MBProgressHUD hideHUDForView:self.view
+                                                                     animated:YES];
+
+                                                [self.tableData addObjectsFromArray:array];
+                                                [self.tableView reloadData];
 
                                             } fail:^(NSInteger i, id o) {
                 [MBProgressHUD hideHUDForView:self.view

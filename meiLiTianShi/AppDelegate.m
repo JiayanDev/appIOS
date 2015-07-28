@@ -60,7 +60,7 @@
 #endif
 
     //for log（optional）
-    [UMessage setLogEnabled:NO];
+    [UMessage setLogEnabled:YES];
 
 
 

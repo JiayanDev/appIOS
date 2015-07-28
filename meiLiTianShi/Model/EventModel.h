@@ -10,7 +10,7 @@
 @interface EventModel : JSONModel
 @property (nonatomic, assign) NSUInteger id;
 @property (nonatomic, strong) NSString <Optional>*categoryName;
-@property (nonatomic, assign) NSNumber <Optional>* hospitalId;
+//@property (nonatomic, assign) NSNumber <Optional>* hospitalId;
 @property (nonatomic, assign) NSNumber <Optional>* hasLike;
 @property (nonatomic, strong) NSArray<Optional> *categoryIds;
 @property (nonatomic, strong) NSString <Optional>*province;
@@ -19,7 +19,7 @@
 @property (nonatomic, strong) NSString <Optional>*hospitalName;
 @property (nonatomic, assign) NSNumber <Optional>* userId;
 @property (nonatomic, strong) NSString <Optional>*doctorName;
-@property (nonatomic, assign) NSNumber <Optional>* doctorId;
+//@property (nonatomic, assign) NSNumber <Optional>* doctorId;
 @property (nonatomic, strong) NSString <Optional>*city;
 @property (nonatomic, assign) NSNumber <Optional>* applymentCount;
 @property (nonatomic, assign) NSNumber <Optional>* commentCount;
