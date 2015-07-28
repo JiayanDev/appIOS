@@ -90,11 +90,11 @@
     [section addFormRow:row];
 
 
-if([MLSession current].isLogined){
-    return [super initWithForm:logginedFormDescriptor];
-}else{
-    return [super initWithForm:self.noLoginFormDescriptor];
-}
+    if([MLSession current].isLogined){
+        return [super initWithForm:logginedFormDescriptor];
+    }else{
+        return [super initWithForm:self.noLoginFormDescriptor];
+    }
 
 }
 
