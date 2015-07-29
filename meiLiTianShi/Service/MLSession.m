@@ -578,8 +578,13 @@ constructingBodyWithBlock:constructingBodyWithBlock
     [self sendPost:@"user/register"
             param:d
           success:^(id o) {
-
-              success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
+              if(o[@"token"]){
+                  self.token=o[@"token"];
+              }
+              UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+              self.isLogined=YES;
+              self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
+              success(m);
           } failure:failure];
 
 }
@@ -602,8 +607,13 @@ constructingBodyWithBlock:constructingBodyWithBlock
     [self sendPost:@"user/login"
              param:d
            success:^(id o) {
-
-               success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
+               if(o[@"token"]){
+                   self.token=o[@"token"];
+               }
+               UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+               self.isLogined=YES;
+               self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
+               success(m);
            } failure:failure];
 
 }
@@ -623,8 +633,13 @@ constructingBodyWithBlock:constructingBodyWithBlock
     [self sendPost:@"user/login"
              param:d
            success:^(id o) {
-
-               success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
+               if(o[@"token"]){
+                   self.token=o[@"token"];
+               }
+               UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+               self.isLogined=YES;
+               self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
+               success(m);
            } failure:failure];
 
 }

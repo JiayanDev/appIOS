@@ -29,6 +29,7 @@ PODS:
   - MBProgressHUD (0.9.1)
   - MJRefresh (2.0.4)
   - pop (1.0.7)
+  - RegExCategories (1.0)
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh
   - pop
+  - RegExCategories (~> 1.0)
   - SDWebImage
   - TSMessages
   - UICKeyChainStore
@@ -76,6 +78,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: ea153717001d3c02444bd22b75c111d2937d2104
   pop: 628ffc631644601567ee8bfaaaea493ebd7d0923
+  RegExCategories: e68befacacd5bda853c88f70ec745cb2d0cfb89c
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
   UICKeyChainStore: c5719c814e8bd69e74e4a0fc09daf8f4d6257a59

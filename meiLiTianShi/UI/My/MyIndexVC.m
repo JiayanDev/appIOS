@@ -112,4 +112,17 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if([MLSession current].isLogined){
+        self.form=self.logginedFormDescriptor;
+    }else{
+        self.form=self.noLoginFormDescriptor;
+    }
+
+    [self.tableView reloadData];
+
+}
+
+
 @end

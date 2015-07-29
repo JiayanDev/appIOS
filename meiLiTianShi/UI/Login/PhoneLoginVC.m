@@ -7,6 +7,9 @@
 //
 
 #import "PhoneLoginVC.h"
+#import "RegExCategories.h"
+#import "TSMessage.h"
+#import "MLSession.h"
 
 @interface PhoneLoginVC ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneInput;
@@ -19,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"手机登陆";
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -27,8 +31,36 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)loginButtonPress:(id)sender {
+    if(![self.phoneInput.text isMatch:RX(@"^1\\d{10}$")]){
+        [TSMessage showNotificationWithTitle:@"请输入正确的国内手机号码"
+                                        type:TSMessageNotificationTypeError];
+        return;
+    }
+
+    if(self.passwordInput.text.length<1){
+        [TSMessage showNotificationWithTitle:@"请输入密码"
+                                        type:TSMessageNotificationTypeError];
+        return;
+    }
+
+    [[MLSession current] loginWithPhone:self.phoneInput.text
+                               password:self.passwordInput.text
+                                success:^(UserDetailModel *model) {
+
+                                    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+                                } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationInViewController:self.navigationController
+                                                      title:@"出错了"
+                                                   subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                       type:TSMessageNotificationTypeError];
+//                [TSMessage showNotificationWithTitle:@"出错了"
+//                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+//                                                type:TSMessageNotificationTypeError];
+            }];
 }
 - (IBAction)forgetPasswordPress:(id)sender {
+
+
 }
 
 /*

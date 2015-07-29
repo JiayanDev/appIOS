@@ -7,6 +7,7 @@
 //
 
 #import "LoginWaySelectVC.h"
+#import "PhoneLoginVC.h"
 
 @interface LoginWaySelectVC ()
 @property (weak, nonatomic) IBOutlet UIButton *wxLoginButton;
@@ -32,6 +33,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)otherLoginPress:(id)sender {
+    [self.navigationController pushViewController:[[PhoneLoginVC alloc] init]
+                                         animated:YES];
+}
+- (IBAction)registButtonPress:(id)sender {
 }
 
 

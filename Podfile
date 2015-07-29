@@ -17,6 +17,7 @@ pod 'MJRefresh'
   pod 'SDWebImage'
   pod 'DACircularProgress'
   pod 'pop'
+  pod 'RegExCategories', '~> 1.0'
 
 end
 
