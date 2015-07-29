@@ -54,6 +54,10 @@
 		07A6993B1B686EBD00A9D2EF /* 用户@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A699371B686EBD00A9D2EF /* 用户@2x.png */; };
 		07A6993F1B68731100A9D2EF /* PhoneLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6993D1B68731100A9D2EF /* PhoneLoginVC.m */; };
 		07A699401B68731100A9D2EF /* PhoneLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6993E1B68731100A9D2EF /* PhoneLoginVC.xib */; };
+		07A699441B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699421B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m */; };
+		07A699451B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A699431B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib */; };
+		07A699491B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699471B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m */; };
+		07A6994A1B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A699481B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib */; };
 		07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */; };
 		07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D301B54AAA50069470E /* DoctorSelectVC.xib */; };
 		07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D461B56497C0069470E /* DiaryDetailVC.m */; };
@@ -219,6 +223,12 @@
 		07A6993C1B68731100A9D2EF /* PhoneLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginVC.h; sourceTree = "<group>"; };
 		07A6993D1B68731100A9D2EF /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
 		07A6993E1B68731100A9D2EF /* PhoneLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneLoginVC.xib; sourceTree = "<group>"; };
+		07A699411B6875A500A9D2EF /* PhoneRegisterSecondStepVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneRegisterSecondStepVC.h; sourceTree = "<group>"; };
+		07A699421B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneRegisterSecondStepVC.m; sourceTree = "<group>"; };
+		07A699431B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneRegisterSecondStepVC.xib; sourceTree = "<group>"; };
+		07A699461B6879C800A9D2EF /* ForgetPasswordSecondStepVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordSecondStepVC.h; sourceTree = "<group>"; };
+		07A699471B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordSecondStepVC.m; sourceTree = "<group>"; };
+		07A699481B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordSecondStepVC.xib; sourceTree = "<group>"; };
 		07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSelectVC.h; sourceTree = "<group>"; };
 		07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSelectVC.m; sourceTree = "<group>"; };
 		07C91D301B54AAA50069470E /* DoctorSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSelectVC.xib; sourceTree = "<group>"; };
@@ -476,6 +486,12 @@
 				07A6993C1B68731100A9D2EF /* PhoneLoginVC.h */,
 				07A6993D1B68731100A9D2EF /* PhoneLoginVC.m */,
 				07A6993E1B68731100A9D2EF /* PhoneLoginVC.xib */,
+				07A699411B6875A500A9D2EF /* PhoneRegisterSecondStepVC.h */,
+				07A699421B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m */,
+				07A699431B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib */,
+				07A699461B6879C800A9D2EF /* ForgetPasswordSecondStepVC.h */,
+				07A699471B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m */,
+				07A699481B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1035,6 +1051,7 @@
 				072C3AA31B653EBD0032849C /* AboutUsVC.xib in Resources */,
 				3CDC5BE729287BA50D2C1AD7 /* selectPhoto@2x.png in Resources */,
 				3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */,
+				07A699451B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib in Resources */,
 				3CDC533D2D65BCF84FA750E4 /* Overlay@2x.png in Resources */,
 				3CDC5B1F9934E1D796FC253E /* ELCAssetPicker.xib in Resources */,
 				07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */,
@@ -1058,6 +1075,7 @@
 				3CDC503D12C1AABC645C9F35 /* Localizable.strings in Resources */,
 				07A6993A1B686EBD00A9D2EF /* 微信@2x.png in Resources */,
 				3CDC5AFA966109CD9934B1EB /* Localizable.strings in Resources */,
+				07A6994A1B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib in Resources */,
 				070E2EDB1B5B8E1F0041847A /* 点赞@2x.png in Resources */,
 				3CDC5269EC26AC2CD7B3C513 /* Localizable.strings in Resources */,
 				07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */,
@@ -1155,6 +1173,7 @@
 				3CDC548F92694470DE7BCA4E /* ELCAssetTablePicker.m in Sources */,
 				3CDC58648BFC255C4F9030EF /* ELCOverlayImageView.m in Sources */,
 				3CDC5359F757287D7F6B3AD7 /* ELCAlbumPickerController.m in Sources */,
+				07A699441B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m in Sources */,
 				3CDC5A1DBE7BDF9E283E9716 /* ELCImagePickerController.m in Sources */,
 				3CDC53EED13C3D9EF6B72632 /* DoctorModel.m in Sources */,
 				3CDC52AB252856C7EBF31FAF /* HospitalModel.m in Sources */,
@@ -1179,6 +1198,7 @@
 				3CDC52EB6B00EC7473271DEA /* WebviewRespondModel.m in Sources */,
 				3CDC5E936900CD70686871B2 /* UserModel.m in Sources */,
 				3CDC59149E134E6D4313ECB5 /* IDMPhoto.m in Sources */,
+				07A699491B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m in Sources */,
 				3CDC527D4088492D38B870C1 /* IDMCaptionView.m in Sources */,
 				3CDC57D7723F8B02D7FBAF6C /* IDMPhotoBrowser.m in Sources */,
 				3CDC5C15B2BDC6BC40940A79 /* IDMTapDetectingView.m in Sources */,
