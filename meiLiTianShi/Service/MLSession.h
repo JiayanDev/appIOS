@@ -64,6 +64,8 @@
 
 - (void)registerWithParam:(NSDictionary *)data success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)registerWithParam:(NSDictionary *)data password:(NSString *)rawPassword success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)loginWithPhone:(NSString *)phone password:(NSString *)rawPassword success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)loginWithWeixinCode:(NSString *)wxCode success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;

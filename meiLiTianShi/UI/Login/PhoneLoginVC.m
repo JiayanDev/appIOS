@@ -32,8 +32,12 @@
 }
 - (IBAction)loginButtonPress:(id)sender {
     if(![self.phoneInput.text isMatch:RX(@"^1\\d{10}$")]){
-        [TSMessage showNotificationWithTitle:@"请输入正确的国内手机号码"
-                                        type:TSMessageNotificationTypeError];
+        [TSMessage showNotificationInViewController:self.navigationController
+                                              title:@"请输入正确的国内手机号码"
+                                           subtitle:nil
+                                               type:TSMessageNotificationTypeError];
+//        [TSMessage showNotificationWithTitle:@"请输入正确的国内手机号码"
+//                                        type:TSMessageNotificationTypeError];
         return;
     }
 

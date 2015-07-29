@@ -8,6 +8,7 @@
 
 #import "LoginWaySelectVC.h"
 #import "PhoneLoginVC.h"
+#import "PhoneBindVC.h"
 
 @interface LoginWaySelectVC ()
 @property (weak, nonatomic) IBOutlet UIButton *wxLoginButton;
@@ -39,6 +40,10 @@
                                          animated:YES];
 }
 - (IBAction)registButtonPress:(id)sender {
+    PhoneBindVC *vc= [[PhoneBindVC alloc] init];
+    vc.type=PhoneBindVcType_registerFirstStep;
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 }
 
 

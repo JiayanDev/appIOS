@@ -566,6 +566,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 #pragma mark - 登陆 注册
 
 -(void)registerWithParam:(NSDictionary *)data
+                password:(NSString *)rawPassword
                  success:(void(^)(UserDetailModel *))success
                     fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [data mutableCopy];
@@ -573,6 +574,8 @@ constructingBodyWithBlock:constructingBodyWithBlock
     if (self.deviceToken){
         d[@"deviceToken"]=self.deviceToken;
     }
+    d[@"psw"]= [rawPassword MD5String];
+
 
 
     [self sendPost:@"user/register"
@@ -667,7 +670,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 -(void)sendConfirmCodeWithPhone:(NSString *)phone
                         success:(void (^)(NSString *confirmId))success fail:(void (^)(NSInteger, id))failure{
-    [self sendPost:@"user/confirm_code/code"
+    [self sendGet:@"user/confirm_code/code"
              param:@{@"phoneNum":phone}
            success:^(NSDictionary * o){
 
