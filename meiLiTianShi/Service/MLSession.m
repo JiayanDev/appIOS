@@ -21,6 +21,7 @@
 #import "UserModel.h"
 #import "EventModel.h"
 #import "UserDetailModel.h"
+#import "NSString+MD5.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -204,23 +205,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
           failure:failure];
 }
 
--(void)quickLoginSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
-    [self sendPost:@"user/quick_login"
-            param:@{@"configVersion":@0}
-          success:^(NSDictionary * user){
-              if(user[@"token"]){
-                  self.token=user[@"token"];
-              }
 
-              self.currentUser= [[UserModel alloc] initWithDictionary:user
-                                                                error:nil];
-
-              [self handleCategories:user];
-
-              success();
-          }
-          failure:failure];
-}
 
 
 -(void)restoreLoginOrRegister_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
@@ -576,6 +561,120 @@ constructingBodyWithBlock:constructingBodyWithBlock
                                                              }];
     [[NSOperationQueue mainQueue] addOperations:operations waitUntilFinished:NO];
 }
+
+
+#pragma mark - 登陆 注册
+
+-(void)registerWithParam:(NSDictionary *)data
+                 success:(void(^)(UserDetailModel *))success
+                    fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d= [data mutableCopy];
+    d[@"configVersion"]= @1.0;
+    if (self.deviceToken){
+        d[@"deviceToken"]=self.deviceToken;
+    }
+
+
+    [self sendPost:@"user/register"
+            param:d
+          success:^(id o) {
+
+              success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
+          } failure:failure];
+
+}
+
+
+
+
+-(void)loginWithPhone:(NSString *)phone password:(NSString *)rawPassword
+                 success:(void(^)(UserDetailModel *))success
+                    fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d= [NSMutableDictionary dictionary];
+    d[@"configVersion"]= @1.0;
+    if (self.deviceToken){
+        d[@"deviceToken"]=self.deviceToken;
+    }
+    d[@"phoneNum"]=phone;
+    d[@"psw"]= [rawPassword MD5String];
+
+
+    [self sendPost:@"user/login"
+             param:d
+           success:^(id o) {
+
+               success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
+           } failure:failure];
+
+}
+
+
+
+-(void)loginWithWeixinCode:(NSString *)wxCode
+              success:(void(^)(UserDetailModel *))success
+                 fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d= [NSMutableDictionary dictionary];
+    d[@"configVersion"]= @1.0;
+    if (self.deviceToken){
+        d[@"deviceToken"]=self.deviceToken;
+    }
+    d[@"wxCode"]=wxCode;
+
+    [self sendPost:@"user/login"
+             param:d
+           success:^(id o) {
+
+               success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
+           } failure:failure];
+
+}
+
+
+
+-(void)quickLoginSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"user/quick_login"
+             param:@{@"configVersion":@0}
+           success:^(NSDictionary * user){
+               if(user[@"token"]){
+                   self.token=user[@"token"];
+               }
+
+               self.currentUser= [[UserModel alloc] initWithDictionary:user
+                                                                 error:nil];
+
+               [self handleCategories:user];
+
+               success();
+           }
+           failure:failure];
+}
+
+
+-(void)sendConfirmCodeWithPhone:(NSString *)phone
+                        success:(void (^)(NSString *confirmId))success fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"user/confirm_code/code"
+             param:@{@"phoneNum":phone}
+           success:^(NSDictionary * o){
+
+               success(o[@"confirmId"]);
+           }
+           failure:failure];
+}
+
+
+
+-(void)validateConfirmCodeWithCode:(NSString *)code confirmId:(NSString *)confirmId
+                        success:(void (^)(NSString *receipt))success fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"user/confirm_code/confirm"
+             param:@{@"code":code,@"confirmId":confirmId}
+           success:^(NSDictionary * o){
+
+               success(o[@"receipt"]);
+           }
+           failure:failure];
+}
+
+
 
 
 @end
