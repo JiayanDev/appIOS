@@ -1417,7 +1417,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"\"${PROJECT_DIR}/meiLiTianShi/frameworks/UMessage_Sdk_1.1.0\"/**",
+					"${PROJECT_DIR}/meiLiTianShi/frameworks/UMessage_Sdk_1.1.0/**",
 					"$(PROJECT_DIR)/meiLiTianShi/frameworks/WeChatSDK_1.5",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1435,7 +1435,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
-					"\"${PROJECT_DIR}/meiLiTianShi/frameworks/UMessage_Sdk_1.1.0\"/**",
+					"${PROJECT_DIR}/meiLiTianShi/frameworks/UMessage_Sdk_1.1.0/**",
 					"$(PROJECT_DIR)/meiLiTianShi/frameworks/WeChatSDK_1.5",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
