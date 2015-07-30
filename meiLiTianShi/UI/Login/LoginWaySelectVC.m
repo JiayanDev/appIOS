@@ -45,6 +45,8 @@
     [self.navigationController pushViewController:vc
                                          animated:YES];
 }
+- (IBAction)wxLoginPress:(id)sender {
+}
 
 
 @end
