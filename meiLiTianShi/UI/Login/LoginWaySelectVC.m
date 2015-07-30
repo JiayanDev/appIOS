@@ -82,7 +82,10 @@
                                          }
 
                                      } fail:^(NSInteger i, id o) {
-
+                [TSMessage showNotificationInViewController:self.navigationController
+                                                      title:@"出错了"
+                                                   subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                       type:TSMessageNotificationTypeError];
             }];
 
 }
