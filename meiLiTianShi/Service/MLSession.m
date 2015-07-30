@@ -22,6 +22,7 @@
 #import "EventModel.h"
 #import "UserDetailModel.h"
 #import "NSString+MD5.h"
+#import "LoginWaySelectVC.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -570,11 +571,14 @@ constructingBodyWithBlock:constructingBodyWithBlock
                  success:(void(^)(UserDetailModel *))success
                     fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [data mutableCopy];
-    d[@"configVersion"]= @1.0;
+//    d[@"configVersion"]= @1.0;
     if (self.deviceToken){
         d[@"deviceToken"]=self.deviceToken;
     }
-    d[@"psw"]= [rawPassword MD5String];
+
+    if(rawPassword){
+        d[@"psw"]= [rawPassword MD5String];
+    }
 
 
 
@@ -599,7 +603,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
                  success:(void(^)(UserDetailModel *))success
                     fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [NSMutableDictionary dictionary];
-    d[@"configVersion"]= @1.0;
+//    d[@"configVersion"]= @1.0;
     if (self.deviceToken){
         d[@"deviceToken"]=self.deviceToken;
     }
@@ -624,10 +628,10 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
 -(void)loginWithWeixinCode:(NSString *)wxCode
-              success:(void(^)(UserDetailModel *))success
+              success:(void(^)(UserDetailModel *,NSString *wxReceipt))success
                  fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [NSMutableDictionary dictionary];
-    d[@"configVersion"]= @1.0;
+//    d[@"configVersion"]= @1.0;
     if (self.deviceToken){
         d[@"deviceToken"]=self.deviceToken;
     }
@@ -639,10 +643,15 @@ constructingBodyWithBlock:constructingBodyWithBlock
                if(o[@"token"]){
                    self.token=o[@"token"];
                }
-               UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
-               self.isLogined=YES;
-               self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
-               success(m);
+
+               if(o[@"wxReceipt"]){
+                   success(nil,o[@"wxReceipt"]);
+               }else{
+                   UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+                   self.isLogined=YES;
+                   self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
+                   success(m,nil);
+               }
            } failure:failure];
 
 }
@@ -651,7 +660,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 -(void)quickLoginSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
     [self sendPost:@"user/quick_login"
-             param:@{@"configVersion":@0}
+             param:@{@"configVersion":@1}
            success:^(NSDictionary * user){
                if(user[@"token"]){
                    self.token=user[@"token"];

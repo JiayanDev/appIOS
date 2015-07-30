@@ -15,5 +15,5 @@ typedef NS_ENUM(NSUInteger , PhoneBindVcType){
 
 @interface PhoneBindVC : UIViewController
 @property (nonatomic, assign)PhoneBindVcType type;
-
+@property (nonatomic, strong)NSString *wxReceipt_afterWechatLogin;
 @end

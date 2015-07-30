@@ -13,6 +13,7 @@
 @class DiaryModel;
 @class UserModel;
 @class UserDetailModel;
+@class LoginWaySelectVC;
 
 
 @interface MLSession : NSObject
@@ -25,6 +26,8 @@
 @property (nonatomic, strong)NSString *deviceToken;
 
 @property (nonatomic, assign)BOOL isLogined;
+
+@property (nonatomic, strong)LoginWaySelectVC *presentingWxLoginVC;
 
 + (MLSession *)current;
 
@@ -68,7 +71,7 @@
 
 - (void)loginWithPhone:(NSString *)phone password:(NSString *)rawPassword success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
 
-- (void)loginWithWeixinCode:(NSString *)wxCode success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
+- (void)loginWithWeixinCode:(NSString *)wxCode success:(void (^)(UserDetailModel *, NSString *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)sendConfirmCodeWithPhone:(NSString *)phone success:(void (^)(NSString *confirmId))success fail:(void (^)(NSInteger, id))failure;
 

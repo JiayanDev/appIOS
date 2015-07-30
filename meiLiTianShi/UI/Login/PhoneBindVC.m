@@ -32,7 +32,7 @@
     }else if (self.type==PhoneBindVcType_afterWechatLogin){
 
     }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
-        self.title=@"绑定";
+        self.title=@"绑定手机";
     }
 }
 
@@ -94,7 +94,20 @@
         vc.phoneNum=self.phoneInput.text;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (self.type==PhoneBindVcType_afterWechatLogin){
+        [[MLSession current] registerWithParam:@{
+                @"wxReceipt":self.wxReceipt_afterWechatLogin,
+                @"receipt":self.receipt,
+                @"phoneNum":self.phoneInput.text,
+        } password:nil
+                                       success:^(UserDetailModel *model) {
+                                           [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
+                                       } fail:^(NSInteger i, id o) {
+                    [TSMessage showNotificationInViewController:self.navigationController
+                                                          title:@"出错了"
+                                                       subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                           type:TSMessageNotificationTypeError];
+                }];
     }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
         self.title=@"绑定";
     }

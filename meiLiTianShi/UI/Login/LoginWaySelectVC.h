@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class SendAuthResp;
+
 @interface LoginWaySelectVC : UIViewController
 
+- (void)handleWxAuthRespond:(SendAuthResp *)resp;
 @end
