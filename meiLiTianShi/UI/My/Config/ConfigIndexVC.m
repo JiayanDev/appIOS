@@ -10,6 +10,7 @@
 #import "XLForm.h"
 #import "SuggestionsVC.h"
 #import "AboutUsVC.h"
+#import "MLSession.h"
 
 @interface ConfigIndexVC ()
 
@@ -31,16 +32,18 @@
     XLFormSectionDescriptor * section;
     XLFormRowDescriptor * row;
 
-    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+    if ([MLSession current].isLogined) {
+        section = [XLFormSectionDescriptor formSectionWithTitle:@""];
 
-    [formDescriptor addFormSection:section];
+        [formDescriptor addFormSection:section];
 
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"mima"
-                                                rowType:XLFormRowDescriptorTypeSelectorPush title:@"修改账户密码"];
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"mima"
+                                                    rowType:XLFormRowDescriptorTypeSelectorPush title:@"修改账户密码"];
 
-    //row.action.viewControllerClass=[MyDiaryBookListTVC class];
-    [section addFormRow:row];
+        //row.action.viewControllerClass=[MyDiaryBookListTVC class];
+        [section addFormRow:row];
+    }
 
 
     section = [XLFormSectionDescriptor formSectionWithTitle:@""];
@@ -76,17 +79,18 @@
     [section addFormRow:row];
 
 
+    if ([MLSession current].isLogined) {
+        section = [XLFormSectionDescriptor formSectionWithTitle:@""];
 
-    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
-
-    [formDescriptor addFormSection:section];
+        [formDescriptor addFormSection:section];
 
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tuichu"
-                                                rowType:XLFormRowDescriptorTypeSelectorPush title:@"退出登录"];
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tuichu"
+                                                    rowType:XLFormRowDescriptorTypeSelectorPush title:@"退出登录"];
 
-    //row.action.viewControllerClass=[MyDiaryBookListTVC class];
-    [section addFormRow:row];
+        //row.action.viewControllerClass=[MyDiaryBookListTVC class];
+        [section addFormRow:row];
+    }
 
 
     return [super initWithForm:formDescriptor];

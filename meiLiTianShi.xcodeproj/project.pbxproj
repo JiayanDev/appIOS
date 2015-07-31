@@ -63,6 +63,10 @@
 		07A699541B69BC8C00A9D2EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */; };
 		07A699561B69BCA100A9D2EF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699551B69BCA100A9D2EF /* libz.dylib */; };
 		07A699581B69BCAD00A9D2EF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699571B69BCAD00A9D2EF /* libsqlite3.0.dylib */; };
+		07A8BA7F1B6A1357007EDE84 /* MyBanMeiListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8BA7D1B6A1357007EDE84 /* MyBanMeiListTVC.m */; };
+		07A8BA801B6A1357007EDE84 /* MyBanMeiListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A8BA7E1B6A1357007EDE84 /* MyBanMeiListTVC.xib */; };
+		07A8BA841B6A16B1007EDE84 /* MyMeiLiTianShiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */; };
+		07A8BA851B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A8BA831B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib */; };
 		07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */; };
 		07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D301B54AAA50069470E /* DoctorSelectVC.xib */; };
 		07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D461B56497C0069470E /* DiaryDetailVC.m */; };
@@ -242,6 +246,12 @@
 		07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		07A699551B69BCA100A9D2EF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		07A699571B69BCAD00A9D2EF /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		07A8BA7C1B6A1357007EDE84 /* MyBanMeiListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBanMeiListTVC.h; sourceTree = "<group>"; };
+		07A8BA7D1B6A1357007EDE84 /* MyBanMeiListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBanMeiListTVC.m; sourceTree = "<group>"; };
+		07A8BA7E1B6A1357007EDE84 /* MyBanMeiListTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBanMeiListTVC.xib; sourceTree = "<group>"; };
+		07A8BA811B6A16B1007EDE84 /* MyMeiLiTianShiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMeiLiTianShiVC.h; sourceTree = "<group>"; };
+		07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMeiLiTianShiVC.m; sourceTree = "<group>"; };
+		07A8BA831B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMeiLiTianShiVC.xib; sourceTree = "<group>"; };
 		07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSelectVC.h; sourceTree = "<group>"; };
 		07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSelectVC.m; sourceTree = "<group>"; };
 		07C91D301B54AAA50069470E /* DoctorSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSelectVC.xib; sourceTree = "<group>"; };
@@ -489,6 +499,19 @@
 				07A699501B69BC5A00A9D2EF /* WXApiObject.h */,
 			);
 			path = WeChatSDK_1.5;
+			sourceTree = "<group>";
+		};
+		3CDC507EC8EFDB61D98A500C /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				07A8BA7C1B6A1357007EDE84 /* MyBanMeiListTVC.h */,
+				07A8BA7D1B6A1357007EDE84 /* MyBanMeiListTVC.m */,
+				07A8BA7E1B6A1357007EDE84 /* MyBanMeiListTVC.xib */,
+				07A8BA811B6A16B1007EDE84 /* MyMeiLiTianShiVC.h */,
+				07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */,
+				07A8BA831B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib */,
+			);
+			path = Event;
 			sourceTree = "<group>";
 		};
 		3CDC5083716725CB11D168CD /* Util */ = {
@@ -915,6 +938,7 @@
 				0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */,
 				3CDC5B6E8D940EA486FD464D /* Info */,
 				3CDC5E0CC04E661D26F74BB0 /* Config */,
+				3CDC507EC8EFDB61D98A500C /* Event */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -1075,6 +1099,7 @@
 				072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */,
 				07A699521B69BC5A00A9D2EF /* read_me.txt in Resources */,
 				07FB9C3C1B4E1471000CCC45 /* CreateDiaryFVC.xib in Resources */,
+				07A8BA851B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
@@ -1091,6 +1116,7 @@
 				07A699451B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib in Resources */,
 				3CDC533D2D65BCF84FA750E4 /* Overlay@2x.png in Resources */,
 				3CDC5B1F9934E1D796FC253E /* ELCAssetPicker.xib in Resources */,
+				07A8BA801B6A1357007EDE84 /* MyBanMeiListTVC.xib in Resources */,
 				07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */,
 				3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */,
 				07A6992E1B67628A00A9D2EF /* logo@2x.png in Resources */,
@@ -1186,6 +1212,7 @@
 				070E2ECC1B58E7800041847A /* EventListTVC.m in Sources */,
 				07FB9C3B1B4E1471000CCC45 /* CreateDiaryFVC.m in Sources */,
 				07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */,
+				07A8BA7F1B6A1357007EDE84 /* MyBanMeiListTVC.m in Sources */,
 				3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */,
 				0746078C1B4BBAF40035E08D /* MyDiaryBookListTVC.m in Sources */,
 				07FB9C401B4E1486000CCC45 /* CreateTopicFVC.m in Sources */,
@@ -1219,6 +1246,7 @@
 				3CDC5FD01D56F1C1EAEDE681 /* UploadTokenModel.m in Sources */,
 				3CDC5DE51352BF9C4B81C12C /* XLRatingView.m in Sources */,
 				3CDC571B97992D204B2458B5 /* XLFormRatingCell.m in Sources */,
+				07A8BA841B6A16B1007EDE84 /* MyMeiLiTianShiVC.m in Sources */,
 				3CDC5CB35C89A248328BF64C /* MLJsonModel.m in Sources */,
 				3CDC503458B508F3F1A206A6 /* SLKTextView.m in Sources */,
 				3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */,
