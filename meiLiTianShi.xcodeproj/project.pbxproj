@@ -131,6 +131,7 @@
 		3CDC5B9F9A2D04C06EFCFCCE /* IDMPhotoBrowser_arrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53F0691BD6FD4301024B /* IDMPhotoBrowser_arrowLeft.png */; };
 		3CDC5BA55D30C7A9D6399196 /* MLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC592229E51A7D98EA62D8 /* MLSession.m */; };
 		3CDC5BA737E58041038D989B /* IDMPhotoBrowser_arrowLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5C49233F34922EB262C2 /* IDMPhotoBrowser_arrowLeft@2x.png */; };
+		3CDC5BA759902DF08F71300F /* SAMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC559E20231836137161B5 /* SAMTextField.m */; };
 		3CDC5BE729287BA50D2C1AD7 /* selectPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */; };
 		3CDC5C15B2BDC6BC40940A79 /* IDMTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC531756E63DE800130A98 /* IDMTapDetectingView.m */; };
 		3CDC5C864005BB6F709A5105 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5748AC0105922B97DB85 /* NSString+MD5.m */; };
@@ -252,6 +253,7 @@
 		07A8BA811B6A16B1007EDE84 /* MyMeiLiTianShiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMeiLiTianShiVC.h; sourceTree = "<group>"; };
 		07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMeiLiTianShiVC.m; sourceTree = "<group>"; };
 		07A8BA831B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMeiLiTianShiVC.xib; sourceTree = "<group>"; };
+		07A8BA861B6B629C007EDE84 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSelectVC.h; sourceTree = "<group>"; };
 		07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSelectVC.m; sourceTree = "<group>"; };
 		07C91D301B54AAA50069470E /* DoctorSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSelectVC.xib; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		3CDC5404A89048EC837DAB69 /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetTablePicker.h; sourceTree = "<group>"; };
 		3CDC540705E8F0F483699CA9 /* WebviewRespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebviewRespondModel.h; sourceTree = "<group>"; };
 		3CDC545CA79CC064904E5255 /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextView.m; sourceTree = "<group>"; };
+		3CDC545D3F894C23E92D6E51 /* SAMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMTextField.h; sourceTree = "<group>"; };
 		3CDC548152DD405F41F0A607 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC54DED21B78D259F20122 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		3CDC54FDCCA040E65431F2AC /* UserDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailModel.m; sourceTree = "<group>"; };
@@ -309,6 +312,7 @@
 		3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTableViewCell.h; sourceTree = "<group>"; };
 		3CDC5580E573067AD09509F6 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTableViewCell.m; sourceTree = "<group>"; };
+		3CDC559E20231836137161B5 /* SAMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMTextField.m; sourceTree = "<group>"; };
 		3CDC55BF2784166CA4EE1E1A /* SLKTextInputbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextInputbar.h; sourceTree = "<group>"; };
 		3CDC55C23738550774AB748D /* UploadTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTokenModel.h; sourceTree = "<group>"; };
 		3CDC55F4EED3B2E251837A7F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = Localizable.strings; sourceTree = "<group>"; };
@@ -469,6 +473,7 @@
 			children = (
 				072DCC391B43A1CE0091CBDE /* Info.plist */,
 				072DCC3A1B43A1CE0091CBDE /* main.m */,
+				07A8BA861B6B629C007EDE84 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -592,6 +597,15 @@
 				3CDC59AC37FF813066BEC7AF /* ELCAssetPickerFilterDelegate.h */,
 			);
 			path = ELCImagePicker;
+			sourceTree = "<group>";
+		};
+		3CDC527105BFF6B36F89FF8C /* SAMTextField */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC545D3F894C23E92D6E51 /* SAMTextField.h */,
+				3CDC559E20231836137161B5 /* SAMTextField.m */,
+			);
+			path = SAMTextField;
 			sourceTree = "<group>";
 		};
 		3CDC53AF979AFCB7505AD411 /* NSArray+toJsonString */ = {
@@ -833,6 +847,7 @@
 				3CDC5461470D4355A4271D0F /* SlackTextViewController */,
 				3CDC57BC2825CC3B4B1918B8 /* IDMPhotoBrowser */,
 				3CDC5F42D2BB86D53A714588 /* UMessage_Sdk_1.1.0 */,
+				3CDC527105BFF6B36F89FF8C /* SAMTextField */,
 			);
 			path = frameworks;
 			sourceTree = "<group>";
@@ -1274,6 +1289,7 @@
 				3CDC55EB3E37279B48E96DCE /* InfoIndexVC.m in Sources */,
 				3CDC550B3DB3F66BF1D0F735 /* UserDetailModel.m in Sources */,
 				3CDC5C864005BB6F709A5105 /* NSString+MD5.m in Sources */,
+				3CDC5BA759902DF08F71300F /* SAMTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1441,6 +1457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "${PROJECT_DIR}/meiLiTianShi/PrefixHeader.pch";
 				INFOPLIST_FILE = meiLiTianShi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
