@@ -117,6 +117,7 @@
 		3CDC5905A16A26BD5353DFD3 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5F8533E195A6E27B562E /* ELCAssetCell.m */; };
 		3CDC5913A3F7535FD2DF3E91 /* NSArray+toJsonString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */; };
 		3CDC59149E134E6D4313ECB5 /* IDMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56724B9E715849E35A98 /* IDMPhoto.m */; };
+		3CDC598E06527831C89337B0 /* XLFormTextDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E20A1F79D8C4BFC24B7 /* XLFormTextDetailViewController.m */; };
 		3CDC5A1CF88FBEC6D4F7A928 /* WebviewRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D1BB818D71CD583340B /* WebviewRequestModel.m */; };
 		3CDC5A1DBE7BDF9E283E9716 /* ELCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */; };
 		3CDC5A3328B4197895FD8B9D /* IDMPhotoBrowser_arrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5234C7D23458862F12DE /* IDMPhotoBrowser_arrowRight@2x.png */; };
@@ -363,6 +364,7 @@
 		3CDC5B18E9D68F95E3DFBE32 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC5B1A2E06FCD1915E202A /* IDMZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMZoomingScrollView.m; sourceTree = "<group>"; };
 		3CDC5B23C177FE8EFE2343E6 /* 搜索@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索@2x.png"; sourceTree = "<group>"; };
+		3CDC5B48F4DC4821E240A707 /* XLFormTextDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormTextDetailViewController.h; sourceTree = "<group>"; };
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKInputAccessoryView.m; sourceTree = "<group>"; };
 		3CDC5BE4CECDEB8B3391024B /* IDMPBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPBConstants.h; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		3CDC5DE2C6E64CD4CAE79464 /* XLFormRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormRatingCell.h; sourceTree = "<group>"; };
 		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E0C3A66E170A06E7D3F /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
+		3CDC5E20A1F79D8C4BFC24B7 /* XLFormTextDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFormTextDetailViewController.m; sourceTree = "<group>"; };
 		3CDC5E63A63C6969B9D109F5 /* PageIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageIndicator.h; sourceTree = "<group>"; };
 		3CDC5E69A2856B3976E1FBCB /* XLRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLRatingView.h; sourceTree = "<group>"; };
 		3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryBookModel.m; sourceTree = "<group>"; };
@@ -648,6 +651,15 @@
 			path = SlackTextViewController;
 			sourceTree = "<group>";
 		};
+		3CDC54EC1AEFC28D5D1C8700 /* XLform_additions */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5B48F4DC4821E240A707 /* XLFormTextDetailViewController.h */,
+				3CDC5E20A1F79D8C4BFC24B7 /* XLFormTextDetailViewController.m */,
+			);
+			path = XLform_additions;
+			sourceTree = "<group>";
+		};
 		3CDC55461C99D4074F6B469C /* AFTabledCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,6 +886,7 @@
 				3CDC527105BFF6B36F89FF8C /* SAMTextField */,
 				3CDC58C9FD3EF10E2B2ADF5F /* SZTextView */,
 				3CDC591BB09CD55729AD15BE /* UIAlertView+Blocks */,
+				3CDC54EC1AEFC28D5D1C8700 /* XLform_additions */,
 			);
 			path = frameworks;
 			sourceTree = "<group>";
@@ -1318,6 +1331,7 @@
 				3CDC5BA759902DF08F71300F /* SAMTextField.m in Sources */,
 				3CDC5C1F41BB0C44DC0E5FBD /* SZTextView.m in Sources */,
 				3CDC5E80DC65DAB95EFAF04D /* UIAlertView+Blocks.m in Sources */,
+				3CDC598E06527831C89337B0 /* XLFormTextDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

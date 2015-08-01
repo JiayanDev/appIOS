@@ -10,6 +10,7 @@
 #import "AvatarTCell.h"
 #import "TSMessage.h"
 #import "UserDetailModel.h"
+#import "XLFormTextDetailViewController.h"
 
 
 @implementation InfoIndexVC {
@@ -42,7 +43,9 @@
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kNickname rowType:XLFormRowDescriptorTypeSelectorPush title:@"昵称"];
-//    row.action.viewControllerClass=[InfoIndexVC class];
+    row.action.viewControllerClass=[XLFormTextDetailViewController class];
+    row.pushConfigs[kPushInnerRowType]=XLFormRowDescriptorTypeText;
+    //row.pushConfigs[kPushInnerTitle]=XLFormRowDescriptorTypeText;
     row.value=[MLSession current].currentUser.name;
     [section addFormRow:row];
 
