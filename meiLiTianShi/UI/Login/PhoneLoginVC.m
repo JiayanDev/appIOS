@@ -10,6 +10,7 @@
 #import "RegExCategories.h"
 #import "TSMessage.h"
 #import "MLSession.h"
+#import "PhoneBindVC.h"
 
 @interface PhoneLoginVC ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneInput;
@@ -63,7 +64,10 @@
             }];
 }
 - (IBAction)forgetPasswordPress:(id)sender {
-
+    PhoneBindVC *vc= [[PhoneBindVC alloc] init];
+    vc.type=PhoneBindVcType_forgetPasswordFirstStep;
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 
 }
 

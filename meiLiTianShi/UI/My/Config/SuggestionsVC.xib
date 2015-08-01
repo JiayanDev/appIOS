@@ -27,31 +27,26 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" placeholder="您的意见是我们前进的动力" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="HBd-FT-Mtn" customClass="SAMTextField">
-                    <rect key="frame" x="8" y="75" width="304" height="153"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="21M-lw-7AO" customClass="SZTextView">
+                    <rect key="frame" x="8" y="76" width="304" height="152"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="HBd-FT-Mtn" secondAttribute="height" multiplier="304:153" id="5la-GE-nN6"/>
+                        <constraint firstAttribute="width" secondItem="21M-lw-7AO" secondAttribute="height" multiplier="2:1" id="gWS-3M-Fu5"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="leftAndRight">
-                            <real key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="UpAndDown">
-                            <real key="value" value="7"/>
-                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="您的宝贵意见是我们前进的动力"/>
                     </userDefinedRuntimeAttributes>
-                </textField>
+                </textView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
-                <constraint firstItem="3NK-Rb-lNJ" firstAttribute="top" secondItem="HBd-FT-Mtn" secondAttribute="bottom" constant="8" id="0hW-Ph-JKq"/>
                 <constraint firstItem="3NK-Rb-lNJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="JCG-xZ-bD5"/>
-                <constraint firstItem="HBd-FT-Mtn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="Xec-cN-CUO"/>
-                <constraint firstItem="HBd-FT-Mtn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="75" id="iFs-N5-cMb"/>
-                <constraint firstAttribute="trailing" secondItem="HBd-FT-Mtn" secondAttribute="trailing" constant="8" id="lm6-Hc-7be"/>
+                <constraint firstItem="21M-lw-7AO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="KsJ-3g-xsU"/>
+                <constraint firstItem="3NK-Rb-lNJ" firstAttribute="top" secondItem="21M-lw-7AO" secondAttribute="bottom" constant="8" id="bAx-tt-VTE"/>
+                <constraint firstAttribute="trailing" secondItem="21M-lw-7AO" secondAttribute="trailing" constant="8" id="fwl-Ew-Zbs"/>
+                <constraint firstItem="21M-lw-7AO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="i9Z-Yk-ykE"/>
                 <constraint firstAttribute="trailing" secondItem="3NK-Rb-lNJ" secondAttribute="trailing" constant="8" id="yvX-iU-f92"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

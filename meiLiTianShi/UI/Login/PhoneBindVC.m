@@ -11,6 +11,7 @@
 #import "RegExCategories.h"
 #import "MLSession.h"
 #import "PhoneRegisterSecondStepVC.h"
+#import "ForgetPasswordSecondStepVC.h"
 
 @interface PhoneBindVC ()
 @property (weak, nonatomic) IBOutlet UITextField *phoneInput;
@@ -30,7 +31,7 @@
     if (self.type==PhoneBindVcType_registerFirstStep){
         self.title=@"注册";
     }else if (self.type==PhoneBindVcType_afterWechatLogin){
-
+        self.title=@"忘记密码";
     }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
         self.title=@"绑定手机";
     }
@@ -109,7 +110,10 @@
                                                            type:TSMessageNotificationTypeError];
                 }];
     }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
-        self.title=@"绑定";
+        ForgetPasswordSecondStepVC *vc= [[ForgetPasswordSecondStepVC alloc] init];
+        vc.receipt=self.receipt;
+        vc.phoneNum=self.phoneInput.text;
+        [self.navigationController pushViewController:vc animated:YES];
     }
 
 }

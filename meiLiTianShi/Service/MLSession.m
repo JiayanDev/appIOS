@@ -702,6 +702,20 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 
+-(void)forgetAndChangePasswordWithPhoneNum:(NSString *)phoneNum
+                                   receipt:(NSString *)receipt
+                               rawPassword:(NSString *)rawPassword
+                           success:(void (^)(void))success
+                                      fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"user/update/psw"
+             param:@{@"phoneNum":phoneNum,@"receipt":receipt,@"psw":[rawPassword MD5String]}
+           success:^(NSDictionary * o){
+
+               success();
+           }
+           failure:failure];
+}
+
 
 
 @end

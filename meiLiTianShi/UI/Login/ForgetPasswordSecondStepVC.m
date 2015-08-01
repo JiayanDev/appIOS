@@ -6,7 +6,10 @@
 //  Copyright (c) 2015年 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <TSMessages/TSMessage.h>
 #import "ForgetPasswordSecondStepVC.h"
+#import "UIAlertView+Blocks.h"
+#import "MLSession.h"
 
 @interface ForgetPasswordSecondStepVC ()
 @property (weak, nonatomic) IBOutlet UITextField *password1;
@@ -18,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title=@"请输入新密码";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -26,6 +29,26 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)submitButtonPress:(id)sender {
+    if(self.password1.text.length>0 &&self.password2.text.length>0 && [self.password2.text isEqualToString:self.password1.text]){
+        [[MLSession current] forgetAndChangePasswordWithPhoneNum:self.phoneNum
+                                                         receipt:self.receipt
+                                                     rawPassword:self.password1.text
+                                                         success:^{
+                                                                     [UIAlertView showWithTitle:@"提示"
+                                                                                        message:@"重置密码成功，请重新登录。"
+                                                                              cancelButtonTitle:@"确定" otherButtonTitles:nil tapBlock:^(UIAlertView * alertView, NSInteger buttonIndex) {
+
+                                                                                 [self.navigationController popToRootViewControllerAnimated:YES];
+                                                                             }];
+
+                                                         } fail:^(NSInteger i, id o) {
+                    [TSMessage showNotificationInViewController:self.navigationController
+                                                          title:@"出错了"
+                                                       subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                           type:TSMessageNotificationTypeError];
+                }];
+    }
+
 }
 
 /*

@@ -76,4 +76,6 @@
 - (void)sendConfirmCodeWithPhone:(NSString *)phone success:(void (^)(NSString *confirmId))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)validateConfirmCodeWithCode:(NSString *)code confirmId:(NSString *)confirmId success:(void (^)(NSString *receipt))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)forgetAndChangePasswordWithPhoneNum:(NSString *)phoneNum receipt:(NSString *)receipt rawPassword:(NSString *)rawPassword success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ForgetPasswordSecondStepVC : UIViewController
-
+@property (nonatomic, strong)NSString *receipt;
+@property (nonatomic, strong)NSString *phoneNum;
 @end

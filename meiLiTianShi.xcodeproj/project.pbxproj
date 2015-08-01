@@ -134,6 +134,7 @@
 		3CDC5BA759902DF08F71300F /* SAMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC559E20231836137161B5 /* SAMTextField.m */; };
 		3CDC5BE729287BA50D2C1AD7 /* selectPhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */; };
 		3CDC5C15B2BDC6BC40940A79 /* IDMTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC531756E63DE800130A98 /* IDMTapDetectingView.m */; };
+		3CDC5C1F41BB0C44DC0E5FBD /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5896332D47A9F0498351 /* SZTextView.m */; };
 		3CDC5C864005BB6F709A5105 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5748AC0105922B97DB85 /* NSString+MD5.m */; };
 		3CDC5CB35C89A248328BF64C /* MLJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FFDC7CE5565D2D71E0C /* MLJsonModel.m */; };
 		3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */; };
@@ -143,6 +144,7 @@
 		3CDC5DD9E3216F755CE44989 /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DBDEFAA0714824AF0B9 /* SLKTypingIndicatorView.m */; };
 		3CDC5DE51352BF9C4B81C12C /* XLRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5F7AE5260A30F5A88CE3 /* XLRatingView.m */; };
 		3CDC5DFB489609637AE3625F /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EE28E8625F6FAC9F486 /* SLKTextView+SLKAdditions.m */; };
+		3CDC5E80DC65DAB95EFAF04D /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B0605BDC5ADFE568BAE /* UIAlertView+Blocks.m */; };
 		3CDC5E81EA016B78E6623E89 /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */; };
 		3CDC5E936900CD70686871B2 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A3594D3209A128BC4A2 /* UserModel.m */; };
 		3CDC5EEFE2EFD58CD35EC6B9 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC597108C0E2C1526D42BA /* CategoryModel.m */; };
@@ -306,6 +308,7 @@
 		3CDC545CA79CC064904E5255 /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextView.m; sourceTree = "<group>"; };
 		3CDC545D3F894C23E92D6E51 /* SAMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMTextField.h; sourceTree = "<group>"; };
 		3CDC548152DD405F41F0A607 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
+		3CDC548F9075268B86941E0B /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
 		3CDC54DED21B78D259F20122 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		3CDC54FDCCA040E65431F2AC /* UserDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailModel.m; sourceTree = "<group>"; };
 		3CDC552F991F2F3361BF0908 /* pt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = pt; path = Localizable.strings; sourceTree = "<group>"; };
@@ -332,7 +335,9 @@
 		3CDC5780F7EA37FAFF250204 /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
 		3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
 		3CDC57C27AF08E2667922489 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
+		3CDC57D2CCF36F450D65F7DE /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
+		3CDC5896332D47A9F0498351 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
 		3CDC58B81A7108D668E1ECC6 /* UserDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailModel.h; sourceTree = "<group>"; };
 		3CDC58DD20D38D9D818A26BB /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKInputAccessoryView.h; sourceTree = "<group>"; };
 		3CDC58F3CE21869816BB0977 /* IDMPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMPhotoBrowser.m; sourceTree = "<group>"; };
@@ -353,6 +358,7 @@
 		3CDC5AD3A598A3AD743782A9 /* IDMZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMZoomingScrollView.h; sourceTree = "<group>"; };
 		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
 		3CDC5AF995573CBE78549469 /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
+		3CDC5B0605BDC5ADFE568BAE /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		3CDC5B17BB76E6736829D551 /* UIScrollView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5B18E9D68F95E3DFBE32 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC5B1A2E06FCD1915E202A /* IDMZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMZoomingScrollView.m; sourceTree = "<group>"; };
@@ -801,6 +807,24 @@
 			path = RatingView;
 			sourceTree = "<group>";
 		};
+		3CDC58C9FD3EF10E2B2ADF5F /* SZTextView */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC548F9075268B86941E0B /* SZTextView.h */,
+				3CDC5896332D47A9F0498351 /* SZTextView.m */,
+			);
+			path = SZTextView;
+			sourceTree = "<group>";
+		};
+		3CDC591BB09CD55729AD15BE /* UIAlertView+Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC57D2CCF36F450D65F7DE /* UIAlertView+Blocks.h */,
+				3CDC5B0605BDC5ADFE568BAE /* UIAlertView+Blocks.m */,
+			);
+			path = "UIAlertView+Blocks";
+			sourceTree = "<group>";
+		};
 		3CDC594C877B5D22A481C3D4 /* pt.lproj */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,6 +872,8 @@
 				3CDC57BC2825CC3B4B1918B8 /* IDMPhotoBrowser */,
 				3CDC5F42D2BB86D53A714588 /* UMessage_Sdk_1.1.0 */,
 				3CDC527105BFF6B36F89FF8C /* SAMTextField */,
+				3CDC58C9FD3EF10E2B2ADF5F /* SZTextView */,
+				3CDC591BB09CD55729AD15BE /* UIAlertView+Blocks */,
 			);
 			path = frameworks;
 			sourceTree = "<group>";
@@ -1290,6 +1316,8 @@
 				3CDC550B3DB3F66BF1D0F735 /* UserDetailModel.m in Sources */,
 				3CDC5C864005BB6F709A5105 /* NSString+MD5.m in Sources */,
 				3CDC5BA759902DF08F71300F /* SAMTextField.m in Sources */,
+				3CDC5C1F41BB0C44DC0E5FBD /* SZTextView.m in Sources */,
+				3CDC5E80DC65DAB95EFAF04D /* UIAlertView+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
