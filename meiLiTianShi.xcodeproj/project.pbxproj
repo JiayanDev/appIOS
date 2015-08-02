@@ -102,6 +102,8 @@
 		3CDC550AC3EDFFBAAE594AAB /* ELCAlbumPickerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */; };
 		3CDC550B3DB3F66BF1D0F735 /* UserDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC54FDCCA040E65431F2AC /* UserDetailModel.m */; };
 		3CDC5520549F22F1F2808900 /* IDMZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B1A2E06FCD1915E202A /* IDMZoomingScrollView.m */; };
+		3CDC5544524F0BF1C9123EAF /* area.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5E9A5D7962A9A3B71D89 /* area.json */; };
+		3CDC555E26CDF7F2AC2B94C6 /* AreaSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B57171E8E5F55DA5FB8 /* AreaSelectModel.m */; };
 		3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582A761F21A9AC5CC46F /* MLRandom.m */; };
 		3CDC55EB3E37279B48E96DCE /* InfoIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC568DD217DBE46686D38B /* InfoIndexVC.m */; };
 		3CDC56BBCA2BD635C460E01C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC585F2F487C220B3AAF16 /* Localizable.strings */; };
@@ -310,6 +312,7 @@
 		3CDC545D3F894C23E92D6E51 /* SAMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMTextField.h; sourceTree = "<group>"; };
 		3CDC548152DD405F41F0A607 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC548F9075268B86941E0B /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
+		3CDC54D820DAE03CF8051DE9 /* AreaSelectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaSelectModel.h; sourceTree = "<group>"; };
 		3CDC54DED21B78D259F20122 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		3CDC54FDCCA040E65431F2AC /* UserDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailModel.m; sourceTree = "<group>"; };
 		3CDC552F991F2F3361BF0908 /* pt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = pt; path = Localizable.strings; sourceTree = "<group>"; };
@@ -365,6 +368,7 @@
 		3CDC5B1A2E06FCD1915E202A /* IDMZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMZoomingScrollView.m; sourceTree = "<group>"; };
 		3CDC5B23C177FE8EFE2343E6 /* 搜索@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索@2x.png"; sourceTree = "<group>"; };
 		3CDC5B48F4DC4821E240A707 /* XLFormTextDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormTextDetailViewController.h; sourceTree = "<group>"; };
+		3CDC5B57171E8E5F55DA5FB8 /* AreaSelectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaSelectModel.m; sourceTree = "<group>"; };
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKInputAccessoryView.m; sourceTree = "<group>"; };
 		3CDC5BE4CECDEB8B3391024B /* IDMPBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPBConstants.h; sourceTree = "<group>"; };
@@ -399,6 +403,7 @@
 		3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryBookModel.m; sourceTree = "<group>"; };
 		3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesArrayWrap.m; sourceTree = "<group>"; };
 		3CDC5E8F9D0269EEB4D0330A /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
+		3CDC5E9A5D7962A9A3B71D89 /* area.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = area.json; sourceTree = "<group>"; };
 		3CDC5EDE45048E6EBD0D401C /* RespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondModel.m; sourceTree = "<group>"; };
 		3CDC5EE28E8625F6FAC9F486 /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5EF4E3D8E1054B3C731A /* ELCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerController.h; sourceTree = "<group>"; };
@@ -712,6 +717,8 @@
 				3CDC54DED21B78D259F20122 /* EventModel.h */,
 				3CDC54FDCCA040E65431F2AC /* UserDetailModel.m */,
 				3CDC58B81A7108D668E1ECC6 /* UserDetailModel.h */,
+				3CDC5B57171E8E5F55DA5FB8 /* AreaSelectModel.m */,
+				3CDC54D820DAE03CF8051DE9 /* AreaSelectModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -783,6 +790,7 @@
 				3CDC5B63426FE4A04BE7F99C /* blue@2x.png */,
 				3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */,
 				3CDC5B23C177FE8EFE2343E6 /* 搜索@2x.png */,
+				3CDC5E9A5D7962A9A3B71D89 /* area.json */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1199,6 +1207,7 @@
 				070E2ED71B5B76A40041847A /* DiaryListCell.xib in Resources */,
 				07A699401B68731100A9D2EF /* PhoneLoginVC.xib in Resources */,
 				07A699391B686EBD00A9D2EF /* 密码@2x.png in Resources */,
+				3CDC5544524F0BF1C9123EAF /* area.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1332,6 +1341,7 @@
 				3CDC5C1F41BB0C44DC0E5FBD /* SZTextView.m in Sources */,
 				3CDC5E80DC65DAB95EFAF04D /* UIAlertView+Blocks.m in Sources */,
 				3CDC598E06527831C89337B0 /* XLFormTextDetailViewController.m in Sources */,
+				3CDC555E26CDF7F2AC2B94C6 /* AreaSelectModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

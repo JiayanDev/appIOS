@@ -18,6 +18,7 @@ pod 'MJRefresh'
   pod 'DACircularProgress'
   pod 'pop'
   pod 'RegExCategories', '~> 1.0'
+  pod 'RMUniversalAlert'
 
 end
 
