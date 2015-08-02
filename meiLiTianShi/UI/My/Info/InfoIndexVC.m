@@ -11,6 +11,8 @@
 #import "TSMessage.h"
 #import "UserDetailModel.h"
 #import "XLFormTextDetailViewController.h"
+#import "AreaSelectTVC.h"
+#import "AreaSelectModel.h"
 
 
 @implementation InfoIndexVC {
@@ -60,7 +62,8 @@
     //row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"];    [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kArea rowType:XLFormRowDescriptorTypeSelectorPush title:@"地区"];
-//    row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    //row.value=[AreaSelectModel initAndFindPositionForName:<#(NSString *)name#>]
+    row.action.viewControllerClass=[AreaSelectTVC class];
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kBirthday rowType:XLFormRowDescriptorTypeDate title:@"生日"];
@@ -101,6 +104,7 @@
                 [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"男"]
                 :
                 [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"女"]);
+        setValue(kArea,[AreaSelectModel initAndFindPositionForName:model.city]);
 
 
 

@@ -18,4 +18,11 @@
 @property (nonatomic, assign)NSString *level;
 @property (nonatomic, strong)NSString *name;
 @property (nonatomic, strong)NSArray <AreaSelectModel,Optional>*children;
+@property (nonatomic, strong, nullable)AreaSelectModel <Ignore>*parent;
+
++ (AreaSelectModel *)initAndFindPositionForName:(NSString *)name;
+
++ (NSArray *)list;
+
+- (AreaSelectModel *)findForName:(NSString *)name;
 @end
