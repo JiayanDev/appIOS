@@ -74,8 +74,9 @@
 //    row.value=[MLSession current].currentUser.name;
     [section addFormRow:row];
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCellphone rowType:XLFormRowDescriptorTypePhone title:@"手机"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCellphone rowType:XLFormRowDescriptorTypeSelectorPush title:@"手机"];
 //    row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    row.disabled=@YES;
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kWeixin rowType:XLFormRowDescriptorTypeSelectorPush title:@"微信"];
@@ -112,6 +113,9 @@
         if(model.birthday){
             setValue(kBirthday,[NSDate dateWithTimeIntervalSince1970:[model.birthday unsignedIntegerValue]])
         }
+
+        setValue(kCellphone,model.phone);
+        setValue(kWeixin,model.bindWX?@"已绑定":@"未绑定");
 
 
 
