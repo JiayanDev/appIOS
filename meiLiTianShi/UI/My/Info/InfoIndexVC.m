@@ -66,8 +66,12 @@
     row.action.viewControllerClass=[AreaSelectTVC class];
     [section addFormRow:row];
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kBirthday rowType:XLFormRowDescriptorTypeDate title:@"生日"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kBirthday rowType:XLFormRowDescriptorTypeSelectorPush title:@"生日"];
 //    row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    row.action.viewControllerClass=[XLFormTextDetailViewController class];
+    row.pushConfigs[kPushInnerRowType]=XLFormRowDescriptorTypeDate;
+    //row.pushConfigs[kPushInnerTitle]=XLFormRowDescriptorTypeText;
+//    row.value=[MLSession current].currentUser.name;
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCellphone rowType:XLFormRowDescriptorTypePhone title:@"手机"];
@@ -105,7 +109,9 @@
                 :
                 [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"女"]);
         setValue(kArea,[AreaSelectModel initAndFindPositionForName:model.city]);
-
+        if(model.birthday){
+            setValue(kBirthday,[NSDate dateWithTimeIntervalSince1970:[model.birthday unsignedIntegerValue]])
+        }
 
 
 

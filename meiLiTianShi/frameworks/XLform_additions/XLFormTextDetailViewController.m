@@ -28,6 +28,8 @@
 #import "RegExCategories.h"
 #import <objc/runtime.h>
 
+#import "NSDate+XLformPushDisplay.h"
+
 
 @implementation XLFormRowDescriptor(push)
 
@@ -113,6 +115,7 @@
         return;
     }
 
+    if([[self.row cellForFormController:self] isKindOfClass:[XLFormTextFieldCell class]]){
     NSString *s= ((XLFormTextFieldCell *)[self.row cellForFormController:self]).textField.text;
     if([self.rowDescriptor.pushConfigs[kPushInnerRowType] isEqualToString: XLFormRowDescriptorTypeDecimal]){
         if([s isMatch:RX(@"^\\-?\\d+(\\.\\d*)?$")]){
@@ -138,6 +141,7 @@
             [alert show];
             return;
         }
+    }
     }
 
     [self.tableView endEditing:YES];
