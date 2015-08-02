@@ -141,6 +141,7 @@
     //如果第三方程序向微信发送了sendReq的请求，那么onResp会被回调。sendReq请求调用后，会切到微信终端程序界面。
     if([resp isKindOfClass:[SendAuthResp class]]){
         [[MLSession current].presentingWxLoginVC handleWxAuthRespond:(SendAuthResp *) resp];
+        [MLSession current].presentingWxLoginVC=nil;
     }
 }
 

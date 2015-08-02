@@ -11,6 +11,7 @@
 #import "SuggestionsVC.h"
 #import "AboutUsVC.h"
 #import "MLSession.h"
+#import "PhoneBindVC.h"
 
 @interface ConfigIndexVC ()
 
@@ -18,7 +19,7 @@
 
 @implementation ConfigIndexVC
 
-
+#define kChangePassword @"changepassword"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,7 +39,7 @@
         [formDescriptor addFormSection:section];
 
 
-        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"mima"
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:kChangePassword
                                                     rowType:XLFormRowDescriptorTypeSelectorPush title:@"修改账户密码"];
 
         //row.action.viewControllerClass=[MyDiaryBookListTVC class];
@@ -95,6 +96,17 @@
 
     return [super initWithForm:formDescriptor];
 
+}
+
+
+- (void)didSelectFormRow:(XLFormRowDescriptor *)formRow {
+    [super didSelectFormRow:formRow];
+    if([formRow.tag isEqualToString:kChangePassword]){
+        PhoneBindVC *vc= [[PhoneBindVC alloc] init];
+        vc.type=PhoneBindVcType_changePasswordFirstStep;
+        [self.navigationController pushViewController:vc animated:YES];
+
+    }
 }
 
 @end

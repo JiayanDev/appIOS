@@ -15,6 +15,7 @@
 #import "DiaryModel.h"
 #import "HospitalModel.h"
 #import "DoctorModel.h"
+#import "WXApiObject.h"
 #import "UploadTokenModel.h"
 #import "UserModel.h"
 #import "NSArray+toJsonString.h"
@@ -630,6 +631,38 @@ constructingBodyWithBlock:constructingBodyWithBlock
 -(void)loginWithWeixinCode:(NSString *)wxCode
               success:(void(^)(UserDetailModel *,NSString *wxReceipt))success
                  fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d= [NSMutableDictionary dictionary];
+//    d[@"configVersion"]= @1.0;
+    if (self.deviceToken){
+        d[@"deviceToken"]=self.deviceToken;
+    }
+    d[@"wxCode"]=wxCode;
+
+    [self sendPost:@"user/login"
+             param:d
+           success:^(id o) {
+               if(o[@"token"]){
+                   self.token=o[@"token"];
+               }
+
+               if(o[@"wxReceipt"]){
+                   success(nil,o[@"wxReceipt"]);
+               }else{
+                   UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+                   self.isLogined=YES;
+                   self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
+                   success(m,nil);
+               }
+           } failure:failure];
+
+}
+
+//todo not finish
+-(void)bindWeixinWithWeixinCode:(NSString *)wxCode
+                       phoneNum:(NSString *)phoneNum
+
+                   success:(void(^)(UserDetailModel *,NSString *wxReceipt))success
+                      fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [NSMutableDictionary dictionary];
 //    d[@"configVersion"]= @1.0;
     if (self.deviceToken){

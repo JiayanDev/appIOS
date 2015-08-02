@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLSession.h"
 
 @class SendAuthResp;
 
-@interface LoginWaySelectVC : UIViewController
+@interface LoginWaySelectVC : UIViewController <wxRespondVC>
 
 - (void)handleWxAuthRespond:(SendAuthResp *)resp;
 @end

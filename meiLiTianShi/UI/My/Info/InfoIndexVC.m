@@ -13,8 +13,12 @@
 #import "XLFormTextDetailViewController.h"
 #import "AreaSelectTVC.h"
 #import "AreaSelectModel.h"
+#import "RMUniversalAlert.h"
+#import "PhoneBindVC.h"
 
-
+@interface InfoIndexVC()
+@property (nonatomic, strong)UserDetailModel *detailModel;
+@end
 @implementation InfoIndexVC {
 
 }
@@ -99,9 +103,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getData];
 
+}
+
+
+-(void)getData{
     [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
 
+        self.detailModel=model;
         setValue(kAvatar, model.avatar);
         setValue(kNickname, model.name);
         setValue(kSex, [model.gender boolValue]
@@ -126,6 +136,33 @@
                                     subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                         type:TSMessageNotificationTypeError];
     }];
+}
+
+- (void)didSelectFormRow:(XLFormRowDescriptor *)formRow {
+    [super didSelectFormRow:formRow];
+    if([formRow.tag isEqualToString:kWeixin]){
+
+        [RMUniversalAlert showActionSheetInViewController:self
+                                                withTitle:nil
+                                                  message:nil
+                                        cancelButtonTitle:@"取消"
+                                   destructiveButtonTitle:nil
+                                        otherButtonTitles:@[self.detailModel.bindWX?
+                                                @"更换绑定的微信":
+                                                @"绑定微信"]
+                       popoverPresentationControllerBlock:nil
+                                                 tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+                                                     if (buttonIndex == alert.cancelButtonIndex) {
+                                                         NSLog(@"Cancel Tapped");
+                                                     } else if (buttonIndex >= alert.firstOtherButtonIndex) {
+
+                                                         PhoneBindVC *vc= [[PhoneBindVC alloc] init];
+                                                         vc.type=PhoneBindVcType_bindWechatFirstStep;
+                                                         [self.navigationController pushViewController:vc
+                                                                                              animated:YES];
+                                                     }
+                                                 }];
+    }
 }
 
 

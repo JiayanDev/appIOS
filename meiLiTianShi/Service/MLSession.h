@@ -14,7 +14,11 @@
 @class UserModel;
 @class UserDetailModel;
 @class LoginWaySelectVC;
+@class SendAuthResp;
 
+@protocol wxRespondVC
+@required - (void)handleWxAuthRespond:(SendAuthResp *)resp;
+@end
 
 @interface MLSession : NSObject
 
@@ -27,7 +31,7 @@
 
 @property (nonatomic, assign)BOOL isLogined;
 
-@property (nonatomic, strong)LoginWaySelectVC *presentingWxLoginVC;
+@property (nonatomic, strong)UIViewController<wxRespondVC> *presentingWxLoginVC;
 
 + (MLSession *)current;
 
