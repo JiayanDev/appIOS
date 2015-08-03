@@ -112,6 +112,7 @@
         [[MLSession current] logoutSuccess:^{
             [TSMessage showNotificationWithTitle:@"已经退出"
                                             type:TSMessageNotificationTypeMessage];
+            [self.navigationController popViewControllerAnimated:YES];
         } fail:^(NSInteger i, id o) {
             [TSMessage showNotificationWithTitle:@"出错了"
                                         subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
