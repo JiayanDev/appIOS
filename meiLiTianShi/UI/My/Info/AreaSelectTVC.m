@@ -150,7 +150,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     AreaSelectModel *data;
     if (!self.parent && indexPath.section == 0) {
-
+        if(self.currentCity){
+            self.rowDescriptor.value = self.currentCity;
+            for (UIViewController *one in [[self.navigationController viewControllers] reverseObjectEnumerator]) {
+                if (![one isKindOfClass:[AreaSelectTVC class]]) {
+                    [self.navigationController popToViewController:one animated:YES];
+                    break;
+                }
+            }
+        }
     } else {
 
 

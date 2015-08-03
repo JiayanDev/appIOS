@@ -123,11 +123,11 @@
         vc.phoneNum=self.phoneInput.text;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (self.type==PhoneBindVcType_bindWechatFirstStep){
-        [MLSession current].presentingWxLoginVC=self;
-        SendAuthReq *req= [[SendAuthReq alloc] init];
-        req.scope=@"snsapi_userinfo" ;
-        req.state = @"meilitianshi_weixindenglu" ;
-        [WXApi sendReq:req];
+//        [MLSession current].presentingWxLoginVC=self;
+//        SendAuthReq *req= [[SendAuthReq alloc] init];
+//        req.scope=@"snsapi_userinfo" ;
+//        req.state = @"meilitianshi_weixindenglu" ;
+//        [WXApi sendReq:req];
     }else if (self.type==PhoneBindVcType_changePasswordFirstStep){
         ChangePasswordSecondStepFTV *vc= [[ChangePasswordSecondStepFTV alloc] init];
         vc.receipt=self.receipt;

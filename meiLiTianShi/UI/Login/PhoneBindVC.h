@@ -17,7 +17,7 @@ typedef NS_ENUM(NSUInteger , PhoneBindVcType){
     PhoneBindVcType_changePasswordFirstStep,
 };
 
-@interface PhoneBindVC : UIViewController<wxRespondVC>
+@interface PhoneBindVC : UIViewController
 @property (nonatomic, assign)PhoneBindVcType type;
 @property (nonatomic, strong)NSString *wxReceipt_afterWechatLogin;
 

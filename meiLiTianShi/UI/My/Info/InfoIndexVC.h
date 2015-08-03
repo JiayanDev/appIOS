@@ -6,7 +6,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "XLFormRowDescriptor.h"
+#import "MLSession.h"
 
-@interface InfoIndexVC : XLFormViewController <XLFormRowDescriptorViewController>
+@interface InfoIndexVC : XLFormViewController <XLFormRowDescriptorViewController, wxRespondVC>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 @end

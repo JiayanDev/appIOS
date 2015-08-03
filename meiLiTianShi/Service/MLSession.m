@@ -431,6 +431,14 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 }
 
+-(void)updateUserInfo:(NSDictionary *)infoNeedUpdate success:(void(^)(void))success  fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"user/update"
+             param:infoNeedUpdate
+           success:^(id o) {
+                success();
+           } failure:failure];
+}
+
 
 -(void)uploadOneImage:(UIImage *)image
         uploadToken:(UploadTokenModel *)uploadToken
@@ -723,32 +731,23 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 //todo not finish
 -(void)bindWeixinWithWeixinCode:(NSString *)wxCode
-                       phoneNum:(NSString *)phoneNum
 
-                   success:(void(^)(UserDetailModel *,NSString *wxReceipt))success
+
+                   success:(void(^)(void))success
                       fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [NSMutableDictionary dictionary];
-//    d[@"configVersion"]= @1.0;
-    if (self.deviceToken){
-        d[@"deviceToken"]=self.deviceToken;
-    }
+
+
     d[@"wxCode"]=wxCode;
 
-    [self sendPost:@"user/login"
+    [self sendPost:@"user/bind_account"
              param:d
            success:^(id o) {
                if(o[@"token"]){
                    self.token=o[@"token"];
                }
 
-               if(o[@"wxReceipt"]){
-                   success(nil,o[@"wxReceipt"]);
-               }else{
-                   UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
-                   self.isLogined=YES;
-                   self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
-                   success(m,nil);
-               }
+               success();
            } failure:failure];
 
 }

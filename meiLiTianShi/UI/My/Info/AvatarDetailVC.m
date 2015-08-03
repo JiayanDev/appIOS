@@ -73,6 +73,10 @@
                                                                                              //self.rowDescriptor.value=url;
                                                                                              [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                                                                              self.avatarUrl=url;
+                                                                                             [self.avatar sd_setImageWithURL:[NSURL URLWithString:url]
+                                                                                                            placeholderImage:nil
+                                                                                                                     options:SDWebImageRefreshCached];
+
 
 
                                                                                          } fail:^(NSInteger i, id o) {

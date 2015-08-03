@@ -16,22 +16,28 @@
 #import "RMUniversalAlert.h"
 #import "PhoneBindVC.h"
 #import "AvatarDetailVC.h"
+#import "WXApiObject.h"
+#import "WXApi.h"
 
 @interface InfoIndexVC()
 @property (nonatomic, strong)UserDetailModel *detailModel;
+@property (nonatomic, assign)BOOL inSetValue;
 @end
 @implementation InfoIndexVC {
 
 }
 
 #define kAvatar @"avatar"
-#define kNickname @"nickname"
-#define kSex @"sex"
+#define kNickname @"name"
+#define kSex @"gender"
 #define kArea @"area"
 #define kBirthday @"birthday"
 #define kCellphone @"cellphone"
 #define kWeixin @"weixin"
 #define setValue(tagV,valueV)     [self.form formRowWithTag:tagV].value=valueV;
+#define getValue(k) [self.form formRowWithTag:k].value
+#define getValueS(k) ((NSString*)getValue(k))
+
 
 
 -(id)init
@@ -111,7 +117,7 @@
 
 -(void)getData{
     [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
-
+        self.inSetValue=YES;
         self.detailModel=model;
         setValue(kAvatar, model.avatar);
         setValue(kNickname, model.name);
@@ -131,6 +137,7 @@
 
 
         [self.tableView reloadData];
+        self.inSetValue=NO;
 
     } fail:^(NSInteger i, id o) {
         [TSMessage showNotificationWithTitle:@"出错了"
@@ -157,20 +164,71 @@
                                                          NSLog(@"Cancel Tapped");
                                                      } else if (buttonIndex >= alert.firstOtherButtonIndex) {
 
-                                                         PhoneBindVC *vc= [[PhoneBindVC alloc] init];
-                                                         vc.type=PhoneBindVcType_bindWechatFirstStep;
-                                                         [self.navigationController pushViewController:vc
-                                                                                              animated:YES];
+                                                         [MLSession current].presentingWxLoginVC=self;
+                                                         SendAuthReq *req= [[SendAuthReq alloc] init];
+                                                         req.scope=@"snsapi_userinfo" ;
+                                                         req.state = @"meilitianshi_weixindenglu" ;
+                                                         [WXApi sendReq:req];
                                                      }
                                                  }];
     }
 }
 
 
+- (void)handleWxAuthRespond:(SendAuthResp *)resp {
+    if(resp.errCode!=0){
+        [TSMessage showNotificationInViewController:self.navigationController
+                                              title:@"微信登陆取消"
+                                           subtitle:nil
+                                               type:TSMessageNotificationTypeError];
+        return ;
+    }
+
+    [[MLSession current] bindWeixinWithWeixinCode:resp.code
+                                          success:^{
+                                              [TSMessage showNotificationWithTitle:@"修改成功" type:TSMessageNotificationTypeSuccess];
+
+                                              self.detailModel.bindWX=YES;
+                                              [self.tableView reloadData];
+                                          } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
+            }];
+}
+
+
 - (void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue {
-//    if([formRow.tag isEqualToString:]){
-//
-//    }
+    if(self.inSetValue){return;}
+    void (^succ)(void) =^{
+        [TSMessage showNotificationWithTitle:@"修改成功" type:TSMessageNotificationTypeSuccess];
+
+    };
+
+    void (^fail)(NSInteger i, id o) =^(NSInteger i, id o) {
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
+        [self getData];
+    };
+
+    if([formRow.tag isEqualToString:kAvatar]||[formRow.tag isEqualToString:kNickname]){
+        [[MLSession current] updateUserInfo:@{formRow.tag:getValueS(formRow.tag)} success:succ fail:fail];
+    }
+
+
+    if([formRow.tag isEqualToString:kSex]){
+        [[MLSession current] updateUserInfo:@{formRow.tag: ((XLFormOptionsObject*)getValue(kSex)).formValue} success:succ fail:fail];
+    }
+
+
+    if([formRow.tag isEqualToString:kArea]){
+        [[MLSession current] updateUserInfo:@{@"province": ((AreaSelectModel *)getValue(kArea)).parent.name,@"city":((AreaSelectModel *)getValue(kArea)).name} success:succ fail:fail];
+    }
+
+    if([formRow.tag isEqualToString:kBirthday] && [getValue(kBirthday) isKindOfClass:[NSDate class]]){
+        [[MLSession current] updateUserInfo:@{kBirthday: @([((NSDate *) getValue(kBirthday)) timeIntervalSince1970])} success:succ fail:fail];
+    }
 }
 
 

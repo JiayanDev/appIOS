@@ -67,6 +67,8 @@
 
 - (void)getUserDetail_success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)updateUserInfo:(NSDictionary *)infoNeedUpdate success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)uploadOneImage:(UIImage *)image uploadToken:(UploadTokenModel *)uploadToken success:(void (^)(NSString *url))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)uploadImages:(NSArray *)imageDatas uploadToken:(UploadTokenModel *)uploadToken allFinish:(void (^)(NSArray *urls, NSArray *fails, NSArray *remainImageDatas))success;
@@ -78,6 +80,8 @@
 - (void)loginWithPhone:(NSString *)phone password:(NSString *)rawPassword success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)loginWithWeixinCode:(NSString *)wxCode success:(void (^)(UserDetailModel *, NSString *))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)bindWeixinWithWeixinCode:(NSString *)wxCode success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)sendConfirmCodeWithPhone:(NSString *)phone success:(void (^)(NSString *confirmId))success fail:(void (^)(NSInteger, id))failure;
 
