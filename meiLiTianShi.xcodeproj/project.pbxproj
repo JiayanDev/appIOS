@@ -43,6 +43,8 @@
 		075AC8C11B6E0EDB00C917B5 /* AreaSelectTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075AC8BF1B6E0EDB00C917B5 /* AreaSelectTVC.xib */; };
 		075AC8C41B6E740C00C917B5 /* BindWeixinFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075AC8C31B6E740C00C917B5 /* BindWeixinFVC.m */; };
 		075AC8C71B6E7E1900C917B5 /* ChangePasswordSecondStepFTV.m in Sources */ = {isa = PBXBuildFile; fileRef = 075AC8C61B6E7E1900C917B5 /* ChangePasswordSecondStepFTV.m */; };
+		075AC8CB1B6F176E00C917B5 /* AvatarDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075AC8C91B6F176E00C917B5 /* AvatarDetailVC.m */; };
+		075AC8CC1B6F176E00C917B5 /* AvatarDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075AC8CA1B6F176E00C917B5 /* AvatarDetailVC.xib */; };
 		076767A81B4E601500F73D00 /* ProjectSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 076767A61B4E601500F73D00 /* ProjectSelectVC.m */; };
 		076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076767A71B4E601500F73D00 /* ProjectSelectVC.xib */; };
 		077C67351B52C6BB00619740 /* ImageRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077C67341B52C6BB00619740 /* ImageRowCell.m */; };
@@ -231,6 +233,9 @@
 		075AC8C31B6E740C00C917B5 /* BindWeixinFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindWeixinFVC.m; sourceTree = "<group>"; };
 		075AC8C51B6E7E1900C917B5 /* ChangePasswordSecondStepFTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordSecondStepFTV.h; sourceTree = "<group>"; };
 		075AC8C61B6E7E1900C917B5 /* ChangePasswordSecondStepFTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordSecondStepFTV.m; sourceTree = "<group>"; };
+		075AC8C81B6F176E00C917B5 /* AvatarDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarDetailVC.h; sourceTree = "<group>"; };
+		075AC8C91B6F176E00C917B5 /* AvatarDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarDetailVC.m; sourceTree = "<group>"; };
+		075AC8CA1B6F176E00C917B5 /* AvatarDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarDetailVC.xib; sourceTree = "<group>"; };
 		076767A51B4E601500F73D00 /* ProjectSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectSelectVC.h; sourceTree = "<group>"; };
 		076767A61B4E601500F73D00 /* ProjectSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProjectSelectVC.m; sourceTree = "<group>"; };
 		076767A71B4E601500F73D00 /* ProjectSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProjectSelectVC.xib; sourceTree = "<group>"; };
@@ -964,6 +969,9 @@
 				075AC8BF1B6E0EDB00C917B5 /* AreaSelectTVC.xib */,
 				075AC8C21B6E740C00C917B5 /* BindWeixinFVC.h */,
 				075AC8C31B6E740C00C917B5 /* BindWeixinFVC.m */,
+				075AC8C81B6F176E00C917B5 /* AvatarDetailVC.h */,
+				075AC8C91B6F176E00C917B5 /* AvatarDetailVC.m */,
+				075AC8CA1B6F176E00C917B5 /* AvatarDetailVC.xib */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -1178,6 +1186,7 @@
 			files = (
 				0746078D1B4BBAF40035E08D /* MyDiaryBookListTVC.xib in Resources */,
 				072DCC4C1B43A1CE0091CBDE /* LaunchScreen.xib in Resources */,
+				075AC8CC1B6F176E00C917B5 /* AvatarDetailVC.xib in Resources */,
 				071AE18D1B60D25900CF149F /* AvatarTCell.xib in Resources */,
 				07FB9C371B4E145B000CCC45 /* CreateDiaryBookFVC.xib in Resources */,
 				07A699381B686EBD00A9D2EF /* 电话@2x.png in Resources */,
@@ -1363,6 +1372,7 @@
 				3CDC5502C8A843C6A8AE403C /* EventModel.m in Sources */,
 				3CDC55EB3E37279B48E96DCE /* InfoIndexVC.m in Sources */,
 				3CDC550B3DB3F66BF1D0F735 /* UserDetailModel.m in Sources */,
+				075AC8CB1B6F176E00C917B5 /* AvatarDetailVC.m in Sources */,
 				3CDC5C864005BB6F709A5105 /* NSString+MD5.m in Sources */,
 				3CDC5BA759902DF08F71300F /* SAMTextField.m in Sources */,
 				3CDC5C1F41BB0C44DC0E5FBD /* SZTextView.m in Sources */,

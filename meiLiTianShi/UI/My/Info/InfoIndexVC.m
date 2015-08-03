@@ -15,6 +15,7 @@
 #import "AreaSelectModel.h"
 #import "RMUniversalAlert.h"
 #import "PhoneBindVC.h"
+#import "AvatarDetailVC.h"
 
 @interface InfoIndexVC()
 @property (nonatomic, strong)UserDetailModel *detailModel;
@@ -45,7 +46,7 @@
 
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kAvatar rowType:XLFormRowDescriptorTypeAvatar title:@"头像"];
-    //row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    row.action.viewControllerClass=[AvatarDetailVC class];
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kNickname rowType:XLFormRowDescriptorTypeSelectorPush title:@"昵称"];

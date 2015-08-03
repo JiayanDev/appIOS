@@ -432,6 +432,70 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 
+-(void)uploadOneImage:(UIImage *)image
+        uploadToken:(UploadTokenModel *)uploadToken
+        success:(void (^)(NSString *url))success fail:(void (^)(NSInteger, id))failure {
+
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
+    NSData *imageData = UIImageJPEGRepresentation((UIImage *) image, 85);
+
+    NSError *serializationError = nil;
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer]
+            multipartFormRequestWithMethod:@"POST"
+                                 URLString:[[NSURL URLWithString:@"http://v0.api.upyun.com/jiayanimg/"] absoluteString]
+                                parameters:@{
+                                        @"policy" : uploadToken.policy,
+                                        @"signature" : uploadToken.signature
+                                }
+                 constructingBodyWithBlock:^(id <AFMultipartFormData> formData) {
+
+                     [formData appendPartWithFileData:imageData name:@"file" fileName:@"file" mimeType:@"image/jpeg"];
+
+                 }
+                                     error:&serializationError];
+
+
+    AFHTTPRequestOperationManager *m = [AFHTTPRequestOperationManager manager];
+    m.responseSerializer.acceptableContentTypes = [manager.responseSerializer.acceptableContentTypes setByAddingObject:@"text/html"];
+
+    AFHTTPRequestOperation *operation = [m
+            HTTPRequestOperationWithRequest:request
+                                    success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                        if ([responseObject[@"code"] integerValue] == 200) {
+                                            success([NSString stringWithFormat:@"http://jiayanimg.b0.upaiyun.com/%@", responseObject[@"url"]]);
+                                        } else {
+                                            NSHTTPURLResponse *response = [operation response];
+                                            NSString *contentType = [response MIMEType];
+                                            NSInteger statusCode = [response statusCode];
+                                            NSLog(@"Error to POST %@ - [%d] %@", [[operation request] URL], statusCode, [operation responseString]);
+                                            failure(statusCode, [operation responseString]);
+                                        }
+
+                                    }
+                                    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                        NSHTTPURLResponse *response = [operation response];
+                                        NSString *contentType = [response MIMEType];
+                                        NSInteger statusCode = [response statusCode];
+
+                                        if (([contentType compare:@"text/plain"] == NSOrderedSame)
+                                                || ([contentType compare:@"text/html"] == NSOrderedSame)) {
+                                            NSLog(@"Error to POST %@ - [%d] %@", [[operation request] URL], statusCode, [operation responseString]);
+                                            failure(statusCode, [operation responseString]);
+                                        }
+                                        else if ([contentType compare:@"application/json"] == NSOrderedSame) {
+                                            NSLog(@"Error to POST %@ - [%d] %@", [[operation request] URL], statusCode, [operation responseObject]);
+                                            failure(statusCode, [operation responseObject]);
+                                        }
+                                        else {
+                                            NSLog(@"Error to POST %@ - [%d]", [[operation request] URL], statusCode);
+                                            failure(statusCode, [operation responseString]);
+                                        }
+                                    }];
+
+    [manager.operationQueue addOperation:operation];
+
+}
+
 
 - (void)uploadImages:(NSArray *)imageDatas
          uploadToken:(UploadTokenModel *)uploadToken

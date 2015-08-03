@@ -8,6 +8,7 @@
 
 #import "AvatarTCell.h"
 #import "UIImageView+WebCache.h"
+#import "AvatarDetailVC.h"
 
 NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar";
 
@@ -47,7 +48,10 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
 
 -(void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller
 {
-    [self.formViewController.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:YES];
+//    [self.formViewController.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:YES];
+    AvatarDetailVC *vc= [[AvatarDetailVC alloc] init];
+    vc.rowDescriptor=self.rowDescriptor;
+    [self.formViewController.navigationController pushViewController:vc animated:YES];
 }
 
 

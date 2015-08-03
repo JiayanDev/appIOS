@@ -67,6 +67,8 @@
 
 - (void)getUserDetail_success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)uploadOneImage:(UIImage *)image uploadToken:(UploadTokenModel *)uploadToken success:(void (^)(NSString *url))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)uploadImages:(NSArray *)imageDatas uploadToken:(UploadTokenModel *)uploadToken allFinish:(void (^)(NSArray *urls, NSArray *fails, NSArray *remainImageDatas))success;
 
 - (void)registerWithParam:(NSDictionary *)data success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
