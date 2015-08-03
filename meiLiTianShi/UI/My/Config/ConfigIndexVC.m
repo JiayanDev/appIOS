@@ -12,6 +12,7 @@
 #import "AboutUsVC.h"
 #import "MLSession.h"
 #import "PhoneBindVC.h"
+#import "TSMessage.h"
 
 @interface ConfigIndexVC ()
 
@@ -20,6 +21,7 @@
 @implementation ConfigIndexVC
 
 #define kChangePassword @"changepassword"
+#define kLogout @"logout"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -86,7 +88,7 @@
         [formDescriptor addFormSection:section];
 
 
-        row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tuichu"
+        row = [XLFormRowDescriptor formRowDescriptorWithTag:kLogout
                                                     rowType:XLFormRowDescriptorTypeSelectorPush title:@"退出登录"];
 
         //row.action.viewControllerClass=[MyDiaryBookListTVC class];
@@ -106,6 +108,15 @@
         vc.type=PhoneBindVcType_changePasswordFirstStep;
         [self.navigationController pushViewController:vc animated:YES];
 
+    }else if([formRow.tag isEqualToString:kLogout]){
+        [[MLSession current] logoutSuccess:^{
+            [TSMessage showNotificationWithTitle:@"已经退出"
+                                            type:TSMessageNotificationTypeMessage];
+        } fail:^(NSInteger i, id o) {
+            [TSMessage showNotificationWithTitle:@"出错了"
+                                        subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                            type:TSMessageNotificationTypeError];
+        }];
     }
 }
 

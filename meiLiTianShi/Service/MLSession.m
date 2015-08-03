@@ -241,6 +241,13 @@ constructingBodyWithBlock:constructingBodyWithBlock
     }
 }
 
+-(void)logoutSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+    _token=nil;
+    self.isLogined=NO;
+    [self appInitGetSessionSuccess:success fail:failure];
+
+}
+
 
 -(void)getTopicListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
 //    #if USE_DEBUG_MOCK
