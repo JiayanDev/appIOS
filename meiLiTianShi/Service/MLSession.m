@@ -38,6 +38,7 @@ static MLSession *session;
 #define SESSION_OUT_OF_DATE -40
 #define keyChainId @"MLLogin"
 #define kToken @"token"
+#define kIsLogined @"islogined"
 
 #define USE_DEBUG_MOCK 1
 #define USE_TRY_FOR_SUCCESS 0
@@ -46,6 +47,7 @@ static MLSession *session;
 + (MLSession *)current {
     if(!session){
         session=[[MLSession alloc]init];
+        session.isLogined= [[NSUserDefaults standardUserDefaults] boolForKey:kIsLogined];
     }
     return session;
 }
@@ -54,6 +56,12 @@ static MLSession *session;
     _token=token;
     UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:keyChainId];
     keychain[kToken]=token;
+}
+
+-(void)setIsLogined:(BOOL)isLogined {
+    _isLogined=isLogined;
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsLogined];
+
 }
 
 
@@ -215,12 +223,17 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
     NSString *token=keychain[kToken];
     self.token=token;
-    if(token && [token isKindOfClass:[NSString class]] &&token.length>0 ){
-//        [self quickLoginSuccess:success
-//                           fail:failure];
+    if(self.isLogined ){
+        [self quickLoginSuccess:^{
+            success();
+        } fail:^(NSInteger i, id o) {
+            self.isLogined=NO;
+            [self appInitGetSessionSuccess:success
+                                      fail:failure];
+        }];
 
-                               [self appInitGetSessionSuccess:success
-                                                fail:failure];
+
+
 
     }else{
         [self appInitGetSessionSuccess:success
