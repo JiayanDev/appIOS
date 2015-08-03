@@ -166,7 +166,11 @@
 }
 
 
-
+- (void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)formRow oldValue:(id)oldValue newValue:(id)newValue {
+//    if([formRow.tag isEqualToString:]){
+//
+//    }
+}
 
 
 @end

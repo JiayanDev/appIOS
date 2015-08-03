@@ -34,11 +34,12 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
     [super update];
 
     if([self.rowDescriptor.value isKindOfClass:[UIImage class]]){
-        self.imageView.image=self.rowDescriptor.value;
+        self.avatar.image=self.rowDescriptor.value;
     }else{
-        [self.imageView sd_setImageWithURL:self.rowDescriptor.value
+        [self.avatar sd_setImageWithURL:self.rowDescriptor.value
                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                     self.imageView.image=image;
+                                     self.avatar.image=image;
+                                     [self needsUpdateConstraints];
                                      [self setNeedsDisplay];
                                  }];
     }
