@@ -39,6 +39,8 @@
 		074607881B4BB5540035E08D /* MyIndexVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074607861B4BB5540035E08D /* MyIndexVC.xib */; };
 		0746078C1B4BBAF40035E08D /* MyDiaryBookListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0746078A1B4BBAF40035E08D /* MyDiaryBookListTVC.m */; };
 		0746078D1B4BBAF40035E08D /* MyDiaryBookListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */; };
+		074804F71B70A78B00FA7C42 /* MyBanMeiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074804F51B70A78B00FA7C42 /* MyBanMeiCell.m */; };
+		074804F81B70A78B00FA7C42 /* MyBanMeiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074804F61B70A78B00FA7C42 /* MyBanMeiCell.xib */; };
 		075AC8C01B6E0EDB00C917B5 /* AreaSelectTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075AC8BE1B6E0EDB00C917B5 /* AreaSelectTVC.m */; };
 		075AC8C11B6E0EDB00C917B5 /* AreaSelectTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075AC8BF1B6E0EDB00C917B5 /* AreaSelectTVC.xib */; };
 		075AC8C41B6E740C00C917B5 /* BindWeixinFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075AC8C31B6E740C00C917B5 /* BindWeixinFVC.m */; };
@@ -226,6 +228,9 @@
 		074607891B4BBAF40035E08D /* MyDiaryBookListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDiaryBookListTVC.h; sourceTree = "<group>"; };
 		0746078A1B4BBAF40035E08D /* MyDiaryBookListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDiaryBookListTVC.m; sourceTree = "<group>"; };
 		0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyDiaryBookListTVC.xib; sourceTree = "<group>"; };
+		074804F41B70A78B00FA7C42 /* MyBanMeiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBanMeiCell.h; sourceTree = "<group>"; };
+		074804F51B70A78B00FA7C42 /* MyBanMeiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBanMeiCell.m; sourceTree = "<group>"; };
+		074804F61B70A78B00FA7C42 /* MyBanMeiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBanMeiCell.xib; sourceTree = "<group>"; };
 		075AC8BD1B6E0EDB00C917B5 /* AreaSelectTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaSelectTVC.h; sourceTree = "<group>"; };
 		075AC8BE1B6E0EDB00C917B5 /* AreaSelectTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaSelectTVC.m; sourceTree = "<group>"; };
 		075AC8BF1B6E0EDB00C917B5 /* AreaSelectTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaSelectTVC.xib; sourceTree = "<group>"; };
@@ -548,6 +553,9 @@
 				07A8BA811B6A16B1007EDE84 /* MyMeiLiTianShiVC.h */,
 				07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */,
 				07A8BA831B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib */,
+				074804F41B70A78B00FA7C42 /* MyBanMeiCell.h */,
+				074804F51B70A78B00FA7C42 /* MyBanMeiCell.m */,
+				074804F61B70A78B00FA7C42 /* MyBanMeiCell.xib */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -1197,6 +1205,7 @@
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
+				074804F81B70A78B00FA7C42 /* MyBanMeiCell.xib in Resources */,
 				070E2ED21B58E7A20041847A /* EventCell.xib in Resources */,
 				074607881B4BB5540035E08D /* MyIndexVC.xib in Resources */,
 				07FB9C411B4E1486000CCC45 /* CreateTopicFVC.xib in Resources */,
@@ -1372,6 +1381,7 @@
 				3CDC5502C8A843C6A8AE403C /* EventModel.m in Sources */,
 				3CDC55EB3E37279B48E96DCE /* InfoIndexVC.m in Sources */,
 				3CDC550B3DB3F66BF1D0F735 /* UserDetailModel.m in Sources */,
+				074804F71B70A78B00FA7C42 /* MyBanMeiCell.m in Sources */,
 				075AC8CB1B6F176E00C917B5 /* AvatarDetailVC.m in Sources */,
 				3CDC5C864005BB6F709A5105 /* NSString+MD5.m in Sources */,
 				3CDC5BA759902DF08F71300F /* SAMTextField.m in Sources */,
