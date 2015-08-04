@@ -836,7 +836,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 -(void)getMyBanMeiEventListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
 
-    [self sendGet:@"company/event/list"
+    [self sendGet:@"company/event/my_list"
             param:[pi toDictionary]
           success:^(id o) {
               NSMutableArray *r=[NSMutableArray array];

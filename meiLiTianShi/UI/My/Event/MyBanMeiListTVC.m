@@ -41,6 +41,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"MyBanMeiCell"
                                                bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kBanmeiCell];
 
+    [self getDataWithScrollingToTop:NO];
+
 }
 
 
@@ -61,8 +63,9 @@
 
                                                            [self.tableData addObjectsFromArray:array];
                                                            if(array.count==0){[self.tableView.footer noticeNoMoreData];}
+                                                           else{
                                                            self.pageIndicator=[PageIndicator initWithMaxId:@(((EventModel *)self.tableData[self.tableData.count-1]).id)];
-
+                                                           }
 
                                                            if (gotoTop){
                                                                self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);

@@ -113,8 +113,9 @@
 
                                                       if (self.type == TYPE_DIARY) {
                                                           [self.tableData addObjectsFromArray:array];
-                                                          if(array.count==0){[self.tableView.footer noticeNoMoreData];}
+                                                          if(array.count==0){[self.tableView.footer noticeNoMoreData];}else{
                                                           self.pageIndicator=[PageIndicator initWithMaxId:@(((DiaryBookModel *)self.tableData[self.tableData.count-1]).id)];
+                                                          }
 
                                                           [self.tableView reloadData];
                                                           if (gotoTop){
@@ -166,8 +167,9 @@
 
                                                        if (self.type == TYPE_TOPIC) {
                                                            [self.tableData addObjectsFromArray:array];
-                                                           if(array.count==0){[self.tableView.footer noticeNoMoreData];}
+                                                           if(array.count==0){[self.tableView.footer noticeNoMoreData];}else{
                                                            self.pageIndicator=[PageIndicator initWithMaxId:@(((TopicModel *)self.tableData[self.tableData.count-1]).id)];
+                                                           }
                                                            [self.tableView reloadData];
                                                            if (gotoTop){
                                                                self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
