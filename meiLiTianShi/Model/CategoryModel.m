@@ -71,4 +71,17 @@
     }
     return [NSString stringWithFormat:@"未知:%@",@(id)];
 }
+
++(NSString *)stringWithIdArray:(NSArray *)ids{
+    NSMutableArray *r=[NSMutableArray array];
+    for (NSNumber *anId in ids) {
+        [r addObject:[self stringWithId:[anId unsignedIntegerValue]]];
+    }
+
+    if(r.count==0){
+        return nil;
+    }else{
+        return [r componentsJoinedByString:@","];
+    }
+}
 @end

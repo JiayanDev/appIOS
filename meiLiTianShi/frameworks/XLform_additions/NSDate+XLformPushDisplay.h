@@ -6,4 +6,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (XLformPushDisplay)
+- (NSString *)displayTextWithDateAndHHMM;
 @end

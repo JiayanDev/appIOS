@@ -14,6 +14,10 @@
 #import "MLSession.h"
 #import "EventModel.h"
 #import "TSMessage.h"
+#import "MyBanMeiCell.h"
+#import "CategoryModel.h"
+
+#import "NSDate+XLformPushDisplay.h"
 
 
 @interface MyBanMeiListTVC ()
@@ -21,6 +25,7 @@
 @property (nonatomic, strong)PageIndicator *pageIndicator;
 @end
 
+#define kBanmeiCell @"banmeicell"
 @implementation MyBanMeiListTVC
 
 - (void)viewDidLoad {
@@ -31,6 +36,10 @@
     self.pageIndicator= [[PageIndicator alloc] init];
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
+
+    [self.tableView registerClass:[MyBanMeiCell class] forCellReuseIdentifier:kBanmeiCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MyBanMeiCell"
+                                               bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kBanmeiCell];
 
 }
 
@@ -82,11 +91,20 @@
 
 -(UITableViewCell *)tableView :(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    MyBanMeiCell *cell=[self.tableView dequeueReusableCellWithIdentifier:kBanmeiCell];
+    EventModel *data=self.tableData[indexPath.section];
+    cell.title.text= [NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
+    cell.doctorAndHospital.text=[NSString stringWithFormat:@"%@ %@",data.hospitalName,data.doctorName];
+    cell.timePoint.text= [[NSDate dateWithTimeIntervalSince1970:[data.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM];
+    cell.status.text=data.applyStatus;
 
-
+    return cell;
 
 
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 150;
+}
 
 @end

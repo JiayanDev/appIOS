@@ -18,13 +18,16 @@
 @property (nonatomic, strong) NSString <Optional>*desc;
 @property (nonatomic, strong) NSString <Optional>*hospitalName;
 @property (nonatomic, assign) NSNumber <Optional>* userId;
+@property (nonatomic, assign) NSString  <Optional>* userName;
 @property (nonatomic, strong) NSString <Optional>*doctorName;
 //@property (nonatomic, assign) NSNumber <Optional>* doctorId;
 @property (nonatomic, strong) NSString <Optional>*city;
 @property (nonatomic, assign) NSNumber <Optional>* applymentCount;
 @property (nonatomic, assign) NSNumber <Optional>* commentCount;
 @property (nonatomic, assign) NSNumber <Optional>* likeCount;
-@property (nonatomic, strong) NSString <Optional>*beginTime;
+@property (nonatomic, strong) NSNumber  <Optional>*beginTime;
+
+
 @property (nonatomic, strong) NSArray <Optional>*photo;
 
 //伴美状态

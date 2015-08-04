@@ -21,5 +21,7 @@
 
 + (NSString *)stringWithId:(NSUInteger)id1;
 
++ (NSString *)stringWithIdArray:(NSArray *)ids;
+
 - (NSString *)stringWithId:(NSUInteger)id1;
 @end
