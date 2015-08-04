@@ -832,6 +832,20 @@ constructingBodyWithBlock:constructingBodyWithBlock
            failure:failure];
 }
 
+#pragma mark - 活动
 
+-(void)getMyBanMeiEventListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+
+    [self sendGet:@"company/event/list"
+            param:[pi toDictionary]
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[EventModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+
+}
 
 @end

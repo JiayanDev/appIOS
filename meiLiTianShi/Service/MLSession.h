@@ -90,4 +90,6 @@
 - (void)validateConfirmCodeWithCode:(NSString *)code confirmId:(NSString *)confirmId success:(void (^)(NSString *receipt))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)forgetAndChangePasswordWithPhoneNum:(NSString *)phoneNum receipt:(NSString *)receipt rawPassword:(NSString *)rawPassword success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)getMyBanMeiEventListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 @end

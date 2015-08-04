@@ -26,4 +26,7 @@
 @property (nonatomic, assign) NSNumber <Optional>* likeCount;
 @property (nonatomic, strong) NSString <Optional>*beginTime;
 @property (nonatomic, strong) NSArray <Optional>*photo;
+
+//伴美状态
+@property (nonatomic, strong)NSString <Optional>*applyStatus;
 @end
