@@ -32,4 +32,6 @@
 
 //伴美状态
 @property (nonatomic, strong)NSString <Optional>*applyStatus;
+
++ (EventModel *)randomOne;
 @end

@@ -65,6 +65,7 @@
                                                            if(array.count==0){[self.tableView.footer noticeNoMoreData];}
                                                            else{
                                                            self.pageIndicator=[PageIndicator initWithMaxId:@(((EventModel *)self.tableData[self.tableData.count-1]).id)];
+                                                               [self.tableView reloadData];
                                                            }
 
                                                            if (gotoTop){

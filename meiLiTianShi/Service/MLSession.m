@@ -835,7 +835,13 @@ constructingBodyWithBlock:constructingBodyWithBlock
 #pragma mark - 活动
 
 -(void)getMyBanMeiEventListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
-
+    #if USE_DEBUG_MOCK
+        NSMutableArray *r=[NSMutableArray array];
+    for (int i = 0; i < 10; ++i) {
+        [r addObject:[EventModel randomOne]];
+    }
+    success(r);
+    #else
     [self sendGet:@"company/event/my_list"
             param:[pi toDictionary]
           success:^(id o) {
@@ -845,7 +851,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
               }
               success(r);
           } failure:failure];
-
+    #endif
 }
 
 @end
