@@ -110,5 +110,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 150;
 }
-
+- (BOOL)hidesBottomBarWhenPushed {
+    return YES;
+}
 @end

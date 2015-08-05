@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyMeiLiTianShiVC : UIViewController
+#import "XLFormRowDescriptor.h"
+
+@interface MyMeiLiTianShiVC : UIViewController <UITableViewDelegate, UITableViewDataSource,XLFormRowDescriptorViewController>
+@property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 
 @end

@@ -14,6 +14,7 @@
 #import "MLSession.h"
 #import "LoginWaySelectVC.h"
 #import "MyBanMeiListTVC.h"
+#import "MyMeiLiTianShiVC.h"
 
 @interface MyIndexVC ()
 @property (nonatomic, strong)XLFormDescriptor *logginedFormDescriptor;
@@ -58,7 +59,7 @@
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"meilitianshi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"美丽天使"];
-//    row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    row.action.viewControllerClass=[MyMeiLiTianShiVC class];
     [section addFormRow:row];
 
 
