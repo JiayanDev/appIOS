@@ -41,6 +41,8 @@
 		0746078D1B4BBAF40035E08D /* MyDiaryBookListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0746078B1B4BBAF40035E08D /* MyDiaryBookListTVC.xib */; };
 		074804F71B70A78B00FA7C42 /* MyBanMeiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 074804F51B70A78B00FA7C42 /* MyBanMeiCell.m */; };
 		074804F81B70A78B00FA7C42 /* MyBanMeiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074804F61B70A78B00FA7C42 /* MyBanMeiCell.xib */; };
+		074804FC1B734B0600FA7C42 /* EventDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 074804FA1B734B0600FA7C42 /* EventDetailVC.m */; };
+		074804FD1B734B0600FA7C42 /* EventDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 074804FB1B734B0600FA7C42 /* EventDetailVC.xib */; };
 		075AC8C01B6E0EDB00C917B5 /* AreaSelectTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075AC8BE1B6E0EDB00C917B5 /* AreaSelectTVC.m */; };
 		075AC8C11B6E0EDB00C917B5 /* AreaSelectTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 075AC8BF1B6E0EDB00C917B5 /* AreaSelectTVC.xib */; };
 		075AC8C41B6E740C00C917B5 /* BindWeixinFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 075AC8C31B6E740C00C917B5 /* BindWeixinFVC.m */; };
@@ -231,6 +233,9 @@
 		074804F41B70A78B00FA7C42 /* MyBanMeiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBanMeiCell.h; sourceTree = "<group>"; };
 		074804F51B70A78B00FA7C42 /* MyBanMeiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBanMeiCell.m; sourceTree = "<group>"; };
 		074804F61B70A78B00FA7C42 /* MyBanMeiCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBanMeiCell.xib; sourceTree = "<group>"; };
+		074804F91B734B0600FA7C42 /* EventDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventDetailVC.h; sourceTree = "<group>"; };
+		074804FA1B734B0600FA7C42 /* EventDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventDetailVC.m; sourceTree = "<group>"; };
+		074804FB1B734B0600FA7C42 /* EventDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventDetailVC.xib; sourceTree = "<group>"; };
 		075AC8BD1B6E0EDB00C917B5 /* AreaSelectTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaSelectTVC.h; sourceTree = "<group>"; };
 		075AC8BE1B6E0EDB00C917B5 /* AreaSelectTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaSelectTVC.m; sourceTree = "<group>"; };
 		075AC8BF1B6E0EDB00C917B5 /* AreaSelectTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaSelectTVC.xib; sourceTree = "<group>"; };
@@ -712,6 +717,9 @@
 				070E2ECE1B58E7A20041847A /* EventCell.h */,
 				070E2ECF1B58E7A20041847A /* EventCell.m */,
 				070E2ED01B58E7A20041847A /* EventCell.xib */,
+				074804F91B734B0600FA7C42 /* EventDetailVC.h */,
+				074804FA1B734B0600FA7C42 /* EventDetailVC.m */,
+				074804FB1B734B0600FA7C42 /* EventDetailVC.xib */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -1230,6 +1238,7 @@
 				3CDC5DCBE4B73F95085734C1 /* 搜索@2x.png in Resources */,
 				3CDC5A7CAC520E8C0CF19641 /* XLFormRatingCell.xib in Resources */,
 				3CDC5B9F9A2D04C06EFCFCCE /* IDMPhotoBrowser_arrowLeft.png in Resources */,
+				074804FD1B734B0600FA7C42 /* EventDetailVC.xib in Resources */,
 				3CDC5A83BCA5996C95343596 /* IDMPhotoBrowser_arrowRight.png in Resources */,
 				3CDC5BA737E58041038D989B /* IDMPhotoBrowser_arrowLeft@2x.png in Resources */,
 				07A699331B686E6F00A9D2EF /* PhoneBindVC.xib in Resources */,
@@ -1372,6 +1381,7 @@
 				3CDC5E936900CD70686871B2 /* UserModel.m in Sources */,
 				3CDC59149E134E6D4313ECB5 /* IDMPhoto.m in Sources */,
 				07A699491B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m in Sources */,
+				074804FC1B734B0600FA7C42 /* EventDetailVC.m in Sources */,
 				3CDC527D4088492D38B870C1 /* IDMCaptionView.m in Sources */,
 				3CDC57D7723F8B02D7FBAF6C /* IDMPhotoBrowser.m in Sources */,
 				3CDC5C15B2BDC6BC40940A79 /* IDMTapDetectingView.m in Sources */,

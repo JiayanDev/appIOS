@@ -18,6 +18,7 @@
 #import "CategoryModel.h"
 
 #import "NSDate+XLformPushDisplay.h"
+#import "EventDetailVC.h"
 
 @interface MyMeiLiTianShiVC ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -112,6 +113,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 150;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EventModel *d=self.tableData[indexPath.section];
+    EventDetailVC *vc= [[EventDetailVC alloc] init];
+    vc.event=d;
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 }
 
 

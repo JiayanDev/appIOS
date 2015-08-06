@@ -13,6 +13,7 @@
 #import "DiaryBookModel.h"
 #import "PageIndicator.h"
 #import "EventModel.h"
+#import "EventDetailVC.h"
 
 @interface EventListTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
@@ -54,6 +55,14 @@ return 1;
     UITableViewCell *cell= [self.tableView dequeueReusableCellWithIdentifier:kCell];
     cell.textLabel.text= [[d description] stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    EventModel *d=self.tableData[indexPath.section];
+    EventDetailVC *vc= [[EventDetailVC alloc] init];
+    vc.event=d;
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 }
 
 
