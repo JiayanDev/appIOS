@@ -30,7 +30,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.title=@"我的伴美";
     self.tableData=[NSMutableArray array];
 
     self.pageIndicator= [[PageIndicator alloc] init];

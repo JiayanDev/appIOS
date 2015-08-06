@@ -31,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"美丽天使";
     self.automaticallyAdjustsScrollViewInsets=YES;
 
     self.tableData=[NSMutableArray array];
