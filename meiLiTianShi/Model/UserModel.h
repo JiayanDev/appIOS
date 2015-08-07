@@ -14,5 +14,6 @@
 @property (nonatomic, strong)NSNumber <Optional>*gender;
 @property (nonatomic, strong)NSString <Optional>*province;
 @property (nonatomic, strong)NSString <Optional>*city;
+@property (nonatomic, strong)NSString <Optional>*phoneNum;
 
 @end

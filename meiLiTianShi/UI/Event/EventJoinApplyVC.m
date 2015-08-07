@@ -12,6 +12,8 @@
 #import "NSDate+XLformPushDisplay.h"
 #import "EventModel.h"
 #import "CategoryModel.h"
+#import "UserModel.h"
+#import "TSMessage.h"
 
 @interface EventJoinApplyVC ()
 @property (nonatomic, strong)EventModel *event;
@@ -21,12 +23,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.isAgree.textLabel.text=@"我已同意<现场伴美活动准则>";
+    self.baoMingXinXi.text = [NSString stringWithFormat:
+            @"昵称:%@ \n电话:%@ \n所在地:%@",
+            [MLSession current].currentUser.name,
+            [MLSession current].currentUser.phoneNum,
+            [MLSession current].currentUser.city
+    ];
     [[MLSession current] getEventDetailWithEventId:(NSUInteger) [self.eventId integerValue]
                                            success:^(EventModel *model) {
 
-                                               self.event=model;
-                                               self.huoDongXiangQing.text=[NSString stringWithFormat:@"%@ \n %@ \n %@ \n %@ ",
-                                                               [[NSDate dateWithTimeIntervalSince1970:[model.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM],
+                                               self.event = model;
+                                               self.huoDongXiangQing.text = [NSString stringWithFormat:
+                                                       @"时间:%@ \n医院:%@ \n医生:%@ \n项目:%@ ",
+                                                       [[NSDate dateWithTimeIntervalSince1970:[model.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM],
                                                        model.hospitalName,
                                                        model.doctorName,
                                                        [CategoryModel stringWithIdArray:model.categoryIds]
@@ -34,7 +44,9 @@
                                                ];
 
                                            } fail:^(NSInteger i, id o) {
-
+                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
             }];
 }
 
