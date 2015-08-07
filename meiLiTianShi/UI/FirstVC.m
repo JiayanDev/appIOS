@@ -22,11 +22,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[MLSession current] restoreLoginOrRegister_Success:^{
+    [[MLSession current] restoreLoginOrAppinit_Success:^{
         [self gotoMainInterface];
-    } fail:^(NSInteger i, id o) {
+    }                                             fail:^(NSInteger i, id o) {
         [TSMessage showNotificationWithTitle:@"出错了"
-                                    subtitle:[NSString stringWithFormat:@"%d - %@",i,o]
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                         type:TSMessageNotificationTypeError];
     }];
 }

@@ -202,23 +202,23 @@ constructingBodyWithBlock:constructingBodyWithBlock
            failure:failure];
 }
 
--(void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
-    [self sendPost:@"user/register"
-            param:nil
-          success:^(NSDictionary * user){
-              self.token=user[@"token"];
-              [self handleCategories:user];
-              self.currentUser= [[UserModel alloc] initWithDictionary:user
-                                                                error:nil];
-              success();
-          }
-          failure:failure];
-}
+//-(void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+//    [self sendPost:@"user/register"
+//            param:nil
+//          success:^(NSDictionary * user){
+//              self.token=user[@"token"];
+//              [self handleCategories:user];
+//              self.currentUser= [[UserModel alloc] initWithDictionary:user
+//                                                                error:nil];
+//              success();
+//          }
+//          failure:failure];
+//}
 
 
 
 
--(void)restoreLoginOrRegister_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+-(void)restoreLoginOrAppinit_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
     UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:keyChainId];
 
     NSString *token=keychain[kToken];
@@ -776,7 +776,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 -(void)quickLoginSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
     [self sendPost:@"user/quick_login"
-             param:@{@"configVersion":@1}
+             param:@{@"configVersion":@0}
            success:^(NSDictionary * user){
                if(user[@"token"]){
                    self.token=user[@"token"];

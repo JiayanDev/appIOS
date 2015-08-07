@@ -41,7 +41,7 @@
 
 - (void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
-- (void)restoreLoginOrRegister_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+- (void)restoreLoginOrAppinit_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)logoutSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
