@@ -15,5 +15,5 @@
 @property (weak, nonatomic) IBOutlet UITextView *baoMingXinXi;
 @property (weak, nonatomic) IBOutlet CTCheckbox *isAgree;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
-
+@property (nonatomic, strong)NSString *eventId;
 @end

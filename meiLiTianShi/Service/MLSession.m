@@ -854,4 +854,48 @@ constructingBodyWithBlock:constructingBodyWithBlock
     #endif
 }
 
+
+-(void)getMyMeilitianshiEventListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+#if USE_DEBUG_MOCK
+    NSMutableArray *r=[NSMutableArray array];
+    for (int i = 0; i < 10; ++i) {
+        [r addObject:[EventModel randomOne]];
+    }
+    success(r);
+#else
+    [self sendGet:@"event/list"
+            param:[pi toDictionary]
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[EventModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+#endif
+}
+
+
+
+-(void)getEventDetailWithEventId:(NSUInteger)id
+                         success:(void(^)(EventModel *))success  fail:(void (^)(NSInteger, id))failure{
+//#if USE_DEBUG_MOCK
+//    NSMutableArray *r=[NSMutableArray array];
+//    for (int i = 0; i < 10; ++i) {
+//        [r addObject:[EventModel randomOne]];
+//    }
+//    success(r);
+//#else
+    [self sendGet:@"event/detail"
+            param:@{@"id":@(id)}
+          success:^(NSDictionary* o) {
+              EventModel *d= [[EventModel alloc] initWithDictionary:o error:nil];
+              success(d);
+          } failure:failure];
+//#endif
+}
+
+
+
+
 @end

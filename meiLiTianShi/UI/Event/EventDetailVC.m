@@ -16,6 +16,7 @@
 #import "UserModel.h"
 #import "IDMPhoto.h"
 #import "IDMPhotoBrowser.h"
+#import "EventJoinApplyVC.h"
 
 @interface EventDetailVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -84,9 +85,11 @@
                                          }] respondToWebview:self.webView
                                                  withReqeust:requestModel
                                                    isSuccess:YES];
-    }else if([requestModel.action isEqualToString:@"openCommentPanel"]){
-//        self.commentRequest=requestModel;
-//        [self.textInputbar.textView becomeFirstResponder];
+    }else if([requestModel.action isEqualToString:@"applymentEvent"]){
+        EventJoinApplyVC *vc= [[EventJoinApplyVC alloc] init];
+        vc.eventId=requestModel.data[@"id"];
+        [self.navigationController pushViewController:vc animated:YES];
+
     }else if([requestModel.action isEqualToString:@"setNavigationBarTitle"]){
 
         self.title=requestModel.data[@"title"];

@@ -15,6 +15,7 @@
 @class UserDetailModel;
 @class LoginWaySelectVC;
 @class SendAuthResp;
+@class EventModel;
 
 @protocol wxRespondVC
 @required - (void)handleWxAuthRespond:(SendAuthResp *)resp;
@@ -39,7 +40,7 @@
 
 - (void)appInitGetSessionSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
-- (void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+//- (void)registerSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)restoreLoginOrAppinit_Success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
@@ -53,7 +54,7 @@
 
 - (void)getMyDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
-- (void)getDiaryList_underDiaryBook:(NSUInteger)diaryBookId success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
+//- (void)getDiaryList_underDiaryBook:(NSUInteger)diaryBookId success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getHospitalWithBlurName:(NSString *)blurName pageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
@@ -75,7 +76,7 @@
 
 - (void)uploadImages:(NSArray *)imageDatas uploadToken:(UploadTokenModel *)uploadToken allFinish:(void (^)(NSArray *urls, NSArray *fails, NSArray *remainImageDatas))success;
 
-- (void)registerWithParam:(NSDictionary *)data success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
+//- (void)registerWithParam:(NSDictionary *)data success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)registerWithParam:(NSDictionary *)data password:(NSString *)rawPassword success:(void (^)(UserDetailModel *))success fail:(void (^)(NSInteger, id))failure;
 
@@ -92,4 +93,6 @@
 - (void)forgetAndChangePasswordWithPhoneNum:(NSString *)phoneNum receipt:(NSString *)receipt rawPassword:(NSString *)rawPassword success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getMyBanMeiEventListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)getEventDetailWithEventId:(NSUInteger)id1 success:(void (^)(EventModel *))success fail:(void (^)(NSInteger, id))failure;
 @end

@@ -8,16 +8,34 @@
 
 #import "EventJoinApplyVC.h"
 #import "CTCheckbox.h"
+#import "MLSession.h"
+#import "NSDate+XLformPushDisplay.h"
+#import "EventModel.h"
+#import "CategoryModel.h"
 
 @interface EventJoinApplyVC ()
-
+@property (nonatomic, strong)EventModel *event;
 @end
 
 @implementation EventJoinApplyVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [[MLSession current] getEventDetailWithEventId:(NSUInteger) [self.eventId integerValue]
+                                           success:^(EventModel *model) {
+
+                                               self.event=model;
+                                               self.huoDongXiangQing.text=[NSString stringWithFormat:@"%@ \n %@ \n %@ \n %@ ",
+                                                               [[NSDate dateWithTimeIntervalSince1970:[model.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM],
+                                                       model.hospitalName,
+                                                       model.doctorName,
+                                                       [CategoryModel stringWithIdArray:model.categoryIds]
+
+                                               ];
+
+                                           } fail:^(NSInteger i, id o) {
+
+            }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,6 +43,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)hidesBottomBarWhenPushed {
+    return YES;
+}
 /*
 #pragma mark - Navigation
 
