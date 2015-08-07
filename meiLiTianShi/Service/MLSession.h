@@ -95,4 +95,6 @@
 - (void)getMyBanMeiEventListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getEventDetailWithEventId:(NSUInteger)id1 success:(void (^)(EventModel *))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)eventJoinApply:(NSDictionary *)data success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 @end

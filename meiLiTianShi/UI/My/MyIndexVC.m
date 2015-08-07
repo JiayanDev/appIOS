@@ -50,9 +50,9 @@
 //    row.action.viewControllerClass=[InfoIndexVC class];
     [section addFormRow:row];
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"fabu" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的发布"];
-//    row.action.viewControllerClass=[MyDiaryBookListTVC class];
-    [section addFormRow:row];
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"fabu" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的发布"];
+////    row.action.viewControllerClass=[MyDiaryBookListTVC class];
+//    [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"banmei" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的伴美"];
     row.action.viewControllerClass=[MyBanMeiListTVC class];

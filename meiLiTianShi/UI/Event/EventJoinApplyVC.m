@@ -58,6 +58,26 @@
 - (BOOL)hidesBottomBarWhenPushed {
     return YES;
 }
+- (IBAction)submitButtonPress:(id)sender {
+    if(!self.isAgree.checked){
+        [TSMessage showNotificationWithTitle:@"请同意准则后再确认报名"
+                                        type:TSMessageNotificationTypeWarning];
+        return ;
+    }
+
+    [[MLSession current] eventJoinApply:@{
+            @"eventId":self.eventId,
+            @"phone":[MLSession current].currentUser.phoneNum,
+            @"name":[MLSession current].currentUser.name,
+            @"gender":[MLSession current].currentUser.gender,
+    } success:^{
+
+    } fail:^(NSInteger i, id o) {
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
+    }];
+}
 /*
 #pragma mark - Navigation
 

@@ -896,6 +896,14 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 
+-(void)eventJoinApply:(NSDictionary *)data success:(void(^)( void))success  fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"event/apply"
+             param:data
+           success:^(id o) {
+               success();
+           } failure:failure];
+}
+
 
 
 @end
