@@ -19,7 +19,7 @@ pod 'MJRefresh'
   pod 'pop'
   pod 'RegExCategories', '~> 1.0'
   pod 'RMUniversalAlert'
-
+  pod 'CTCheckbox'
 end
 
 target 'meiLiTianShiTests' do

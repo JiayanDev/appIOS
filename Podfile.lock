@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AXRatingView (1.0.3)
+  - CTCheckbox (0.0.4)
   - DACircularProgress (2.3.1)
   - HexColors (2.2.1)
   - JMImageCache (0.4.0)
@@ -52,6 +53,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - AXRatingView (from `https://github.com/xmartlabs/AXRatingView.git`)
+  - CTCheckbox
   - DACircularProgress
   - JMImageCache
   - JSONModel
@@ -80,6 +82,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   AXRatingView: ccaadc1bbda99a4b7e1d556059482d2b933a9f4e
+  CTCheckbox: 51ca73c98cddb96a665e20660e3f2b7a741645bd
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   JMImageCache: fac25eb168a25b29ac130fee6a6b17ea463c1d86
