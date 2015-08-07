@@ -14,6 +14,7 @@
 #import "CategoryModel.h"
 #import "UserModel.h"
 #import "TSMessage.h"
+#import "EventJoinApplySuccVC.h"
 
 @interface EventJoinApplyVC ()
 @property (nonatomic, strong)EventModel *event;
@@ -71,7 +72,8 @@
             @"name":[MLSession current].currentUser.name,
             @"gender":[MLSession current].currentUser.gender,
     } success:^{
-
+        EventJoinApplySuccVC *vc= [[EventJoinApplySuccVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     } fail:^(NSInteger i, id o) {
         [TSMessage showNotificationWithTitle:@"出错了"
                                     subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
