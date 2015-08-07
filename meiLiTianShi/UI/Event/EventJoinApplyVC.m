@@ -15,9 +15,11 @@
 #import "UserModel.h"
 #import "TSMessage.h"
 #import "EventJoinApplySuccVC.h"
+#import "UserDetailModel.h"
 
 @interface EventJoinApplyVC ()
 @property (nonatomic, strong)EventModel *event;
+@property (nonatomic, strong)UserDetailModel *userDetailModel;
 @end
 
 @implementation EventJoinApplyVC
@@ -25,12 +27,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.isAgree.textLabel.text=@"我已同意<现场伴美活动准则>";
-    self.baoMingXinXi.text = [NSString stringWithFormat:
-            @"昵称:%@ \n电话:%@ \n所在地:%@",
-            [MLSession current].currentUser.name,
-            [MLSession current].currentUser.phoneNum,
-            [MLSession current].currentUser.city
-    ];
+    [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
+        self.userDetailModel=model;
+        self.baoMingXinXi.text = [NSString stringWithFormat:
+                @"昵称:%@ \n电话:%@ \n所在地:%@",
+                        model.name,
+                        model.phone,
+                model.city
+
+        ];
+    } fail:^(NSInteger i, id o) {
+
+    }];
+
     [[MLSession current] getEventDetailWithEventId:(NSUInteger) [self.eventId integerValue]
                                            success:^(EventModel *model) {
 
@@ -68,9 +77,9 @@
 
     [[MLSession current] eventJoinApply:@{
             @"eventId":self.eventId,
-            @"phone":[MLSession current].currentUser.phoneNum,
-            @"name":[MLSession current].currentUser.name,
-            @"gender":[MLSession current].currentUser.gender,
+            @"phone":self.userDetailModel.phone,
+            @"name":self.userDetailModel.name,
+            @"gender":self.userDetailModel.gender,
     } success:^{
         EventJoinApplySuccVC *vc= [[EventJoinApplySuccVC alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
