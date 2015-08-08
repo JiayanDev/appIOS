@@ -20,6 +20,7 @@ pod 'MJRefresh'
   pod 'RegExCategories', '~> 1.0'
   pod 'RMUniversalAlert'
   pod 'CTCheckbox'
+  pod 'KIImagePager'
 end
 
 target 'meiLiTianShiTests' do

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KIImagePager.h"
 
-@interface TopicListVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface TopicListVC : UIViewController <UITableViewDataSource, UITableViewDelegate, KIImagePagerDelegate, KIImagePagerDataSource>
 
 @end

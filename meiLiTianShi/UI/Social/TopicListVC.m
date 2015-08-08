@@ -24,6 +24,8 @@
 #import "DiaryListCell.h"
 #import "UIImageView+WebCache.h"
 #import "CategoryModel.h"
+#import "KIImagePager.h"
+#import "WKIImagePager.h"
 
 @interface TopicListVC ()
 @property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -31,6 +33,7 @@
 @property (strong, nonatomic)NSMutableArray *tableData;
 @property (nonatomic, strong)PageIndicator *pageIndicator;
 @property (nonatomic, assign)NSInteger type;
+@property (nonatomic, strong)KIImagePager *imagePager;
 @end
 
 #define kCellTopic @"topic_cell"
@@ -62,8 +65,31 @@
 //    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 
+
+    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.75)];
+    self.imagePager.delegate=self;
+    self.imagePager.dataSource=self;
+    self.tableView.tableHeaderView=self.imagePager;
+
+
+
     [self getDataWithScrollingToTop:YES];
 }
+
+- (NSArray *)arrayWithImages:(KIImagePager *)pager {
+    return @[
+            [UIImage imageNamed:@"IMG_1622.jpg"],
+            [UIImage imageNamed:@"IMG_1652.jpg"],
+//            [UIImage imageNamed:@"IMG_1744.jpg"],
+    ];
+}
+
+- (UIViewContentMode) contentModeForImage:(NSUInteger)image inPager:(KIImagePager*)pager
+{
+    return UIViewContentModeScaleAspectFill;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
