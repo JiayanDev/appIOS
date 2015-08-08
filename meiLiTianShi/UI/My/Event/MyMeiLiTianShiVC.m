@@ -59,7 +59,7 @@
     [MBProgressHUD showHUDAddedTo:self.view
                          animated:YES];
 
-    [[MLSession current] getMyBanMeiEventListWithPageIndicator:self.pageIndicator
+    [[MLSession current] getMyMeilitianshiEventListWithPageIndicator:self.pageIndicator
                                                        success:^(NSArray *array) {
                                                            [MBProgressHUD hideHUDForView:self.view
                                                                                 animated:YES];

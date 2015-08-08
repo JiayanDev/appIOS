@@ -40,7 +40,7 @@ static MLSession *session;
 #define kToken @"token"
 #define kIsLogined @"islogined"
 
-#define USE_DEBUG_MOCK 1
+#define USE_DEBUG_MOCK 0
 #define USE_TRY_FOR_SUCCESS 0
 
 
