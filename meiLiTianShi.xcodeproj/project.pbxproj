@@ -19,6 +19,8 @@
 		071AE18D1B60D25900CF149F /* AvatarTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071AE18B1B60D25900CF149F /* AvatarTCell.xib */; };
 		071F2CD21B784E9E00A081FE /* IndexTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071F2CD01B784E9E00A081FE /* IndexTVC.m */; };
 		071F2CD31B784E9E00A081FE /* IndexTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071F2CD11B784E9E00A081FE /* IndexTVC.xib */; };
+		071F2CD71B78BCF700A081FE /* IndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 071F2CD51B78BCF700A081FE /* IndexCell.m */; };
+		071F2CD81B78BCF700A081FE /* IndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071F2CD61B78BCF700A081FE /* IndexCell.xib */; };
 		072C3A991B64D6500032849C /* ConfigIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A981B64D6500032849C /* ConfigIndexVC.m */; };
 		072C3A9D1B653D820032849C /* SuggestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A9B1B653D820032849C /* SuggestionsVC.m */; };
 		072C3A9E1B653D820032849C /* SuggestionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072C3A9C1B653D820032849C /* SuggestionsVC.xib */; };
@@ -206,6 +208,9 @@
 		071F2CCF1B784E9E00A081FE /* IndexTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexTVC.h; sourceTree = "<group>"; };
 		071F2CD01B784E9E00A081FE /* IndexTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexTVC.m; sourceTree = "<group>"; };
 		071F2CD11B784E9E00A081FE /* IndexTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexTVC.xib; sourceTree = "<group>"; };
+		071F2CD41B78BCF700A081FE /* IndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexCell.h; sourceTree = "<group>"; };
+		071F2CD51B78BCF700A081FE /* IndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexCell.m; sourceTree = "<group>"; };
+		071F2CD61B78BCF700A081FE /* IndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexCell.xib; sourceTree = "<group>"; };
 		072C3A971B64D6500032849C /* ConfigIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigIndexVC.h; sourceTree = "<group>"; };
 		072C3A981B64D6500032849C /* ConfigIndexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigIndexVC.m; sourceTree = "<group>"; };
 		072C3A9A1B653D820032849C /* SuggestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsVC.h; sourceTree = "<group>"; };
@@ -1050,6 +1055,9 @@
 				071F2CCF1B784E9E00A081FE /* IndexTVC.h */,
 				071F2CD01B784E9E00A081FE /* IndexTVC.m */,
 				071F2CD11B784E9E00A081FE /* IndexTVC.xib */,
+				071F2CD41B78BCF700A081FE /* IndexCell.h */,
+				071F2CD51B78BCF700A081FE /* IndexCell.m */,
+				071F2CD61B78BCF700A081FE /* IndexCell.xib */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -1274,6 +1282,7 @@
 				07A8BA851B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
+				071F2CD81B78BCF700A081FE /* IndexCell.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
 				071F2CD31B784E9E00A081FE /* IndexTVC.xib in Resources */,
 				074804F81B70A78B00FA7C42 /* MyBanMeiCell.xib in Resources */,
@@ -1439,6 +1448,7 @@
 				3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */,
 				3CDC5E81EA016B78E6623E89 /* SLKInputAccessoryView.m in Sources */,
 				3CDC5D6E3479C55CDFB955D0 /* SLKTextViewController.m in Sources */,
+				071F2CD71B78BCF700A081FE /* IndexCell.m in Sources */,
 				3CDC5DD9E3216F755CE44989 /* SLKTypingIndicatorView.m in Sources */,
 				3CDC502645DD3E76B08331AD /* UIView+SLKAdditions.m in Sources */,
 				07A699321B686E6F00A9D2EF /* PhoneBindVC.m in Sources */,

@@ -6,21 +6,25 @@
 //  Copyright (c) 2015年 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "IndexTVC.h"
 #import "MLSession.h"
 #import "TSMessage.h"
 #import "TopicModel.h"
 #import "EventModel.h"
-
+#import "IndexCell.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
 @end
-
+#define kIndexCell @"indexcell"
 @implementation IndexTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableData=[NSMutableArray array];
+    [self.tableView registerClass:[IndexCell class] forCellReuseIdentifier:kIndexCell];
+    [self.tableView registerNib:[UINib nibWithNibName:@"IndexCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kIndexCell];
     [self getData];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -59,19 +63,42 @@ return 1;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [UITableViewCell new];
+    IndexCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kIndexCell];
     if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
         TopicModel *data=self.tableData[indexPath.section];
-        cell.textLabel.text=[NSString stringWithFormat:@"huati: %@",data.title];
+        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
+        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
+        if(data.coverImg){
+            [cell.imageView sd_setImageWithURL:data.coverImg
+                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                         [cell.imageView setNeedsDisplay];
+                                     }];
+        }
     }else{
         EventModel *data=self.tableData[indexPath.section];
-        cell.textLabel.text=[NSString stringWithFormat:@"huodong: %@",data.title];
+        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
+        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
+        if(data.coverImg){
+            [cell.imageView sd_setImageWithURL:data.coverImg
+                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                         [cell.imageView setNeedsDisplay];
+                                     }];
+        }
     }
 
     
     return cell;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [tableView fd_heightForCellWithIdentifier:kIndexCell cacheByIndexPath:indexPath configuration:^(id cell) {
+//        id data = self.tableData[indexPath.section];
+//        [self setTheCell:cell withData:data];
+
+
+    }];
+}
 
 /*
 // Override to support conditional editing of the table view.
