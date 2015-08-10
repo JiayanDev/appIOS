@@ -7,16 +7,22 @@
 //
 
 #import "IndexTVC.h"
+#import "MLSession.h"
+#import "TSMessage.h"
+#import "TopicModel.h"
+#import "EventModel.h"
 
 @interface IndexTVC ()
-
+@property (strong, nonatomic)NSMutableArray *tableData;
 @end
 
 @implementation IndexTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableData=[NSMutableArray array];
+    [self getData];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -32,26 +38,40 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return self.tableData.count;
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+return 1;
 }
 
-/*
+-(void)getData{
+    [[MLSession current] getIndexList_success:^(NSArray *array) {
+        self.tableData= [array mutableCopy];
+        [self.tableView reloadData];
+    } fail:^(NSInteger i, id o) {
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
+    }];
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [UITableViewCell new];
+    if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
+        TopicModel *data=self.tableData[indexPath.section];
+        cell.textLabel.text=[NSString stringWithFormat:@"huati: %@",data.title];
+    }else{
+        EventModel *data=self.tableData[indexPath.section];
+        cell.textLabel.text=[NSString stringWithFormat:@"huodong: %@",data.title];
+    }
+
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.

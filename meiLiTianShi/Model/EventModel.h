@@ -37,5 +37,9 @@
 //伴美状态
 @property (nonatomic, strong)NSString <Optional>*applyStatus;
 
+//for index page
+@property (nonatomic, strong)NSString <Optional>*coverImg;
+@property (nonatomic, strong)NSString <Optional>*title;
+//@property (nonatomic, strong)NSString <Optional>*desc;
 + (EventModel *)randomOne;
 @end

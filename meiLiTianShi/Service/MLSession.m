@@ -904,6 +904,32 @@ constructingBodyWithBlock:constructingBodyWithBlock
            } failure:failure];
 }
 
+#pragma mark - shouye
+
+-(void)getIndexList_success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+//#if USE_DEBUG_MOCK
+//    NSMutableArray *r=[NSMutableArray array];
+//    for (int i = 0; i < 10; ++i) {
+//        [r addObject:[EventModel randomOne]];
+//    }
+//    success(r);
+//#else
+    [self sendGet:@"homepage/event/list"
+            param:nil
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  if ([oned[@"type"] isEqualToString:@"topic"]){
+                      [r addObject:[[TopicModel alloc] initWithDictionary:oned error:nil]];
+                  }else{
+                      [r addObject:[[EventModel alloc] initWithDictionary:oned error:nil]];
+                  }
+
+              }
+              success(r);
+          } failure:failure];
+//#endif
+}
 
 
 @end

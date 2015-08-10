@@ -14,5 +14,9 @@
 @property (nonatomic, assign)NSInteger commentCount;
 @property (nonatomic, assign)NSInteger likeCount;
 
+//for index page
+@property (nonatomic, strong)NSString <Optional>*coverImg;
+@property (nonatomic, strong)NSString <Optional>*title;
+@property (nonatomic, strong)NSString <Optional>*desc;
 + (TopicModel *)randomOne;
 @end

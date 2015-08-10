@@ -13,6 +13,7 @@
 #import "TopicListVC.h"
 #import "MyIndexVC.h"
 #import "EventListTVC.h"
+#import "IndexTVC.h"
 
 @interface FirstVC ()
 
@@ -35,7 +36,7 @@
     UITabBarController* tabBarController = [[UITabBarController alloc] init];
     //tabBarController.delegate = self;
     UINavigationController* vc1=[[UINavigationController alloc]
-            initWithRootViewController:[[UIViewController alloc]init]];
+            initWithRootViewController:[[IndexTVC alloc]init]];
     vc1.title=@"伴美";
 
     UINavigationController *vc2= [[UINavigationController alloc] initWithRootViewController:
