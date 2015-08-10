@@ -14,6 +14,8 @@
 #import "EventModel.h"
 #import "IndexCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "EventDetailVC.h"
+
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
 @end
@@ -22,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title=@"美丽天使";
     self.tableData=[NSMutableArray array];
     [self.tableView registerClass:[IndexCell class] forCellReuseIdentifier:kIndexCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"IndexCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kIndexCell];
@@ -76,8 +79,8 @@ return 1;
         }
     }else{
         EventModel *data=self.tableData[indexPath.section];
-        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
-        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
+        cell.title.text=[NSString stringWithFormat:@"huodong: %@",data.title];
+        cell.desc.text=[NSString stringWithFormat:@"huodong: %@",data.desc];
         if(data.coverImg){
             [cell.imageView sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
@@ -100,64 +103,18 @@ return 1;
     }];
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
-    
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-*/
+    if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
+        TopicModel *data=self.tableData[indexPath.section];
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    }else{
+        EventModel *data=self.tableData[indexPath.section];
+
+        EventDetailVC *vc=[[EventDetailVC alloc]init];
+        vc.event=data;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
-*/
 
 @end
