@@ -17,6 +17,8 @@
 		070E2EDB1B5B8E1F0041847A /* 点赞@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 070E2EDA1B5B8E1F0041847A /* 点赞@2x.png */; };
 		071AE18C1B60D25900CF149F /* AvatarTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AE18A1B60D25900CF149F /* AvatarTCell.m */; };
 		071AE18D1B60D25900CF149F /* AvatarTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071AE18B1B60D25900CF149F /* AvatarTCell.xib */; };
+		071F2CD21B784E9E00A081FE /* IndexTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071F2CD01B784E9E00A081FE /* IndexTVC.m */; };
+		071F2CD31B784E9E00A081FE /* IndexTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071F2CD11B784E9E00A081FE /* IndexTVC.xib */; };
 		072C3A991B64D6500032849C /* ConfigIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A981B64D6500032849C /* ConfigIndexVC.m */; };
 		072C3A9D1B653D820032849C /* SuggestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A9B1B653D820032849C /* SuggestionsVC.m */; };
 		072C3A9E1B653D820032849C /* SuggestionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072C3A9C1B653D820032849C /* SuggestionsVC.xib */; };
@@ -201,6 +203,9 @@
 		071AE1891B60D25900CF149F /* AvatarTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarTCell.h; sourceTree = "<group>"; };
 		071AE18A1B60D25900CF149F /* AvatarTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarTCell.m; sourceTree = "<group>"; };
 		071AE18B1B60D25900CF149F /* AvatarTCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarTCell.xib; sourceTree = "<group>"; };
+		071F2CCF1B784E9E00A081FE /* IndexTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexTVC.h; sourceTree = "<group>"; };
+		071F2CD01B784E9E00A081FE /* IndexTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexTVC.m; sourceTree = "<group>"; };
+		071F2CD11B784E9E00A081FE /* IndexTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexTVC.xib; sourceTree = "<group>"; };
 		072C3A971B64D6500032849C /* ConfigIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigIndexVC.h; sourceTree = "<group>"; };
 		072C3A981B64D6500032849C /* ConfigIndexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigIndexVC.m; sourceTree = "<group>"; };
 		072C3A9A1B653D820032849C /* SuggestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsVC.h; sourceTree = "<group>"; };
@@ -834,6 +839,7 @@
 				3CDC5E90FA7401823429E2FB /* My */,
 				3CDC554C8E12B30D27EFC5D2 /* Event */,
 				3CDC51AFB7C56EA4C5229BA5 /* Login */,
+				3CDC5C1E0B13C9E502CEFA53 /* Index */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1036,6 +1042,16 @@
 				075AC8CA1B6F176E00C917B5 /* AvatarDetailVC.xib */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		3CDC5C1E0B13C9E502CEFA53 /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				071F2CCF1B784E9E00A081FE /* IndexTVC.h */,
+				071F2CD01B784E9E00A081FE /* IndexTVC.m */,
+				071F2CD11B784E9E00A081FE /* IndexTVC.xib */,
+			);
+			path = Index;
 			sourceTree = "<group>";
 		};
 		3CDC5CD7140F630F8D7B3398 /* zh-Hans.lproj */ = {
@@ -1259,6 +1275,7 @@
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
+				071F2CD31B784E9E00A081FE /* IndexTVC.xib in Resources */,
 				074804F81B70A78B00FA7C42 /* MyBanMeiCell.xib in Resources */,
 				070E2ED21B58E7A20041847A /* EventCell.xib in Resources */,
 				074607881B4BB5540035E08D /* MyIndexVC.xib in Resources */,
@@ -1383,6 +1400,7 @@
 				3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */,
 				0746078C1B4BBAF40035E08D /* MyDiaryBookListTVC.m in Sources */,
 				075AC8C01B6E0EDB00C917B5 /* AreaSelectTVC.m in Sources */,
+				071F2CD21B784E9E00A081FE /* IndexTVC.m in Sources */,
 				07FB9C401B4E1486000CCC45 /* CreateTopicFVC.m in Sources */,
 				072C3A991B64D6500032849C /* ConfigIndexVC.m in Sources */,
 				07FB9C361B4E145B000CCC45 /* CreateDiaryBookFVC.m in Sources */,

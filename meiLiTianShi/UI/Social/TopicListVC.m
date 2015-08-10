@@ -76,6 +76,8 @@
     [self getDataWithScrollingToTop:YES];
 }
 
+#pragma mark imagepager delegate and datasource
+
 - (NSArray *)arrayWithImages:(KIImagePager *)pager {
     return @[
             [UIImage imageNamed:@"IMG_1622.jpg"],
@@ -89,6 +91,9 @@
     return UIViewContentModeScaleAspectFill;
 }
 
+- (void)imagePager:(KIImagePager *)imagePager didSelectImageAtIndex:(NSUInteger)index {
+    NSLog(@"%@,didSelectImageAtIndex  %@",imagePager,@(index));
+}
 
 
 - (void)didReceiveMemoryWarning {
