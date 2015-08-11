@@ -13,8 +13,8 @@
 
 +(TopicModel *)randomOne{
     TopicModel *a=[[TopicModel alloc]init];
-    a.likeCount=arc4random_uniform(100);
-    a.commentCount=arc4random_uniform(100);
+    a.likeCount=@(arc4random_uniform(100));
+    a.commentCount=@(arc4random_uniform(100));
     a.content=[MLRandom randomChineseStringLengthFrom:10 to:30];
     return a;
 }

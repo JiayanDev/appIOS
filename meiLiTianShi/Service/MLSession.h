@@ -16,6 +16,7 @@
 @class LoginWaySelectVC;
 @class SendAuthResp;
 @class EventModel;
+@class TopicModel;
 
 @protocol wxRespondVC
 @required - (void)handleWxAuthRespond:(SendAuthResp *)resp;
@@ -53,6 +54,8 @@
 - (void)getDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getPostListWithPageIndicator:(PageIndicator *)pi type:(NSString *)diaryOrTopic categoryId:(NSNumber *)cate success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)getRecommendTopic_success:(void (^)(TopicModel *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getMyDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 

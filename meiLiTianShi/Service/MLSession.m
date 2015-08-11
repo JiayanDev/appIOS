@@ -256,6 +256,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 }
 
+#pragma mark - 日志 话题
 
 -(void)getTopicListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
 //    #if USE_DEBUG_MOCK
@@ -322,6 +323,14 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 }
 
+
+-(void)getRecommendTopic_success:(void(^)(TopicModel *))success  fail:(void (^)(NSInteger, id))failure{
+    [self sendGet:@"recommend/topic/one"
+                 param:nil
+          success:^(id o) {
+              success([[TopicModel alloc] initWithDictionary:o error:nil]);
+          } failure:failure];
+}
 
 
 -(void)getMyDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
@@ -428,22 +437,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
 
--(void)getEventsWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
-    NSMutableDictionary *d=[NSMutableDictionary dictionary];
-    [d setValuesForKeysWithDictionary:[pi toDictionary]];
 
-
-    [self sendGet:@"event/list"
-            param:d
-          success:^(id o) {
-              NSMutableArray *r=[NSMutableArray array];
-              for (NSDictionary *oned in (NSArray *) o) {
-                  [r addObject:[[EventModel alloc] initWithDictionary:oned error:nil]];
-              }
-              success(r);
-          } failure:failure];
-
-}
 
 
 -(void)getUserDetail_success:(void(^)(UserDetailModel *))success  fail:(void (^)(NSInteger, id))failure{
@@ -841,6 +835,23 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 #pragma mark - 活动
+
+-(void)getEventsWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d=[NSMutableDictionary dictionary];
+    [d setValuesForKeysWithDictionary:[pi toDictionary]];
+
+
+    [self sendGet:@"event/list"
+            param:d
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[EventModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+
+}
 
 -(void)getMyBanMeiEventListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
     #if USE_DEBUG_MOCK

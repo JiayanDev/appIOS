@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TopicListVC">
             <connections>
+                <outlet property="headerDesc" destination="yzM-nv-ImX" id="id7-lc-KPY"/>
+                <outlet property="headerImage" destination="xge-2k-M9f" id="0TY-Dp-1ku"/>
+                <outlet property="headerRecommendedTopicView" destination="L7A-p3-k4z" id="7nh-Jo-Okb"/>
+                <outlet property="headerTitle" destination="JQw-PB-H2w" id="Tfy-bF-b6W"/>
                 <outlet property="tableView" destination="6Sm-V5-Me7" id="Yos-iq-0Ku"/>
                 <outlet property="typeSwitcher" destination="PPb-Ll-kPW" id="ce6-25-Eb1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -43,6 +47,43 @@
             </connections>
             <point key="canvasLocation" x="-118.5" y="106"/>
         </segmentedControl>
+        <view contentMode="scaleToFill" id="L7A-p3-k4z">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xge-2k-M9f">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQw-PB-H2w">
+                    <rect key="frame" x="8" y="8" width="304" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzM-nv-ImX">
+                    <rect key="frame" x="8" y="37" width="304" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="JQw-PB-H2w" secondAttribute="trailing" constant="8" id="07s-i7-pJK"/>
+                <constraint firstAttribute="bottom" secondItem="xge-2k-M9f" secondAttribute="bottom" id="42w-MV-hrt"/>
+                <constraint firstItem="xge-2k-M9f" firstAttribute="top" secondItem="L7A-p3-k4z" secondAttribute="top" id="BJF-X8-Hrt"/>
+                <constraint firstAttribute="trailing" secondItem="xge-2k-M9f" secondAttribute="trailing" id="CsJ-rh-muy"/>
+                <constraint firstAttribute="trailing" secondItem="yzM-nv-ImX" secondAttribute="trailing" constant="8" id="Ltu-GN-fsI"/>
+                <constraint firstItem="xge-2k-M9f" firstAttribute="leading" secondItem="L7A-p3-k4z" secondAttribute="leading" id="Vdq-OP-MZ1"/>
+                <constraint firstItem="yzM-nv-ImX" firstAttribute="leading" secondItem="L7A-p3-k4z" secondAttribute="leading" constant="8" id="e93-iK-x9Y"/>
+                <constraint firstItem="yzM-nv-ImX" firstAttribute="top" secondItem="JQw-PB-H2w" secondAttribute="bottom" constant="8" id="kGI-2A-LmP"/>
+                <constraint firstItem="JQw-PB-H2w" firstAttribute="top" secondItem="L7A-p3-k4z" secondAttribute="top" constant="8" id="pTw-4E-6Bg"/>
+                <constraint firstItem="JQw-PB-H2w" firstAttribute="leading" secondItem="L7A-p3-k4z" secondAttribute="leading" constant="8" id="uX1-NV-Lpd"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-132" y="243.5"/>
+        </view>
     </objects>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

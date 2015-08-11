@@ -34,6 +34,12 @@
 @property (nonatomic, strong)PageIndicator *pageIndicator;
 @property (nonatomic, assign)NSInteger type;
 @property (nonatomic, strong)KIImagePager *imagePager;
+
+@property (strong, nonatomic) IBOutlet UIView *headerRecommendedTopicView;
+@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
+@property (weak, nonatomic) IBOutlet UILabel *headerDesc;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+@property (nonatomic, strong)TopicModel *recommendedTopic;
 @end
 
 #define kCellTopic @"topic_cell"
@@ -66,14 +72,48 @@
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 
 
-    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.75)];
-    self.imagePager.delegate=self;
-    self.imagePager.dataSource=self;
-    self.tableView.tableHeaderView=self.imagePager;
+//    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.75)];
+//    self.imagePager.delegate=self;
+//    self.imagePager.dataSource=self;
+//    self.tableView.tableHeaderView=self.imagePager;
 
+    self.headerRecommendedTopicView.frame=CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.5);
+    self.tableView.tableHeaderView=self.headerRecommendedTopicView;
+    self.headerRecommendedTopicView.userInteractionEnabled=YES;
+
+
+    UITapGestureRecognizer *singleFingerTap =
+            [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                    action:@selector(handleSingleTap:)];
+    [self.headerRecommendedTopicView addGestureRecognizer:singleFingerTap];
+    [[MLSession current] getRecommendTopic_success:^(TopicModel *model) {
+
+        self.recommendedTopic=model;
+        self.headerTitle.text=model.title;
+        self.headerDesc.text=model.desc;
+        if(model.coverImg){
+            [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.coverImg]
+                                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                           self.headerImage.image=image;
+                                           [self.headerImage setNeedsDisplay];
+                                       }];
+
+        }
+    } fail:^(NSInteger i, id o) {
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
+    }];
 
 
     [self getDataWithScrollingToTop:YES];
+}
+
+
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+
+    //Do stuff here...
 }
 
 #pragma mark imagepager delegate and datasource
@@ -327,7 +367,7 @@
         if([data isKindOfClass:[TopicModel class]]){
             TopicModel * topic=(TopicModel *)data;
             tcell.contentLabel.text=topic.content;
-            tcell.downLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",@(topic.commentCount),@(topic.likeCount)];
+            tcell.downLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",topic.commentCount,topic.likeCount];
 
         }else if([data isKindOfClass:[DiaryModel class]]){
             DiaryModel *diary=(DiaryModel *)data;
