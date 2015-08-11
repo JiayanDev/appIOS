@@ -70,7 +70,7 @@
     }
 
     [[MLSession current] loginWithWeixinCode:resp.code
-                                     success:^(UserDetailModel *model,NSString *wxReceipt) {
+                                     success:^(UserModel *model,NSString *wxReceipt) {
                                          if(wxReceipt){
                                              PhoneBindVC *vc= [[PhoneBindVC alloc] init];
                                              vc.type=PhoneBindVcType_afterWechatLogin;

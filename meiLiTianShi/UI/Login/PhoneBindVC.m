@@ -108,7 +108,7 @@
                 @"receipt":self.receipt,
                 @"phoneNum":self.phoneInput.text,
         } password:nil
-                                       success:^(UserDetailModel *model) {
+                                       success:^(UserModel *model) {
                                            [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
                                        } fail:^(NSInteger i, id o) {

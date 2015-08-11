@@ -50,7 +50,7 @@
 
     [[MLSession current] loginWithPhone:self.phoneInput.text
                                password:self.passwordInput.text
-                                success:^(UserDetailModel *model) {
+                                success:^(UserModel *model) {
 
                                     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
                                 } fail:^(NSInteger i, id o) {

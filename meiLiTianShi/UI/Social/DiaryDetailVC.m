@@ -69,9 +69,14 @@
 //
 //        [self slk_setupViewConstraints];
 
-    self.url=[NSURL URLWithString:[NSString stringWithFormat:
-            @"http://app.jiayantech.com/app/html/diary.html?id=%@",@(self.diary.id)]];
+    if(self.type==WebviewWithCommentVcDetailTypeDiary){
 
+        self.url=[NSURL URLWithString:[NSString stringWithFormat:
+            @"http://apptest.jiayantech.com/html/diary.html?id=%@",@(self.diary.id)]];
+    }else{
+        self.url=[NSURL URLWithString:[NSString stringWithFormat:
+                @"http://apptest.jiayantech.com/html/topic.html?id=%@",@(self.diary.id)]];
+    }
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
 }
 
@@ -140,6 +145,10 @@
         NSUInteger posY= [requestModel.data[@"posY"] unsignedIntegerValue];
         NSUInteger posYtop=posY-self.webView.frame.size.height;
         [self.webView.scrollView setContentOffset:CGPointMake(0, posYtop) animated:YES];
+
+
+    }else if([requestModel.action isEqualToString:@"getUserInfo"]){
+
 
 
     }

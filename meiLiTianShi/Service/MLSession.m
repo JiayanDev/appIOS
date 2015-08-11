@@ -39,6 +39,7 @@ static MLSession *session;
 #define keyChainId @"MLLogin"
 #define kToken @"token"
 #define kIsLogined @"islogined"
+#define kCategories @"categories"
 
 #define USE_DEBUG_MOCK 0
 #define USE_TRY_FOR_SUCCESS 0
@@ -48,6 +49,7 @@ static MLSession *session;
     if(!session){
         session=[[MLSession alloc]init];
         session.isLogined= [[NSUserDefaults standardUserDefaults] boolForKey:kIsLogined];
+        session.categories= [[NSUserDefaults standardUserDefaults] objectForKey:kCategories];
     }
     return session;
 }
@@ -178,9 +180,15 @@ constructingBodyWithBlock:constructingBodyWithBlock
             [self.categories addObject:[[CategoryModel alloc] initWithDictionary:one
                                                                            error:nil]];
         }
+
+//        [[NSUserDefaults standardUserDefaults] setObject:self.categories forKey:kCategories];
     }
 
 }
+//
+//-(NSNumber *)currentCategoriesConfigVersion{
+//
+//}
 
 -(void)appInitGetSessionSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [@{@"configVersion" : @0} mutableCopy];
@@ -661,7 +669,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 -(void)registerWithParam:(NSDictionary *)data
                 password:(NSString *)rawPassword
-                 success:(void(^)(UserDetailModel *))success
+                 success:(void(^)(UserModel *))success
                     fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [data mutableCopy];
 //    d[@"configVersion"]= @1.0;
@@ -681,7 +689,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
               if(o[@"token"]){
                   self.token=o[@"token"];
               }
-              UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+              UserModel *m=[[UserModel alloc] initWithDictionary:o error:nil];
               self.isLogined=YES;
               self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
               success(m);
@@ -693,7 +701,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
 -(void)loginWithPhone:(NSString *)phone password:(NSString *)rawPassword
-                 success:(void(^)(UserDetailModel *))success
+                 success:(void(^)(UserModel *))success
                     fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [NSMutableDictionary dictionary];
 //    d[@"configVersion"]= @1.0;
@@ -710,7 +718,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
                if(o[@"token"]){
                    self.token=o[@"token"];
                }
-               UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+               UserModel *m=[[UserModel alloc] initWithDictionary:o error:nil];
                self.isLogined=YES;
                self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
                success(m);
@@ -721,7 +729,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
 -(void)loginWithWeixinCode:(NSString *)wxCode
-              success:(void(^)(UserDetailModel *,NSString *wxReceipt))success
+              success:(void(^)(UserModel *,NSString *wxReceipt))success
                  fail:(void (^)(NSInteger, id))failure{
     NSMutableDictionary *d= [NSMutableDictionary dictionary];
 //    d[@"configVersion"]= @1.0;
@@ -740,7 +748,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
                if(o[@"wxReceipt"]){
                    success(nil,o[@"wxReceipt"]);
                }else{
-                   UserDetailModel *m=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+                   UserModel *m=[[UserModel alloc] initWithDictionary:o error:nil];
                    self.isLogined=YES;
                    self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
                    success(m,nil);
