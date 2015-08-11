@@ -40,7 +40,7 @@
 
     [[MLSession current] registerWithParam:d
                                   password:self.password1.text
-                                   success:^(UserDetailModel *model) {
+                                   success:^(UserModel *model) {
                                        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 
                                    } fail:^(NSInteger i, id o) {
