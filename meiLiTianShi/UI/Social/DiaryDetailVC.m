@@ -148,7 +148,18 @@
 
 
     }else if([requestModel.action isEqualToString:@"getUserInfo"]){
+        NSDictionary *d=@{
+                @"id":@([MLSession current].currentUser.id),
+                @"name":[MLSession current].currentUser.name,
+                @"phone":[MLSession current].currentUser.phoneNum,
+                @"token":[MLSession current].token,
+        };
 
+        [[WebviewRespondModel respondWithCode:@0
+                                          msg:@"ok"
+                                         data:d] respondToWebview:self.webView
+                                                      withReqeust:requestModel
+                                                        isSuccess:YES];
 
 
     }

@@ -23,6 +23,8 @@
 
 @interface MLSession : NSObject
 
+@property (nonatomic, strong) NSString *token;
+
 @property (nonatomic, strong)NSMutableArray *categories;
 
 

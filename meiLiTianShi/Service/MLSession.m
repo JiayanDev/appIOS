@@ -27,7 +27,7 @@
 
 static MLSession *session;
 @interface MLSession()
-@property (nonatomic, strong) NSString *token;
+
 //@property (nonatomic, strong) dispatch_queue_t uploadQueue;
 
 @end
