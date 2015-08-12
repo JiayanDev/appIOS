@@ -17,6 +17,7 @@
 #import "IDMPhoto.h"
 #import "IDMPhotoBrowser.h"
 #import "EventJoinApplyVC.h"
+#import "MLWebRedirectPusher.h"
 
 @interface EventDetailVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -108,7 +109,9 @@
 
 -(BOOL)handleRedirectRequests:(NSURL *)url{
 
-    return YES;
+
+    return ![MLWebRedirectPusher pushWithUrl:url
+                              viewController:self];
 }
 
 

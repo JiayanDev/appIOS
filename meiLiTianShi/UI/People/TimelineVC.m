@@ -13,6 +13,7 @@
 #import "MLSession.h"
 #import "WebviewRequestModel.h"
 #import "URLParser.h"
+#import "MLWebRedirectPusher.h"
 
 @interface TimelineVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -110,7 +111,8 @@
 
 -(BOOL)handleRedirectRequests:(NSURL *)url{
 
-    return NO;
+    return ![MLWebRedirectPusher pushWithUrl:url
+                              viewController:self];
 }
 
 
