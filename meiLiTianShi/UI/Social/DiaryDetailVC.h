@@ -14,8 +14,10 @@ typedef NS_ENUM(NSUInteger,WebviewWithCommentVcDetailType){
 };
 
 @class DiaryModel;
+@class TopicModel;
 
 @interface DiaryDetailVC : SLKTextViewController <UIWebViewDelegate, IDMPhotoBrowserDelegate>
 @property (nonatomic, assign)WebviewWithCommentVcDetailType type;
 @property (nonatomic, strong)DiaryModel *diary;
+@property (nonatomic, strong)TopicModel *topic;
 @end

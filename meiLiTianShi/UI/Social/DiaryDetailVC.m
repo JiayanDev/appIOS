@@ -18,6 +18,7 @@
 #import "UserModel.h"
 #import "IDMPhoto.h"
 #import "IDMPhotoBrowser.h"
+#import "TopicModel.h"
 
 @interface DiaryDetailVC ()
 //@property (strong, nonatomic) IBOutlet UIScrollView *scroll;
@@ -75,8 +76,9 @@
             @"http://apptest.jiayantech.com/html/diary.html?id=%@",@(self.diary.id)]];
     }else{
         self.url=[NSURL URLWithString:[NSString stringWithFormat:
-                @"http://apptest.jiayantech.com/html/topic.html?id=%@",@(self.diary.id)]];
+                @"http://apptest.jiayantech.com/html/topic.html?id=%@",@(self.topic.id)]];
     }
+    NSLog(@"self.url: %@",);
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
 }
 
@@ -187,8 +189,8 @@
     UIWebView *webView=self.webView;
     __weak DiaryDetailVC* weakSelf = self;
 
-    NSString *subject=request.data ? request.data[@"subject"] : @"diary";
-    NSNumber *subjectId=request.data ? request.data[@"subjectId"] : @(self.diary.id);
+    NSString *subject=request.data ? request.data[@"subject"] : (self.type==WebviewWithCommentVcDetailTypeDiary? @"diary":@"topic");
+    NSNumber *subjectId=request.data ? request.data[@"subjectId"] : @(self.type==WebviewWithCommentVcDetailTypeDiary? self.diary.id:self.topic.id);
 
 
     [[MLSession current] createCommentWithSubject:subject

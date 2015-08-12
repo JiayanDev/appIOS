@@ -51,8 +51,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title=@"话题列表";
-    self.navigationItem.titleView=self.typeSwitcher;
+    self.title=@"发现";
+    //self.navigationItem.titleView=self.typeSwitcher;
 
     self.tableData=[NSMutableArray array];
     [self.tableView registerClass:[TopicListCell class] forCellReuseIdentifier:kCellTopic];
@@ -65,9 +65,9 @@
     self.pageIndicator= [[PageIndicator alloc] init];
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
-    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                                         target:self
-                                                                                         action:@selector(gotoCreate)];
+//    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+//                                                                                         target:self
+//                                                                                         action:@selector(gotoCreate)];
 //    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 
@@ -111,9 +111,12 @@
 
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
-    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
-
-    //Do stuff here...
+    if(self.recommendedTopic){
+        DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
+        vc.type=WebviewWithCommentVcDetailTypeTopic;
+        vc.topic=self.recommendedTopic;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 #pragma mark imagepager delegate and datasource
