@@ -22,7 +22,7 @@
 
 @interface DiaryDetailVC ()
 //@property (strong, nonatomic) IBOutlet UIScrollView *scroll;
-@property(strong, nonatomic) UIScrollView *scroller;
+//@property(strong, nonatomic) UIScrollView *scroller;
 //@property (weak, nonatomic) IBOutlet UIWebView *webview;
 @property(strong, nonatomic) UIWebView *webView;
 @property (strong, nonatomic)NSURL *url;
@@ -42,9 +42,7 @@
 - (instancetype)init {
     //[[NSBundle mainBundle] loadNibNamed:@"DiaryDetailVC" owner:self options:nil];
 
-    NSString * userAgent = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-    userAgent=[NSString stringWithFormat:@"%@ jiayantech",userAgent];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent" : userAgent}];
+
     //NSUserDefaults.standardUserDefaults().registerDefaults(["UserAgent" : userAgent])
 
 

@@ -63,8 +63,21 @@
     //for log（optional）
     [UMessage setLogEnabled:YES];
     [WXApi registerApp:@"wxb6f54f1fe561c970"];
-    
-    
+
+
+
+
+
+
+
+
+    NSString * userAgent = [[[UIWebView alloc] init] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    userAgent=[NSString stringWithFormat:@"%@ jiayantech",userAgent];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent" : userAgent}];
+
+
+
+
 
 
 

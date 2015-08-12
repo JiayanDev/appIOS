@@ -21,6 +21,8 @@
 		071F2CD31B784E9E00A081FE /* IndexTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071F2CD11B784E9E00A081FE /* IndexTVC.xib */; };
 		071F2CD71B78BCF700A081FE /* IndexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 071F2CD51B78BCF700A081FE /* IndexCell.m */; };
 		071F2CD81B78BCF700A081FE /* IndexCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071F2CD61B78BCF700A081FE /* IndexCell.xib */; };
+		071F2CDC1B7AF2DF00A081FE /* TimelineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071F2CDA1B7AF2DF00A081FE /* TimelineVC.m */; };
+		071F2CDD1B7AF2DF00A081FE /* TimelineVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071F2CDB1B7AF2DF00A081FE /* TimelineVC.xib */; };
 		072C3A991B64D6500032849C /* ConfigIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A981B64D6500032849C /* ConfigIndexVC.m */; };
 		072C3A9D1B653D820032849C /* SuggestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A9B1B653D820032849C /* SuggestionsVC.m */; };
 		072C3A9E1B653D820032849C /* SuggestionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072C3A9C1B653D820032849C /* SuggestionsVC.xib */; };
@@ -211,6 +213,9 @@
 		071F2CD41B78BCF700A081FE /* IndexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexCell.h; sourceTree = "<group>"; };
 		071F2CD51B78BCF700A081FE /* IndexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexCell.m; sourceTree = "<group>"; };
 		071F2CD61B78BCF700A081FE /* IndexCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IndexCell.xib; sourceTree = "<group>"; };
+		071F2CD91B7AF2DF00A081FE /* TimelineVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineVC.h; sourceTree = "<group>"; };
+		071F2CDA1B7AF2DF00A081FE /* TimelineVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineVC.m; sourceTree = "<group>"; };
+		071F2CDB1B7AF2DF00A081FE /* TimelineVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimelineVC.xib; sourceTree = "<group>"; };
 		072C3A971B64D6500032849C /* ConfigIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigIndexVC.h; sourceTree = "<group>"; };
 		072C3A981B64D6500032849C /* ConfigIndexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigIndexVC.m; sourceTree = "<group>"; };
 		072C3A9A1B653D820032849C /* SuggestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsVC.h; sourceTree = "<group>"; };
@@ -845,6 +850,7 @@
 				3CDC554C8E12B30D27EFC5D2 /* Event */,
 				3CDC51AFB7C56EA4C5229BA5 /* Login */,
 				3CDC5C1E0B13C9E502CEFA53 /* Index */,
+				3CDC5F59C489127E21550906 /* People */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1131,6 +1137,16 @@
 			path = UMessage_Sdk_1.1.0;
 			sourceTree = "<group>";
 		};
+		3CDC5F59C489127E21550906 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				071F2CD91B7AF2DF00A081FE /* TimelineVC.h */,
+				071F2CDA1B7AF2DF00A081FE /* TimelineVC.m */,
+				071F2CDB1B7AF2DF00A081FE /* TimelineVC.xib */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
 		3CDC5F82A36890DC46E43AAC /* createNew */ = {
 			isa = PBXGroup;
 			children = (
@@ -1281,6 +1297,7 @@
 				07FB9C3C1B4E1471000CCC45 /* CreateDiaryFVC.xib in Resources */,
 				07A8BA851B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
+				071F2CDD1B7AF2DF00A081FE /* TimelineVC.xib in Resources */,
 				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
 				071F2CD81B78BCF700A081FE /* IndexCell.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
@@ -1401,6 +1418,7 @@
 				072F30B31B468536001A14E6 /* TopicListVC.m in Sources */,
 				076767A81B4E601500F73D00 /* ProjectSelectVC.m in Sources */,
 				3CDC5BA55D30C7A9D6399196 /* MLSession.m in Sources */,
+				071F2CDC1B7AF2DF00A081FE /* TimelineVC.m in Sources */,
 				070E2ECC1B58E7800041847A /* EventListTVC.m in Sources */,
 				07FB9C3B1B4E1471000CCC45 /* CreateDiaryFVC.m in Sources */,
 				07BB692E1B74A1E100BBACA6 /* EventJoinApplySuccVC.m in Sources */,
