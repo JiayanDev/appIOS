@@ -108,7 +108,7 @@
 
 -(BOOL)handleRedirectRequests:(NSURL *)url{
 
-    return NO;
+    return YES;
 }
 
 

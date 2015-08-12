@@ -78,7 +78,7 @@
         self.url=[NSURL URLWithString:[NSString stringWithFormat:
                 @"http://apptest.jiayantech.com/html/topic.html?id=%@",@(self.topic.id)]];
     }
-    NSLog(@"self.url: %@",);
+    NSLog(@"self.url: %@",self.url);
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
 }
 
