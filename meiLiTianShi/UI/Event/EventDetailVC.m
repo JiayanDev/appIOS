@@ -107,6 +107,7 @@
     return NO;
 }
 - (BOOL)hidesBottomBarWhenPushed {
+//    NSLog(@"%@", @([[NSDate new] timeIntervalSince1970]));
     return YES;
 }
 

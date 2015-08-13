@@ -15,6 +15,7 @@
 #import "IndexCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "EventDetailVC.h"
+#import "DiaryDetailVC.h"
 
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
@@ -106,7 +107,10 @@ return 1;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
         TopicModel *data=self.tableData[indexPath.section];
-
+        DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
+        vc.type=WebviewWithCommentVcDetailTypeTopic;
+        vc.topic=data;
+        [self.navigationController pushViewController:vc animated:YES];
 
     }else{
         EventModel *data=self.tableData[indexPath.section];
