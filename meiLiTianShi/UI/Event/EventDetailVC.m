@@ -106,6 +106,9 @@
 
     return NO;
 }
+- (BOOL)hidesBottomBarWhenPushed {
+    return YES;
+}
 
 -(BOOL)handleRedirectRequests:(NSURL *)url{
 

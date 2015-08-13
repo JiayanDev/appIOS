@@ -14,6 +14,7 @@
 #import "WebviewRequestModel.h"
 #import "URLParser.h"
 #import "MLWebRedirectPusher.h"
+#import "CreateDiaryFVC.h"
 
 @interface TimelineVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -99,6 +100,8 @@
 
 
     }else if([requestModel.action isEqualToString:@"addPost"]){
+        CreateDiaryFVC *vc= [[CreateDiaryFVC alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
 
 
     }else if([requestModel.action isEqualToString:@"hideLoading"]){

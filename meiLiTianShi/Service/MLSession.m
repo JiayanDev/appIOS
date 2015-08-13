@@ -420,7 +420,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 -(void)createDiaryWithContent:(NSString *)content photoes:(NSArray *)photoes  success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure{
     [self sendPost:@"diary/post"
-             param:@{@"content":content,@"photoes":photoes?photoes:@[]}
+             param:@{@"content":content,@"photoes":photoes?[photoes toJsonString]:@"[]"}
            success:^(id o) {
                 NSUInteger id= [o[@"id"] unsignedIntValue];
                 success(id);

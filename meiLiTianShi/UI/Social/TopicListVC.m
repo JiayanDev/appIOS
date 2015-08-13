@@ -334,12 +334,12 @@
                                         }];
         }
 
-        NSMutableArray *cates=[NSMutableArray array];
-        for (NSNumber *categoryId in diary.categoryIds) {
-            [cates addObject:[CategoryModel stringWithId:[categoryId unsignedIntegerValue]]];
-        }
-
-        dcell.tagLabel.text= [cates componentsJoinedByString:@"，"];
+//        NSMutableArray *cates=[NSMutableArray array];
+//        for (NSNumber *categoryId in diary.categoryIds) {
+//            [cates addObject:[CategoryModel stringWithId:[categoryId unsignedIntegerValue]]];
+//        }
+//
+//        dcell.tagLabel.text= [cates componentsJoinedByString:@"，"];
 
         [dcell.likeButton setTitle:[NSString stringWithFormat:@"%@",@(diary.likeCount)] forState:UIControlStateNormal];
         [dcell.commentButton setTitle:[NSString stringWithFormat:@"%@",@(diary.commentCount)] forState:UIControlStateNormal];

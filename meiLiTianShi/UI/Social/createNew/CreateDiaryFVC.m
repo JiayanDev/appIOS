@@ -16,6 +16,7 @@
 #import "CreateDiaryBookFVC.h"
 #import "MLSession.h"
 #import "TSMessage.h"
+#import "MBProgressHUD.h"
 
 @interface CreateDiaryFVC ()
 @property (nonatomic, strong)DiaryModel *diaryWithoutImage;
@@ -41,12 +42,12 @@
     [self.form formRowWithTag:kcates].value=[CategoriesArrayWrap wrapWithCates:self.categories];
     [self.tableView reloadData];
 
-    if(self.needToCreateNewDiaryBookLater){
-        self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"下一步"
+//    if(self.needToCreateNewDiaryBookLater){
+        self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"提交"
                                                                                  style:UIBarButtonItemStylePlain
                                                                                 target:self
                                                                                 action:@selector(submit)];
-    }
+//    }
 
 }
 
@@ -74,6 +75,7 @@
 
 
 -(void)uploadImages{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[MLSession current]
             getImageUploadPolicyAndSignatureWithMod:@"diary"
                                             Success:^(UploadTokenModel *model) {
@@ -83,6 +85,7 @@
                                                                             self.uploadFinished = YES;
                                                                             self.imageUrls = urls;
                                                                             if (fails.count > 0) {
+                                                                                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                                                                 [TSMessage showNotificationWithTitle:@"上传中出错了"
                                                                                                             subtitle:[NSString stringWithFormat:
                                                                                                                     @"成功：%lu个，失败：%lu个，失败信息：%@",
@@ -93,16 +96,21 @@
                                                                                 [[MLSession current] createDiaryWithContent:self.diaryWithoutImage.content
                                                                                                                     photoes:urls
                                                                                                                     success:^(NSUInteger id) {
+                                                                                                                        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                                                                                                         [TSMessage showNotificationWithTitle:@"发表成功"
                                                                                                                                                         type:TSMessageNotificationTypeSuccess];
                                                                                                                         [self.navigationController popViewControllerAnimated:YES];
                                                                                                                     } fail:^(NSInteger i, id o) {
-
+                                                                                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                                                                            [TSMessage showNotificationWithTitle:@"出错了"
+                                                                                                                        subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                                                                                            type:TSMessageNotificationTypeError];
                                                                                         }];
                                                                             }
 
                                                                         }];
                                             } fail:^(NSInteger i, id o) {
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                 [TSMessage showNotificationWithTitle:@"获取token出错" subtitle:[NSString stringWithFormat:@"%ld %@", (long)i, o]
                                                 type:TSMessageNotificationTypeError];
             }];
