@@ -18,5 +18,5 @@
 
 @property (nonatomic, strong) NSString <Optional>*userName;
 @property (nonatomic, strong) NSNumber<Optional> *userId;
-@property (nonatomic, strong) NSArray <Optional> *categoryIds;
+//@property (nonatomic, strong) NSArray <Optional> *categoryIds;
 @end

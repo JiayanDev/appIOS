@@ -405,17 +405,26 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 
--(void)createDiaryBookWithDiaryBook:(DiaryBookModel *)book diary:(DiaryModel *)diary
-                            success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure{
-    NSMutableDictionary *d=[NSMutableDictionary dictionary];
-    [d setValuesForKeysWithDictionary:[book toDictionaryWithNSArrayToJSONString]];
-    d[@"post_content"]=diary.content;
-    d[@"post_photoes"]= [diary.photoes toJsonString];
-    [d removeObjectForKey:@"id"];
-    [self sendPost:@"diary/create" param:d success:^(id o) {
-        NSUInteger id= [o[@"id"] unsignedIntValue];
-        success(id);
-    } failure:failure];
+//-(void)createDiaryBookWithDiaryBook:(DiaryBookModel *)book diary:(DiaryModel *)diary
+//                            success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure{
+//    NSMutableDictionary *d=[NSMutableDictionary dictionary];
+//    [d setValuesForKeysWithDictionary:[book toDictionaryWithNSArrayToJSONString]];
+//    d[@"post_content"]=diary.content;
+//    d[@"post_photoes"]= [diary.photoes toJsonString];
+//    [d removeObjectForKey:@"id"];
+//    [self sendPost:@"diary/create" param:d success:^(id o) {
+//        NSUInteger id= [o[@"id"] unsignedIntValue];
+//        success(id);
+//    } failure:failure];
+//}
+
+-(void)createDiaryWithContent:(NSString *)content photoes:(NSArray *)photoes  success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"diary/post"
+             param:@{@"content":content,@"photoes":photoes?photoes:@[]}
+           success:^(id o) {
+                NSUInteger id= [o[@"id"] unsignedIntValue];
+                success(id);
+           } failure:failure];
 }
 
 

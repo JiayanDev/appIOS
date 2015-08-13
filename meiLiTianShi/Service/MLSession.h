@@ -69,6 +69,10 @@
 
 - (void)createDiaryBookWithDiaryBook:(DiaryBookModel *)book diary:(DiaryModel *)diary success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)createDiary:(DiaryModel *)diary success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)createDiaryWithContent:(NSString *)content photoes:(NSArray *)photoes success:(void (^)(NSUInteger id))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)createCommentWithSubject:(NSString *)subject subjectId:(NSNumber *)subjectId content:(NSString *)content success:(void (^)(NSUInteger, NSDictionary *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getEventsWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
