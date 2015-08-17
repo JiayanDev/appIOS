@@ -78,6 +78,9 @@
     }
     NSLog(@"self.url: %@",self.url);
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
+
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+
 }
 
 - (void)viewDidLayoutSubviews {

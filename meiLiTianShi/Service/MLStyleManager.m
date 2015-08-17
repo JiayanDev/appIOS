@@ -19,6 +19,9 @@
 
 
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithHexString:@"ff5a60"]];
+
+
+//    [UINavigationBar appearance]set
 };
 
 
@@ -26,6 +29,14 @@
     UIView* sv= [[UIView alloc] initWithFrame:[self findHairlineImageViewUnder:navigationBar].frame];
     sv.backgroundColor=[UIColor colorWithHexString:@"d9d9d9"];
     [[self findHairlineImageViewUnder:navigationBar].superview addSubview:sv];
+
+
+
+    UIImage *backBtn = [UIImage imageNamed:@"返回.png"];
+    backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+    navigationBar.backIndicatorImage = backBtn;
+    navigationBar.backIndicatorTransitionMaskImage = backBtn;
 }
 
 
