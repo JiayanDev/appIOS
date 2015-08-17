@@ -16,6 +16,9 @@
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "EventDetailVC.h"
 #import "DiaryDetailVC.h"
+#import "UIImage+Color.h"
+#import "HexColor.h"
+#import "MLStyleManager.h"
 
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
@@ -25,18 +28,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title=@"美丽天使";
+    self.navigationItem.title=@"阿赫";
     self.tableData=[NSMutableArray array];
     [self.tableView registerClass:[IndexCell class] forCellReuseIdentifier:kIndexCell];
     [self.tableView registerNib:[UINib nibWithNibName:@"IndexCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kIndexCell];
     [self getData];
 
+
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+
 }
+
+
+- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
+    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -12,6 +12,8 @@
 #import "UMessage.h"
 #import "MLSession.h"
 #import "LoginWaySelectVC.h"
+#import "HexColor.h"
+#import "MLStyleManager.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong)UITabBarController* tabBarController;
@@ -76,6 +78,8 @@
     [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent" : userAgent}];
 
 
+
+    [MLStyleManager styleSetsWhenFinishiLaunching];
 
 
 
