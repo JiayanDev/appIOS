@@ -26,6 +26,7 @@
 #import "CategoryModel.h"
 #import "KIImagePager.h"
 #import "WKIImagePager.h"
+#import "MLStyleManager.h"
 
 @interface TopicListVC ()
 @property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -107,6 +108,9 @@
 
 
     [self getDataWithScrollingToTop:YES];
+
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
+
 }
 
 

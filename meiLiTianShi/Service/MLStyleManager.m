@@ -26,12 +26,15 @@
 
 
 +(void)styleTheNavigationBar:(UINavigationBar *)navigationBar{
+
+    //hairline
     UIView* sv= [[UIView alloc] initWithFrame:[self findHairlineImageViewUnder:navigationBar].frame];
     sv.backgroundColor=[UIColor colorWithHexString:@"d9d9d9"];
     [[self findHairlineImageViewUnder:navigationBar].superview addSubview:sv];
 
 
 
+    //back button
     UIImage *backBtn = [UIImage imageNamed:@"返回.png"];
     backBtn = [backBtn imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
