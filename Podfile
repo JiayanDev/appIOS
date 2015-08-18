@@ -21,6 +21,7 @@ pod 'MJRefresh'
   pod 'RMUniversalAlert'
   pod 'CTCheckbox'
   pod 'KIImagePager'
+  pod 'JVFloatLabeledTextField'
 end
 
 target 'meiLiTianShiTests' do

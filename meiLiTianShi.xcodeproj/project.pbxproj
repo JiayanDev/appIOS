@@ -168,6 +168,7 @@
 		3CDC5C864005BB6F709A5105 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5748AC0105922B97DB85 /* NSString+MD5.m */; };
 		3CDC5CB35C89A248328BF64C /* MLJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FFDC7CE5565D2D71E0C /* MLJsonModel.m */; };
 		3CDC5CDDDC7CF43BC8C77D2F /* IMG_1744.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC548A0F16F3FB0F881047 /* IMG_1744.jpg */; };
+		3CDC5CFC82BD7B1A18F8F3C2 /* FloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50150804B09C4982B605 /* FloatLabeledTextFieldCell.m */; };
 		3CDC5D0C79BCFF3DEDCA33D7 /* 返回@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC50C251336D10479DA047 /* 返回@3x.png */; };
 		3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */; };
 		3CDC5D13FFAEE4226A3DDC8B /* 分享@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC530ED1448F41295231BF /* 分享@2x.png */; };
@@ -340,6 +341,7 @@
 		07FB9C3E1B4E1486000CCC45 /* CreateTopicFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateTopicFVC.m; sourceTree = "<group>"; };
 		07FB9C3F1B4E1486000CCC45 /* CreateTopicFVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateTopicFVC.xib; sourceTree = "<group>"; };
 		3CDC5011C0DC667206AB0190 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
+		3CDC50150804B09C4982B605 /* FloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
 		3CDC50439D6B18F000354CD6 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
 		3CDC5066FE5ACA4B6EF717C6 /* WebviewRespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebviewRespondModel.m; sourceTree = "<group>"; };
 		3CDC506D5F81122F80F2A68D /* ELCOverlayImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCOverlayImageView.h; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		3CDC597984E0800F22B6CF38 /* IDMPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhotoBrowser.h; sourceTree = "<group>"; };
 		3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAssetTablePicker.xib; sourceTree = "<group>"; };
 		3CDC5987BB34C7D719ADD99D /* SLKTextView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLKTextView+SLKAdditions.h"; sourceTree = "<group>"; };
+		3CDC59A828258B04097E0FE8 /* FloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		3CDC59AC37FF813066BEC7AF /* ELCAssetPickerFilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetPickerFilterDelegate.h; sourceTree = "<group>"; };
 		3CDC59AFC59FCBBC3CCCDD58 /* HospitalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalModel.m; sourceTree = "<group>"; };
 		3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAlbumPickerController.xib; sourceTree = "<group>"; };
@@ -746,6 +749,8 @@
 				3CDC5E20A1F79D8C4BFC24B7 /* XLFormTextDetailViewController.m */,
 				3CDC5B5D5C62A64C66272263 /* NSDate+XLformPushDisplay.m */,
 				3CDC5E1F09CB6F9A69C9A456 /* NSDate+XLformPushDisplay.h */,
+				3CDC59A828258B04097E0FE8 /* FloatLabeledTextFieldCell.h */,
+				3CDC50150804B09C4982B605 /* FloatLabeledTextFieldCell.m */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -1550,6 +1555,7 @@
 				3CDC5EC7F2A1AF4BCE0FD9C4 /* MLWebRedirectPusher.m in Sources */,
 				3CDC56DFC92394767FB11EDD /* UIImage+Color.m in Sources */,
 				3CDC58AAFB5966383A7A7533 /* MLStyleManager.m in Sources */,
+				3CDC5CFC82BD7B1A18F8F3C2 /* FloatLabeledTextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
