@@ -136,6 +136,7 @@
 		3CDC5718D0183EB570522492 /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDC5C047D0E6D12E9B89195 /* libUMessage_Sdk_1.1.0.a */; };
 		3CDC571B97992D204B2458B5 /* XLFormRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC539503866142E846D7C9 /* XLFormRatingCell.m */; };
 		3CDC576E2CCB127E6248136E /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59659707C01E4412DD98 /* 返回@2x.png */; };
+		3CDC57980929EBB3432623C3 /* MLXLformVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */; };
 		3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */; };
 		3CDC57D7723F8B02D7FBAF6C /* IDMPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC58F3CE21869816BB0977 /* IDMPhotoBrowser.m */; };
 		3CDC58648BFC255C4F9030EF /* ELCOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */; };
@@ -383,6 +384,7 @@
 		3CDC537D996240025C659B6F /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		3CDC537F2BF458DE621E0C1C /* FloatCellOfNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfNumber.h; sourceTree = "<group>"; };
 		3CDC539503866142E846D7C9 /* XLFormRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFormRatingCell.m; sourceTree = "<group>"; };
+		3CDC5397096D0A27549BD9B5 /* MLXLformVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLformVC.h; sourceTree = "<group>"; };
 		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
 		3CDC53CAAB6150275227214A /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
 		3CDC53F0691BD6FD4301024B /* IDMPhotoBrowser_arrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDMPhotoBrowser_arrowLeft.png; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 		3CDC5F4BAC0BEE64E31C33E5 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
 		3CDC5F7AE5260A30F5A88CE3 /* XLRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLRatingView.m; sourceTree = "<group>"; };
 		3CDC5F8533E195A6E27B562E /* ELCAssetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetCell.m; sourceTree = "<group>"; };
+		3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLformVC.m; sourceTree = "<group>"; };
 		3CDC5FFDC7CE5565D2D71E0C /* MLJsonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLJsonModel.m; sourceTree = "<group>"; };
 		681628C019081CA3341F7F68 /* libPods-meiLiTianShi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-meiLiTianShi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6119EACC3758C4C93EEB3EE /* Pods-meiLiTianShi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-meiLiTianShi.release.xcconfig"; path = "Pods/Target Support Files/Pods-meiLiTianShi/Pods-meiLiTianShi.release.xcconfig"; sourceTree = "<group>"; };
@@ -766,6 +769,8 @@
 				3CDC51F690789D5E140B1057 /* FloatCellOfPhoneAndButton.h */,
 				3CDC51A90201CE851736F53D /* FloatCellOfNumber.m */,
 				3CDC537F2BF458DE621E0C1C /* FloatCellOfNumber.h */,
+				3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */,
+				3CDC5397096D0A27549BD9B5 /* MLXLformVC.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -1574,6 +1579,7 @@
 				3CDC50830EF3A25AA70E0047 /* FloatCellOfPhoneAndButton.m in Sources */,
 				3CDC5E83933ACBE1C5A4BA2A /* PhoneBindFVC.m in Sources */,
 				3CDC5D425F39456D92040EFE /* FloatCellOfNumber.m in Sources */,
+				3CDC57980929EBB3432623C3 /* MLXLformVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

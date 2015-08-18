@@ -5,8 +5,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XLFormViewController.h"
-#import "MLXLformVC.h"
 
 
-@interface PhoneBindFVC : MLXLformVC
+@interface MLXLformVC : XLFormViewController
 @end
