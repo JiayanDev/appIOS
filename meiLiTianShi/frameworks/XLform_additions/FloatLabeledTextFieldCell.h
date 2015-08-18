@@ -24,8 +24,11 @@
 
 #import "XLFormBaseCell.h"
 
+@class JVFloatLabeledTextField;
+
 extern NSString * const XLFormRowDescriptorTypeFloatLabeledTextField;
 
 @interface FloatLabeledTextFieldCell : XLFormBaseCell
+@property (nonatomic) JVFloatLabeledTextField * floatLabeledTextField;
 
 @end

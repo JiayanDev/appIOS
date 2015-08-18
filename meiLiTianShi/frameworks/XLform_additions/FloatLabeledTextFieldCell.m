@@ -36,7 +36,6 @@ const static CGFloat kVMargin = 8.0f;
 const static CGFloat kFloatingLabelFontSize = 11.0f;
 
 @interface FloatLabeledTextFieldCell () <UITextFieldDelegate>
-@property (nonatomic) JVFloatLabeledTextField * floatLabeledTextField;
 @end
 
 @implementation FloatLabeledTextFieldCell
