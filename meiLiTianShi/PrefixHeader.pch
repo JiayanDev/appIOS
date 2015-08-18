@@ -14,7 +14,10 @@
 #ifdef __OBJC__
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "HexColor.h"
+
 #define THE1PX_CONST (1.0 / [UIScreen mainScreen].scale)
+#define THEME_COLOR [UIColor colorWithHexString:@"ff5a60"]
 
 #endif
 

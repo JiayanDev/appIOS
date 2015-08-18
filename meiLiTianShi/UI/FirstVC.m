@@ -14,6 +14,7 @@
 #import "MyIndexVC.h"
 #import "EventListTVC.h"
 #import "IndexTVC.h"
+#import "PhoneBindFVC.h"
 
 @interface FirstVC ()
 
@@ -44,7 +45,7 @@
     vc2.title=@"发现";
 
     UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:
-            [[EventListTVC alloc]init]];
+            [[PhoneBindFVC alloc]init]];
     vc3.title=@"活动";
 
     UINavigationController *vc4= [[UINavigationController alloc] initWithRootViewController:
