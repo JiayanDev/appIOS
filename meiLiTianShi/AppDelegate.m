@@ -79,7 +79,8 @@
 
 
 
-    [MLStyleManager styleSetsWhenFinishiLaunching];
+    [MLStyleManager styleSetsWhenFinishiLaunchingWithWindow:self.window];
+
 
 
 

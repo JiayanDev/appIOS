@@ -9,5 +9,7 @@
 @interface MLStyleManager : NSObject
 + (void)styleSetsWhenFinishiLaunching;
 
++ (void)styleSetsWhenFinishiLaunchingWithWindow:(UIWindow *)window;
+
 + (void)styleTheNavigationBar:(UINavigationBar *)navigationBar;
 @end

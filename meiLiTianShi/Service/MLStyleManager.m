@@ -11,7 +11,7 @@
 
 }
 
-+(void)styleSetsWhenFinishiLaunching{
++(void)styleSetsWhenFinishiLaunchingWithWindow:(UIWindow *)window{
 
 
     NSDictionary *textTitleOptions = @{
@@ -19,10 +19,13 @@
             NSFontAttributeName:[UIFont systemFontOfSize:16]
     };
     [[UINavigationBar appearance] setTitleTextAttributes:textTitleOptions];
+//    [[UINavigationBar appearance]set]
 
 
     [[UINavigationBar appearance] setTintColor:[UIColor colorWithHexString:@"ff5a60"]];
 
+
+    [window setTintColor:[UIColor colorWithHexString:@"ff5a60"]];
 
 //    [UINavigationBar appearance]set
 };
