@@ -18,6 +18,8 @@
 
 #define THE1PX_CONST (1.0 / [UIScreen mainScreen].scale)
 #define THEME_COLOR [UIColor colorWithHexString:@"ff5a60"]
+#define THEME_COLOR_HIGHLIGHT [UIColor colorWithHexString:@"fdb4b7"]
+#define THEME_COLOR_DISABLED_BUTTON [UIColor colorWithHexString:@"d9d9d9"]
 
 #endif
 

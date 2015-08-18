@@ -6,6 +6,7 @@
 #import "PhoneBindFVC.h"
 #import "XLForm.h"
 #import "FloatCellOfPhoneAndButton.h"
+#import "FloatCellOfNumber.h"
 
 
 @implementation PhoneBindFVC {
@@ -43,6 +44,11 @@
     [section addFormRow:row];
 
 
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"hasasaha" rowType:XLFormRowDescriptorTypeFloatLabeledTextField_number];
+    row.title=@"ceshiw";
+//    row.cellConfigAtConfigure[@"textView.placeholder"] = @"日记内容";
+    [section addFormRow:row];
 
 
 

@@ -7,14 +7,13 @@
 #import "FloatCellOfPhoneAndButton.h"
 #import "JVFloatLabeledTextField.h"
 #import "UIView+XLFormAdditions.h"
+#import "UIImage+Color.h"
 #import <QuartzCore/QuartzCore.h>
 
 
-NSString * const XLFormRowDescriptorTypeFloatLabeledTextField_phoneAndButton = @"XLFormRowDescriptorTypeFloatLabeledTextField";
+NSString * const XLFormRowDescriptorTypeFloatLabeledTextField_phoneAndButton = @"XLFormRowDescriptorTypeFloatLabeledTextField_phoneAndButton";
 
 @interface FloatCellOfPhoneAndButton()
-@property (nonatomic, strong)UIButton *postfixButton;
-@property (nonatomic, strong)UILabel *prefixLabel;
 @end
 
 
@@ -68,6 +67,9 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     self.postfixButton.layer.cornerRadius = 4; // this value vary as per your desire
     self.postfixButton.clipsToBounds = YES;
 
+    [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT] forState:UIControlStateHighlighted];
+    [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
+
 
     self.prefixLabel=[[UILabel alloc] init];
     self.prefixLabel.textAlignment=NSTextAlignmentCenter;
@@ -104,6 +106,7 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
         make.right.equalTo(self.contentView.mas_right).with.offset(-kHMargin);
         make.centerY.equalTo(self.contentView);
         make.width.mas_equalTo(@90);
+        make.height.mas_equalTo(@30);
     }];
 
 //    [self.contentView addConstraints:[self layoutConstraints]];

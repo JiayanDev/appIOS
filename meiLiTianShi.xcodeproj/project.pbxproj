@@ -173,6 +173,7 @@
 		3CDC5D0C79BCFF3DEDCA33D7 /* 返回@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC50C251336D10479DA047 /* 返回@3x.png */; };
 		3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */; };
 		3CDC5D13FFAEE4226A3DDC8B /* 分享@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC530ED1448F41295231BF /* 分享@2x.png */; };
+		3CDC5D425F39456D92040EFE /* FloatCellOfNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51A90201CE851736F53D /* FloatCellOfNumber.m */; };
 		3CDC5D6E3479C55CDFB955D0 /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5218D7E23FB9BB172D9C /* SLKTextViewController.m */; };
 		3CDC5DBAAD9EF21AC5234AE7 /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EDE45048E6EBD0D401C /* RespondModel.m */; };
 		3CDC5DCBE4B73F95085734C1 /* 搜索@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B23C177FE8EFE2343E6 /* 搜索@2x.png */; };
@@ -356,6 +357,7 @@
 		3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAssetPicker.xib; sourceTree = "<group>"; };
 		3CDC515EF7C0F25FAB63E766 /* IDMTapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingView.h; sourceTree = "<group>"; };
 		3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextInputbar.m; sourceTree = "<group>"; };
+		3CDC51A90201CE851736F53D /* FloatCellOfNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfNumber.m; sourceTree = "<group>"; };
 		3CDC51C6D8284563362D9860 /* IDMTapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMTapDetectingImageView.m; sourceTree = "<group>"; };
 		3CDC51E4DF2E06D32E164600 /* SLKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextView.h; sourceTree = "<group>"; };
 		3CDC51EA3A260C89563CC956 /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLParser.h; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 		3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		3CDC53689314A573D22FC3D1 /* PhoneBindFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneBindFVC.h; sourceTree = "<group>"; };
 		3CDC537D996240025C659B6F /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		3CDC537F2BF458DE621E0C1C /* FloatCellOfNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfNumber.h; sourceTree = "<group>"; };
 		3CDC539503866142E846D7C9 /* XLFormRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFormRatingCell.m; sourceTree = "<group>"; };
 		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
 		3CDC53CAAB6150275227214A /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
@@ -761,6 +764,8 @@
 				3CDC50150804B09C4982B605 /* FloatLabeledTextFieldCell.m */,
 				3CDC52167A37C2A15657D800 /* FloatCellOfPhoneAndButton.m */,
 				3CDC51F690789D5E140B1057 /* FloatCellOfPhoneAndButton.h */,
+				3CDC51A90201CE851736F53D /* FloatCellOfNumber.m */,
+				3CDC537F2BF458DE621E0C1C /* FloatCellOfNumber.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -1568,6 +1573,7 @@
 				3CDC5CFC82BD7B1A18F8F3C2 /* FloatLabeledTextFieldCell.m in Sources */,
 				3CDC50830EF3A25AA70E0047 /* FloatCellOfPhoneAndButton.m in Sources */,
 				3CDC5E83933ACBE1C5A4BA2A /* PhoneBindFVC.m in Sources */,
+				3CDC5D425F39456D92040EFE /* FloatCellOfNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

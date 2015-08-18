@@ -9,4 +9,6 @@
 extern NSString * const XLFormRowDescriptorTypeFloatLabeledTextField_phoneAndButton;
 
 @interface FloatCellOfPhoneAndButton : FloatLabeledTextFieldCell <UITextFieldDelegate>
+@property (nonatomic, strong)UIButton *postfixButton;
+@property (nonatomic, strong)UILabel *prefixLabel;
 @end
