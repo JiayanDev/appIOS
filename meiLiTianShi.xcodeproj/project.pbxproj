@@ -143,6 +143,7 @@
 		3CDC57163F14B372FAB7014E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E0C3A66E170A06E7D3F /* URLParser.m */; };
 		3CDC5718D0183EB570522492 /* libUMessage_Sdk_1.1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDC5C047D0E6D12E9B89195 /* libUMessage_Sdk_1.1.0.a */; };
 		3CDC571B97992D204B2458B5 /* XLFormRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC539503866142E846D7C9 /* XLFormRatingCell.m */; };
+		3CDC5737F9F47F5ACDFFCEF5 /* FloatCellOfGender.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */; };
 		3CDC576E2CCB127E6248136E /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59659707C01E4412DD98 /* 返回@2x.png */; };
 		3CDC57980929EBB3432623C3 /* MLXLformVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */; };
 		3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */; };
@@ -399,6 +400,7 @@
 		3CDC5269BECA6E37708CBF47 /* WKIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKIImagePager.h; sourceTree = "<group>"; };
 		3CDC52B3040B7888C183D7E6 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		3CDC52D2A6FCE96FD2DAF844 /* IMG_1652.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1652.jpg; sourceTree = "<group>"; };
+		3CDC52DEBF530DB4E73DAB9B /* FloatCellOfGender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfGender.h; sourceTree = "<group>"; };
 		3CDC5301039E95A45EE8950E /* IDMPhotoBrowser_arrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDMPhotoBrowser_arrowRight.png; sourceTree = "<group>"; };
 		3CDC5303D4AA91E14F4EFCDA /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
 		3CDC530ED1448F41295231BF /* 分享@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享@2x.png"; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		3CDC5B65DBF8147BD8DC3CF1 /* FloatCellOfName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfName.m; sourceTree = "<group>"; };
 		3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKInputAccessoryView.m; sourceTree = "<group>"; };
+		3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfGender.m; sourceTree = "<group>"; };
 		3CDC5BE4CECDEB8B3391024B /* IDMPBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPBConstants.h; sourceTree = "<group>"; };
 		3CDC5C047D0E6D12E9B89195 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		3CDC5C18BA83F13AA44AD6BE /* IDMCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMCaptionView.h; sourceTree = "<group>"; };
@@ -861,6 +864,8 @@
 				3CDC546E233F9D47BE475EF9 /* FloatCellOfName.h */,
 				3CDC56B9336FEBCB16E7E352 /* FloatCellOfPassword.m */,
 				3CDC511F436FF2931081F237 /* FloatCellOfPassword.h */,
+				3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */,
+				3CDC52DEBF530DB4E73DAB9B /* FloatCellOfGender.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -1692,6 +1697,7 @@
 				3CDC5C3E8F2240D510AF2DD9 /* FloatCellOfName.m in Sources */,
 				3CDC53439E3B84D8D8919F7C /* FloatCellOfPassword.m in Sources */,
 				3CDC5C56D98511B4C58B9DCA /* MLCheckBox.m in Sources */,
+				3CDC5737F9F47F5ACDFFCEF5 /* FloatCellOfGender.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

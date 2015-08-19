@@ -5,6 +5,13 @@
 
 #import <Foundation/Foundation.h>
 
+@class MLCheckBox;
+
+@protocol MLCheckBoxDelegate
+-(void)checkbox:(MLCheckBox *)checkBox valueChanged:(BOOL)value;
+@end
 
 @interface MLCheckBox : UIButton
+@property (nonatomic, strong)MLCheckBox* oppositeCheckbox;
+@property (nonatomic, strong)NSObject <MLCheckBoxDelegate>*delegate;
 @end
