@@ -13,7 +13,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView setSeparatorColor:[UIColor colorWithHexString:@"ededed"]];
-    self.tableView.backgroundColor=[UIColor colorWithHexString:@"f7f7f7"];
+    self.tableView.backgroundColor=[UIColor colorWithHexString:@"f6f6f6"];
 }
 
 -(void)viewDidLayoutSubviews
