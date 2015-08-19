@@ -62,6 +62,8 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
 
     self.postfixButton= [[UIButton alloc] init];
     [self.postfixButton setTitle:@"发送验证码" forState:UIControlStateNormal];
+    [self.postfixButton setTitle:@"已发送"
+                         forState:UIControlStateDisabled];
     self.postfixButton.backgroundColor=THEME_COLOR;
     self.postfixButton.titleLabel.font=[UIFont systemFontOfSize:13];
     self.postfixButton.layer.cornerRadius = 4; // this value vary as per your desire
@@ -69,6 +71,8 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
 
     [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT] forState:UIControlStateHighlighted];
     [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
+
+    [self.postfixButton addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchUpInside];
 
 
     self.prefixLabel=[[UILabel alloc] init];
@@ -112,6 +116,14 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
 //    [self.contentView addConstraints:[self layoutConstraints]];
 }
 
+
+-(void)buttonPress:(UIButton *)button{
+    [self.floatLabeledTextField endEditing:YES];
+    if([self.formViewController conformsToProtocol:@protocol(FloatCellOfPhoneAndButton_buttonDelegate)]){
+        [((XLFormViewController <FloatCellOfPhoneAndButton_buttonDelegate> *) self.formViewController) postfixButtonPressed:button
+                                                                                                               rowDescrptor:self.rowDescriptor];
+    }
+}
 
 //-(NSArray *)layoutConstraints
 //{

@@ -6,7 +6,10 @@
 #import <Foundation/Foundation.h>
 #import "XLFormViewController.h"
 #import "MLXLformVC.h"
+#import "FloatCellOfPhoneAndButton.h"
 
 
-@interface PhoneBindFVC : MLXLformVC
+@interface PhoneBindFVC : MLXLformVC<FloatCellOfPhoneAndButton_buttonDelegate>
+@property (nonatomic, strong)NSString *wxReceipt_afterWechatLogin;
+
 @end

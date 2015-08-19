@@ -465,6 +465,7 @@
 		3CDC5BE4CECDEB8B3391024B /* IDMPBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPBConstants.h; sourceTree = "<group>"; };
 		3CDC5C047D0E6D12E9B89195 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		3CDC5C18BA83F13AA44AD6BE /* IDMCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMCaptionView.h; sourceTree = "<group>"; };
+		3CDC5C1E81DA4A488EE6CC30 /* XLform_getAndSetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLform_getAndSetValue.h; sourceTree = "<group>"; };
 		3CDC5C49233F34922EB262C2 /* IDMPhotoBrowser_arrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDMPhotoBrowser_arrowLeft@2x.png"; sourceTree = "<group>"; };
 		3CDC5C4AC3F4E96F3F2A4F02 /* IDMTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingImageView.h; sourceTree = "<group>"; };
 		3CDC5C64D43B593244EE3289 /* WebviewRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebviewRequestModel.h; sourceTree = "<group>"; };
@@ -771,6 +772,7 @@
 				3CDC537F2BF458DE621E0C1C /* FloatCellOfNumber.h */,
 				3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */,
 				3CDC5397096D0A27549BD9B5 /* MLXLformVC.h */,
+				3CDC5C1E81DA4A488EE6CC30 /* XLform_getAndSetValue.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
