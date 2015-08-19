@@ -12,4 +12,6 @@
 + (void)styleSetsWhenFinishiLaunchingWithWindow:(UIWindow *)window;
 
 + (void)styleTheNavigationBar:(UINavigationBar *)navigationBar;
+
++ (void)removeBackTextForNextScene:(UIViewController *)viewController;
 @end

@@ -57,7 +57,7 @@
     b.titleLabel.font=[UIFont systemFontOfSize:15];
     b.layer.cornerRadius = 4;
     b.clipsToBounds = YES;
-    [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT] forState:UIControlStateHighlighted];
+    [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT_BUTTON] forState:UIControlStateHighlighted];
     [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
 
     [b addTarget:self action:@selector(submitButtonPress:) forControlEvents:UIControlEventTouchUpInside];

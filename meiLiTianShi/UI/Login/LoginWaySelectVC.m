@@ -28,6 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     THEME_BUTTON(self.wxLoginButton);
+    [MLStyleManager removeBackTextForNextScene:self];
 
 //
 //    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"取消"

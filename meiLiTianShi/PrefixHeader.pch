@@ -19,15 +19,18 @@
 
 #define THE1PX_CONST (1.0 / [UIScreen mainScreen].scale)
 #define THEME_COLOR [UIColor colorWithHexString:@"ff5a60"]
-#define THEME_COLOR_HIGHLIGHT [UIColor colorWithHexString:@"fdb4b7"]
+#define THEME_COLOR_HIGHLIGHT_BUTTON [UIColor colorWithHexString:@"fdb4b7"]
 #define THEME_COLOR_DISABLED_BUTTON [UIColor colorWithHexString:@"d9d9d9"]
+
+#define THEME_COLOR_TEXT [UIColor colorWithHexString:@"3a3a3a"]
+#define THEME_COLOR_TEXT_LIGHT_GRAY [UIColor colorWithHexString:@"bdbdbd"]
 
 #define THEME_BUTTON(b) b.backgroundColor=THEME_COLOR;\
 b.titleLabel.font=[UIFont systemFontOfSize:15];\
 b.layer.cornerRadius = 4;\
 b.clipsToBounds = YES;\
 [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR] forState:UIControlStateNormal]; \
-[b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT] forState:UIControlStateHighlighted];\
+[b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT_BUTTON] forState:UIControlStateHighlighted];\
 [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
 
 

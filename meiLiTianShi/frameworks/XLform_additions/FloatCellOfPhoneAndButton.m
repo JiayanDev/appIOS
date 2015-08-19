@@ -69,7 +69,7 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     self.postfixButton.layer.cornerRadius = 4; // this value vary as per your desire
     self.postfixButton.clipsToBounds = YES;
 
-    [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT] forState:UIControlStateHighlighted];
+    [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT_BUTTON] forState:UIControlStateHighlighted];
     [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
 
     [self.postfixButton addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchUpInside];
