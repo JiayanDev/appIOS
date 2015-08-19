@@ -9,7 +9,7 @@
 #import <TSMessages/TSMessage.h>
 #import "LoginWaySelectVC.h"
 #import "PhoneLoginVC.h"
-#import "PhoneBindVC.h"
+#import "PhoneBindFVC.h"
 #import "WXApi.h"
 #import "MLSession.h"
 #import "WXApiObject.h"
@@ -28,7 +28,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     THEME_BUTTON(self.wxLoginButton);
-    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
 
 //
 //    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"取消"
@@ -58,7 +57,7 @@
                                          animated:YES];
 }
 - (IBAction)registButtonPress:(id)sender {
-    PhoneBindVC *vc= [[PhoneBindVC alloc] init];
+    PhoneBindFVC *vc= [[PhoneBindFVC alloc] init];
     vc.type=PhoneBindVcType_registerFirstStep;
     [self.navigationController pushViewController:vc
                                          animated:YES];
@@ -83,7 +82,7 @@
     [[MLSession current] loginWithWeixinCode:resp.code
                                      success:^(UserModel *model,NSString *wxReceipt) {
                                          if(wxReceipt){
-                                             PhoneBindVC *vc= [[PhoneBindVC alloc] init];
+                                             PhoneBindFVC *vc= [[PhoneBindFVC alloc] init];
                                              vc.type=PhoneBindVcType_afterWechatLogin;
                                              vc.wxReceipt_afterWechatLogin=wxReceipt;
                                              [self.navigationController pushViewController:vc

@@ -62,7 +62,7 @@ static MLSession *session;
 
 -(void)setIsLogined:(BOOL)isLogined {
     _isLogined=isLogined;
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kIsLogined];
+    [[NSUserDefaults standardUserDefaults] setBool:isLogined forKey:kIsLogined];
 
 }
 

@@ -14,6 +14,10 @@
 #import "XLform_getAndSetValue.h"
 #import "UIScrollView+MJRefresh.h"
 #import "UIImage+Color.h"
+#import "PhoneRegisterSecondStepVC.h"
+#import "ForgetPasswordSecondStepVC.h"
+#import "ChangePasswordSecondStepFTV.h"
+#import "MLStyleManager.h"
 
 
 @interface PhoneBindFVC()
@@ -29,6 +33,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
+
+    if (self.type==PhoneBindVcType_registerFirstStep){
+        self.title=@"注册";
+    }else if (self.type==PhoneBindVcType_afterWechatLogin){
+        self.title=@"忘记密码";
+    }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
+        self.title=@"绑定手机";
+    }else if (self.type==PhoneBindVcType_bindWechatFirstStep){
+        self.title=@"微信绑定";
+    }else if (self.type==PhoneBindVcType_changePasswordFirstStep){
+        self.title=@"更改密码";
+    }
+
+
     UIView * t= [[UIView alloc] init];
     UIButton * b= [[UIButton alloc] init];
     [b setTitle:@"完成验证" forState:UIControlStateNormal];
@@ -65,6 +84,15 @@
 
     self.submitButton=b;
 }
+
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+
 
 
 -(id)init
@@ -162,20 +190,10 @@
                                            confirmId:self.confirmId
                                              success:^(NSString *receipt) {
                                                  self.receipt=receipt;
-                                                 [[MLSession current] registerWithParam:@{
-                                                                 @"wxReceipt":self.wxReceipt_afterWechatLogin,
-                                                                 @"receipt":self.receipt,
-                                                                 @"phoneNum":getValue(kPhone),
-                                                         } password:nil
-                                                                                success:^(UserModel *model) {
-                                                                                    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+                                                 [self gotoNextScene];
 
-                                                                                } fail:^(NSInteger i, id o) {
-                                                             [TSMessage showNotificationInViewController:self.navigationController
-                                                                                                   title:@"出错了"
-                                                                                                subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
-                                                                                                    type:TSMessageNotificationTypeError];
-                                                         }];                                             } fail:^(NSInteger i, id o) {
+
+                                             } fail:^(NSInteger i, id o) {
                 [TSMessage showNotificationInViewController:self.navigationController
                                                       title:@"出错了"
                                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
@@ -184,5 +202,48 @@
 
 }
 
+
+
+-(void)gotoNextScene{
+    if (self.type==PhoneBindVcType_registerFirstStep){
+//        PhoneRegisterSecondStepVC *vc= [[PhoneRegisterSecondStepVC alloc] init];
+//        vc.receipt=self.receipt;
+//        vc.phoneNum=self.phoneInput.text;
+//        [self.navigationController pushViewController:vc animated:YES];
+    }else if (self.type==PhoneBindVcType_afterWechatLogin){
+        [[MLSession current] registerWithParam:@{
+                        @"wxReceipt":self.wxReceipt_afterWechatLogin,
+                        @"receipt":self.receipt,
+                        @"phoneNum":getValue(kPhone),
+                } password:nil
+                                       success:^(UserModel *model) {
+                                           [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+
+                                       } fail:^(NSInteger i, id o) {
+                    [TSMessage showNotificationInViewController:self.navigationController
+                                                          title:@"出错了"
+                                                       subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                           type:TSMessageNotificationTypeError];
+                }];
+    }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
+//        ForgetPasswordSecondStepVC *vc= [[ForgetPasswordSecondStepVC alloc] init];
+//        vc.receipt=self.receipt;
+//        vc.phoneNum=self.phoneInput.text;
+//        [self.navigationController pushViewController:vc animated:YES];
+    }else if (self.type==PhoneBindVcType_bindWechatFirstStep){
+//        [MLSession current].presentingWxLoginVC=self;
+//        SendAuthReq *req= [[SendAuthReq alloc] init];
+//        req.scope=@"snsapi_userinfo" ;
+//        req.state = @"meilitianshi_weixindenglu" ;
+//        [WXApi sendReq:req];
+    }else if (self.type==PhoneBindVcType_changePasswordFirstStep){
+//        ChangePasswordSecondStepFTV *vc= [[ChangePasswordSecondStepFTV alloc] init];
+//        vc.receipt=self.receipt;
+//        vc.phoneNum=self.phoneInput.text;
+//        [self.navigationController pushViewController:vc animated:YES];
+
+    }
+
+}
 
 @end

@@ -8,8 +8,16 @@
 #import "MLXLformVC.h"
 #import "FloatCellOfPhoneAndButton.h"
 
-
+typedef NS_ENUM(NSUInteger , PhoneBindVcType){
+    PhoneBindVcType_afterWechatLogin,
+    PhoneBindVcType_registerFirstStep,
+    PhoneBindVcType_forgetPasswordFirstStep,
+    PhoneBindVcType_bindWechatFirstStep,
+    PhoneBindVcType_changePasswordFirstStep,
+};
 @interface PhoneBindFVC : MLXLformVC<FloatCellOfPhoneAndButton_buttonDelegate>
+@property (nonatomic, assign)PhoneBindVcType type;
+
 @property (nonatomic, strong)NSString *wxReceipt_afterWechatLogin;
 
 @end
