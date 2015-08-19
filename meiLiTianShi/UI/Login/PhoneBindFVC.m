@@ -41,17 +41,23 @@
     [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT] forState:UIControlStateHighlighted];
     [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
 
-    [b addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchUpInside];
+    [b addTarget:self action:@selector(submitButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     [t addSubview:b];
     [b mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(@45);
         make.left.equalTo(t.mas_left).with.offset(15);
         make.right.equalTo(t.mas_right).with.offset(-15);
         make.top.equalTo(t.mas_top).with.offset(30);
+//        make.bottom.equalTo(t.mas_bottom);
     }];
 
     self.tableView.tableFooterView=t;
-
+    CGRect r=t.frame;
+    r.size.height=90;
+    t.frame=r;
+//    [t mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.height.mas_equalTo(@60);
+//    }];
 //    [t mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.leading.equalTo(self.tableView.mas_leading).with.offset(0);
 //        make.trailing.equalTo(self.tableView.mas_trailing).with.offset(0);
@@ -134,4 +140,49 @@
             }];
 
 }
+
+
+- (IBAction)submitButtonPress:(UIButton *)sender {
+    [sender becomeFirstResponder];
+    if(!self.confirmId){
+        [TSMessage showNotificationInViewController:self.navigationController
+                                              title:@"请先发送验证码"
+                                           subtitle:nil
+                                               type:TSMessageNotificationTypeError];
+        return;
+    }
+    if(!getValue(kCode)){
+        [TSMessage showNotificationInViewController:self.navigationController
+                                              title:@"请填写验证码"
+                                           subtitle:nil
+                                               type:TSMessageNotificationTypeError];
+        return;
+    }
+    [[MLSession current] validateConfirmCodeWithCode:getValue(kCode)
+                                           confirmId:self.confirmId
+                                             success:^(NSString *receipt) {
+                                                 self.receipt=receipt;
+                                                 [[MLSession current] registerWithParam:@{
+                                                                 @"wxReceipt":self.wxReceipt_afterWechatLogin,
+                                                                 @"receipt":self.receipt,
+                                                                 @"phoneNum":getValue(kPhone),
+                                                         } password:nil
+                                                                                success:^(UserModel *model) {
+                                                                                    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+
+                                                                                } fail:^(NSInteger i, id o) {
+                                                             [TSMessage showNotificationInViewController:self.navigationController
+                                                                                                   title:@"出错了"
+                                                                                                subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                                                                    type:TSMessageNotificationTypeError];
+                                                         }];                                             } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationInViewController:self.navigationController
+                                                      title:@"出错了"
+                                                   subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                       type:TSMessageNotificationTypeError];
+            }];
+
+}
+
+
 @end

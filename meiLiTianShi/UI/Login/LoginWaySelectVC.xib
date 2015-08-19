@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginWaySelectVC">
             <connections>
+                <outlet property="closeButton" destination="i2J-q7-NNR" id="RWL-em-BMq"/>
                 <outlet property="otherLoginButton" destination="vC7-ik-gFH" id="Sio-Rw-3Hy"/>
                 <outlet property="registerButton" destination="Not-U3-Fzz" id="Hc8-Vx-zzi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="jYv-ny-uLa"/>
@@ -20,19 +21,20 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="xpz-sx-1F0">
-                    <rect key="frame" x="0.0" y="71" width="320" height="172"/>
+                    <rect key="frame" x="0.0" y="168" width="320" height="172"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="xpz-sx-1F0" secondAttribute="height" multiplier="80:43" id="whF-Az-bxR"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fr-t6-FIW">
-                    <rect key="frame" x="18" y="434" width="284" height="40"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fr-t6-FIW">
+                    <rect key="frame" x="15" y="440" width="290" height="45"/>
                     <color key="backgroundColor" red="1" green="0.0" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="PAa-dg-gDz"/>
+                        <constraint firstAttribute="height" constant="45" id="PAa-dg-gDz"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="微信登陆">
+                    <inset key="titleEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="-20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="微信登陆" image="微信登录.png">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -40,53 +42,67 @@
                         <action selector="wxLoginPress:" destination="-1" eventType="touchUpInside" id="Z7S-53-UQ1"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vC7-ik-gFH">
-                    <rect key="frame" x="8" y="498" width="150" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Not-U3-Fzz">
+                    <rect key="frame" x="155" y="512" width="150" height="27"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="150" id="ZoL-Cm-wJw"/>
-                        <constraint firstAttribute="height" constant="30" id="uoy-J6-ewG"/>
-                    </constraints>
-                    <state key="normal" title="其他登录方式">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="otherLoginPress:" destination="-1" eventType="touchUpInside" id="2Hv-rF-zJn"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Not-U3-Fzz">
-                    <rect key="frame" x="162" y="498" width="150" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="L9L-yN-bkH"/>
                         <constraint firstAttribute="width" constant="150" id="zHM-li-Gpa"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="立即注册">
-                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="registButtonPress:" destination="-1" eventType="touchUpInside" id="paT-1J-26V"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2J-q7-NNR">
+                    <rect key="frame" x="16" y="36" width="27" height="27"/>
+                    <state key="normal" image="关.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="cancel" destination="-1" eventType="touchUpInside" id="gsg-eE-NYM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vC7-ik-gFH">
+                    <rect key="frame" x="15" y="512" width="150" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="ZoL-Cm-wJw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="其他登录方式">
+                        <color key="titleColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="otherLoginPress:" destination="-1" eventType="touchUpInside" id="2Hv-rF-zJn"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="xpz-sx-1F0" secondAttribute="trailing" id="053-hH-U0R"/>
-                <constraint firstItem="vC7-ik-gFH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="0ZB-TS-Q8w"/>
+                <constraint firstItem="vC7-ik-gFH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="0ZB-TS-Q8w"/>
                 <constraint firstItem="xpz-sx-1F0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1Se-Tw-ka1"/>
-                <constraint firstItem="7fr-t6-FIW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="1cr-PX-chG"/>
-                <constraint firstItem="Not-U3-Fzz" firstAttribute="top" secondItem="7fr-t6-FIW" secondAttribute="bottom" constant="24" id="2jW-gg-G3h"/>
-                <constraint firstAttribute="trailing" secondItem="Not-U3-Fzz" secondAttribute="trailing" constant="8" id="OIQ-np-FtJ"/>
-                <constraint firstItem="vC7-ik-gFH" firstAttribute="top" secondItem="7fr-t6-FIW" secondAttribute="bottom" constant="24" id="bpU-wf-d7W"/>
-                <constraint firstItem="xpz-sx-1F0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="71" id="cQA-50-Lw0"/>
-                <constraint firstAttribute="bottom" secondItem="Not-U3-Fzz" secondAttribute="bottom" constant="40" id="dsG-Mk-mrV"/>
-                <constraint firstAttribute="trailing" secondItem="7fr-t6-FIW" secondAttribute="trailing" constant="18" id="oYc-sp-6VW"/>
+                <constraint firstItem="7fr-t6-FIW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="1cr-PX-chG"/>
+                <constraint firstItem="Not-U3-Fzz" firstAttribute="top" secondItem="7fr-t6-FIW" secondAttribute="bottom" constant="27" id="2jW-gg-G3h"/>
+                <constraint firstItem="i2J-q7-NNR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="36" id="82M-sD-4PH"/>
+                <constraint firstItem="i2J-q7-NNR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="LUb-uV-I8B"/>
+                <constraint firstAttribute="trailing" secondItem="Not-U3-Fzz" secondAttribute="trailing" constant="15" id="OIQ-np-FtJ"/>
+                <constraint firstItem="vC7-ik-gFH" firstAttribute="top" secondItem="7fr-t6-FIW" secondAttribute="bottom" constant="27" id="bpU-wf-d7W"/>
+                <constraint firstAttribute="bottom" secondItem="Not-U3-Fzz" secondAttribute="bottom" constant="29" id="dsG-Mk-mrV"/>
+                <constraint firstAttribute="centerY" secondItem="xpz-sx-1F0" secondAttribute="centerY" constant="30" id="gri-hD-YYh"/>
+                <constraint firstAttribute="trailing" secondItem="7fr-t6-FIW" secondAttribute="trailing" constant="15" id="oYc-sp-6VW"/>
             </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="549" y="269"/>
         </view>
     </objects>
     <resources>
-        <image name="logo.png" width="165" height="165"/>
+        <image name="logo.png" width="90" height="130"/>
+        <image name="关.png" width="27" height="27"/>
+        <image name="微信登录.png" width="27" height="27"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

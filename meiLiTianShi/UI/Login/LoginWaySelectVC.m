@@ -13,11 +13,13 @@
 #import "WXApi.h"
 #import "MLSession.h"
 #import "WXApiObject.h"
+#import "MLStyleManager.h"
 
 @interface LoginWaySelectVC ()
 @property (weak, nonatomic) IBOutlet UIButton *wxLoginButton;
 @property (weak, nonatomic) IBOutlet UIButton *otherLoginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
 
 @end
 
@@ -25,16 +27,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"取消"
-                                                                            style:UIBarButtonItemStylePlain
-                                                                           target:self
-                                                                           action:@selector(cancel)];
-    if(![WXApi isWXAppInstalled]){
-        self.wxLoginButton.hidden=YES;
-    }
+    THEME_BUTTON(self.wxLoginButton);
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
+
+//
+//    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"取消"
+//                                                                            style:UIBarButtonItemStylePlain
+//                                                                           target:self
+//                                                                           action:@selector(cancel)];
+//    if(![WXApi isWXAppInstalled]){
+//        self.wxLoginButton.hidden=YES;
+//    }
 }
 
--(void)cancel{
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+-(IBAction)cancel{
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
