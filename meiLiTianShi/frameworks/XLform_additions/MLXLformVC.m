@@ -14,6 +14,8 @@
     [super viewDidLoad];
     [self.tableView setSeparatorColor:[UIColor colorWithHexString:@"ededed"]];
     self.tableView.backgroundColor=[UIColor colorWithHexString:@"f6f6f6"];
+    self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
+
 }
 
 -(void)viewDidLayoutSubviews
