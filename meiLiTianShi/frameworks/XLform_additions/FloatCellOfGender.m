@@ -42,7 +42,8 @@ NSString * const XLFormRowDescriptorTypeFloatLabeledTextField_gender = @"XLFormR
 //    [self.floatLabeledTextField setDelegate:self];
 
     self.label=[[UILabel alloc]init];
-    self.label.text=self.rowDescriptor.title;
+    self.label.text=@"性别";
+    self.label.font=[UIFont systemFontOfSize:16];
     self.label.textColor=THEME_COLOR_TEXT_LIGHT_GRAY;
     [self.contentView addSubview:self.label];
     [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -51,7 +52,9 @@ NSString * const XLFormRowDescriptorTypeFloatLabeledTextField_gender = @"XLFormR
     }];
 
     self.nan= [[MLCheckBox alloc] init];
+    [self.nan setTitle:@"男" forState:UIControlStateNormal];
     self.nv= [[MLCheckBox alloc] init];
+    [self.nv setTitle:@"女" forState:UIControlStateNormal];
     self.rowDescriptor.value=@1;
 
     self.nan.delegate=self;
@@ -65,14 +68,16 @@ NSString * const XLFormRowDescriptorTypeFloatLabeledTextField_gender = @"XLFormR
     [self.contentView addSubview:self.nan];
 
     [self.nv mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.label.mas_left).with.offset(15);
+        make.left.equalTo(self.label.mas_right).with.offset(15);
         make.centerY.equalTo(self.contentView);
+        make.width.mas_greaterThanOrEqualTo(@50);
 
     }];
 
     [self.nan mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.nv.mas_left).with.offset(15);
+        make.left.equalTo(self.nv.mas_right).with.offset(15);
         make.centerY.equalTo(self.contentView);
+        make.width.mas_greaterThanOrEqualTo(@50);
 
     }];
 

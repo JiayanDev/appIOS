@@ -42,6 +42,10 @@
 {
     [self setImage:[UIImage imageNamed:@"checkbox_blank.png"] forState:UIControlStateNormal];
     [self setImage:[UIImage imageNamed:@"checkbox_checked.png"] forState:UIControlStateSelected];
+//    [self.titleLabel setTextColor:THEME_COLOR_TEXT_LIGHT_GRAY];
+    [self setTitleColor:THEME_COLOR_TEXT_LIGHT_GRAY forState:UIControlStateNormal];
+    [self setTitleColor:THEME_COLOR_TEXT forState:UIControlStateSelected];
+    [self.titleLabel setFont:[UIFont systemFontOfSize:16]];
     [self addTarget:self action:@selector(pressed:) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -60,7 +64,7 @@
 
 - (void)setSelected:(BOOL)selected {
     [super setSelected:selected];
-    self.titleLabel.textColor=self.selected?THEME_COLOR_TEXT:THEME_COLOR_TEXT_LIGHT_GRAY;
+    //self.titleLabel.textColor=self.selected?THEME_COLOR_TEXT:THEME_COLOR_TEXT_LIGHT_GRAY;
 
 }
 
