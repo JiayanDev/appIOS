@@ -5,7 +5,8 @@
 
 #import <Foundation/Foundation.h>
 #import "MLXLformVC.h"
+#import "MLSession.h"
 
 
-@interface PhoneLoginFVC : MLXLformVC
+@interface PhoneLoginFVC : MLXLformVC <wxRespondVC>
 @end
