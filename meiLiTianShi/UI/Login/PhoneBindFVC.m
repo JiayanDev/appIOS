@@ -48,41 +48,9 @@
     }
 
 
-    UIView * t= [[UIView alloc] init];
-    UIButton * b= [[UIButton alloc] init];
-    [b setTitle:@"完成验证" forState:UIControlStateNormal];
-//    [b setTitle:@"已发送"
-//                        forState:UIControlStateDisabled];
-    b.backgroundColor=THEME_COLOR;
-    b.titleLabel.font=[UIFont systemFontOfSize:15];
-    b.layer.cornerRadius = 4;
-    b.clipsToBounds = YES;
-    [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT_BUTTON] forState:UIControlStateHighlighted];
-    [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
 
-    [b addTarget:self action:@selector(submitButtonPress:) forControlEvents:UIControlEventTouchUpInside];
-    [t addSubview:b];
-    [b mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(@45);
-        make.left.equalTo(t.mas_left).with.offset(15);
-        make.right.equalTo(t.mas_right).with.offset(-15);
-        make.top.equalTo(t.mas_top).with.offset(30);
-//        make.bottom.equalTo(t.mas_bottom);
-    }];
-
-    self.tableView.tableFooterView=t;
-    CGRect r=t.frame;
-    r.size.height=90;
-    t.frame=r;
-//    [t mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.height.mas_equalTo(@60);
-//    }];
-//    [t mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.equalTo(self.tableView.mas_leading).with.offset(0);
-//        make.trailing.equalTo(self.tableView.mas_trailing).with.offset(0);
-//    }];
-
-    self.submitButton=b;
+    self.submitButton=[self addStyledBigButtonAtTableFooter_title:@"完成验证"];
+    [self.submitButton addTarget:self action:@selector(submitButtonPress:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 

@@ -8,4 +8,5 @@
 
 
 @interface MLXLformVC : XLFormViewController
+- (UIButton *)addStyledBigButtonAtTableFooter_title:(NSString *)title;
 @end
