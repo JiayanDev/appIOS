@@ -67,8 +67,6 @@
 		07A699391B686EBD00A9D2EF /* 密码@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A699351B686EBD00A9D2EF /* 密码@2x.png */; };
 		07A6993A1B686EBD00A9D2EF /* 微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A699361B686EBD00A9D2EF /* 微信@2x.png */; };
 		07A6993B1B686EBD00A9D2EF /* 用户@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A699371B686EBD00A9D2EF /* 用户@2x.png */; };
-		07A6993F1B68731100A9D2EF /* PhoneLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A6993D1B68731100A9D2EF /* PhoneLoginVC.m */; };
-		07A699401B68731100A9D2EF /* PhoneLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6993E1B68731100A9D2EF /* PhoneLoginVC.xib */; };
 		07A699511B69BC5A00A9D2EF /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A6994D1B69BC5A00A9D2EF /* libWeChatSDK.a */; };
 		07A699521B69BC5A00A9D2EF /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07A6994E1B69BC5A00A9D2EF /* read_me.txt */; };
 		07A699541B69BC8C00A9D2EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */; };
@@ -143,6 +141,7 @@
 		3CDC571B97992D204B2458B5 /* XLFormRatingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC539503866142E846D7C9 /* XLFormRatingCell.m */; };
 		3CDC5737F9F47F5ACDFFCEF5 /* FloatCellOfGender.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */; };
 		3CDC576E2CCB127E6248136E /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59659707C01E4412DD98 /* 返回@2x.png */; };
+		3CDC578AB2CD4E28BF054D13 /* PhoneLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5063748EF674BC66D294 /* PhoneLoginVC.xib */; };
 		3CDC57980929EBB3432623C3 /* MLXLformVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */; };
 		3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */; };
 		3CDC57D7723F8B02D7FBAF6C /* IDMPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC58F3CE21869816BB0977 /* IDMPhotoBrowser.m */; };
@@ -164,6 +163,7 @@
 		3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B63426FE4A04BE7F99C /* blue@2x.png */; };
 		3CDC5A5B72CE8FC29351F7F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5A6C83D1389585BD2B32 /* Localizable.strings */; };
 		3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */; };
+		3CDC5A72F773F299B8AF1E41 /* PhoneLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */; };
 		3CDC5A7CAC520E8C0CF19641 /* XLFormRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5D544238B38E305442DD /* XLFormRatingCell.xib */; };
 		3CDC5A83BCA5996C95343596 /* IDMPhotoBrowser_arrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5301039E95A45EE8950E /* IDMPhotoBrowser_arrowRight.png */; };
 		3CDC5A916299FBFDAC7D4781 /* NSDate+XLformPushDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B5D5C62A64C66272263 /* NSDate+XLformPushDisplay.m */; };
@@ -320,9 +320,6 @@
 		07A699351B686EBD00A9D2EF /* 密码@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "密码@2x.png"; sourceTree = "<group>"; };
 		07A699361B686EBD00A9D2EF /* 微信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@2x.png"; sourceTree = "<group>"; };
 		07A699371B686EBD00A9D2EF /* 用户@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "用户@2x.png"; sourceTree = "<group>"; };
-		07A6993C1B68731100A9D2EF /* PhoneLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginVC.h; sourceTree = "<group>"; };
-		07A6993D1B68731100A9D2EF /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
-		07A6993E1B68731100A9D2EF /* PhoneLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneLoginVC.xib; sourceTree = "<group>"; };
 		07A6994D1B69BC5A00A9D2EF /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		07A6994E1B69BC5A00A9D2EF /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
 		07A6994F1B69BC5A00A9D2EF /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
@@ -361,6 +358,7 @@
 		3CDC50150804B09C4982B605 /* FloatLabeledTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatLabeledTextFieldCell.m; sourceTree = "<group>"; };
 		3CDC50439D6B18F000354CD6 /* TopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicModel.m; sourceTree = "<group>"; };
 		3CDC5055CCD9EA52C7CCB8BF /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		3CDC5063748EF674BC66D294 /* PhoneLoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneLoginVC.xib; sourceTree = "<group>"; };
 		3CDC5066FE5ACA4B6EF717C6 /* WebviewRespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebviewRespondModel.m; sourceTree = "<group>"; };
 		3CDC506D5F81122F80F2A68D /* ELCOverlayImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCOverlayImageView.h; sourceTree = "<group>"; };
 		3CDC5073432FD1F9A136B5D4 /* DoctorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorModel.m; sourceTree = "<group>"; };
@@ -468,6 +466,7 @@
 		3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
 		3CDC592FA18BCE8F22C16D3D /* selectPhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectPhoto@2x.png"; sourceTree = "<group>"; };
+		3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
 		3CDC59659707C01E4412DD98 /* 返回@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@2x.png"; sourceTree = "<group>"; };
 		3CDC597108C0E2C1526D42BA /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
 		3CDC597984E0800F22B6CF38 /* IDMPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhotoBrowser.h; sourceTree = "<group>"; };
@@ -529,6 +528,7 @@
 		3CDC5D67497B107E58D21F88 /* PhoneBindVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneBindVC.xib; sourceTree = "<group>"; };
 		3CDC5D686863830874C138DD /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC5D82708C13EB121EDDBD /* InfoIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoIndexVC.h; sourceTree = "<group>"; };
+		3CDC5D83A7BD94629107FBE2 /* PhoneLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginVC.h; sourceTree = "<group>"; };
 		3CDC5D860DC83AA2E154091D /* 微信登录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信登录.png"; sourceTree = "<group>"; };
 		3CDC5D89AE02239E92F501AC /* DoctorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorModel.h; sourceTree = "<group>"; };
 		3CDC5DA4C0C4D46EDDB42D3B /* PhoneLoginFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginFVC.m; sourceTree = "<group>"; };
@@ -718,9 +718,6 @@
 				07A699281B67626C00A9D2EF /* LoginWaySelectVC.h */,
 				07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */,
 				07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */,
-				07A6993C1B68731100A9D2EF /* PhoneLoginVC.h */,
-				07A6993D1B68731100A9D2EF /* PhoneLoginVC.m */,
-				07A6993E1B68731100A9D2EF /* PhoneLoginVC.xib */,
 				3CDC5A40A622F6C3BD2EE4AC /* PhoneBindFVC.m */,
 				3CDC53689314A573D22FC3D1 /* PhoneBindFVC.h */,
 				3CDC52C0E4057D482CE67F83 /* PhoneRegisterSecondStepFVC.m */,
@@ -804,6 +801,9 @@
 				3CDC510AD493292E5287CCD7 /* PhoneRegisterSecondStepVC.h */,
 				3CDC5A34E339F51872293CC8 /* PhoneRegisterSecondStepVC.xib */,
 				3CDC5FE027B581508AAC749E /* PhoneRegisterSecondStepVC.m */,
+				3CDC5D83A7BD94629107FBE2 /* PhoneLoginVC.h */,
+				3CDC5063748EF674BC66D294 /* PhoneLoginVC.xib */,
+				3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */,
 			);
 			path = LoginOld;
 			sourceTree = "<group>";
@@ -1525,7 +1525,6 @@
 				3CDC5269EC26AC2CD7B3C513 /* Localizable.strings in Resources */,
 				07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */,
 				070E2ED71B5B76A40041847A /* DiaryListCell.xib in Resources */,
-				07A699401B68731100A9D2EF /* PhoneLoginVC.xib in Resources */,
 				07BB692F1B74A1E100BBACA6 /* EventJoinApplySuccVC.xib in Resources */,
 				07A699391B686EBD00A9D2EF /* 密码@2x.png in Resources */,
 				3CDC5544524F0BF1C9123EAF /* area.json in Resources */,
@@ -1557,6 +1556,7 @@
 				3CDC535DA037CD185825DD73 /* PhoneBindVC.xib in Resources */,
 				3CDC5B0CEC05DD5EC0E61BB4 /* ForgetPasswordSecondStepVC.xib in Resources */,
 				3CDC5B8CE38CD193EB6FB1D6 /* PhoneRegisterSecondStepVC.xib in Resources */,
+				3CDC578AB2CD4E28BF054D13 /* PhoneLoginVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1647,7 +1647,6 @@
 				3CDC50AA8E495BE766AB5C4A /* CategoriesArrayWrap.m in Sources */,
 				3CDC53CED6F3C6CD978266D4 /* AFTableViewCell.m in Sources */,
 				3CDC51E018A987664AEA4AAC /* ELCAsset.m in Sources */,
-				07A6993F1B68731100A9D2EF /* PhoneLoginVC.m in Sources */,
 				07CFFDD71B53AC6400B2560E /* HospitalSelectVC.m in Sources */,
 				3CDC5B3E7652B2E644165ABD /* ELCConsole.m in Sources */,
 				3CDC5905A16A26BD5353DFD3 /* ELCAssetCell.m in Sources */,
@@ -1718,6 +1717,7 @@
 				3CDC53315B0A2EB160036502 /* PhoneRegisterSecondStepFVC.m in Sources */,
 				3CDC54B58CB0EC5B3B8A75F7 /* PhoneRegisterSecondStepVC.m in Sources */,
 				3CDC5F1D5B042EC372ABB793 /* PhoneLoginFVC.m in Sources */,
+				3CDC5A72F773F299B8AF1E41 /* PhoneLoginVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
