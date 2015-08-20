@@ -3,11 +3,15 @@
 // Copyright (c) 2015 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "PhoneRegisterSecondStepFVC.h"
 #import "MLStyleManager.h"
 #import "FloatCellOfName.h"
 #import "FloatCellOfGender.h"
 #import "FloatCellOfPassword.h"
+#import "MLSession.h"
+#import "TSMessage.h"
+#import "XLform_getAndSetValue.h"
 
 @interface PhoneRegisterSecondStepFVC()
 @property (nonatomic, strong)UIButton *submitButton;
@@ -27,8 +31,19 @@
 
 
 
-    self.submitButton=[self addStyledBigButtonAtTableFooter_title:@"完成验证"];
+    self.submitButton=[self addStyledBigButtonAtTableFooter_title:@"注册"];
     [self.submitButton addTarget:self action:@selector(submitButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    UILabel *l=[[UILabel alloc]init];
+    [self.tableView.tableFooterView addSubview:l];
+    l.text=@"点击注册,代表理解并同意用户协议及隐私政策";
+    l.numberOfLines=0;
+    l.font=[UIFont systemFontOfSize:14];
+    l.textColor=THEME_COLOR_TEXT_LIGHT_GRAY;
+    [l mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.tableView.tableFooterView).with.offset(15);
+        make.right.equalTo(self.tableView.tableFooterView).with.offset(-15);
+        make.top.equalTo(self.tableView.tableFooterView).with.offset(0);
+    }];
 }
 
 
@@ -95,7 +110,24 @@
 
 
 - (IBAction)submitButtonPress:(UIButton *)sender {
+    NSDictionary *d=@{
+            @"phoneNum":self.phoneNum,
+            @"name":getValue(kName),
+            @"gender":getValue(kGender),
+            @"receipt":self.receipt,
+    };
 
+    [[MLSession current] registerWithParam:d
+                                  password:getValue(kPass1)
+                                   success:^(UserModel *model) {
+                                       [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+
+                                   } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationInViewController:self.navigationController
+                                                      title:@"出错了"
+                                                   subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                       type:TSMessageNotificationTypeError];
+            }];
 
 }
 
