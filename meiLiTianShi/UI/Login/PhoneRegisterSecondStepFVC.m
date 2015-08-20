@@ -110,6 +110,7 @@
 
 
 - (IBAction)submitButtonPress:(UIButton *)sender {
+    [self.view endEditing:YES];
     NSDictionary *d=@{
             @"phoneNum":self.phoneNum,
             @"name":getValue(kName),

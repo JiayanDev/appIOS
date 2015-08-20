@@ -18,6 +18,7 @@
 #import "ForgetPasswordSecondStepVC.h"
 #import "ChangePasswordSecondStepFTV.h"
 #import "MLStyleManager.h"
+#import "PhoneRegisterSecondStepFVC.h"
 
 
 @interface PhoneBindFVC()
@@ -139,7 +140,8 @@
 
 
 - (IBAction)submitButtonPress:(UIButton *)sender {
-    [sender becomeFirstResponder];
+    [self.view endEditing:YES];
+    //    [sender becomeFirstResponder];
     if(!self.confirmId){
         [TSMessage showNotificationInViewController:self.navigationController
                                               title:@"请先发送验证码"
@@ -174,10 +176,10 @@
 
 -(void)gotoNextScene{
     if (self.type==PhoneBindVcType_registerFirstStep){
-//        PhoneRegisterSecondStepVC *vc= [[PhoneRegisterSecondStepVC alloc] init];
-//        vc.receipt=self.receipt;
-//        vc.phoneNum=self.phoneInput.text;
-//        [self.navigationController pushViewController:vc animated:YES];
+        PhoneRegisterSecondStepFVC *vc= [[PhoneRegisterSecondStepFVC alloc] init];
+        vc.receipt=self.receipt;
+        vc.phoneNum=getValue(kPhone);
+        [self.navigationController pushViewController:vc animated:YES];
     }else if (self.type==PhoneBindVcType_afterWechatLogin){
         [[MLSession current] registerWithParam:@{
                         @"wxReceipt":self.wxReceipt_afterWechatLogin,
