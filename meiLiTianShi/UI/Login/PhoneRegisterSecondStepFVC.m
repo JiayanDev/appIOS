@@ -90,6 +90,7 @@
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kGender rowType:XLFormRowDescriptorTypeFloatLabeledTextField_gender];
     row.title=@"性别";
     [section addFormRow:row];
+    row.value=@1;
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kPass1 rowType:XLFormRowDescriptorTypeFloatLabeledTextField_password];
     row.title=@"设置密码";
@@ -111,6 +112,7 @@
 
 - (IBAction)submitButtonPress:(UIButton *)sender {
     [self.view endEditing:YES];
+    NSLog(@"name:%@,gender:%@",getValue(kName),getValue(kGender));
     NSDictionary *d=@{
             @"phoneNum":self.phoneNum,
             @"name":getValue(kName),
