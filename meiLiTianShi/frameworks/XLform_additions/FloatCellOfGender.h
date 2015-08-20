@@ -5,9 +5,10 @@
 
 #import <Foundation/Foundation.h>
 #import "FloatLabeledTextFieldCell.h"
+#import "MLCheckBox.h"
 
 extern NSString * const XLFormRowDescriptorTypeFloatLabeledTextField_gender;
 
-@interface FloatCellOfGender : FloatLabeledTextFieldCell
+@interface FloatCellOfGender : FloatLabeledTextFieldCell <UITextFieldDelegate, MLCheckBoxDelegate>
 @end
 

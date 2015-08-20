@@ -63,8 +63,6 @@
 		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
 		07A6992B1B67626C00A9D2EF /* LoginWaySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */; };
 		07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */; };
-		07A699321B686E6F00A9D2EF /* PhoneBindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699301B686E6F00A9D2EF /* PhoneBindVC.m */; };
-		07A699331B686E6F00A9D2EF /* PhoneBindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A699311B686E6F00A9D2EF /* PhoneBindVC.xib */; };
 		07A699381B686EBD00A9D2EF /* 电话@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A699341B686EBD00A9D2EF /* 电话@2x.png */; };
 		07A699391B686EBD00A9D2EF /* 密码@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A699351B686EBD00A9D2EF /* 密码@2x.png */; };
 		07A6993A1B686EBD00A9D2EF /* 微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A699361B686EBD00A9D2EF /* 微信@2x.png */; };
@@ -73,8 +71,6 @@
 		07A699401B68731100A9D2EF /* PhoneLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6993E1B68731100A9D2EF /* PhoneLoginVC.xib */; };
 		07A699441B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699421B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m */; };
 		07A699451B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A699431B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib */; };
-		07A699491B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699471B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m */; };
-		07A6994A1B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A699481B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib */; };
 		07A699511B69BC5A00A9D2EF /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A6994D1B69BC5A00A9D2EF /* libWeChatSDK.a */; };
 		07A699521B69BC5A00A9D2EF /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07A6994E1B69BC5A00A9D2EF /* read_me.txt */; };
 		07A699541B69BC8C00A9D2EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */; };
@@ -118,6 +114,7 @@
 		3CDC53439E3B84D8D8919F7C /* FloatCellOfPassword.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56B9336FEBCB16E7E352 /* FloatCellOfPassword.m */; };
 		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
 		3CDC5359F757287D7F6B3AD7 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */; };
+		3CDC535DA037CD185825DD73 /* PhoneBindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5D67497B107E58D21F88 /* PhoneBindVC.xib */; };
 		3CDC53CED6F3C6CD978266D4 /* AFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */; };
 		3CDC53D7FB3C69721515678F /* checkbox_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC518E7DEB9B9A5AA61156 /* checkbox_checked.png */; };
 		3CDC53EED13C3D9EF6B72632 /* DoctorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5073432FD1F9A136B5D4 /* DoctorModel.m */; };
@@ -131,6 +128,7 @@
 		3CDC5537911BFC8D45A85ED3 /* 关.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5456644690A7041D50F3 /* 关.png */; };
 		3CDC5544524F0BF1C9123EAF /* area.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5E9A5D7962A9A3B71D89 /* area.json */; };
 		3CDC555E26CDF7F2AC2B94C6 /* AreaSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B57171E8E5F55DA5FB8 /* AreaSelectModel.m */; };
+		3CDC5562A18269E40E02726B /* ForgetPasswordSecondStepVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5ECADA9B5EEF883FFC84 /* ForgetPasswordSecondStepVC.m */; };
 		3CDC558A3B3E8E5207B2DE6C /* MLRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582A761F21A9AC5CC46F /* MLRandom.m */; };
 		3CDC55DCDF24BCB5AF2A993F /* checkbox_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC514844E2ADCF9F053BD9 /* checkbox_checked@2x.png */; };
 		3CDC55EB3E37279B48E96DCE /* InfoIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC568DD217DBE46686D38B /* InfoIndexVC.m */; };
@@ -152,6 +150,7 @@
 		3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50439D6B18F000354CD6 /* TopicModel.m */; };
 		3CDC58AAFB5966383A7A7533 /* MLStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC531D690D9F97CC50EBD6 /* MLStyleManager.m */; };
 		3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */; };
+		3CDC58EF68CD27DD97F96BC0 /* PhoneBindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AFE616B7BCE581AEB04 /* PhoneBindVC.m */; };
 		3CDC5905A16A26BD5353DFD3 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5F8533E195A6E27B562E /* ELCAssetCell.m */; };
 		3CDC5913A3F7535FD2DF3E91 /* NSArray+toJsonString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */; };
 		3CDC59149E134E6D4313ECB5 /* IDMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56724B9E715849E35A98 /* IDMPhoto.m */; };
@@ -169,6 +168,7 @@
 		3CDC5A83BCA5996C95343596 /* IDMPhotoBrowser_arrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5301039E95A45EE8950E /* IDMPhotoBrowser_arrowRight.png */; };
 		3CDC5A916299FBFDAC7D4781 /* NSDate+XLformPushDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B5D5C62A64C66272263 /* NSDate+XLformPushDisplay.m */; };
 		3CDC5AFA966109CD9934B1EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5C3228FE9C2D3D37175D /* Localizable.strings */; };
+		3CDC5B0CEC05DD5EC0E61BB4 /* ForgetPasswordSecondStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC58DEBBF4F913701AC6EC /* ForgetPasswordSecondStepVC.xib */; };
 		3CDC5B1F9934E1D796FC253E /* ELCAssetPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */; };
 		3CDC5B3E7652B2E644165ABD /* ELCConsole.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5C92C7FFBCA9C773725A /* ELCConsole.m */; };
 		3CDC5B9F9A2D04C06EFCFCCE /* IDMPhotoBrowser_arrowLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53F0691BD6FD4301024B /* IDMPhotoBrowser_arrowLeft.png */; };
@@ -314,9 +314,6 @@
 		07A699281B67626C00A9D2EF /* LoginWaySelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWaySelectVC.h; sourceTree = "<group>"; };
 		07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWaySelectVC.m; sourceTree = "<group>"; };
 		07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWaySelectVC.xib; sourceTree = "<group>"; };
-		07A6992F1B686E6F00A9D2EF /* PhoneBindVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneBindVC.h; sourceTree = "<group>"; };
-		07A699301B686E6F00A9D2EF /* PhoneBindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneBindVC.m; sourceTree = "<group>"; };
-		07A699311B686E6F00A9D2EF /* PhoneBindVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneBindVC.xib; sourceTree = "<group>"; };
 		07A699341B686EBD00A9D2EF /* 电话@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "电话@2x.png"; sourceTree = "<group>"; };
 		07A699351B686EBD00A9D2EF /* 密码@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "密码@2x.png"; sourceTree = "<group>"; };
 		07A699361B686EBD00A9D2EF /* 微信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@2x.png"; sourceTree = "<group>"; };
@@ -327,9 +324,6 @@
 		07A699411B6875A500A9D2EF /* PhoneRegisterSecondStepVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneRegisterSecondStepVC.h; sourceTree = "<group>"; };
 		07A699421B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneRegisterSecondStepVC.m; sourceTree = "<group>"; };
 		07A699431B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneRegisterSecondStepVC.xib; sourceTree = "<group>"; };
-		07A699461B6879C800A9D2EF /* ForgetPasswordSecondStepVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordSecondStepVC.h; sourceTree = "<group>"; };
-		07A699471B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordSecondStepVC.m; sourceTree = "<group>"; };
-		07A699481B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForgetPasswordSecondStepVC.xib; sourceTree = "<group>"; };
 		07A6994D1B69BC5A00A9D2EF /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		07A6994E1B69BC5A00A9D2EF /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
 		07A6994F1B69BC5A00A9D2EF /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
@@ -463,9 +457,11 @@
 		3CDC57D2CCF36F450D65F7DE /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
 		3CDC5836623FA92B65DA27FC /* 微信@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@3x.png"; sourceTree = "<group>"; };
+		3CDC587605AF7E92962AE6E8 /* ForgetPasswordSecondStepVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordSecondStepVC.h; sourceTree = "<group>"; };
 		3CDC5896332D47A9F0498351 /* SZTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZTextView.m; sourceTree = "<group>"; };
 		3CDC58B81A7108D668E1ECC6 /* UserDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailModel.h; sourceTree = "<group>"; };
 		3CDC58DD20D38D9D818A26BB /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKInputAccessoryView.h; sourceTree = "<group>"; };
+		3CDC58DEBBF4F913701AC6EC /* ForgetPasswordSecondStepVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordSecondStepVC.xib; sourceTree = "<group>"; };
 		3CDC58F3CE21869816BB0977 /* IDMPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMPhotoBrowser.m; sourceTree = "<group>"; };
 		3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
@@ -478,6 +474,7 @@
 		3CDC599F9F125E0EC1597F80 /* 微信登录@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信登录@2x.png"; sourceTree = "<group>"; };
 		3CDC59A828258B04097E0FE8 /* FloatLabeledTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatLabeledTextFieldCell.h; sourceTree = "<group>"; };
 		3CDC59AC37FF813066BEC7AF /* ELCAssetPickerFilterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetPickerFilterDelegate.h; sourceTree = "<group>"; };
+		3CDC59AC743AC379AA599C3B /* PhoneBindVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneBindVC.h; sourceTree = "<group>"; };
 		3CDC59AFC59FCBBC3CCCDD58 /* HospitalModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalModel.m; sourceTree = "<group>"; };
 		3CDC59B5A6EE9B0B28DEAE0B /* 微信登录@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信登录@3x.png"; sourceTree = "<group>"; };
 		3CDC59C6192C5C969645E1A0 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
@@ -492,6 +489,7 @@
 		3CDC5AD3A598A3AD743782A9 /* IDMZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMZoomingScrollView.h; sourceTree = "<group>"; };
 		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
 		3CDC5AF995573CBE78549469 /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
+		3CDC5AFE616B7BCE581AEB04 /* PhoneBindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneBindVC.m; sourceTree = "<group>"; };
 		3CDC5B0605BDC5ADFE568BAE /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		3CDC5B129CBA914329675DAC /* 微信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@2x.png"; sourceTree = "<group>"; };
 		3CDC5B17BB76E6736829D551 /* UIScrollView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SLKAdditions.m"; sourceTree = "<group>"; };
@@ -525,6 +523,7 @@
 		3CDC5D3B8732CB0F18558B30 /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
 		3CDC5D544238B38E305442DD /* XLFormRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XLFormRatingCell.xib; sourceTree = "<group>"; };
+		3CDC5D67497B107E58D21F88 /* PhoneBindVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneBindVC.xib; sourceTree = "<group>"; };
 		3CDC5D686863830874C138DD /* ru */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC5D82708C13EB121EDDBD /* InfoIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoIndexVC.h; sourceTree = "<group>"; };
 		3CDC5D860DC83AA2E154091D /* 微信登录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信登录.png"; sourceTree = "<group>"; };
@@ -543,6 +542,7 @@
 		3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesArrayWrap.m; sourceTree = "<group>"; };
 		3CDC5E8F9D0269EEB4D0330A /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
 		3CDC5E9A5D7962A9A3B71D89 /* area.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = area.json; sourceTree = "<group>"; };
+		3CDC5ECADA9B5EEF883FFC84 /* ForgetPasswordSecondStepVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordSecondStepVC.m; sourceTree = "<group>"; };
 		3CDC5EDE45048E6EBD0D401C /* RespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondModel.m; sourceTree = "<group>"; };
 		3CDC5EE28E8625F6FAC9F486 /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5EF4E3D8E1054B3C731A /* ELCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerController.h; sourceTree = "<group>"; };
@@ -712,18 +712,12 @@
 				07A699281B67626C00A9D2EF /* LoginWaySelectVC.h */,
 				07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */,
 				07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */,
-				07A6992F1B686E6F00A9D2EF /* PhoneBindVC.h */,
-				07A699301B686E6F00A9D2EF /* PhoneBindVC.m */,
-				07A699311B686E6F00A9D2EF /* PhoneBindVC.xib */,
 				07A6993C1B68731100A9D2EF /* PhoneLoginVC.h */,
 				07A6993D1B68731100A9D2EF /* PhoneLoginVC.m */,
 				07A6993E1B68731100A9D2EF /* PhoneLoginVC.xib */,
 				07A699411B6875A500A9D2EF /* PhoneRegisterSecondStepVC.h */,
 				07A699421B6875A500A9D2EF /* PhoneRegisterSecondStepVC.m */,
 				07A699431B6875A500A9D2EF /* PhoneRegisterSecondStepVC.xib */,
-				07A699461B6879C800A9D2EF /* ForgetPasswordSecondStepVC.h */,
-				07A699471B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m */,
-				07A699481B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib */,
 				3CDC5A40A622F6C3BD2EE4AC /* PhoneBindFVC.m */,
 				3CDC53689314A573D22FC3D1 /* PhoneBindFVC.h */,
 			);
@@ -789,6 +783,19 @@
 				3CDC559E20231836137161B5 /* SAMTextField.m */,
 			);
 			path = SAMTextField;
+			sourceTree = "<group>";
+		};
+		3CDC52FA561D7793D916C394 /* LoginOld */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5D67497B107E58D21F88 /* PhoneBindVC.xib */,
+				3CDC5AFE616B7BCE581AEB04 /* PhoneBindVC.m */,
+				3CDC5ECADA9B5EEF883FFC84 /* ForgetPasswordSecondStepVC.m */,
+				3CDC59AC743AC379AA599C3B /* PhoneBindVC.h */,
+				3CDC58DEBBF4F913701AC6EC /* ForgetPasswordSecondStepVC.xib */,
+				3CDC587605AF7E92962AE6E8 /* ForgetPasswordSecondStepVC.h */,
+			);
+			path = LoginOld;
 			sourceTree = "<group>";
 		};
 		3CDC53AF979AFCB7505AD411 /* NSArray+toJsonString */ = {
@@ -999,6 +1006,7 @@
 				3CDC51AFB7C56EA4C5229BA5 /* Login */,
 				3CDC5C1E0B13C9E502CEFA53 /* Index */,
 				3CDC5F59C489127E21550906 /* People */,
+				3CDC52FA561D7793D916C394 /* LoginOld */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1495,7 +1503,6 @@
 				074804FD1B734B0600FA7C42 /* EventDetailVC.xib in Resources */,
 				3CDC5A83BCA5996C95343596 /* IDMPhotoBrowser_arrowRight.png in Resources */,
 				3CDC5BA737E58041038D989B /* IDMPhotoBrowser_arrowLeft@2x.png in Resources */,
-				07A699331B686E6F00A9D2EF /* PhoneBindVC.xib in Resources */,
 				3CDC5A3328B4197895FD8B9D /* IDMPhotoBrowser_arrowRight@2x.png in Resources */,
 				070E2ED91B5B8DBA0041847A /* 回复@2x.png in Resources */,
 				3CDC54DA84EB95BCD68FB62B /* Localizable.strings in Resources */,
@@ -1505,7 +1512,6 @@
 				3CDC503D12C1AABC645C9F35 /* Localizable.strings in Resources */,
 				07A6993A1B686EBD00A9D2EF /* 微信@2x.png in Resources */,
 				3CDC5AFA966109CD9934B1EB /* Localizable.strings in Resources */,
-				07A6994A1B6879C800A9D2EF /* ForgetPasswordSecondStepVC.xib in Resources */,
 				070E2EDB1B5B8E1F0041847A /* 点赞@2x.png in Resources */,
 				3CDC5269EC26AC2CD7B3C513 /* Localizable.strings in Resources */,
 				07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */,
@@ -1539,6 +1545,8 @@
 				3CDC5CDAFC7905D20FC7F4C6 /* checkbox_checked@3x.png in Resources */,
 				3CDC5EBECB51FC48E0C0A451 /* checkbox_blank@2x.png in Resources */,
 				3CDC55DCDF24BCB5AF2A993F /* checkbox_checked@2x.png in Resources */,
+				3CDC535DA037CD185825DD73 /* PhoneBindVC.xib in Resources */,
+				3CDC5B0CEC05DD5EC0E61BB4 /* ForgetPasswordSecondStepVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1655,7 +1663,6 @@
 				071F2CD71B78BCF700A081FE /* IndexCell.m in Sources */,
 				3CDC5DD9E3216F755CE44989 /* SLKTypingIndicatorView.m in Sources */,
 				3CDC502645DD3E76B08331AD /* UIView+SLKAdditions.m in Sources */,
-				07A699321B686E6F00A9D2EF /* PhoneBindVC.m in Sources */,
 				3CDC5DFB489609637AE3625F /* SLKTextView+SLKAdditions.m in Sources */,
 				3CDC52E26D2ADD492E3AFDBE /* UIResponder+SLKAdditions.m in Sources */,
 				3CDC5F96E8A8CA83AAAAFA96 /* UIScrollView+SLKAdditions.m in Sources */,
@@ -1664,7 +1671,6 @@
 				3CDC52EB6B00EC7473271DEA /* WebviewRespondModel.m in Sources */,
 				3CDC5E936900CD70686871B2 /* UserModel.m in Sources */,
 				3CDC59149E134E6D4313ECB5 /* IDMPhoto.m in Sources */,
-				07A699491B6879C800A9D2EF /* ForgetPasswordSecondStepVC.m in Sources */,
 				074804FC1B734B0600FA7C42 /* EventDetailVC.m in Sources */,
 				3CDC527D4088492D38B870C1 /* IDMCaptionView.m in Sources */,
 				074805011B73542600FA7C42 /* EventJoinApplyVC.m in Sources */,
@@ -1698,6 +1704,8 @@
 				3CDC53439E3B84D8D8919F7C /* FloatCellOfPassword.m in Sources */,
 				3CDC5C56D98511B4C58B9DCA /* MLCheckBox.m in Sources */,
 				3CDC5737F9F47F5ACDFFCEF5 /* FloatCellOfGender.m in Sources */,
+				3CDC58EF68CD27DD97F96BC0 /* PhoneBindVC.m in Sources */,
+				3CDC5562A18269E40E02726B /* ForgetPasswordSecondStepVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
