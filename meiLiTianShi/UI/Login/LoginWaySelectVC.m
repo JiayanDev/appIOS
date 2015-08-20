@@ -14,6 +14,7 @@
 #import "MLSession.h"
 #import "WXApiObject.h"
 #import "MLStyleManager.h"
+#import "PhoneLoginFVC.h"
 
 @interface LoginWaySelectVC ()
 @property (weak, nonatomic) IBOutlet UIButton *wxLoginButton;
@@ -54,7 +55,7 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)otherLoginPress:(id)sender {
-    [self.navigationController pushViewController:[[PhoneLoginVC alloc] init]
+    [self.navigationController pushViewController:[[PhoneLoginFVC alloc] init]
                                          animated:YES];
 }
 - (IBAction)registButtonPress:(id)sender {
