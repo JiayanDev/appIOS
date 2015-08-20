@@ -15,6 +15,7 @@
 #import "WXApiObject.h"
 #import "WXApi.h"
 #import "PhoneBindFVC.h"
+#import "ForgetPasswordFVC.h"
 
 @interface PhoneLoginFVC()
 
@@ -194,8 +195,8 @@
 }
 
 - (IBAction)forgetPasswordPress:(id)sender {
-    PhoneBindFVC *vc= [[PhoneBindFVC alloc] init];
-    vc.type=PhoneBindVcType_forgetPasswordFirstStep;
+    ForgetPasswordFVC *vc= [[ForgetPasswordFVC alloc] init];
+//    vc.type=PhoneBindVcType_forgetPasswordFirstStep;
     [self.navigationController pushViewController:vc
                                          animated:YES];
 
