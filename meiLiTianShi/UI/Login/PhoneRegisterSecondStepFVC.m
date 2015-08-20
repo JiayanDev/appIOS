@@ -26,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"完善信息";
 //    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
 
 

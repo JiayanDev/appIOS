@@ -35,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
+    [MLStyleManager removeBackTextForNextScene:self];
 
     if (self.type==PhoneBindVcType_registerFirstStep){
         self.title=@"注册";
