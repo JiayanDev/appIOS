@@ -3,6 +3,7 @@
 // Copyright (c) 2015 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "PhoneLoginFVC.h"
 #import "MLStyleManager.h"
 #import "FloatCellOfNumber.h"
@@ -22,6 +23,7 @@
 #define kPass @"password"
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"账号登陆";
     [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
     [MLStyleManager removeBackTextForNextScene:self];
 
@@ -32,6 +34,21 @@
     self.submitButton=[self addStyledBigButtonAtTableFooter_title:@"登录"];
     [self.submitButton addTarget:self action:@selector(submitButtonPress:) forControlEvents:UIControlEventTouchUpInside];
 
+    UIButton *b=[[UIButton alloc]init];
+    [self.tableView.tableFooterView addSubview:b];
+    [b setImage:[UIImage imageNamed:@"微信.png"] forState:UIControlStateNormal];
+    [b setTitle:@"微信" forState:UIControlStateNormal];
+    [b setImageEdgeInsets:UIEdgeInsetsMake(0,13,0,0)];
+    [b setTitleEdgeInsets:UIEdgeInsetsMake(84,-55,0,0)];
+    [b setContentEdgeInsets:UIEdgeInsetsMake(0,0,23,0)];
+    [b setTitleColor:THEME_COLOR_TEXT forState:UIControlStateNormal];
+    [b.titleLabel setFont:[UIFont systemFontOfSize:13]];
+    [b mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.tableView.tableFooterView ).with.offset(-57);
+        make.centerX.equalTo(self.tableView.tableFooterView );
+
+    }];
+
 
 }
 
@@ -40,6 +57,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+    NSLog(@"%@",NSStringFromCGRect(self.tableView.tableFooterView.frame));
+    CGRect r=self.tableView.tableFooterView.frame;
+    r.size.height=self.tableView.frame.size.height-r.origin.y-64;
+    self.tableView.tableFooterView.frame=r;
+
 }
 
 
