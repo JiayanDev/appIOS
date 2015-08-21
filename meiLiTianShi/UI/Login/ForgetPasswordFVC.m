@@ -31,6 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title=@"找回密码";
 //    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
     [MLStyleManager removeBackTextForNextScene:self];
 

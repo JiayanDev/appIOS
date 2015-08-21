@@ -43,7 +43,7 @@
     [l mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.tableView.tableFooterView).with.offset(15);
         make.right.equalTo(self.tableView.tableFooterView).with.offset(-15);
-        make.top.equalTo(self.tableView.tableFooterView).with.offset(0);
+        make.top.equalTo(self.tableView.tableFooterView).with.offset(6);
     }];
 }
 

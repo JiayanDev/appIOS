@@ -77,7 +77,7 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
 
     self.prefixLabel=[[UILabel alloc] init];
     self.prefixLabel.textAlignment=NSTextAlignmentCenter;
-    self.prefixLabel.text=@"86";
+    self.prefixLabel.text=@"+86";
     [self.contentView addSubview:self.prefixLabel];
     [self.contentView addSubview:self.postfixButton];
 
