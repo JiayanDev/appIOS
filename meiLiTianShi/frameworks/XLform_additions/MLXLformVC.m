@@ -17,7 +17,8 @@
     [self.tableView setSeparatorColor:THEME_COLOR_SEPERATOR_LINE];
     self.tableView.backgroundColor=THEME_COLOR_BACKGROUND;
     self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.000001f)];
-
+    self.tableView.sectionHeaderHeight = 0.0;
+    self.tableView.sectionFooterHeight = 0.0;
 }
 
 -(void)viewDidLayoutSubviews
@@ -44,6 +45,29 @@
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
         [cell setLayoutMargins:e];
     }
+}
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+        return CGFLOAT_MIN;
+    return 10;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0;
+}
+
+
+- (UIView*)tableView:(UITableView*)tableView
+        viewForHeaderInSection:(NSInteger)section {
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+- (UIView*)tableView:(UITableView*)tableView
+        viewForFooterInSection:(NSInteger)section {
+    return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 
