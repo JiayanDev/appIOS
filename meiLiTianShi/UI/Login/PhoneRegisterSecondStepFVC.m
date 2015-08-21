@@ -38,7 +38,7 @@
     [self.tableView.tableFooterView addSubview:l];
     l.text=@"点击注册,代表理解并同意用户协议及隐私政策";
     l.numberOfLines=0;
-    l.font=[UIFont systemFontOfSize:14];
+    l.font=[UIFont systemFontOfSize:13];
     l.textColor=THEME_COLOR_TEXT_LIGHT_GRAY;
     [l mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.tableView.tableFooterView).with.offset(15);
@@ -114,24 +114,37 @@
 - (IBAction)submitButtonPress:(UIButton *)sender {
     [self.view endEditing:YES];
     NSLog(@"name:%@,gender:%@",getValue(kName),getValue(kGender));
-    NSDictionary *d=@{
-            @"phoneNum":self.phoneNum,
-            @"name":getValue(kName),
-            @"gender":getValue(kGender),
-            @"receipt":self.receipt,
-    };
+    if(!getValue(kName)){
+        [TSMessage showNotificationWithTitle:@"请填写昵称" type:TSMessageNotificationTypeError];
+        return ;
+    }
 
-    [[MLSession current] registerWithParam:d
-                                  password:getValue(kPass1)
-                                   success:^(UserModel *model) {
-                                       [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    if(getValueS(kPass1).length>0 &&getValueS(kPass2).length>0 && [getValueS(kPass1) isEqualToString:getValueS(kPass2)]) {
+        NSDictionary *d = @{
+                @"phoneNum" : self.phoneNum,
+                @"name" : getValue(kName),
+                @"gender" : getValue(kGender),
+                @"receipt" : self.receipt,
+        };
 
-                                   } fail:^(NSInteger i, id o) {
-                [TSMessage showNotificationInViewController:self.navigationController
-                                                      title:@"出错了"
-                                                   subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
-                                                       type:TSMessageNotificationTypeError];
-            }];
+        [[MLSession current] registerWithParam:d
+                                      password:getValue(kPass1)
+                                       success:^(UserModel *model) {
+                                           [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+
+                                       } fail:^(NSInteger i, id o) {
+                    [TSMessage showNotificationInViewController:self.navigationController
+                                                          title:@"出错了"
+                                                       subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                           type:TSMessageNotificationTypeError];
+                }];
+    }else{
+        [TSMessage showNotificationInViewController:self.navigationController
+                                              title:@"请填写密码,并保持两次相同"
+                                           subtitle:nil
+                                               type:TSMessageNotificationTypeError];
+        return;
+    }
 
 }
 
