@@ -50,7 +50,7 @@
 }
 
 -(void)pressed:(MLCheckBox *)checkbox{
-    checkbox.selected=!checkbox.selected;
+    checkbox.selected=YES;
     if(self.oppositeCheckbox){
         [self.oppositeCheckbox setSelected:!self.selected];
     }
