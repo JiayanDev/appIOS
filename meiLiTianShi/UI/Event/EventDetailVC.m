@@ -18,10 +18,12 @@
 #import "IDMPhotoBrowser.h"
 #import "EventJoinApplyVC.h"
 #import "MLWebRedirectPusher.h"
+#import "ShareViewManager.h"
 
 @interface EventDetailVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic)NSURL *url;
+@property ShareViewManager* share;
 @end
 
 @implementation EventDetailVC
@@ -35,6 +37,8 @@
 
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self
+                                                                                          action:@selector(sharePress)];
 
 }
 
@@ -43,6 +47,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)sharePress{
+    self.share=[ShareViewManager showSharePanelOnto:self.navigationController.view];
+}
 
 
 #pragma mark - webview delegate

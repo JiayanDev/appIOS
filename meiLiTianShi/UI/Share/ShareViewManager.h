@@ -7,4 +7,9 @@
 
 
 @interface ShareViewManager : NSObject
++ (ShareViewManager *)showSharePanelOnto:(UIView *)view;
+
+- (void)disappearAll;
+
+- (void)showSharePanelOnto:(UIView *)view;
 @end
