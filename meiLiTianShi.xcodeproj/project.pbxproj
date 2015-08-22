@@ -205,6 +205,7 @@
 		3CDC5E80DC65DAB95EFAF04D /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B0605BDC5ADFE568BAE /* UIAlertView+Blocks.m */; };
 		3CDC5E81EA016B78E6623E89 /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */; };
 		3CDC5E83933ACBE1C5A4BA2A /* PhoneBindFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A40A622F6C3BD2EE4AC /* PhoneBindFVC.m */; };
+		3CDC5E93042416519F2B2311 /* ShareViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A065703EE8ABFA43D74 /* ShareViewManager.m */; };
 		3CDC5E936900CD70686871B2 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A3594D3209A128BC4A2 /* UserModel.m */; };
 		3CDC5EA58FADA4EABB3546DF /* checkbox_blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC551C9A3EC42EA101BAAD /* checkbox_blank.png */; };
 		3CDC5EBECB51FC48E0C0A451 /* checkbox_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5184309AE67755DB6E5B /* checkbox_blank@2x.png */; };
@@ -410,6 +411,7 @@
 		3CDC539503866142E846D7C9 /* XLFormRatingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLFormRatingCell.m; sourceTree = "<group>"; };
 		3CDC5397096D0A27549BD9B5 /* MLXLformVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLformVC.h; sourceTree = "<group>"; };
 		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
+		3CDC53C8236E9347C8A629FB /* ShareViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewManager.h; sourceTree = "<group>"; };
 		3CDC53CAAB6150275227214A /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
 		3CDC53F0691BD6FD4301024B /* IDMPhotoBrowser_arrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDMPhotoBrowser_arrowLeft.png; sourceTree = "<group>"; };
 		3CDC53FE4E82611186E33AE3 /* MLStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStyleManager.h; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 		3CDC59C6192C5C969645E1A0 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		3CDC59DB976691D65C5ECDCD /* ELCAlbumPickerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAlbumPickerController.xib; sourceTree = "<group>"; };
 		3CDC59EE7615C1F88295DE29 /* CategoriesArrayWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesArrayWrap.h; sourceTree = "<group>"; };
+		3CDC5A065703EE8ABFA43D74 /* ShareViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewManager.m; sourceTree = "<group>"; };
 		3CDC5A13DF6D9E0204EF8D36 /* UploadTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTokenModel.m; sourceTree = "<group>"; };
 		3CDC5A17283FB67A1E6073E0 /* 分享@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享@3x.png"; sourceTree = "<group>"; };
 		3CDC5A34E339F51872293CC8 /* PhoneRegisterSecondStepVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneRegisterSecondStepVC.xib; sourceTree = "<group>"; };
@@ -866,6 +869,15 @@
 			path = SlackTextViewController;
 			sourceTree = "<group>";
 		};
+		3CDC5490729B59DA35B66999 /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5A065703EE8ABFA43D74 /* ShareViewManager.m */,
+				3CDC53C8236E9347C8A629FB /* ShareViewManager.h */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		3CDC54EC1AEFC28D5D1C8700 /* XLform_additions */ = {
 			isa = PBXGroup;
 			children = (
@@ -1022,6 +1034,7 @@
 				3CDC5C1E0B13C9E502CEFA53 /* Index */,
 				3CDC5F59C489127E21550906 /* People */,
 				3CDC52FA561D7793D916C394 /* LoginOld */,
+				3CDC5490729B59DA35B66999 /* Share */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1724,6 +1737,7 @@
 				3CDC5F1D5B042EC372ABB793 /* PhoneLoginFVC.m in Sources */,
 				3CDC5A72F773F299B8AF1E41 /* PhoneLoginVC.m in Sources */,
 				3CDC55B2A4A947702FBF456D /* ForgetPasswordFVC.m in Sources */,
+				3CDC5E93042416519F2B2311 /* ShareViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
