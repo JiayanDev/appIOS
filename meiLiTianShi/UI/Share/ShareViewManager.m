@@ -16,7 +16,7 @@
 @implementation ShareViewManager {
 
 }
-
+#define animateDuration 0.3
 +(ShareViewManager*)showSharePanelOnto:(UIView *)view {
     ShareViewManager* shareViewManager=[[ShareViewManager alloc]init];
     [shareViewManager showSharePanelOnto:view];
@@ -47,7 +47,7 @@
 
         }];
 
-        [UIView animateWithDuration:.5 animations:^{
+        [UIView animateWithDuration:animateDuration animations:^{
             b.backgroundColor = [UIColor colorWithHexString:@"000000" alpha:0.3];
         }];
 
@@ -56,7 +56,7 @@
               action:@selector(disappearAll) forControlEvents:UIControlEventTouchUpInside];
 
     } else {
-        [UIView animateWithDuration:0.5
+        [UIView animateWithDuration:animateDuration
                          animations:^{
                              self.mask.backgroundColor = [UIColor colorWithHexString:@"000000" alpha:0.00];
                          } completion:^(BOOL finished) {
@@ -68,6 +68,8 @@
 
 
 - (void)showOrHidePanel:(BOOL)isShow {
+    CGFloat height=200;
+
     if (isShow) {
         UIView *v = [[UIView alloc] init];
         v.backgroundColor = THEME_COLOR_BACKGROUND;
@@ -76,7 +78,7 @@
         [v mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.ontoView);
             make.right.equalTo(self.ontoView);
-            make.height.mas_equalTo(@200);
+            make.height.mas_equalTo(@(height));
             make.top.equalTo(self.ontoView.mas_bottom);
 
         }];
@@ -85,31 +87,46 @@
         [self.ontoView setNeedsUpdateConstraints];
         [self.ontoView layoutIfNeeded];
 
-        [UIView animateWithDuration:.5 animations:^{
-            [v mas_updateConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.ontoView.mas_bottom).with.offset(-200);
+        [UIView animateWithDuration:animateDuration
+                              delay:0
+                            options:UIViewAnimationOptionTransitionCurlUp
+                         animations:^{
 
-            }];
-            [self.ontoView layoutIfNeeded];
-            [self.ontoView setNeedsLayout];
-            [self.ontoView setNeedsUpdateConstraints];
-        }];
+                    [v mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.top.equalTo(self.ontoView.mas_bottom).with.offset(-height);
+
+                    }];
+                    [self.ontoView layoutIfNeeded];
+                    [self.ontoView setNeedsLayout];
+                    [self.ontoView setNeedsUpdateConstraints];
+                } completion:^(BOOL finished) {
+
+                }];
+
+
 
         self.panel = v;
 
     } else {
-        [UIView animateWithDuration:0.5
+
+        [UIView animateWithDuration:animateDuration
+                              delay:0
+                            options:UIViewAnimationOptionTransitionCurlUp
                          animations:^{
                              [self.panel mas_updateConstraints:^(MASConstraintMaker *make) {
                                  make.top.equalTo(self.ontoView.mas_bottom).with.offset(0);
 
                              }];
 
-                             [self.ontoView setNeedsLayout];
+
+                             [self.ontoView layoutIfNeeded];
                          } completion:^(BOOL finished) {
                     [self.panel removeFromSuperview];
                     self.panel = nil;
                 }];
+
+
+
     }
 }
 
