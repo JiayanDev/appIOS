@@ -13,4 +13,5 @@
 + (UIImage *)imageWithColor:(UIColor *)color;
 + (UIImage *)imageWithColor:(UIColor *)color imageSize:(CGSize)imageSize;
 
+- (UIImage *)imageWithOverlayColor:(UIColor *)color;
 @end
