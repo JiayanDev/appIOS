@@ -15,6 +15,7 @@
 #import "LoginWaySelectVC.h"
 #import "MyBanMeiListTVC.h"
 #import "MyMeiLiTianShiVC.h"
+#import "MLStyleManager.h"
 
 @interface MyIndexVC ()
 @property (nonatomic, strong)XLFormDescriptor *logginedFormDescriptor;
@@ -27,6 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
     // Do any additional setup after loading the view from its nib.
     self.title=@"我的";
 }
