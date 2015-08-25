@@ -7,7 +7,8 @@
 //
 
 #import "XLFormViewController.h"
+#import "MLXLformVC.h"
 
-@interface MyIndexVC : XLFormViewController
+@interface MyIndexVC : MLXLformVC
 
 @end

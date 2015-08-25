@@ -16,7 +16,7 @@
 
     NSDictionary *textTitleOptions = @{
             NSForegroundColorAttributeName : [UIColor colorWithHexString:@"ff5a60"],/*, UITextAttributeTextShadowColor : [UIColor whiteColor]*/
-            NSFontAttributeName:[UIFont systemFontOfSize:16]
+            NSFontAttributeName:[UIFont systemFontOfSize:17]
     };
     [[UINavigationBar appearance] setTitleTextAttributes:textTitleOptions];
 //    [[UINavigationBar appearance]set]

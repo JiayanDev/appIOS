@@ -7,8 +7,9 @@
 //
 
 #import "XLFormViewController.h"
+#import "MLXLformVC.h"
 
-@interface ConfigIndexVC : XLFormViewController<XLFormRowDescriptorViewController>
+@interface ConfigIndexVC : MLXLformVC<XLFormRowDescriptorViewController>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 
 @end
