@@ -68,7 +68,7 @@
 
 
 - (void)showOrHidePanel:(BOOL)isShow {
-    CGFloat height=200;
+    CGFloat height=300;
 
     if (isShow) {
         UIView *v = [[UIView alloc] init];
@@ -91,7 +91,7 @@
 
         [UIView animateWithDuration:animateDuration
                               delay:0
-                            options:UIViewAnimationOptionTransitionCurlUp
+                            options:UIViewAnimationOptionTransitionFlipFromBottom
                          animations:^{
 
                     [v mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -134,7 +134,7 @@
 
 -(void)settleShareButton:(UIButton *)button withImage:(UIImage *)image text:(NSString *)text{
     [button setImage:image forState:UIControlStateNormal];
-    [button setImage:[image imageWithOverlayColor:[UIColor colorWithHexString:@"000000" alpha:0.3]] forState:UIControlStateHighlighted];
+//    [button setImage:[image imageWithOverlayColor:[UIColor colorWithHexString:@"000000" alpha:0.3]] forState:UIControlStateHighlighted];
     [button setTitle:text forState:UIControlStateNormal];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, 13, 0, 0)];
     [button setTitleEdgeInsets:UIEdgeInsetsMake(84, -45, 0, 0)];
@@ -184,19 +184,19 @@
 
     [wxb mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(panel).with.offset(24);
-        make.centerY.equalTo(panel);
+        make.centerY.equalTo(panel).offset(-11);
     }];
 
     [pyq mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(panel);
+        make.centerY.equalTo(panel).offset(-11);
     }];
 
     [wbb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(panel);
+        make.centerY.equalTo(panel).offset(-11);
     }];
 
     [qqk mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(panel);
+        make.centerY.equalTo(panel).offset(-11);
         make.right.equalTo(panel).with.offset(-24);
     }];
 
@@ -224,6 +224,37 @@
         make.right.equalTo(qqk.mas_left);
 
     }];
+
+
+
+    UILabel *title= [[UILabel alloc] init];
+    [panel addSubview:title];
+    title.text=@"分享到";
+    title.font=[UIFont systemFontOfSize:13];
+    title.textColor=THEME_COLOR_TEXT;
+    [title mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(panel).with.offset(17);
+        make.centerX.equalTo(panel);
+    }];
+
+
+    UIButton *cancelButton =[UIButton new];
+    [panel addSubview:cancelButton];
+    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    cancelButton.titleLabel.font=[UIFont systemFontOfSize:15];
+    [cancelButton setTitleColor:THEME_COLOR_TEXT forState:UIControlStateNormal];
+    [cancelButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithHexString:@"ffffff"]] forState:UIControlStateNormal];
+    [cancelButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(panel).with.offset(-17);
+        make.left.equalTo(panel).offset(15);
+        make.right.equalTo(panel).offset(-15);
+        make.height.mas_equalTo(@45);
+    }];
+    cancelButton.layer.cornerRadius = 4;
+    cancelButton.clipsToBounds = YES;
+    [cancelButton addTarget:self
+                     action:@selector(disappearAll) forControlEvents:UIControlEventTouchUpInside];
+
 
 }
 
