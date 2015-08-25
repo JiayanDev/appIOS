@@ -137,12 +137,12 @@
     [button setImage:[image imageWithOverlayColor:[UIColor colorWithHexString:@"000000" alpha:0.3]] forState:UIControlStateHighlighted];
     [button setTitle:text forState:UIControlStateNormal];
     [button setImageEdgeInsets:UIEdgeInsetsMake(0, 13, 0, 0)];
-    [button setTitleEdgeInsets:UIEdgeInsetsMake(84, -55, 0, 0)];
-    [button setContentEdgeInsets:UIEdgeInsetsMake(0, -8, 23, 0)];
+    [button setTitleEdgeInsets:UIEdgeInsetsMake(84, -45, 0, 0)];
+    [button setContentEdgeInsets:UIEdgeInsetsMake(0, -13, 23, 0)];
     [button setTitleColor:THEME_COLOR_TEXT forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont systemFontOfSize:13]];
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(@68);
+        make.width.mas_equalTo(@58);
     }];
 }
 
@@ -151,6 +151,7 @@
     UIButton *wxb = [[UIButton alloc] init];
     [self settleShareButton:wxb
                   withImage:[UIImage imageNamed:@"分享_微信.png"] text:@"微信"];
+
     [panel addSubview:wxb];
 
 
