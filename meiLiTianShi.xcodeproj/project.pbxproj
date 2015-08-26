@@ -94,8 +94,10 @@
 		3CDC50830EF3A25AA70E0047 /* FloatCellOfPhoneAndButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC52167A37C2A15657D800 /* FloatCellOfPhoneAndButton.m */; };
 		3CDC50AA8E495BE766AB5C4A /* CategoriesArrayWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */; };
 		3CDC50ACC0FD4877A007E55D /* 分享_朋友圈@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5742F8142E4A0FE81056 /* 分享_朋友圈@3x.png */; };
+		3CDC50C19A397F092C8A4E38 /* MLJVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC54307E5733108DB38225 /* MLJVFloatLabeledTextField.m */; };
 		3CDC510F9DCC5DA5D9919E72 /* DiaryBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */; };
 		3CDC51E018A987664AEA4AAC /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AF995573CBE78549469 /* ELCAsset.m */; };
+		3CDC51E20C9B77826B965BC0 /* InfoCellOfListOfKV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A22690CC9AA9B69D28D /* InfoCellOfListOfKV.m */; };
 		3CDC5244C6BB89534D89AB15 /* DiaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */; };
 		3CDC5269EC26AC2CD7B3C513 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC50BCB5E48FAB46AADA4E /* Localizable.strings */; };
 		3CDC527D4088492D38B870C1 /* IDMCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5737B6CD13982A393807 /* IDMCaptionView.m */; };
@@ -365,6 +367,7 @@
 		3CDC50AD67ABE27D12768D02 /* RespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondModel.h; sourceTree = "<group>"; };
 		3CDC50C251336D10479DA047 /* 返回@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@3x.png"; sourceTree = "<group>"; };
 		3CDC50CCE1665AAD44EBB742 /* UIView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SLKAdditions.h"; sourceTree = "<group>"; };
+		3CDC50E4CD2C63753B1F6C9E /* MLJVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLJVFloatLabeledTextField.h; sourceTree = "<group>"; };
 		3CDC50F8FDFADD69806DA598 /* MLCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCheckBox.m; sourceTree = "<group>"; };
 		3CDC50FFF325119EDE8210C5 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
 		3CDC510AD493292E5287CCD7 /* PhoneRegisterSecondStepVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneRegisterSecondStepVC.h; sourceTree = "<group>"; };
@@ -416,6 +419,7 @@
 		3CDC53FE4E82611186E33AE3 /* MLStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStyleManager.h; sourceTree = "<group>"; };
 		3CDC5404A89048EC837DAB69 /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetTablePicker.h; sourceTree = "<group>"; };
 		3CDC540705E8F0F483699CA9 /* WebviewRespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebviewRespondModel.h; sourceTree = "<group>"; };
+		3CDC54307E5733108DB38225 /* MLJVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLJVFloatLabeledTextField.m; sourceTree = "<group>"; };
 		3CDC5456644690A7041D50F3 /* 关.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关.png"; sourceTree = "<group>"; };
 		3CDC545CA79CC064904E5255 /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextView.m; sourceTree = "<group>"; };
 		3CDC545D3F894C23E92D6E51 /* SAMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMTextField.h; sourceTree = "<group>"; };
@@ -427,6 +431,7 @@
 		3CDC54DED21B78D259F20122 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		3CDC54DED74EF4644A1997EC /* 分享_微博@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_微博@3x.png"; sourceTree = "<group>"; };
 		3CDC54FDCCA040E65431F2AC /* UserDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailModel.m; sourceTree = "<group>"; };
+		3CDC551B964C8F273412A7DE /* InfoCellOfListOfKV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCellOfListOfKV.h; sourceTree = "<group>"; };
 		3CDC551C9A3EC42EA101BAAD /* checkbox_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_blank.png; sourceTree = "<group>"; };
 		3CDC552F991F2F3361BF0908 /* pt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = pt; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC5533301A12BE6154BB44 /* 微信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信.png"; sourceTree = "<group>"; };
@@ -493,6 +498,7 @@
 		3CDC5A065703EE8ABFA43D74 /* ShareViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewManager.m; sourceTree = "<group>"; };
 		3CDC5A13DF6D9E0204EF8D36 /* UploadTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTokenModel.m; sourceTree = "<group>"; };
 		3CDC5A17283FB67A1E6073E0 /* 分享@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享@3x.png"; sourceTree = "<group>"; };
+		3CDC5A22690CC9AA9B69D28D /* InfoCellOfListOfKV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCellOfListOfKV.m; sourceTree = "<group>"; };
 		3CDC5A34E339F51872293CC8 /* PhoneRegisterSecondStepVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneRegisterSecondStepVC.xib; sourceTree = "<group>"; };
 		3CDC5A3594D3209A128BC4A2 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		3CDC5A40A622F6C3BD2EE4AC /* PhoneBindFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneBindFVC.m; sourceTree = "<group>"; };
@@ -908,6 +914,10 @@
 				3CDC511F436FF2931081F237 /* FloatCellOfPassword.h */,
 				3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */,
 				3CDC52DEBF530DB4E73DAB9B /* FloatCellOfGender.h */,
+				3CDC5A22690CC9AA9B69D28D /* InfoCellOfListOfKV.m */,
+				3CDC551B964C8F273412A7DE /* InfoCellOfListOfKV.h */,
+				3CDC54307E5733108DB38225 /* MLJVFloatLabeledTextField.m */,
+				3CDC50E4CD2C63753B1F6C9E /* MLJVFloatLabeledTextField.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -1762,6 +1772,8 @@
 				3CDC5A72F773F299B8AF1E41 /* PhoneLoginVC.m in Sources */,
 				3CDC55B2A4A947702FBF456D /* ForgetPasswordFVC.m in Sources */,
 				3CDC5E93042416519F2B2311 /* ShareViewManager.m in Sources */,
+				3CDC51E20C9B77826B965BC0 /* InfoCellOfListOfKV.m in Sources */,
+				3CDC50C19A397F092C8A4E38 /* MLJVFloatLabeledTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

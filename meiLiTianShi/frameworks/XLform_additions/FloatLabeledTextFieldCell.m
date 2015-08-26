@@ -54,6 +54,7 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     _floatLabeledTextField = [JVFloatLabeledTextField autolayoutView];
     _floatLabeledTextField.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
     _floatLabeledTextField.floatingLabel.font = [UIFont boldSystemFontOfSize:kFloatingLabelFontSize];
+    _floatLabeledTextField.floatingLabelActiveTextColor=THEME_COLOR;
 
     _floatLabeledTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     return _floatLabeledTextField;
