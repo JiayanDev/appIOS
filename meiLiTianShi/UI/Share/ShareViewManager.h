@@ -4,9 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MLSession.h"
 
 
-@interface ShareViewManager : NSObject
+@interface ShareViewManager : NSObject <wxSendMessageRespondObj>
 + (ShareViewManager *)showSharePanelOnto:(UIView *)view;
 
 - (void)disappearAll;

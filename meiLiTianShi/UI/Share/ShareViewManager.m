@@ -5,6 +5,10 @@
 
 #import <Masonry/View+MASAdditions.h>
 #import "ShareViewManager.h"
+#import "WXApiObject.h"
+#import "WXApi.h"
+#import "MLSession.h"
+#import "TSMessage.h"
 
 
 @interface ShareViewManager ()
@@ -159,6 +163,8 @@
     [self settleShareButton:pyq
                   withImage:[UIImage imageNamed:@"分享_朋友圈.png"] text:@"朋友圈"];
     [panel addSubview:pyq];
+    [pyq addTarget:self
+            action:@selector(sendToPYQ) forControlEvents:UIControlEventTouchUpInside];
 
 
     UIButton *wbb = [[UIButton alloc] init];
@@ -258,4 +264,38 @@
 
 }
 
+
+-(void)sendToPYQ{
+    WXMediaMessage *message = [WXMediaMessage message];
+    message.title = @"专访张小龙：产品之上的世界观";
+    message.description = @"微信的平台化发展方向是否真的会让这个原本简洁的产品变得臃肿？在国际化发展方向上，微信面临的问题真的是文化差异壁垒吗？腾讯高级副总裁、微信产品负责人张小龙给出了自己的回复。";
+    [message setThumbImage:[UIImage imageNamed:@"微信.png"]];
+
+    WXWebpageObject *ext = [WXWebpageObject object];
+    ext.webpageUrl = @"http://tech.qq.com/zt2012/tmtdecode/252.htm";
+
+    message.mediaObject = ext;
+    message.mediaTagName = @"WECHAT_TAG_JUMP_SHOWRANK";
+
+    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+    req.bText = NO;
+    req.message = message;
+    req.scene = WXSceneTimeline;
+    [MLSession current].wxMessageRespHandler=self;
+    [WXApi sendReq:req];
+
+
+
+}
+
+
+
+- (void)handleWxSendMessageRespond:(SendMessageToWXResp *)resp {
+    if(resp.errCode==0){
+        [TSMessage showNotificationWithTitle:@"分享成功" type:TSMessageNotificationTypeSuccess];
+        [self disappearAll];
+    }else{
+        [TSMessage showNotificationWithTitle:@"分享失败" type:TSMessageNotificationTypeSuccess];
+    }
+}
 @end

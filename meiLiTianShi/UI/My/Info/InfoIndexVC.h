@@ -9,6 +9,6 @@
 #import "MLSession.h"
 #import "MLXLformVC.h"
 
-@interface InfoIndexVC : MLXLformVC <XLFormRowDescriptorViewController, wxRespondVC>
+@interface InfoIndexVC : MLXLformVC <XLFormRowDescriptorViewController, wxAuthRespondVC>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 @end

@@ -160,6 +160,9 @@
     if([resp isKindOfClass:[SendAuthResp class]]){
         [[MLSession current].presentingWxLoginVC handleWxAuthRespond:(SendAuthResp *) resp];
         [MLSession current].presentingWxLoginVC=nil;
+    }else if([resp isKindOfClass:[SendMessageToWXResp class]]){
+        [[MLSession current].wxMessageRespHandler handleWxSendMessageRespond:(SendMessageToWXResp *) resp];
+        [MLSession current].wxMessageRespHandler=nil;
     }
 }
 

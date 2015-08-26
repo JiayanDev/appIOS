@@ -17,10 +17,16 @@
 @class SendAuthResp;
 @class EventModel;
 @class TopicModel;
+@class SendMessageToWXResp;
 
-@protocol wxRespondVC
+@protocol wxAuthRespondVC
 @required - (void)handleWxAuthRespond:(SendAuthResp *)resp;
 @end
+
+@protocol wxSendMessageRespondObj
+@required - (void)handleWxSendMessageRespond:(SendMessageToWXResp *)resp;
+@end
+
 
 @interface MLSession : NSObject
 
@@ -35,7 +41,8 @@
 
 @property (nonatomic, assign)BOOL isLogined;
 
-@property (nonatomic, strong)UIViewController<wxRespondVC> *presentingWxLoginVC;
+@property (nonatomic, strong)UIViewController<wxAuthRespondVC> *presentingWxLoginVC;
+@property (nonatomic, strong)NSObject <wxSendMessageRespondObj> *wxMessageRespHandler;
 
 + (MLSession *)current;
 

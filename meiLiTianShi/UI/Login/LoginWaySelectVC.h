@@ -11,7 +11,7 @@
 
 @class SendAuthResp;
 
-@interface LoginWaySelectVC : UIViewController <wxRespondVC>
+@interface LoginWaySelectVC : UIViewController <wxAuthRespondVC>
 
 - (void)handleWxAuthRespond:(SendAuthResp *)resp;
 @end

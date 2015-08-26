@@ -8,5 +8,5 @@
 #import "MLSession.h"
 
 
-@interface PhoneLoginFVC : MLXLformVC <wxRespondVC>
+@interface PhoneLoginFVC : MLXLformVC <wxAuthRespondVC>
 @end
