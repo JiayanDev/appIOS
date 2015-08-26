@@ -18,6 +18,7 @@
 #import "AvatarDetailVC.h"
 #import "WXApiObject.h"
 #import "WXApi.h"
+#import "MLStyleManager.h"
 
 @interface InfoIndexVC()
 @property (nonatomic, strong)UserDetailModel *detailModel;
@@ -111,6 +112,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getData];
+    [MLStyleManager removeBackTextForNextScene:self];
 
 }
 
