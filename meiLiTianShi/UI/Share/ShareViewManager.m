@@ -295,7 +295,7 @@
         [TSMessage showNotificationWithTitle:@"分享成功" type:TSMessageNotificationTypeSuccess];
         [self disappearAll];
     }else{
-        [TSMessage showNotificationWithTitle:@"分享失败" type:TSMessageNotificationTypeSuccess];
+        [TSMessage showNotificationWithTitle:@"分享失败" type:TSMessageNotificationTypeError];
     }
 }
 @end
