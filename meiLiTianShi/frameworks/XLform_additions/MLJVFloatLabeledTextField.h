@@ -8,9 +8,7 @@
 #import "JVFloatLabeledTextField.h"
 
 
-@interface XLFormRowDescriptor(display_data)
-@property (nonatomic, strong)NSMutableDictionary *displayData;
-@end
+
 
 @interface MLJVFloatLabeledTextField : JVFloatLabeledTextField
 @end

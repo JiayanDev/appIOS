@@ -4,7 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <XLForm/XLFormRowDescriptor.h>
 
-
+@interface XLFormRowDescriptor(display_data)
+@property (nonatomic, strong)NSMutableDictionary *displayData;
+@end
 @interface InfoCellOfListOfKV : NSObject
 @end
