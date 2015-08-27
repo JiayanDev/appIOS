@@ -8,4 +8,5 @@
 
 
 @interface EventJoinApplyFVC : MLXLformVC
+@property (nonatomic, strong)NSString *eventId;
 @end

@@ -19,6 +19,7 @@
 #import "EventJoinApplyVC.h"
 #import "MLWebRedirectPusher.h"
 #import "ShareViewManager.h"
+#import "EventJoinApplyFVC.h"
 
 @interface EventDetailVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -96,7 +97,7 @@
                                                  withReqeust:requestModel
                                                    isSuccess:YES];
     }else if([requestModel.action isEqualToString:@"applymentEvent"]){
-        EventJoinApplyVC *vc= [[EventJoinApplyVC alloc] init];
+        EventJoinApplyFVC *vc= [[EventJoinApplyFVC alloc] init];
         vc.eventId=requestModel.data[@"id"];
         [self.navigationController pushViewController:vc animated:YES];
 

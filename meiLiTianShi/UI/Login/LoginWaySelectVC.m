@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     THEME_BUTTON(self.wxLoginButton);
+
     [MLStyleManager removeBackTextForNextScene:self];
 
 //

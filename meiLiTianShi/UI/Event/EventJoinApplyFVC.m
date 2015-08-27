@@ -12,8 +12,15 @@
 #import "UserModel.h"
 #import "PhoneAndGotoEditButtonCell.h"
 #import "UILabel+MLStyle.h"
+#import "EventModel.h"
+#import "NSDate+XLformPushDisplay.h"
+#import "CategoryModel.h"
+#import "TSMessage.h"
 
-
+@interface EventJoinApplyFVC()
+@property (nonatomic, strong)EventModel *event;
+@property (nonatomic, strong)UserDetailModel *userDetailModel;
+@end
 @implementation EventJoinApplyFVC {
     UIButton *b;
     UIView *v;
@@ -35,6 +42,7 @@
     [self.tableView reloadData];
 
     [self layoutTheBottom];
+    [self getData];
 }
 
 
@@ -75,7 +83,26 @@
     l.numberOfLines=0;
 }
 
+-(void)getData{
+    [[MLSession current] getEventDetailWithEventId:(NSUInteger) [self.eventId integerValue]
+                                           success:^(EventModel *model) {
 
+                                               self.event = model;
+//                                               self.huoDongXiangQing.text = [NSString stringWithFormat:
+//                                                       @"时间:%@ \n医院:%@ \n医生:%@ \n项目:%@ ",
+//                                                       [[NSDate dateWithTimeIntervalSince1970:[model.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM],
+//                                                       model.hospitalName,
+//                                                       model.doctorName,
+//                                                       [CategoryModel stringWithIdArray:model.categoryIds]
+//
+//                                               ];
+
+                                           } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
+            }];
+};
 
 
 
