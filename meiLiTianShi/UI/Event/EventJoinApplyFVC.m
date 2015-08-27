@@ -6,6 +6,9 @@
 #import "EventJoinApplyFVC.h"
 #import "InfoCellOfListOfKV.h"
 #import "XLform_getAndSetValue.h"
+#import "PersonCellOfAvatarAndName.h"
+#import "MLSession.h"
+#import "UserModel.h"
 
 
 @implementation EventJoinApplyFVC {
@@ -14,10 +17,12 @@
 
 
 #define kInfoCell @"infocell"
+#define kPersonCell @"personcell"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     setValue(kInfoCell,(@[@{@"hehe":@"papa"},@{@"hehe":@"papa"},@{@"hehe":@"papa"}]));
+    setValue(kPersonCell,(@{kName:@"hahaha",kAvatar:[MLSession current].currentUser.avatar}));
     [self.tableView reloadData];
 
 }
@@ -33,11 +38,15 @@
     [formDescriptor addFormSection:section];
 
 
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kPersonCell rowType:XLFormRowDescriptorType_personCellOfAvatarAndName];
+    [section addFormRow:row];
 
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kInfoCell rowType:XLFormRowDescriptorType_infoCellOfKV];
     row.title=@"手机号";
     [section addFormRow:row];
+
+
 
 
 
