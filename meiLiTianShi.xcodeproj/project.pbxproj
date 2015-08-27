@@ -155,6 +155,7 @@
 		3CDC58648BFC255C4F9030EF /* ELCOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */; };
 		3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50439D6B18F000354CD6 /* TopicModel.m */; };
 		3CDC58AAFB5966383A7A7533 /* MLStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC531D690D9F97CC50EBD6 /* MLStyleManager.m */; };
+		3CDC58D79207C332C307D257 /* UILabel+MLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5BFC9F5393CCD2A1C692 /* UILabel+MLStyle.m */; };
 		3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */; };
 		3CDC58EF68CD27DD97F96BC0 /* PhoneBindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AFE616B7BCE581AEB04 /* PhoneBindVC.m */; };
 		3CDC5905A16A26BD5353DFD3 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5F8533E195A6E27B562E /* ELCAssetCell.m */; };
@@ -531,6 +532,7 @@
 		3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfGender.m; sourceTree = "<group>"; };
 		3CDC5BE4CECDEB8B3391024B /* IDMPBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPBConstants.h; sourceTree = "<group>"; };
 		3CDC5BE93EFA33E71C9DB426 /* ForgetPasswordFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordFVC.m; sourceTree = "<group>"; };
+		3CDC5BFC9F5393CCD2A1C692 /* UILabel+MLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MLStyle.m"; sourceTree = "<group>"; };
 		3CDC5C047D0E6D12E9B89195 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		3CDC5C17B892ADD4694BCD3B /* 分享_qq空间@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_qq空间@2x.png"; sourceTree = "<group>"; };
 		3CDC5C18BA83F13AA44AD6BE /* IDMCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMCaptionView.h; sourceTree = "<group>"; };
@@ -563,6 +565,7 @@
 		3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+toJsonString.m"; sourceTree = "<group>"; };
 		3CDC5DBDEFAA0714824AF0B9 /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
 		3CDC5DD1ABCAE261D249F615 /* UIResponder+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+SLKAdditions.m"; sourceTree = "<group>"; };
+		3CDC5DD70181F64F813BAFC2 /* UILabel+MLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MLStyle.h"; sourceTree = "<group>"; };
 		3CDC5DE2C6E64CD4CAE79464 /* XLFormRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormRatingCell.h; sourceTree = "<group>"; };
 		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E0C3A66E170A06E7D3F /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
@@ -1119,6 +1122,15 @@
 			path = RatingView;
 			sourceTree = "<group>";
 		};
+		3CDC58166893A8CA9BF2BED8 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5BFC9F5393CCD2A1C692 /* UILabel+MLStyle.m */,
+				3CDC5DD70181F64F813BAFC2 /* UILabel+MLStyle.h */,
+			);
+			path = Style;
+			sourceTree = "<group>";
+		};
 		3CDC58BB2A057ABC93E02F87 /* KIImagePagerSubClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -1238,6 +1250,7 @@
 				3CDC5F4B717D97A3D5EF089F /* MLWebRedirectPusher.h */,
 				3CDC531D690D9F97CC50EBD6 /* MLStyleManager.m */,
 				3CDC53FE4E82611186E33AE3 /* MLStyleManager.h */,
+				3CDC58166893A8CA9BF2BED8 /* Style */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1792,6 +1805,7 @@
 				3CDC506777A977C9EE0044DD /* EventJoinApplyFVC.m in Sources */,
 				3CDC596FACF94BA2F3EF71AB /* PersonCellOfAvatarAndName.m in Sources */,
 				3CDC5198A1E477F8B7678F0E /* PhoneAndGotoEditButtonCell.m in Sources */,
+				3CDC58D79207C332C307D257 /* UILabel+MLStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

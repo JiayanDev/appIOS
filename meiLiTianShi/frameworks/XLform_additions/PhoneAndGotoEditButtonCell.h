@@ -4,8 +4,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XLFormBaseCell.h"
 
-extern NSString * const XLFormRowDescriptorType_personCellOfAvatarAndName;
+extern NSString * const XLFormRowDescriptorType_PhoneAndGotoEditButtonCell;
 
-@interface PhoneAndGotoEditButtonCell : NSObject
+@interface PhoneAndGotoEditButtonCell : XLFormBaseCell
 @end
