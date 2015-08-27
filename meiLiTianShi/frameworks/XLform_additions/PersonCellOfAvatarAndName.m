@@ -4,6 +4,7 @@
 //
 
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <Masonry/View+MASAdditions.h>
 #import "PersonCellOfAvatarAndName.h"
 
 NSString * const XLFormRowDescriptorType_personCellOfAvatarAndName = @"XLFormRowDescriptorType_personCellOfAvatarAndName";
@@ -26,7 +27,22 @@ NSString * const XLFormRowDescriptorType_personCellOfAvatarAndName = @"XLFormRow
 - (void)configure {
     self.avatarView=[UIImageView new];
     self.nameLabel=[UILabel new];
+    [self.contentView addSubview:self.avatarView];
+    [self.contentView addSubview:self.nameLabel];
+    [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(16);
+        make.top.equalTo(self.contentView).offset(17);
+        make.bottom.equalTo(self.contentView).offset(17);
+        make.size.mas_equalTo(CGSizeMake(31,31));
+    }];
 
+    self.avatarView.layer.cornerRadius = 16;
+    self.avatarView.layer.masksToBounds=YES;
+
+    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.avatarView.mas_right).offset(7);
+        make.centerY.equalTo(self.contentView);
+    }];
 
 
 }
@@ -42,10 +58,12 @@ NSString * const XLFormRowDescriptorType_personCellOfAvatarAndName = @"XLFormRow
                                   }
                               }];
 
+    self.nameLabel.text=self.rowDescriptor.value[kName];
+
 }
 
 + (CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor {
-
+    return 34+31;
 }
 
 
