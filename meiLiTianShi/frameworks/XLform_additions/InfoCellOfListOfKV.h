@@ -13,5 +13,5 @@ extern NSString * const XLFormRowDescriptorType_infoCellOfKV;
 @property (nonatomic, strong)NSMutableDictionary *displayData;
 @end
 @interface InfoCellOfListOfKV : XLFormBaseCell
-- (CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor;
+
 @end
