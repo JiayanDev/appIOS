@@ -9,6 +9,7 @@
 #import "PersonCellOfAvatarAndName.h"
 #import "MLSession.h"
 #import "UserModel.h"
+#import "PhoneAndGotoEditButtonCell.h"
 
 
 @implementation EventJoinApplyFVC {
@@ -18,11 +19,15 @@
 
 #define kInfoCell @"infocell"
 #define kPersonCell @"personcell"
+#define kPhoneCell @"phonecell"
+#define kNickCell @"nickcell"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     setValue(kInfoCell,(@[@{@"hehe":@"papa"},@{@"hehe":@"papa"},@{@"hehe":@"papa"}]));
     setValue(kPersonCell,(@{kName:@"hahaha",kAvatar:[MLSession current].currentUser.avatar}));
+    setValue(kPhoneCell,[MLSession current].currentUser.phoneNum);
+    setValue(kNickCell,(@[@{@"haha":@"nick"}]));
     [self.tableView reloadData];
 
 }
@@ -43,10 +48,17 @@
 
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kInfoCell rowType:XLFormRowDescriptorType_infoCellOfKV];
-    row.title=@"手机号";
     [section addFormRow:row];
 
 
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+
+    [formDescriptor addFormSection:section];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kNickCell rowType:XLFormRowDescriptorType_infoCellOfKV];
+    [section addFormRow:row];
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kPhoneCell rowType:XLFormRowDescriptorType_PhoneAndGotoEditButtonCell];
+    [section addFormRow:row];
 
 
 

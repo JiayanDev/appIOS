@@ -81,7 +81,7 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
         UILabel *r=rights[i];
         if(i==0){
             [l mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.top.equalTo(self.contentView).offset(17);
+                make.top.equalTo(self.contentView).offset(16);
             }];
         }else{
             [l mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -102,7 +102,7 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
 
         if(i==lefts.count &&i>0){
             [l mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.bottom.equalTo(self.contentView).offset(-17);
+                make.bottom.equalTo(self.contentView).offset(-16);
             }];
         }
     }
@@ -129,7 +129,7 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
 
 
 + (CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor {
-    return ((NSArray *)rowDescriptor.value).count *(15+18)+17+16;
+    return ((NSArray *)rowDescriptor.value).count *(18+18)+16-2;
 }
 
 @end

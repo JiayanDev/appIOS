@@ -56,6 +56,7 @@ NSString * const XLFormRowDescriptorType_PhoneAndGotoEditButtonCell = @"XLFormRo
     self.gotoEditLabel.text=@"更换";
     self.titleLabel.text=@"手机";
 
+    self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
 
 }
 
@@ -67,7 +68,7 @@ NSString * const XLFormRowDescriptorType_PhoneAndGotoEditButtonCell = @"XLFormRo
 }
 
 + (CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor {
-    return 34+31;
+    return 50;
 }
 
 
