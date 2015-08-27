@@ -90,6 +90,7 @@
 		3CDC503D12C1AABC645C9F35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC579AF2BF44A8F6413D85 /* Localizable.strings */; };
 		3CDC5049CDE2C8AEF6A48902 /* 分享_qq空间@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC56BD6CE95F34925FF712 /* 分享_qq空间@3x.png */; };
 		3CDC506588BA8E9AE718B348 /* 分享_微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC55679A443BF805F4539B /* 分享_微信@2x.png */; };
+		3CDC506777A977C9EE0044DD /* EventJoinApplyFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51B7755AF78323A1110E /* EventJoinApplyFVC.m */; };
 		3CDC506E1ADE1C5BA8B4FADF /* 微信登录@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC599F9F125E0EC1597F80 /* 微信登录@2x.png */; };
 		3CDC50830EF3A25AA70E0047 /* FloatCellOfPhoneAndButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC52167A37C2A15657D800 /* FloatCellOfPhoneAndButton.m */; };
 		3CDC50AA8E495BE766AB5C4A /* CategoriesArrayWrap.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E81B2F919AB62446254 /* CategoriesArrayWrap.m */; };
@@ -381,6 +382,7 @@
 		3CDC518E7DEB9B9A5AA61156 /* checkbox_checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_checked.png; sourceTree = "<group>"; };
 		3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextInputbar.m; sourceTree = "<group>"; };
 		3CDC51A90201CE851736F53D /* FloatCellOfNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfNumber.m; sourceTree = "<group>"; };
+		3CDC51B7755AF78323A1110E /* EventJoinApplyFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventJoinApplyFVC.m; sourceTree = "<group>"; };
 		3CDC51BB48FD866AD9FF54B1 /* 分享_qq空间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_qq空间.png"; sourceTree = "<group>"; };
 		3CDC51C6D8284563362D9860 /* IDMTapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMTapDetectingImageView.m; sourceTree = "<group>"; };
 		3CDC51CE57641CCCF7DEDED5 /* checkbox_blank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_blank@3x.png"; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 		3CDC5C17B892ADD4694BCD3B /* 分享_qq空间@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_qq空间@2x.png"; sourceTree = "<group>"; };
 		3CDC5C18BA83F13AA44AD6BE /* IDMCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMCaptionView.h; sourceTree = "<group>"; };
 		3CDC5C1E81DA4A488EE6CC30 /* XLform_getAndSetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLform_getAndSetValue.h; sourceTree = "<group>"; };
+		3CDC5C433694EB64E0DF8DDC /* EventJoinApplyFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventJoinApplyFVC.h; sourceTree = "<group>"; };
 		3CDC5C47A824831F142B2EAE /* 分享_微信@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_微信@3x.png"; sourceTree = "<group>"; };
 		3CDC5C49233F34922EB262C2 /* IDMPhotoBrowser_arrowLeft@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDMPhotoBrowser_arrowLeft@2x.png"; sourceTree = "<group>"; };
 		3CDC5C4AC3F4E96F3F2A4F02 /* IDMTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingImageView.h; sourceTree = "<group>"; };
@@ -949,6 +952,8 @@
 				07BB692B1B74A1E100BBACA6 /* EventJoinApplySuccVC.h */,
 				07BB692C1B74A1E100BBACA6 /* EventJoinApplySuccVC.m */,
 				07BB692D1B74A1E100BBACA6 /* EventJoinApplySuccVC.xib */,
+				3CDC51B7755AF78323A1110E /* EventJoinApplyFVC.m */,
+				3CDC5C433694EB64E0DF8DDC /* EventJoinApplyFVC.h */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -1774,6 +1779,7 @@
 				3CDC5E93042416519F2B2311 /* ShareViewManager.m in Sources */,
 				3CDC51E20C9B77826B965BC0 /* InfoCellOfListOfKV.m in Sources */,
 				3CDC50C19A397F092C8A4E38 /* MLJVFloatLabeledTextField.m in Sources */,
+				3CDC506777A977C9EE0044DD /* EventJoinApplyFVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

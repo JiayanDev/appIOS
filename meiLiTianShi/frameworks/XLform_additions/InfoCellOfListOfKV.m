@@ -70,6 +70,8 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
         right.font=[UIFont systemFontOfSize:15];
         [lefts addObject:left];
         [rights addObject:right];
+        [self.contentView addSubview:left];
+        [self.contentView addSubview:right];
     }
 
 
@@ -126,8 +128,8 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
 }
 
 
-- (CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor {
-    return ((NSArray *)self.rowDescriptor.value).count *(15+18)+17+16;
++ (CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor {
+    return ((NSArray *)rowDescriptor.value).count *(15+18)+17+16;
 }
 
 @end
