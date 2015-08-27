@@ -32,7 +32,7 @@ NSString * const XLFormRowDescriptorType_personCellOfAvatarAndName = @"XLFormRow
     [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(16);
         make.top.equalTo(self.contentView).offset(17);
-        make.bottom.equalTo(self.contentView).offset(-17);
+//        make.bottom.equalTo(self.contentView).offset(-17);
         make.size.mas_equalTo(CGSizeMake(31,31));
     }];
 

@@ -3,6 +3,7 @@
 // Copyright (c) 2015 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "EventJoinApplyFVC.h"
 #import "InfoCellOfListOfKV.h"
 #import "XLform_getAndSetValue.h"
@@ -10,10 +11,13 @@
 #import "MLSession.h"
 #import "UserModel.h"
 #import "PhoneAndGotoEditButtonCell.h"
+#import "UILabel+MLStyle.h"
 
 
 @implementation EventJoinApplyFVC {
-
+    UIButton *b;
+    UIView *v;
+    UILabel *l;
 }
 
 
@@ -30,7 +34,67 @@
     setValue(kNickCell,(@[@{@"haha":@"nick"}]));
     [self.tableView reloadData];
 
+    [self layoutTheBottom];
 }
+
+
+-(void)layoutTheBottom{
+    self.tableView.tableFooterView=[UIView new];
+    b=[UIButton new];
+    THEME_BUTTON(b);
+    [self.tableView.tableFooterView addSubview:b];
+    [b mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(@45);
+        make.bottom.equalTo(self.tableView.tableFooterView).offset(-17);
+        make.left.equalTo(self.tableView.tableFooterView).offset(17);
+        make.right.equalTo(self.tableView.tableFooterView).offset(-17);
+    }];
+
+    v=[UIView new];
+    v.backgroundColor=[UIColor colorWithHexString:@"ededed"];
+
+    l=[UILabel newMLStyleWithSize:12 isGrey:YES];
+    l.textColor=[UIColor colorWithHexString:@"8a8a8a"];
+
+    [self.tableView.tableFooterView addSubview:v];
+    [v addSubview:l];
+
+    [v mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(b.mas_top).offset(-17);
+        make.left.equalTo(self.tableView.tableFooterView).offset(17);
+        make.right.equalTo(self.tableView.tableFooterView).offset(-17);
+    }];
+
+    [l mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(v).insets(UIEdgeInsetsMake(15,17,15,17));
+    }];
+
+    [b setTitle:@"确认报名" forState:UIControlStateNormal];
+    l.text=@"确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名";
+    l.lineBreakMode=NSLineBreakByCharWrapping;
+    l.numberOfLines=0;
+}
+
+
+
+
+
+
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+    NSLog(@"%@",NSStringFromCGRect(self.tableView.tableFooterView.frame));
+    CGRect r=self.tableView.tableFooterView.frame;
+    r.size.height=MAX(64, self.tableView.frame.size.height-r.origin.y-64);
+    self.tableView.tableFooterView.frame=r;
+
+}
+
+
+
 
 -(id)init
 {
