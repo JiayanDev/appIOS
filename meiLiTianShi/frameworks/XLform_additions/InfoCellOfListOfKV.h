@@ -6,8 +6,11 @@
 #import <Foundation/Foundation.h>
 #import <XLForm/XLFormRowDescriptor.h>
 
+extern NSString * const XLFormRowDescriptorType_infoCellOfKV;
+
+
 @interface XLFormRowDescriptor(display_data)
 @property (nonatomic, strong)NSMutableDictionary *displayData;
 @end
-@interface InfoCellOfListOfKV : NSObject
+@interface InfoCellOfListOfKV : XLFormBaseCell
 @end

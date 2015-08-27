@@ -16,6 +16,7 @@
 #import "IndexTVC.h"
 #import "PhoneBindFVC.h"
 #import "PhoneRegisterSecondStepFVC.h"
+#import "EventJoinApplyVC.h"
 
 @interface FirstVC ()
 
@@ -46,7 +47,7 @@
     vc2.title=@"发现";
 
     UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:
-            [[PhoneRegisterSecondStepFVC alloc]init]];
+            [[EventJoinApplyVC alloc]init]];
     vc3.title=@"活动";
 
     UINavigationController *vc4= [[UINavigationController alloc] initWithRootViewController:
