@@ -32,6 +32,7 @@
     [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
     // Do any additional setup after loading the view from its nib.
     self.title=@"我的";
+    [MLStyleManager removeBackTextForNextScene:self];
 }
 
 -(id)init
@@ -50,9 +51,11 @@
 
     [section addFormRow:row];
 
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+    [logginedFormDescriptor addFormSection:section];
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tongzhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的通知"];
-    row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_我的通知.png"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tongzhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的主页"];
+    row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_我的日志.png"];
     [section addFormRow:row];
 
 
@@ -64,6 +67,9 @@
 //    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"fabu" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的发布"];
 ////    row.action.viewControllerClass=[MyDiaryBookListTVC class];
 //    [section addFormRow:row];
+
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+    [logginedFormDescriptor addFormSection:section];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"banmei" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的伴美"];
     row.action.viewControllerClass=[MyBanMeiListTVC class];
