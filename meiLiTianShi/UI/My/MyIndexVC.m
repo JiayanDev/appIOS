@@ -16,6 +16,7 @@
 #import "MyBanMeiListTVC.h"
 #import "MyMeiLiTianShiVC.h"
 #import "MLStyleManager.h"
+#import "MLXLFormSelectorCell.h"
 
 @interface MyIndexVC ()
 @property (nonatomic, strong)XLFormDescriptor *logginedFormDescriptor;
@@ -46,10 +47,18 @@
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"user" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的资料"];
     row.action.viewControllerClass=[InfoIndexVC class];
+
     [section addFormRow:row];
 
+
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tongzhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的通知"];
-//    row.action.viewControllerClass=[InfoIndexVC class];
+    row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_我的通知.png"];
+    [section addFormRow:row];
+
+
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tongzhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的通知"];
+    row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_我的通知.png"];
     [section addFormRow:row];
 
 //    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"fabu" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的发布"];
@@ -58,10 +67,12 @@
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"banmei" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的伴美"];
     row.action.viewControllerClass=[MyBanMeiListTVC class];
+    row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_我的伴美.png"];
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"meilitianshi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"美丽天使"];
     row.action.viewControllerClass=[MyMeiLiTianShiVC class];
+    row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_美丽天使.png"];
     [section addFormRow:row];
 
 
@@ -70,6 +81,7 @@
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"shezhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"设置"];
     row.action.viewControllerClass=[ConfigIndexVC class];
+    row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_设置.png"];
     [section addFormRow:row];
 
     self.logginedFormDescriptor=logginedFormDescriptor;
