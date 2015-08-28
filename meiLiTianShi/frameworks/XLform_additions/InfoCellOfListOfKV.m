@@ -59,6 +59,7 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
 
     NSArray * a=(NSArray *)self.rowDescriptor.value;
     for (NSDictionary *dictionary in a) {
+        NSLog(@"%@",dictionary);
         UILabel *left=[UILabel new];
         left.text= [dictionary allKeys][0];
         left.textColor=THEME_COLOR_TEXT_LIGHT_GRAY;

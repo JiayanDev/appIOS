@@ -99,6 +99,7 @@
     }else if([requestModel.action isEqualToString:@"applymentEvent"]){
         EventJoinApplyFVC *vc= [[EventJoinApplyFVC alloc] init];
         vc.eventId=requestModel.data[@"id"];
+        vc.eventInfo=requestModel.data[@"eventInfo"];
         [self.navigationController pushViewController:vc animated:YES];
 
     }else if([requestModel.action isEqualToString:@"setNavigationBarTitle"]){

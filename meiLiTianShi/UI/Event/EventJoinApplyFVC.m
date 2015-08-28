@@ -16,6 +16,8 @@
 #import "NSDate+XLformPushDisplay.h"
 #import "CategoryModel.h"
 #import "TSMessage.h"
+#import "UserDetailModel.h"
+#import "RMUniversalAlert.h"
 
 @interface EventJoinApplyFVC()
 @property (nonatomic, strong)EventModel *event;
@@ -35,14 +37,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    setValue(kInfoCell,(@[@{@"hehe":@"papa"},@{@"hehe":@"papa"},@{@"hehe":@"papa"}]));
-    setValue(kPersonCell,(@{kName:@"hahaha",kAvatar:[MLSession current].currentUser.avatar}));
+    setValue(kInfoCell,(@[
+            @{@"项目":([self.eventInfo valueForKeyPath:@"categoryIds"]!=[NSNull null]?[self.eventInfo valueForKeyPath:@"categoryIds"]:@"null")},
+            @{@"医生":[self.eventInfo valueForKeyPath:@"doctorName"]},
+            @{@"时间":[self.eventInfo valueForKeyPath:@"beginTime"]}]));
+    setValue(kPersonCell,(@{kName:[self.eventInfo valueForKeyPath:@"angelUserInfo.name"],
+            kAvatar:[self.eventInfo valueForKeyPath:@"angelUserInfo.avatar"],}));
     setValue(kPhoneCell,[MLSession current].currentUser.phoneNum);
-    setValue(kNickCell,(@[@{@"haha":@"nick"}]));
+    setValue(kNickCell,(@[@{@"昵称":[MLSession current].currentUser.name}]));
     [self.tableView reloadData];
 
     [self layoutTheBottom];
     [self getData];
+
+
+
 }
 
 
@@ -81,6 +90,11 @@
     l.text=@"确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名";
     l.lineBreakMode=NSLineBreakByCharWrapping;
     l.numberOfLines=0;
+
+
+    [b addTarget:self
+          action:@selector(submitButtonPress:)
+forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)getData{
@@ -102,6 +116,13 @@
                                             subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                                 type:TSMessageNotificationTypeError];
             }];
+
+
+    [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
+        self.userDetailModel=model;
+    } fail:^(NSInteger i, id o) {
+
+    }];
 };
 
 
@@ -120,7 +141,32 @@
 
 }
 
+- (IBAction)submitButtonPress:(id)sender {
 
+
+    [[MLSession current] eventJoinApply:@{
+            @"eventId":self.eventId,
+            @"phone":self.userDetailModel.phone,
+            @"name":self.userDetailModel.name,
+            @"gender":self.userDetailModel.gender,
+    } success:^{
+        [RMUniversalAlert showAlertInViewController:self
+                                          withTitle:@"提示"
+                                            message:@"报名已提交,请等待工作人员审核"
+                                  cancelButtonTitle:@"确定"
+                             destructiveButtonTitle:nil
+                                  otherButtonTitles:nil
+                                           tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+
+                                               [self.navigationController popViewControllerAnimated:YES];
+                                           }];
+
+    } fail:^(NSInteger i, id o) {
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
+    }];
+}
 
 
 -(id)init

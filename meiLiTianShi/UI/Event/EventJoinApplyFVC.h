@@ -9,4 +9,5 @@
 
 @interface EventJoinApplyFVC : MLXLformVC
 @property (nonatomic, strong)NSString *eventId;
+@property (nonatomic, strong)NSDictionary *eventInfo;  //by webview
 @end
