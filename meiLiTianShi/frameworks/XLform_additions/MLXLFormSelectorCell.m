@@ -40,6 +40,10 @@
 //    [self.textLabel setText:self.rowDescriptor.title];
     self.textLabel.font=[UIFont systemFontOfSize:15];
     self.textLabel.textColor=THEME_COLOR_TEXT;
+
+
+    self.detailTextLabel.font=[UIFont systemFontOfSize:15];
+    self.detailTextLabel.textColor=THEME_COLOR_TEXT_LIGHT_GRAY;
 //    self.selectionStyle = self.rowDescriptor.isDisabled ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleDefault;
 //    self.textLabel.text = [NSString stringWithFormat:@"%@%@", self.rowDescriptor.title, self.rowDescriptor.required && self.rowDescriptor.sectionDescriptor.formDescriptor.addAsteriskToRequiredRowsTitle ? @"*" : @""];
 //    self.detailTextLabel.text = [self valueDisplayText];

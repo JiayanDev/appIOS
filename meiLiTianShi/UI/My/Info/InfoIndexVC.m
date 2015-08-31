@@ -19,6 +19,7 @@
 #import "WXApiObject.h"
 #import "WXApi.h"
 #import "MLStyleManager.h"
+#import "MLXLFormSelectorCell.h"
 
 @interface InfoIndexVC()
 @property (nonatomic, strong)UserDetailModel *detailModel;
@@ -71,6 +72,11 @@
     ];
     [section addFormRow:row];
 
+
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+
+    [formDescriptor addFormSection:section];
+
     //row.value = [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"Option 2"];    [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kArea rowType:XLFormRowDescriptorTypeSelectorPush title:@"地区"];
@@ -86,10 +92,18 @@
 //    row.value=[MLSession current].currentUser.name;
     [section addFormRow:row];
 
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+
+    [formDescriptor addFormSection:section];
+
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCellphone rowType:XLFormRowDescriptorTypeSelectorPush title:@"手机"];
 //    row.action.viewControllerClass=[MyDiaryBookListTVC class];
     row.disabled=@YES;
     [section addFormRow:row];
+
+    section = [XLFormSectionDescriptor formSectionWithTitle:@""];
+
+    [formDescriptor addFormSection:section];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kWeixin rowType:XLFormRowDescriptorTypeSelectorPush title:@"微信"];
 //    row.action.viewControllerClass=[MyDiaryBookListTVC class];
