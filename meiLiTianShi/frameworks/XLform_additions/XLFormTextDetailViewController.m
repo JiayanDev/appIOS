@@ -30,6 +30,8 @@
 
 #import "NSDate+XLformPushDisplay.h"
 
+#import "MLXLFormTextFieldCell.h"
+
 
 @implementation XLFormRowDescriptor(push)
 
