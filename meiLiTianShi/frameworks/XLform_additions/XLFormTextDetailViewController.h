@@ -25,6 +25,7 @@
 
 #import "XLForm.h"
 #import "XLFormViewController.h"
+#import "MLXLformVC.h"
 
 #define kPushInnerRowType @"_pushInnerRowType"
 #define kPushInnerTitle @"_pushInnerTitle"
@@ -33,7 +34,7 @@
 @property (nonatomic, strong)NSMutableDictionary * pushConfigs;
 @end
 
-@interface XLFormTextDetailViewController : XLFormViewController<XLFormRowDescriptorViewController, XLFormRowDescriptorPopoverViewController>
+@interface XLFormTextDetailViewController : MLXLformVC<XLFormRowDescriptorViewController, XLFormRowDescriptorPopoverViewController>
 -(id)initWithRowDescriptor:(XLFormRowDescriptor*)rowDescriptor;
 
 @end

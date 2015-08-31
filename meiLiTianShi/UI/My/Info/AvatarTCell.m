@@ -57,7 +57,7 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
 
 
 +(CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor{
-    return 34+31;
+    return 70;
 };
 
 
