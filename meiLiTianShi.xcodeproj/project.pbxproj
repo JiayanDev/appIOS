@@ -155,6 +155,7 @@
 		3CDC5737F9F47F5ACDFFCEF5 /* FloatCellOfGender.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */; };
 		3CDC5769D04F9795E1FCE9F5 /* 我的_我的评论.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5AE8B03BA4C21F2E89BA /* 我的_我的评论.png */; };
 		3CDC576E2CCB127E6248136E /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59659707C01E4412DD98 /* 返回@2x.png */; };
+		3CDC5784CEE4FE438635894B /* AvatarAndNameAndDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582086FA4D32DAD19A65 /* AvatarAndNameAndDescCell.m */; };
 		3CDC578AB2CD4E28BF054D13 /* PhoneLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5063748EF674BC66D294 /* PhoneLoginVC.xib */; };
 		3CDC57980929EBB3432623C3 /* MLXLformVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */; };
 		3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */; };
@@ -387,6 +388,7 @@
 		3CDC5066FE5ACA4B6EF717C6 /* WebviewRespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebviewRespondModel.m; sourceTree = "<group>"; };
 		3CDC506D5F81122F80F2A68D /* ELCOverlayImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCOverlayImageView.h; sourceTree = "<group>"; };
 		3CDC5073432FD1F9A136B5D4 /* DoctorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorModel.m; sourceTree = "<group>"; };
+		3CDC508EBA88FF7B8FD2EF8A /* AvatarAndNameAndDescCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarAndNameAndDescCell.h; sourceTree = "<group>"; };
 		3CDC50AD67ABE27D12768D02 /* RespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RespondModel.h; sourceTree = "<group>"; };
 		3CDC50C251336D10479DA047 /* 返回@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@3x.png"; sourceTree = "<group>"; };
 		3CDC50CCE1665AAD44EBB742 /* UIView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SLKAdditions.h"; sourceTree = "<group>"; };
@@ -507,6 +509,7 @@
 		3CDC57C27AF08E2667922489 /* fr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC57D2CCF36F450D65F7DE /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		3CDC580FD3E528A085DF996A /* 我的_我的伴美.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的伴美.png"; sourceTree = "<group>"; };
+		3CDC582086FA4D32DAD19A65 /* AvatarAndNameAndDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarAndNameAndDescCell.m; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
 		3CDC5836623FA92B65DA27FC /* 微信@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@3x.png"; sourceTree = "<group>"; };
 		3CDC5861E34BA6A4975DB1B4 /* 分享_朋友圈@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_朋友圈@2x.png"; sourceTree = "<group>"; };
@@ -975,6 +978,8 @@
 				3CDC5FB3EFE3E1443FCBB551 /* PhoneAndGotoEditButtonCell.h */,
 				3CDC5BBB4680D886D0FC3CC2 /* MLXLFormSelectorCell.m */,
 				3CDC594E31CB68DAA3F612EC /* MLXLFormSelectorCell.h */,
+				3CDC582086FA4D32DAD19A65 /* AvatarAndNameAndDescCell.m */,
+				3CDC508EBA88FF7B8FD2EF8A /* AvatarAndNameAndDescCell.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -1892,6 +1897,7 @@
 				3CDC5198A1E477F8B7678F0E /* PhoneAndGotoEditButtonCell.m in Sources */,
 				3CDC58D79207C332C307D257 /* UILabel+MLStyle.m in Sources */,
 				3CDC5A808F55039563C20B06 /* MLXLFormSelectorCell.m in Sources */,
+				3CDC5784CEE4FE438635894B /* AvatarAndNameAndDescCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
