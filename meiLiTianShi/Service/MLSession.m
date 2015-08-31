@@ -234,6 +234,12 @@ constructingBodyWithBlock:constructingBodyWithBlock
     if(self.isLogined ){
         [self quickLoginSuccess:^{
             success();
+            [self getUserDetail_success:^(UserDetailModel *model) {
+
+            } fail:^(NSInteger i, id o) {
+
+            }];
+
         } fail:^(NSInteger i, id o) {
             self.isLogined=NO;
             [self appInitGetSessionSuccess:success
@@ -456,7 +462,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
     [self sendGet:@"user/detail"
             param:nil
           success:^(id o) {
-
+              self.currentUserDetail=[[UserDetailModel alloc] initWithDictionary:o error:nil];
               success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
           } failure:failure];
 

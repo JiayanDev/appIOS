@@ -37,6 +37,8 @@
 
 @property (nonatomic, strong) UserModel *currentUser;
 
+@property (nonatomic, strong) UserDetailModel *currentUserDetail;
+
 @property (nonatomic, strong)NSString *deviceToken;
 
 @property (nonatomic, assign)BOOL isLogined;
