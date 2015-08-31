@@ -23,6 +23,7 @@
     }
     if(self.city){
         [s appendString:self.city];
+        [s appendString:@" "];
     }
 
     if(self.birthday){
