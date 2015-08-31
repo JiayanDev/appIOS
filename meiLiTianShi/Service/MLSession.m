@@ -702,6 +702,11 @@ constructingBodyWithBlock:constructingBodyWithBlock
               self.isLogined=YES;
               self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
               success(m);
+              [self getUserDetail_success:^(UserDetailModel *model) {
+
+              } fail:^(NSInteger i, id o) {
+
+              }];
           } failure:failure];
 
 }
@@ -731,6 +736,11 @@ constructingBodyWithBlock:constructingBodyWithBlock
                self.isLogined=YES;
                self.currentUser= [[UserModel alloc] initWithDictionary:o error:nil];
                success(m);
+               [self getUserDetail_success:^(UserDetailModel *model) {
+
+               } fail:^(NSInteger i, id o) {
+
+               }];
            } failure:failure];
 
 }
@@ -756,6 +766,11 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
                if(o[@"wxReceipt"]){
                    success(nil,o[@"wxReceipt"]);
+                   [self getUserDetail_success:^(UserDetailModel *model) {
+
+                   } fail:^(NSInteger i, id o) {
+
+                   }];
                }else{
                    UserModel *m=[[UserModel alloc] initWithDictionary:o error:nil];
                    self.isLogined=YES;
