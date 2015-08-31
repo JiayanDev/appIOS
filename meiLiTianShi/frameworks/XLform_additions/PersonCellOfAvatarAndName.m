@@ -38,7 +38,7 @@ NSString * const XLFormRowDescriptorType_personCellOfAvatarAndName = @"XLFormRow
 
     self.avatarView.layer.cornerRadius = 16;
     self.avatarView.layer.masksToBounds=YES;
-    self.avatarView.contentMode=UIViewContentModeScaleAspectFit;
+    self.avatarView.contentMode=UIViewContentModeScaleAspectFill;
 
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.avatarView.mas_right).offset(7);

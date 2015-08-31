@@ -4,8 +4,10 @@
 //
 
 #import <Masonry/View+MASAdditions.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "AvatarAndNameAndDescCell.h"
 #import "UILabel+MLStyle.h"
+#import "UserDetailModel.h"
 
 NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowDescriptorType_AvatarAndNameAndDescCell";
 
@@ -39,11 +41,39 @@ NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowD
     }];
 
 
+    avatarView.layer.cornerRadius = 33;
+    avatarView.layer.masksToBounds=YES;
+    avatarView.contentMode=UIViewContentModeScaleAspectFill;
+
+    [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(avatarView).offset(8);
+        make.right.equalTo(self.contentView);
+        make.centerY.equalTo(self.contentView).offset(-10);
+
+    }];
+
+    [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(avatarView).offset(8);
+        make.right.equalTo(self.contentView);
+        make.centerY.equalTo(self.contentView).offset(10);
+    }];
 
 
 }
 
 - (void)update {
+
+    UserDetailModel *detailModel=self.rowDescriptor.value;
+    if(detailModel){
+        [avatarView sd_setImageWithURL:[NSURL URLWithString:detailModel.avatar]
+                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                 avatarView.image=image;
+                             }];
+
+        nameLabel.text=detailModel.name;
+        descLabel.text=[NSString stringWithFormat:@"%@ %@%@ %@岁",]
+    }
+
 
 }
 

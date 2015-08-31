@@ -256,7 +256,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 -(void)logoutSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
-    _token=nil;
+    self.token=nil;
     self.isLogined=NO;
     [self appInitGetSessionSuccess:success fail:failure];
 
