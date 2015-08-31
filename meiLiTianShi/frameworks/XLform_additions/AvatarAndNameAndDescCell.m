@@ -35,7 +35,7 @@ NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowD
     [self.contentView addSubview:descLabel];
 
     [avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView).offset(8);
+        make.left.equalTo(self.contentView).offset(16);
         make.centerY.equalTo(self.contentView);
         make.size.mas_equalTo(CGSizeMake(65,65));
     }];
@@ -46,17 +46,19 @@ NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowD
     avatarView.contentMode=UIViewContentModeScaleAspectFill;
 
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(avatarView).offset(8);
+        make.left.equalTo(avatarView.mas_right).offset(16);
         make.right.equalTo(self.contentView);
         make.centerY.equalTo(self.contentView).offset(-10);
 
     }];
 
     [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(avatarView).offset(8);
+        make.left.equalTo(avatarView.mas_right).offset(16);
         make.right.equalTo(self.contentView);
         make.centerY.equalTo(self.contentView).offset(10);
     }];
+
+    self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
 
 
 }
@@ -71,7 +73,7 @@ NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowD
                              }];
 
         nameLabel.text=detailModel.name;
-        descLabel.text=[NSString stringWithFormat:@"%@ %@%@ %@岁",]
+        descLabel.text= [detailModel descOfGenderAreaAge];
     }
 
 
@@ -81,6 +83,12 @@ NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowD
 + (CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor {
 
     return 110;
+}
+
+
+- (void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller {
+    id VC= [[self.rowDescriptor.action.viewControllerClass alloc]init];
+    [controller.navigationController pushViewController:VC animated:YES];
 }
 
 @end

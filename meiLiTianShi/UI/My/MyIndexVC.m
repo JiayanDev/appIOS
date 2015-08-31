@@ -17,6 +17,8 @@
 #import "MyMeiLiTianShiVC.h"
 #import "MLStyleManager.h"
 #import "MLXLFormSelectorCell.h"
+#import "AvatarAndNameAndDescCell.h"
+#import "XLform_getAndSetValue.h"
 
 @interface MyIndexVC ()
 @property (nonatomic, strong)XLFormDescriptor *logginedFormDescriptor;
@@ -26,6 +28,7 @@
 @implementation MyIndexVC
 
 #define kLogin @"login"
+#define kUser @"user"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +36,8 @@
     // Do any additional setup after loading the view from its nib.
     self.title=@"我的";
     [MLStyleManager removeBackTextForNextScene:self];
+
+    setValue(kUser,[MLSession current].currentUserDetail);
 }
 
 -(id)init
@@ -46,7 +51,7 @@
     [logginedFormDescriptor addFormSection:section];
 
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"user" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的资料"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUser rowType:XLFormRowDescriptorType_AvatarAndNameAndDescCell title:@"我的资料"];
     row.action.viewControllerClass=[InfoIndexVC class];
 
     [section addFormRow:row];

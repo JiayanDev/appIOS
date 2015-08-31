@@ -19,4 +19,6 @@
 @property (nonatomic, assign)BOOL bindWX;
 @property (nonatomic, assign)BOOL bindWB;
 @property (nonatomic, assign)BOOL bindQQ;
+
+- (NSString *)descOfGenderAreaAge;
 @end

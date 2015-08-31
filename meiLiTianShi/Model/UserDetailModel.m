@@ -38,5 +38,7 @@
         [s appendString:[NSString stringWithFormat:@"%@岁",@(ageComponents.year)]];
     }
 
+    return s;
+
 };
 @end
