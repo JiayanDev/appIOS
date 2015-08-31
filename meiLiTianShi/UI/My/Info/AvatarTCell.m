@@ -33,6 +33,7 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
 - (void)update
 {
     [super update];
+    self.titleLabel.textColor=THEME_COLOR_TEXT;
 
     if([self.rowDescriptor.value isKindOfClass:[UIImage class]]){
         self.avatar.image=self.rowDescriptor.value;
@@ -56,7 +57,7 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
 
 
 +(CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor{
-    return 88;
+    return 34+31;
 };
 
 

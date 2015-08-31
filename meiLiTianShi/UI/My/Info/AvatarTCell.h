@@ -12,5 +12,6 @@ extern NSString * const XLFormRowDescriptorTypeAvatar;
 
 @interface AvatarTCell : XLFormBaseCell
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
