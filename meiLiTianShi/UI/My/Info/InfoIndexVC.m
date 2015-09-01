@@ -20,6 +20,7 @@
 #import "WXApi.h"
 #import "MLStyleManager.h"
 #import "MLXLFormSelectorCell.h"
+#import "MLXLFormOptionsViewController.h"
 
 @interface InfoIndexVC()
 @property (nonatomic, strong)UserDetailModel *detailModel;
@@ -67,6 +68,7 @@
 //    row = [XLFormRowDescriptor formRowDescriptorWithTag:kSex rowType:XLFormRowDescriptorTypeSelectorPush title:@"性别"];
 // Selector Push
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kSex rowType:XLFormRowDescriptorTypeSelectorPush title:@"性别"];
+    row.action.viewControllerClass=[MLXLFormOptionsViewController class];
     row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"男"],
             [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"女"],
     ];

@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "XLFormRowDescriptor.h"
+#import "MLStyledTableVC.h"
 #import <CoreLocation/CoreLocation.h>
 
 @class AreaSelectModel;
 
 
-@interface AreaSelectTVC : UITableViewController <XLFormRowDescriptorViewController, CLLocationManagerDelegate>
+@interface AreaSelectTVC : MLStyledTableVC <XLFormRowDescriptorViewController, CLLocationManagerDelegate>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 @property (nonatomic, strong)AreaSelectModel *parent;
 @end

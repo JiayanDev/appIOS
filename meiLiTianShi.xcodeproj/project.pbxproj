@@ -218,6 +218,7 @@
 		3CDC5D0C79BCFF3DEDCA33D7 /* 返回@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC50C251336D10479DA047 /* 返回@3x.png */; };
 		3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */; };
 		3CDC5D13FFAEE4226A3DDC8B /* 分享@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC530ED1448F41295231BF /* 分享@2x.png */; };
+		3CDC5D25A2114894FBF24854 /* MLXLFormOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC52099F3A026AA06D3C8D /* MLXLFormOptionsViewController.m */; };
 		3CDC5D425F39456D92040EFE /* FloatCellOfNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51A90201CE851736F53D /* FloatCellOfNumber.m */; };
 		3CDC5D68432D6D6239575704 /* 微信登录.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5D860DC83AA2E154091D /* 微信登录.png */; };
 		3CDC5D6E3479C55CDFB955D0 /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5218D7E23FB9BB172D9C /* SLKTextViewController.m */; };
@@ -240,6 +241,7 @@
 		3CDC5EBECB51FC48E0C0A451 /* checkbox_blank@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5184309AE67755DB6E5B /* checkbox_blank@2x.png */; };
 		3CDC5EC7F2A1AF4BCE0FD9C4 /* MLWebRedirectPusher.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A430A17A773B80FA4C2 /* MLWebRedirectPusher.m */; };
 		3CDC5EEFE2EFD58CD35EC6B9 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC597108C0E2C1526D42BA /* CategoryModel.m */; };
+		3CDC5F16AA7F8864243DACF2 /* MLStyledTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC54636EFDCD36869BB118 /* MLStyledTableVC.m */; };
 		3CDC5F1D5B042EC372ABB793 /* PhoneLoginFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DA4C0C4D46EDDB42D3B /* PhoneLoginFVC.m */; };
 		3CDC5F71CF61468F552B6093 /* 微信登录@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59B5A6EE9B0B28DEAE0B /* 微信登录@3x.png */; };
 		3CDC5F96E8A8CA83AAAAFA96 /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B17BB76E6736829D551 /* UIScrollView+SLKAdditions.m */; };
@@ -406,6 +408,7 @@
 		3CDC514844E2ADCF9F053BD9 /* checkbox_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_checked@2x.png"; sourceTree = "<group>"; };
 		3CDC515EF7C0F25FAB63E766 /* IDMTapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingView.h; sourceTree = "<group>"; };
 		3CDC516026F3C67052FA474A /* 我的_设置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_设置@3x.png"; sourceTree = "<group>"; };
+		3CDC5166531073E2FFF12B48 /* MLStyledTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStyledTableVC.h; sourceTree = "<group>"; };
 		3CDC51671FD3503BB0D26E42 /* PhoneLoginFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginFVC.h; sourceTree = "<group>"; };
 		3CDC516D57D2B097B0F83CF2 /* 我的_设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_设置.png"; sourceTree = "<group>"; };
 		3CDC5184309AE67755DB6E5B /* checkbox_blank@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_blank@2x.png"; sourceTree = "<group>"; };
@@ -422,6 +425,7 @@
 		3CDC51F21EE3C6DF90D75C4B /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		3CDC51F690789D5E140B1057 /* FloatCellOfPhoneAndButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfPhoneAndButton.h; sourceTree = "<group>"; };
 		3CDC52045F7DBE1CD674E091 /* MLJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLJsonModel.h; sourceTree = "<group>"; };
+		3CDC52099F3A026AA06D3C8D /* MLXLFormOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormOptionsViewController.m; sourceTree = "<group>"; };
 		3CDC52167A37C2A15657D800 /* FloatCellOfPhoneAndButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfPhoneAndButton.m; sourceTree = "<group>"; };
 		3CDC5218D7E23FB9BB172D9C /* SLKTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextViewController.m; sourceTree = "<group>"; };
 		3CDC5234C7D23458862F12DE /* IDMPhotoBrowser_arrowRight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "IDMPhotoBrowser_arrowRight@2x.png"; sourceTree = "<group>"; };
@@ -455,10 +459,12 @@
 		3CDC5404A89048EC837DAB69 /* ELCAssetTablePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetTablePicker.h; sourceTree = "<group>"; };
 		3CDC540705E8F0F483699CA9 /* WebviewRespondModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebviewRespondModel.h; sourceTree = "<group>"; };
 		3CDC54307E5733108DB38225 /* MLJVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLJVFloatLabeledTextField.m; sourceTree = "<group>"; };
+		3CDC5432A4801A689502A182 /* MLXLFormOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormOptionsViewController.h; sourceTree = "<group>"; };
 		3CDC543C9403D6ACA0100BA7 /* 我的_我的评论@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的评论@2x.png"; sourceTree = "<group>"; };
 		3CDC5456644690A7041D50F3 /* 关.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关.png"; sourceTree = "<group>"; };
 		3CDC545CA79CC064904E5255 /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextView.m; sourceTree = "<group>"; };
 		3CDC545D3F894C23E92D6E51 /* SAMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMTextField.h; sourceTree = "<group>"; };
+		3CDC54636EFDCD36869BB118 /* MLStyledTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStyledTableVC.m; sourceTree = "<group>"; };
 		3CDC546E233F9D47BE475EF9 /* FloatCellOfName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfName.h; sourceTree = "<group>"; };
 		3CDC548152DD405F41F0A607 /* zh-Hans */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC548A0F16F3FB0F881047 /* IMG_1744.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1744.jpg; sourceTree = "<group>"; };
@@ -985,6 +991,10 @@
 				3CDC508EBA88FF7B8FD2EF8A /* AvatarAndNameAndDescCell.h */,
 				3CDC54909B16504D3A46265E /* MLXLFormTextFieldCell.m */,
 				3CDC55822B21A893B538C0DF /* MLXLFormTextFieldCell.h */,
+				3CDC52099F3A026AA06D3C8D /* MLXLFormOptionsViewController.m */,
+				3CDC5432A4801A689502A182 /* MLXLFormOptionsViewController.h */,
+				3CDC54636EFDCD36869BB118 /* MLStyledTableVC.m */,
+				3CDC5166531073E2FFF12B48 /* MLStyledTableVC.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -1904,6 +1914,8 @@
 				3CDC5A808F55039563C20B06 /* MLXLFormSelectorCell.m in Sources */,
 				3CDC5784CEE4FE438635894B /* AvatarAndNameAndDescCell.m in Sources */,
 				3CDC51B20B2F4E3EA1162F8F /* MLXLFormTextFieldCell.m in Sources */,
+				3CDC5D25A2114894FBF24854 /* MLXLFormOptionsViewController.m in Sources */,
+				3CDC5F16AA7F8864243DACF2 /* MLStyledTableVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

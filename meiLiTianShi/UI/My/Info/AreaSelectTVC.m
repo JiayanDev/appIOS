@@ -8,6 +8,7 @@
 
 #import "AreaSelectTVC.h"
 #import "AreaSelectModel.h"
+#import "MLStyleManager.h"
 #import <CoreLocation/CoreLocation.h>
 
 
@@ -23,7 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [MLStyleManager removeBackTextForNextScene:self];
 
     self.clearsSelectionOnViewWillAppear = YES;
 
@@ -143,8 +144,11 @@
 
     }
 
+    cell.textLabel.font=[UIFont systemFontOfSize:15];
+    cell.textLabel.textColor=THEME_COLOR_TEXT;
 
     return cell;
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
