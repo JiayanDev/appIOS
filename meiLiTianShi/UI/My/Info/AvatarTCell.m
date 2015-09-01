@@ -46,14 +46,14 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
                                  }];
     }
 }
-
--(void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller
-{
-//    [self.formViewController.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:YES];
-    AvatarDetailVC *vc= [[AvatarDetailVC alloc] init];
-    vc.rowDescriptor=self.rowDescriptor;
-    [self.formViewController.navigationController pushViewController:vc animated:YES];
-}
+//
+//-(void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller
+//{
+////    [self.formViewController.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor] animated:YES];
+//    AvatarDetailVC *vc= [[AvatarDetailVC alloc] init];
+//    vc.rowDescriptor=self.rowDescriptor;
+//    [self.formViewController.navigationController pushViewController:vc animated:YES];
+//}
 
 
 +(CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor{

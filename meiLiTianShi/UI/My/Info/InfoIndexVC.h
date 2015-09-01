@@ -8,7 +8,8 @@
 #import "XLFormRowDescriptor.h"
 #import "MLSession.h"
 #import "MLXLformVC.h"
+#import "RSKImageCropViewController.h"
 
-@interface InfoIndexVC : MLXLformVC <XLFormRowDescriptorViewController, wxAuthRespondVC>
+@interface InfoIndexVC : MLXLformVC <XLFormRowDescriptorViewController, wxAuthRespondVC, UINavigationControllerDelegate, UIImagePickerControllerDelegate, RSKImageCropViewControllerDelegate>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 @end

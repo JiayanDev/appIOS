@@ -480,6 +480,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 -(void)uploadOneImage:(UIImage *)image
         uploadToken:(UploadTokenModel *)uploadToken
         success:(void (^)(NSString *url))success fail:(void (^)(NSInteger, id))failure {
+    NSLog(@"upload:%@",uploadToken);
 
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
     NSData *imageData = UIImageJPEGRepresentation((UIImage *) image, 85);
@@ -507,6 +508,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
             HTTPRequestOperationWithRequest:request
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                         if ([responseObject[@"code"] integerValue] == 200) {
+                                            NSLog(@"success:%@",responseObject);
                                             success([NSString stringWithFormat:@"http://jiayanimg.b0.upaiyun.com/%@", responseObject[@"url"]]);
                                         } else {
                                             NSHTTPURLResponse *response = [operation response];

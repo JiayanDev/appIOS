@@ -21,6 +21,11 @@
 #import "MLStyleManager.h"
 #import "MLXLFormSelectorCell.h"
 #import "MLXLFormOptionsViewController.h"
+#import "RSKImageCropViewController.h"
+#import "MBProgressHUD.h"
+#import "SDWebImageManager.h"
+#import <MobileCoreServices/UTCoreTypes.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface InfoIndexVC()
 @property (nonatomic, strong)UserDetailModel *detailModel;
@@ -55,7 +60,7 @@
 
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kAvatar rowType:XLFormRowDescriptorTypeAvatar title:@"头像"];
-    row.action.viewControllerClass=[AvatarDetailVC class];
+//    row.action.viewControllerClass=[AvatarDetailVC class];
     [section addFormRow:row];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kNickname rowType:XLFormRowDescriptorTypeSelectorPush title:@"昵称"];
@@ -189,6 +194,18 @@
                                                          [WXApi sendReq:req];
                                                      }
                                                  }];
+    }else if ([formRow.tag isEqualToString:kAvatar]){
+        UIImagePickerController *imagePickerController=[[UIImagePickerController alloc]init];
+        imagePickerController.mediaTypes = @[(NSString *) kUTTypeImage];
+        imagePickerController.delegate=self;
+        [self presentViewController:imagePickerController
+                           animated:YES completion:^{
+                    [MLStyleManager styleTheNavigationBar:imagePickerController.navigationController.navigationBar];
+                    [MLStyleManager styleTheNavigationBar:imagePickerController.navigationBar];
+                }];
+//        [MLStyleManager styleTheNavigationBar:imagePickerController.navigationController.navigationBar];
+//        [MLStyleManager styleTheNavigationBar:imagePickerController.navigationBar];
+
     }
 }
 
@@ -247,6 +264,91 @@
     if([formRow.tag isEqualToString:kBirthday] && [getValue(kBirthday) isKindOfClass:[NSDate class]]){
         [[MLSession current] updateUserInfo:@{kBirthday: @([((NSDate *) getValue(kBirthday)) timeIntervalSince1970])} success:succ fail:fail];
     }
+}
+
+
+#pragma mark - image picker
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *image = (UIImage *) info[UIImagePickerControllerOriginalImage];
+
+
+
+    RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:image cropMode:RSKImageCropModeSquare];
+    imageCropVC.delegate = self;
+//    [self.navigationController pushViewController:imageCropVC animated:YES];
+
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:YES];
+//    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+
+    [picker setNavigationBarHidden:NO animated:YES];
+    [picker pushViewController:imageCropVC animated:YES];
+
+
+
+
+
+}
+
+
+#pragma mark - crop delegate
+
+- (void)imageCropViewController:(RSKImageCropViewController *)controller didCropImage:(UIImage *)croppedImage usingCropRect:(CGRect)cropRect {
+    [MBProgressHUD showHUDAddedTo:self.view
+                         animated:YES].labelText=@"上传中";
+
+    [[MLSession current] getImageUploadPolicyAndSignatureWithMod:@"avatar"
+                                                         Success:^(UploadTokenModel *model) {
+                                                             [[MLSession current] uploadOneImage:croppedImage
+                                                                                     uploadToken:model
+                                                                                         success:^(NSString *url) {
+                                                                                             NSLog(@"succe:url: %@",url);
+
+                                                                                             self.inSetValue=YES;
+//                                                                                             self.avatarUrl=url;
+                                                                                             [[UIImageView new] sd_setImageWithURL:[NSURL URLWithString:url]
+                                                                                                                  placeholderImage:nil
+                                                                                                                           options:SDWebImageRefreshCached];
+
+                                                                                             [((AvatarTCell *)[[self.form formRowWithTag:kAvatar] cellForFormController:self]).avatar sd_setImageWithURL:[NSURL URLWithString:url]
+                                                                                                                                                                                        placeholderImage:nil
+                                                                                                                                                                                                 options:SDWebImageRefreshCached];
+                                                                                             setValue(kAvatar,url);
+
+                                                                                             [[MLSession current] updateUserInfo:@{kAvatar:url} success:^{
+                                                                                                 [self dismissViewControllerAnimated:YES completion:^{
+
+                                                                                                 }];
+
+                                                                                                 [TSMessage showNotificationWithTitle:@"更换头像成功" type:TSMessageNotificationTypeSuccess];
+                                                                                                 //self.rowDescriptor.value=url;
+                                                                                                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                                                                                 self.inSetValue=NO;
+                                                                                             } fail:^(NSInteger i, id o) {
+                                                                                                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                                                                                 [TSMessage showNotificationWithTitle:@"出错了"
+                                                                                                                             subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                                                                                                 type:TSMessageNotificationTypeError];
+                                                                                                 self.inSetValue=NO;
+                                                                                             }];
+
+
+//
+
+
+                                                                                         } fail:^(NSInteger i, id o) {
+                                                                         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                                                         [TSMessage showNotificationWithTitle:@"出错了"
+                                                                                                     subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                                                                         type:TSMessageNotificationTypeError];
+                                                                     }];
+
+                                                         } fail:^(NSInteger i, id o) {
+                [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
+            }];
 }
 
 
