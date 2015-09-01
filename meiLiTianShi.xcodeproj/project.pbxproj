@@ -210,6 +210,7 @@
 		3CDC5C56D98511B4C58B9DCA /* MLCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50F8FDFADD69806DA598 /* MLCheckBox.m */; };
 		3CDC5C6B1B7E2634FBA86C42 /* 我的_美丽天使@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC51377497863F1EDDE06C /* 我的_美丽天使@2x.png */; };
 		3CDC5C864005BB6F709A5105 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5748AC0105922B97DB85 /* NSString+MD5.m */; };
+		3CDC5C8F46B89E5C36042B6D /* MLXLFormDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC527B1A5792F867B42AF4 /* MLXLFormDateCell.m */; };
 		3CDC5CA970CDF55ED76D3C01 /* 分享_朋友圈.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC56172E6C7030FDF4BC08 /* 分享_朋友圈.png */; };
 		3CDC5CB35C89A248328BF64C /* MLJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FFDC7CE5565D2D71E0C /* MLJsonModel.m */; };
 		3CDC5CDAFC7905D20FC7F4C6 /* checkbox_checked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53820C8D59FA208C5A72 /* checkbox_checked@3x.png */; };
@@ -432,6 +433,7 @@
 		3CDC5250389104C21DC3BBF7 /* UIResponder+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIResponder+SLKAdditions.h"; sourceTree = "<group>"; };
 		3CDC52507956A25261AC332B /* NSArray+toJsonString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+toJsonString.h"; sourceTree = "<group>"; };
 		3CDC5269BECA6E37708CBF47 /* WKIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKIImagePager.h; sourceTree = "<group>"; };
+		3CDC527B1A5792F867B42AF4 /* MLXLFormDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormDateCell.m; sourceTree = "<group>"; };
 		3CDC529EB08FEC805CFFAC30 /* PersonCellOfAvatarAndName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonCellOfAvatarAndName.m; sourceTree = "<group>"; };
 		3CDC52B3040B7888C183D7E6 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		3CDC52C0E4057D482CE67F83 /* PhoneRegisterSecondStepFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneRegisterSecondStepFVC.m; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 		3CDC573019190B1E64D3ECBD /* logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@3x.png"; sourceTree = "<group>"; };
 		3CDC5737B6CD13982A393807 /* IDMCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMCaptionView.m; sourceTree = "<group>"; };
 		3CDC5742F8142E4A0FE81056 /* 分享_朋友圈@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_朋友圈@3x.png"; sourceTree = "<group>"; };
+		3CDC5744A79D2D8D44B743BB /* MLXLFormDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormDateCell.h; sourceTree = "<group>"; };
 		3CDC5748AC0105922B97DB85 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		3CDC5780F7EA37FAFF250204 /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
 		3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
@@ -995,6 +998,8 @@
 				3CDC5432A4801A689502A182 /* MLXLFormOptionsViewController.h */,
 				3CDC54636EFDCD36869BB118 /* MLStyledTableVC.m */,
 				3CDC5166531073E2FFF12B48 /* MLStyledTableVC.h */,
+				3CDC527B1A5792F867B42AF4 /* MLXLFormDateCell.m */,
+				3CDC5744A79D2D8D44B743BB /* MLXLFormDateCell.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -1916,6 +1921,7 @@
 				3CDC51B20B2F4E3EA1162F8F /* MLXLFormTextFieldCell.m in Sources */,
 				3CDC5D25A2114894FBF24854 /* MLXLFormOptionsViewController.m in Sources */,
 				3CDC5F16AA7F8864243DACF2 /* MLStyledTableVC.m in Sources */,
+				3CDC5C8F46B89E5C36042B6D /* MLXLFormDateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
