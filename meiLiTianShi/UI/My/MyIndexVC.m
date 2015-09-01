@@ -37,7 +37,15 @@
     self.title=@"我的";
     [MLStyleManager removeBackTextForNextScene:self];
 
-    setValue(kUser,[MLSession current].currentUserDetail);
+    if([MLSession current].currentUserDetail){
+        setValue(kUser,[MLSession current].currentUserDetail);
+    }else{
+        [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
+            setValue(kUser,model);
+        } fail:^(NSInteger i, id o) {
+
+        }];
+    }
 }
 
 -(id)init
