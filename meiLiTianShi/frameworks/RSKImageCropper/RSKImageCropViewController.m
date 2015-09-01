@@ -105,12 +105,17 @@ static const CGFloat kLayoutImageScrollViewAnimationDuration = 0.25;
 
 - (BOOL)prefersStatusBarHidden
 {
-    return YES;
+    return NO;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setNeedsStatusBarAppearanceUpdate];
     
     if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
