@@ -15,11 +15,11 @@
     self.automaticallyAdjustsScrollViewInsets=NO;
     self.mainView= [[MLBlurImageHeaderedWebview alloc] init];
     [self.mainView setupVC:self];
-    self.mainView.backgroundImageOrigin=[UIImage imageNamed:@"Y80Y09B4Y73E.jpg"];
+    self.mainView.backgroundImageOrigin=[UIImage imageNamed:@"meinvtupianbizhi_813_051.jpg"];
     [self.view addSubview:self.mainView];
 
 
-    self.mainView.avatarView.image=[UIImage imageNamed:@"Y80Y09B4Y73E.jpg"];
+    self.mainView.avatarView.image=[UIImage imageNamed:@"meinvtupianbizhi_813_051.jpg"];
     self.mainView.nameLabel.text=@"hahahaha";
     self.mainView.descLabel.text=@"hahahaha";
 

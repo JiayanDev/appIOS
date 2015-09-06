@@ -10,7 +10,7 @@
 #import "UILabel+MLStyle.h"
 
 
-#define IMAGEVIEW_HEIGHT 200
+#define IMAGEVIEW_HEIGHT 220
 #define IMAGEVIEW_HEIGHT_SHRINK 64
 
 CGFloat const offset_HeaderStop = IMAGEVIEW_HEIGHT-IMAGEVIEW_HEIGHT_SHRINK;
@@ -55,8 +55,9 @@ CGFloat const distance_W_LabelHeader = 31.0;
     self.webView.scrollView.contentInset=UIEdgeInsetsMake(IMAGEVIEW_HEIGHT,0,0,0);
 
     self.webView.scrollView.delegate=self;
-    NSURL *websiteUrl = [NSURL URLWithString:@"http://news.qq.com"];
+    NSURL *websiteUrl = [NSURL URLWithString:@"http://apptest.jiayantech.com/html/timeline.html?id=495"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
+    [[NSURLCache sharedURLCache] removeCachedResponseForRequest:urlRequest];
     [self.webView loadRequest:urlRequest];
     [self addSubview:self.webView];
     [self addSubview:self.imageView];
@@ -115,7 +116,7 @@ CGFloat const distance_W_LabelHeader = 31.0;
 
 - (void)setBackgroundImageOrigin:(UIImage *)backgroundImageOrigin {
     _backgroundImageOrigin=backgroundImageOrigin;
-    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageWithRadius:50
+    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageWithRadius:100
                                                                         iterations:5
                                                                          tintColor:[UIColor colorWithHexString:@"333333" alpha:0.3]];
 
