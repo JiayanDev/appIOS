@@ -143,10 +143,8 @@ CGFloat const distance_W_LabelHeader = 31.0;
 }
 
 - (void)animationForScroll:(CGFloat)offset {
-//    NSLog(@"%2.2f",offset);
 
     CATransform3D headerTransform = CATransform3DIdentity;
-    CATransform3D avatarTransform = CATransform3DIdentity;
 
     offset+=IMAGEVIEW_HEIGHT;
 
@@ -163,10 +161,6 @@ CGFloat const distance_W_LabelHeader = 31.0;
         NSLog(@"%2.2f, %2.2f, %2.2f",offset,headerScaleFactor,headerSizevariation);
 
         self.imageView.layer.transform = headerTransform;
-//
-//        if (offset < -self.frame.size.height/3.5) {
-//            [self recievedMBTwitterScrollEvent];
-//        }
 
 
          headerTransform = CATransform3DIdentity;
@@ -198,31 +192,19 @@ CGFloat const distance_W_LabelHeader = 31.0;
         self.nameLabel.layer.transform = headerTransform;
         self.descLabel.layer.transform = headerTransform;
 
-//        // Avatar -----------
-//        CGFloat avatarScaleFactor = (MIN(offset_HeaderStop, offset)) / self.avatarImage.bounds.size.height / 1.4; // Slow down the animation
-//        CGFloat avatarSizeVariation = ((self.avatarImage.bounds.size.height * (1.0 + avatarScaleFactor)) - self.avatarImage.bounds.size.height) / 2.0;
-//        avatarTransform = CATransform3DTranslate(avatarTransform, 0, avatarSizeVariation, 0);
-//        avatarTransform = CATransform3DScale(avatarTransform, 1.0 - avatarScaleFactor, 1.0 - avatarScaleFactor, 0);
 
-//        if (offset <= offset_HeaderStop) {
-//
-//            if (self.avatarImage.layer.zPosition <= self.headerImageView.layer.zPosition) {
-//                self.imageView.layer.zPosition = 0;
-//            }
-//
-//        }else {
-//            if (self.avatarImage.layer.zPosition >= self.headerImageView.layer.zPosition) {
-//                self.imageView.layer.zPosition = 2;
-//            }
-//        }
 
     }
-//    if (self.headerImageView.image != nil) {
-//        [self blurWithOffset:offset];
-//    }
-//
-//    self.avatarImage.layer.transform = avatarTransform;
 
+
+    CGFloat opa=(offset-offset_B_LabelHeader)/distance_W_LabelHeader;
+    opa=1-opa;
+    if(opa<0){opa=0;}
+    if(opa>1){opa=1;}
+
+    self.avatarView.layer.opacity=opa;
+    self.nameLabel.layer.opacity=opa;
+    self.descLabel.layer.opacity=opa;
 
 
 }
