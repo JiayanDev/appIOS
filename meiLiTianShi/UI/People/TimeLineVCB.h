@@ -4,10 +4,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IDMPhotoBrowser.h"
 
 @class MLBlurImageHeaderedWebview;
 
 
-@interface TimeLineVCB : UIViewController
+@interface TimeLineVCB : UIViewController <UIWebViewDelegate, IDMPhotoBrowserDelegate>
 @property(nonatomic, strong) MLBlurImageHeaderedWebview *mainView;
 @end

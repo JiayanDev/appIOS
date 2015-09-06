@@ -56,8 +56,9 @@ CGFloat const distance_W_LabelHeader = 31.0;
 
     self.webView.scrollView.delegate=self;
     NSURL *websiteUrl = [NSURL URLWithString:@"http://apptest.jiayantech.com/html/timeline.html?id=495"];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
-    [[NSURLCache sharedURLCache] removeCachedResponseForRequest:urlRequest];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+
     [self.webView loadRequest:urlRequest];
     [self addSubview:self.webView];
     [self addSubview:self.imageView];
