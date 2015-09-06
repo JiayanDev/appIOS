@@ -3,6 +3,7 @@
 // Copyright (c) 2015 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "MLBlurImageHeaderedWebview.h"
 #import "FXBlurView.h"
 #import "MLStyleManager.h"
@@ -60,6 +61,52 @@ CGFloat const distance_W_LabelHeader = 31.0;
     [self addSubview:self.webView];
     [self addSubview:self.imageView];
     [self.imageView addSubview:self.headerLabel];
+    
+    
+    
+    
+    
+    self.nameLabel=[UILabel newMLStyleWithSize:14 isGrey:NO];
+    self.nameLabel.textColor=[UIColor whiteColor];
+
+    self.descLabel=[UILabel newMLStyleWithSize:10 isGrey:NO];
+    self.descLabel.textColor=[UIColor whiteColor];
+    
+    self.avatarView=[UIImageView new];
+
+    self.avatarView.layer.cornerRadius = 33;
+    self.avatarView.clipsToBounds = YES;
+    self.avatarView.contentMode=UIViewContentModeScaleAspectFill;
+
+    [self addSubview:self.nameLabel];
+    [self addSubview:self.descLabel];
+    [self addSubview:self.avatarView];
+
+
+    [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(65,65));
+        make.top.equalTo(self.imageView).offset(66);
+        make.centerX.equalTo(self.imageView);
+    }];
+
+    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.imageView);
+        make.top.equalTo(self.avatarView.mas_bottom).offset(10);
+    }];
+
+    [self.descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.imageView);
+        make.top.equalTo(self.nameLabel.mas_bottom).offset(10);
+    }];
+
+
+
+
+
+
+
+
+
 
 
 
@@ -136,6 +183,9 @@ CGFloat const distance_W_LabelHeader = 31.0;
         self.headerLabel.layer.transform = labelTransform;
         self.headerLabel.layer.zPosition = 2;
         self.imageView.layer.transform = headerTransform;
+        self.avatarView.layer.transform = headerTransform;
+        self.nameLabel.layer.transform = headerTransform;
+        self.descLabel.layer.transform = headerTransform;
 
 //        // Avatar -----------
 //        CGFloat avatarScaleFactor = (MIN(offset_HeaderStop, offset)) / self.avatarImage.bounds.size.height / 1.4; // Slow down the animation

@@ -18,6 +18,11 @@
     self.mainView.backgroundImageOrigin=[UIImage imageNamed:@"Y80Y09B4Y73E.jpg"];
     [self.view addSubview:self.mainView];
 
+
+    self.mainView.avatarView.image=[UIImage imageNamed:@"Y80Y09B4Y73E.jpg"];
+    self.mainView.nameLabel.text=@"hahahaha";
+    self.mainView.descLabel.text=@"hahahaha";
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

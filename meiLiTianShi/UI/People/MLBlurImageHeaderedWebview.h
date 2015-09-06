@@ -13,5 +13,11 @@
 @property(nonatomic, strong) UIImageView * imageView;
 @property(nonatomic, strong) UILabel *headerLabel;
 
+@property(nonatomic, strong) UILabel *nameLabel;
+
+@property(nonatomic, strong) UILabel *descLabel;
+
+@property(nonatomic, strong) UIImageView *avatarView;
+
 - (void)setupVC:(UIViewController *)viewController;
 @end
