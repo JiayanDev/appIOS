@@ -168,6 +168,17 @@ CGFloat const distance_W_LabelHeader = 31.0;
 //            [self recievedMBTwitterScrollEvent];
 //        }
 
+
+         headerTransform = CATransform3DIdentity;
+
+        headerTransform = CATransform3DTranslate(headerTransform, 0, headerSizevariation, 0);
+
+
+        //  ------------ Label
+        self.avatarView.layer.transform = headerTransform;
+        self.nameLabel.layer.transform = headerTransform;
+        self.descLabel.layer.transform = headerTransform;
+
     }
 
         // SCROLL UP/DOWN ------------
