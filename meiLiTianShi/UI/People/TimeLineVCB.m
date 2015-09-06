@@ -15,6 +15,7 @@
     self.automaticallyAdjustsScrollViewInsets=NO;
     self.mainView= [[MLBlurImageHeaderedWebview alloc] init];
     [self.mainView setupVC:self];
+    self.mainView.backgroundImageOrigin=[UIImage imageNamed:@"Y80Y09B4Y73E.jpg"];
     [self.view addSubview:self.mainView];
 
 }
@@ -24,6 +25,14 @@
 }
 - (void)viewDidLoad {
     [self setNeedsStatusBarAppearanceUpdate];
+//    self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
+    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"timeline_分享.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                                                             style:UIBarButtonItemStylePlain target:self
+                                                                            action:@selector(sharePress)];
+}
+
+-(void)sharePress{
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {

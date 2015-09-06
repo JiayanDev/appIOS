@@ -8,9 +8,10 @@
 #import "MLStyleManager.h"
 
 
-#define IMAGEVIEW_HEIGHT 100
+#define IMAGEVIEW_HEIGHT 200
+#define IMAGEVIEW_HEIGHT_SHRINK 64
 
-CGFloat const offset_HeaderStop = 40.0;
+CGFloat const offset_HeaderStop = IMAGEVIEW_HEIGHT-IMAGEVIEW_HEIGHT_SHRINK;
 CGFloat const offset_B_LabelHeader = 95.0;
 CGFloat const distance_W_LabelHeader = 35.0;
 
@@ -32,12 +33,7 @@ CGFloat const distance_W_LabelHeader = 35.0;
     self.imageView= [[UIImageView alloc] initWithFrame:CGRectMake(0,0,bounds.size.width,IMAGEVIEW_HEIGHT )];
 
 
-    self.backgroundImageOrigin=[UIImage imageNamed:@"Y80Y09B4Y73E.jpg"];
-    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageWithRadius:50
-                                                                        iterations:5
-                                                                         tintColor:[UIColor colorWithHexString:@"888888" alpha:0.2]];
 
-    self.imageView.image=self.backgroundImageBlured;
     self.imageView.contentMode=UIViewContentModeScaleAspectFill;
     self.imageView.clipsToBounds = YES;
 
@@ -65,6 +61,16 @@ CGFloat const distance_W_LabelHeader = 35.0;
 
 
 
+}
+
+
+- (void)setBackgroundImageOrigin:(UIImage *)backgroundImageOrigin {
+    _backgroundImageOrigin=backgroundImageOrigin;
+    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageWithRadius:50
+                                                                        iterations:5
+                                                                         tintColor:[UIColor colorWithHexString:@"333333" alpha:0.3]];
+
+    self.imageView.image=self.backgroundImageBlured;
 }
 
 
@@ -122,10 +128,12 @@ CGFloat const distance_W_LabelHeader = 35.0;
         // Header -----------
         headerTransform = CATransform3DTranslate(headerTransform, 0, MAX(-offset_HeaderStop, -offset), 0);
 
+
         //  ------------ Label
         CATransform3D labelTransform = CATransform3DMakeTranslation(0, MAX(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0);
         self.headerLabel.layer.transform = labelTransform;
         self.headerLabel.layer.zPosition = 2;
+        self.imageView.layer.transform = headerTransform;
 
 //        // Avatar -----------
 //        CGFloat avatarScaleFactor = (MIN(offset_HeaderStop, offset)) / self.avatarImage.bounds.size.height / 1.4; // Slow down the animation
@@ -149,7 +157,7 @@ CGFloat const distance_W_LabelHeader = 35.0;
 //    if (self.headerImageView.image != nil) {
 //        [self blurWithOffset:offset];
 //    }
-//    self.imageView.layer.transform = headerTransform;
+//
 //    self.avatarImage.layer.transform = avatarTransform;
 
 
