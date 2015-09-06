@@ -6,6 +6,7 @@
 #import "MLBlurImageHeaderedWebview.h"
 #import "FXBlurView.h"
 #import "MLStyleManager.h"
+#import "UILabel+MLStyle.h"
 
 
 #define IMAGEVIEW_HEIGHT 200
@@ -13,7 +14,7 @@
 
 CGFloat const offset_HeaderStop = IMAGEVIEW_HEIGHT-IMAGEVIEW_HEIGHT_SHRINK;
 CGFloat const offset_B_LabelHeader = 95.0;
-CGFloat const distance_W_LabelHeader = 35.0;
+CGFloat const distance_W_LabelHeader = 31.0;
 
 @implementation MLBlurImageHeaderedWebview {
 
@@ -38,10 +39,11 @@ CGFloat const distance_W_LabelHeader = 35.0;
     self.imageView.clipsToBounds = YES;
 
 
-    self.headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.imageView.frame.size.height - 5, self.frame.size.width, 25)];
+    self.headerLabel = [UILabel newMLStyleWithSize:15 isGrey:NO];
+    self.headerLabel.frame=CGRectMake(self.frame.origin.x, self.imageView.frame.size.height - 5, self.frame.size.width, 25);
     self.headerLabel.textAlignment = NSTextAlignmentCenter;
     self.headerLabel.text = @"hahahahahaha";
-    self.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
+//    self.headerLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:18];
     self.headerLabel.textColor = [UIColor whiteColor];
 
     
