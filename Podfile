@@ -22,6 +22,7 @@ pod 'MJRefresh'
   pod 'CTCheckbox'
   pod 'KIImagePager'
   pod 'JVFloatLabeledTextField'
+  pod 'FXBlurView'
 end
 
 target 'meiLiTianShiTests' do

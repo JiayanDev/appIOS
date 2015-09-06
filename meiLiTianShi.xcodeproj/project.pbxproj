@@ -118,6 +118,7 @@
 		3CDC5351736E0AC8D62F5833 /* MLRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56E914AEA220E50BFBB5 /* MLRequestManager.m */; };
 		3CDC5359F757287D7F6B3AD7 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */; };
 		3CDC535DA037CD185825DD73 /* PhoneBindVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5D67497B107E58D21F88 /* PhoneBindVC.xib */; };
+		3CDC53628260FC2599C3CAC4 /* TimeLineVCB.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5BF9BC09693F7F9D1EAC /* TimeLineVCB.m */; };
 		3CDC53CED6F3C6CD978266D4 /* AFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */; };
 		3CDC53D7FB3C69721515678F /* checkbox_checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC518E7DEB9B9A5AA61156 /* checkbox_checked.png */; };
 		3CDC53EED13C3D9EF6B72632 /* DoctorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5073432FD1F9A136B5D4 /* DoctorModel.m */; };
@@ -142,6 +143,7 @@
 		3CDC55DCDF24BCB5AF2A993F /* checkbox_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC514844E2ADCF9F053BD9 /* checkbox_checked@2x.png */; };
 		3CDC55DF16E5A0182051D098 /* 分享_微信.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B136A8C9442FD7C8FBB /* 分享_微信.png */; };
 		3CDC55EB3E37279B48E96DCE /* InfoIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC568DD217DBE46686D38B /* InfoIndexVC.m */; };
+		3CDC5619DC1A8128B6F71AD2 /* Y80Y09B4Y73E.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC590761C4F1E530209A41 /* Y80Y09B4Y73E.jpg */; };
 		3CDC562BE0BCD6DDCD278982 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5055CCD9EA52C7CCB8BF /* logo@2x.png */; };
 		3CDC56351FA1B0A5A574351C /* 关@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5F947C7120837570E2E3 /* 关@2x.png */; };
 		3CDC563B2281B25A00F3DF61 /* 分享@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5A17283FB67A1E6073E0 /* 分享@3x.png */; };
@@ -176,6 +178,7 @@
 		3CDC5913A3F7535FD2DF3E91 /* NSArray+toJsonString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DA88C2F5E35B83E906E /* NSArray+toJsonString.m */; };
 		3CDC59149E134E6D4313ECB5 /* IDMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56724B9E715849E35A98 /* IDMPhoto.m */; };
 		3CDC592CEFCB7041701C3066 /* 微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B129CBA914329675DAC /* 微信@2x.png */; };
+		3CDC5962D1250F1C9238945B /* MLBlurImageHeaderedWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AC44BA8AB1FFB3A7AE2 /* MLBlurImageHeaderedWebview.m */; };
 		3CDC596FACF94BA2F3EF71AB /* PersonCellOfAvatarAndName.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC529EB08FEC805CFFAC30 /* PersonCellOfAvatarAndName.m */; };
 		3CDC598E06527831C89337B0 /* XLFormTextDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E20A1F79D8C4BFC24B7 /* XLFormTextDetailViewController.m */; };
 		3CDC59AA302780DDCF29E930 /* 我的_我的伴美@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5EF2920168E84DC9BD1B /* 我的_我的伴美@3x.png */; };
@@ -416,6 +419,7 @@
 		3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ELCAssetPicker.xib; sourceTree = "<group>"; };
 		3CDC511F436FF2931081F237 /* FloatCellOfPassword.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfPassword.h; sourceTree = "<group>"; };
 		3CDC51377497863F1EDDE06C /* 我的_美丽天使@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_美丽天使@2x.png"; sourceTree = "<group>"; };
+		3CDC51390B8C54F0A36D9D47 /* MLBlurImageHeaderedWebview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLBlurImageHeaderedWebview.h; sourceTree = "<group>"; };
 		3CDC514844E2ADCF9F053BD9 /* checkbox_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_checked@2x.png"; sourceTree = "<group>"; };
 		3CDC515EF7C0F25FAB63E766 /* IDMTapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingView.h; sourceTree = "<group>"; };
 		3CDC516026F3C67052FA474A /* 我的_设置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_设置@3x.png"; sourceTree = "<group>"; };
@@ -545,6 +549,7 @@
 		3CDC58DEBBF4F913701AC6EC /* ForgetPasswordSecondStepVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordSecondStepVC.xib; sourceTree = "<group>"; };
 		3CDC58F3CE21869816BB0977 /* IDMPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMPhotoBrowser.m; sourceTree = "<group>"; };
 		3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
+		3CDC590761C4F1E530209A41 /* Y80Y09B4Y73E.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Y80Y09B4Y73E.jpg; sourceTree = "<group>"; };
 		3CDC5913A9B6678E36A286CA /* 我的_我的日志.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的日志.png"; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
 		3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
@@ -576,6 +581,7 @@
 		3CDC5A5B60184E3A29F42C81 /* UIScrollView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SLKAdditions.h"; sourceTree = "<group>"; };
 		3CDC5A7923D0A4D9A2E44955 /* 我的_美丽天使@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_美丽天使@3x.png"; sourceTree = "<group>"; };
 		3CDC5AA3CC29C1CFDD4A27F4 /* RSKImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSKImageScrollView.m; sourceTree = "<group>"; };
+		3CDC5AC44BA8AB1FFB3A7AE2 /* MLBlurImageHeaderedWebview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBlurImageHeaderedWebview.m; sourceTree = "<group>"; };
 		3CDC5AD3A598A3AD743782A9 /* IDMZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMZoomingScrollView.h; sourceTree = "<group>"; };
 		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
 		3CDC5AE8B03BA4C21F2E89BA /* 我的_我的评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的评论.png"; sourceTree = "<group>"; };
@@ -597,8 +603,10 @@
 		3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfGender.m; sourceTree = "<group>"; };
 		3CDC5BADD2AE5CD83D5B37A3 /* RSKImageCropViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RSKImageCropViewController+Protected.h"; sourceTree = "<group>"; };
 		3CDC5BBB4680D886D0FC3CC2 /* MLXLFormSelectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormSelectorCell.m; sourceTree = "<group>"; };
+		3CDC5BD7E4D71672861102AB /* TimeLineVCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineVCB.h; sourceTree = "<group>"; };
 		3CDC5BE4CECDEB8B3391024B /* IDMPBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPBConstants.h; sourceTree = "<group>"; };
 		3CDC5BE93EFA33E71C9DB426 /* ForgetPasswordFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordFVC.m; sourceTree = "<group>"; };
+		3CDC5BF9BC09693F7F9D1EAC /* TimeLineVCB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeLineVCB.m; sourceTree = "<group>"; };
 		3CDC5BFC9F5393CCD2A1C692 /* UILabel+MLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MLStyle.m"; sourceTree = "<group>"; };
 		3CDC5C047D0E6D12E9B89195 /* libUMessage_Sdk_1.1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.1.0.a; sourceTree = "<group>"; };
 		3CDC5C17B892ADD4694BCD3B /* 分享_qq空间@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_qq空间@2x.png"; sourceTree = "<group>"; };
@@ -1242,6 +1250,7 @@
 				3CDC548A0F16F3FB0F881047 /* IMG_1744.jpg */,
 				3CDC5C8EEA968FDE7085D891 /* IMG_1622.jpg */,
 				3CDC52D2A6FCE96FD2DAF844 /* IMG_1652.jpg */,
+				3CDC590761C4F1E530209A41 /* Y80Y09B4Y73E.jpg */,
 			);
 			path = tmp;
 			sourceTree = "<group>";
@@ -1536,6 +1545,10 @@
 				071F2CD91B7AF2DF00A081FE /* TimelineVC.h */,
 				071F2CDA1B7AF2DF00A081FE /* TimelineVC.m */,
 				071F2CDB1B7AF2DF00A081FE /* TimelineVC.xib */,
+				3CDC5AC44BA8AB1FFB3A7AE2 /* MLBlurImageHeaderedWebview.m */,
+				3CDC51390B8C54F0A36D9D47 /* MLBlurImageHeaderedWebview.h */,
+				3CDC5BF9BC09693F7F9D1EAC /* TimeLineVCB.m */,
+				3CDC5BD7E4D71672861102AB /* TimeLineVCB.h */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -1789,6 +1802,7 @@
 				3CDC5FB7F3F593C1C2F933AD /* 我的_我的伴美@2x.png in Resources */,
 				3CDC570502B8295903E885F5 /* 我的_我的评论@3x.png in Resources */,
 				3CDC5AA08C714BC24D1273E5 /* 我的_设置@3x.png in Resources */,
+				3CDC5619DC1A8128B6F71AD2 /* Y80Y09B4Y73E.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1970,6 +1984,8 @@
 				3CDC59C2E4D18EC68CFCE5E7 /* CGGeometry+RSKImageCropper.m in Sources */,
 				3CDC5BC58361FC7AA73347B4 /* RSKImageCropViewController.m in Sources */,
 				3CDC5ACAD05B75D3E490B2B8 /* UIApplication+RSKImageCropper.m in Sources */,
+				3CDC5962D1250F1C9238945B /* MLBlurImageHeaderedWebview.m in Sources */,
+				3CDC53628260FC2599C3CAC4 /* TimeLineVCB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
