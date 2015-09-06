@@ -13,5 +13,7 @@
 
 + (void)styleTheNavigationBar:(UINavigationBar *)navigationBar;
 
++ (void)hideTheHairLine:(UINavigationBar *)navigationBar;
+
 + (void)removeBackTextForNextScene:(UIViewController *)viewController;
 @end

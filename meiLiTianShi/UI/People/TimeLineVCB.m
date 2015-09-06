@@ -14,10 +14,20 @@
     [super loadView];
     self.automaticallyAdjustsScrollViewInsets=NO;
     self.mainView= [[MLBlurImageHeaderedWebview alloc] init];
+    [self.mainView setupVC:self];
     [self.view addSubview:self.mainView];
 
 }
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
 - (void)viewDidLoad {
-    
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 @end

@@ -5,6 +5,7 @@
 
 #import "MLBlurImageHeaderedWebview.h"
 #import "FXBlurView.h"
+#import "MLStyleManager.h"
 
 
 #define IMAGEVIEW_HEIGHT 100
@@ -32,12 +33,13 @@ CGFloat const distance_W_LabelHeader = 35.0;
 
 
     self.backgroundImageOrigin=[UIImage imageNamed:@"Y80Y09B4Y73E.jpg"];
-    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageWithRadius:10
-                                                                        iterations:3
+    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageWithRadius:50
+                                                                        iterations:5
                                                                          tintColor:[UIColor colorWithHexString:@"888888" alpha:0.2]];
 
     self.imageView.image=self.backgroundImageBlured;
     self.imageView.contentMode=UIViewContentModeScaleAspectFill;
+    self.imageView.clipsToBounds = YES;
 
 
     self.headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.imageView.frame.size.height - 5, self.frame.size.width, 25)];
@@ -51,18 +53,33 @@ CGFloat const distance_W_LabelHeader = 35.0;
     
 
     self.webView= [[UIWebView alloc] initWithFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height)];
-    self.webView.scrollView.contentInset=UIEdgeInsetsMake(64+IMAGEVIEW_HEIGHT,0,0,0);
-    [self addSubview:self.webView];
+    self.webView.scrollView.contentInset=UIEdgeInsetsMake(IMAGEVIEW_HEIGHT,0,0,0);
+
     self.webView.scrollView.delegate=self;
-    NSURL *websiteUrl = [NSURL URLWithString:@"http://qq.com"];
+    NSURL *websiteUrl = [NSURL URLWithString:@"http://news.qq.com"];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
     [self.webView loadRequest:urlRequest];
+    [self addSubview:self.webView];
     [self addSubview:self.imageView];
     [self.imageView addSubview:self.headerLabel];
 
 
 
 }
+
+
+
+-(void)setupVC:(UIViewController *)viewController{
+    [MLStyleManager hideTheHairLine:viewController.navigationController.navigationBar];
+    [viewController.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    viewController.navigationController.navigationBar.shadowImage = [UIImage new];
+    viewController.navigationController.navigationBar.translucent = YES;
+    viewController.navigationController.view.backgroundColor = [UIColor clearColor];
+    viewController.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
+
+
+};
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -76,7 +93,7 @@ CGFloat const distance_W_LabelHeader = 35.0;
     CATransform3D headerTransform = CATransform3DIdentity;
     CATransform3D avatarTransform = CATransform3DIdentity;
 
-    offset+=64+IMAGEVIEW_HEIGHT;
+    offset+=IMAGEVIEW_HEIGHT;
 
 
     // DOWN -----------------

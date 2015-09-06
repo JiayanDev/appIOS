@@ -12,4 +12,6 @@
 @property (strong, nonatomic)UIImage *backgroundImageBlured;
 @property(nonatomic, strong) UIImageView * imageView;
 @property(nonatomic, strong) UILabel *headerLabel;
+
+- (void)setupVC:(UIViewController *)viewController;
 @end

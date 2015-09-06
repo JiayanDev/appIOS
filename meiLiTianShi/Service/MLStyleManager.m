@@ -48,6 +48,15 @@
     navigationBar.backIndicatorTransitionMaskImage = backBtn;
 }
 
++(void)hideTheHairLine:(UINavigationBar *)navigationBar{
+
+    //hairline
+//    UIView* sv= [[UIView alloc] initWithFrame:[self findHairlineImageViewUnder:navigationBar].frame];
+//    sv.backgroundColor=[UIColor colorWithHexString:@"d9d9d9"];
+    [self findHairlineImageViewUnder:navigationBar].hidden=YES;
+
+}
+
 
 +(void)removeBackTextForNextScene:(UIViewController *)viewController{
     viewController.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
