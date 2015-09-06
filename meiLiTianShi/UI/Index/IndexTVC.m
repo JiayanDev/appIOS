@@ -98,6 +98,7 @@ return 1;
         if(data.coverImg){
             [cell.imageView sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                         cell.imageView.image=image;
                                          [cell.imageView setNeedsDisplay];
                                      }];
         }
@@ -108,6 +109,7 @@ return 1;
         if(data.coverImg){
             [cell.imageView sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                         cell.imageView.image=image;
                                          [cell.imageView setNeedsDisplay];
                                      }];
         }
@@ -119,12 +121,7 @@ return 1;
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [tableView fd_heightForCellWithIdentifier:kIndexCell cacheByIndexPath:indexPath configuration:^(id cell) {
-//        id data = self.tableData[indexPath.section];
-//        [self setTheCell:cell withData:data];
-
-
-    }];
+    return 126;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

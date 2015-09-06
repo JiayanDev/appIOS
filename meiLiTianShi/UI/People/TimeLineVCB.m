@@ -30,6 +30,10 @@
     self.mainView.nameLabel.text=@"hahahaha";
     self.mainView.descLabel.text=@"hahahaha";
     self.mainView.webView.delegate=self;
+    self.url=[NSURL URLWithString:[NSString stringWithFormat:
+            @"http://apptest.jiayantech.com/html/timeline.html?id=%@",self.userId]];
+
+    [self.mainView.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
 
 }
 
