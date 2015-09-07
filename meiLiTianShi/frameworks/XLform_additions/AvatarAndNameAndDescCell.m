@@ -76,6 +76,9 @@ NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowD
         descLabel.text= [detailModel descOfGenderAreaAge];
     }
 
+    [self.contentView setNeedsLayout];
+    [self.contentView setNeedsDisplay];
+
 
 }
 
