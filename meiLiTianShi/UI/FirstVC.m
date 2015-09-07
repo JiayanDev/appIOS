@@ -62,18 +62,19 @@
 
 
     tabBarController.viewControllers = @[vc1,vc2,vc3,vc4];
+    tabBarController.tabBar.tintColor=THEME_COLOR;
     vc1.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"伴美"
-                                                  image:[UIImage imageNamed:@"black.png"]
-                                          selectedImage:[UIImage imageNamed:@"blue.png"]];
+                                                  image:[[UIImage imageNamed:@"home－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                          selectedImage:[[UIImage imageNamed:@"首页－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     vc2.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"发现"
-                                                  image:[UIImage imageNamed:@"black.png"]
-                                          selectedImage:[UIImage imageNamed:@"blue.png"]];
+                                                  image:[[UIImage imageNamed:@"发现－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                          selectedImage:[[UIImage imageNamed:@"发现－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     vc3.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"活动"
                                                   image:[UIImage imageNamed:@"black.png"]
                                           selectedImage:[UIImage imageNamed:@"blue.png"]];
     vc4.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"我的"
-                                                  image:[UIImage imageNamed:@"black.png"]
-                                          selectedImage:[UIImage imageNamed:@"blue.png"]];
+                                                  image:[[UIImage imageNamed:@"我的－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                          selectedImage:[[UIImage imageNamed:@"我的－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
     AppDelegate *testAppDelegate = [UIApplication sharedApplication].delegate;
 
