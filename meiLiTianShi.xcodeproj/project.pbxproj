@@ -177,6 +177,7 @@
 		3CDC576E2CCB127E6248136E /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59659707C01E4412DD98 /* 返回@2x.png */; };
 		3CDC5784CEE4FE438635894B /* AvatarAndNameAndDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC582086FA4D32DAD19A65 /* AvatarAndNameAndDescCell.m */; };
 		3CDC578AB2CD4E28BF054D13 /* PhoneLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5063748EF674BC66D294 /* PhoneLoginVC.xib */; };
+		3CDC57972F4A81A79F476C45 /* IndexCellOfOthers.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC557A71E559B2ACC42AC8 /* IndexCellOfOthers.m */; };
 		3CDC57980929EBB3432623C3 /* MLXLformVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */; };
 		3CDC5799765EDBCD29A94788 /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51A1E4A6F0BC7A689D2F /* SLKTextInputbar.m */; };
 		3CDC57B17D6A85EC5755311F /* 我的_我的通知@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC54E98BB1F4C1059697E3 /* 我的_我的通知@2x.png */; };
@@ -545,6 +546,7 @@
 		3CDC5533301A12BE6154BB44 /* 微信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信.png"; sourceTree = "<group>"; };
 		3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTableViewCell.h; sourceTree = "<group>"; };
 		3CDC55679A443BF805F4539B /* 分享_微信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_微信@2x.png"; sourceTree = "<group>"; };
+		3CDC557A71E559B2ACC42AC8 /* IndexCellOfOthers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexCellOfOthers.m; sourceTree = "<group>"; };
 		3CDC5580E573067AD09509F6 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		3CDC55822B21A893B538C0DF /* MLXLFormTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormTextFieldCell.h; sourceTree = "<group>"; };
 		3CDC558E72A69757887B8DB1 /* 我的－亮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的－亮.png"; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 		3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
 		3CDC590761C4F1E530209A41 /* Y80Y09B4Y73E.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Y80Y09B4Y73E.jpg; sourceTree = "<group>"; };
 		3CDC5913A9B6678E36A286CA /* 我的_我的日志.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的日志.png"; sourceTree = "<group>"; };
+		3CDC5915955F159F03CCE2EB /* IndexCellOfOthers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexCellOfOthers.h; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
 		3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
 		3CDC594E31CB68DAA3F612EC /* MLXLFormSelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormSelectorCell.h; sourceTree = "<group>"; };
@@ -1543,6 +1546,8 @@
 				071F2CD61B78BCF700A081FE /* IndexCell.xib */,
 				3CDC5BC40871883B9355AEDD /* IndexCellPR.m */,
 				3CDC57C60F006AB4948D71D1 /* IndexCellPR.h */,
+				3CDC557A71E559B2ACC42AC8 /* IndexCellOfOthers.m */,
+				3CDC5915955F159F03CCE2EB /* IndexCellOfOthers.h */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -2146,6 +2151,7 @@
 				3CDC53628260FC2599C3CAC4 /* TimeLineVCB.m in Sources */,
 				3CDC5CEF13C28973A3F503AB /* IndexCellPR.m in Sources */,
 				3CDC512B1E993D7DB46E993E /* UIImageView+MLStyle.m in Sources */,
+				3CDC57972F4A81A79F476C45 /* IndexCellOfOthers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

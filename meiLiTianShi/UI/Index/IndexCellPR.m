@@ -38,10 +38,11 @@
         [self.footView addSubview:self.doctorDescLabel];
 
         self.statusBackImage.image=[UIImage imageNamed:@"活动状态标签－底.png"];
+        self.backImage.clipsToBounds=YES;
 
         [self.backImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.contentView);
-            make.height.equalTo(self.contentView).multipliedBy(380.0/750.0);
+            make.height.equalTo(self.contentView.mas_width).multipliedBy(380.0/750.0);
             make.top.equalTo(self.contentView);
             make.left.equalTo(self.contentView);
             make.right.equalTo(self.contentView);

@@ -12,26 +12,29 @@
 #import "TSMessage.h"
 #import "TopicModel.h"
 #import "EventModel.h"
-#import "IndexCell.h"
+//#import "IndexCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "EventDetailVC.h"
 #import "DiaryDetailVC.h"
 #import "UIImage+Color.h"
 #import "HexColor.h"
 #import "MLStyleManager.h"
+#import "IndexCellPR.h"
+#import "IndexCellOfOthers.h"
 
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
 @end
-#define kIndexCell @"indexcell"
+#define kIndexCellEvent @"indexcellevent"
+#define kIndexCellOther @"indexcellother"
 @implementation IndexTVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title=@"阿赫";
     self.tableData=[NSMutableArray array];
-    [self.tableView registerClass:[IndexCell class] forCellReuseIdentifier:kIndexCell];
-    [self.tableView registerNib:[UINib nibWithNibName:@"IndexCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kIndexCell];
+    [self.tableView registerClass:[IndexCellPR class] forCellReuseIdentifier:kIndexCellEvent];
+    [self.tableView registerClass:[IndexCellOfOthers class] forCellReuseIdentifier:kIndexCellOther];
     [self getData];
 
 
@@ -61,10 +64,6 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
@@ -90,38 +89,62 @@ return 1;
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    IndexCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kIndexCell];
+
     if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
+
+        IndexCellPR *cell= [self.tableView dequeueReusableCellWithIdentifier:kIndexCellEvent];
         TopicModel *data=self.tableData[indexPath.section];
-        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
-        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
+//        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
+//        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
         if(data.coverImg){
-            [cell.imageView sd_setImageWithURL:data.coverImg
+            [cell.backImage sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                         cell.imageView.image=image;
-                                         [cell.imageView setNeedsDisplay];
+                                         cell.backImage.image=image;
+                                         [cell.backImage setNeedsDisplay];
                                      }];
+        }else{
+            cell.backImage.backgroundColor=THEME_COLOR;
         }
+        return cell;
     }else{
         EventModel *data=self.tableData[indexPath.section];
-        cell.title.text=[NSString stringWithFormat:@"huodong: %@",data.title];
-        cell.desc.text=[NSString stringWithFormat:@"huodong: %@",data.desc];
+
+        IndexCellOfOthers *cell=[self.tableView dequeueReusableCellWithIdentifier:kIndexCellOther];
         if(data.coverImg){
-            [cell.imageView sd_setImageWithURL:data.coverImg
+            [cell.backImage sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                         cell.imageView.image=image;
-                                         [cell.imageView setNeedsDisplay];
+                                         cell.backImage.image=image;
+                                         [cell.backImage setNeedsDisplay];
                                      }];
+        }else{
+            cell.backImage.backgroundColor=THEME_COLOR;
         }
+        return cell;
     }
 
     
-    return cell;
+
 }
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 126;
+
+    if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
+        return [tableView fd_heightForCellWithIdentifier:kIndexCellEvent cacheByIndexPath:indexPath configuration:^(id cell) {
+//        id data = self.tableData[indexPath.section];
+//        [self setTheCell:cell withData:data];
+
+
+        }];
+    }else{
+        return [tableView fd_heightForCellWithIdentifier:kIndexCellOther cacheByIndexPath:indexPath configuration:^(id cell) {
+//        id data = self.tableData[indexPath.section];
+//        [self setTheCell:cell withData:data];
+
+
+        }];
+    }
+
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
