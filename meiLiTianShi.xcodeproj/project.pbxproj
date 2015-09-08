@@ -245,6 +245,7 @@
 		3CDC5CDAFC7905D20FC7F4C6 /* checkbox_checked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53820C8D59FA208C5A72 /* checkbox_checked@3x.png */; };
 		3CDC5CDDDC7CF43BC8C77D2F /* IMG_1744.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC548A0F16F3FB0F881047 /* IMG_1744.jpg */; };
 		3CDC5CEC8297AC65488F764F /* 首页－亮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC54197519461E6E5268E9 /* 首页－亮@2x.png */; };
+		3CDC5CEF13C28973A3F503AB /* IndexCellPR.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5BC40871883B9355AEDD /* IndexCellPR.m */; };
 		3CDC5CFC82BD7B1A18F8F3C2 /* FloatLabeledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50150804B09C4982B605 /* FloatLabeledTextFieldCell.m */; };
 		3CDC5D0C79BCFF3DEDCA33D7 /* 返回@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC50C251336D10479DA047 /* 返回@3x.png */; };
 		3CDC5D0D05F887E2FB7B1398 /* PageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */; };
@@ -573,6 +574,7 @@
 		3CDC5780F7EA37FAFF250204 /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
 		3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
 		3CDC57C27AF08E2667922489 /* fr */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
+		3CDC57C60F006AB4948D71D1 /* IndexCellPR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexCellPR.h; sourceTree = "<group>"; };
 		3CDC57D2CCF36F450D65F7DE /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		3CDC57F87134CB81A38E40DD /* timeline_返回-@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_返回-@3x.png"; sourceTree = "<group>"; };
 		3CDC580FD3E528A085DF996A /* 我的_我的伴美.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的伴美.png"; sourceTree = "<group>"; };
@@ -647,6 +649,7 @@
 		3CDC5B9BA7C97ECAAD0EB909 /* FloatCellOfGender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfGender.m; sourceTree = "<group>"; };
 		3CDC5BADD2AE5CD83D5B37A3 /* RSKImageCropViewController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RSKImageCropViewController+Protected.h"; sourceTree = "<group>"; };
 		3CDC5BBB4680D886D0FC3CC2 /* MLXLFormSelectorCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormSelectorCell.m; sourceTree = "<group>"; };
+		3CDC5BC40871883B9355AEDD /* IndexCellPR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexCellPR.m; sourceTree = "<group>"; };
 		3CDC5BC9A18E1A87972B2109 /* home－灰@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home－灰@2x.png"; sourceTree = "<group>"; };
 		3CDC5BD7E4D71672861102AB /* TimeLineVCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeLineVCB.h; sourceTree = "<group>"; };
 		3CDC5BE4CECDEB8B3391024B /* IDMPBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPBConstants.h; sourceTree = "<group>"; };
@@ -1507,6 +1510,8 @@
 				071F2CD41B78BCF700A081FE /* IndexCell.h */,
 				071F2CD51B78BCF700A081FE /* IndexCell.m */,
 				071F2CD61B78BCF700A081FE /* IndexCell.xib */,
+				3CDC5BC40871883B9355AEDD /* IndexCellPR.m */,
+				3CDC57C60F006AB4948D71D1 /* IndexCellPR.h */,
 			);
 			path = Index;
 			sourceTree = "<group>";
@@ -2102,6 +2107,7 @@
 				3CDC5ACAD05B75D3E490B2B8 /* UIApplication+RSKImageCropper.m in Sources */,
 				3CDC5962D1250F1C9238945B /* MLBlurImageHeaderedWebview.m in Sources */,
 				3CDC53628260FC2599C3CAC4 /* TimeLineVCB.m in Sources */,
+				3CDC5CEF13C28973A3F503AB /* IndexCellPR.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
