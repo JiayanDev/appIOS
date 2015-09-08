@@ -31,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title=@"阿赫";
+    self.navigationItem.title=@"佳妍";
     self.tableData=[NSMutableArray array];
     [self.tableView registerClass:[IndexCellPR class] forCellReuseIdentifier:kIndexCellEvent];
     [self.tableView registerClass:[IndexCellOfOthers class] forCellReuseIdentifier:kIndexCellOther];
@@ -92,7 +92,7 @@ return 1;
 
     if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
 
-        IndexCellPR *cell= [self.tableView dequeueReusableCellWithIdentifier:kIndexCellEvent];
+        IndexCellOfOthers*cell= [self.tableView dequeueReusableCellWithIdentifier:kIndexCellOther];
         TopicModel *data=self.tableData[indexPath.section];
 //        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
 //        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
@@ -109,7 +109,7 @@ return 1;
     }else{
         EventModel *data=self.tableData[indexPath.section];
 
-        IndexCellOfOthers *cell=[self.tableView dequeueReusableCellWithIdentifier:kIndexCellOther];
+        IndexCellPR  *cell=[self.tableView dequeueReusableCellWithIdentifier:kIndexCellEvent];
         if(data.coverImg){
             [cell.backImage sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
@@ -119,6 +119,18 @@ return 1;
         }else{
             cell.backImage.backgroundColor=THEME_COLOR;
         }
+
+        if(data.doctorAvatar){
+            [cell.doctorAvatar sd_setImageWithURL:data.doctorAvatar];
+        }else{
+            cell.doctorAvatar.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
+        }
+
+        cell.doctorNameLabel.text=data.doctorName;
+        cell.doctorDescLabel.text=data.doctorDesc;
+        cell.statusLabel.text=data.status;
+
+
         return cell;
     }
 
@@ -130,14 +142,14 @@ return 1;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
-        return [tableView fd_heightForCellWithIdentifier:kIndexCellEvent cacheByIndexPath:indexPath configuration:^(id cell) {
+        return [tableView fd_heightForCellWithIdentifier:kIndexCellOther cacheByIndexPath:indexPath configuration:^(id cell) {
 //        id data = self.tableData[indexPath.section];
 //        [self setTheCell:cell withData:data];
 
 
         }];
     }else{
-        return [tableView fd_heightForCellWithIdentifier:kIndexCellOther cacheByIndexPath:indexPath configuration:^(id cell) {
+        return [tableView fd_heightForCellWithIdentifier:kIndexCellEvent cacheByIndexPath:indexPath configuration:^(id cell) {
 //        id data = self.tableData[indexPath.section];
 //        [self setTheCell:cell withData:data];
 

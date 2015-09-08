@@ -20,7 +20,13 @@
 @property (nonatomic, assign) NSNumber <Optional>* userId;
 @property (nonatomic, assign) NSString  <Optional>* userName;
 @property (nonatomic, strong) NSString <Optional>*doctorName;
-//@property (nonatomic, assign) NSNumber <Optional>* doctorId;
+@property (nonatomic, assign) NSNumber <Optional>* doctorId;
+
+@property (nonatomic, strong) NSString <Optional>*doctorAvatar; // for index
+@property (nonatomic, strong) NSString <Optional>*doctorDesc; // for index
+@property (nonatomic, strong) NSString <Optional>*status; // for index
+
+
 @property (nonatomic, strong) NSString <Optional>*city;
 @property (nonatomic, strong) NSString <Optional>*district;
 @property (nonatomic, strong) NSString <Optional>*addr;

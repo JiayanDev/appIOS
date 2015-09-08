@@ -19,7 +19,7 @@
 
         self.backImage=[UIImageView new];
         self.statusBackImage=[UIImageView new];
-        self.statusLabel=[UILabel newMLStyleWithSize:15 isGrey:NO];
+        self.statusLabel=[UILabel newMLStyleWithSize:12 isGrey:NO];
         self.statusLabel.textColor=[UIColor whiteColor];
         
         self.footView=[UIView new];
@@ -40,6 +40,7 @@
         self.statusBackImage.image=[UIImage imageNamed:@"活动状态标签－底.png"];
         self.backImage.clipsToBounds=YES;
         self.backImage.contentMode=UIViewContentModeScaleAspectFill;
+        self.doctorDescLabel.textAlignment=NSTextAlignmentRight;
 
         [self.backImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.contentView);

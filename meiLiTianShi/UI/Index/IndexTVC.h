@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLStyledTableVC.h"
 
-@interface IndexTVC : UITableViewController
+@interface IndexTVC : MLStyledTableVC
 
 @end
