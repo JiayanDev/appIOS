@@ -70,6 +70,8 @@ NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowD
         [avatarView sd_setImageWithURL:[NSURL URLWithString:detailModel.avatar]
                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                  avatarView.image=image;
+                                 [self.contentView setNeedsLayout];
+                                 [self.contentView setNeedsDisplay];
                              }];
 
         nameLabel.text=detailModel.name;

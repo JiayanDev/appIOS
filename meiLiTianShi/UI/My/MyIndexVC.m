@@ -42,6 +42,7 @@
     }else{
         [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
             setValue(kUser,model);
+            [self.tableView reloadData];
         } fail:^(NSInteger i, id o) {
 
         }];
