@@ -37,6 +37,8 @@
         [self.footView addSubview:self.doctorNameLabel];
         [self.footView addSubview:self.doctorDescLabel];
 
+        self.statusBackImage.image=[UIImage imageNamed:@"活动状态标签－底.png"];
+
         [self.backImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.contentView);
             make.height.equalTo(self.contentView).multipliedBy(380.0/750.0);
@@ -56,6 +58,7 @@
         [self.statusBackImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.backImage).offset(16);
             make.right.equalTo(self.backImage);
+            make.size.mas_equalTo([UIImage imageNamed:@"活动状态标签－底.png"].size);
 //            make.height.equalTo();
 //            make.width.equalTo();
         }];
