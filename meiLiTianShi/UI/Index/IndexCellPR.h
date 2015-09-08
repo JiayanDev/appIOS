@@ -7,4 +7,12 @@
 
 
 @interface IndexCellPR : UITableViewCell
+@property(nonatomic, strong) UIImageView *backImage;
+@property(nonatomic, strong) UIImageView *statusBackImage;
+@property(nonatomic, strong) UIView *footView;
+
+@property(nonatomic, strong) UIImageView *doctorAvatar;
+@property(nonatomic, strong) UILabel *doctorNameLabel;
+@property(nonatomic, strong) UILabel *doctorDescLabel;
+@property(nonatomic, strong) UILabel *statusLabel;
 @end

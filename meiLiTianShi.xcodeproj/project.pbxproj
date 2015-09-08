@@ -100,6 +100,7 @@
 		3CDC510C9FFEA4FB6239CCDA /* meinvtupianbizhi_813_051.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC50C5A7380169FFFBA1AB /* meinvtupianbizhi_813_051.jpg */; };
 		3CDC510F9DCC5DA5D9919E72 /* DiaryBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E6C125DA34A5D64B6EC /* DiaryBookModel.m */; };
 		3CDC5111A11CBF6B8719619F /* timeline_分享@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B8583C617DAF9C08AD6 /* timeline_分享@2x.png */; };
+		3CDC512B1E993D7DB46E993E /* UIImageView+MLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC54BD94295EA7BB3708BC /* UIImageView+MLStyle.m */; };
 		3CDC5152856C5B951773CF11 /* 我的－亮.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC558E72A69757887B8DB1 /* 我的－亮.png */; };
 		3CDC5164916A07E2D5BD2835 /* 我的_我的日志@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC51949D8E890318EF96B4 /* 我的_我的日志@3x.png */; };
 		3CDC51688C83A460F70AA94D /* 发现－亮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59DC46F84009206BCF9B /* 发现－亮@2x.png */; };
@@ -524,6 +525,7 @@
 		3CDC548F9075268B86941E0B /* SZTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZTextView.h; sourceTree = "<group>"; };
 		3CDC54909B16504D3A46265E /* MLXLFormTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormTextFieldCell.m; sourceTree = "<group>"; };
 		3CDC5491E26918F70E986B0B /* 我的_我的通知.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的通知.png"; sourceTree = "<group>"; };
+		3CDC54BD94295EA7BB3708BC /* UIImageView+MLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MLStyle.m"; sourceTree = "<group>"; };
 		3CDC54D820DAE03CF8051DE9 /* AreaSelectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaSelectModel.h; sourceTree = "<group>"; };
 		3CDC54DED21B78D259F20122 /* EventModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventModel.h; sourceTree = "<group>"; };
 		3CDC54DED74EF4644A1997EC /* 分享_微博@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_微博@3x.png"; sourceTree = "<group>"; };
@@ -579,6 +581,7 @@
 		3CDC57F87134CB81A38E40DD /* timeline_返回-@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_返回-@3x.png"; sourceTree = "<group>"; };
 		3CDC580FD3E528A085DF996A /* 我的_我的伴美.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的伴美.png"; sourceTree = "<group>"; };
 		3CDC582086FA4D32DAD19A65 /* AvatarAndNameAndDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarAndNameAndDescCell.m; sourceTree = "<group>"; };
+		3CDC5829010088FEADF591B9 /* UIImageView+MLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MLStyle.h"; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
 		3CDC5836623FA92B65DA27FC /* 微信@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@3x.png"; sourceTree = "<group>"; };
 		3CDC58399FD8F8C4E8C9B584 /* timeline_分享.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_分享.png"; sourceTree = "<group>"; };
@@ -1277,6 +1280,8 @@
 			children = (
 				3CDC5BFC9F5393CCD2A1C692 /* UILabel+MLStyle.m */,
 				3CDC5DD70181F64F813BAFC2 /* UILabel+MLStyle.h */,
+				3CDC54BD94295EA7BB3708BC /* UIImageView+MLStyle.m */,
+				3CDC5829010088FEADF591B9 /* UIImageView+MLStyle.h */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -2108,6 +2113,7 @@
 				3CDC5962D1250F1C9238945B /* MLBlurImageHeaderedWebview.m in Sources */,
 				3CDC53628260FC2599C3CAC4 /* TimeLineVCB.m in Sources */,
 				3CDC5CEF13C28973A3F503AB /* IndexCellPR.m in Sources */,
+				3CDC512B1E993D7DB46E993E /* UIImageView+MLStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
