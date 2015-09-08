@@ -56,8 +56,38 @@
         [self.statusBackImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.backImage).offset(16);
             make.right.equalTo(self.backImage);
+//            make.height.equalTo();
+//            make.width.equalTo();
+        }];
+
+        [self.statusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.statusBackImage);
+            make.right.equalTo(self.statusBackImage).offset(-14);
+        }];
+
+        [self.doctorAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.footView);
+            make.left.equalTo(self.footView).offset(14);
+            make.size.mas_equalTo(CGSizeMake(30,30));
 
         }];
+
+        [self.doctorNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.footView);
+            make.left.equalTo(self.doctorAvatar.mas_right).offset(12);
+
+
+        }];
+
+        [self.doctorDescLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.footView);
+            make.right.equalTo(self.footView).offset(-14);
+            make.left.equalTo(self.doctorNameLabel.mas_right).offset(10);
+
+
+        }];
+
+
 
 
 
