@@ -39,6 +39,7 @@
 
         self.statusBackImage.image=[UIImage imageNamed:@"活动状态标签－底.png"];
         self.backImage.clipsToBounds=YES;
+        self.backImage.contentMode=UIViewContentModeScaleAspectFill;
 
         [self.backImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(self.contentView);

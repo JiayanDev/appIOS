@@ -16,6 +16,7 @@
         self.backImage=[UIImageView new];
         self.backImage.clipsToBounds=YES;
         [self.contentView addSubview:self.backImage];
+        self.backImage.contentMode=UIViewContentModeScaleAspectFill;
         [self.backImage mas_makeConstraints:^(MASConstraintMaker *make) {
 
             make.height.equalTo(self.contentView.mas_width).multipliedBy(380.0/750.0);
