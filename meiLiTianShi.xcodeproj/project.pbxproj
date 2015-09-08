@@ -84,6 +84,7 @@
 		07FB9C401B4E1486000CCC45 /* CreateTopicFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FB9C3E1B4E1486000CCC45 /* CreateTopicFVC.m */; };
 		07FB9C411B4E1486000CCC45 /* CreateTopicFVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FB9C3F1B4E1486000CCC45 /* CreateTopicFVC.xib */; };
 		3CDC500E2EB346D00E638FED /* IMG_1652.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC52D2A6FCE96FD2DAF844 /* IMG_1652.jpg */; };
+		3CDC5012671BD8D68552879B /* MyBanMeiCellB.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51C6840F9B61F262B8AE /* MyBanMeiCellB.m */; };
 		3CDC501A7B4C5188E67222B1 /* checkbox_blank@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC51CE57641CCCF7DEDED5 /* checkbox_blank@3x.png */; };
 		3CDC502645DD3E76B08331AD /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D3B8732CB0F18558B30 /* UIView+SLKAdditions.m */; };
 		3CDC503458B508F3F1A206A6 /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC545CA79CC064904E5255 /* SLKTextView.m */; };
@@ -471,6 +472,7 @@
 		3CDC51A90201CE851736F53D /* FloatCellOfNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatCellOfNumber.m; sourceTree = "<group>"; };
 		3CDC51B7755AF78323A1110E /* EventJoinApplyFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventJoinApplyFVC.m; sourceTree = "<group>"; };
 		3CDC51BB48FD866AD9FF54B1 /* 分享_qq空间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_qq空间.png"; sourceTree = "<group>"; };
+		3CDC51C6840F9B61F262B8AE /* MyBanMeiCellB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyBanMeiCellB.m; sourceTree = "<group>"; };
 		3CDC51C6D8284563362D9860 /* IDMTapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMTapDetectingImageView.m; sourceTree = "<group>"; };
 		3CDC51CE57641CCCF7DEDED5 /* checkbox_blank@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_blank@3x.png"; sourceTree = "<group>"; };
 		3CDC51CF637CD274346D7895 /* 发现－亮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发现－亮@3x.png"; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 		3CDC54FDCCA040E65431F2AC /* UserDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailModel.m; sourceTree = "<group>"; };
 		3CDC551B964C8F273412A7DE /* InfoCellOfListOfKV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoCellOfListOfKV.h; sourceTree = "<group>"; };
 		3CDC551C9A3EC42EA101BAAD /* checkbox_blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkbox_blank.png; sourceTree = "<group>"; };
+		3CDC55248D33A49E6664915A /* MyBanMeiCellB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyBanMeiCellB.h; sourceTree = "<group>"; };
 		3CDC552F991F2F3361BF0908 /* pt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = pt; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC5533301A12BE6154BB44 /* 微信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信.png"; sourceTree = "<group>"; };
 		3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTableViewCell.h; sourceTree = "<group>"; };
@@ -865,6 +868,8 @@
 				074804F41B70A78B00FA7C42 /* MyBanMeiCell.h */,
 				074804F51B70A78B00FA7C42 /* MyBanMeiCell.m */,
 				074804F61B70A78B00FA7C42 /* MyBanMeiCell.xib */,
+				3CDC51C6840F9B61F262B8AE /* MyBanMeiCellB.m */,
+				3CDC55248D33A49E6664915A /* MyBanMeiCellB.h */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -2152,6 +2157,7 @@
 				3CDC5CEF13C28973A3F503AB /* IndexCellPR.m in Sources */,
 				3CDC512B1E993D7DB46E993E /* UIImageView+MLStyle.m in Sources */,
 				3CDC57972F4A81A79F476C45 /* IndexCellOfOthers.m in Sources */,
+				3CDC5012671BD8D68552879B /* MyBanMeiCellB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

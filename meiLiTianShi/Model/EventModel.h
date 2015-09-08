@@ -26,6 +26,7 @@
 @property (nonatomic, strong) NSString <Optional>*doctorDesc; // for index
 @property (nonatomic, strong) NSString <Optional>*status; // for index
 
+@property (nonatomic, strong)NSString <Optional>*thumbnailImg;
 
 @property (nonatomic, strong) NSString <Optional>*city;
 @property (nonatomic, strong) NSString <Optional>*district;
