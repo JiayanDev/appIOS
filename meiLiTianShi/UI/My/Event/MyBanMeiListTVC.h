@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "XLFormRowDescriptor.h"
+#import "MLStyledTableVC.h"
 
-@interface MyBanMeiListTVC : UITableViewController <XLFormRowDescriptorViewController>
+@interface MyBanMeiListTVC : MLStyledTableVC <XLFormRowDescriptorViewController>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 
 @end

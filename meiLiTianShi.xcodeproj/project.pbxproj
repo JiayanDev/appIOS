@@ -214,6 +214,7 @@
 		3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B63426FE4A04BE7F99C /* blue@2x.png */; };
 		3CDC5A5B72CE8FC29351F7F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5A6C83D1389585BD2B32 /* Localizable.strings */; };
 		3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */; };
+		3CDC5A5F35578D9FAA0E6585 /* UIButton+MLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50FFFE3BFB4F4E438FD3 /* UIButton+MLStyle.m */; };
 		3CDC5A72F773F299B8AF1E41 /* PhoneLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */; };
 		3CDC5A7CAC520E8C0CF19641 /* XLFormRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5D544238B38E305442DD /* XLFormRatingCell.xib */; };
 		3CDC5A808F55039563C20B06 /* MLXLFormSelectorCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5BBB4680D886D0FC3CC2 /* MLXLFormSelectorCell.m */; };
@@ -451,6 +452,7 @@
 		3CDC50F37DA1CCD6AD7727A7 /* PhoneAndGotoEditButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneAndGotoEditButtonCell.m; sourceTree = "<group>"; };
 		3CDC50F8FDFADD69806DA598 /* MLCheckBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCheckBox.m; sourceTree = "<group>"; };
 		3CDC50FFF325119EDE8210C5 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		3CDC50FFFE3BFB4F4E438FD3 /* UIButton+MLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MLStyle.m"; sourceTree = "<group>"; };
 		3CDC510AD493292E5287CCD7 /* PhoneRegisterSecondStepVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneRegisterSecondStepVC.h; sourceTree = "<group>"; };
 		3CDC510CEE2FBAD90870E059 /* RSKImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKImageScrollView.h; sourceTree = "<group>"; };
 		3CDC51143C40C1176B84D9DD /* MLRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRequestManager.h; sourceTree = "<group>"; };
@@ -700,6 +702,7 @@
 		3CDC5D544238B38E305442DD /* XLFormRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XLFormRatingCell.xib; sourceTree = "<group>"; };
 		3CDC5D67497B107E58D21F88 /* PhoneBindVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneBindVC.xib; sourceTree = "<group>"; };
 		3CDC5D686863830874C138DD /* ru */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; name = ru; path = Localizable.strings; sourceTree = "<group>"; };
+		3CDC5D6A0808365E9FD47565 /* UIButton+MLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+MLStyle.h"; sourceTree = "<group>"; };
 		3CDC5D82708C13EB121EDDBD /* InfoIndexVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoIndexVC.h; sourceTree = "<group>"; };
 		3CDC5D83A7BD94629107FBE2 /* PhoneLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginVC.h; sourceTree = "<group>"; };
 		3CDC5D860DC83AA2E154091D /* 微信登录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信登录.png"; sourceTree = "<group>"; };
@@ -1316,6 +1319,8 @@
 				3CDC5DD70181F64F813BAFC2 /* UILabel+MLStyle.h */,
 				3CDC54BD94295EA7BB3708BC /* UIImageView+MLStyle.m */,
 				3CDC5829010088FEADF591B9 /* UIImageView+MLStyle.h */,
+				3CDC50FFFE3BFB4F4E438FD3 /* UIButton+MLStyle.m */,
+				3CDC5D6A0808365E9FD47565 /* UIButton+MLStyle.h */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -2158,6 +2163,7 @@
 				3CDC512B1E993D7DB46E993E /* UIImageView+MLStyle.m in Sources */,
 				3CDC57972F4A81A79F476C45 /* IndexCellOfOthers.m in Sources */,
 				3CDC5012671BD8D68552879B /* MyBanMeiCellB.m in Sources */,
+				3CDC5A5F35578D9FAA0E6585 /* UIButton+MLStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

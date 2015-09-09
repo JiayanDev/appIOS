@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 #import "MyBanMeiListTVC.h"
 #import "PageIndicator.h"
 #import "MJRefreshAutoNormalFooter.h"
@@ -14,11 +16,12 @@
 #import "MLSession.h"
 #import "EventModel.h"
 #import "TSMessage.h"
-#import "MyBanMeiCell.h"
+//#import "MyBanMeiCell.h"
 #import "CategoryModel.h"
 
 #import "NSDate+XLformPushDisplay.h"
 #import "EventDetailVC.h"
+#import "MyBanMeiCellB.h"
 
 
 @interface MyBanMeiListTVC ()
@@ -38,9 +41,7 @@
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
 
-    [self.tableView registerClass:[MyBanMeiCell class] forCellReuseIdentifier:kBanmeiCell];
-    [self.tableView registerNib:[UINib nibWithNibName:@"MyBanMeiCell"
-                                               bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kBanmeiCell];
+    [self.tableView registerClass:[MyBanMeiCellB class] forCellReuseIdentifier:kBanmeiCell];
 
     [self getDataWithScrollingToTop:NO];
 
@@ -96,12 +97,23 @@
 
 -(UITableViewCell *)tableView :(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    MyBanMeiCell *cell=[self.tableView dequeueReusableCellWithIdentifier:kBanmeiCell];
+    MyBanMeiCellB *cell=[self.tableView dequeueReusableCellWithIdentifier:kBanmeiCell];
     EventModel *data=self.tableData[indexPath.section];
-    cell.title.text= [NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
-    cell.doctorAndHospital.text=[NSString stringWithFormat:@"%@ %@",data.hospitalName,data.doctorName];
-    cell.timePoint.text= [[NSDate dateWithTimeIntervalSince1970:[data.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM];
-    cell.status.text=data.applyStatus;
+    cell.thumbImageView.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
+    if(data.thumbnailImg){
+        [cell.thumbImageView sd_setImageWithURL:[NSURL URLWithString:data.thumbnailImg]];
+    }
+    cell.titleLabel.text= [NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
+    cell.descLabel.text=[CategoryModel stringWithIdArray:data.categoryIds];
+    cell.timeLabel.text= [[NSDate dateWithTimeIntervalSince1970:[data.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM];
+    cell.statusLable.text=data.applyStatus;
+    if(YES){
+        cell.pingjiaButton.hidden=YES;
+        cell.statusLable.hidden=NO;
+    }else{
+        cell.pingjiaButton.hidden=NO;
+        cell.statusLable.hidden=YES;
+    }
 
     return cell;
 
@@ -109,7 +121,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150;
+    return [self.tableView fd_heightForCellWithIdentifier:kBanmeiCell configuration:^(id cell) {
+
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
