@@ -4,6 +4,7 @@
 //
 
 #import <Masonry/View+MASAdditions.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "DiaryInListCell.h"
 #import "UIImageView+MLStyle.h"
 #import "UILabel+MLStyle.h"
@@ -18,7 +19,7 @@
     if (self) {
 
         self.images=[NSArray new];
-        self.imageViews=[NSArray new];
+        self.imageViews=[NSMutableArray new];
         self.avatarView=[UIImageView newWithRoundRadius:18];
         self.nameLabel=[UILabel newMLStyleWithSize:12 isGrey:NO];
         self.nameLabel.textColor=THEME_COLOR;
@@ -84,6 +85,40 @@
 
 - (void)setImages:(NSArray *)images {
     [self.imageViews makeObjectsPerformSelector: @selector(removeFromSuperview)];
+    self.imageViews=[NSMutableArray new];
+    CGFloat w= (CGFloat) ((SCREEN_WIDTH-8-9-35-15+5)/3.0);
+//    _images=images;
+    for (NSString *string in images) {
+        NSURL *url=[NSURL URLWithString:string];
+        UIImageView *v=[UIImageView new];
+        [v sd_setImageWithURL:url];
+        [self.contentView addSubview:v];
+        [self.imageViews addObject:v];
+        NSUInteger index= [images indexOfObject:string];
+        [v mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.size.mas_equalTo(CGSizeMake(w,w));
+            if(index==0){
+                make.top.equalTo(self.contentLabel.mas_bottom).offset(12);
+                make.left.equalTo(self.avatarView.mas_right).offset(9);
+
+            }else if(index%3==0){
+                make.top.equalTo(((UIImageView *)self.imageViews[index-3]).mas_bottom).offset(5);
+                make.left.equalTo(self.avatarView.mas_right).offset(9);
+            }else{
+                make.top.equalTo(((UIImageView *)self.imageViews[index-1]));
+                make.left.equalTo(((UIImageView *)self.imageViews[index-1]).mas_right).offset(5);
+            }
+
+
+            if(index== [images count]){
+                make.bottom.equalTo(self.pinglunAndZanLabel.mas_top).offset(-17).priority(600);
+            }
+        }];
+    }
+
+
+
+
 
 }
 

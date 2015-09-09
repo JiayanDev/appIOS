@@ -8,7 +8,7 @@
 
 @interface DiaryInListCell : UITableViewCell
 @property(nonatomic, strong) NSArray *images;
-@property(nonatomic, strong) NSArray *imageViews;
+@property(nonatomic, strong) NSMutableArray *imageViews;
 @property(nonatomic, strong) UIImageView *avatarView;
 @property(nonatomic, strong) UILabel *nameLabel;
 @property(nonatomic, strong) UILabel *catogoriesLabel;
