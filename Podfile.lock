@@ -28,7 +28,6 @@ PODS:
   - JMImageCache (0.4.0)
   - JSONModel (1.1.0)
   - JVFloatLabeledTextField (1.1.0)
-  - KIImagePager (2.1.0)
   - Masonry (0.6.2)
   - MBProgressHUD (0.9.1)
   - MJRefresh (2.0.4)
@@ -62,7 +61,6 @@ DEPENDENCIES:
   - JMImageCache
   - JSONModel
   - JVFloatLabeledTextField
-  - KIImagePager
   - Masonry
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh
@@ -95,7 +93,6 @@ SPEC CHECKSUMS:
   JMImageCache: fac25eb168a25b29ac130fee6a6b17ea463c1d86
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4
-  KIImagePager: aea488f00879fda4a4b81e2b83187da070907c85
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: ea153717001d3c02444bd22b75c111d2937d2104

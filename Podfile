@@ -20,7 +20,7 @@ pod 'MJRefresh'
   pod 'RegExCategories', '~> 1.0'
   pod 'RMUniversalAlert'
   pod 'CTCheckbox'
-  pod 'KIImagePager'
+  # pod 'KIImagePager'
   pod 'JVFloatLabeledTextField'
   pod 'FXBlurView'
 end
