@@ -45,7 +45,7 @@
     vc1.title=@"伴美";
 
     UINavigationController *vc2= [[UINavigationController alloc] initWithRootViewController:
-            [[TopicListVC alloc]init]];
+            [[TopicListVC alloc] initWithStyle:UITableViewStyleGrouped]];
     vc2.title=@"发现";
 
     UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:

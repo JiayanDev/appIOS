@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "KIImagePager.h"
+#import "MLStyledTableVC.h"
 
-@interface TopicListVC : UIViewController <UITableViewDataSource, UITableViewDelegate, KIImagePagerDelegate, KIImagePagerDataSource>
+@interface TopicListVC : MLStyledTableVC <UITableViewDataSource, UITableViewDelegate, KIImagePagerDelegate, KIImagePagerDataSource>
 
 @end

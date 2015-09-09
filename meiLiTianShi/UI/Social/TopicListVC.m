@@ -29,17 +29,17 @@
 #import "MLStyleManager.h"
 
 @interface TopicListVC ()
-@property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+//@property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *tableData;
 @property (nonatomic, strong)PageIndicator *pageIndicator;
 @property (nonatomic, assign)NSInteger type;
 @property (nonatomic, strong)KIImagePager *imagePager;
 
-@property (strong, nonatomic) IBOutlet UIView *headerRecommendedTopicView;
-@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
-@property (weak, nonatomic) IBOutlet UILabel *headerDesc;
-@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
+//@property (strong, nonatomic) IBOutlet UIView *headerRecommendedTopicView;
+//@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
+//@property (weak, nonatomic) IBOutlet UILabel *headerDesc;
+//@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 @property (nonatomic, strong)TopicModel *recommendedTopic;
 @end
 
@@ -60,8 +60,8 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"TopicListCell" bundle:nil]forCellReuseIdentifier:kCellTopic];
     [self.tableView registerClass:[DiaryListCell class] forCellReuseIdentifier:kCellDiary];
     [self.tableView registerNib:[UINib nibWithNibName:@"DiaryListCell" bundle:nil]forCellReuseIdentifier:kCellDiary];
-    self.tableView.delegate=self;
-    self.tableView.dataSource=self;
+//    self.tableView.delegate=self;
+//    self.tableView.dataSource=self;
     self.tableView.estimatedRowHeight=142;
     self.pageIndicator= [[PageIndicator alloc] init];
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
@@ -70,41 +70,41 @@
 //                                                                                         target:self
 //                                                                                         action:@selector(gotoCreate)];
 //    [self.tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+//    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 
 
-//    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.75)];
-//    self.imagePager.delegate=self;
-//    self.imagePager.dataSource=self;
-//    self.tableView.tableHeaderView=self.imagePager;
+    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.75)];
+    self.imagePager.delegate=self;
+    self.imagePager.dataSource=self;
+    self.tableView.tableHeaderView=self.imagePager;
 
-    self.headerRecommendedTopicView.frame=CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.5);
-    self.tableView.tableHeaderView=self.headerRecommendedTopicView;
-    self.headerRecommendedTopicView.userInteractionEnabled=YES;
+//    self.headerRecommendedTopicView.frame=CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.5);
+//    self.tableView.tableHeaderView=self.headerRecommendedTopicView;
+//    self.headerRecommendedTopicView.userInteractionEnabled=YES;
 
 
     UITapGestureRecognizer *singleFingerTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(handleSingleTap:)];
-    [self.headerRecommendedTopicView addGestureRecognizer:singleFingerTap];
-    [[MLSession current] getRecommendTopic_success:^(TopicModel *model) {
-
-        self.recommendedTopic=model;
-        self.headerTitle.text=model.title;
-        self.headerDesc.text=model.desc;
-        if(model.coverImg){
-            [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.coverImg]
-                                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                           self.headerImage.image=image;
-                                           [self.headerImage setNeedsDisplay];
-                                       }];
-
-        }
-    } fail:^(NSInteger i, id o) {
-        [TSMessage showNotificationWithTitle:@"出错了"
-                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
-                                        type:TSMessageNotificationTypeError];
-    }];
+//    [self.headerRecommendedTopicView addGestureRecognizer:singleFingerTap];
+//    [[MLSession current] getRecommendTopic_success:^(TopicModel *model) {
+//
+//        self.recommendedTopic=model;
+//        self.headerTitle.text=model.title;
+//        self.headerDesc.text=model.desc;
+//        if(model.coverImg){
+//            [self.headerImage sd_setImageWithURL:[NSURL URLWithString:model.coverImg]
+//                                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                           self.headerImage.image=image;
+//                                           [self.headerImage setNeedsDisplay];
+//                                       }];
+//
+//        }
+//    } fail:^(NSInteger i, id o) {
+//        [TSMessage showNotificationWithTitle:@"出错了"
+//                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+//                                        type:TSMessageNotificationTypeError];
+//    }];
 
 
     [self getDataWithScrollingToTop:YES];
@@ -152,13 +152,13 @@
 }
 
 
-- (IBAction)typeChanged:(id)sender {
-    self.type=self.typeSwitcher.selectedSegmentIndex;
-    self.tableData=[NSMutableArray array];
-    self.pageIndicator=[[PageIndicator alloc]init];
-    [self getDataWithScrollingToTop:YES];
-
-}
+//- (IBAction)typeChanged:(id)sender {
+//    self.type=self.typeSwitcher.selectedSegmentIndex;
+//    self.tableData=[NSMutableArray array];
+//    self.pageIndicator=[[PageIndicator alloc]init];
+//    [self getDataWithScrollingToTop:YES];
+//
+//}
 
 
 -(void)dragUp{
@@ -349,20 +349,20 @@
         [dcell.commentButton setTitle:[NSString stringWithFormat:@"%@",@(diary.commentCount)] forState:UIControlStateNormal];
 
 
-        // Remove seperator inset
-        if ([dcell respondsToSelector:@selector(setSeparatorInset:)]) {
-            [dcell setSeparatorInset:UIEdgeInsetsZero];
-        }
-
-        // Prevent the cell from inheriting the Table View's margin settings
-        if ([dcell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
-            [dcell setPreservesSuperviewLayoutMargins:NO];
-        }
-
-        // Explictly set your cell's layout margins
-        if ([dcell respondsToSelector:@selector(setLayoutMargins:)]) {
-            [dcell setLayoutMargins:UIEdgeInsetsZero];
-        }
+//        // Remove seperator inset
+//        if ([dcell respondsToSelector:@selector(setSeparatorInset:)]) {
+//            [dcell setSeparatorInset:UIEdgeInsetsZero];
+//        }
+//
+//        // Prevent the cell from inheriting the Table View's margin settings
+//        if ([dcell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+//            [dcell setPreservesSuperviewLayoutMargins:NO];
+//        }
+//
+//        // Explictly set your cell's layout margins
+//        if ([dcell respondsToSelector:@selector(setLayoutMargins:)]) {
+//            [dcell setLayoutMargins:UIEdgeInsetsZero];
+//        }
 
 //        dcell.separatorInset = UIEdgeInsetsMake(0.0f, cell.frame.size.width, 0.0f, 0.0f);
 

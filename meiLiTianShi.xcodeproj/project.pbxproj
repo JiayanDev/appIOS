@@ -36,7 +36,6 @@
 		072F30AE1B46427B001A14E6 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30AC1B46427B001A14E6 /* FirstVC.m */; };
 		072F30AF1B46427B001A14E6 /* FirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30AD1B46427B001A14E6 /* FirstVC.xib */; };
 		072F30B31B468536001A14E6 /* TopicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30B11B468536001A14E6 /* TopicListVC.m */; };
-		072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30B21B468536001A14E6 /* TopicListVC.xib */; };
 		072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30B61B4A702E001A14E6 /* TopicListCell.m */; };
 		072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30B71B4A702E001A14E6 /* TopicListCell.xib */; };
 		074607871B4BB5540035E08D /* MyIndexVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 074607851B4BB5540035E08D /* MyIndexVC.m */; };
@@ -357,7 +356,6 @@
 		072F30AD1B46427B001A14E6 /* FirstVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstVC.xib; sourceTree = "<group>"; };
 		072F30B01B468536001A14E6 /* TopicListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListVC.h; sourceTree = "<group>"; };
 		072F30B11B468536001A14E6 /* TopicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListVC.m; sourceTree = "<group>"; };
-		072F30B21B468536001A14E6 /* TopicListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListVC.xib; sourceTree = "<group>"; };
 		072F30B51B4A702E001A14E6 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
 		072F30B61B4A702E001A14E6 /* TopicListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListCell.m; sourceTree = "<group>"; };
 		072F30B71B4A702E001A14E6 /* TopicListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopicListCell.xib; sourceTree = "<group>"; };
@@ -1185,7 +1183,6 @@
 			children = (
 				072F30B01B468536001A14E6 /* TopicListVC.h */,
 				072F30B11B468536001A14E6 /* TopicListVC.m */,
-				072F30B21B468536001A14E6 /* TopicListVC.xib */,
 				072F30B51B4A702E001A14E6 /* TopicListCell.h */,
 				072F30B61B4A702E001A14E6 /* TopicListCell.m */,
 				072F30B71B4A702E001A14E6 /* TopicListCell.xib */,
@@ -1845,7 +1842,6 @@
 				07A8BA851B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				071F2CDD1B7AF2DF00A081FE /* TimelineVC.xib in Resources */,
-				072F30B41B468536001A14E6 /* TopicListVC.xib in Resources */,
 				071F2CD81B78BCF700A081FE /* IndexCell.xib in Resources */,
 				3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */,
 				071F2CD31B784E9E00A081FE /* IndexTVC.xib in Resources */,
