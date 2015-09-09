@@ -76,7 +76,7 @@
 //    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 
 
-    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.75)];
+    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,(int)([UIScreen mainScreen].bounds.size.width*0.75))];
     self.imagePager.delegate=self;
     self.imagePager.dataSource=self;
     self.tableView.tableHeaderView=self.imagePager;
