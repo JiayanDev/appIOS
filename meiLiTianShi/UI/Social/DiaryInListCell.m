@@ -92,6 +92,8 @@
     for (NSString *string in images) {
         NSURL *url=[NSURL URLWithString:string];
         UIImageView *v=[UIImageView new];
+        v.contentMode=UIViewContentModeScaleAspectFill;
+        v.clipsToBounds=YES;
         [v sd_setImageWithURL:url];
         [self.contentView addSubview:v];
         [self.imageViews addObject:v];

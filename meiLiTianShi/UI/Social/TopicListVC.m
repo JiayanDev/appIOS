@@ -283,7 +283,10 @@
         DiaryModel *diary=(DiaryModel *)data;
         //[dcell.avatarView sd_setImageWithURL:diary.];
 
+//        [dcell.avatarView sd_setImageWithURL:diary.];
+        dcell.avatarView.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
         dcell.nameLabel.text=diary.userName;
+
         dcell.catogoriesLabel.text=@"项目名字";
         dcell.contentLabel.text=diary.content;
         dcell.dateLabel.text= [[NSDate dateWithTimeIntervalSince1970:diary.createTime] displayTextWithMMdd];
