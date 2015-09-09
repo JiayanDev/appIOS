@@ -53,6 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"发现";
+    [MLStyleManager removeBackTextForNextScene:self];
     //self.navigationItem.titleView=self.typeSwitcher;
 
     self.tableData=[NSMutableArray array];

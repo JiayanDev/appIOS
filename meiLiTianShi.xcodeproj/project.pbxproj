@@ -183,6 +183,7 @@
 		3CDC57B17D6A85EC5755311F /* 我的_我的通知@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC54E98BB1F4C1059697E3 /* 我的_我的通知@2x.png */; };
 		3CDC57D7723F8B02D7FBAF6C /* IDMPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC58F3CE21869816BB0977 /* IDMPhotoBrowser.m */; };
 		3CDC57F094353BC28A524D06 /* 分享_微博@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC54DED74EF4644A1997EC /* 分享_微博@3x.png */; };
+		3CDC58026CA2F82D2DD1AE0C /* DiaryInListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AEBA4448A318C6E0952 /* DiaryInListCell.m */; };
 		3CDC580F32FC0069D1E1A845 /* 我的_设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC516D57D2B097B0F83CF2 /* 我的_设置.png */; };
 		3CDC5810B5DC325C81D947E0 /* 我的_我的评论@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC543C9403D6ACA0100BA7 /* 我的_我的评论@2x.png */; };
 		3CDC58648BFC255C4F9030EF /* ELCOverlayImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56D987933650A3C8A60E /* ELCOverlayImageView.m */; };
@@ -614,6 +615,7 @@
 		3CDC5915955F159F03CCE2EB /* IndexCellOfOthers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexCellOfOthers.h; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
 		3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
+		3CDC594BBAFE71BECBE1EF55 /* DiaryInListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryInListCell.h; sourceTree = "<group>"; };
 		3CDC594E31CB68DAA3F612EC /* MLXLFormSelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormSelectorCell.h; sourceTree = "<group>"; };
 		3CDC59659707C01E4412DD98 /* 返回@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@2x.png"; sourceTree = "<group>"; };
 		3CDC597108C0E2C1526D42BA /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
@@ -647,6 +649,7 @@
 		3CDC5AD3A598A3AD743782A9 /* IDMZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMZoomingScrollView.h; sourceTree = "<group>"; };
 		3CDC5AD754B40F4C42EC7AB8 /* MLRandom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLRandom.h; sourceTree = "<group>"; };
 		3CDC5AE8B03BA4C21F2E89BA /* 我的_我的评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的评论.png"; sourceTree = "<group>"; };
+		3CDC5AEBA4448A318C6E0952 /* DiaryInListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryInListCell.m; sourceTree = "<group>"; };
 		3CDC5AF018B5DD8DD2E9A625 /* 我的－灰@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的－灰@2x.png"; sourceTree = "<group>"; };
 		3CDC5AF995573CBE78549469 /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
 		3CDC5AFE616B7BCE581AEB04 /* PhoneBindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneBindVC.m; sourceTree = "<group>"; };
@@ -1192,6 +1195,8 @@
 				070E2ED31B5B76A40041847A /* DiaryListCell.h */,
 				070E2ED41B5B76A40041847A /* DiaryListCell.m */,
 				070E2ED51B5B76A40041847A /* DiaryListCell.xib */,
+				3CDC5AEBA4448A318C6E0952 /* DiaryInListCell.m */,
+				3CDC594BBAFE71BECBE1EF55 /* DiaryInListCell.h */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -2160,6 +2165,7 @@
 				3CDC57972F4A81A79F476C45 /* IndexCellOfOthers.m in Sources */,
 				3CDC5012671BD8D68552879B /* MyBanMeiCellB.m in Sources */,
 				3CDC5A5F35578D9FAA0E6585 /* UIButton+MLStyle.m in Sources */,
+				3CDC58026CA2F82D2DD1AE0C /* DiaryInListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
