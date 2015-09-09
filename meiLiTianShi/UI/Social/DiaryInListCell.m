@@ -94,7 +94,10 @@
         UIImageView *v=[UIImageView new];
         v.contentMode=UIViewContentModeScaleAspectFill;
         v.clipsToBounds=YES;
-        [v sd_setImageWithURL:url];
+//        [v sd_setImageWithURL:url];
+        [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [v setImageWithFadeIn:image];
+        }];
         [self.contentView addSubview:v];
         [self.imageViews addObject:v];
         NSUInteger index= [images indexOfObject:string];
