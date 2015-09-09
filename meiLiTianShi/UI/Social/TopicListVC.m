@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <XLForm/NSObject+XLFormAdditions.h>
 #import "TopicListVC.h"
 #import "TopicListCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
@@ -21,12 +22,14 @@
 #import "ProjectSelectVC.h"
 #import "DiaryModel.h"
 #import "DiaryDetailVC.h"
-#import "DiaryListCell.h"
+//#import "DiaryListCell.h"
 #import "UIImageView+WebCache.h"
 #import "CategoryModel.h"
 #import "KIImagePager.h"
 #import "WKIImagePager.h"
 #import "MLStyleManager.h"
+#import "DiaryInListCell.h"
+#import "NSDate+XLformPushDisplay.h"
 
 @interface TopicListVC ()
 //@property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -59,8 +62,7 @@
     self.tableData=[NSMutableArray array];
     [self.tableView registerClass:[TopicListCell class] forCellReuseIdentifier:kCellTopic];
     [self.tableView registerNib:[UINib nibWithNibName:@"TopicListCell" bundle:nil]forCellReuseIdentifier:kCellTopic];
-    [self.tableView registerClass:[DiaryListCell class] forCellReuseIdentifier:kCellDiary];
-    [self.tableView registerNib:[UINib nibWithNibName:@"DiaryListCell" bundle:nil]forCellReuseIdentifier:kCellDiary];
+    [self.tableView registerClass:[DiaryInListCell class] forCellReuseIdentifier:kCellDiary];
 //    self.tableView.delegate=self;
 //    self.tableView.dataSource=self;
     self.tableView.estimatedRowHeight=142;
@@ -277,97 +279,99 @@
 
 -(void)setTheCell:(UITableViewCell *)cell withData:(id)data{
     if([data isKindOfClass:[DiaryModel class]]){
-        DiaryListCell *dcell=((DiaryListCell *) cell);
+        DiaryInListCell *dcell=((DiaryInListCell *) cell);
         DiaryModel *diary=(DiaryModel *)data;
         //[dcell.avatarView sd_setImageWithURL:diary.];
 
-        dcell.splitLineHeightConstraint.constant=1.0 / [UIScreen mainScreen].scale;
-        dcell.userNameLabel.text=diary.userName;
-        dcell.userDescLabel.text=@"用户地址 用户年龄";
-        dcell.diaryContentLabel.text=diary.content;
-
-        dcell.diaryImage1.hidden= diary.photoes.count < 1;
-        dcell.diaryImage2.hidden=diary.photoes.count<2;
-        dcell.diaryImage3.hidden=diary.photoes.count<3;
-
-        if(diary.photoes.count>=1){
-//            [dcell.diaryImage1 sd_setImageWithURL:diary.photoes[0]];
-            [dcell.diaryImage1 sd_setImageWithURL:diary.photoes[0]
-                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                            dcell.diaryImage1.image=image;
-                                            [dcell.diaryImage1 setNeedsDisplay];
-                                            [dcell setNeedsDisplay];
-                                        }];
-            dcell.noImageConstraint.priority=500;
-            dcell.pic1up.priority=999;
-            dcell.pic2up.priority=999;
-            dcell.pic3up.priority=999;
+        dcell.nameLabel.text=diary.userName;
+        dcell.catogoriesLabel.text=@"项目名字";
+        dcell.contentLabel.text=diary.content;
+        dcell.dateLabel.text= [[NSDate dateWithTimeIntervalSince1970:diary.createTime] displayTextWithMMdd];
+        dcell.pinglunAndZanLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",diary.commentCount,diary.likeCount];
+        [dcell setImages:diary.photoes];
 //
-//            dcell.pic1down.priority=999;
-//            dcell.pic2down.priority=999;
-//            dcell.pic3down.priority=999;
-        }else{
-            dcell.noImageConstraint.priority=999;
-            dcell.pic1up.priority=500;
-            dcell.pic2up.priority=500;
-            dcell.pic3up.priority=500;
+//        dcell.diaryImage1.hidden= diary.photoes.count < 1;
+//        dcell.diaryImage2.hidden=diary.photoes.count<2;
+//        dcell.diaryImage3.hidden=diary.photoes.count<3;
 //
-//            dcell.pic1down.priority=500;
-//            dcell.pic2down.priority=500;
-//            dcell.pic3down.priority=500;
-        }
-
-        [dcell layoutIfNeeded];
-
-        if(diary.photoes.count>=2){
-//            [dcell.diaryImage2 sd_setImageWithURL:diary.photoes[1]];
-            [dcell.diaryImage2 sd_setImageWithURL:diary.photoes[1]
-                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                            dcell.diaryImage2.image=image;
-                                            [dcell.diaryImage2 setNeedsDisplay];
-                                            [dcell setNeedsDisplay];
-                                        }];
-        }
-
-        if(diary.photoes.count>=3){
-//            [dcell.diaryImage3 sd_setImageWithURL:diary.photoes[2]];
-            [dcell.diaryImage3 sd_setImageWithURL:diary.photoes[2]
-                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                            dcell.diaryImage3.image=image;
-                                            [dcell.diaryImage3 setNeedsDisplay];
-                                            [dcell setNeedsDisplay];
-                                        }];
-        }
-
-//        NSMutableArray *cates=[NSMutableArray array];
-//        for (NSNumber *categoryId in diary.categoryIds) {
-//            [cates addObject:[CategoryModel stringWithId:[categoryId unsignedIntegerValue]]];
+//        if(diary.photoes.count>=1){
+////            [dcell.diaryImage1 sd_setImageWithURL:diary.photoes[0]];
+//            [dcell.diaryImage1 sd_setImageWithURL:diary.photoes[0]
+//                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                            dcell.diaryImage1.image=image;
+//                                            [dcell.diaryImage1 setNeedsDisplay];
+//                                            [dcell setNeedsDisplay];
+//                                        }];
+//            dcell.noImageConstraint.priority=500;
+//            dcell.pic1up.priority=999;
+//            dcell.pic2up.priority=999;
+//            dcell.pic3up.priority=999;
+////
+////            dcell.pic1down.priority=999;
+////            dcell.pic2down.priority=999;
+////            dcell.pic3down.priority=999;
+//        }else{
+//            dcell.noImageConstraint.priority=999;
+//            dcell.pic1up.priority=500;
+//            dcell.pic2up.priority=500;
+//            dcell.pic3up.priority=500;
+////
+////            dcell.pic1down.priority=500;
+////            dcell.pic2down.priority=500;
+////            dcell.pic3down.priority=500;
 //        }
 //
-//        dcell.tagLabel.text= [cates componentsJoinedByString:@"，"];
-
-        [dcell.likeButton setTitle:[NSString stringWithFormat:@"%@",@(diary.likeCount)] forState:UIControlStateNormal];
-        [dcell.commentButton setTitle:[NSString stringWithFormat:@"%@",@(diary.commentCount)] forState:UIControlStateNormal];
-
-
-//        // Remove seperator inset
-//        if ([dcell respondsToSelector:@selector(setSeparatorInset:)]) {
-//            [dcell setSeparatorInset:UIEdgeInsetsZero];
+//        [dcell layoutIfNeeded];
+//
+//        if(diary.photoes.count>=2){
+////            [dcell.diaryImage2 sd_setImageWithURL:diary.photoes[1]];
+//            [dcell.diaryImage2 sd_setImageWithURL:diary.photoes[1]
+//                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                            dcell.diaryImage2.image=image;
+//                                            [dcell.diaryImage2 setNeedsDisplay];
+//                                            [dcell setNeedsDisplay];
+//                                        }];
 //        }
 //
-//        // Prevent the cell from inheriting the Table View's margin settings
-//        if ([dcell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
-//            [dcell setPreservesSuperviewLayoutMargins:NO];
+//        if(diary.photoes.count>=3){
+////            [dcell.diaryImage3 sd_setImageWithURL:diary.photoes[2]];
+//            [dcell.diaryImage3 sd_setImageWithURL:diary.photoes[2]
+//                                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                            dcell.diaryImage3.image=image;
+//                                            [dcell.diaryImage3 setNeedsDisplay];
+//                                            [dcell setNeedsDisplay];
+//                                        }];
 //        }
 //
-//        // Explictly set your cell's layout margins
-//        if ([dcell respondsToSelector:@selector(setLayoutMargins:)]) {
-//            [dcell setLayoutMargins:UIEdgeInsetsZero];
-//        }
-
-//        dcell.separatorInset = UIEdgeInsetsMake(0.0f, cell.frame.size.width, 0.0f, 0.0f);
-
-//        dcell.separatorInset
+////        NSMutableArray *cates=[NSMutableArray array];
+////        for (NSNumber *categoryId in diary.categoryIds) {
+////            [cates addObject:[CategoryModel stringWithId:[categoryId unsignedIntegerValue]]];
+////        }
+////
+////        dcell.tagLabel.text= [cates componentsJoinedByString:@"，"];
+//
+//        [dcell.likeButton setTitle:[NSString stringWithFormat:@"%@",@(diary.likeCount)] forState:UIControlStateNormal];
+//        [dcell.commentButton setTitle:[NSString stringWithFormat:@"%@",@(diary.commentCount)] forState:UIControlStateNormal];
+//
+//
+////        // Remove seperator inset
+////        if ([dcell respondsToSelector:@selector(setSeparatorInset:)]) {
+////            [dcell setSeparatorInset:UIEdgeInsetsZero];
+////        }
+////
+////        // Prevent the cell from inheriting the Table View's margin settings
+////        if ([dcell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+////            [dcell setPreservesSuperviewLayoutMargins:NO];
+////        }
+////
+////        // Explictly set your cell's layout margins
+////        if ([dcell respondsToSelector:@selector(setLayoutMargins:)]) {
+////            [dcell setLayoutMargins:UIEdgeInsetsZero];
+////        }
+//
+////        dcell.separatorInset = UIEdgeInsetsMake(0.0f, cell.frame.size.width, 0.0f, 0.0f);
+//
+////        dcell.separatorInset
 
     }else if([cell isKindOfClass:[TopicListCell class]]){
         TopicListCell *tcell=((TopicListCell *) cell);
@@ -388,7 +392,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     id data=self.tableData[indexPath.section];
     if([data isKindOfClass:[DiaryModel class]]){
-        DiaryListCell *cell= [self.tableView dequeueReusableCellWithIdentifier:kCellDiary];
+        DiaryInListCell *cell= [self.tableView dequeueReusableCellWithIdentifier:kCellDiary];
         [self setTheCell:cell withData:data];
         return cell;
     }else{

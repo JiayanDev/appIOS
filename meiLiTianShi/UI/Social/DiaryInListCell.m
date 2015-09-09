@@ -88,6 +88,7 @@
     self.imageViews=[NSMutableArray new];
     CGFloat w= (CGFloat) ((SCREEN_WIDTH-8-9-35-15+5)/3.0);
 //    _images=images;
+    if(images && [images isKindOfClass:[NSArray class]]){
     for (NSString *string in images) {
         NSURL *url=[NSURL URLWithString:string];
         UIImageView *v=[UIImageView new];
@@ -110,10 +111,11 @@
             }
 
 
-            if(index== [images count]){
+            if(index== [images count]-1){
                 make.bottom.equalTo(self.pinglunAndZanLabel.mas_top).offset(-17).priority(600);
             }
         }];
+    }
     }
 
 

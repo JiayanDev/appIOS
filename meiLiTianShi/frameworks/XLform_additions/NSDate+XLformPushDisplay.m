@@ -17,6 +17,16 @@
     return dateString;
 };
 
+-(NSString *)displayTextWithMMdd{
+//    NSDate* now = [NSDate date];
+    NSDateFormatter* fmt = [[NSDateFormatter alloc] init];
+//    fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+    fmt.dateFormat = @"MM-dd";
+    NSString* dateString = [fmt stringFromDate:self];
+//     NSLog(@"%@", dateString);
+    return dateString;
+};
+
 
 -(NSString *)displayTextWithDateAndHHMM{
 //    NSDate* now = [NSDate date];
