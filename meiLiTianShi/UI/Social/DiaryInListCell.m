@@ -86,7 +86,7 @@
 - (void)setImages:(NSArray *)images {
     [self.imageViews makeObjectsPerformSelector: @selector(removeFromSuperview)];
     self.imageViews=[NSMutableArray new];
-    CGFloat w= (CGFloat) ((SCREEN_WIDTH-8-9-35-15+5)/3.0);
+    CGFloat w= (CGFloat) ((SCREEN_WIDTH-8-9-35-15+5)/3.0-5);
 //    _images=images;
     if(images && [images isKindOfClass:[NSArray class]]){
     for (NSString *string in images) {
