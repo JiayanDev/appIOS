@@ -7,4 +7,7 @@
 
 
 @interface MyBanMeiCellB : UITableViewCell
+@property(nonatomic, strong) UIImageView *thumbImageView;
+@property(nonatomic, strong) UILabel *titleLabel;
+@property(nonatomic, strong) UILabel *descLabel;
 @end

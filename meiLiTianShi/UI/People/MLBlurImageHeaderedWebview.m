@@ -185,10 +185,7 @@ CGFloat const distance_W_LabelHeader = 31.0;
         headerTransform = CATransform3DTranslate(headerTransform, 0, MAX(-offset_HeaderStop, -offset), 0);
 
 
-        //  ------------ Label
-        CATransform3D labelTransform = CATransform3DMakeTranslation(0, MAX(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0);
-        self.headerLabel.layer.transform = labelTransform;
-        self.headerLabel.layer.zPosition = 2;
+
         self.imageView.layer.transform = headerTransform;
         self.avatarView.layer.transform = headerTransform;
         self.nameLabel.layer.transform = headerTransform;
@@ -197,6 +194,11 @@ CGFloat const distance_W_LabelHeader = 31.0;
 
 
     }
+
+    //  ------------ Label
+    CATransform3D labelTransform = CATransform3DMakeTranslation(0, MAX(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0);
+    self.headerLabel.layer.transform = labelTransform;
+    self.headerLabel.layer.zPosition = 2;
 
 
     CGFloat opa=(offset-offset_B_LabelHeader)/distance_W_LabelHeader;
