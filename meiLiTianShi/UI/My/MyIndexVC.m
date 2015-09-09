@@ -37,16 +37,7 @@
     self.title=@"我的";
     [MLStyleManager removeBackTextForNextScene:self];
 
-    if([MLSession current].currentUserDetail){
-        setValue(kUser,[MLSession current].currentUserDetail);
-    }else{
-        [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
-            setValue(kUser,model);
-            [self.tableView reloadData];
-        } fail:^(NSInteger i, id o) {
 
-        }];
-    }
 }
 
 -(id)init
@@ -156,6 +147,16 @@
         self.form=self.noLoginFormDescriptor;
     }
 
+    if([MLSession current].currentUserDetail){
+        setValue(kUser,[MLSession current].currentUserDetail);
+    }else{
+        [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
+            setValue(kUser,model);
+            [self.tableView reloadData];
+        } fail:^(NSInteger i, id o) {
+
+        }];
+    }
     [self.tableView reloadData];
 
 }
