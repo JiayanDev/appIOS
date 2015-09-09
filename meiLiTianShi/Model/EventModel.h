@@ -9,6 +9,7 @@
 
 @interface EventModel : JSONModel
 @property (nonatomic, assign) NSUInteger id;
+@property (nonatomic, strong)NSNumber <Optional>*eventId;// for index
 @property (nonatomic, strong) NSString <Optional>*categoryName;
 //@property (nonatomic, assign) NSNumber <Optional>* hospitalId;
 @property (nonatomic, assign) NSNumber <Optional>* hasLike;

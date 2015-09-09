@@ -34,7 +34,7 @@
 
     self.webView.delegate=self;
     self.url=[NSURL URLWithString:[NSString stringWithFormat:
-            @"http://apptest.jiayantech.com/html/eventdetail.html?id=%@",@(self.event.id)]];
+            @"http://apptest.jiayantech.com/html/eventdetail.html?id=%@",@(self.eventId)]];
 
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];

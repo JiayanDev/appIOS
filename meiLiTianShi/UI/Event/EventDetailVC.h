@@ -12,5 +12,6 @@
 @class EventModel;
 
 @interface EventDetailVC : UIViewController <UIWebViewDelegate, IDMPhotoBrowserDelegate>
-@property (nonatomic, strong)EventModel *event;
+//@property (nonatomic, strong)EventModel *event;
+@property(nonatomic, assign) NSUInteger eventId;
 @end

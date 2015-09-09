@@ -60,7 +60,7 @@ return 1;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     EventModel *d=self.tableData[indexPath.section];
     EventDetailVC *vc= [[EventDetailVC alloc] init];
-    vc.event=d;
+    vc.eventId=d.eventId||d.id;
     [self.navigationController pushViewController:vc
                                          animated:YES];
 }

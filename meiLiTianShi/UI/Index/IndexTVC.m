@@ -173,7 +173,7 @@ return 1;
         EventModel *data=self.tableData[indexPath.section];
 
         EventDetailVC *vc=[[EventDetailVC alloc]init];
-        vc.event=data;
+        vc.eventId= [data.eventId unsignedIntegerValue];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
