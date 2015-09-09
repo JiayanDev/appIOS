@@ -21,6 +21,7 @@
 #import "MLStyleManager.h"
 #import "IndexCellPR.h"
 #import "IndexCellOfOthers.h"
+#import "UIImageView+MLStyle.h"
 
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
@@ -99,7 +100,7 @@ return 1;
         if(data.coverImg){
             [cell.backImage sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                         cell.backImage.image=image;
+                                         [cell.backImage setImageWithFadeIn:image];
                                          [cell.backImage setNeedsDisplay];
                                      }];
         }else{
@@ -113,7 +114,8 @@ return 1;
         if(data.coverImg){
             [cell.backImage sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                         cell.backImage.image=image;
+                                         [cell.backImage setImageWithFadeIn:image];
+//                                         cell.backImage.image=image;
                                          [cell.backImage setNeedsDisplay];
                                      }];
         }else{

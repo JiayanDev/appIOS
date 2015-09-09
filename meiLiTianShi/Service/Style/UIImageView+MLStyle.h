@@ -7,4 +7,6 @@
 
 @interface UIImageView (MLStyle)
 + (UIImageView *)newWithRoundRadius:(CGFloat)r;
+
+- (void)setImageWithFadeIn:(UIImage *)image;
 @end

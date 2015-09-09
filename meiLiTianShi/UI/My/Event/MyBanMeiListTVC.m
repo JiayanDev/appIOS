@@ -22,6 +22,7 @@
 #import "NSDate+XLformPushDisplay.h"
 #import "EventDetailVC.h"
 #import "MyBanMeiCellB.h"
+#import "MLStyleManager.h"
 
 
 @interface MyBanMeiListTVC ()
@@ -44,6 +45,7 @@
     [self.tableView registerClass:[MyBanMeiCellB class] forCellReuseIdentifier:kBanmeiCell];
 
     [self getDataWithScrollingToTop:NO];
+    [MLStyleManager removeBackTextForNextScene:self];
 
 }
 

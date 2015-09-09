@@ -14,4 +14,14 @@
     v.contentMode=UIViewContentModeScaleAspectFill;
     return v;
 }
+
+- (void)setImageWithFadeIn:(UIImage *)image {
+
+    [UIView transitionWithView:self
+                      duration:0.3f
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        self.image = image;
+                    } completion:nil];
+}
 @end
