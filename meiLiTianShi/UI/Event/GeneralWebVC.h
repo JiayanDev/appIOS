@@ -6,6 +6,6 @@
 #import <Foundation/Foundation.h>
 
 
-@interface GeneralWebVC : NSObject
+@interface GeneralWebVC : UIViewController
 @property (nonatomic, strong)NSURL *url;
 @end
