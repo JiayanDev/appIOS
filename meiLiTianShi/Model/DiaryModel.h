@@ -16,6 +16,10 @@
 @property (nonatomic, assign) NSNumber <Optional>* likeCount;
 @property (nonatomic, assign) NSUInteger createTime;
 
+@property (nonatomic, strong)NSString <Optional>*avatar; // for faxian index
+@property (nonatomic, strong)NSNumber <Optional>*gender;// for faxian index
+@property (nonatomic, strong)NSArray <Optional>*prevCategoryIds;// for faxian index
+
 @property (nonatomic, strong) NSString <Optional>*userName;
 @property (nonatomic, strong) NSNumber<Optional> *userId;
 //@property (nonatomic, strong) NSArray <Optional> *categoryIds;

@@ -30,6 +30,7 @@
 #import "MLStyleManager.h"
 #import "DiaryInListCell.h"
 #import "NSDate+XLformPushDisplay.h"
+#import "UILabel+MLStyle.h"
 
 @interface TopicListVC ()
 //@property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -283,11 +284,23 @@
         DiaryModel *diary=(DiaryModel *)data;
         //[dcell.avatarView sd_setImageWithURL:diary.];
 
-//        [dcell.avatarView sd_setImageWithURL:diary.];
-        dcell.avatarView.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
+        if (diary.avatar){
+            [dcell.avatarView sd_setImageWithURL:[NSURL URLWithString:diary.avatar]];
+        }else{
+            dcell.avatarView.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
+        }
         dcell.nameLabel.text=diary.userName;
 
-        dcell.catogoriesLabel.text=@"项目名字";
+        [dcell.nameLabel appendIconOfGender:[diary.gender unsignedIntegerValue]];
+
+//        dcell.catogoriesLabel.text=@"项目名字";
+        if(diary.prevCategoryIds && diary.prevCategoryIds.count>0){
+            dcell.catogoriesLabel.text=[CategoryModel stringWithIdArray:diary.prevCategoryIds];
+            [dcell.catogoriesLabel prependIcon:[UIImage imageNamed:@"标签.png"]];
+        }else{
+            dcell.catogoriesLabel.text=@"暂无项目";
+            [dcell.catogoriesLabel prependIcon:[UIImage imageNamed:@"标签.png"]];
+        }
         dcell.contentLabel.text=diary.content;
         dcell.dateLabel.text= [[NSDate dateWithTimeIntervalSince1970:diary.createTime] displayTextWithMMdd];
         dcell.pinglunAndZanLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",diary.commentCount,diary.likeCount];

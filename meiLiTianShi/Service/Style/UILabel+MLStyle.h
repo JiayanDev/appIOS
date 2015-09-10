@@ -7,4 +7,14 @@
 
 @interface UILabel (MLStyle)
 + (UILabel *)newMLStyleWithSize:(CGFloat)size isGrey:(BOOL)isGrey;
+
+- (void)appendIcon:(UIImage *)icon;
+
+//- (void)appendIcon:(UIImage *)icon withBounds:(CGRect)bound;
+
+- (void)appendIconOfGender:(NSUInteger)gender;
+
+- (void)prependIcon:(UIImage *)icon;
+
+//- (void)prependIcon:(UIImage *)icon withBounds:(CGRect)bound;
 @end
