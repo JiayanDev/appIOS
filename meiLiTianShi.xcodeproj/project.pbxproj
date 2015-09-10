@@ -297,6 +297,7 @@
 		3CDC5F16AA7F8864243DACF2 /* MLStyledTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC54636EFDCD36869BB118 /* MLStyledTableVC.m */; };
 		3CDC5F1D5B042EC372ABB793 /* PhoneLoginFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DA4C0C4D46EDDB42D3B /* PhoneLoginFVC.m */; };
 		3CDC5F2D205DE05485035E7C /* 发现－灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC58DAAB94CF73CB33DC17 /* 发现－灰.png */; };
+		3CDC5F3FDF54288CBB005944 /* GeneralWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5833D8A7D7D98FDA39E7 /* GeneralWebVC.m */; };
 		3CDC5F71CF61468F552B6093 /* 微信登录@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59B5A6EE9B0B28DEAE0B /* 微信登录@3x.png */; };
 		3CDC5F96E8A8CA83AAAAFA96 /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B17BB76E6736829D551 /* UIScrollView+SLKAdditions.m */; };
 		3CDC5FB7F3F593C1C2F933AD /* 我的_我的伴美@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5651B77D916F000DC83B /* 我的_我的伴美@2x.png */; };
@@ -613,6 +614,7 @@
 		3CDC582086FA4D32DAD19A65 /* AvatarAndNameAndDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarAndNameAndDescCell.m; sourceTree = "<group>"; };
 		3CDC5829010088FEADF591B9 /* UIImageView+MLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MLStyle.h"; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
+		3CDC5833D8A7D7D98FDA39E7 /* GeneralWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralWebVC.m; sourceTree = "<group>"; };
 		3CDC5836623FA92B65DA27FC /* 微信@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@3x.png"; sourceTree = "<group>"; };
 		3CDC58399FD8F8C4E8C9B584 /* timeline_分享.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_分享.png"; sourceTree = "<group>"; };
 		3CDC5861E34BA6A4975DB1B4 /* 分享_朋友圈@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_朋友圈@2x.png"; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 		3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
 		3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
 		3CDC5CBBC671C05CBF0DB901 /* IDMPhotoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhotoProtocol.h; sourceTree = "<group>"; };
+		3CDC5CD839CA828726D624E4 /* GeneralWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralWebVC.h; sourceTree = "<group>"; };
 		3CDC5CF5A6319C12E2B536BA /* IDMPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhoto.h; sourceTree = "<group>"; };
 		3CDC5D1BB818D71CD583340B /* WebviewRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebviewRequestModel.m; sourceTree = "<group>"; };
 		3CDC5D3B8732CB0F18558B30 /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLKAdditions.m"; sourceTree = "<group>"; };
@@ -1184,6 +1187,8 @@
 				07BB692D1B74A1E100BBACA6 /* EventJoinApplySuccVC.xib */,
 				3CDC51B7755AF78323A1110E /* EventJoinApplyFVC.m */,
 				3CDC5C433694EB64E0DF8DDC /* EventJoinApplyFVC.h */,
+				3CDC5833D8A7D7D98FDA39E7 /* GeneralWebVC.m */,
+				3CDC5CD839CA828726D624E4 /* GeneralWebVC.h */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -2220,6 +2225,7 @@
 				3CDC5A5F35578D9FAA0E6585 /* UIButton+MLStyle.m in Sources */,
 				3CDC58026CA2F82D2DD1AE0C /* DiaryInListCell.m in Sources */,
 				3CDC5E9AB4173987FCB1D968 /* KIImagePager.m in Sources */,
+				3CDC5F3FDF54288CBB005944 /* GeneralWebVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
