@@ -186,6 +186,11 @@
 
 - (void)imagePager:(KIImagePager *)imagePager didSelectImageAtIndex:(NSUInteger)index {
     NSLog(@"%@,didSelectImageAtIndex  %@",imagePager,@(index));
+    TopicModel *topicModel=self.recommendedTopicList[index];
+    DiaryDetailVC *diaryDetailVC=[DiaryDetailVC new];
+    diaryDetailVC.type=WebviewWithCommentVcDetailTypeTopic;
+    diaryDetailVC.topic=topicModel;
+    [self.navigationController pushViewController:diaryDetailVC animated:YES];
 }
 
 
