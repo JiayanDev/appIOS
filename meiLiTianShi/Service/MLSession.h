@@ -64,7 +64,9 @@
 
 - (void)getPostListWithPageIndicator:(PageIndicator *)pi type:(NSString *)diaryOrTopic categoryId:(NSNumber *)cate success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
-- (void)getRecommendTopic_success:(void (^)(TopicModel *))success fail:(void (^)(NSInteger, id))failure;
+//- (void)getRecommendTopic_success:(void (^)(TopicModel *))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)getRecommendTopicList_success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getMyDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 

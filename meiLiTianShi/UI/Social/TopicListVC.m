@@ -44,7 +44,7 @@
 //@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
 //@property (weak, nonatomic) IBOutlet UILabel *headerDesc;
 //@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
-@property (nonatomic, strong)TopicModel *recommendedTopic;
+@property (nonatomic, strong)NSArray *recommendedTopicList;
 @end
 
 #define kCellTopic @"topic_cell"
@@ -77,7 +77,7 @@
 //    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 
 
-    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,(int)([UIScreen mainScreen].bounds.size.width*0.75))];
+    self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,(int)([UIScreen mainScreen].bounds.size.width*(380/750.0)))];
     self.imagePager.delegate=self;
     self.imagePager.dataSource=self;
 
@@ -91,6 +91,16 @@
     UITapGestureRecognizer *singleFingerTap =
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(handleSingleTap:)];
+
+    [[MLSession current] getRecommendTopicList_success:^(NSArray *array) {
+        self.recommendedTopicList=array;
+        [self.imagePager reloadData];
+        self.imagePager.scrollView.scrollsToTop=NO;
+    } fail:^(NSInteger i, id o) {
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
+    }];
 //    [self.headerRecommendedTopicView addGestureRecognizer:singleFingerTap];
 //    [[MLSession current] getRecommendTopic_success:^(TopicModel *model) {
 //
@@ -142,29 +152,31 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self setScrollTopToNOToView:self.view];
+//    [self setScrollTopToNOToView:self.view];
 
+    self.imagePager.scrollView.scrollsToTop=NO;
     self.tableView.scrollsToTop = YES;
 }
 
 
-- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
-    if(self.recommendedTopic){
-        DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
-        vc.type=WebviewWithCommentVcDetailTypeTopic;
-        vc.topic=self.recommendedTopic;
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-}
+//- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+//    if(self.recommendedTopic){
+//        DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
+//        vc.type=WebviewWithCommentVcDetailTypeTopic;
+//        vc.topic=self.recommendedTopic;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }
+//}
 
 #pragma mark imagepager delegate and datasource
 
 - (NSArray *)arrayWithImages:(KIImagePager *)pager {
-    return @[
-            [UIImage imageNamed:@"IMG_1622.jpg"],
-            [UIImage imageNamed:@"IMG_1652.jpg"],
-//            [UIImage imageNamed:@"IMG_1744.jpg"],
-    ];
+    NSMutableArray *r=[NSMutableArray new];
+    for (TopicModel *model in self.recommendedTopicList) {
+        [r addObject:model.coverImg];
+    }
+
+    return r;
 }
 
 - (UIViewContentMode) contentModeForImage:(NSUInteger)image inPager:(KIImagePager*)pager

@@ -330,11 +330,15 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 
--(void)getRecommendTopic_success:(void(^)(TopicModel *))success  fail:(void (^)(NSInteger, id))failure{
-    [self sendGet:@"recommend/topic/one"
+-(void)getRecommendTopicList_success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+    [self sendGet:@"recommend/topic/list"
                  param:nil
           success:^(id o) {
-              success([[TopicModel alloc] initWithDictionary:o error:nil]);
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[TopicModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
           } failure:failure];
 }
 
