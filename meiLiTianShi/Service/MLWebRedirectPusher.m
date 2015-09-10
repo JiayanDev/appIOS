@@ -9,6 +9,7 @@
 #import "URLParser.h"
 #import "TopicModel.h"
 #import "TimelineVC.h"
+#import "GeneralWebVC.h"
 
 
 @implementation MLWebRedirectPusher {
@@ -38,6 +39,11 @@
         svc.userId= @([[[[URLParser alloc] initWithURLString:[url absoluteString]] valueForVariable:@"id"] longLongValue]);
 
         [vc.navigationController pushViewController:svc animated:YES];
+        return YES;
+    }else{
+        GeneralWebVC *wvc= [[GeneralWebVC alloc] init];
+        wvc.url=url;
+        [vc.navigationController pushViewController:wvc animated:YES];
         return YES;
     }
 

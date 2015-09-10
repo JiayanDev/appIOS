@@ -4,8 +4,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IDMPhotoBrowser.h"
 
 
-@interface GeneralWebVC : UIViewController
+@interface GeneralWebVC : UIViewController <UIWebViewDelegate, IDMPhotoBrowserDelegate>
 @property (nonatomic, strong)NSURL *url;
 @end
