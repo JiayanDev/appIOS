@@ -10,6 +10,6 @@
 #import "KIImagePager.h"
 #import "MLStyledTableVC.h"
 
-@interface TopicListVC : MLStyledTableVC <UITableViewDataSource, UITableViewDelegate, KIImagePagerDelegate, KIImagePagerDataSource>
+@interface TopicListVC : MLStyledTableVC <KIImagePagerDelegate, KIImagePagerDataSource>
 
 @end

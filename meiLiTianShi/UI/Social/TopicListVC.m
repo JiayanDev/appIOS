@@ -80,6 +80,7 @@
     self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,(int)([UIScreen mainScreen].bounds.size.width*0.75))];
     self.imagePager.delegate=self;
     self.imagePager.dataSource=self;
+
     self.tableView.tableHeaderView=self.imagePager;
 
 //    self.headerRecommendedTopicView.frame=CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.width*0.5);
@@ -115,6 +116,35 @@
 
     [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
 
+
+}
+
+- (void)setScrollTopToNOToView:(UIView *)view
+{
+    NSLog(@"%@", self);
+
+    for (UIView *sub  in view.subviews)
+    {
+        if ([sub isKindOfClass:[UIScrollView class]]) {
+            ((UIScrollView *)sub).scrollsToTop = NO;
+
+        }
+
+        [self setScrollTopToNOToView:sub];
+    }
+}
+
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self setScrollTopToNOToView:self.view];
+
+    self.tableView.scrollsToTop = YES;
 }
 
 
