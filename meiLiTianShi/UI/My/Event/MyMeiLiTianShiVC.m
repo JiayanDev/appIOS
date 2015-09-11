@@ -7,6 +7,8 @@
 //
 
 #import <Masonry/View+MASAdditions.h>
+#import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
+#import <XLForm/NSObject+XLFormAdditions.h>
 #import "MyMeiLiTianShiVC.h"
 #import "PageIndicator.h"
 #import "MJRefreshAutoNormalFooter.h"
@@ -15,12 +17,15 @@
 #import "MLSession.h"
 #import "EventModel.h"
 #import "TSMessage.h"
-#import "MyBanMeiCell.h"
+//#import "MyBanMeiCell.h"
 #import "CategoryModel.h"
 
 #import "NSDate+XLformPushDisplay.h"
 #import "EventDetailVC.h"
 #import "UIButton+MLStyle.h"
+#import "ShenQingMLTS_FVC.h"
+#import "MLStyleManager.h"
+#import "MyMLTSCell.h"
 
 @interface MyMeiLiTianShiVC ()
 
@@ -50,17 +55,21 @@
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
 
-    [self.tableView registerClass:[MyBanMeiCell class] forCellReuseIdentifier:kBanmeiCell];
-    [self.tableView registerNib:[UINib nibWithNibName:@"MyBanMeiCell"
-                                               bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kBanmeiCell];
+    [self.tableView registerClass:[MyMLTSCell class] forCellReuseIdentifier:kBanmeiCell];
+//    [self.tableView registerNib:[UINib nibWithNibName:@"MyBanMeiCell"
+//                                               bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kBanmeiCell];
 
     [self getDataWithScrollingToTop:NO];
 
 
     self.button=[UIButton newSquareSolidButtonWithTitle:@"成为美丽天使"];
+    [self.button addTarget:self
+                    action:@selector(applyNewPress:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.tableView addSubview:self.button];
     self.fixedBottomView=self.button;
+
+    [MLStyleManager removeBackTextForNextScene:self];
 }
 
 
@@ -115,12 +124,23 @@
 
 -(UITableViewCell *)tableView :(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    MyBanMeiCell *cell=[self.tableView dequeueReusableCellWithIdentifier:kBanmeiCell];
+    MyMLTSCell *cell=[self.tableView dequeueReusableCellWithIdentifier:kBanmeiCell];
     EventModel *data=self.tableData[indexPath.section];
-    cell.title.text= [NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
-    cell.doctorAndHospital.text=[NSString stringWithFormat:@"%@ %@",data.hospitalName,data.doctorName];
-    cell.timePoint.text= [[NSDate dateWithTimeIntervalSince1970:[data.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM];
-    cell.status.text=data.applyStatus;
+
+    ((UIImageView *)cell.lefts[0]).image=[UIImage imageNamed:@"活动名称.png"];
+    ((UIImageView *)cell.lefts[1]).image=[UIImage imageNamed:@"活动地点.png"];
+    ((UIImageView *)cell.lefts[2]).image=[UIImage imageNamed:@"活动时间.png"];
+    ((UILabel *)cell.rights[0]).text= data.title;//[NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
+    ((UILabel *)cell.rights[1]).text= data.hospitalName;
+    ((UILabel *)cell.rights[2]).text= [[NSDate dateWithTimeIntervalSince1970:[data.beginTime unsignedIntegerValue]] displayText];
+
+
+
+
+//
+//    cell.doctorAndHospital.text=[NSString stringWithFormat:@"%@ %@",data.hospitalName,data.doctorName];
+//    cell.timePoint.text= [[NSDate dateWithTimeIntervalSince1970:[data.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM];
+//    cell.status.text=data.applyStatus;
 
     return cell;
 
@@ -128,7 +148,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 150;
+    return [self.tableView fd_heightForCellWithIdentifier:kBanmeiCell configuration:^(id cell) {
+
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -141,6 +163,8 @@
 
 
 - (IBAction)applyNewPress:(id)sender {
+    ShenQingMLTS_FVC * shenQingMLTSFvc=[ShenQingMLTS_FVC new];
+    [self.navigationController pushViewController:shenQingMLTSFvc animated:YES];
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
