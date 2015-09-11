@@ -19,6 +19,7 @@
 
 #define THE1PX_CONST (CGFloat)(1.0 / [UIScreen mainScreen].scale)
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 #define THEME_COLOR [UIColor colorWithHexString:@"ff5a60"]
 #define THEME_COLOR_HIGHLIGHT_BUTTON [UIColor colorWithHexString:@"e55156"]

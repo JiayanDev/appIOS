@@ -148,4 +148,14 @@
 }
 
 
+- (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
+    UIWebView *webView=[UIWebView new];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://apptest.jiayantech.com/html/aboutmlts.html"]]];
+    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(SCREEN_HEIGHT);
+    }];
+    return webView;
+}
+
+
 @end
