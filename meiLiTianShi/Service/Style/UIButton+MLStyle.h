@@ -9,4 +9,6 @@
 + (UIButton *)newSolidThemeColorButtonWithTitle:(NSString *)title fontSize:(CGFloat)fontsize;
 
 + (UIButton *)newBorderedColorButtonWithTitle:(NSString *)title fontSize:(CGFloat)fontsize;
+
++ (UIButton *)newSquareSolidButtonWithTitle:(NSString *)title;
 @end

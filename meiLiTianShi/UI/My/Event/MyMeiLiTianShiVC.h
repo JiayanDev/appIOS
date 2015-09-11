@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "XLFormRowDescriptor.h"
+#import "MLStyledTableVC.h"
 
-@interface MyMeiLiTianShiVC : UIViewController <UITableViewDelegate, UITableViewDataSource,XLFormRowDescriptorViewController>
+@interface MyMeiLiTianShiVC : MLStyledTableVC <XLFormRowDescriptorViewController>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 
 @end

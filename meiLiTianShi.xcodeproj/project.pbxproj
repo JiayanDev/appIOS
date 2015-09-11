@@ -68,7 +68,6 @@
 		07A8BA7F1B6A1357007EDE84 /* MyBanMeiListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8BA7D1B6A1357007EDE84 /* MyBanMeiListTVC.m */; };
 		07A8BA801B6A1357007EDE84 /* MyBanMeiListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A8BA7E1B6A1357007EDE84 /* MyBanMeiListTVC.xib */; };
 		07A8BA841B6A16B1007EDE84 /* MyMeiLiTianShiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */; };
-		07A8BA851B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A8BA831B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib */; };
 		07BB692E1B74A1E100BBACA6 /* EventJoinApplySuccVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BB692C1B74A1E100BBACA6 /* EventJoinApplySuccVC.m */; };
 		07BB692F1B74A1E100BBACA6 /* EventJoinApplySuccVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BB692D1B74A1E100BBACA6 /* EventJoinApplySuccVC.xib */; };
 		07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */; };
@@ -419,7 +418,6 @@
 		07A8BA7E1B6A1357007EDE84 /* MyBanMeiListTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBanMeiListTVC.xib; sourceTree = "<group>"; };
 		07A8BA811B6A16B1007EDE84 /* MyMeiLiTianShiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMeiLiTianShiVC.h; sourceTree = "<group>"; };
 		07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMeiLiTianShiVC.m; sourceTree = "<group>"; };
-		07A8BA831B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyMeiLiTianShiVC.xib; sourceTree = "<group>"; };
 		07A8BA861B6B629C007EDE84 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		07BB692B1B74A1E100BBACA6 /* EventJoinApplySuccVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventJoinApplySuccVC.h; sourceTree = "<group>"; };
 		07BB692C1B74A1E100BBACA6 /* EventJoinApplySuccVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventJoinApplySuccVC.m; sourceTree = "<group>"; };
@@ -896,7 +894,6 @@
 				07A8BA7E1B6A1357007EDE84 /* MyBanMeiListTVC.xib */,
 				07A8BA811B6A16B1007EDE84 /* MyMeiLiTianShiVC.h */,
 				07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */,
-				07A8BA831B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib */,
 				074804F41B70A78B00FA7C42 /* MyBanMeiCell.h */,
 				074804F51B70A78B00FA7C42 /* MyBanMeiCell.m */,
 				074804F61B70A78B00FA7C42 /* MyBanMeiCell.xib */,
@@ -1903,7 +1900,6 @@
 				072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */,
 				07A699521B69BC5A00A9D2EF /* read_me.txt in Resources */,
 				07FB9C3C1B4E1471000CCC45 /* CreateDiaryFVC.xib in Resources */,
-				07A8BA851B6A16B1007EDE84 /* MyMeiLiTianShiVC.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				071F2CDD1B7AF2DF00A081FE /* TimelineVC.xib in Resources */,
 				071F2CD81B78BCF700A081FE /* IndexCell.xib in Resources */,

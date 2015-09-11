@@ -8,4 +8,5 @@
 
 
 @interface MLStyledTableVC : UITableViewController<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
+@property (nonatomic, strong)UIView *fixedBottomView;
 @end

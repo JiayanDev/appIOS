@@ -76,4 +76,29 @@
         viewForFooterInSection:(NSInteger)section {
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
+
+
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGRect frame = self.fixedBottomView.frame;
+    frame.origin.y = scrollView.contentOffset.y + self.tableView.frame.size.height - self.fixedBottomView.frame.size.height;
+    self.fixedBottomView.frame = frame;
+
+    [self.view bringSubviewToFront:self.fixedBottomView];
+}
+
+- (void)setFixedBottomView:(UIView *)fixedBottomView {
+    _fixedBottomView=fixedBottomView;
+    CGRect frame = self.fixedBottomView.frame;
+    frame.origin.y = self.tableView.contentOffset.y + self.tableView.frame.size.height - self.fixedBottomView.frame.size.height;
+    self.fixedBottomView.frame = frame;
+}
+
+
+- (BOOL)emptyDataSetShouldAllowScroll:(UIScrollView *)scrollView {
+    return YES;
+}
+
+
 @end

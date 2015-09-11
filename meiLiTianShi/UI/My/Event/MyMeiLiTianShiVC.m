@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "MyMeiLiTianShiVC.h"
 #import "PageIndicator.h"
 #import "MJRefreshAutoNormalFooter.h"
@@ -19,16 +20,22 @@
 
 #import "NSDate+XLformPushDisplay.h"
 #import "EventDetailVC.h"
+#import "UIButton+MLStyle.h"
 
 @interface MyMeiLiTianShiVC ()
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong, nonatomic)NSMutableArray *tableData;
 @property (nonatomic, strong)PageIndicator *pageIndicator;
+@property (nonatomic, strong)UIButton *button;
 
 @end
 #define kBanmeiCell @"banmeicell"
 
 @implementation MyMeiLiTianShiVC
+
+- (instancetype)init {
+    return [self initWithStyle:UITableViewStyleGrouped];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,7 +54,16 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"MyBanMeiCell"
                                                bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kBanmeiCell];
 
-    [self getDataWithScrollingToTop:NO];}
+    [self getDataWithScrollingToTop:NO];
+
+
+    self.button=[UIButton newSquareSolidButtonWithTitle:@"成为美丽天使"];
+
+    [self.tableView addSubview:self.button];
+    self.fixedBottomView=self.button;
+}
+
+
 
 
 -(void)dragUp{
