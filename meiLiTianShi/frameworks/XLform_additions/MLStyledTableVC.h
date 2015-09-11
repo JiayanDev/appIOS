@@ -4,7 +4,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UIScrollView+EmptyDataSet.h"
 
 
-@interface MLStyledTableVC : UITableViewController
+@interface MLStyledTableVC : UITableViewController<DZNEmptyDataSetSource, DZNEmptyDataSetDelegate>
 @end
