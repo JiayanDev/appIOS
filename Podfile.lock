@@ -23,6 +23,7 @@ PODS:
   - AXRatingView (1.0.3)
   - CTCheckbox (0.0.4)
   - DACircularProgress (2.3.1)
+  - DZNEmptyDataSet (1.7.1)
   - FXBlurView (1.6.4)
   - HexColors (2.2.1)
   - JMImageCache (0.4.0)
@@ -57,6 +58,7 @@ DEPENDENCIES:
   - AXRatingView (from `https://github.com/xmartlabs/AXRatingView.git`)
   - CTCheckbox
   - DACircularProgress
+  - DZNEmptyDataSet
   - FXBlurView
   - JMImageCache
   - JSONModel
@@ -88,6 +90,7 @@ SPEC CHECKSUMS:
   AXRatingView: ccaadc1bbda99a4b7e1d556059482d2b933a9f4e
   CTCheckbox: 51ca73c98cddb96a665e20660e3f2b7a741645bd
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  DZNEmptyDataSet: 2a398066c2bf5848f7f693fb50954b5064debd12
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   JMImageCache: fac25eb168a25b29ac130fee6a6b17ea463c1d86

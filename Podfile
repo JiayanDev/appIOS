@@ -23,6 +23,7 @@ pod 'MJRefresh'
   # pod 'KIImagePager'
   pod 'JVFloatLabeledTextField'
   pod 'FXBlurView'
+  pod 'DZNEmptyDataSet'
 end
 
 target 'meiLiTianShiTests' do
