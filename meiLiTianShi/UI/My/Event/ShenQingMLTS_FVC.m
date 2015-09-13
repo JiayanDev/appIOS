@@ -20,6 +20,7 @@
 #import "UserDetailModel.h"
 #import "RMUniversalAlert.h"
 #import "XLForm.h"
+#import "CateSelectVC.h"
 
 @interface ShenQingMLTS_FVC()
 @property (nonatomic, strong)UserDetailModel *userDetailModel;
@@ -202,6 +203,7 @@ forControlEvents:UIControlEventTouchUpInside];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCateCell rowType:XLFormRowDescriptorTypeSelectorPush];
     row.title=@"部位";
+    row.action.viewControllerClass=[CateSelectVC class];
     [section addFormRow:row];
 
 
