@@ -204,6 +204,8 @@ forControlEvents:UIControlEventTouchUpInside];
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCateCell rowType:XLFormRowDescriptorTypeSelectorPush];
     row.title=@"部位";
     row.action.viewControllerClass=[CateSelectVC class];
+    row.cellConfig[@"textLabel.textColor"]=THEME_COLOR_TEXT_LIGHT_GRAY;
+    row.cellConfig[@"detailTextLabel.textColor"]=THEME_COLOR_TEXT;
     [section addFormRow:row];
 
 
