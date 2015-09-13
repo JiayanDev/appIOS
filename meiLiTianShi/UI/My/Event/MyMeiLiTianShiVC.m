@@ -26,6 +26,8 @@
 #import "ShenQingMLTS_FVC.h"
 #import "MLStyleManager.h"
 #import "MyMLTSCell.h"
+#import "NSNumber+MLUtil.h"
+#import "NSObject+MLUtil.h"
 
 @interface MyMeiLiTianShiVC ()
 
@@ -130,9 +132,9 @@
     ((UIImageView *)cell.lefts[0]).image=[UIImage imageNamed:@"活动名称.png"];
     ((UIImageView *)cell.lefts[1]).image=[UIImage imageNamed:@"活动地点.png"];
     ((UIImageView *)cell.lefts[2]).image=[UIImage imageNamed:@"活动时间.png"];
-    ((UILabel *)cell.rights[0]).text= data.title;//[NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
-    ((UILabel *)cell.rights[1]).text= data.hospitalName;
-    ((UILabel *)cell.rights[2]).text= [[NSDate dateWithTimeIntervalSince1970:[data.beginTime unsignedIntegerValue]] displayText];
+    ((UILabel *)cell.rights[0]).text= [data.title selfOrNilNullWithReplacing:@"暂无标题"];//[NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
+    ((UILabel *)cell.rights[1]).text= [data.hospitalName selfOrNilNullWithReplacing:@"暂无确定医院"];
+    ((UILabel *)cell.rights[2]).text= [data.beginTime stringOfDateSince1970_blankTip:@"暂未确定时间"];
 
 
 
