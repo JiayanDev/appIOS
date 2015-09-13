@@ -27,6 +27,17 @@ NSString * const XLFormRowDescriptorType_RatingCell_ATitleAndTwoRates = @"XLForm
     self.star1=[HCSStarRatingView new];
     self.star2=[HCSStarRatingView new];
 
+    self.titleLabel.text=@"给活动评分";
+    self.label1.text=@"美丽天使配合度";
+    self.label2.text=@"主治医生推荐度";
+    self.star1.tintColor=THEME_COLOR;
+    self.star1.maximumValue=5;
+    self.star1.allowsHalfStars=NO;
+
+    self.star2.tintColor=THEME_COLOR;
+    self.star2.maximumValue=5;
+    self.star2.allowsHalfStars=NO;
+
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.label1];
     [self.contentView addSubview:self.label2];
@@ -44,21 +55,23 @@ NSString * const XLFormRowDescriptorType_RatingCell_ATitleAndTwoRates = @"XLForm
         make.left.equalTo(self.titleLabel);
     }];
     [self.label2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(16);
+        make.top.equalTo(self.label1.mas_bottom).offset(16);
         make.left.equalTo(self.titleLabel);
     }];
     
     [self.star1 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(30);
-        make.left.equalTo(self.label1.mas_right).offset(30);
+        make.right.equalTo(self.contentView).offset(-30);
+        make.width.equalTo(self.contentView).multipliedBy(0.5);
+//        make.left.equalTo(self.label1.mas_right).offset(30);
         make.centerY.equalTo(self.label1);
         make.height.mas_equalTo(20);
     }];
 
 
     [self.star2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView).offset(30);
-        make.left.equalTo(self.label2.mas_right).offset(30);
+        make.right.equalTo(self.contentView).offset(-30);
+//        make.left.equalTo(self.label2.mas_right).offset(30);
+        make.width.equalTo(self.contentView).multipliedBy(0.5);
         make.centerY.equalTo(self.label2);
         make.height.mas_equalTo(20);
     }];
