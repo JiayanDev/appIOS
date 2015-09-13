@@ -27,6 +27,13 @@ NSString * const XLFormRowDescriptorType_RatingCell_ATitleAndTwoRates = @"XLForm
     self.star1=[HCSStarRatingView new];
     self.star2=[HCSStarRatingView new];
 
+    [self.contentView addSubview:self.titleLabel];
+    [self.contentView addSubview:self.label1];
+    [self.contentView addSubview:self.label2];
+    [self.contentView addSubview:self.star1];
+    [self.contentView addSubview:self.star2];
+
+
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(16);
         make.left.equalTo(self.contentView).offset(16);

@@ -256,6 +256,7 @@
 		3CDC5BA737E58041038D989B /* IDMPhotoBrowser_arrowLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5C49233F34922EB262C2 /* IDMPhotoBrowser_arrowLeft@2x.png */; };
 		3CDC5BA759902DF08F71300F /* SAMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC559E20231836137161B5 /* SAMTextField.m */; };
 		3CDC5BC58361FC7AA73347B4 /* RSKImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50E9A9A6310541B6C40B /* RSKImageCropViewController.m */; };
+		3CDC5BC8E58D86FAADA6176F /* EventRatingFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC52D19713D8D656A0176F /* EventRatingFVC.m */; };
 		3CDC5C07BE925FF45BCCAF27 /* 我的－灰@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5AF018B5DD8DD2E9A625 /* 我的－灰@2x.png */; };
 		3CDC5C0A11793041E93C98F5 /* ShenQingMLTS_FVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FD940550F2414A15744 /* ShenQingMLTS_FVC.m */; };
 		3CDC5C0D5816D0D41A82AABE /* 微信@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5836623FA92B65DA27FC /* 微信@3x.png */; };
@@ -268,6 +269,7 @@
 		3CDC5C871511311643652940 /* home－灰@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5BC9A18E1A87972B2109 /* home－灰@2x.png */; };
 		3CDC5C8F46B89E5C36042B6D /* MLXLFormDateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC527B1A5792F867B42AF4 /* MLXLFormDateCell.m */; };
 		3CDC5C958F52BE014D822AA6 /* timeline_返回-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC500014459A561A375587 /* timeline_返回-@2x.png */; };
+		3CDC5CA1AC70686779FBF1EE /* EventIntroCell_atRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC543251049AB8B2D93648 /* EventIntroCell_atRating.m */; };
 		3CDC5CA970CDF55ED76D3C01 /* 分享_朋友圈.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC56172E6C7030FDF4BC08 /* 分享_朋友圈.png */; };
 		3CDC5CB35C89A248328BF64C /* MLJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FFDC7CE5565D2D71E0C /* MLJsonModel.m */; };
 		3CDC5CDA649C084166AF72FF /* 活动状态标签－底－灰.zip.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC567FDD89D1B0B0E1063C /* 活动状态标签－底－灰.zip.png */; };
@@ -529,6 +531,7 @@
 		3CDC52B3040B7888C183D7E6 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		3CDC52BCD8CAE32BB1F9EB3F /* 男@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "男@2x.png"; sourceTree = "<group>"; };
 		3CDC52C0E4057D482CE67F83 /* PhoneRegisterSecondStepFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneRegisterSecondStepFVC.m; sourceTree = "<group>"; };
+		3CDC52D19713D8D656A0176F /* EventRatingFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventRatingFVC.m; sourceTree = "<group>"; };
 		3CDC52D2A6FCE96FD2DAF844 /* IMG_1652.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1652.jpg; sourceTree = "<group>"; };
 		3CDC52DADE4303E359EF7D21 /* PersonCellOfAvatarAndName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCellOfAvatarAndName.h; sourceTree = "<group>"; };
 		3CDC52DEBF530DB4E73DAB9B /* FloatCellOfGender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfGender.h; sourceTree = "<group>"; };
@@ -560,6 +563,7 @@
 		3CDC54197519461E6E5268E9 /* 首页－亮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页－亮@2x.png"; sourceTree = "<group>"; };
 		3CDC541B240B7BFAEAA6FC44 /* 活动地点.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "活动地点.png"; sourceTree = "<group>"; };
 		3CDC54307E5733108DB38225 /* MLJVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLJVFloatLabeledTextField.m; sourceTree = "<group>"; };
+		3CDC543251049AB8B2D93648 /* EventIntroCell_atRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventIntroCell_atRating.m; sourceTree = "<group>"; };
 		3CDC5432A4801A689502A182 /* MLXLFormOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormOptionsViewController.h; sourceTree = "<group>"; };
 		3CDC543C9403D6ACA0100BA7 /* 我的_我的评论@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的评论@2x.png"; sourceTree = "<group>"; };
 		3CDC5456644690A7041D50F3 /* 关.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关.png"; sourceTree = "<group>"; };
@@ -629,6 +633,7 @@
 		3CDC5742F8142E4A0FE81056 /* 分享_朋友圈@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_朋友圈@3x.png"; sourceTree = "<group>"; };
 		3CDC5744A79D2D8D44B743BB /* MLXLFormDateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormDateCell.h; sourceTree = "<group>"; };
 		3CDC5748AC0105922B97DB85 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		3CDC575FFDF67ECDBD556727 /* EventRatingFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventRatingFVC.h; sourceTree = "<group>"; };
 		3CDC576110F66824C7C84FC2 /* 我的－亮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的－亮@3x.png"; sourceTree = "<group>"; };
 		3CDC5780F7EA37FAFF250204 /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
 		3CDC578B149B9DF96FE8EE13 /* RatingCell_ATitleAndTwoRates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingCell_ATitleAndTwoRates.h; sourceTree = "<group>"; };
@@ -791,6 +796,7 @@
 		3CDC5EDE45048E6EBD0D401C /* RespondModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RespondModel.m; sourceTree = "<group>"; };
 		3CDC5EE28E8625F6FAC9F486 /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5EEC53A748B61DAECA71 /* UIApplication+RSKImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+RSKImageCropper.m"; sourceTree = "<group>"; };
+		3CDC5EECB35605BAE5309794 /* EventIntroCell_atRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventIntroCell_atRating.h; sourceTree = "<group>"; };
 		3CDC5EF2920168E84DC9BD1B /* 我的_我的伴美@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的伴美@3x.png"; sourceTree = "<group>"; };
 		3CDC5EF4E3D8E1054B3C731A /* ELCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerController.h; sourceTree = "<group>"; };
 		3CDC5EFBECB8D6CF38033D6F /* DiaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryModel.m; sourceTree = "<group>"; };
@@ -941,6 +947,8 @@
 				3CDC584EF2F375F4225CF24B /* MyMLTSCell.h */,
 				3CDC5A0ADB8C6048C722B1AC /* CateSelectVC.m */,
 				3CDC533401A6B0EDDE6B25A1 /* CateSelectVC.h */,
+				3CDC52D19713D8D656A0176F /* EventRatingFVC.m */,
+				3CDC575FFDF67ECDBD556727 /* EventRatingFVC.h */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -1224,6 +1232,8 @@
 				3CDC5744A79D2D8D44B743BB /* MLXLFormDateCell.h */,
 				3CDC5AF2D097BDA0C6484A4C /* RatingCell_ATitleAndTwoRates.m */,
 				3CDC578B149B9DF96FE8EE13 /* RatingCell_ATitleAndTwoRates.h */,
+				3CDC543251049AB8B2D93648 /* EventIntroCell_atRating.m */,
+				3CDC5EECB35605BAE5309794 /* EventIntroCell_atRating.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -2314,6 +2324,8 @@
 				3CDC5AAE8C81244E5CC2490F /* NSNumber+MLUtil.m in Sources */,
 				3CDC5A303873C136FB82C81F /* NSObject+MLUtil.m in Sources */,
 				3CDC5A30F117507887AFD857 /* RatingCell_ATitleAndTwoRates.m in Sources */,
+				3CDC5CA1AC70686779FBF1EE /* EventIntroCell_atRating.m in Sources */,
+				3CDC5BC8E58D86FAADA6176F /* EventRatingFVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
