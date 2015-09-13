@@ -19,6 +19,7 @@
 #import "TSMessage.h"
 #import "UserDetailModel.h"
 #import "RMUniversalAlert.h"
+#import "XLForm.h"
 
 @interface ShenQingMLTS_FVC()
 @property (nonatomic, strong)UserDetailModel *userDetailModel;
@@ -198,6 +199,10 @@ forControlEvents:UIControlEventTouchUpInside];
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kPhoneCell rowType:XLFormRowDescriptorType_PhoneAndGotoEditButtonCell];
     [section addFormRow:row];
 
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCateCell rowType:XLFormRowDescriptorTypeSelectorPush];
+    row.title=@"部位";
+    [section addFormRow:row];
 
 
 

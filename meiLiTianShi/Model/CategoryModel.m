@@ -84,4 +84,11 @@
         return [r componentsJoinedByString:@","];
     }
 }
+
+-(NSString *)displayText{
+    return self.name;
+};
+-(id)valueData{
+    return self;
+};
 @end

@@ -215,6 +215,7 @@
 		3CDC5962D1250F1C9238945B /* MLBlurImageHeaderedWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AC44BA8AB1FFB3A7AE2 /* MLBlurImageHeaderedWebview.m */; };
 		3CDC596CE2CE07267FCE10ED /* 首页－亮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC55EA56425B81205B4A2A /* 首页－亮@3x.png */; };
 		3CDC596FACF94BA2F3EF71AB /* PersonCellOfAvatarAndName.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC529EB08FEC805CFFAC30 /* PersonCellOfAvatarAndName.m */; };
+		3CDC59778F4148150FD2D41C /* CateSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A0ADB8C6048C722B1AC /* CateSelectVC.m */; };
 		3CDC598E06527831C89337B0 /* XLFormTextDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5E20A1F79D8C4BFC24B7 /* XLFormTextDetailViewController.m */; };
 		3CDC59AA302780DDCF29E930 /* 我的_我的伴美@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5EF2920168E84DC9BD1B /* 我的_我的伴美@3x.png */; };
 		3CDC59C2B1D8AF907B12D21A /* 活动时间@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5707EE38044B1FDC537C /* 活动时间@3x.png */; };
@@ -535,6 +536,7 @@
 		3CDC531756E63DE800130A98 /* IDMTapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMTapDetectingView.m; sourceTree = "<group>"; };
 		3CDC531D690D9F97CC50EBD6 /* MLStyleManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLStyleManager.m; sourceTree = "<group>"; };
 		3CDC532E99B81B539DBA7594 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
+		3CDC533401A6B0EDDE6B25A1 /* CateSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CateSelectVC.h; sourceTree = "<group>"; };
 		3CDC5339B3B7493E8816AEDE /* 活动名称@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "活动名称@3x.png"; sourceTree = "<group>"; };
 		3CDC5342D11A36B352E7E59B /* 首页－亮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页－亮.png"; sourceTree = "<group>"; };
 		3CDC53689314A573D22FC3D1 /* PhoneBindFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneBindFVC.h; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 		3CDC59DC46F84009206BCF9B /* 发现－亮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发现－亮@2x.png"; sourceTree = "<group>"; };
 		3CDC59EE7615C1F88295DE29 /* CategoriesArrayWrap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesArrayWrap.h; sourceTree = "<group>"; };
 		3CDC5A065703EE8ABFA43D74 /* ShareViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewManager.m; sourceTree = "<group>"; };
+		3CDC5A0ADB8C6048C722B1AC /* CateSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CateSelectVC.m; sourceTree = "<group>"; };
 		3CDC5A13DF6D9E0204EF8D36 /* UploadTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadTokenModel.m; sourceTree = "<group>"; };
 		3CDC5A17283FB67A1E6073E0 /* 分享@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享@3x.png"; sourceTree = "<group>"; };
 		3CDC5A22690CC9AA9B69D28D /* InfoCellOfListOfKV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoCellOfListOfKV.m; sourceTree = "<group>"; };
@@ -927,6 +930,8 @@
 				3CDC5069202857E5FEC20215 /* ShenQingMLTS_FVC.h */,
 				3CDC57A639850B1FE4883145 /* MyMLTSCell.m */,
 				3CDC584EF2F375F4225CF24B /* MyMLTSCell.h */,
+				3CDC5A0ADB8C6048C722B1AC /* CateSelectVC.m */,
+				3CDC533401A6B0EDDE6B25A1 /* CateSelectVC.h */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -2290,6 +2295,7 @@
 				3CDC5F3FDF54288CBB005944 /* GeneralWebVC.m in Sources */,
 				3CDC5C0A11793041E93C98F5 /* ShenQingMLTS_FVC.m in Sources */,
 				3CDC573179738483419598FD /* MyMLTSCell.m in Sources */,
+				3CDC59778F4148150FD2D41C /* CateSelectVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
