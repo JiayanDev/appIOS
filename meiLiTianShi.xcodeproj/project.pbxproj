@@ -225,6 +225,7 @@
 		3CDC5A1CF88FBEC6D4F7A928 /* WebviewRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5D1BB818D71CD583340B /* WebviewRequestModel.m */; };
 		3CDC5A1DBE7BDF9E283E9716 /* ELCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */; };
 		3CDC5A303873C136FB82C81F /* NSObject+MLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5CFEE41D869E92555350 /* NSObject+MLUtil.m */; };
+		3CDC5A30F117507887AFD857 /* RatingCell_ATitleAndTwoRates.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AF2D097BDA0C6484A4C /* RatingCell_ATitleAndTwoRates.m */; };
 		3CDC5A32CEED5A45D1F9D189 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC573019190B1E64D3ECBD /* logo@3x.png */; };
 		3CDC5A3328B4197895FD8B9D /* IDMPhotoBrowser_arrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5234C7D23458862F12DE /* IDMPhotoBrowser_arrowRight@2x.png */; };
 		3CDC5A50701FE665B1415D24 /* RSKImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AA3CC29C1CFDD4A27F4 /* RSKImageScrollView.m */; };
@@ -630,6 +631,7 @@
 		3CDC5748AC0105922B97DB85 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		3CDC576110F66824C7C84FC2 /* 我的－亮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的－亮@3x.png"; sourceTree = "<group>"; };
 		3CDC5780F7EA37FAFF250204 /* ELCImagePickerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerHeader.h; sourceTree = "<group>"; };
+		3CDC578B149B9DF96FE8EE13 /* RatingCell_ATitleAndTwoRates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingCell_ATitleAndTwoRates.h; sourceTree = "<group>"; };
 		3CDC57A570C885CFE5707107 /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
 		3CDC57A639850B1FE4883145 /* MyMLTSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMLTSCell.m; sourceTree = "<group>"; };
 		3CDC57C27AF08E2667922489 /* fr */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
@@ -698,6 +700,7 @@
 		3CDC5AE8B03BA4C21F2E89BA /* 我的_我的评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的评论.png"; sourceTree = "<group>"; };
 		3CDC5AEBA4448A318C6E0952 /* DiaryInListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryInListCell.m; sourceTree = "<group>"; };
 		3CDC5AF018B5DD8DD2E9A625 /* 我的－灰@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的－灰@2x.png"; sourceTree = "<group>"; };
+		3CDC5AF2D097BDA0C6484A4C /* RatingCell_ATitleAndTwoRates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingCell_ATitleAndTwoRates.m; sourceTree = "<group>"; };
 		3CDC5AF995573CBE78549469 /* ELCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAsset.m; sourceTree = "<group>"; };
 		3CDC5AFE616B7BCE581AEB04 /* PhoneBindVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneBindVC.m; sourceTree = "<group>"; };
 		3CDC5B0605BDC5ADFE568BAE /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
@@ -1219,6 +1222,8 @@
 				3CDC5166531073E2FFF12B48 /* MLStyledTableVC.h */,
 				3CDC527B1A5792F867B42AF4 /* MLXLFormDateCell.m */,
 				3CDC5744A79D2D8D44B743BB /* MLXLFormDateCell.h */,
+				3CDC5AF2D097BDA0C6484A4C /* RatingCell_ATitleAndTwoRates.m */,
+				3CDC578B149B9DF96FE8EE13 /* RatingCell_ATitleAndTwoRates.h */,
 			);
 			path = XLform_additions;
 			sourceTree = "<group>";
@@ -2308,6 +2313,7 @@
 				3CDC59778F4148150FD2D41C /* CateSelectVC.m in Sources */,
 				3CDC5AAE8C81244E5CC2490F /* NSNumber+MLUtil.m in Sources */,
 				3CDC5A303873C136FB82C81F /* NSObject+MLUtil.m in Sources */,
+				3CDC5A30F117507887AFD857 /* RatingCell_ATitleAndTwoRates.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
