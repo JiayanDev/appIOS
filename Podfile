@@ -24,6 +24,7 @@ pod 'MJRefresh'
   pod 'JVFloatLabeledTextField'
   pod 'FXBlurView'
   pod 'DZNEmptyDataSet'
+  pod 'HCSStarRatingView', '~> 1.4.2'
 end
 
 target 'meiLiTianShiTests' do

@@ -25,6 +25,7 @@ PODS:
   - DACircularProgress (2.3.1)
   - DZNEmptyDataSet (1.7.1)
   - FXBlurView (1.6.4)
+  - HCSStarRatingView (1.4.2)
   - HexColors (2.2.1)
   - JMImageCache (0.4.0)
   - JSONModel (1.1.0)
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - DACircularProgress
   - DZNEmptyDataSet
   - FXBlurView
+  - HCSStarRatingView (~> 1.4.2)
   - JMImageCache
   - JSONModel
   - JVFloatLabeledTextField
@@ -92,6 +94,7 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DZNEmptyDataSet: 2a398066c2bf5848f7f693fb50954b5064debd12
   FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
+  HCSStarRatingView: 6157471eff9fe3ec7240e131a5b0aba39f097e57
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   JMImageCache: fac25eb168a25b29ac130fee6a6b17ea463c1d86
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
@@ -112,4 +115,4 @@ SPEC CHECKSUMS:
   XLForm: 10fc7eb9e2d5df21a515fa3a794f4e26319abd0e
   XLPagerTabStrip: 1614c2a5a078e0ef378a825e84534d56066bea88
 
-COCOAPODS: 0.36.0
+COCOAPODS: 0.38.2
