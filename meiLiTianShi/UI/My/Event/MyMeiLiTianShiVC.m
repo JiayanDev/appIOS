@@ -164,6 +164,7 @@
 
 - (IBAction)applyNewPress:(id)sender {
     ShenQingMLTS_FVC * shenQingMLTSFvc=[ShenQingMLTS_FVC new];
+    shenQingMLTSFvc.parentVC=self;
     [self.navigationController pushViewController:shenQingMLTSFvc animated:YES];
 }
 

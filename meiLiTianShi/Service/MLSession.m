@@ -930,6 +930,16 @@ constructingBodyWithBlock:constructingBodyWithBlock
 #endif
 }
 
+-(void)createEventWithCategories:(NSArray *)categories
+        success:(void(^)(NSUInteger id))success  fail:(void (^)(NSInteger, id))failure{
+
+    [self sendPost:@"event/create"
+             param:@{@"categoryIds": [categories toJsonString]}
+           success:^(id o) {
+               success([o[@"id"] unsignedIntegerValue]);
+           } failure:failure];
+}
+
 
 
 -(void)getEventDetailWithEventId:(NSUInteger)id

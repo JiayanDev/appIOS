@@ -6,6 +6,9 @@
 #import <Foundation/Foundation.h>
 #import "MLXLformVC.h"
 
+@class MyMeiLiTianShiVC;
+
 
 @interface ShenQingMLTS_FVC : MLXLformVC
+@property (nonatomic, weak)MyMeiLiTianShiVC *parentVC;
 @end

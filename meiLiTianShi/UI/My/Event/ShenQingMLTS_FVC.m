@@ -8,6 +8,7 @@
 
 #import "InfoCellOfListOfKV.h"
 #import "XLform_getAndSetValue.h"
+#import "MyMeiLiTianShiVC.h"
 #import "PersonCellOfAvatarAndName.h"
 #import "MLSession.h"
 #import "UserModel.h"
@@ -101,6 +102,28 @@ forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)getData{
+    CategoryModel *model=getValue(kCateCell);
+    if(!model){
+        [TSMessage showNotificationWithTitle:@"请选择部位"
+                                        type:TSMessageNotificationTypeError];
+    }
+    [[MLSession current] createEventWithCategories:@[@(model.id)]
+                                           success:^(NSUInteger id) {
+                                               [RMUniversalAlert showAlertInViewController:self
+                                                                                 withTitle:@"申请成功"
+                                                                                   message:@"请耐心等待工作人员与您联系"
+                                                                         cancelButtonTitle:@"确定"
+                                                                    destructiveButtonTitle:nil
+                                                                         otherButtonTitles:nil
+                                                                                  tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+                                                                                      [self.parentVC getDataWithScrollingToTop:YES];
+                                                                                      [self.navigationController popViewControllerAnimated:YES];
+                                                                                  }];
+                                           } fail:^(NSInteger i, id o) {
+                                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
+            }];
 //    [[MLSession current] getEventDetailWithEventId:(NSUInteger) [self.eventId integerValue]
 //                                           success:^(EventModel *model) {
 //

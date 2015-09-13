@@ -14,4 +14,5 @@
 @interface MyMeiLiTianShiVC : MLStyledTableVC <XLFormRowDescriptorViewController>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 
+- (void)getDataWithScrollingToTop:(BOOL)gotoTop;
 @end
