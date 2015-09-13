@@ -68,7 +68,7 @@
             }];
 
 
-            if(i==self.lefts.count &&i>0){
+            if(i==self.lefts.count-1 &&i>0){
                 [l mas_makeConstraints:^(MASConstraintMaker *make) {
                     make.bottom.equalTo(self.contentView).offset(-16);
                 }];

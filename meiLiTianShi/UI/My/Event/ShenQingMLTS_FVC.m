@@ -22,6 +22,7 @@
 #import "RMUniversalAlert.h"
 #import "XLForm.h"
 #import "CateSelectVC.h"
+#import "MLStyleManager.h"
 
 @interface ShenQingMLTS_FVC()
 @property (nonatomic, strong)UserDetailModel *userDetailModel;
@@ -41,6 +42,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"申请成为美丽天使";
+    [MLStyleManager removeBackTextForNextScene:self];
 //    setValue(kInfoCell,(@[
 //            @{@"项目":([self.eventInfo valueForKeyPath:@"categoryIds"]!=[NSNull null]?[self.eventInfo valueForKeyPath:@"categoryIds"]:@"null")},
 //            @{@"医生":[self.eventInfo valueForKeyPath:@"doctorName"]},
@@ -102,53 +104,7 @@ forControlEvents:UIControlEventTouchUpInside];
 }
 
 -(void)getData{
-    CategoryModel *model=getValue(kCateCell);
-    if(!model){
-        [TSMessage showNotificationWithTitle:@"请选择部位"
-                                        type:TSMessageNotificationTypeError];
-    }
-    [[MLSession current] createEventWithCategories:@[@(model.id)]
-                                           success:^(NSUInteger id) {
-                                               [RMUniversalAlert showAlertInViewController:self
-                                                                                 withTitle:@"申请成功"
-                                                                                   message:@"请耐心等待工作人员与您联系"
-                                                                         cancelButtonTitle:@"确定"
-                                                                    destructiveButtonTitle:nil
-                                                                         otherButtonTitles:nil
-                                                                                  tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
-                                                                                      [self.parentVC getDataWithScrollingToTop:YES];
-                                                                                      [self.navigationController popViewControllerAnimated:YES];
-                                                                                  }];
-                                           } fail:^(NSInteger i, id o) {
-                                [TSMessage showNotificationWithTitle:@"出错了"
-                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
-                                                type:TSMessageNotificationTypeError];
-            }];
-//    [[MLSession current] getEventDetailWithEventId:(NSUInteger) [self.eventId integerValue]
-//                                           success:^(EventModel *model) {
-//
-//                                               self.event = model;
-////                                               self.huoDongXiangQing.text = [NSString stringWithFormat:
-////                                                       @"时间:%@ \n医院:%@ \n医生:%@ \n项目:%@ ",
-////                                                       [[NSDate dateWithTimeIntervalSince1970:[model.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM],
-////                                                       model.hospitalName,
-////                                                       model.doctorName,
-////                                                       [CategoryModel stringWithIdArray:model.categoryIds]
-////
-////                                               ];
-//
-//                                           } fail:^(NSInteger i, id o) {
-//                [TSMessage showNotificationWithTitle:@"出错了"
-//                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
-//                                                type:TSMessageNotificationTypeError];
-//            }];
 
-
-//    [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
-//        self.userDetailModel=model;
-//    } fail:^(NSInteger i, id o) {
-//
-//    }];
 };
 
 
@@ -170,28 +126,28 @@ forControlEvents:UIControlEventTouchUpInside];
 - (IBAction)submitButtonPress:(id)sender {
 
 
-//    [[MLSession current] eventJoinApply:@{
-//            @"eventId":self.eventId,
-//            @"phone":self.userDetailModel.phone,
-//            @"name":self.userDetailModel.name,
-//            @"gender":self.userDetailModel.gender,
-//    } success:^{
-//        [RMUniversalAlert showAlertInViewController:self
-//                                          withTitle:@"提示"
-//                                            message:@"报名已提交,请等待工作人员审核"
-//                                  cancelButtonTitle:@"确定"
-//                             destructiveButtonTitle:nil
-//                                  otherButtonTitles:nil
-//                                           tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
-//
-//                                               [self.navigationController popViewControllerAnimated:YES];
-//                                           }];
-//
-//    } fail:^(NSInteger i, id o) {
-//        [TSMessage showNotificationWithTitle:@"出错了"
-//                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
-//                                        type:TSMessageNotificationTypeError];
-//    }];
+    CategoryModel *model=getValue(kCateCell);
+    if(!model){
+        [TSMessage showNotificationWithTitle:@"请选择部位"
+                                        type:TSMessageNotificationTypeError];
+    }
+    [[MLSession current] createEventWithCategories:@[@(model.id)]
+                                           success:^(NSUInteger id) {
+                                               [RMUniversalAlert showAlertInViewController:self
+                                                                                 withTitle:@"申请成功"
+                                                                                   message:@"请耐心等待工作人员与您联系"
+                                                                         cancelButtonTitle:@"确定"
+                                                                    destructiveButtonTitle:nil
+                                                                         otherButtonTitles:nil
+                                                                                  tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+                                                                                      [self.parentVC getDataWithScrollingToTop:YES];
+                                                                                      [self.navigationController popViewControllerAnimated:YES];
+                                                                                  }];
+                                           } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
+            }];
 }
 
 

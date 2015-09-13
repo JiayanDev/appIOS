@@ -104,7 +104,7 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
         }];
 
 
-        if(i==lefts.count &&i>0){
+        if(i==lefts.count-1 &&i>0){
             [l mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.bottom.equalTo(self.contentView).offset(-16);
             }];
