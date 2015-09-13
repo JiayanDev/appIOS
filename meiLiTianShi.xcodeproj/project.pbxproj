@@ -237,6 +237,7 @@
 		3CDC5A83BCA5996C95343596 /* IDMPhotoBrowser_arrowRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5301039E95A45EE8950E /* IDMPhotoBrowser_arrowRight.png */; };
 		3CDC5A916299FBFDAC7D4781 /* NSDate+XLformPushDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B5D5C62A64C66272263 /* NSDate+XLformPushDisplay.m */; };
 		3CDC5AA08C714BC24D1273E5 /* 我的_设置@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC516026F3C67052FA474A /* 我的_设置@3x.png */; };
+		3CDC5AAE8C81244E5CC2490F /* NSNumber+MLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC55C95898C3FD2C8CB630 /* NSNumber+MLUtil.m */; };
 		3CDC5AAF12DB4DF5F25ED049 /* 我的_美丽天使@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5A7923D0A4D9A2E44955 /* 我的_美丽天使@3x.png */; };
 		3CDC5ACAD05B75D3E490B2B8 /* UIApplication+RSKImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EEC53A748B61DAECA71 /* UIApplication+RSKImageCropper.m */; };
 		3CDC5AE2B9001DF5A5E2A575 /* home－灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC58BAC33D905B66839601 /* home－灰.png */; };
@@ -595,6 +596,7 @@
 		3CDC559E20231836137161B5 /* SAMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMTextField.m; sourceTree = "<group>"; };
 		3CDC55BF2784166CA4EE1E1A /* SLKTextInputbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextInputbar.h; sourceTree = "<group>"; };
 		3CDC55C23738550774AB748D /* UploadTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTokenModel.h; sourceTree = "<group>"; };
+		3CDC55C95898C3FD2C8CB630 /* NSNumber+MLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MLUtil.m"; sourceTree = "<group>"; };
 		3CDC55EA56425B81205B4A2A /* 首页－亮@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页－亮@3x.png"; sourceTree = "<group>"; };
 		3CDC55F4EED3B2E251837A7F /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = de; path = Localizable.strings; sourceTree = "<group>"; };
 		3CDC55F6AD700C97F4A9C722 /* ForgetPasswordFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordFVC.h; sourceTree = "<group>"; };
@@ -798,6 +800,7 @@
 		3CDC5F947C7120837570E2E3 /* 关@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关@2x.png"; sourceTree = "<group>"; };
 		3CDC5F9CDC1490993AF4B91A /* RSKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKImageCropViewController.h; sourceTree = "<group>"; };
 		3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLformVC.m; sourceTree = "<group>"; };
+		3CDC5FB04AC2E2B3B8EC5645 /* NSNumber+MLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MLUtil.h"; sourceTree = "<group>"; };
 		3CDC5FB22D978467D2C673BB /* 我的－灰@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的－灰@3x.png"; sourceTree = "<group>"; };
 		3CDC5FB3EFE3E1443FCBB551 /* PhoneAndGotoEditButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneAndGotoEditButtonCell.h; sourceTree = "<group>"; };
 		3CDC5FBD748F4EB965B6DC79 /* 活动时间@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "活动时间@2x.png"; sourceTree = "<group>"; };
@@ -947,6 +950,8 @@
 				3CDC51EA3A260C89563CC956 /* URLParser.h */,
 				3CDC5748AC0105922B97DB85 /* NSString+MD5.m */,
 				3CDC5580E573067AD09509F6 /* NSString+MD5.h */,
+				3CDC55C95898C3FD2C8CB630 /* NSNumber+MLUtil.m */,
+				3CDC5FB04AC2E2B3B8EC5645 /* NSNumber+MLUtil.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2296,6 +2301,7 @@
 				3CDC5C0A11793041E93C98F5 /* ShenQingMLTS_FVC.m in Sources */,
 				3CDC573179738483419598FD /* MyMLTSCell.m in Sources */,
 				3CDC59778F4148150FD2D41C /* CateSelectVC.m in Sources */,
+				3CDC5AAE8C81244E5CC2490F /* NSNumber+MLUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
