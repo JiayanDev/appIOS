@@ -7,6 +7,7 @@
 #import "EventIntroCell_atRating.h"
 #import "RatingCell_ATitleAndTwoRates.h"
 #import "XLForm.h"
+#import "EventModel.h"
 
 #define kIntroCell @"intro"
 #define kStarCell @"star"
@@ -16,10 +17,10 @@
 }
 
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
 
-
-
-
+}
 
 
 -(id)init

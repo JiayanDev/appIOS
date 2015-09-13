@@ -6,6 +6,9 @@
 #import <Foundation/Foundation.h>
 #import "MLXLformVC.h"
 
+@class EventModel;
+
 
 @interface EventRatingFVC : MLXLformVC
+@property (nonatomic, strong)EventModel *eventModel;
 @end
