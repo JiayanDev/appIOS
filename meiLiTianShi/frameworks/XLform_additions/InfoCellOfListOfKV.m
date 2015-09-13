@@ -43,6 +43,9 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
 
 }
 
+- (BOOL)canBecomeFirstResponder {
+    return NO;
+}
 
 
 - (void)update
@@ -126,6 +129,8 @@ NSString * const XLFormRowDescriptorType_infoCellOfKV = @"XLFormRowDescriptorTyp
 
 - (void)formDescriptorCellDidSelectedWithFormController:(XLFormViewController *)controller {
 
+    [controller.tableView deselectRowAtIndexPath:[controller.form indexPathOfFormRow:self.rowDescriptor]
+                                        animated:YES];
 }
 
 
