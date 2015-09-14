@@ -174,7 +174,8 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
 
 +(CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor{
     CGFloat w=(int)((SCREEN_WIDTH)/4.0);
-    return w*ceil(rowDescriptor.value?(((NSArray *)rowDescriptor.value).count+1)/4.0:1);
+    int xishu=MIN(ceil(rowDescriptor.value?(((NSArray *)rowDescriptor.value).count+1)/4.0:1),2);
+    return w*xishu;
 };
 
 

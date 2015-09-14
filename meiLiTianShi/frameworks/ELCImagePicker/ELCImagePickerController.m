@@ -14,6 +14,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "ELCConsole.h"
+#import "TSMessage.h"
 
 @implementation ELCImagePickerController
 
@@ -71,13 +72,18 @@
 {
     BOOL shouldSelect = previousCount < self.maximumImagesCount;
     if (!shouldSelect) {
-        NSString *title = [NSString stringWithFormat:NSLocalizedString(@"Only %d photos please!", nil), self.maximumImagesCount];
-        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"You can only send %d photos at a time.", nil), self.maximumImagesCount];
-        [[[UIAlertView alloc] initWithTitle:title
-                                    message:message
-                                   delegate:nil
-                          cancelButtonTitle:nil
-                          otherButtonTitles:NSLocalizedString(@"Okay", nil), nil] show];
+        NSString *title = [NSString stringWithFormat:(@"只能选择%d张图片"), self.maximumImagesCount];
+        NSString *message = [NSString stringWithFormat:(@"已经选够了")];
+        [TSMessage showNotificationInViewController:self
+                                              title:title subtitle:message
+                                               type:TSMessageNotificationTypeWarning];
+//        [TSMessage showNotificationWithTitle:title subtitle:message
+//                                        type:TSMessageNotificationTypeWarning];
+//        [[[UIAlertView alloc] initWithTitle:title
+//                                    message:message
+//                                   delegate:nil
+//                          cancelButtonTitle:nil
+//                          otherButtonTitles:NSLocalizedString(@"Okay", nil), nil] show];
     }
     return shouldSelect;
 }
