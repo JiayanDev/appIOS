@@ -22,13 +22,17 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
     if (!(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) return nil;
 
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.sectionInset = UIEdgeInsetsMake(10, 10, 9, 10);
-    layout.itemSize = CGSizeMake(44, 44);
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    CGFloat w=(int)((SCREEN_WIDTH)/4.0);
+
+    layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
+
+    layout.itemSize = CGSizeMake(w, w);
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     self.collectionView = [[AFIndexedCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CollectionViewCellIdentifier];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.showsHorizontalScrollIndicator = NO;
+
     [self setCollectionViewDataSourceDelegate:self
                                     indexPath:[NSIndexPath indexPathWithIndex:0]];
     [self.contentView addSubview:self.collectionView];
@@ -91,6 +95,18 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
         return 1;
     }
 }
+- (UIEdgeInsets)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return UIEdgeInsetsMake(0, 0, 0, 0); // top, left, bottom, right
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 0.0;
+}
+
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -157,7 +173,8 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
 
 
 +(CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor{
-    return 66;
+    CGFloat w=(int)((SCREEN_WIDTH)/4.0);
+    return w*ceil(rowDescriptor.value?(((NSArray *)rowDescriptor.value).count+1)/4.0:1);
 };
 
 
@@ -193,6 +210,9 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
     }
 
     [self.collectionView reloadData];
+//    [self.formViewController.tableView beginUpdates];
+//    [self.formViewController.tableView endUpdates];
+    [self.formViewController.tableView reloadData];
 }
 
 

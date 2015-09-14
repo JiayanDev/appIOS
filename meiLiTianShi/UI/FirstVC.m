@@ -20,6 +20,7 @@
 #import "EventJoinApplyFVC.h"
 #import "TimeLineVCB.h"
 #import "EventRatingFVC.h"
+#import "CreateDiaryFVC.h"
 
 @interface FirstVC ()
 
@@ -50,7 +51,7 @@
     vc2.title=@"发现";
 
     UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:
-            [[EventRatingFVC alloc]init]];
+            [[CreateDiaryFVC alloc]init]];
     vc3.title=@"活动";
 
     UINavigationController *vc4= [[UINavigationController alloc] initWithRootViewController:

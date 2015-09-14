@@ -241,6 +241,7 @@
 		3CDC5AA08C714BC24D1273E5 /* 我的_设置@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC516026F3C67052FA474A /* 我的_设置@3x.png */; };
 		3CDC5AAE8C81244E5CC2490F /* NSNumber+MLUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC55C95898C3FD2C8CB630 /* NSNumber+MLUtil.m */; };
 		3CDC5AAF12DB4DF5F25ED049 /* 我的_美丽天使@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5A7923D0A4D9A2E44955 /* 我的_美丽天使@3x.png */; };
+		3CDC5AC38087BD834372021A /* NotificationListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC56C485646217D607FD65 /* NotificationListCell.m */; };
 		3CDC5ACAD05B75D3E490B2B8 /* UIApplication+RSKImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EEC53A748B61DAECA71 /* UIApplication+RSKImageCropper.m */; };
 		3CDC5AE2B9001DF5A5E2A575 /* home－灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC58BAC33D905B66839601 /* home－灰.png */; };
 		3CDC5AFA966109CD9934B1EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5C3228FE9C2D3D37175D /* Localizable.strings */; };
@@ -621,6 +622,7 @@
 		3CDC56BA68DE2084AF7FB551 /* 分享_微博.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_微博.png"; sourceTree = "<group>"; };
 		3CDC56BD6CE95F34925FF712 /* 分享_qq空间@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_qq空间@3x.png"; sourceTree = "<group>"; };
 		3CDC56C0F628220CECFD85D4 /* 关@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "关@3x.png"; sourceTree = "<group>"; };
+		3CDC56C485646217D607FD65 /* NotificationListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationListCell.m; sourceTree = "<group>"; };
 		3CDC56C59011FEC1D7E2B5E6 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		3CDC56D1E8173D40D24933E5 /* WKIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKIImagePager.m; sourceTree = "<group>"; };
 		3CDC56D47615EDF5406F1A68 /* CGGeometry+RSKImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGGeometry+RSKImageCropper.h"; sourceTree = "<group>"; };
@@ -775,6 +777,7 @@
 		3CDC5DD70181F64F813BAFC2 /* UILabel+MLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MLStyle.h"; sourceTree = "<group>"; };
 		3CDC5DE2C6E64CD4CAE79464 /* XLFormRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormRatingCell.h; sourceTree = "<group>"; };
 		3CDC5DE615351DAEEF160912 /* RSKImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKImageCropper.h; sourceTree = "<group>"; };
+		3CDC5DEB02B17CC28C945514 /* NotificationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListCell.h; sourceTree = "<group>"; };
 		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E0C3A66E170A06E7D3F /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
 		3CDC5E1F09CB6F9A69C9A456 /* NSDate+XLformPushDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+XLformPushDisplay.h"; sourceTree = "<group>"; };
@@ -1487,6 +1490,15 @@
 			path = tmp;
 			sourceTree = "<group>";
 		};
+		3CDC5919BD487DE14D7497A3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC56C485646217D607FD65 /* NotificationListCell.m */,
+				3CDC5DEB02B17CC28C945514 /* NotificationListCell.h */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		3CDC591BB09CD55729AD15BE /* UIAlertView+Blocks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1801,6 +1813,7 @@
 				3CDC5B6E8D940EA486FD464D /* Info */,
 				3CDC5E0CC04E661D26F74BB0 /* Config */,
 				3CDC507EC8EFDB61D98A500C /* Event */,
+				3CDC5919BD487DE14D7497A3 /* Notification */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -2326,6 +2339,7 @@
 				3CDC5A30F117507887AFD857 /* RatingCell_ATitleAndTwoRates.m in Sources */,
 				3CDC5CA1AC70686779FBF1EE /* EventIntroCell_atRating.m in Sources */,
 				3CDC5BC8E58D86FAADA6176F /* EventRatingFVC.m in Sources */,
+				3CDC5AC38087BD834372021A /* NotificationListCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
