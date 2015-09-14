@@ -11,4 +11,5 @@
 
 @interface EventRatingFVC : MLXLformVC
 @property (nonatomic, strong)EventModel *eventModel;
+@property(nonatomic, strong) UIButton *submitButton;
 @end
