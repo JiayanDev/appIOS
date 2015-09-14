@@ -604,7 +604,7 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
     if ([self.textView isFirstResponder]) {
         return;
     }
-    
+
     if (!animated) {
         [UIView performWithoutAnimation:^{
             [self.textView becomeFirstResponder];
@@ -1729,6 +1729,16 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
 - (void)textViewDidChangeSelection:(UITextView *)textView
 {
     // Keep to avoid unnecessary crashes. Was meant to be overriden in subclass while calling super.
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+//    [self.textInputbar beginTextEditing];
+    self.textInputbar.likeButton.hidden=YES;
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+//    [self.textInputbar endTextEdition];
+    self.textInputbar.likeButton.hidden=NO;
 }
 
 

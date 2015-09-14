@@ -146,4 +146,5 @@ typedef NS_ENUM(NSUInteger, SLKCounterPosition) {
 /** The color used for character counter label when it has exceeded the limit. Default is redColor. */
 @property (nonatomic, strong, readwrite) UIColor *charCountLabelWarningColor;
 
+@property(nonatomic, strong) UIButton *likeButton;
 @end

@@ -14,6 +14,7 @@
 //   limitations under the License.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "SLKTextInputbar.h"
 #import "SLKTextViewController.h"
 #import "SLKTextView.h"
@@ -81,6 +82,12 @@
     [self addSubview:self.rightButton];
     [self addSubview:self.textView];
     [self addSubview:self.charCountLabel];
+    
+    self.likeButton=[UIButton new];
+    [self addSubview:self.likeButton];
+    [self.likeButton setImage:[UIImage imageNamed:@"赞－灰.png"] forState:UIControlStateNormal];
+    [self.likeButton setImage:[UIImage imageNamed:@"赞－亮.png"] forState:UIControlStateSelected];
+
 
     [self slk_setupViewConstraints];
     [self slk_updateConstraintConstants];
@@ -167,12 +174,15 @@
 {
     if (!_rightButton)
     {
-        _rightButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _rightButton.translatesAutoresizingMaskIntoConstraints = NO;
         _rightButton.titleLabel.font = [UIFont boldSystemFontOfSize:15.0];
         _rightButton.enabled = NO;
+        [_rightButton setImage:[UIImage imageNamed:@"确定.png"] forState:UIControlStateNormal];
+
         
-        [_rightButton setTitle:NSLocalizedString(@"Send", nil) forState:UIControlStateNormal];
+//        [_rightButton setTitle:NSLocalizedString(@"Send", nil) forState:UIControlStateNormal];
+//        _rightButton
     }
     return _rightButton;
 }
@@ -316,6 +326,7 @@
 
 - (CGFloat)slk_appropriateRightButtonWidth
 {
+
     NSString *title = [self.rightButton titleForState:UIControlStateNormal];
     CGSize rigthButtonSize = [title sizeWithAttributes:@{NSFontAttributeName: self.rightButton.titleLabel.font}];
     
@@ -324,6 +335,8 @@
             return 0.0;
         }
     }
+
+    return [UIImage imageNamed:@"确定.png"].size.width;
     return rigthButtonSize.width+self.contentInset.right;
 }
 
@@ -439,6 +452,8 @@
 
 
 #pragma mark - Text Editing
+
+
 
 - (BOOL)canEditText:(NSString *)text
 {
@@ -621,6 +636,18 @@
 
     self.rightButtonWC = [self slk_constraintForAttribute:NSLayoutAttributeWidth firstItem:self.rightButton secondItem:nil];
     self.rightMarginWC = [self slk_constraintsForAttribute:NSLayoutAttributeTrailing][0];
+
+
+    [self.rightButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo([UIImage imageNamed:@"确定.png"].size);
+    }];
+
+    [self.likeButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.textView.mas_right).offset(self.contentInset.right).priority(1000);
+        make.right.equalTo(self).offset(-self.contentInset.right).priority(1000);
+        make.size.mas_equalTo([UIImage imageNamed:@"赞－亮.png"].size);
+        make.centerY.equalTo(self);
+    }];
 }
 
 - (void)slk_updateConstraintConstants
@@ -636,6 +663,7 @@
         self.bottomMarginWC.constant = zero;
         self.rightButtonWC.constant = zero;
         self.rightMarginWC.constant = zero;
+
     }
     else {
         self.editorContentViewHC.constant = zero;
@@ -652,6 +680,7 @@
         
         self.rightButtonWC.constant = [self slk_appropriateRightButtonWidth];
         self.rightMarginWC.constant = [self slk_appropriateRightButtonMargin];
+
     }
 }
 
