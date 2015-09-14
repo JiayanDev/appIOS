@@ -74,7 +74,7 @@
         self.imageViewSmall.contentMode=UIViewContentModeScaleAspectFill;
         self.imageViewSmall.clipsToBounds=YES;
         self.removeButton=[UIButton new];
-        [self.removeButton setImage:[UIImage imageNamed:@"男.png"]
+        [self.removeButton setImage:[UIImage imageNamed:@"内容清除.png"]
                            forState:UIControlStateNormal];
 
 
@@ -89,7 +89,7 @@
         [self.removeButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView).offset(3);
             make.left.equalTo(self.contentView).offset(3);
-            make.size.mas_equalTo([UIImage imageNamed:@"男.png"].size);
+            make.size.mas_equalTo([UIImage imageNamed:@"内容清除.png"].size);
         }];
 
 
