@@ -6,6 +6,7 @@
 //  Copyright (c) 2014年 ELC Technologies. All rights reserved.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "ELCOverlayImageView.h"
 #import "ELCConsole.h"
 @implementation ELCOverlayImageView
@@ -18,6 +19,36 @@
     }
     return self;
 }
+
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+
+        self.notSelectedImage=[UIImageView new];
+        self.notSelectedImage.image=[UIImage imageNamed:@"未选取照片.png"];
+        self.selectedImage=[UIImageView new];
+        self.selectedImage.image=[UIImage imageNamed:@"选择取照片.png"];
+        [self addSubview:self.notSelectedImage];
+        [self addSubview:self.selectedImage];
+        [self.notSelectedImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self).offset(4);
+            make.right.equalTo(self).offset(-4);
+        }];
+
+        [self.selectedImage mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self).offset(4);
+            make.right.equalTo(self).offset(-4);
+        }];
+
+
+        self.labIndex = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 16, 16)];
+
+    }
+
+    return self;
+}
+
 
 - (void)setIndex:(int)_index
 {

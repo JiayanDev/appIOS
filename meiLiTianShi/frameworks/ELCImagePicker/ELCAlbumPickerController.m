@@ -8,6 +8,7 @@
 #import "ELCAlbumPickerController.h"
 #import "ELCImagePickerController.h"
 #import "ELCAssetTablePicker.h"
+#import "MLStyleManager.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 
 @interface ELCAlbumPickerController ()
@@ -96,6 +97,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadTableView) name:ALAssetsLibraryChangedNotification object:nil];
     [self.tableView reloadData];
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -106,7 +108,8 @@
 - (void)reloadTableView
 {
 	[self.tableView reloadData];
-	[self.navigationItem setTitle:NSLocalizedString(@"Select an Album", nil)];
+	[self.navigationItem setTitle:@"请选择相册"];
+    [MLStyleManager removeBackTextForNextScene:self];
 }
 
 - (BOOL)shouldSelectAsset:(ELCAsset *)asset previousCount:(NSUInteger)previousCount

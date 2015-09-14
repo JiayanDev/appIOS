@@ -17,6 +17,7 @@
 #import "MLSession.h"
 #import "TSMessage.h"
 #import "MBProgressHUD.h"
+#import "MLStyleManager.h"
 
 @interface CreateDiaryFVC ()
 @property (nonatomic, strong)DiaryModel *diaryWithoutImage;
@@ -37,6 +38,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"创建日记";
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
 
     //set value
     [self.form formRowWithTag:kcates].value=[CategoriesArrayWrap wrapWithCates:self.categories];

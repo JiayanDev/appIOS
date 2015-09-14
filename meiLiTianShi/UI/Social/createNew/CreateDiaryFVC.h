@@ -7,8 +7,9 @@
 //
 
 #import "XLFormViewController.h"
+#import "MLXLformVC.h"
 
-@interface CreateDiaryFVC : XLFormViewController
+@interface CreateDiaryFVC : MLXLformVC
 @property (nonatomic, assign)BOOL needToCreateNewDiaryBookLater;
 @property (nonatomic, strong) NSMutableOrderedSet *categories;
 

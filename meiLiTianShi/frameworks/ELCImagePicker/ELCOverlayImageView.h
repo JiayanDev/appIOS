@@ -12,6 +12,10 @@
 
 @property (nonatomic, strong) UILabel *labIndex;
 
+@property(nonatomic, strong) UIImageView *notSelectedImage;
+
+@property(nonatomic, strong) UIImageView *selectedImage;
+
 - (void)setIndex:(int)_index;
 
 @end

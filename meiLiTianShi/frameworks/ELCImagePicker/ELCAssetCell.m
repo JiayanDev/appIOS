@@ -65,15 +65,19 @@
         
         if (i < [_overlayViewArray count]) {
             ELCOverlayImageView *overlayView = [_overlayViewArray objectAtIndex:i];
-            overlayView.hidden = asset.selected ? NO : YES;
+//            overlayView.hidden = asset.selected ? NO : YES;
+            overlayView.notSelectedImage.hidden = asset.selected ? YES : NO;
+            overlayView.selectedImage.hidden = asset.selected ? NO : YES;
             overlayView.labIndex.text = [NSString stringWithFormat:@"%d", asset.index + 1];
         } else {
             if (overlayImage == nil) {
                 overlayImage = [UIImage imageNamed:@"Overlay.png"];
             }
-            ELCOverlayImageView *overlayView = [[ELCOverlayImageView alloc] initWithImage:overlayImage];
+            ELCOverlayImageView *overlayView = [[ELCOverlayImageView alloc] init];
             [_overlayViewArray addObject:overlayView];
-            overlayView.hidden = asset.selected ? NO : YES;
+//            overlayView.hidden = asset.selected ? NO : YES;
+            overlayView.notSelectedImage.hidden = asset.selected ? YES : NO;
+            overlayView.selectedImage.hidden = asset.selected ? NO : YES;
             overlayView.labIndex.text = [NSString stringWithFormat:@"%d", asset.index + 1];
         }
     }
@@ -91,15 +95,19 @@
     }else {
         startX = (self.bounds.size.width - totalWidth) / 2;
     }
-    
-	CGRect frame = CGRectMake(startX, 2, 75, 75);
+
+    startX=0;
+
+    CGRect frame = CGRectMake(startX, 2, (int ) ((SCREEN_WIDTH+7)/3.0 -7), (int ) ((SCREEN_WIDTH+7)/3.0 -7));
 	
 	for (int i = 0; i < [_rowAssets count]; ++i) {
         if (CGRectContainsPoint(frame, point)) {
             ELCAsset *asset = [_rowAssets objectAtIndex:i];
             asset.selected = !asset.selected;
             ELCOverlayImageView *overlayView = [_overlayViewArray objectAtIndex:i];
-            overlayView.hidden = !asset.selected;
+//            overlayView.hidden = !asset.selected;
+            overlayView.notSelectedImage.hidden = asset.selected ? YES : NO;
+            overlayView.selectedImage.hidden = asset.selected ? NO : YES;
             if (asset.selected) {
                 asset.index = [[ELCConsole mainConsole] numOfSelectedElements];
                 [overlayView setIndex:asset.index+1];
@@ -112,14 +120,14 @@
             }
             break;
         }
-        frame.origin.x = frame.origin.x + frame.size.width + 4;
+        frame.origin.x = frame.origin.x + frame.size.width + 7;
     }
 }
 
 - (void)layoutSubviews
 {
     int c = (int32_t)self.rowAssets.count;
-    CGFloat totalWidth = c * 75 + (c - 1) * 4;
+    CGFloat totalWidth = SCREEN_WIDTH;
     CGFloat startX;
     
     if (self.alignmentLeft) {
@@ -127,8 +135,10 @@
     }else {
         startX = (self.bounds.size.width - totalWidth) / 2;
     }
+
+    startX=0;
     
-	CGRect frame = CGRectMake(startX, 2, 75, 75);
+	CGRect frame = CGRectMake(startX, 2, (int ) ((SCREEN_WIDTH+7)/3.0 -7), (int ) ((SCREEN_WIDTH+7)/3.0 -7));
 	
 	for (int i = 0; i < [_rowAssets count]; ++i) {
 		UIImageView *imageView = [_imageViewArray objectAtIndex:i];
@@ -139,7 +149,7 @@
         [overlayView setFrame:frame];
         [self addSubview:overlayView];
 		
-		frame.origin.x = frame.origin.x + frame.size.width + 4;
+		frame.origin.x = frame.origin.x + frame.size.width + 7;
 	}
 }
 
