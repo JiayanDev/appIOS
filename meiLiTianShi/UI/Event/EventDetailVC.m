@@ -38,8 +38,12 @@
 
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self
-                                                                                          action:@selector(sharePress)];
+    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"分享.png"]
+                                                                             style:UIBarButtonItemStylePlain target:self
+                                                                            action:@selector(sharePress)];
+    //[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self
+//                                                                                          action:@selector(sharePress)];
+//
 
 }
 
