@@ -158,6 +158,7 @@
 		3CDC5538590F57B680F98ED6 /* 添加图片－相机@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC585B776E5EE9F9AF1D49 /* 添加图片－相机@2x.png */; };
 		3CDC553D693FB60B1C159F97 /* RSKTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5099BEA901AFF437A4C9 /* RSKTouchView.m */; };
 		3CDC5544524F0BF1C9123EAF /* area.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5E9A5D7962A9A3B71D89 /* area.json */; };
+		3CDC55503DE1191A34CADBCB /* ImageRowCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC591FDE2A71870F2E26FA /* ImageRowCollectionCell.m */; };
 		3CDC555E26CDF7F2AC2B94C6 /* AreaSelectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B57171E8E5F55DA5FB8 /* AreaSelectModel.m */; };
 		3CDC5562A18269E40E02726B /* ForgetPasswordSecondStepVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5ECADA9B5EEF883FFC84 /* ForgetPasswordSecondStepVC.m */; };
 		3CDC55768620421C3953706D /* 我的－亮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC576110F66824C7C84FC2 /* 我的－亮@3x.png */; };
@@ -609,6 +610,7 @@
 		3CDC55488CF5DDC0399C94D4 /* AFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFTableViewCell.h; sourceTree = "<group>"; };
 		3CDC55679A443BF805F4539B /* 分享_微信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_微信@2x.png"; sourceTree = "<group>"; };
 		3CDC556C1CCC674862354608 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
+		3CDC556C7B6E4EFA890BBCFE /* ImageRowCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRowCollectionCell.h; sourceTree = "<group>"; };
 		3CDC557A71E559B2ACC42AC8 /* IndexCellOfOthers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexCellOfOthers.m; sourceTree = "<group>"; };
 		3CDC5580E573067AD09509F6 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		3CDC55822B21A893B538C0DF /* MLXLFormTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormTextFieldCell.h; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 		3CDC590761C4F1E530209A41 /* Y80Y09B4Y73E.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Y80Y09B4Y73E.jpg; sourceTree = "<group>"; };
 		3CDC5913A9B6678E36A286CA /* 我的_我的日志.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的日志.png"; sourceTree = "<group>"; };
 		3CDC5915955F159F03CCE2EB /* IndexCellOfOthers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexCellOfOthers.h; sourceTree = "<group>"; };
+		3CDC591FDE2A71870F2E26FA /* ImageRowCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRowCollectionCell.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
 		3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
 		3CDC594BBAFE71BECBE1EF55 /* DiaryInListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryInListCell.h; sourceTree = "<group>"; };
@@ -1899,6 +1902,8 @@
 				07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */,
 				07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */,
 				07C91D301B54AAA50069470E /* DoctorSelectVC.xib */,
+				3CDC591FDE2A71870F2E26FA /* ImageRowCollectionCell.m */,
+				3CDC556C7B6E4EFA890BBCFE /* ImageRowCollectionCell.h */,
 			);
 			path = createNew;
 			sourceTree = "<group>";
@@ -2384,6 +2389,7 @@
 				3CDC5CA1AC70686779FBF1EE /* EventIntroCell_atRating.m in Sources */,
 				3CDC5BC8E58D86FAADA6176F /* EventRatingFVC.m in Sources */,
 				3CDC5AC38087BD834372021A /* NotificationListCell.m in Sources */,
+				3CDC55503DE1191A34CADBCB /* ImageRowCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

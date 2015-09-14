@@ -9,8 +9,10 @@
 #import "ImageRowCell.h"
 #import "AFTableViewCell.h"
 #import "ELCImagePickerController.h"
+#import "ImageRowCollectionCell.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <Masonry/View+MASAdditions.h>
 
 
 NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImageRow";
@@ -22,20 +24,23 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
     if (!(self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) return nil;
 
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    CGFloat w=(int)((SCREEN_WIDTH)/4.0);
+    CGFloat w=(int)((SCREEN_WIDTH-2-13)/4.0);
 
     layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
 
     layout.itemSize = CGSizeMake(w, w);
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     self.collectionView = [[AFIndexedCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:CollectionViewCellIdentifier];
+    [self.collectionView registerClass:[ImageRowCollectionCell class] forCellWithReuseIdentifier:CollectionViewCellIdentifier];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.showsHorizontalScrollIndicator = NO;
 
     [self setCollectionViewDataSourceDelegate:self
                                     indexPath:[NSIndexPath indexPathWithIndex:0]];
     [self.contentView addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+       make.edges.equalTo(self.contentView).insets(UIEdgeInsetsMake(0,2,0,13));
+    }];
 
     return self;
 }
@@ -44,7 +49,7 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
 {
     [super layoutSubviews];
 
-    self.collectionView.frame = self.contentView.bounds;
+//    self.collectionView.frame = self.contentView.bounds;
 }
 
 - (void)setCollectionViewDataSourceDelegate:(id<UICollectionViewDataSource, UICollectionViewDelegate>)dataSourceDelegate indexPath:(NSIndexPath *)indexPath
@@ -110,33 +115,62 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewCellIdentifier forIndexPath:indexPath];
+    ImageRowCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewCellIdentifier forIndexPath:indexPath];
 
     NSArray *collectionViewArray = self.rowDescriptor.value;
     //cell.backgroundColor = collectionViewArray[indexPath.item];
-    [cell.contentView.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
-    UIImageView *iv= [[UIImageView alloc] initWithFrame:cell.contentView.bounds];
+//    [cell.contentView.subviews makeObjectsPerformSelector: @selector(removeFromSuperview)];
+//    UIImageView *iv= [[UIImageView alloc] initWithFrame:cell.contentView.bounds];
+
+    for (UIGestureRecognizer *recognizer in cell.gestureRecognizers) {
+        [cell removeGestureRecognizer:recognizer];
+    }
 
     if(indexPath.item>=collectionViewArray.count){
-        iv.image=[UIImage imageNamed:@"selectPhoto.png"];
+        cell.imageViewSmall.image=[UIImage imageNamed:@"添加图片－相机.png"];
+        cell.imageViewSmall.contentMode=UIViewContentModeCenter;
+        cell.imageViewSmall.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
+        cell.removeButton.hidden=YES;
+//        iv.image=[UIImage imageNamed:@"selectPhoto.png"];
         UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gotoSelectPhoto:)];
         [recognizer setNumberOfTapsRequired:1];
         cell.userInteractionEnabled = YES;
         [cell addGestureRecognizer:recognizer];
     }else{
-        iv.image=(UIImage *)collectionViewArray[indexPath.item];
-        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollCellSelect:)];
-        [recognizer setNumberOfTapsRequired:1];
-        cell.userInteractionEnabled = YES;
-        [cell addGestureRecognizer:recognizer];
+        cell.imageViewSmall.image=(UIImage *)collectionViewArray[indexPath.item];
+        cell.imageViewSmall.contentMode=UIViewContentModeScaleAspectFill;
+        cell.imageViewSmall.backgroundColor=[UIColor clearColor];
+        cell.removeButton.hidden=NO;
+        [cell.removeButton removeTarget:nil
+                action:NULL
+                forControlEvents:UIControlEventAllEvents];
+        cell.tag=indexPath.item;
+        [cell.removeButton addTarget:self
+                              action:@selector(removeItemPressed:)
+                    forControlEvents:UIControlEventTouchUpInside];
+//        iv.image=(UIImage *)collectionViewArray[indexPath.item];
+//        UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollCellSelect:)];
+//        [recognizer setNumberOfTapsRequired:1];
+//        cell.userInteractionEnabled = YES;
+//        [cell addGestureRecognizer:recognizer];
     }
 
     //iv.image
     //todo add image
-    [cell.contentView addSubview:iv];
+//    [cell.contentView addSubview:iv];
 
 
     return cell;
+}
+
+-(void)removeItemPressed:(UIButton *)sender{
+    NSMutableArray *v= [((NSArray *) self.rowDescriptor.value) mutableCopy];
+    [v removeObjectAtIndex:sender.tag];
+    self.rowDescriptor.value=v;
+    [self.collectionView reloadData];
+//    [self.formViewController.tableView beginUpdates];
+//    [self.formViewController.tableView endUpdates];
+    [self.formViewController.tableView reloadData];
 }
 
 
@@ -161,7 +195,7 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
 // Create the image picker
     ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
     elcPicker.mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    elcPicker.maximumImagesCount = 6-((NSArray *)self.rowDescriptor.value).count;
+    elcPicker.maximumImagesCount = 8-((NSArray *)self.rowDescriptor.value).count;
     elcPicker.returnsOriginalImage = YES; //Only return the fullScreenImage, not the fullResolutionImage
     elcPicker.returnsImage = YES; //Return UIimage if YES. If NO, only return asset location information
     elcPicker.onOrder = YES; //For multiple image selection, display and return selected order of images
@@ -173,9 +207,9 @@ NSString * const XLFormRowDescriptorTypeImageRow = @"XLFormRowDescriptorTypeImag
 
 
 +(CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor{
-    CGFloat w=(int)((SCREEN_WIDTH)/4.0);
+    CGFloat w=(int)((SCREEN_WIDTH-2-13)/4.0);
     int xishu=MIN(ceil(rowDescriptor.value?(((NSArray *)rowDescriptor.value).count+1)/4.0:1),2);
-    return w*xishu;
+    return w*xishu+11;
 };
 
 
