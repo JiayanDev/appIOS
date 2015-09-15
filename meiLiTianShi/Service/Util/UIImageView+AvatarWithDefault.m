@@ -15,4 +15,17 @@
         self.image=[UIImage imageNamed:@"logo.png"];
     }
 }
+
+
+-(void)setAvatarImageUrl:(NSString *)urlString completed:(void(^)(UIImage * image))completed{
+    if(urlString&&urlString!=[NSNull null]&&urlString.length>0){
+        [self sd_setImageWithURL:[[NSURL alloc] initWithString:urlString]
+                       completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                            completed(image);
+                       }];
+    }else{
+        self.image=[UIImage imageNamed:@"logo.png"];
+        completed(self.image);
+    }
+}
 @end

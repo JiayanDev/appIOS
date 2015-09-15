@@ -14,4 +14,6 @@
 + (UIImage *)imageWithColor:(UIColor *)color imageSize:(CGSize)imageSize;
 
 - (UIImage *)imageWithOverlayColor:(UIColor *)color;
+
+- (UIImage *)blurredImageDarkerWithRadius:(CGFloat)radius iterations:(NSUInteger)iterations tintColor:(UIColor *)tintColor;
 @end

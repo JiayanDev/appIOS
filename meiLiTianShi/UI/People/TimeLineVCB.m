@@ -12,6 +12,8 @@
 #import "MLWebRedirectPusher.h"
 #import "IDMPhoto.h"
 #import "IDMPhotoBrowser.h"
+#import "UserModel.h"
+#import "UIImageView+AvatarWithDefault.h"
 
 
 @implementation TimeLineVCB {
@@ -129,6 +131,16 @@
 
     }else if([requestModel.action isEqualToString:@"hideLoading"]){
 
+
+    }else if([requestModel.action isEqualToString:@"showUserProfileHeader"]){
+        UserModel*user= [[UserModel alloc] initWithDictionary:requestModel.data
+                                                        error:nil];
+        __weak TimeLineVCB *weakSelf = self;
+        [self.mainView.avatarView setAvatarImageUrl:user.avatar
+                                          completed:^(UIImage *image) {
+                                              weakSelf.mainView.avatarView.image=image;
+                                              weakSelf.mainView.backgroundImageOrigin=image;
+                                          }];
 
     }
 

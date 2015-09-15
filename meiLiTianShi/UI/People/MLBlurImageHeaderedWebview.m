@@ -8,6 +8,7 @@
 #import "FXBlurView.h"
 #import "MLStyleManager.h"
 #import "UILabel+MLStyle.h"
+#import "UIImage+Color.h"
 
 
 #define IMAGEVIEW_HEIGHT 220
@@ -117,9 +118,9 @@ CGFloat const distance_W_LabelHeader = 31.0;
 
 - (void)setBackgroundImageOrigin:(UIImage *)backgroundImageOrigin {
     _backgroundImageOrigin=backgroundImageOrigin;
-    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageWithRadius:100
+    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageDarkerWithRadius:100
                                                                         iterations:10
-                                                                         tintColor:[UIColor colorWithHexString:@"333333" alpha:0.3]];
+                                                                         tintColor:[UIColor colorWithHexString:@"333333" alpha:0.05]];
 
     self.imageView.image=self.backgroundImageBlured;
 }

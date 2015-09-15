@@ -7,4 +7,7 @@
 
 @interface UIImageView (AvatarWithDefault)
 
+- (void)setAvatarImageUrl:(NSString *)urlString;
+
+- (void)setAvatarImageUrl:(NSString *)urlString completed:(void (^)(UIImage *image))completed;
 @end
