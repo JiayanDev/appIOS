@@ -8,7 +8,7 @@
 #import "DiaryModel.h"
 #import "URLParser.h"
 #import "TopicModel.h"
-#import "TimelineVC.h"
+#import "TimeLineVCB.h"
 #import "GeneralWebVC.h"
 
 
@@ -28,6 +28,14 @@
         return YES;
     }else if([url.path isEqualToString:@"/html/diary.html"]){
         DiaryDetailVC *svc= [[DiaryDetailVC alloc] init];
+        svc.type=WebviewWithCommentVcDetailTypeDiary;
+        TopicModel *topic= [[TopicModel alloc] init];
+        topic.id= (NSUInteger) [[[[URLParser alloc] initWithURLString:[url absoluteString]] valueForVariable:@"id"] longLongValue];
+        svc.topic=topic;
+        [vc.navigationController pushViewController:svc animated:YES];
+        return YES;
+    }else if([url.path isEqualToString:@"/html/topic.html"]){
+        DiaryDetailVC *svc= [[DiaryDetailVC alloc] init];
         svc.type=WebviewWithCommentVcDetailTypeTopic;
         TopicModel *topic= [[TopicModel alloc] init];
         topic.id= (NSUInteger) [[[[URLParser alloc] initWithURLString:[url absoluteString]] valueForVariable:@"id"] longLongValue];
@@ -35,7 +43,7 @@
         [vc.navigationController pushViewController:svc animated:YES];
         return YES;
     }else if([url.path isEqualToString:@"/html/timeline.html"]){
-        TimelineVC *svc= [[TimelineVC alloc] init];
+        TimeLineVCB *svc= [[TimeLineVCB alloc] init];
         svc.userId= @([[[[URLParser alloc] initWithURLString:[url absoluteString]] valueForVariable:@"id"] longLongValue]);
 
         [vc.navigationController pushViewController:svc animated:YES];

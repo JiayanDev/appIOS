@@ -21,7 +21,7 @@
     [super loadView];
     self.automaticallyAdjustsScrollViewInsets=NO;
     self.mainView= [[MLBlurImageHeaderedWebview alloc] init];
-    [self.mainView setupVC:self];
+
     self.mainView.backgroundImageOrigin=[UIImage imageNamed:@"meinvtupianbizhi_813_051.jpg"];
     [self.view addSubview:self.mainView];
 
@@ -42,6 +42,7 @@
 }
 - (void)viewDidLoad {
     [self setNeedsStatusBarAppearanceUpdate];
+
 //    self.navigationController.navigationBar.tintColor=[UIColor whiteColor];
     self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"timeline_分享.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                                                              style:UIBarButtonItemStylePlain target:self
@@ -53,23 +54,32 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    NSLog(@"viewwillapear");
+    [self.mainView setupVC:self];
+
     [super viewWillAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.mainView unsetupVC:self];
+}
 
 
 #pragma mark - webview delegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+
     NSURL *url=request.URL;
-//    if([url isEqual:self.url]){
-//        return YES;
-//    }
+    NSLog(@"URL:%@",url);
+    if([url isEqual:self.url]){
+        return YES;
+    }
     if([url.scheme isEqualToString:@"jiayan"]){
         return [self handleInteractionRequests:url];
     }else if([url.scheme isEqualToString:@"http"]){
-        //return [self handleRedirectRequests:url];
+        return [self handleRedirectRequests:url];
     }
 
     return YES;
@@ -101,7 +111,7 @@
     }
     else if([requestModel.action isEqualToString:@"setNavigationBarTitle"]){
 
-        self.title=requestModel.data[@"title"];
+//        self.title=requestModel.data[@"title"];
     }
     else if([requestModel.action isEqualToString:@"playImg"]){
         [self showImageBrowserWithImages:requestModel.data[@"imgList"] startIndex:[requestModel.data[@"defaultIndex"] unsignedIntegerValue]];

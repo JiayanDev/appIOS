@@ -11,6 +11,8 @@
 
 }
 
+#define myHairLineTag 56789
+
 +(void)styleSetsWhenFinishiLaunchingWithWindow:(UIWindow *)window{
 
 
@@ -36,6 +38,7 @@
     //hairline
     UIView* sv= [[UIView alloc] initWithFrame:[self findHairlineImageViewUnder:navigationBar].frame];
     sv.backgroundColor=[UIColor colorWithHexString:@"d9d9d9"];
+    sv.tag=myHairLineTag;
     [[self findHairlineImageViewUnder:navigationBar].superview addSubview:sv];
 
 
@@ -53,9 +56,17 @@
     //hairline
 //    UIView* sv= [[UIView alloc] initWithFrame:[self findHairlineImageViewUnder:navigationBar].frame];
 //    sv.backgroundColor=[UIColor colorWithHexString:@"d9d9d9"];
+    UIImageView *view;
+    while ((view=[self findMyHarilineUnder:navigationBar.superview] )!=nil){
+        [view removeFromSuperview];
+    }
     [self findHairlineImageViewUnder:navigationBar].hidden=YES;
+//    [self findHairlineImageViewUnder:navigationBar].hidden=YES;
+
+
 
 }
+
 
 
 +(void)removeBackTextForNextScene:(UIViewController *)viewController{
@@ -75,5 +86,21 @@
     }
     return nil;
 }
+
+
++ (UIImageView *)findMyHarilineUnder:(UIView *)view {
+    if (view.tag==myHairLineTag) {
+        return (UIImageView *)view;
+    }
+    for (UIView *subview in view.subviews) {
+        UIImageView *imageView = [self findMyHarilineUnder:subview];
+        if (imageView) {
+            return imageView;
+        }
+    }
+    return nil;
+}
+
+
 
 @end

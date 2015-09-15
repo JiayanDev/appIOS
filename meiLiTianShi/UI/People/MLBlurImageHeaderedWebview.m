@@ -55,11 +55,11 @@ CGFloat const distance_W_LabelHeader = 31.0;
     self.webView.scrollView.contentInset=UIEdgeInsetsMake(IMAGEVIEW_HEIGHT,0,0,0);
 
     self.webView.scrollView.delegate=self;
-    NSURL *websiteUrl = [NSURL URLWithString:@"http://apptest.jiayantech.com/html/timeline.html?id=495"];
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
+//    NSURL *websiteUrl = [NSURL URLWithString:@"http://apptest.jiayantech.com/html/timeline.html?id=495"];
+//    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
 
-    [self.webView loadRequest:urlRequest];
+//    [self.webView loadRequest:urlRequest];
     [self addSubview:self.webView];
     [self addSubview:self.imageView];
     [self.imageView addSubview:self.headerLabel];
@@ -137,6 +137,13 @@ CGFloat const distance_W_LabelHeader = 31.0;
 
 
 };
+
+-(void)unsetupVC:(UIViewController *)viewController{
+    [viewController.navigationController.navigationBar setBackgroundImage:nil
+                                                  forBarMetrics:UIBarMetricsDefault];
+    [MLStyleManager styleTheNavigationBar:viewController.navigationController.navigationBar];
+
+}
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

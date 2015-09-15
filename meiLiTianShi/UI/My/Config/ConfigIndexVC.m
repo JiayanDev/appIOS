@@ -13,6 +13,8 @@
 #import "MLSession.h"
 #import "PhoneBindVC.h"
 #import "TSMessage.h"
+#import "GeneralWebVC.h"
+#import "MLStyleManager.h"
 
 @interface ConfigIndexVC ()
 
@@ -22,10 +24,12 @@
 
 #define kChangePassword @"changepassword"
 #define kLogout @"logout"
+#define kHelp @"bangzhu"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+[MLStyleManager removeBackTextForNextScene:self];
 }
 
 
@@ -54,7 +58,7 @@
     [formDescriptor addFormSection:section];
 
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"angzhu"
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kHelp
                                                 rowType:XLFormRowDescriptorTypeSelectorPush title:@"使用帮助"];
 
     [section addFormRow:row];
@@ -118,6 +122,12 @@
                                         subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                             type:TSMessageNotificationTypeError];
         }];
+    }else if([formRow.tag isEqualToString:kHelp]){
+        GeneralWebVC *vc=[GeneralWebVC new];
+        vc.url=[NSURL URLWithString:@"http://apptest.jiayantech.com/html/help.html"];
+        vc.title=@"帮助";
+        [self.navigationController pushViewController:vc animated:YES];
+
     }
 }
 

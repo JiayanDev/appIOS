@@ -20,4 +20,6 @@
 @property(nonatomic, strong) UIImageView *avatarView;
 
 - (void)setupVC:(UIViewController *)viewController;
+
+- (void)unsetupVC:(UIViewController *)viewController;
 @end
