@@ -12,4 +12,9 @@
 @interface AboutUsVC : UIViewController<XLFormRowDescriptorViewController>
 @property (nonatomic) XLFormRowDescriptor * rowDescriptor;
 
+@property(nonatomic, strong) UIImageView *logo;
+@property(nonatomic, strong) UILabel *versionLabel;
+@property(nonatomic, strong) UIButton *qqButton;
+@property(nonatomic, strong) UIButton *phoneButton;
+@property(nonatomic, strong) UILabel *bottomCLabel;
 @end

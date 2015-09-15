@@ -25,7 +25,6 @@
 		072C3A9D1B653D820032849C /* SuggestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3A9B1B653D820032849C /* SuggestionsVC.m */; };
 		072C3A9E1B653D820032849C /* SuggestionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072C3A9C1B653D820032849C /* SuggestionsVC.xib */; };
 		072C3AA21B653EBD0032849C /* AboutUsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072C3AA01B653EBD0032849C /* AboutUsVC.m */; };
-		072C3AA31B653EBD0032849C /* AboutUsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072C3AA11B653EBD0032849C /* AboutUsVC.xib */; };
 		072DCC3B1B43A1CE0091CBDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC3A1B43A1CE0091CBDE /* main.m */; };
 		072DCC3E1B43A1CE0091CBDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC3D1B43A1CE0091CBDE /* AppDelegate.m */; };
 		072DCC411B43A1CE0091CBDE /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC401B43A1CE0091CBDE /* FirstViewController.m */; };
@@ -398,7 +397,6 @@
 		072C3A9C1B653D820032849C /* SuggestionsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuggestionsVC.xib; sourceTree = "<group>"; };
 		072C3A9F1B653EBD0032849C /* AboutUsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsVC.h; sourceTree = "<group>"; };
 		072C3AA01B653EBD0032849C /* AboutUsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsVC.m; sourceTree = "<group>"; };
-		072C3AA11B653EBD0032849C /* AboutUsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsVC.xib; sourceTree = "<group>"; };
 		072DCC351B43A1CE0091CBDE /* meiLiTianShi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meiLiTianShi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		072DCC391B43A1CE0091CBDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		072DCC3A1B43A1CE0091CBDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1874,7 +1872,6 @@
 				072C3A9C1B653D820032849C /* SuggestionsVC.xib */,
 				072C3A9F1B653EBD0032849C /* AboutUsVC.h */,
 				072C3AA01B653EBD0032849C /* AboutUsVC.m */,
-				072C3AA11B653EBD0032849C /* AboutUsVC.xib */,
 				075AC8C51B6E7E1900C917B5 /* ChangePasswordSecondStepFTV.h */,
 				075AC8C61B6E7E1900C917B5 /* ChangePasswordSecondStepFTV.m */,
 			);
@@ -2110,7 +2107,6 @@
 				072F30AF1B46427B001A14E6 /* FirstVC.xib in Resources */,
 				072C3A9E1B653D820032849C /* SuggestionsVC.xib in Resources */,
 				076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */,
-				072C3AA31B653EBD0032849C /* AboutUsVC.xib in Resources */,
 				3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */,
 				3CDC533D2D65BCF84FA750E4 /* Overlay@2x.png in Resources */,
 				075AC8C11B6E0EDB00C917B5 /* AreaSelectTVC.xib in Resources */,
