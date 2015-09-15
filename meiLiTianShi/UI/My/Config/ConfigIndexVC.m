@@ -15,6 +15,7 @@
 #import "TSMessage.h"
 #import "GeneralWebVC.h"
 #import "MLStyleManager.h"
+#import "ChangePasswordFVC.h"
 
 @interface ConfigIndexVC ()
 
@@ -108,8 +109,9 @@
 - (void)didSelectFormRow:(XLFormRowDescriptor *)formRow {
     [super didSelectFormRow:formRow];
     if([formRow.tag isEqualToString:kChangePassword]){
-        PhoneBindVC *vc= [[PhoneBindVC alloc] init];
-        vc.type=PhoneBindVcType_changePasswordFirstStep;
+//        PhoneBindVC *vc= [[PhoneBindVC alloc] init];
+//        vc.type=PhoneBindVcType_changePasswordFirstStep;
+        ChangePasswordFVC *vc=[ChangePasswordFVC new];
         [self.navigationController pushViewController:vc animated:YES];
 
     }else if([formRow.tag isEqualToString:kLogout]){
