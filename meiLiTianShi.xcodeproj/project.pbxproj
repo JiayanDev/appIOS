@@ -347,6 +347,7 @@
 		3CDC5F2D205DE05485035E7C /* 发现－灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC58DAAB94CF73CB33DC17 /* 发现－灰.png */; };
 		3CDC5F30B9E78AD90E266425 /* 活动名称@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5339B3B7493E8816AEDE /* 活动名称@3x.png */; };
 		3CDC5F3FDF54288CBB005944 /* GeneralWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5833D8A7D7D98FDA39E7 /* GeneralWebVC.m */; };
+		3CDC5F3FE5A81470EDCFEE78 /* UIImageView+AvatarWithDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51F8CE80A281B0932602 /* UIImageView+AvatarWithDefault.m */; };
 		3CDC5F71CF61468F552B6093 /* 微信登录@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59B5A6EE9B0B28DEAE0B /* 微信登录@3x.png */; };
 		3CDC5F8FE1A09EDFA032B87E /* 赞－亮.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5510BC697B688ABC8F36 /* 赞－亮.png */; };
 		3CDC5F96E8A8CA83AAAAFA96 /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B17BB76E6736829D551 /* UIScrollView+SLKAdditions.m */; };
@@ -547,6 +548,7 @@
 		3CDC51F21EE3C6DF90D75C4B /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		3CDC51F5ABBC30F3CD611F46 /* 男.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "男.png"; sourceTree = "<group>"; };
 		3CDC51F690789D5E140B1057 /* FloatCellOfPhoneAndButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfPhoneAndButton.h; sourceTree = "<group>"; };
+		3CDC51F8CE80A281B0932602 /* UIImageView+AvatarWithDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AvatarWithDefault.m"; sourceTree = "<group>"; };
 		3CDC51FB009C38ADC7F2A54A /* 发现－灰@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发现－灰@2x.png"; sourceTree = "<group>"; };
 		3CDC52045F7DBE1CD674E091 /* MLJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLJsonModel.h; sourceTree = "<group>"; };
 		3CDC52099F3A026AA06D3C8D /* MLXLFormOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormOptionsViewController.m; sourceTree = "<group>"; };
@@ -659,6 +661,7 @@
 		3CDC55FFFD232DA56A21E1BA /* HospitalModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalModel.h; sourceTree = "<group>"; };
 		3CDC56172E6C7030FDF4BC08 /* 分享_朋友圈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_朋友圈.png"; sourceTree = "<group>"; };
 		3CDC563702F4589268BCF4FF /* 我的_设置@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_设置@2x.png"; sourceTree = "<group>"; };
+		3CDC5641FE0C5D3B729B3150 /* UIImageView+AvatarWithDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AvatarWithDefault.h"; sourceTree = "<group>"; };
 		3CDC5651B77D916F000DC83B /* 我的_我的伴美@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的伴美@2x.png"; sourceTree = "<group>"; };
 		3CDC566F3C9693A1C8D52D1B /* DiaryBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryBookModel.h; sourceTree = "<group>"; };
 		3CDC56724B9E715849E35A98 /* IDMPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMPhoto.m; sourceTree = "<group>"; };
@@ -1039,6 +1042,8 @@
 				3CDC5D07BB9A399A29F55BDF /* UITabBarController+statusBar.h */,
 				3CDC58ADCDB472CDB0CACF77 /* UINavigationController+statusBar.m */,
 				3CDC54279D945B4F1BFBEBFE /* UINavigationController+statusBar.h */,
+				3CDC51F8CE80A281B0932602 /* UIImageView+AvatarWithDefault.m */,
+				3CDC5641FE0C5D3B729B3150 /* UIImageView+AvatarWithDefault.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2476,6 +2481,7 @@
 				3CDC5327F94ED7FD6F1497A7 /* UITabBarController+statusBar.m in Sources */,
 				3CDC599E4C44DDCFBD87B1E4 /* UINavigationController+statusBar.m in Sources */,
 				3CDC57CF2A87FBA5A7BCE98A /* ChangePasswordFVC.m in Sources */,
+				3CDC5F3FE5A81470EDCFEE78 /* UIImageView+AvatarWithDefault.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
