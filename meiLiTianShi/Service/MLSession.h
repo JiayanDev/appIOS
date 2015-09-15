@@ -58,6 +58,10 @@
 
 - (void)logoutSuccess:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)checkUserHasPasswordSucc:(void (^)(BOOL hasPassword))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)changeUserPasswordWithOriginalRawPassword:(NSString *)oldPassword newRawPassword:(NSString *)newRawPassword success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)getTopicListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;

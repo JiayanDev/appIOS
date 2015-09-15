@@ -262,6 +262,29 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 }
 
+-(void)checkUserHasPasswordSucc:(void (^)(BOOL hasPassword))success fail:(void (^)(NSInteger, id))failure{
+    [self sendGet:@"user/has/psw"
+            param:nil
+          success:^(id o) {
+              success([o[@"hasPSW"] boolValue]);
+          } failure:failure];
+}
+
+-(void)changeUserPasswordWithOriginalRawPassword:(NSString *)oldPassword newRawPassword:(NSString *)newRawPassword
+                                         success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+    NSMutableDictionary *d=[NSMutableDictionary new];
+    d[@"newPsw"]= [newRawPassword MD5String];
+    if(oldPassword){
+        d[@"currPsw"]= [oldPassword MD5String];
+    }
+
+    [self sendPost:@"user/update/psw"
+             param:d
+           success:^(id o) {
+               success();
+           } failure:failure];
+}
+
 #pragma mark - 日志 话题
 
 -(void)getTopicListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
