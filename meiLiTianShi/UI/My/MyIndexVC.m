@@ -20,6 +20,8 @@
 #import "AvatarAndNameAndDescCell.h"
 #import "XLform_getAndSetValue.h"
 #import "NotificationListTVC.h"
+#import "TimeLineVCB.h"
+#import "UserModel.h"
 
 @interface MyIndexVC ()
 @property (nonatomic, strong)XLFormDescriptor *logginedFormDescriptor;
@@ -30,6 +32,7 @@
 
 #define kLogin @"login"
 #define kUser @"user"
+#define kMyTimeline @"mytimeline"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -60,7 +63,7 @@
     section = [XLFormSectionDescriptor formSectionWithTitle:@""];
     [logginedFormDescriptor addFormSection:section];
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tongzhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的主页"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kMyTimeline rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的主页"];
     row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_我的日志.png"];
     [section addFormRow:row];
 
@@ -137,6 +140,11 @@
                          completion:^{
 
                          }];
+    }else if([formRow.tag isEqualToString:kMyTimeline]){
+        TimeLineVCB *vc=[TimeLineVCB new];
+        vc.userId= @([MLSession current].currentUser.id);
+        [self.navigationController pushViewController:vc
+                                             animated:YES];
     }
 }
 

@@ -15,6 +15,8 @@
 #import "UserModel.h"
 #import "UIImageView+AvatarWithDefault.h"
 #import "UserDetailModel.h"
+#import "MLSession.h"
+#import "MLStyleManager.h"
 
 
 @implementation TimeLineVCB {
@@ -37,6 +39,7 @@
             @"http://apptest.jiayantech.com/html/timeline.html?id=%@",self.userId]];
 
     [self.mainView.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
+    [MLStyleManager removeBackTextForNextScene:self];
 
 }
 
@@ -132,6 +135,9 @@
 
     }else if([requestModel.action isEqualToString:@"hideLoading"]){
 
+        if([self.userId unsignedIntegerValue]==[MLSession current].currentUser.id){
+            [self.mainView.webView stringByEvaluatingJavaScriptFromString:@"G_showAddPostButton()"];
+        }
 
     }else if([requestModel.action isEqualToString:@"showUserProfileHeader"]){
         UserDetailModel *user= [[UserDetailModel alloc] initWithDictionary:requestModel.data
@@ -174,7 +180,9 @@
     [self presentViewController:browser animated:YES completion:nil];
 
 }
-
+- (BOOL)hidesBottomBarWhenPushed {
+    return YES;
+}
 
 
 @end
