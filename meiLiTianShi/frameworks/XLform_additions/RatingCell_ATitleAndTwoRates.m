@@ -6,7 +6,7 @@
 #import <Masonry/View+MASAdditions.h>
 #import "RatingCell_ATitleAndTwoRates.h"
 #import "UILabel+MLStyle.h"
-#import "HCSStarRatingView.h"
+//#import "HCSStarRatingView.h"
 
 NSString * const XLFormRowDescriptorType_RatingCell_ATitleAndTwoRates = @"XLFormRowDescriptorType_RatingCell_ATitleAndTwoRates";
 

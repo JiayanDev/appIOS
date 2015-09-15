@@ -5,8 +5,8 @@
 
 #import <Foundation/Foundation.h>
 #import "XLFormBaseCell.h"
-
-@class HCSStarRatingView;
+#import "HCSStarRatingView.h"
+//@class HCSStarRatingView;
 extern NSString * const XLFormRowDescriptorType_RatingCell_ATitleAndTwoRates;
 
 @interface RatingCell_ATitleAndTwoRates : XLFormBaseCell

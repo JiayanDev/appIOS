@@ -969,6 +969,14 @@ constructingBodyWithBlock:constructingBodyWithBlock
            } failure:failure];
 }
 
+
+-(void)commentEventWithParams:(NSDictionary *)param success:(void(^)( void))success  fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"event/comment"
+             param:param success:^(id o) {
+                success();
+            } failure:failure];
+}
+
 #pragma mark - shouye
 
 -(void)getIndexList_success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{

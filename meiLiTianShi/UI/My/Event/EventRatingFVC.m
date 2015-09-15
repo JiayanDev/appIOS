@@ -10,6 +10,9 @@
 #import "XLForm.h"
 #import "EventModel.h"
 #import "UIButton+MLStyle.h"
+#import "XLform_getAndSetValue.h"
+#import "TSMessage.h"
+#import "MLSession.h"
 
 #define kIntroCell @"intro"
 #define kStarCell @"star"
@@ -55,6 +58,24 @@
 
 
 -(void)submitButtonPress {
+    RatingCell_ATitleAndTwoRates*cell= (RatingCell_ATitleAndTwoRates *) [[self.form formRowWithTag:kStarCell] cellForFormController:self];
+    if(getValueS(kWordsCell).length==0){
+        [TSMessage showNotificationWithTitle:@"请输入评论"
+                                        type:TSMessageNotificationTypeWarning];
+        return ;
+    }
+
+    [[MLSession current] commentEventWithParams:@{
+            @"eventId":@(self.eventId),
+            @"content":getValueS(kWordsCell),
+            @"satisfyLevelToAngel":@(cell.star1.value),
+            @"satisfyLevelToDoctor":@(cell.star1.value),
+    } success:^{
+
+    } fail:^(NSInteger i, id o) {
+
+    }];
+
 
 }
 

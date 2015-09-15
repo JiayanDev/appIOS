@@ -122,5 +122,7 @@
 
 - (void)eventJoinApply:(NSDictionary *)data success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)commentEventWithParams:(NSDictionary *)param success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)getIndexList_success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 @end
