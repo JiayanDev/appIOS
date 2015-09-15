@@ -135,6 +135,7 @@ CGFloat const distance_W_LabelHeader = 31.0;
     viewController.navigationController.view.backgroundColor = [UIColor clearColor];
     viewController.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
 
+    viewController.navigationController.navigationBar.backIndicatorImage= [[UIImage imageNamed:@"timeline_返回-.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 
 };
 

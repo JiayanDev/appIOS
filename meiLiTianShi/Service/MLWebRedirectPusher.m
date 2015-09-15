@@ -46,6 +46,7 @@
         TimeLineVCB *svc= [[TimeLineVCB alloc] init];
         svc.userId= @([[[[URLParser alloc] initWithURLString:[url absoluteString]] valueForVariable:@"id"] longLongValue]);
 
+
         [vc.navigationController pushViewController:svc animated:YES];
         return YES;
     }else{
