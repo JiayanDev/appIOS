@@ -19,6 +19,7 @@
 #import "MLXLFormSelectorCell.h"
 #import "AvatarAndNameAndDescCell.h"
 #import "XLform_getAndSetValue.h"
+#import "NotificationListTVC.h"
 
 @interface MyIndexVC ()
 @property (nonatomic, strong)XLFormDescriptor *logginedFormDescriptor;
@@ -67,6 +68,7 @@
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"tongzhi" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的通知"];
     row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_我的通知.png"];
+    row.action.viewControllerClass=[NotificationListTVC class];
     [section addFormRow:row];
 
 //    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"fabu" rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的发布"];

@@ -10,7 +10,7 @@
 
 @implementation NSNumber (MLUtil)
 -(NSString *)stringOfDateSince1970_blankTip:(NSString *)blankTip{
-    if(self && self!=  [NSNull null]){
+    if(self && [self unsignedIntegerValue]>0){
         return [[NSDate dateWithTimeIntervalSince1970:[self unsignedIntegerValue]] displayText];
     }else{
         return blankTip;

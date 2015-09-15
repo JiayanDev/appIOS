@@ -24,6 +24,7 @@
 #import "UserDetailModel.h"
 #import "NSString+MD5.h"
 #import "LoginWaySelectVC.h"
+#import "MessageNoticingModel.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -1044,5 +1045,27 @@ constructingBodyWithBlock:constructingBodyWithBlock
 //#endif
 }
 
+
+#pragma mark - 通知
+
+-(void)getNotificationListWithPageIndicator:(PageIndicator *)pi success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
+//    #if USE_DEBUG_MOCK
+//        NSMutableArray *r=[NSMutableArray array];
+//    for (int i = 0; i < 10; ++i) {
+//        [r addObject:[TopicModel randomOne]];
+//    }
+//    success(r);
+//    #else
+    [self sendGet:@"user/msg/list"
+            param:[pi toDictionary]
+          success:^(id o) {
+              NSMutableArray *r=[NSMutableArray array];
+              for (NSDictionary *oned in (NSArray *) o) {
+                  [r addObject:[[MessageNoticingModel alloc] initWithDictionary:oned error:nil]];
+              }
+              success(r);
+          } failure:failure];
+//#endif
+}
 
 @end

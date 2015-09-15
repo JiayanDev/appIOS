@@ -131,4 +131,6 @@
 - (void)commentEventWithParams:(NSDictionary *)param success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getIndexList_success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)getNotificationListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 @end

@@ -330,6 +330,7 @@
 		3CDC5DFB489609637AE3625F /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EE28E8625F6FAC9F486 /* SLKTextView+SLKAdditions.m */; };
 		3CDC5E0A9EE8394151BCCCE6 /* 关@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC56C0F628220CECFD85D4 /* 关@3x.png */; };
 		3CDC5E478B5DF9C040CDB2B1 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC59C6192C5C969645E1A0 /* logo.png */; };
+		3CDC5E4C3FE5B561CBE00139 /* NotificationListTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AA2E5AC2D28F2015051 /* NotificationListTVC.m */; };
 		3CDC5E729817682916D18097 /* UIImage+RSKImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5217C522EBD712CF000C /* UIImage+RSKImageCropper.m */; };
 		3CDC5E80DC65DAB95EFAF04D /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B0605BDC5ADFE568BAE /* UIAlertView+Blocks.m */; };
 		3CDC5E81EA016B78E6623E89 /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */; };
@@ -628,6 +629,7 @@
 		3CDC54909B16504D3A46265E /* MLXLFormTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormTextFieldCell.m; sourceTree = "<group>"; };
 		3CDC5491E26918F70E986B0B /* 我的_我的通知.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的通知.png"; sourceTree = "<group>"; };
 		3CDC5499ACDA861EAA2D0189 /* 气泡@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡@3x.png"; sourceTree = "<group>"; };
+		3CDC54B259AA43DCF61F2374 /* NotificationListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListTVC.h; sourceTree = "<group>"; };
 		3CDC54BD94295EA7BB3708BC /* UIImageView+MLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MLStyle.m"; sourceTree = "<group>"; };
 		3CDC54D820DAE03CF8051DE9 /* AreaSelectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaSelectModel.h; sourceTree = "<group>"; };
 		3CDC54D83C8347D061A177DA /* 赞－灰@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赞－灰@3x.png"; sourceTree = "<group>"; };
@@ -761,6 +763,7 @@
 		3CDC5A430A17A773B80FA4C2 /* MLWebRedirectPusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLWebRedirectPusher.m; sourceTree = "<group>"; };
 		3CDC5A5B60184E3A29F42C81 /* UIScrollView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SLKAdditions.h"; sourceTree = "<group>"; };
 		3CDC5A7923D0A4D9A2E44955 /* 我的_美丽天使@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_美丽天使@3x.png"; sourceTree = "<group>"; };
+		3CDC5AA2E5AC2D28F2015051 /* NotificationListTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationListTVC.m; sourceTree = "<group>"; };
 		3CDC5AA3CC29C1CFDD4A27F4 /* RSKImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSKImageScrollView.m; sourceTree = "<group>"; };
 		3CDC5AC44BA8AB1FFB3A7AE2 /* MLBlurImageHeaderedWebview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLBlurImageHeaderedWebview.m; sourceTree = "<group>"; };
 		3CDC5AD3A598A3AD743782A9 /* IDMZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMZoomingScrollView.h; sourceTree = "<group>"; };
@@ -1592,6 +1595,8 @@
 			children = (
 				3CDC56C485646217D607FD65 /* NotificationListCell.m */,
 				3CDC5DEB02B17CC28C945514 /* NotificationListCell.h */,
+				3CDC5AA2E5AC2D28F2015051 /* NotificationListTVC.m */,
+				3CDC54B259AA43DCF61F2374 /* NotificationListTVC.h */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -2488,6 +2493,7 @@
 				3CDC57CF2A87FBA5A7BCE98A /* ChangePasswordFVC.m in Sources */,
 				3CDC5F3FE5A81470EDCFEE78 /* UIImageView+AvatarWithDefault.m in Sources */,
 				3CDC58D74ACB6E8B6D66B07C /* MessageNoticingModel.m in Sources */,
+				3CDC5E4C3FE5B561CBE00139 /* NotificationListTVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
