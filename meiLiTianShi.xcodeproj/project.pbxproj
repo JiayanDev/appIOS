@@ -222,6 +222,7 @@
 		3CDC58803D0EDE529AC327E4 /* TopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50439D6B18F000354CD6 /* TopicModel.m */; };
 		3CDC588FB771EAD4FFD85FBB /* 发现－亮@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC51CF637CD274346D7895 /* 发现－亮@3x.png */; };
 		3CDC58AAFB5966383A7A7533 /* MLStyleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC531D690D9F97CC50EBD6 /* MLStyleManager.m */; };
+		3CDC58D74ACB6E8B6D66B07C /* MessageNoticingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC592A5585788E18CA6605 /* MessageNoticingModel.m */; };
 		3CDC58D79207C332C307D257 /* UILabel+MLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5BFC9F5393CCD2A1C692 /* UILabel+MLStyle.m */; };
 		3CDC58E9285E5C2D758383D1 /* ELCAssetTablePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC597B403772AC21D8C2C6 /* ELCAssetTablePicker.xib */; };
 		3CDC58EF68CD27DD97F96BC0 /* PhoneBindVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AFE616B7BCE581AEB04 /* PhoneBindVC.m */; };
@@ -727,6 +728,7 @@
 		3CDC5915955F159F03CCE2EB /* IndexCellOfOthers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexCellOfOthers.h; sourceTree = "<group>"; };
 		3CDC591FDE2A71870F2E26FA /* ImageRowCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRowCollectionCell.m; sourceTree = "<group>"; };
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
+		3CDC592A5585788E18CA6605 /* MessageNoticingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNoticingModel.m; sourceTree = "<group>"; };
 		3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
 		3CDC594BBAFE71BECBE1EF55 /* DiaryInListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryInListCell.h; sourceTree = "<group>"; };
 		3CDC594E31CB68DAA3F612EC /* MLXLFormSelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormSelectorCell.h; sourceTree = "<group>"; };
@@ -840,6 +842,7 @@
 		3CDC5DD70181F64F813BAFC2 /* UILabel+MLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MLStyle.h"; sourceTree = "<group>"; };
 		3CDC5DE2C6E64CD4CAE79464 /* XLFormRatingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormRatingCell.h; sourceTree = "<group>"; };
 		3CDC5DE615351DAEEF160912 /* RSKImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKImageCropper.h; sourceTree = "<group>"; };
+		3CDC5DE7FF8AFB3E18ED7E77 /* MessageNoticingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageNoticingModel.h; sourceTree = "<group>"; };
 		3CDC5DEB02B17CC28C945514 /* NotificationListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListCell.h; sourceTree = "<group>"; };
 		3CDC5DF899CEC90E17742F7C /* DiaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryModel.h; sourceTree = "<group>"; };
 		3CDC5E0C3A66E170A06E7D3F /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
@@ -1399,6 +1402,8 @@
 				3CDC58B81A7108D668E1ECC6 /* UserDetailModel.h */,
 				3CDC5B57171E8E5F55DA5FB8 /* AreaSelectModel.m */,
 				3CDC54D820DAE03CF8051DE9 /* AreaSelectModel.h */,
+				3CDC592A5585788E18CA6605 /* MessageNoticingModel.m */,
+				3CDC5DE7FF8AFB3E18ED7E77 /* MessageNoticingModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2482,6 +2487,7 @@
 				3CDC599E4C44DDCFBD87B1E4 /* UINavigationController+statusBar.m in Sources */,
 				3CDC57CF2A87FBA5A7BCE98A /* ChangePasswordFVC.m in Sources */,
 				3CDC5F3FE5A81470EDCFEE78 /* UIImageView+AvatarWithDefault.m in Sources */,
+				3CDC58D74ACB6E8B6D66B07C /* MessageNoticingModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
