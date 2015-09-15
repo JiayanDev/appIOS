@@ -262,6 +262,28 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 }
 
+
+-(void)getUserDetail_success:(void(^)(UserDetailModel *))success  fail:(void (^)(NSInteger, id))failure{
+
+
+
+    [self sendGet:@"user/detail"
+            param:nil
+          success:^(id o) {
+              self.currentUserDetail=[[UserDetailModel alloc] initWithDictionary:o error:nil];
+              success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
+          } failure:failure];
+
+}
+
+-(void)updateUserInfo:(NSDictionary *)infoNeedUpdate success:(void(^)(void))success  fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"user/update"
+             param:infoNeedUpdate
+           success:^(id o) {
+               success();
+           } failure:failure];
+}
+
 -(void)checkUserHasPasswordSucc:(void (^)(BOOL hasPassword))success fail:(void (^)(NSInteger, id))failure{
     [self sendGet:@"user/has/psw"
             param:nil
@@ -284,6 +306,8 @@ constructingBodyWithBlock:constructingBodyWithBlock
                success();
            } failure:failure];
 }
+
+
 
 #pragma mark - 日志 话题
 
@@ -481,27 +505,6 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
 
-
--(void)getUserDetail_success:(void(^)(UserDetailModel *))success  fail:(void (^)(NSInteger, id))failure{
-
-
-
-    [self sendGet:@"user/detail"
-            param:nil
-          success:^(id o) {
-              self.currentUserDetail=[[UserDetailModel alloc] initWithDictionary:o error:nil];
-              success([[UserDetailModel alloc] initWithDictionary:o error:nil]);
-          } failure:failure];
-
-}
-
--(void)updateUserInfo:(NSDictionary *)infoNeedUpdate success:(void(^)(void))success  fail:(void (^)(NSInteger, id))failure{
-    [self sendPost:@"user/update"
-             param:infoNeedUpdate
-           success:^(id o) {
-                success();
-           } failure:failure];
-}
 
 
 -(void)uploadOneImage:(UIImage *)image

@@ -47,6 +47,8 @@
         self.title=@"微信绑定";
     }else if (self.type==PhoneBindVcType_changePasswordFirstStep){
         self.title=@"更改密码";
+    }else if (self.type==PhoneBindVcType_changePhone){
+        self.title=@"更改手机";
     }
 
 

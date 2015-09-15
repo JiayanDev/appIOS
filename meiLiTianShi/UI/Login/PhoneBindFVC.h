@@ -12,8 +12,9 @@ typedef NS_ENUM(NSUInteger , PhoneBindVcType){
     PhoneBindVcType_afterWechatLogin,
     PhoneBindVcType_registerFirstStep,
     PhoneBindVcType_forgetPasswordFirstStep,
-    PhoneBindVcType_bindWechatFirstStep,
-    PhoneBindVcType_changePasswordFirstStep,
+    PhoneBindVcType_bindWechatFirstStep,  //no use
+    PhoneBindVcType_changePasswordFirstStep,//no use
+    PhoneBindVcType_changePhone,
 };
 @interface PhoneBindFVC : MLXLformVC<FloatCellOfPhoneAndButton_buttonDelegate>
 @property (nonatomic, assign)PhoneBindVcType type;
