@@ -16,9 +16,11 @@
 @property (nonatomic, strong)NSString <Optional>*city;
 @property (nonatomic, strong)NSNumber <Optional>*birthday;
 @property (nonatomic, strong)NSString *phone;
-@property (nonatomic, assign)BOOL bindWX;
-@property (nonatomic, assign)BOOL bindWB;
-@property (nonatomic, assign)BOOL bindQQ;
+@property (nonatomic, assign)NSNumber <Optional>* bindWX;
+@property (nonatomic, assign)NSNumber <Optional>* bindWB;
+@property (nonatomic, assign)NSNumber <Optional>* bindQQ;
 
 - (NSString *)descOfGenderAreaAge;
+
+- (void)setGenderIconAndCityAndAgeForLabel:(UILabel *)label;
 @end

@@ -39,6 +39,17 @@
 };
 
 
+
+-(void)prependIconOfGender:(NSUInteger)gender{
+    if(gender){
+        [self prependIcon:[UIImage imageNamed:@"男.png"] ];
+    }else{
+        [self prependIcon:[UIImage imageNamed:@"女.png"] ];
+    }
+
+};
+
+
 -(void)prependIcon:(UIImage *)icon{
     NSTextAttachment *attachment = [[NSTextAttachment alloc] init];
     attachment.image = icon;

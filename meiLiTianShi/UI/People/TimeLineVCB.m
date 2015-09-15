@@ -14,6 +14,7 @@
 #import "IDMPhotoBrowser.h"
 #import "UserModel.h"
 #import "UIImageView+AvatarWithDefault.h"
+#import "UserDetailModel.h"
 
 
 @implementation TimeLineVCB {
@@ -24,13 +25,13 @@
     self.automaticallyAdjustsScrollViewInsets=NO;
     self.mainView= [[MLBlurImageHeaderedWebview alloc] init];
 
-    self.mainView.backgroundImageOrigin=[UIImage imageNamed:@"meinvtupianbizhi_813_051.jpg"];
+//    self.mainView.backgroundImageOrigin=[UIImage imageNamed:@"meinvtupianbizhi_813_051.jpg"];
     [self.view addSubview:self.mainView];
 
 
-    self.mainView.avatarView.image=[UIImage imageNamed:@"meinvtupianbizhi_813_051.jpg"];
-    self.mainView.nameLabel.text=@"hahahaha";
-    self.mainView.descLabel.text=@"hahahaha";
+//    self.mainView.avatarView.image=[UIImage imageNamed:@"meinvtupianbizhi_813_051.jpg"];
+//    self.mainView.nameLabel.text=@"hahahaha";
+//    self.mainView.descLabel.text=@"hahahaha";
     self.mainView.webView.delegate=self;
     self.url=[NSURL URLWithString:[NSString stringWithFormat:
             @"http://apptest.jiayantech.com/html/timeline.html?id=%@",self.userId]];
@@ -133,7 +134,7 @@
 
 
     }else if([requestModel.action isEqualToString:@"showUserProfileHeader"]){
-        UserModel*user= [[UserModel alloc] initWithDictionary:requestModel.data
+        UserDetailModel *user= [[UserDetailModel alloc] initWithDictionary:requestModel.data
                                                         error:nil];
         __weak TimeLineVCB *weakSelf = self;
         [self.mainView.avatarView setAvatarImageUrl:user.avatar
@@ -141,6 +142,10 @@
                                               weakSelf.mainView.avatarView.image=image;
                                               weakSelf.mainView.backgroundImageOrigin=image;
                                           }];
+
+        self.mainView.nameLabel.text=user.name;
+        self.mainView.headerLabel.text=user.name;
+        [user setGenderIconAndCityAndAgeForLabel:self.mainView.descLabel];
 
     }
 

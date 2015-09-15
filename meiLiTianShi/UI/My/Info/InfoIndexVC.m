@@ -160,7 +160,7 @@
         }
 
         setValue(kCellphone,model.phone);
-        setValue(kWeixin,model.bindWX?@"已绑定":@"未绑定");
+        setValue(kWeixin, [model.bindWX boolValue]?@"已绑定":@"未绑定");
 
 
 
@@ -183,7 +183,7 @@
                                                   message:nil
                                         cancelButtonTitle:@"取消"
                                    destructiveButtonTitle:nil
-                                        otherButtonTitles:@[self.detailModel.bindWX?
+                                        otherButtonTitles:@[[self.detailModel.bindWX boolValue]?
                                                 @"更换绑定的微信":
                                                 @"绑定微信"]
                        popoverPresentationControllerBlock:nil
@@ -234,7 +234,7 @@
                                           success:^{
                                               [TSMessage showNotificationWithTitle:@"修改成功" type:TSMessageNotificationTypeSuccess];
 
-                                              self.detailModel.bindWX=YES;
+                                              self.detailModel.bindWX=@YES;
                                               [self.tableView reloadData];
                                           } fail:^(NSInteger i, id o) {
                 [TSMessage showNotificationWithTitle:@"出错了"

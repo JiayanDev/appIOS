@@ -9,6 +9,7 @@
 #import "MLStyleManager.h"
 #import "UILabel+MLStyle.h"
 #import "UIImage+Color.h"
+#import "UIImageView+MLStyle.h"
 
 
 #define IMAGEVIEW_HEIGHT 220
@@ -122,7 +123,8 @@ CGFloat const distance_W_LabelHeader = 31.0;
                                                                         iterations:10
                                                                          tintColor:[UIColor colorWithHexString:@"333333" alpha:0.05]];
 
-    self.imageView.image=self.backgroundImageBlured;
+//    self.imageView.image=self.backgroundImageBlured;
+    [self.imageView setImageWithFadeIn:self.backgroundImageBlured];
 }
 
 

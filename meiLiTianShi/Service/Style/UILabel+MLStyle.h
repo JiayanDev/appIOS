@@ -14,6 +14,8 @@
 
 - (void)appendIconOfGender:(NSUInteger)gender;
 
+- (void)prependIconOfGender:(NSUInteger)gender;
+
 - (void)prependIcon:(UIImage *)icon;
 
 //- (void)prependIcon:(UIImage *)icon withBounds:(CGRect)bound;

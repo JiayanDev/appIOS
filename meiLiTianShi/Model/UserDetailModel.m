@@ -4,6 +4,7 @@
 //
 
 #import "UserDetailModel.h"
+#import "UILabel+MLStyle.h"
 
 
 @implementation UserDetailModel {
@@ -42,4 +43,35 @@
     return s;
 
 };
+
+-(void)setGenderIconAndCityAndAgeForLabel:(UILabel *)label{
+    NSMutableString *s=[NSMutableString new];
+
+    if(self.province){
+        [s appendString:self.province];
+    }
+    if(self.city){
+        [s appendString:self.city];
+        [s appendString:@" "];
+    }
+
+    if(self.birthday){
+        NSDate * b= [[NSDate alloc] initWithTimeIntervalSince1970:self.birthday.unsignedIntegerValue];
+        NSDate *today = [NSDate date];
+
+        NSDateComponents *ageComponents = [[NSCalendar currentCalendar]
+                components:NSYearCalendarUnit
+                  fromDate:b
+                    toDate:today
+                   options:0];
+
+        [s appendString:[NSString stringWithFormat:@"%@岁",@(ageComponents.year)]];
+    }
+
+    label.text=s;
+    [label prependIconOfGender:[self.gender unsignedIntegerValue]];
+};
+
+
+
 @end
