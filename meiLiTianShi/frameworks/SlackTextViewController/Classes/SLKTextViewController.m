@@ -1734,11 +1734,17 @@ NSInteger const SLKAlertViewClearTextTag = 1534347677; // absolute hash of 'SLKT
 - (void)textViewDidBeginEditing:(UITextView *)textView {
 //    [self.textInputbar beginTextEditing];
     self.textInputbar.likeButton.hidden=YES;
+    [self.textInputbar slk_animateLayoutIfNeededWithBounce:YES
+                                      options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState
+                                   animations:NULL];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView {
 //    [self.textInputbar endTextEdition];
     self.textInputbar.likeButton.hidden=NO;
+    [self.textInputbar slk_animateLayoutIfNeededWithBounce:NO
+                                                   options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState
+                                                animations:NULL];
 }
 
 
