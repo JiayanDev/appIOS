@@ -308,6 +308,20 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 
+-(void)changeUserPhoneWithPhoneNum:(NSString *)phoneNum receipt:(NSString *)receipt
+                                         success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+
+    [self sendPost:@"user/update/phone"
+             param:@{
+                     @"phoneNum":phoneNum,
+                     @"receipt":receipt,
+             }
+           success:^(id o) {
+               success();
+           } failure:failure];
+}
+
+
 
 #pragma mark - 日志 话题
 

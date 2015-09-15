@@ -62,6 +62,8 @@
 
 - (void)changeUserPasswordWithOriginalRawPassword:(NSString *)oldPassword newRawPassword:(NSString *)newRawPassword success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)changeUserPhoneWithPhoneNum:(NSString *)phoneNum receipt:(NSString *)receipt success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)getTopicListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)getDiaryBookListWithPageIndicator:(PageIndicator *)pi success:(void (^)(NSArray *))success fail:(void (^)(NSInteger, id))failure;

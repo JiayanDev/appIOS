@@ -14,7 +14,7 @@
 #import "AreaSelectTVC.h"
 #import "AreaSelectModel.h"
 #import "RMUniversalAlert.h"
-#import "PhoneBindVC.h"
+//#import "PhoneBindVC.h"
 #import "AvatarDetailVC.h"
 #import "WXApiObject.h"
 #import "WXApi.h"
@@ -24,6 +24,7 @@
 #import "RSKImageCropViewController.h"
 #import "MBProgressHUD.h"
 #import "SDWebImageManager.h"
+#import "PhoneBindFVC.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
@@ -105,7 +106,7 @@
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCellphone rowType:XLFormRowDescriptorTypeSelectorPush title:@"手机"];
 //    row.action.viewControllerClass=[MyDiaryBookListTVC class];
-    row.disabled=@YES;
+//    row.disabled=@YES;
     [section addFormRow:row];
 
     section = [XLFormSectionDescriptor formSectionWithTitle:@""];
@@ -135,6 +136,10 @@
     [self getData];
     [MLStyleManager removeBackTextForNextScene:self];
 
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self getData];
 }
 
 
@@ -205,6 +210,12 @@
                 }];
 //        [MLStyleManager styleTheNavigationBar:imagePickerController.navigationController.navigationBar];
 //        [MLStyleManager styleTheNavigationBar:imagePickerController.navigationBar];
+
+    }else if ([formRow.tag isEqualToString:kCellphone]){
+        PhoneBindFVC *vc=[PhoneBindFVC new];
+        vc.type=PhoneBindVcType_changePhone;
+        [self.navigationController pushViewController:vc
+                                             animated:YES];
 
     }
 }

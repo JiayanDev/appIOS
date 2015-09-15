@@ -215,6 +215,18 @@
 //        vc.phoneNum=self.phoneInput.text;
 //        [self.navigationController pushViewController:vc animated:YES];
 
+    }else if (self.type==PhoneBindVcType_changePhone){
+        [[MLSession current] changeUserPhoneWithPhoneNum:getValue(kPhone)
+                                                 receipt:self.receipt
+                                                 success:^{
+                                                     [TSMessage showNotificationWithTitle:@"更改手机成功"
+                                                                                     type:TSMessageNotificationTypeSuccess];
+                                                 } fail:^(NSInteger i, id o) {
+                    [TSMessage showNotificationWithTitle:@"出错了"
+                                                subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                    type:TSMessageNotificationTypeError];
+                }];
+
     }
 
 }
