@@ -210,6 +210,7 @@
 		3CDC57B17D6A85EC5755311F /* 我的_我的通知@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC54E98BB1F4C1059697E3 /* 我的_我的通知@2x.png */; };
 		3CDC57BC1D1969516FD38664 /* 添加图片－相机@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC58702DDE2D85441B4FFD /* 添加图片－相机@3x.png */; };
 		3CDC57CDEF135CCB494D78EA /* 活动地点@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5291BC43CE8C407DBD71 /* 活动地点@2x.png */; };
+		3CDC57CF2A87FBA5A7BCE98A /* ChangePasswordFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5CCEE3C463C0226F0554 /* ChangePasswordFVC.m */; };
 		3CDC57D0D1386790028302AA /* 确定.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5E33EF4483C09ED94BFE /* 确定.png */; };
 		3CDC57D7723F8B02D7FBAF6C /* IDMPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC58F3CE21869816BB0977 /* IDMPhotoBrowser.m */; };
 		3CDC57F094353BC28A524D06 /* 分享_微博@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC54DED74EF4644A1997EC /* 分享_微博@3x.png */; };
@@ -568,6 +569,7 @@
 		3CDC52B3040B7888C183D7E6 /* EventModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventModel.m; sourceTree = "<group>"; };
 		3CDC52BCD8CAE32BB1F9EB3F /* 男@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "男@2x.png"; sourceTree = "<group>"; };
 		3CDC52C0E4057D482CE67F83 /* PhoneRegisterSecondStepFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneRegisterSecondStepFVC.m; sourceTree = "<group>"; };
+		3CDC52C16B2FC4AB3CFE9CA1 /* ChangePasswordFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordFVC.h; sourceTree = "<group>"; };
 		3CDC52D19713D8D656A0176F /* EventRatingFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventRatingFVC.m; sourceTree = "<group>"; };
 		3CDC52D2A6FCE96FD2DAF844 /* IMG_1652.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1652.jpg; sourceTree = "<group>"; };
 		3CDC52DADE4303E359EF7D21 /* PersonCellOfAvatarAndName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonCellOfAvatarAndName.h; sourceTree = "<group>"; };
@@ -812,6 +814,7 @@
 		3CDC5CB9FB37F9C2F71AF213 /* TopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicModel.h; sourceTree = "<group>"; };
 		3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
 		3CDC5CBBC671C05CBF0DB901 /* IDMPhotoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhotoProtocol.h; sourceTree = "<group>"; };
+		3CDC5CCEE3C463C0226F0554 /* ChangePasswordFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordFVC.m; sourceTree = "<group>"; };
 		3CDC5CD839CA828726D624E4 /* GeneralWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralWebVC.h; sourceTree = "<group>"; };
 		3CDC5CE873EFFFC1530BA2D2 /* 赞－亮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赞－亮@2x.png"; sourceTree = "<group>"; };
 		3CDC5CF5A6319C12E2B536BA /* IDMPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhoto.h; sourceTree = "<group>"; };
@@ -1742,6 +1745,8 @@
 				075AC8C81B6F176E00C917B5 /* AvatarDetailVC.h */,
 				075AC8C91B6F176E00C917B5 /* AvatarDetailVC.m */,
 				075AC8CA1B6F176E00C917B5 /* AvatarDetailVC.xib */,
+				3CDC5CCEE3C463C0226F0554 /* ChangePasswordFVC.m */,
+				3CDC52C16B2FC4AB3CFE9CA1 /* ChangePasswordFVC.h */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -2474,6 +2479,7 @@
 				3CDC55503DE1191A34CADBCB /* ImageRowCollectionCell.m in Sources */,
 				3CDC5327F94ED7FD6F1497A7 /* UITabBarController+statusBar.m in Sources */,
 				3CDC599E4C44DDCFBD87B1E4 /* UINavigationController+statusBar.m in Sources */,
+				3CDC57CF2A87FBA5A7BCE98A /* ChangePasswordFVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
