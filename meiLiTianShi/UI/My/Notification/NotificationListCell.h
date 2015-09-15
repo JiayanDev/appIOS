@@ -7,4 +7,11 @@
 
 
 @interface NotificationListCell : UITableViewCell
+@property(nonatomic, strong) UIImageView *avatarView;
+@property(nonatomic, strong) UILabel *timeLabel;
+@property(nonatomic, strong) UILabel *nameLabel;
+@property(nonatomic, strong) UILabel *actionLabel;
+@property(nonatomic, strong) UILabel *contentLabel;
+@property(nonatomic, strong) UIImageView *secondContentImageView;
+@property(nonatomic, strong) UILabel *secondContentLabel;
 @end
