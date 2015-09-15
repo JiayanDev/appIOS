@@ -71,9 +71,14 @@
             @"satisfyLevelToAngel":@(cell.star1.value),
             @"satisfyLevelToDoctor":@(cell.star1.value),
     } success:^{
+        [TSMessage showNotificationWithTitle:@"评论成功"
+                                        type:TSMessageNotificationTypeSuccess];
+        [self.navigationController popViewControllerAnimated:YES];
 
     } fail:^(NSInteger i, id o) {
-
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
     }];
 
 
