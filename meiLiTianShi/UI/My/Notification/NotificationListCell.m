@@ -25,15 +25,14 @@
         self.secondContentImageView=[UIImageView new];
         self.secondContentLabel=[UILabel newMLStyleWithSize:13 isGrey:YES];
 
-        self.secondContentImageView.image= [[UIImage imageNamed:@"气泡.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(24,28,19,25)];
+
 
         [self.contentView addSubview:self.avatarView];
         [self.contentView addSubview:self.timeLabel];
         [self.contentView addSubview:self.nameLabel];
         [self.contentView addSubview:self.actionLabel];
         [self.contentView addSubview:self.contentLabel];
-        [self.contentView addSubview:self.secondContentImageView];
-        [self.secondContentImageView addSubview:self.secondContentLabel];
+
 
         [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.contentView).offset(17);
@@ -60,18 +59,10 @@
         [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.nameLabel.mas_bottom).offset(15);
             make.left.equalTo(self.avatarView.mas_right).offset(10);
-            make.bottom.equalTo(self.contentView).offset(17).priority(500);
+            make.bottom.equalTo(self.contentView).offset(-17).priority(500);
         }];
 
-        [self.secondContentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentLabel.mas_bottom).offset(15);
-            make.left.equalTo(self.avatarView.mas_right).offset(10);
-            make.bottom.equalTo(self.contentView).offset(17).priority(600);
-        }];
 
-        [self.secondContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.secondContentImageView).insets(UIEdgeInsetsMake(15,10,10,10));
-        }];
 
 
     }
@@ -79,4 +70,29 @@
     return self;
 }
 
+
+-(void)setTheSecondContentViews{
+    [self removeTheSecondContentViews];
+    self.secondContentImageView=[UIImageView new];
+    self.secondContentLabel=[UILabel newMLStyleWithSize:13 isGrey:YES];
+    [self.contentView addSubview:self.secondContentImageView];
+    [self.secondContentImageView addSubview:self.secondContentLabel];
+    self.secondContentImageView.image= [[UIImage imageNamed:@"气泡.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(24,28,19,25)];
+    [self.secondContentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentLabel.mas_bottom).offset(15);
+        make.left.equalTo(self.avatarView.mas_right).offset(10);
+        make.bottom.equalTo(self.contentView).offset(-17).priority(600);
+        make.right.equalTo(self.contentView).offset(-15);
+    }];
+
+    [self.secondContentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.secondContentImageView).insets(UIEdgeInsetsMake(15,10,10,10));
+    }];
+};
+
+
+-(void)removeTheSecondContentViews{
+    [self.secondContentImageView removeFromSuperview];
+    [self.secondContentLabel removeFromSuperview];
+}
 @end

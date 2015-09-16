@@ -12,7 +12,7 @@
     if(urlString&&urlString!=[NSNull null]&&urlString.length>0){
         [self sd_setImageWithURL:[[NSURL alloc] initWithString:urlString]];
     }else{
-        self.image=[UIImage imageNamed:@"logo.png"];
+        self.image=[UIImage imageNamed:@"默认头像－灰.png"];
     }
 }
 
@@ -24,7 +24,7 @@
                             completed(image);
                        }];
     }else{
-        self.image=[UIImage imageNamed:@"logo.png"];
+        self.image=[UIImage imageNamed:@"默认头像－灰.png"];
         completed(self.image);
     }
 }

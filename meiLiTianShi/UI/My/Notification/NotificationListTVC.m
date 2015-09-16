@@ -109,9 +109,10 @@
     cell.timeLabel.text= [data.createTime stringOfDateSince1970_blankTip:@"未知"];
     cell.contentLabel.text=data.commentContent;
     if(data.subject && data.subjectContent && data.subjectContent.length>0){
-        cell.secondContentImageView.hidden=NO;
+        [cell setTheSecondContentViews];
         cell.secondContentLabel.text=data.subjectContent;
     }else{
+        [cell removeTheSecondContentViews];
         cell.secondContentImageView.hidden=YES;
     }
 
