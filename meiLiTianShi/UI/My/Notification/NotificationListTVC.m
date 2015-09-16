@@ -94,11 +94,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.tableData.count;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.tableData.count;
 }
 
 -(void)setCell:(NotificationListCell *)cell withData:(MessageNoticingModel*)data{
@@ -121,11 +121,11 @@
 -(UITableViewCell *)tableView :(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NotificationListCell *cell=[self.tableView dequeueReusableCellWithIdentifier:kCell];
     [self setCell:cell
-         withData:self.tableData[indexPath.section]];
+         withData:self.tableData[indexPath.row]];
     return cell;
 
 //    MyBanMeiCellB *cell=[self.tableView dequeueReusableCellWithIdentifier:kBanmeiCell];
-//    EventModel *data=self.tableData[indexPath.section];
+//    EventModel *data=self.tableData[indexPath.row];
 //    cell.thumbImageView.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
 //    if(data.thumbnailImg){
 //        [cell.thumbImageView sd_setImageWithURL:[NSURL URLWithString:data.thumbnailImg]];
@@ -153,12 +153,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self.tableView fd_heightForCellWithIdentifier:kCell configuration:^(id cell) {
         [self setCell:cell
-             withData:self.tableData[indexPath.section]];
+             withData:self.tableData[indexPath.row]];
     }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    EventModel *d=self.tableData[indexPath.section];
+//    EventModel *d=self.tableData[indexPath.row];
 //    EventDetailVC *vc= [[EventDetailVC alloc] init];
 //    vc.eventId=[d.eventId unsignedIntegerValue];
 //    [self.navigationController pushViewController:vc
