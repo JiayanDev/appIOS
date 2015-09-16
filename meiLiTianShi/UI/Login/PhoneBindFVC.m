@@ -34,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
+
     [MLStyleManager removeBackTextForNextScene:self];
 
     if (self.type==PhoneBindVcType_registerFirstStep){
@@ -62,6 +62,19 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
+    if(self.presentingViewController){
+        self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"取消"
+                                                                                style:UIBarButtonItemStylePlain target:self
+                                                                               action:@selector(dismiss)];
+    }
+
+}
+
+
+-(void)dismiss{
+    [self.presentingViewController dismissViewControllerAnimated:YES
+                                                      completion:nil];
 }
 
 
@@ -221,6 +234,13 @@
                                                  success:^{
                                                      [TSMessage showNotificationWithTitle:@"更改手机成功"
                                                                                      type:TSMessageNotificationTypeSuccess];
+                                                     if(self.presentingViewController){
+                                                         [self.presentingViewController dismissViewControllerAnimated:YES
+                                                                                                           completion:nil];
+                                                     }else{
+
+                                                         [self.navigationController popViewControllerAnimated:YES];
+                                                     }
                                                  } fail:^(NSInteger i, id o) {
                     [TSMessage showNotificationWithTitle:@"出错了"
                                                 subtitle:[NSString stringWithFormat:@"%d - %@", i, o]

@@ -88,6 +88,7 @@
 		3CDC503D12C1AABC645C9F35 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC579AF2BF44A8F6413D85 /* Localizable.strings */; };
 		3CDC5049CDE2C8AEF6A48902 /* 分享_qq空间@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC56BD6CE95F34925FF712 /* 分享_qq空间@3x.png */; };
 		3CDC5053A878A5034EEA4C5E /* 活动名称.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC538242A3669457EF4B39 /* 活动名称.png */; };
+		3CDC505E1D986A98D70E30C1 /* UIViewController+requireLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FB2C28C861CC61997F9 /* UIViewController+requireLogin.m */; };
 		3CDC506588BA8E9AE718B348 /* 分享_微信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC55679A443BF805F4539B /* 分享_微信@2x.png */; };
 		3CDC506777A977C9EE0044DD /* EventJoinApplyFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC51B7755AF78323A1110E /* EventJoinApplyFVC.m */; };
 		3CDC506B16F6BD6A398CE70F /* 我的_设置@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC563702F4589268BCF4FF /* 我的_设置@2x.png */; };
@@ -603,6 +604,7 @@
 		3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black@2x.png"; sourceTree = "<group>"; };
 		3CDC53B37FCA42C790FAB706 /* 女.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "女.png"; sourceTree = "<group>"; };
 		3CDC53C8236E9347C8A629FB /* ShareViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewManager.h; sourceTree = "<group>"; };
+		3CDC53CA4F505187B54DCDA6 /* UIViewController+requireLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+requireLogin.h"; sourceTree = "<group>"; };
 		3CDC53CAAB6150275227214A /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
 		3CDC53F0691BD6FD4301024B /* IDMPhotoBrowser_arrowLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDMPhotoBrowser_arrowLeft.png; sourceTree = "<group>"; };
 		3CDC53FE4E82611186E33AE3 /* MLStyleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStyleManager.h; sourceTree = "<group>"; };
@@ -891,6 +893,7 @@
 		3CDC5FAFB7DE4926E632619C /* MLXLformVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLformVC.m; sourceTree = "<group>"; };
 		3CDC5FB04AC2E2B3B8EC5645 /* NSNumber+MLUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MLUtil.h"; sourceTree = "<group>"; };
 		3CDC5FB22D978467D2C673BB /* 我的－灰@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的－灰@3x.png"; sourceTree = "<group>"; };
+		3CDC5FB2C28C861CC61997F9 /* UIViewController+requireLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+requireLogin.m"; sourceTree = "<group>"; };
 		3CDC5FB3EFE3E1443FCBB551 /* PhoneAndGotoEditButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneAndGotoEditButtonCell.h; sourceTree = "<group>"; };
 		3CDC5FB8E7B2B86D4C841E6C /* 内容清除@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "内容清除@2x.png"; sourceTree = "<group>"; };
 		3CDC5FBADD51C50D88CED03E /* 未选取照片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未选取照片.png"; sourceTree = "<group>"; };
@@ -1056,6 +1059,8 @@
 				3CDC54279D945B4F1BFBEBFE /* UINavigationController+statusBar.h */,
 				3CDC51F8CE80A281B0932602 /* UIImageView+AvatarWithDefault.m */,
 				3CDC5641FE0C5D3B729B3150 /* UIImageView+AvatarWithDefault.h */,
+				3CDC5FB2C28C861CC61997F9 /* UIViewController+requireLogin.m */,
+				3CDC53CA4F505187B54DCDA6 /* UIViewController+requireLogin.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2506,6 +2511,7 @@
 				3CDC5F3FE5A81470EDCFEE78 /* UIImageView+AvatarWithDefault.m in Sources */,
 				3CDC58D74ACB6E8B6D66B07C /* MessageNoticingModel.m in Sources */,
 				3CDC5E4C3FE5B561CBE00139 /* NotificationListTVC.m in Sources */,
+				3CDC505E1D986A98D70E30C1 /* UIViewController+requireLogin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

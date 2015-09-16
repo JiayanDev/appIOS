@@ -61,6 +61,7 @@
 }
 
 
+
 -(void)layoutTheBottom{
     self.tableView.tableFooterView=[UIView new];
     b=[UIButton new];
@@ -121,6 +122,8 @@ forControlEvents:UIControlEventTouchUpInside];
     r.size.height=MAX(64, self.tableView.frame.size.height-r.origin.y-64);
     self.tableView.tableFooterView.frame=r;
 
+    setValue(kPhoneCell,[MLSession current].currentUser.phoneNum);
+    [self.tableView reloadData];
 }
 
 - (IBAction)submitButtonPress:(id)sender {

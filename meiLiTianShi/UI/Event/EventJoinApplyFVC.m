@@ -18,6 +18,7 @@
 #import "TSMessage.h"
 #import "UserDetailModel.h"
 #import "RMUniversalAlert.h"
+#import "NSNumber+MLUtil.h"
 
 @interface EventJoinApplyFVC()
 @property (nonatomic, strong)EventModel *event;
@@ -40,7 +41,7 @@
     setValue(kInfoCell,(@[
             @{@"项目":([self.eventInfo valueForKeyPath:@"categoryIds"]!=[NSNull null]?[self.eventInfo valueForKeyPath:@"categoryIds"]:@"null")},
             @{@"医生":[self.eventInfo valueForKeyPath:@"doctorName"]},
-            @{@"时间":[self.eventInfo valueForKeyPath:@"beginTime"]}]));
+            @{@"时间": [((NSNumber *) [self.eventInfo valueForKeyPath:@"beginTime"]) stringOfDateSince1970_blankTip:@"未知"]}]));
     setValue(kPersonCell,(@{kName:[self.eventInfo valueForKeyPath:@"angelUserInfo.name"],
             kAvatar:[self.eventInfo valueForKeyPath:@"angelUserInfo.avatar"],}));
     setValue(kPhoneCell,[MLSession current].currentUser.phoneNum);
@@ -138,6 +139,9 @@ forControlEvents:UIControlEventTouchUpInside];
     CGRect r=self.tableView.tableFooterView.frame;
     r.size.height=MAX(64, self.tableView.frame.size.height-r.origin.y-64);
     self.tableView.tableFooterView.frame=r;
+
+    setValue(kPhoneCell,[MLSession current].currentUser.phoneNum);
+    [self.tableView reloadData];
 
 }
 

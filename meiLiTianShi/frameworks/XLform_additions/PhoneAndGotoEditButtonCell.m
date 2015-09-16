@@ -7,13 +7,14 @@
 #import "PhoneAndGotoEditButtonCell.h"
 #import "MASConstraintMaker.h"
 #import "UILabel+MLStyle.h"
+#import "PhoneBindFVC.h"
 
 NSString * const XLFormRowDescriptorType_PhoneAndGotoEditButtonCell = @"XLFormRowDescriptorType_PhoneAndGotoEditButtonCell";
 
 @interface PhoneAndGotoEditButtonCell()
 @property (nonatomic, strong)UILabel *phoneLabel;
 @property (nonatomic, strong)UILabel *titleLabel;
-@property (nonatomic, strong)UILabel *gotoEditLabel;
+@property (nonatomic, strong) UIButton *gotoEditLabel;
 @end
 @implementation PhoneAndGotoEditButtonCell {
 
@@ -30,7 +31,7 @@ NSString * const XLFormRowDescriptorType_PhoneAndGotoEditButtonCell = @"XLFormRo
 
     self.phoneLabel=[UILabel newMLStyleWithSize:15 isGrey:NO];
     self.titleLabel=[UILabel newMLStyleWithSize:15 isGrey:YES];
-    self.gotoEditLabel= [UILabel newMLStyleWithSize:15 isGrey:NO];
+    self.gotoEditLabel= [UIButton buttonWithType:UIButtonTypeCustom];
 
     [self.contentView addSubview:self.phoneLabel];
     [self.contentView addSubview:self.titleLabel];
@@ -52,12 +53,28 @@ NSString * const XLFormRowDescriptorType_PhoneAndGotoEditButtonCell = @"XLFormRo
 
     }];
 
-    self.gotoEditLabel.textColor=THEME_COLOR;
-    self.gotoEditLabel.text=@"更换";
+
+
+    [self.gotoEditLabel setTitle:@"更换" forState:UIControlStateNormal];
+    [self.gotoEditLabel setTitleColor:THEME_COLOR forState:UIControlStateNormal];
+    self.gotoEditLabel.titleLabel.font=[UIFont systemFontOfSize:15];
     self.titleLabel.text=@"手机";
+
+    [self.gotoEditLabel addTarget:self
+                           action:@selector(changePhone)
+                 forControlEvents:UIControlEventTouchUpInside];
 
     self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
 
+}
+
+
+-(void)changePhone{
+    PhoneBindFVC *vc=[PhoneBindFVC new];
+    vc.type=PhoneBindVcType_changePhone;
+    [self.formViewController presentViewController:[[UINavigationController alloc] initWithRootViewController:vc]
+                                          animated:YES
+                                        completion:nil];
 }
 
 

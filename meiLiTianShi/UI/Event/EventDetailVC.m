@@ -20,6 +20,7 @@
 #import "MLWebRedirectPusher.h"
 #import "ShareViewManager.h"
 #import "EventJoinApplyFVC.h"
+#import "UIViewController+requireLogin.h"
 
 @interface EventDetailVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -102,6 +103,10 @@
                                                  withReqeust:requestModel
                                                    isSuccess:YES];
     }else if([requestModel.action isEqualToString:@"applymentEvent"]){
+        if(![MLSession current].isLogined){
+            [self requireLogin];
+            return YES;
+        }
         EventJoinApplyFVC *vc= [[EventJoinApplyFVC alloc] init];
         vc.eventId=requestModel.data[@"id"];
         vc.eventInfo=requestModel.data[@"eventInfo"];

@@ -318,6 +318,8 @@ constructingBodyWithBlock:constructingBodyWithBlock
                      @"receipt":receipt,
              }
            success:^(id o) {
+               self.currentUser.phoneNum=phoneNum;
+               self.currentUserDetail.phone=phoneNum;
                success();
            } failure:failure];
 }
