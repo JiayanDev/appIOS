@@ -8,4 +8,8 @@
 
 @interface IndexCellOfOthers : UITableViewCell
 @property(nonatomic, strong) UIImageView *backImage;
+
++ (int)cellHeight;
+
+- (int)cellHeight;
 @end

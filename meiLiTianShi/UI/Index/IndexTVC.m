@@ -22,6 +22,7 @@
 #import "IndexCellPR.h"
 #import "IndexCellOfOthers.h"
 #import "UIImageView+MLStyle.h"
+#import "UIImage+Resizing.h"
 
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
@@ -100,7 +101,7 @@ return 1;
         if(data.coverImg){
             [cell.backImage sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                         [cell.backImage setImageWithFadeIn:image];
+                                         [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
                                          [cell.backImage setNeedsDisplay];
                                      }];
         }else{
@@ -114,7 +115,7 @@ return 1;
         if(data.coverImg){
             [cell.backImage sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                         [cell.backImage setImageWithFadeIn:image];
+                                         [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
 //                                         cell.backImage.image=image;
                                          [cell.backImage setNeedsDisplay];
                                      }];
@@ -144,6 +145,8 @@ return 1;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
+        return [IndexCellOfOthers cellHeight];
+        return [tableView fd_heightForCellWithIdentifier:kIndexCellOther cacheByIndexPath:indexPath configuration:nil];
         return [tableView fd_heightForCellWithIdentifier:kIndexCellOther cacheByIndexPath:indexPath configuration:^(id cell) {
 //        id data = self.tableData[indexPath.section];
 //        [self setTheCell:cell withData:data];
@@ -151,6 +154,8 @@ return 1;
 
         }];
     }else{
+        return [IndexCellPR cellHeight];
+        return [tableView fd_heightForCellWithIdentifier:kIndexCellEvent cacheByIndexPath:indexPath configuration:nil];
         return [tableView fd_heightForCellWithIdentifier:kIndexCellEvent cacheByIndexPath:indexPath configuration:^(id cell) {
 //        id data = self.tableData[indexPath.section];
 //        [self setTheCell:cell withData:data];

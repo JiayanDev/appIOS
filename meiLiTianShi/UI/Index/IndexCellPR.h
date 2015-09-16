@@ -15,4 +15,8 @@
 @property(nonatomic, strong) UILabel *doctorNameLabel;
 @property(nonatomic, strong) UILabel *doctorDescLabel;
 @property(nonatomic, strong) UILabel *statusLabel;
+
++ (int)cellHeight;
+
+- (int)cellHeight;
 @end

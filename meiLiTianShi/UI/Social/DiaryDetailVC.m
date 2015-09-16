@@ -165,6 +165,15 @@
                                                         isSuccess:YES];
 
 
+    }else if([requestModel.action isEqualToString:@"postDetailData"]){
+
+
+        if(self.type==WebviewWithCommentVcDetailTypeDiary){
+            DiaryModel *diary= [[DiaryModel alloc] initWithDictionary:requestModel.data
+                                                                error:nil];
+            self.textInputbar.likeButton.selected= [diary.isLike boolValue];
+        }
+
     }
 
     return NO;

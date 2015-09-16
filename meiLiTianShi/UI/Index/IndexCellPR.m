@@ -101,4 +101,9 @@
     }
     return self;
 }
+
+
++(int)cellHeight{
+    return (int)(SCREEN_WIDTH*380/750.0)+44;
+}
 @end
