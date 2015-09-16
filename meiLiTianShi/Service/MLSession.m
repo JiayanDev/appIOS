@@ -521,6 +521,37 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
 
+-(void)likePostId:(NSNumber *)iden
+          success:(void(^)(void))success
+             fail:(void (^)(NSInteger, id))failure{
+
+
+
+    [self sendPost:@"post/like"
+            param:@{@"id":iden}
+          success:^(id o) {
+              success();
+          } failure:failure];
+
+}
+
+
+-(void)cancelLikePostId:(NSNumber *)iden
+          success:(void(^)(void))success
+             fail:(void (^)(NSInteger, id))failure{
+
+
+
+    [self sendPost:@"post/cancel_like"
+             param:@{@"postId":iden}
+           success:^(id o) {
+               success();
+           } failure:failure];
+
+}
+
+
+
 
 
 

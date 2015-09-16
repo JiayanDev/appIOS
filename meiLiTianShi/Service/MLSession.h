@@ -98,6 +98,10 @@
 
 - (void)updateUserInfo:(NSDictionary *)infoNeedUpdate success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)likePostId:(NSNumber *)iden success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
+- (void)cancelLikePostId:(NSNumber *)iden success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)uploadOneImage:(UIImage *)image uploadToken:(UploadTokenModel *)uploadToken success:(void (^)(NSString *url))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)uploadImages:(NSArray *)imageDatas uploadToken:(UploadTokenModel *)uploadToken allFinish:(void (^)(NSArray *urls, NSArray *fails, NSArray *remainImageDatas))success;

@@ -81,6 +81,10 @@
 
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
+
+    [self.textInputbar.likeButton addTarget:self
+                                     action:@selector(likePress:)
+                           forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -96,6 +100,41 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)likePress:(UIButton *)sender{
+    NSNumber *iden;
+    if(self.type==WebviewWithCommentVcDetailTypeDiary){
+        iden= @(self.diary.id);
+    }else{
+        iden= @(self.topic.id);
+    }
+    if(sender.selected){
+        sender.selected=NO;
+        [[MLSession current] cancelLikePostId:iden
+                                      success:^{
+
+                                      } fail:^(NSInteger i, id o) {
+                    sender.selected=YES;
+                    [TSMessage showNotificationWithTitle:@"出错了"
+                                                subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                    type:TSMessageNotificationTypeError];
+                }];
+    }else{
+        sender.selected=YES;
+
+        [[MLSession current] likePostId:iden
+                                      success:^{
+
+                                      } fail:^(NSInteger i, id o) {
+                    sender.selected=NO;
+                    [TSMessage showNotificationWithTitle:@"出错了"
+                                                subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                    type:TSMessageNotificationTypeError];
+                }];
+    }
+
+
+};
 
 #pragma mark - webview delegate
 
