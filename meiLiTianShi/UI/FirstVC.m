@@ -84,6 +84,7 @@
 
 
     testAppDelegate.window.rootViewController = tabBarController;
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
 - (void)didReceiveMemoryWarning {

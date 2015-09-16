@@ -21,6 +21,7 @@
 #import "ShareViewManager.h"
 #import "EventJoinApplyFVC.h"
 #import "UIViewController+requireLogin.h"
+#import "TSMessage.h"
 
 @interface EventDetailVC ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -107,10 +108,23 @@
             [self requireLogin];
             return YES;
         }
-        EventJoinApplyFVC *vc= [[EventJoinApplyFVC alloc] init];
-        vc.eventId=requestModel.data[@"id"];
-        vc.eventInfo=requestModel.data[@"eventInfo"];
-        [self.navigationController pushViewController:vc animated:YES];
+
+        @try {
+            EventJoinApplyFVC *vc= [[EventJoinApplyFVC alloc] init];
+            vc.eventId=requestModel.data[@"id"];
+            vc.eventInfo=requestModel.data[@"eventInfo"];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        @catch (NSException *exception) {
+            [TSMessage showNotificationWithTitle:@"请稍等再试"
+                                        subtitle:[NSString stringWithFormat:@"%@",exception]
+                                            type:TSMessageNotificationTypeError];
+        }
+        @finally {
+            //Display Alternative
+        }
+
+
 
     }else if([requestModel.action isEqualToString:@"setNavigationBarTitle"]){
 
