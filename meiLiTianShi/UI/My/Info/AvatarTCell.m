@@ -17,6 +17,9 @@ NSString * const XLFormRowDescriptorTypeAvatar = @"XLFormRowDescriptorTypeAvatar
 - (void)awakeFromNib {
     // Initialization code
     self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+    self.avatar.layer.cornerRadius = 20;
+    self.avatar.clipsToBounds = YES;
+    self.avatar.contentMode=UIViewContentModeScaleAspectFill;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

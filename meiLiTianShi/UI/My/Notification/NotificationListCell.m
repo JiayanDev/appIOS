@@ -79,7 +79,7 @@
     [self.secondContentImageView addSubview:self.secondContentLabel];
     self.secondContentImageView.image= [[UIImage imageNamed:@"气泡.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(24,28,19,25)];
     [self.secondContentImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentLabel.mas_bottom).offset(15);
+        make.top.equalTo(self.contentLabel.mas_bottom).offset(9);
         make.left.equalTo(self.avatarView.mas_right).offset(10);
         make.bottom.equalTo(self.contentView).offset(-17).priority(600);
         make.right.equalTo(self.contentView).offset(-15);
