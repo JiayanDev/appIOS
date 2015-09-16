@@ -19,6 +19,8 @@
 #import "UITabBarController+statusBar.h"
 #import "UINavigationController+statusBar.h"
 
+#define NOT_LOGIN_CODE (-17)
+
 #define THE1PX_CONST (CGFloat)(1.0 / [UIScreen mainScreen].scale)
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height

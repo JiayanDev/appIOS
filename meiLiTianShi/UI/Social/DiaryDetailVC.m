@@ -190,6 +190,7 @@
 
 
     }else if([requestModel.action isEqualToString:@"getUserInfo"]){
+        if([MLSession current].isLogined){
         NSDictionary *d=@{
                 @"id":@([MLSession current].currentUser.id),
                 @"name":[MLSession current].currentUser.name,
@@ -202,6 +203,15 @@
                                          data:d] respondToWebview:self.webView
                                                       withReqeust:requestModel
                                                         isSuccess:YES];
+        }else{
+            [[WebviewRespondModel respondWithCode:@NOT_LOGIN_CODE
+                                              msg:@"ok"
+                                             data:@{
+                                                     @"token":[MLSession current].token,
+                                             }] respondToWebview:self.webView
+                                                          withReqeust:requestModel
+                                                            isSuccess:YES];
+        }
 
 
     }else if([requestModel.action isEqualToString:@"postDetailData"]){

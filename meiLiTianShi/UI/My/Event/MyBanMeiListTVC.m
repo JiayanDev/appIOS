@@ -139,4 +139,8 @@
 - (BOOL)hidesBottomBarWhenPushed {
     return YES;
 }
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"你还没有参加伴美活动.png"];
+}
 @end
