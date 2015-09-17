@@ -3,7 +3,7 @@
 #import "MLRequestManager.h"
 #import "MLSession.h"
 
-static NSString* BASE_URL = @"http://apptest.jiayantech.com:80/";
+static NSString* BASE_URL = @"http://apptest.jiayantech.com/";
 
 
 static MLRequestManager* instance = nil;
