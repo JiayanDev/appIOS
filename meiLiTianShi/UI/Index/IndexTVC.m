@@ -99,15 +99,45 @@ return 1;
 //        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
 //        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
         if(data.coverImg){
-            if(cell.backImage.image){
-                [cell.backImage sd_setImageWithURL:data.coverImg];
-            }else{
-            [cell.backImage sd_setImageWithURL:data.coverImg
-                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                         [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
-//                                         [cell.backImage setNeedsDisplay];
-                                     }];
+//            if(cell.backImage.image){
+//                [cell.backImage sd_setImageWithURL:data.coverImg];
+//            }else{
+//            [cell.backImage sd_setImageWithURL:data.coverImg
+//                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                         [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
+////                                         [cell.backImage setNeedsDisplay];
+//                                     }];
+//            }
+
+
+            BOOL animated=(!self.tableView.isDragging && !self.tableView.isDecelerating);
+            if (animated) {
+                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)];
+                        dispatch_main_async_safe(^{
+                            [cell.backImage setImageWithFadeIn:scaledImage];
+
+//                    cell.backImage.image=scaledImage;
+                        });
+                    });
+
+                }];
+            } else {
+                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)];
+                        dispatch_main_async_safe(^{
+//                        [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(w*2,w*2)]];
+
+                            cell.backImage.image = scaledImage;
+                        });
+                    });
+
+                }];
             }
+
+
         }else{
             cell.backImage.backgroundColor=THEME_COLOR;
         }
@@ -117,15 +147,43 @@ return 1;
 
         IndexCellPR  *cell=[self.tableView dequeueReusableCellWithIdentifier:kIndexCellEvent];
         if(data.coverImg){
-            if(cell.backImage.image){
-                [cell.backImage sd_setImageWithURL:data.coverImg];
-            }else{
-                [cell.backImage sd_setImageWithURL:data.coverImg
-                                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                             [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
-//                                         [cell.backImage setNeedsDisplay];
-                                         }];
-            }
+//            if(cell.backImage.image){
+//                [cell.backImage sd_setImageWithURL:data.coverImg];
+//            }else{
+//                [cell.backImage sd_setImageWithURL:data.coverImg
+//                                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                                             [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
+////                                         [cell.backImage setNeedsDisplay];
+//                                         }];
+//            }
+
+            BOOL animated=(!self.tableView.isDragging && !self.tableView.isDecelerating);
+            [cell.backImage setImageWithScalingToSelfSizeWithUrl:[NSURL URLWithString:data.coverImg] AndWillAnimate:animated];
+//            if (animated) {
+//                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)];
+//                        dispatch_main_async_safe(^{
+//                            [cell.backImage setImageWithFadeIn:scaledImage];
+//
+////                    cell.backImage.image=scaledImage;
+//                        });
+//                    });
+//
+//                }];
+//            } else {
+//                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)];
+//                        dispatch_main_async_safe(^{
+////                        [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(w*2,w*2)]];
+//
+//                            cell.backImage.image = scaledImage;
+//                        });
+//                    });
+//
+//                }];
+//            }
         }else{
             cell.backImage.backgroundColor=THEME_COLOR;
         }

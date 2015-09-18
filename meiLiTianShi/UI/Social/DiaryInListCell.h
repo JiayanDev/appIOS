@@ -15,4 +15,6 @@
 @property(nonatomic, strong) UILabel *contentLabel;
 @property(nonatomic, strong) UILabel *dateLabel;
 @property(nonatomic, strong) UILabel *pinglunAndZanLabel;
+
+- (void)setImages:(NSArray *)images withAnimations:(BOOL)animated;
 @end

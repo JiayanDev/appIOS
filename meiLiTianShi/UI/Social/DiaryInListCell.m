@@ -8,6 +8,7 @@
 #import "DiaryInListCell.h"
 #import "UIImageView+MLStyle.h"
 #import "UILabel+MLStyle.h"
+#import "UIImage+Resizing.h"
 
 
 @implementation DiaryInListCell {
@@ -83,7 +84,7 @@
     return self;
 }
 
-- (void)setImages:(NSArray *)images {
+- (void)setImages:(NSArray *)images withAnimations:(BOOL)animated {
     [self.imageViews makeObjectsPerformSelector: @selector(removeFromSuperview)];
     self.imageViews=[NSMutableArray new];
     CGFloat w= (CGFloat) ((SCREEN_WIDTH-8-9-35-15+5)/3.0-5);
@@ -95,9 +96,33 @@
         v.contentMode=UIViewContentModeScaleAspectFill;
         v.clipsToBounds=YES;
 //        [v sd_setImageWithURL:url];
-        [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            [v setImageWithFadeIn:image];
-        }];
+//        [v setImageWithScalingToSelfSizeWithUrl:url AndWillAnimate:animated];
+
+        if (animated) {
+            [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(w * 2, w * 2)];
+                    dispatch_main_async_safe(^{
+                        [v setImageWithFadeIn:scaledImage];
+
+//                    v.image=scaledImage;
+                    });
+                });
+
+            }];
+        } else {
+            [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(w * 2, w * 2)];
+                    dispatch_main_async_safe(^{
+//                        [v setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(w*2,w*2)]];
+
+                        v.image = scaledImage;
+                    });
+                });
+
+            }];
+        }
         [self.contentView addSubview:v];
         [self.imageViews addObject:v];
         NSUInteger index= [images indexOfObject:string];

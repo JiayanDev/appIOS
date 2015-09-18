@@ -9,4 +9,6 @@
 + (UIImageView *)newWithRoundRadius:(CGFloat)r;
 
 - (void)setImageWithFadeIn:(UIImage *)image;
+
+- (void)setImageWithScalingToSelfSizeWithUrl:(NSURL *)url AndWillAnimate:(BOOL)animated;
 @end

@@ -352,7 +352,8 @@
         dcell.contentLabel.text=diary.content;
         dcell.dateLabel.text= [[NSDate dateWithTimeIntervalSince1970:diary.createTime] displayTextWithMMdd];
         dcell.pinglunAndZanLabel.text= [NSString stringWithFormat:@"评论:%@ 赞:%@",diary.commentCount,diary.likeCount];
-        [dcell setImages:diary.photoes];
+
+        [dcell setImages:diary.photoes withAnimations:(!self.tableView.isDragging && !self.tableView.isDecelerating)];
 //
 //        dcell.diaryImage1.hidden= diary.photoes.count < 1;
 //        dcell.diaryImage2.hidden=diary.photoes.count<2;
