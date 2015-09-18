@@ -154,6 +154,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 //    [self setScrollTopToNOToView:self.view];
 
+    [super viewDidAppear:animated];
     self.imagePager.scrollView.scrollsToTop=NO;
     self.tableView.scrollsToTop = YES;
 }

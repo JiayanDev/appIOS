@@ -51,19 +51,19 @@
 
 }
 
-
-- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
-    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
-        return (UIImageView *)view;
-    }
-    for (UIView *subview in view.subviews) {
-        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
-        if (imageView) {
-            return imageView;
-        }
-    }
-    return nil;
-}
+//
+//- (UIImageView *)findHairlineImageViewUnder:(UIView *)view {
+//    if ([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
+//        return (UIImageView *)view;
+//    }
+//    for (UIView *subview in view.subviews) {
+//        UIImageView *imageView = [self findHairlineImageViewUnder:subview];
+//        if (imageView) {
+//            return imageView;
+//        }
+//    }
+//    return nil;
+//}
 
 
 
@@ -99,11 +99,15 @@ return 1;
 //        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
 //        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
         if(data.coverImg){
+            if(cell.backImage.image){
+                [cell.backImage sd_setImageWithURL:data.coverImg];
+            }else{
             [cell.backImage sd_setImageWithURL:data.coverImg
                                      completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                          [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
-                                         [cell.backImage setNeedsDisplay];
+//                                         [cell.backImage setNeedsDisplay];
                                      }];
+            }
         }else{
             cell.backImage.backgroundColor=THEME_COLOR;
         }
@@ -113,12 +117,15 @@ return 1;
 
         IndexCellPR  *cell=[self.tableView dequeueReusableCellWithIdentifier:kIndexCellEvent];
         if(data.coverImg){
-            [cell.backImage sd_setImageWithURL:data.coverImg
-                                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                         [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
-//                                         cell.backImage.image=image;
-                                         [cell.backImage setNeedsDisplay];
-                                     }];
+            if(cell.backImage.image){
+                [cell.backImage sd_setImageWithURL:data.coverImg];
+            }else{
+                [cell.backImage sd_setImageWithURL:data.coverImg
+                                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                             [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)]];
+//                                         [cell.backImage setNeedsDisplay];
+                                         }];
+            }
         }else{
             cell.backImage.backgroundColor=THEME_COLOR;
         }
