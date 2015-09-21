@@ -6,5 +6,7 @@
 #import <Foundation/Foundation.h>
 
 @interface UIViewController (requireLogin)
++ (UIViewController *)currentViewController;
+
 - (void)requireLogin;
 @end
