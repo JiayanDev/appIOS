@@ -14,6 +14,8 @@
 #import "LoginWaySelectVC.h"
 #import "HexColor.h"
 #import "MLStyleManager.h"
+#import "MLWebRedirectPusher.h"
+#import "UIViewController+requireLogin.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong)UITabBarController* tabBarController;
@@ -90,8 +92,9 @@
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-
-    self.window.rootViewController = [[FirstVC alloc] init];
+    FirstVC *firstVC=[[FirstVC alloc] init];
+    firstVC.appLanuchOptions=launchOptions;
+    self.window.rootViewController = firstVC;
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -113,7 +116,9 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [UMessage didReceiveRemoteNotification:userInfo];
+//    [UMessage didReceiveRemoteNotification:userInfo];
+
+    [MLWebRedirectPusher pushWithNotificationData:userInfo viewController:[UIViewController currentViewController]];
 
 }
 

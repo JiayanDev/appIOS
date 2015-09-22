@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FirstVC : UIViewController
+@property (nonatomic, strong)NSDictionary *appLanuchOptions;
 
 @end

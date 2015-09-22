@@ -10,6 +10,9 @@
 #import "TopicModel.h"
 #import "TimeLineVCB.h"
 #import "GeneralWebVC.h"
+#import "MLSession.h"
+#import "UserModel.h"
+#import "MyBanMeiListTVC.h"
 
 
 @implementation MLWebRedirectPusher {
@@ -58,5 +61,53 @@
 
     return NO;
 
+}
+
++(BOOL)pushWithNotificationData:(NSDictionary *)noti viewController:(UIViewController *)viewController{
+    if([noti[@"action"] isEqualToString:@"jump_to_page"]){
+        NSString *data=noti[@"data"];
+        GeneralWebVC *generalWebVC=[GeneralWebVC new];
+        generalWebVC.url=[NSURL URLWithString:data];
+        [viewController.navigationController pushViewController:generalWebVC animated:YES];
+        return YES;
+
+
+
+    }else if([noti[@"action"] isEqualToString:@"jump_to_web"]){
+        NSDictionary *data=noti[@"data"];
+        NSString *name=data[@"page"];
+        if([name isEqualToString:@"diary_detail"]){
+
+            DiaryDetailVC *vc=[DiaryDetailVC new];
+            vc.type=WebviewWithCommentVcDetailTypeDiary;
+            DiaryModel *diaryModel=[DiaryModel new];
+            diaryModel.id= [data[@"id"] unsignedIntegerValue];
+            vc.diary=diaryModel;
+            [viewController.navigationController pushViewController:vc animated:YES];
+            return YES;
+        }else if([name isEqualToString:@"topic_detail"]){
+            DiaryDetailVC *vc=[DiaryDetailVC new];
+            vc.type=WebviewWithCommentVcDetailTypeTopic;
+            TopicModel *topicModel=[TopicModel new];
+            topicModel.id= [data[@"id"] unsignedIntegerValue];
+            vc.topic=topicModel;
+            [viewController.navigationController pushViewController:vc animated:YES];
+            return YES;
+        }else if([name isEqualToString:@"my_angel"]){
+            TimeLineVCB *vc=[TimeLineVCB new];
+            vc.userId= @([MLSession current].currentUser.id);
+            [viewController.navigationController pushViewController:vc animated:YES];
+
+            return YES;
+        }else if([name isEqualToString:@"my_company"]){
+            MyBanMeiListTVC *vc=[MyBanMeiListTVC new];
+            [viewController.navigationController pushViewController:vc animated:YES];
+            return YES;
+        }else{
+
+        }
+    }
+
+    return NO;
 }
 @end

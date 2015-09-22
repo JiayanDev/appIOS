@@ -21,6 +21,8 @@
 #import "TimeLineVCB.h"
 #import "EventRatingFVC.h"
 #import "CreateDiaryFVC.h"
+#import "UIViewController+requireLogin.h"
+#import "MLWebRedirectPusher.h"
 
 @interface FirstVC ()
 
@@ -85,6 +87,10 @@
 
     testAppDelegate.window.rootViewController = tabBarController;
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
+
+    if(self.appLanuchOptions && self.appLanuchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]){
+        [MLWebRedirectPusher pushWithNotificationData:self.appLanuchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] viewController:[UIViewController currentViewController]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

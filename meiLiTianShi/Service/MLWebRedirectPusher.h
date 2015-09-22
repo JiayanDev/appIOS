@@ -8,4 +8,6 @@
 
 @interface MLWebRedirectPusher : NSObject
 + (BOOL)pushWithUrl:(NSURL *)url viewController:(UIViewController *)vc;
+
++ (BOOL)pushWithNotificationData:(NSDictionary *)noti viewController:(UIViewController *)viewController;
 @end
