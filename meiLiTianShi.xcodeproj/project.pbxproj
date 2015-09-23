@@ -264,6 +264,7 @@
 		3CDC5A32CEED5A45D1F9D189 /* logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC573019190B1E64D3ECBD /* logo@3x.png */; };
 		3CDC5A3328B4197895FD8B9D /* IDMPhotoBrowser_arrowRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5234C7D23458862F12DE /* IDMPhotoBrowser_arrowRight@2x.png */; };
 		3CDC5A50701FE665B1415D24 /* RSKImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5AA3CC29C1CFDD4A27F4 /* RSKImageScrollView.m */; };
+		3CDC5A531B2F4E667480D512 /* UITableViewCellWhiteAtSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC54A977234B4BC7569213 /* UITableViewCellWhiteAtSelect.m */; };
 		3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B63426FE4A04BE7F99C /* blue@2x.png */; };
 		3CDC5A5B72CE8FC29351F7F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5A6C83D1389585BD2B32 /* Localizable.strings */; };
 		3CDC5A5CDDAF822A3EBC83F6 /* black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */; };
@@ -612,6 +613,7 @@
 		3CDC53454A4CD5DD01BEAA4B /* 取消@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "取消@2x.png"; sourceTree = "<group>"; };
 		3CDC534E6D1FDF4E1DA6353E /* 选择取照片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "选择取照片.png"; sourceTree = "<group>"; };
 		3CDC53689314A573D22FC3D1 /* PhoneBindFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneBindFVC.h; sourceTree = "<group>"; };
+		3CDC536C3F04300572919EC4 /* UITableViewCellWhiteAtSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewCellWhiteAtSelect.h; sourceTree = "<group>"; };
 		3CDC537D996240025C659B6F /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		3CDC537F2BF458DE621E0C1C /* FloatCellOfNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfNumber.h; sourceTree = "<group>"; };
 		3CDC53820C8D59FA208C5A72 /* checkbox_checked@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_checked@3x.png"; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 		3CDC54909B16504D3A46265E /* MLXLFormTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormTextFieldCell.m; sourceTree = "<group>"; };
 		3CDC5491E26918F70E986B0B /* 我的_我的通知.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的通知.png"; sourceTree = "<group>"; };
 		3CDC5499ACDA861EAA2D0189 /* 气泡@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡@3x.png"; sourceTree = "<group>"; };
+		3CDC54A977234B4BC7569213 /* UITableViewCellWhiteAtSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewCellWhiteAtSelect.m; sourceTree = "<group>"; };
 		3CDC54B259AA43DCF61F2374 /* NotificationListTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationListTVC.h; sourceTree = "<group>"; };
 		3CDC54B619F7FCE851102282 /* NYXImagesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYXImagesHelper.m; sourceTree = "<group>"; };
 		3CDC54BD94295EA7BB3708BC /* UIImageView+MLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MLStyle.m"; sourceTree = "<group>"; };
@@ -1098,6 +1101,8 @@
 				3CDC54B619F7FCE851102282 /* NYXImagesHelper.m */,
 				3CDC5829D229C0CA354A1A28 /* NSString+jsonUtil.m */,
 				3CDC5B5732014B4D080479F4 /* NSString+jsonUtil.h */,
+				3CDC54A977234B4BC7569213 /* UITableViewCellWhiteAtSelect.m */,
+				3CDC536C3F04300572919EC4 /* UITableViewCellWhiteAtSelect.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2582,6 +2587,7 @@
 				3CDC55B5BE487579A6C75BA0 /* UIImage+Resizing.m in Sources */,
 				3CDC542BEF2E5D339CEB4260 /* NYXImagesHelper.m in Sources */,
 				3CDC5E84CA284FB71A80328D /* NSString+jsonUtil.m in Sources */,
+				3CDC5A531B2F4E667480D512 /* UITableViewCellWhiteAtSelect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

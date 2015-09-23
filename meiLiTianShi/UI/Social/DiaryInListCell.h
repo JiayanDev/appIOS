@@ -4,9 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UITableViewCellWhiteAtSelect.h"
 
 
-@interface DiaryInListCell : UITableViewCell
+@interface DiaryInListCell : UITableViewCellWhiteAtSelect
 @property(nonatomic, strong) NSArray *images;
 @property(nonatomic, strong) NSMutableArray *imageViews;
 @property(nonatomic, strong) UIImageView *avatarView;

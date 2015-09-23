@@ -4,9 +4,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UITableViewCellWhiteAtSelect.h"
 
 
-@interface IndexCellPR : UITableViewCell
+@interface IndexCellPR : UITableViewCellWhiteAtSelect
 @property(nonatomic, strong) UIImageView *backImage;
 @property(nonatomic, strong) UIImageView *statusBackImage;
 @property(nonatomic, strong) UIView *footView;
@@ -18,5 +19,5 @@
 
 + (int)cellHeight;
 
-- (int)cellHeight;
+
 @end

@@ -4,12 +4,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UITableViewCellWhiteAtSelect.h"
 
 
-@interface IndexCellOfOthers : UITableViewCell
+@interface IndexCellOfOthers : UITableViewCellWhiteAtSelect
 @property(nonatomic, strong) UIImageView *backImage;
 
 + (int)cellHeight;
 
-- (int)cellHeight;
+
 @end

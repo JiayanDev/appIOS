@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UITableViewCellWhiteAtSelect.h"
 
-@interface TopicListCell : UITableViewCell
+@interface TopicListCell : UITableViewCellWhiteAtSelect
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *image1;
 @property (weak, nonatomic) IBOutlet UIImageView *image2;
