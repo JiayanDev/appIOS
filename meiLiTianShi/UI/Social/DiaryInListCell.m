@@ -14,7 +14,7 @@
 @implementation DiaryInListCell {
 
 }
-
+#define TAG_CONTENT_IMAGE 12322
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -85,66 +85,95 @@
 }
 
 - (void)setImages:(NSArray *)images withAnimations:(BOOL)animated {
-    [self.imageViews makeObjectsPerformSelector: @selector(removeFromSuperview)];
-    self.imageViews=[NSMutableArray new];
+
+    CGFloat scale=[UIScreen mainScreen].scale;
+    NSMutableArray* oldViews=self.imageViews;
+//    for (UIView *view in self.contentView.subviews) {
+//        if([view isKindOfClass:[UIImageView class]]&& view.tag==TAG_CONTENT_IMAGE){
+//            [oldViews addObject:view];
+//        }
+//    }
+    BOOL useOldViews= self.imageViews.count==images.count;
+
+    if(!useOldViews){
+        [self.imageViews makeObjectsPerformSelector: @selector(removeFromSuperview)];
+        self.imageViews=[NSMutableArray new];
+    }
+
     CGFloat w= (CGFloat) ((SCREEN_WIDTH-8-9-35-15+5)/3.0-5);
 //    _images=images;
     if(images && [images isKindOfClass:[NSArray class]]){
     for (NSString *string in images) {
         NSURL *url=[NSURL URLWithString:string];
-        UIImageView *v=[UIImageView new];
+        UIImageView *v;
+        if(useOldViews){
+            v=oldViews[[images indexOfObject:string]];
+        }else{
+            v=[UIImageView new];
+        }
         v.contentMode=UIViewContentModeScaleAspectFill;
         v.clipsToBounds=YES;
 //        [v sd_setImageWithURL:url];
 //        [v setImageWithScalingToSelfSizeWithUrl:url AndWillAnimate:animated];
 
-        if (animated) {
-            [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(w * 2, w * 2)];
-                    dispatch_async(dispatch_get_main_queue(),^{
-                        [v setImageWithFadeIn:scaledImage];
+        [v setImageWithScalingToSelfSizeWithUrl:url
+                                 AndWillAnimate:animated
+                                       withSize:CGSizeMake(w * scale, w * scale)];
+        v.tag=TAG_CONTENT_IMAGE;
 
-//                    v.image=scaledImage;
-                    });
-                });
+//        if (animated) {
+//            [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                    UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(w * 2, w * 2)];
+//                    dispatch_async(dispatch_get_main_queue(),^{
+//                        [v setImageWithFadeIn:scaledImage];
+//
+////                    v.image=scaledImage;
+//                    });
+//                });
+//
+//            }];
+//        } else {
+//            [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                    UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(w * 2, w * 2)];
+//                    dispatch_async(dispatch_get_main_queue(),^{
+////                        [v setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(w*2,w*2)]];
+//
+//                        v.image = scaledImage;
+//                    });
+//                });
+//
+//            }];
+//        }
 
-            }];
-        } else {
-            [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                    UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(w * 2, w * 2)];
-                    dispatch_async(dispatch_get_main_queue(),^{
-//                        [v setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(w*2,w*2)]];
 
-                        v.image = scaledImage;
-                    });
-                });
 
+        if(!useOldViews){
+            [self.contentView addSubview:v];
+            [self.imageViews addObject:v];
+
+            NSUInteger index= [images indexOfObject:string];
+            [v mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.size.mas_equalTo(CGSizeMake(w,w));
+                if(index==0){
+                    make.top.equalTo(self.contentLabel.mas_bottom).offset(12);
+                    make.left.equalTo(self.avatarView.mas_right).offset(9);
+
+                }else if(index%3==0){
+                    make.top.equalTo(((UIImageView *)self.imageViews[index-3]).mas_bottom).offset(5);
+                    make.left.equalTo(self.avatarView.mas_right).offset(9);
+                }else{
+                    make.top.equalTo(((UIImageView *)self.imageViews[index-1]));
+                    make.left.equalTo(((UIImageView *)self.imageViews[index-1]).mas_right).offset(5);
+                }
+
+
+                if(index== [images count]-1){
+                    make.bottom.equalTo(self.pinglunAndZanLabel.mas_top).offset(-17).priority(600);
+                }
             }];
         }
-        [self.contentView addSubview:v];
-        [self.imageViews addObject:v];
-        NSUInteger index= [images indexOfObject:string];
-        [v mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.size.mas_equalTo(CGSizeMake(w,w));
-            if(index==0){
-                make.top.equalTo(self.contentLabel.mas_bottom).offset(12);
-                make.left.equalTo(self.avatarView.mas_right).offset(9);
-
-            }else if(index%3==0){
-                make.top.equalTo(((UIImageView *)self.imageViews[index-3]).mas_bottom).offset(5);
-                make.left.equalTo(self.avatarView.mas_right).offset(9);
-            }else{
-                make.top.equalTo(((UIImageView *)self.imageViews[index-1]));
-                make.left.equalTo(((UIImageView *)self.imageViews[index-1]).mas_right).offset(5);
-            }
-
-
-            if(index== [images count]-1){
-                make.bottom.equalTo(self.pinglunAndZanLabel.mas_top).offset(-17).priority(600);
-            }
-        }];
     }
     }
 

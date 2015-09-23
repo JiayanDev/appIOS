@@ -10,5 +10,7 @@
 
 - (void)setImageWithFadeIn:(UIImage *)image;
 
-- (void)setImageWithScalingToSelfSizeWithUrl:(NSURL *)url AndWillAnimate:(BOOL)animated;
+- (void)setImageWithScalingToSelfSizeWithUrl:(NSURL *)url AndWillAnimate:(BOOL)animated withSize:(CGSize)size;
+
+//- (void)setImageWithScalingToSelfSizeWithUrl:(NSURL *)url AndWillAnimate:(BOOL)animated;
 @end

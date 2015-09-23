@@ -25,17 +25,27 @@
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{
                         self.image = image;
+                        [self layoutIfNeeded];
                     } completion:nil];
 }
 
--(void)setImageWithScalingToSelfSizeWithUrl:(NSURL *)url AndWillAnimate:(BOOL)animated{
-    CGFloat scale=[UIScreen mainScreen].scale;
+-(void)setImageWithScalingToSelfSizeWithUrl:(NSURL *)url AndWillAnimate:(BOOL)animated withSize:(CGSize)size{
+    __block CGSize s;
+    CGFloat  scale=[UIScreen mainScreen].scale;
+
+
     if (animated) {
         [self sd_setImageWithURL:url
                 placeholderImage:nil
                          options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale)];
+                        if(CGSizeEqualToSize(size,CGSizeZero)){
+                            s=CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
+
+                        }else{
+                            s=size;
+                        }
+                        UIImage *scaledImage = [image scaleToCoverSize:s];
                         dispatch_async(dispatch_get_main_queue(),^{
                             [self setImageWithFadeIn:scaledImage];
 
@@ -49,7 +59,13 @@
                 placeholderImage:nil
                          options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale)];
+                        if(CGSizeEqualToSize(size,CGSizeZero)){
+                            s=CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
+
+                        }else{
+                            s=size;
+                        }
+                        UIImage *scaledImage = [image scaleToCoverSize:s];
                         dispatch_async(dispatch_get_main_queue(),^{
                             self.image = scaledImage;
 

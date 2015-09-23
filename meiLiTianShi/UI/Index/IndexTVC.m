@@ -112,7 +112,7 @@ return 1;
 
             BOOL animated=(!self.tableView.isDragging && !self.tableView.isDecelerating);
             [cell.backImage setImageWithScalingToSelfSizeWithUrl:[NSURL URLWithString:data.coverImg]
-                                                  AndWillAnimate:animated];
+                                                  AndWillAnimate:animated withSize:CGSizeZero];
 //            if (animated) {
 //                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
 //                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -160,7 +160,8 @@ return 1;
 //            }
 
             BOOL animated=(!self.tableView.isDragging && !self.tableView.isDecelerating);
-            [cell.backImage setImageWithScalingToSelfSizeWithUrl:[NSURL URLWithString:data.coverImg] AndWillAnimate:animated];
+            [cell.backImage setImageWithScalingToSelfSizeWithUrl:[NSURL URLWithString:data.coverImg]
+                                                  AndWillAnimate:animated  withSize:CGSizeZero];
 //            if (animated) {
 //                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
 //                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
