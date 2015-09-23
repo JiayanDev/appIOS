@@ -16,6 +16,7 @@
 #import "MLStyleManager.h"
 #import "MLWebRedirectPusher.h"
 #import "UIViewController+requireLogin.h"
+#import "RMUniversalAlert.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong)UITabBarController* tabBarController;
@@ -117,8 +118,19 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
 //    [UMessage didReceiveRemoteNotification:userInfo];
+    [RMUniversalAlert showAlertInViewController:[UIViewController currentViewController]
+                                      withTitle:@"提示"
+                                        message:userInfo[@"aps"][@"alert"]
+                              cancelButtonTitle:@"取消"
+                         destructiveButtonTitle:nil
+                              otherButtonTitles:@[@"查看"]
+                                       tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+                                            if(buttonIndex==2){
+                                                [MLWebRedirectPusher pushWithNotificationData:userInfo viewController:[UIViewController currentViewController]];
+                                            }
 
-    [MLWebRedirectPusher pushWithNotificationData:userInfo viewController:[UIViewController currentViewController]];
+                                       }];
+    
 
 }
 
