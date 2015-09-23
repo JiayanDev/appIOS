@@ -5,12 +5,12 @@ target 'meiLiTianShi' do
   pod "AFNetworking", "~> 2.0"
   pod 'JSONModel'
   pod 'XLPagerTabStrip', '~> 1.0.0'
-pod 'AXRatingView', :git => 'https://github.com/xmartlabs/AXRatingView.git'
-pod "TSMessages"
-pod 'MBProgressHUD', '~> 0.9.1'
-pod 'UICKeyChainStore'
-pod 'JMImageCache'
-pod 'MJRefresh'
+  pod 'AXRatingView', :git => 'https://github.com/xmartlabs/AXRatingView.git'
+  pod "TSMessages"
+  pod 'MBProgressHUD', '~> 0.9.1'
+  pod 'UICKeyChainStore'
+  pod 'JMImageCache'
+  pod 'MJRefresh'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'XLForm', '~> 3.0.0'
   pod 'Masonry'
@@ -25,6 +25,7 @@ pod 'MJRefresh'
   pod 'FXBlurView'
   pod 'DZNEmptyDataSet'
   pod 'HCSStarRatingView', '~> 1.4.2'
+  pod "UIViewController-KeyboardAdditions"
 end
 
 target 'meiLiTianShiTests' do

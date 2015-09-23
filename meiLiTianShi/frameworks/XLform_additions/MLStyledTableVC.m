@@ -35,6 +35,7 @@
     }
 }
 
+
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
 //    [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
@@ -77,7 +78,10 @@
     return [[UIView alloc] initWithFrame:CGRectZero];
 }
 
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self scrollViewDidScroll:self.tableView];
+}
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

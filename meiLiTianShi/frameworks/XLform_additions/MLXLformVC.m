@@ -36,7 +36,7 @@
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
+   [super tableView:tableView willDisplayCell:cell forRowAtIndexPath:indexPath];
     UIEdgeInsets e=UIEdgeInsetsMake(0,5,0,5);
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
         [cell setSeparatorInset:e];
