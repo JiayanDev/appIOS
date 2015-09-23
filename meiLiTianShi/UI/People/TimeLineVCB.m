@@ -65,6 +65,10 @@
 
     [super viewWillAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
+    if(self.needUpdateContent){
+        [self.mainView.webView reload];
+        self.needUpdateContent=NO;
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -130,6 +134,7 @@
 
     }else if([requestModel.action isEqualToString:@"addPost"]){
         CreateDiaryFVC *vc= [[CreateDiaryFVC alloc] init];
+        vc.timeLineVC=self;
         [self.navigationController pushViewController:vc animated:YES];
 
 

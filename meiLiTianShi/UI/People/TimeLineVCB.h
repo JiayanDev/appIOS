@@ -12,6 +12,6 @@
 @interface TimeLineVCB : UIViewController <UIWebViewDelegate, IDMPhotoBrowserDelegate>
 @property(nonatomic, strong) MLBlurImageHeaderedWebview *mainView;
 @property (nonatomic, strong)NSNumber *userId;
-
+@property (nonatomic, assign)BOOL needUpdateContent;
 @property(nonatomic, strong) NSURL *url;
 @end

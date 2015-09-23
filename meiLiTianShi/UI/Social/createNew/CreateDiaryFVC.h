@@ -9,8 +9,10 @@
 #import "XLFormViewController.h"
 #import "MLXLformVC.h"
 
+@class TimeLineVCB;
+
 @interface CreateDiaryFVC : MLXLformVC
 @property (nonatomic, assign)BOOL needToCreateNewDiaryBookLater;
 @property (nonatomic, strong) NSMutableOrderedSet *categories;
-
+@property (nonatomic, strong)TimeLineVCB* timeLineVC;
 @end

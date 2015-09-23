@@ -16,6 +16,7 @@
 #import "CreateDiaryBookFVC.h"
 #import "MLSession.h"
 #import "TSMessage.h"
+#import "TimeLineVCB.h"
 #import "MBProgressHUD.h"
 #import "MLStyleManager.h"
 
@@ -102,6 +103,7 @@
                                                                                                                         [TSMessage showNotificationWithTitle:@"发表成功"
                                                                                                                                                         type:TSMessageNotificationTypeSuccess];
                                                                                                                         [self.navigationController popViewControllerAnimated:YES];
+                                                                                                                        self.timeLineVC.needUpdateContent=YES;
                                                                                                                     } fail:^(NSInteger i, id o) {
                                                                                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                                                                             [TSMessage showNotificationWithTitle:@"出错了"
