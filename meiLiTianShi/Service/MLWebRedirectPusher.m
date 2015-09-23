@@ -64,7 +64,7 @@
 }
 
 +(BOOL)pushWithNotificationData:(NSDictionary *)noti viewController:(UIViewController *)viewController{
-    if([noti[@"action"] isEqualToString:@"jump_to_page"]){
+    if([noti[@"action"] isEqualToString:@"jump_to_web"]){
         NSString *data=noti[@"data"];
         GeneralWebVC *generalWebVC=[GeneralWebVC new];
         generalWebVC.url=[NSURL URLWithString:data];
@@ -73,7 +73,7 @@
 
 
 
-    }else if([noti[@"action"] isEqualToString:@"jump_to_web"]){
+    }else if([noti[@"action"] isEqualToString:@"jump_to_page"]){
         NSDictionary *data=noti[@"data"];
         NSString *name=data[@"page"];
         if([name isEqualToString:@"diary_detail"]){

@@ -40,4 +40,5 @@
 @property (nonatomic, strong) NSString <Optional> * subject;
 @property (nonatomic, strong) NSString <Optional> * subjectContent;
 
+- (NSDictionary *)toJumpableDict;
 @end

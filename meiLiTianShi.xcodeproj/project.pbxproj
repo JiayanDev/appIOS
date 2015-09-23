@@ -351,6 +351,7 @@
 		3CDC5E80DC65DAB95EFAF04D /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B0605BDC5ADFE568BAE /* UIAlertView+Blocks.m */; };
 		3CDC5E81EA016B78E6623E89 /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B6939D8B4428F5ABA13 /* SLKInputAccessoryView.m */; };
 		3CDC5E83933ACBE1C5A4BA2A /* PhoneBindFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A40A622F6C3BD2EE4AC /* PhoneBindFVC.m */; };
+		3CDC5E84CA284FB71A80328D /* NSString+jsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5829D229C0CA354A1A28 /* NSString+jsonUtil.m */; };
 		3CDC5E93042416519F2B2311 /* ShareViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A065703EE8ABFA43D74 /* ShareViewManager.m */; };
 		3CDC5E936900CD70686871B2 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5A3594D3209A128BC4A2 /* UserModel.m */; };
 		3CDC5E9553F11C1146E7DEC9 /* 女.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53B37FCA42C790FAB706 /* 女.png */; };
@@ -731,6 +732,7 @@
 		3CDC580FD3E528A085DF996A /* 我的_我的伴美.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的伴美.png"; sourceTree = "<group>"; };
 		3CDC582086FA4D32DAD19A65 /* AvatarAndNameAndDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarAndNameAndDescCell.m; sourceTree = "<group>"; };
 		3CDC5829010088FEADF591B9 /* UIImageView+MLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MLStyle.h"; sourceTree = "<group>"; };
+		3CDC5829D229C0CA354A1A28 /* NSString+jsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+jsonUtil.m"; sourceTree = "<group>"; };
 		3CDC582A761F21A9AC5CC46F /* MLRandom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLRandom.m; sourceTree = "<group>"; };
 		3CDC5833D8A7D7D98FDA39E7 /* GeneralWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralWebVC.m; sourceTree = "<group>"; };
 		3CDC5836623FA92B65DA27FC /* 微信@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "微信@3x.png"; sourceTree = "<group>"; };
@@ -811,6 +813,7 @@
 		3CDC5B1A2E06FCD1915E202A /* IDMZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMZoomingScrollView.m; sourceTree = "<group>"; };
 		3CDC5B48F4DC4821E240A707 /* XLFormTextDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLFormTextDetailViewController.h; sourceTree = "<group>"; };
 		3CDC5B57171E8E5F55DA5FB8 /* AreaSelectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaSelectModel.m; sourceTree = "<group>"; };
+		3CDC5B5732014B4D080479F4 /* NSString+jsonUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+jsonUtil.h"; sourceTree = "<group>"; };
 		3CDC5B5D5C62A64C66272263 /* NSDate+XLformPushDisplay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XLformPushDisplay.m"; sourceTree = "<group>"; };
 		3CDC5B63426FE4A04BE7F99C /* blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue@2x.png"; sourceTree = "<group>"; };
 		3CDC5B63E4653C0110C568CF /* 还没评论@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "还没评论@3x.png"; sourceTree = "<group>"; };
@@ -1093,6 +1096,8 @@
 				3CDC598EEECAA89BF0B744BA /* UIImage+Resizing.m */,
 				3CDC54836D4D5C40028C6BB9 /* NYXImagesHelper.h */,
 				3CDC54B619F7FCE851102282 /* NYXImagesHelper.m */,
+				3CDC5829D229C0CA354A1A28 /* NSString+jsonUtil.m */,
+				3CDC5B5732014B4D080479F4 /* NSString+jsonUtil.h */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -2576,6 +2581,7 @@
 				3CDC505E1D986A98D70E30C1 /* UIViewController+requireLogin.m in Sources */,
 				3CDC55B5BE487579A6C75BA0 /* UIImage+Resizing.m in Sources */,
 				3CDC542BEF2E5D339CEB4260 /* NYXImagesHelper.m in Sources */,
+				3CDC5E84CA284FB71A80328D /* NSString+jsonUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

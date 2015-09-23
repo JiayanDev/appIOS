@@ -24,6 +24,7 @@
 #import "NotificationListCell.h"
 #import "MessageNoticingModel.h"
 #import "NSNumber+MLUtil.h"
+#import "MLWebRedirectPusher.h"
 
 @interface NotificationListTVC()
 @property (strong, nonatomic)NSMutableArray *tableData;
@@ -163,6 +164,12 @@
 //    vc.eventId=[d.eventId unsignedIntegerValue];
 //    [self.navigationController pushViewController:vc
 //                                         animated:YES];
+
+    MessageNoticingModel*data=self.tableData[indexPath.row];
+    [MLWebRedirectPusher pushWithNotificationData:[data toJumpableDict]
+                                   viewController:self];
+
+
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
