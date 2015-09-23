@@ -111,31 +111,33 @@ return 1;
 
 
             BOOL animated=(!self.tableView.isDragging && !self.tableView.isDecelerating);
-            if (animated) {
-                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)];
-                        dispatch_main_async_safe(^{
-                            [cell.backImage setImageWithFadeIn:scaledImage];
-
-//                    cell.backImage.image=scaledImage;
-                        });
-                    });
-
-                }];
-            } else {
-                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)];
-                        dispatch_main_async_safe(^{
-//                        [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(w*2,w*2)]];
-
-                            cell.backImage.image = scaledImage;
-                        });
-                    });
-
-                }];
-            }
+            [cell.backImage setImageWithScalingToSelfSizeWithUrl:[NSURL URLWithString:data.coverImg]
+                                                  AndWillAnimate:animated];
+//            if (animated) {
+//                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)];
+//                        dispatch_async(dispatch_get_main_queue(),^{
+//                            [cell.backImage setImageWithFadeIn:scaledImage];
+//
+////                    cell.backImage.image=scaledImage;
+//                        });
+//                    });
+//
+//                }];
+//            } else {
+//                [cell.backImage sd_setImageWithURL:data.coverImg completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                        UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(cell.backImage.frame.size.width*2,cell.backImage.frame.size.height*2)];
+//                        dispatch_async(dispatch_get_main_queue(),^{
+////                        [cell.backImage setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(w*2,w*2)]];
+//
+//                            cell.backImage.image = scaledImage;
+//                        });
+//                    });
+//
+//                }];
+//            }
 
 
         }else{

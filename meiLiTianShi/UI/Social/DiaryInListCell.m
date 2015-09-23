@@ -102,7 +102,7 @@
             [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(w * 2, w * 2)];
-                    dispatch_main_async_safe(^{
+                    dispatch_async(dispatch_get_main_queue(),^{
                         [v setImageWithFadeIn:scaledImage];
 
 //                    v.image=scaledImage;
@@ -114,7 +114,7 @@
             [v sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     UIImage *scaledImage = [image scaleToCoverSize:CGSizeMake(w * 2, w * 2)];
-                    dispatch_main_async_safe(^{
+                    dispatch_async(dispatch_get_main_queue(),^{
 //                        [v setImageWithFadeIn:[image scaleToCoverSize:CGSizeMake(w*2,w*2)]];
 
                         v.image = scaledImage;
