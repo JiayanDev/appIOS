@@ -307,6 +307,8 @@
 // Create and setup browser
     IDMPhotoBrowser *browser = [[IDMPhotoBrowser alloc] initWithPhotos:photos];
     [browser setInitialPageIndex:index];
+    browser.displayActionButton=NO;
+
     browser.delegate = self;
     [self presentViewController:browser animated:YES completion:nil];
 
