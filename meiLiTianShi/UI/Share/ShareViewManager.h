@@ -8,6 +8,15 @@
 
 
 @interface ShareViewManager : NSObject <wxSendMessageRespondObj>
+
+@property (nonatomic, strong)NSString *shareTitle;
+
+@property (nonatomic, strong)NSString *shareDesc;
+
+@property (nonatomic, strong)NSString *shareUrl;
+
+@property (nonatomic, strong)UIImage *shareIcon;
+
 + (ShareViewManager *)showSharePanelOnto:(UIView *)view;
 
 - (void)disappearAll;
