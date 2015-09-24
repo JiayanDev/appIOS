@@ -31,6 +31,7 @@
 #import "DiaryInListCell.h"
 #import "NSDate+XLformPushDisplay.h"
 #import "UILabel+MLStyle.h"
+#import "MJRefreshNormalHeader.h"
 
 @interface TopicListVC ()
 //@property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -70,6 +71,11 @@
     self.pageIndicator= [[PageIndicator alloc] init];
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
+
+    self.tableView.header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(dragDown)];
+    ((MJRefreshNormalHeader*)self.tableView.header).lastUpdatedTimeLabel.hidden = YES;
+
+
 //    self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
 //                                                                                         target:self
 //                                                                                         action:@selector(gotoCreate)];
@@ -218,6 +224,15 @@
 
 }
 
+
+-(void)dragDown{
+    self.pageIndicator= [[PageIndicator alloc] init];
+    self.tableData=[NSMutableArray array];
+    [self getDataWithScrollingToTop:YES];
+
+}
+
+
 -(void)gotoCreate{
     if(self.type== TYPE_DIARY){
         ProjectSelectVC *bvc=[[ProjectSelectVC alloc]init];
@@ -240,6 +255,7 @@
                                                       [MBProgressHUD hideHUDForView:self.view
                                                                            animated:YES];
                                                       [self.tableView.footer endRefreshing];
+                                                      [self.tableView.header endRefreshing];
 
                                                       if (self.type == TYPE_DIARY) {
                                                           [self.tableData addObjectsFromArray:array];
@@ -256,6 +272,7 @@
                     [MBProgressHUD hideHUDForView:self.view
                                          animated:YES];
                     [self.tableView.footer endRefreshing];
+                    [self.tableView.header endRefreshing];
 
                     [TSMessage showNotificationWithTitle:@"出错了"
                                                 subtitle:[NSString stringWithFormat:@"%d - %@", i, o]

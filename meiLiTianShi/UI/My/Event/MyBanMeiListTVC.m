@@ -50,6 +50,7 @@
 }
 
 
+
 -(void)dragUp{
     [self getDataWithScrollingToTop:NO];
 
