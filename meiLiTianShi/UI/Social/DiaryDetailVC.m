@@ -85,6 +85,9 @@
     [self.textInputbar.likeButton addTarget:self
                                      action:@selector(likePress:)
                            forControlEvents:UIControlEventTouchUpInside];
+
+
+    self.view.backgroundColor=THEME_COLOR_BACKGROUND;
 }
 
 - (void)viewDidLayoutSubviews {
