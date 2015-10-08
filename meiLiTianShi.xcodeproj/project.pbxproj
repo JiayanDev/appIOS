@@ -69,6 +69,7 @@
 		07A8BA841B6A16B1007EDE84 /* MyMeiLiTianShiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A8BA821B6A16B1007EDE84 /* MyMeiLiTianShiVC.m */; };
 		07BB692E1B74A1E100BBACA6 /* EventJoinApplySuccVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BB692C1B74A1E100BBACA6 /* EventJoinApplySuccVC.m */; };
 		07BB692F1B74A1E100BBACA6 /* EventJoinApplySuccVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BB692D1B74A1E100BBACA6 /* EventJoinApplySuccVC.xib */; };
+		07C627A91BC6219F005C1AD7 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07C627A81BC6219F005C1AD7 /* libMobClickLibrary.a */; };
 		07C91D311B54AAA50069470E /* DoctorSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */; };
 		07C91D321B54AAA50069470E /* DoctorSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07C91D301B54AAA50069470E /* DoctorSelectVC.xib */; };
 		07C91D481B56497C0069470E /* DiaryDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C91D461B56497C0069470E /* DiaryDetailVC.m */; };
@@ -491,6 +492,7 @@
 		07BB692B1B74A1E100BBACA6 /* EventJoinApplySuccVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventJoinApplySuccVC.h; sourceTree = "<group>"; };
 		07BB692C1B74A1E100BBACA6 /* EventJoinApplySuccVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventJoinApplySuccVC.m; sourceTree = "<group>"; };
 		07BB692D1B74A1E100BBACA6 /* EventJoinApplySuccVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventJoinApplySuccVC.xib; sourceTree = "<group>"; };
+		07C627A81BC6219F005C1AD7 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libMobClickLibrary.a; path = Pods/UMengAnalytics/umsdk_IOS_analytics_idfa_v3.6.4/UMAnalytics_Sdk_3.6.4/libMobClickLibrary.a; sourceTree = "<group>"; };
 		07C91D2E1B54AAA50069470E /* DoctorSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSelectVC.h; sourceTree = "<group>"; };
 		07C91D2F1B54AAA50069470E /* DoctorSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSelectVC.m; sourceTree = "<group>"; };
 		07C91D301B54AAA50069470E /* DoctorSelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorSelectVC.xib; sourceTree = "<group>"; };
@@ -948,6 +950,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C627A91BC6219F005C1AD7 /* libMobClickLibrary.a in Frameworks */,
 				07A699581B69BCAD00A9D2EF /* libsqlite3.0.dylib in Frameworks */,
 				07A699561B69BCA100A9D2EF /* libz.dylib in Frameworks */,
 				07A699541B69BC8C00A9D2EF /* SystemConfiguration.framework in Frameworks */,
@@ -2084,6 +2087,7 @@
 		D12D4EF717231CEA68B73D48 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07C627A81BC6219F005C1AD7 /* libMobClickLibrary.a */,
 				07A699571B69BCAD00A9D2EF /* libsqlite3.0.dylib */,
 				07A699551B69BCA100A9D2EF /* libz.dylib */,
 				07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */,
@@ -2763,6 +2767,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"${PROJECT_DIR}/meiLiTianShi/frameworks/UMessage_Sdk_1.1.0/**",
 					"$(PROJECT_DIR)/meiLiTianShi/frameworks/WeChatSDK_1.5",
+					"$(PROJECT_DIR)/Pods/UMengAnalytics/umsdk_IOS_analytics_idfa_v3.6.4/UMAnalytics_Sdk_3.6.4",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -2783,6 +2788,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"${PROJECT_DIR}/meiLiTianShi/frameworks/UMessage_Sdk_1.1.0/**",
 					"$(PROJECT_DIR)/meiLiTianShi/frameworks/WeChatSDK_1.5",
+					"$(PROJECT_DIR)/Pods/UMengAnalytics/umsdk_IOS_analytics_idfa_v3.6.4/UMAnalytics_Sdk_3.6.4",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
