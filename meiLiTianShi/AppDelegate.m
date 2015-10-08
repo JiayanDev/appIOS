@@ -17,6 +17,7 @@
 #import "MLWebRedirectPusher.h"
 #import "UIViewController+requireLogin.h"
 #import "RMUniversalAlert.h"
+#import "MobClick.h"
 
 @interface AppDelegate ()
 @property(nonatomic,strong)UITabBarController* tabBarController;
@@ -97,6 +98,8 @@
     firstVC.appLanuchOptions=launchOptions;
     self.window.rootViewController = firstVC;
     [self.window makeKeyAndVisible];
+
+    [MobClick startWithAppkey:@"55b090b467e58eb80500958c" reportPolicy:BATCH   channelId:nil];
 
     return YES;
 }

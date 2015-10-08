@@ -26,6 +26,7 @@ target 'meiLiTianShi' do
   pod 'DZNEmptyDataSet'
   pod 'HCSStarRatingView', '~> 1.4.2'
   pod "UIViewController-KeyboardAdditions"
+  pod 'UMengAnalytics'
 end
 
 target 'meiLiTianShiTests' do
