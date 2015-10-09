@@ -37,6 +37,7 @@
 //@property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
 //@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic)NSMutableArray *tableData;
+@property (strong, nonatomic)NSMutableArray *tableDataDisplayCaching;
 @property (nonatomic, strong)PageIndicator *pageIndicator;
 @property (nonatomic, assign)NSInteger type;
 @property (nonatomic, strong)KIImagePager *imagePager;
@@ -62,6 +63,7 @@
     //self.navigationItem.titleView=self.typeSwitcher;
 
     self.tableData=[NSMutableArray array];
+    self.tableDataDisplayCaching =self.tableData;
     [self.tableView registerClass:[TopicListCell class] forCellReuseIdentifier:kCellTopic];
     [self.tableView registerNib:[UINib nibWithNibName:@"TopicListCell" bundle:nil]forCellReuseIdentifier:kCellTopic];
     [self.tableView registerClass:[DiaryInListCell class] forCellReuseIdentifier:kCellDiary];
@@ -263,6 +265,7 @@
                                                           self.pageIndicator=[PageIndicator initWithMaxId:@(((DiaryBookModel *)self.tableData[self.tableData.count-1]).id)];
                                                           }
 
+                                                          self.tableDataDisplayCaching =self.tableData;
                                                           [self.tableView reloadData];
                                                           if (gotoTop){
                                                               self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
@@ -317,6 +320,8 @@
                                                            if(array.count==0){[self.tableView.footer noticeNoMoreData];}else{
                                                            self.pageIndicator=[PageIndicator initWithMaxId:@(((TopicModel *)self.tableData[self.tableData.count-1]).id)];
                                                            }
+
+                                                           self.tableDataDisplayCaching =self.tableData;
                                                            [self.tableView reloadData];
                                                            if (gotoTop){
                                                                self.tableView.contentOffset = CGPointMake(0, 0 - self.tableView.contentInset.top);
@@ -335,7 +340,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.tableData.count;
+    return self.tableDataDisplayCaching.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -472,12 +477,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if(self.tableData.count<indexPath.section+1){
-        return nil;
+    if(self.tableDataDisplayCaching.count<indexPath.section+1){
+        DiaryInListCell *cell= [self.tableView dequeueReusableCellWithIdentifier:kCellDiary];
+        return cell;
     }
 
 
-    id data=self.tableData[indexPath.section];
+    id data=self.tableDataDisplayCaching[indexPath.section];
     if([data isKindOfClass:[DiaryModel class]]){
         DiaryInListCell *cell= [self.tableView dequeueReusableCellWithIdentifier:kCellDiary];
         [self setTheCell:cell withData:data];
@@ -494,18 +500,18 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id data=self.tableData[indexPath.section];
+    id data=self.tableDataDisplayCaching[indexPath.section];
 
     if([data isKindOfClass:[DiaryModel class]]){
         return [tableView fd_heightForCellWithIdentifier:kCellDiary cacheByIndexPath:indexPath configuration:^(id cell) {
-            id data = self.tableData[indexPath.section];
+            id data = self.tableDataDisplayCaching[indexPath.section];
             [self setTheCell:cell withData:data];
 
 
         }];
     }else{
         return [tableView fd_heightForCellWithIdentifier:kCellTopic cacheByIndexPath:indexPath configuration:^(id cell) {
-            id data = self.tableData[indexPath.section];
+            id data = self.tableDataDisplayCaching[indexPath.section];
             [self setTheCell:cell withData:data];
 
 
@@ -514,7 +520,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    id data=self.tableData[indexPath.section];
+    id data=self.tableDataDisplayCaching[indexPath.section];
     if([data isKindOfClass:[DiaryModel class]]){
         [self gotoDiaryDetail:data];
     }
