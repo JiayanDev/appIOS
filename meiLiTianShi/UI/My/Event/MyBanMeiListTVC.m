@@ -23,6 +23,7 @@
 #import "EventDetailVC.h"
 #import "MyBanMeiCellB.h"
 #import "MLStyleManager.h"
+#import "EventRatingFVC.h"
 
 
 @interface MyBanMeiListTVC ()
@@ -110,16 +111,30 @@
     cell.descLabel.text=[CategoryModel stringWithIdArray:data.categoryIds];
     cell.timeLabel.text= [[NSDate dateWithTimeIntervalSince1970:[data.beginTime unsignedIntegerValue]] displayTextWithDateAndHHMM];
     cell.statusLable.text=data.applyStatus;
-    if(YES){
+    if(![data.applyStatus isEqualToString:@"待评论"]){
         cell.pingjiaButton.hidden=YES;
         cell.statusLable.hidden=NO;
+        [cell.pingjiaButton removeTarget:nil action:NULL forControlEvents:UIControlEventAllEvents];
     }else{
         cell.pingjiaButton.hidden=NO;
         cell.statusLable.hidden=YES;
+        cell.pingjiaButton.tag= indexPath.section;
+        [cell.pingjiaButton addTarget:self
+                               action:@selector(buttonClick:)
+                     forControlEvents:UIControlEventTouchUpInside];
+        [cell.pingjiaButton setTitle:@"评论" forState:UIControlStateNormal];
     }
 
     return cell;
 
+
+}
+
+-(void)buttonClick:(UIButton *)button{
+    EventRatingFVC* vc=[EventRatingFVC new];
+    vc.eventId= [((EventModel *) self.tableData[button.tag]).eventId unsignedIntegerValue];
+    [self.navigationController pushViewController:vc
+                                         animated:YES];
 
 }
 

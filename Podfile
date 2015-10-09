@@ -3,7 +3,8 @@ platform :ios, '7.0'
 
 target 'meiLiTianShi' do
   pod "AFNetworking", "~> 2.0"
-  pod 'JSONModel'
+  # pod 'JSONModel'
+  pod 'JSONModel', :git => 'https://github.com/hfossli/JSONModel.git', :branch => 'patch-1'
   pod 'XLPagerTabStrip', '~> 1.0.0'
   pod 'AXRatingView', :git => 'https://github.com/xmartlabs/AXRatingView.git'
   pod "TSMessages"

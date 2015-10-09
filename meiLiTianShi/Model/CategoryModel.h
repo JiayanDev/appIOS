@@ -23,5 +23,7 @@
 
 + (NSString *)stringWithIdArray:(NSArray *)ids;
 
++ (NSString *)stringWithIdAndNameObjectsArray:(NSArray *)objs;
+
 - (NSString *)stringWithId:(NSUInteger)id1;
 @end

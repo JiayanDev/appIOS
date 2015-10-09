@@ -16,10 +16,12 @@
 @property (nonatomic, strong) NSArray<Optional> *categoryIds;
 @property (nonatomic, strong) NSString <Optional>*province;
 @property (nonatomic, strong) NSString <Optional>*applyBeginTime;
-@property (nonatomic, strong) NSString <Optional>*desc;
+//@property (nonatomic, strong) NSString <Optional>*desc;
 @property (nonatomic, strong) NSString <Optional>*hospitalName;
 @property (nonatomic, assign) NSNumber <Optional>* userId;
-@property (nonatomic, assign) NSString  <Optional>* userName;
+@property (nonatomic, assign) NSString  <Optional>* userName123;
+
+@property (nonatomic, assign) NSString  <Optional>* userName456;
 @property (nonatomic, strong) NSString <Optional>*doctorName;
 @property (nonatomic, assign) NSNumber <Optional>* doctorId;
 
@@ -48,6 +50,7 @@
 //for index page
 @property (nonatomic, strong)NSString <Optional>*coverImg;
 @property (nonatomic, strong)NSString <Optional>*title;
+@property (nonatomic, assign) NSString  <Optional>* userName;
 //@property (nonatomic, strong)NSString <Optional>*desc;
 + (EventModel *)randomOne;
 @end

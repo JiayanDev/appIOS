@@ -70,6 +70,7 @@
         [self.pingjiaButton mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(self.contentView).offset(-15);
             make.centerY.equalTo(self.contentView);
+            make.width.mas_greaterThanOrEqualTo(50);
         }];
 
 

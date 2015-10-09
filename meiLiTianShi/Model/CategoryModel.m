@@ -85,6 +85,19 @@
     }
 }
 
++(NSString *)stringWithIdAndNameObjectsArray:(NSArray *)objs{
+    NSMutableArray *r=[NSMutableArray array];
+    for (NSDictionary *anId in objs) {
+        [r addObject:anId[@"name"]];
+    }
+
+    if(r.count==0){
+        return nil;
+    }else{
+        return [r componentsJoinedByString:@","];
+    }
+}
+
 -(NSString *)displayText{
     return self.name;
 };

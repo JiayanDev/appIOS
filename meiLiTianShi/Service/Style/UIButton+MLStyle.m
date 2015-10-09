@@ -26,6 +26,7 @@
 +(UIButton *)newBorderedColorButtonWithTitle:(NSString *)title fontSize:(CGFloat)fontsize{
     UIButton * b= [[UIButton alloc] init];
     [b setTitle:title forState:UIControlStateNormal];
+    [b setTitleColor:THEME_COLOR forState:UIControlStateNormal];
 
 
 //    b.backgroundColor=THEME_COLOR;

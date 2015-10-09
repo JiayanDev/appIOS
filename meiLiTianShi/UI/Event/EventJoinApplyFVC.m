@@ -39,7 +39,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     setValue(kInfoCell,(@[
-            @{@"项目":([self.eventInfo valueForKeyPath:@"categoryIds"]!=[NSNull null]?[self.eventInfo valueForKeyPath:@"categoryIds"]:@"null")},
+            @{@"项目":([self.eventInfo valueForKeyPath:@"categoryIds"]!=[NSNull null]? [CategoryModel stringWithIdAndNameObjectsArray: [self.eventInfo valueForKeyPath:@"categoryIds"]]:@"暂无")},
             @{@"医生":[self.eventInfo valueForKeyPath:@"doctorName"]},
             @{@"时间": [((NSNumber *) [self.eventInfo valueForKeyPath:@"beginTime"]) stringOfDateSince1970_blankTip:@"未知"]}]));
     setValue(kPersonCell,(@{kName:[self.eventInfo valueForKeyPath:@"angelUserInfo.name"],

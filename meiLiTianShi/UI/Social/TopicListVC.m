@@ -472,6 +472,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(self.tableData.count<indexPath.section+1){
+        return nil;
+    }
+
+
     id data=self.tableData[indexPath.section];
     if([data isKindOfClass:[DiaryModel class]]){
         DiaryInListCell *cell= [self.tableView dequeueReusableCellWithIdentifier:kCellDiary];
