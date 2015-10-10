@@ -116,6 +116,8 @@
 
 - (void)bindWeixinWithWeixinCode:(NSString *)wxCode success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure;
 
+- (void)judgePhoneIsAlreadyExsitedUser:(NSString *)phone success:(void (^)(BOOL isExist))success fail:(void (^)(NSInteger, id))failure;
+
 - (void)sendConfirmCodeWithPhone:(NSString *)phone success:(void (^)(NSString *confirmId))success fail:(void (^)(NSInteger, id))failure;
 
 - (void)validateConfirmCodeWithCode:(NSString *)code confirmId:(NSString *)confirmId success:(void (^)(NSString *receipt))success fail:(void (^)(NSInteger, id))failure;

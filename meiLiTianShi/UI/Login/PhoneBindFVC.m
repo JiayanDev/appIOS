@@ -130,28 +130,53 @@
 - (void)postfixButtonPressed:(UIButton *)button rowDescrptor:(XLFormRowDescriptor *)rowDescriptor {
 
     NSLog(@"::%@::",getValue(kPhone));
-    if(![getValue(kPhone) isMatch:RX(@"^1\\d{10}$")]){
+    NSString *phone=getValue(kPhone);
+    if(![phone isMatch:RX(@"^1\\d{10}$")]){
         [TSMessage showNotificationInViewController:self.navigationController
                                               title:@"请输入正确的国内手机号码"
                                            subtitle:nil
                                                type:TSMessageNotificationTypeError];
         return;
     }
+    if (self.type == PhoneBindVcType_registerFirstStep || self.type == PhoneBindVcType_afterWechatLogin || self.type == PhoneBindVcType_changePhone) {
+        [[MLSession current] judgePhoneIsAlreadyExsitedUser:phone
+                                                    success:^(BOOL isExist) {
+                                                        if(isExist){
+                                                            [TSMessage showNotificationInViewController:self.navigationController
+                                                                                                  title:@"错误"
+                                                                                               subtitle:@"此手机号码已被注册过,请换一个号码"
+                                                                                                   type:TSMessageNotificationTypeError];
+                                                        }else{
+                                                            [self doSendConfirmCodeWithPhoneLineRowDescriptor:rowDescriptor phone:phone];
+                                                        }
 
+                                                    } fail:^(NSInteger i, id o) {
+                    [TSMessage showNotificationInViewController:self.navigationController
+                                                          title:@"出错了"
+                                                       subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                           type:TSMessageNotificationTypeError];
+                }];
+    } else {
+        [self doSendConfirmCodeWithPhoneLineRowDescriptor:rowDescriptor phone:phone];
+    }
+
+}
+
+
+- (void)doSendConfirmCodeWithPhoneLineRowDescriptor:(XLFormRowDescriptor *)rowDescriptor phone:(NSString *)phone {
     [[MLSession current] sendConfirmCodeWithPhone:getValue(kPhone)
                                           success:^(NSString *confirmId) {
 
-                                              ((FloatCellOfPhoneAndButton *)[rowDescriptor cellForFormController:self]).postfixButton.enabled=NO;
-                                              self.confirmId=confirmId;
+                                              ((FloatCellOfPhoneAndButton *) [rowDescriptor cellForFormController:self]).postfixButton.enabled = NO;
+                                              self.confirmId = confirmId;
                                           } fail:^(NSInteger i, id o) {
                 [TSMessage showNotificationInViewController:self.navigationController
                                                       title:@"出错了"
                                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                                        type:TSMessageNotificationTypeError];
-                ((FloatCellOfPhoneAndButton *)[rowDescriptor cellForFormController:self]).postfixButton.enabled=YES;
+                ((FloatCellOfPhoneAndButton *) [rowDescriptor cellForFormController:self]).postfixButton.enabled = YES;
 
             }];
-
 }
 
 

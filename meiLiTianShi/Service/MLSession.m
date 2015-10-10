@@ -907,6 +907,18 @@ constructingBodyWithBlock:constructingBodyWithBlock
            failure:failure];
 }
 
+-(void)judgePhoneIsAlreadyExsitedUser:(NSString *)phone
+                              success:(void (^)(BOOL isExist))success
+                                 fail:(void (^)(NSInteger, id))failure{
+    [self sendGet:@"user/phone/exist"
+            param:@{@"phoneNum":phone}
+          success:^(NSDictionary * o){
+
+              success([((NSNumber *) o[@"exist"]) boolValue]);
+          }
+          failure:failure];
+}
+
 
 -(void)sendConfirmCodeWithPhone:(NSString *)phone
                         success:(void (^)(NSString *confirmId))success fail:(void (^)(NSInteger, id))failure{
