@@ -16,9 +16,9 @@
 @property (nonatomic, strong)NSString <Optional>*city;
 @property (nonatomic, strong)NSNumber <Optional>*birthday;
 @property (nonatomic, strong)NSString *phone;
-@property (nonatomic, assign)NSNumber <Optional>* bindWX;
-@property (nonatomic, assign)NSNumber <Optional>* bindWB;
-@property (nonatomic, assign)NSNumber <Optional>* bindQQ;
+@property (nonatomic, strong)NSNumber <Optional>* bindWX;
+@property (nonatomic, strong)NSNumber <Optional>* bindWB;
+@property (nonatomic, strong)NSNumber <Optional>* bindQQ;
 
 - (NSString *)descOfGenderAreaAge;
 

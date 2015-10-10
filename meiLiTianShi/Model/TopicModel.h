@@ -11,8 +11,8 @@
 @property (nonatomic, assign)NSUInteger id;
 @property (nonatomic, strong)NSString<Optional> * content;
 @property (nonatomic, strong)NSArray <Optional>*photoes;
-@property (nonatomic, assign)NSNumber <Optional>* commentCount;
-@property (nonatomic, assign)NSNumber <Optional>* likeCount;
+@property (nonatomic, strong)NSNumber <Optional>* commentCount;
+@property (nonatomic, strong)NSNumber <Optional>* likeCount;
 
 //for index page
 @property (nonatomic, strong)NSString <Optional>*coverImg;

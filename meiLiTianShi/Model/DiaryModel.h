@@ -9,11 +9,11 @@
 
 
 @interface DiaryModel : MLJsonModel
-@property (nonatomic, assign) NSNumber <Optional>*commentCount;
+@property (nonatomic, strong) NSNumber <Optional>*commentCount;
 @property (nonatomic, assign) NSUInteger id;
 @property (nonatomic, strong) NSString <Optional>*content;
 @property (nonatomic, strong) NSArray <Optional>*photoes;
-@property (nonatomic, assign) NSNumber <Optional>* likeCount;
+@property (nonatomic, strong) NSNumber <Optional>* likeCount;
 @property (nonatomic, assign) NSUInteger createTime;
 
 @property (nonatomic, strong)NSString <Optional>*avatar; // for faxian index
