@@ -48,7 +48,10 @@
     [self getDataWithScrollingToTop:NO];
     [MLStyleManager removeBackTextForNextScene:self];
 
+
 }
+
+
 
 
 
