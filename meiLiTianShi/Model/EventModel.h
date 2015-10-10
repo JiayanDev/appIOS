@@ -12,18 +12,18 @@
 @property (nonatomic, strong)NSNumber <Optional>*eventId;// for index
 @property (nonatomic, strong) NSString <Optional>*categoryName;
 //@property (nonatomic, assign) NSNumber <Optional>* hospitalId;
-@property (nonatomic, assign) NSNumber <Optional>* hasLike;
+@property (nonatomic, strong) NSNumber <Optional>* hasLike;
 @property (nonatomic, strong) NSArray<Optional> *categoryIds;
 @property (nonatomic, strong) NSString <Optional>*province;
 @property (nonatomic, strong) NSString <Optional>*applyBeginTime;
 //@property (nonatomic, strong) NSString <Optional>*desc;
 @property (nonatomic, strong) NSString <Optional>*hospitalName;
-@property (nonatomic, assign) NSNumber <Optional>* userId;
-@property (nonatomic, assign) NSString  <Optional>* userName123;
-
-@property (nonatomic, assign) NSString  <Optional>* userName456;
+@property (nonatomic, strong) NSNumber <Optional>* userId;
+//@property (nonatomic, strong) NSString  <Optional>* userName123;
+//
+//@property (nonatomic, assign) NSString  <Optional>* userName456;
 @property (nonatomic, strong) NSString <Optional>*doctorName;
-@property (nonatomic, assign) NSNumber <Optional>* doctorId;
+@property (nonatomic, strong) NSNumber <Optional>* doctorId;
 
 @property (nonatomic, strong) NSString <Optional>*doctorAvatar; // for index
 @property (nonatomic, strong) NSString <Optional>*doctorDesc; // for index
@@ -36,9 +36,9 @@
 @property (nonatomic, strong) NSString <Optional>*addr;
 
 
-@property (nonatomic, assign) NSNumber <Optional>* applymentCount;
-@property (nonatomic, assign) NSNumber <Optional>* commentCount;
-@property (nonatomic, assign) NSNumber <Optional>* likeCount;
+@property (nonatomic, strong) NSNumber <Optional>* applymentCount;
+@property (nonatomic, strong) NSNumber <Optional>* commentCount;
+@property (nonatomic, strong) NSNumber <Optional>* likeCount;
 @property (nonatomic, strong) NSNumber  <Optional>*beginTime;
 
 
@@ -50,7 +50,7 @@
 //for index page
 @property (nonatomic, strong)NSString <Optional>*coverImg;
 @property (nonatomic, strong)NSString <Optional>*title;
-@property (nonatomic, assign) NSString  <Optional>* userName;
+@property (nonatomic, strong) NSString  <Optional>* userName;
 //@property (nonatomic, strong)NSString <Optional>*desc;
 + (EventModel *)randomOne;
 @end
