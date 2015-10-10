@@ -200,4 +200,13 @@
 	return [self scaleToFillSize:CGSizeMake(destWidth, destHeight)];
 }
 
+-(UIImage*)scaleDownToCoverSizeAndNoZoomForSmall:(CGSize)newSize{
+	if(self.size.height<=newSize.height && self.size.width<=newSize.width){
+		return self;
+	}else{
+		return [self scaleToCoverSize:newSize];
+	}
+}
+
+
 @end

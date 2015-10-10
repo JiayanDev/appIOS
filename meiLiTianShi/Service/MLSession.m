@@ -25,6 +25,7 @@
 #import "NSString+MD5.h"
 #import "LoginWaySelectVC.h"
 #import "MessageNoticingModel.h"
+#import "UIImage+Resizing.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -552,7 +553,9 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
 
-
+-(NSData*)imageDataWithUploadResizingAndCompressToJpeg:(UIImage *)image{
+    return UIImageJPEGRepresentation([image scaleDownToCoverSizeAndNoZoomForSmall:CGSizeMake(600, 600)], 85);
+}
 
 
 -(void)uploadOneImage:(UIImage *)image
@@ -561,7 +564,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
     NSLog(@"upload:%@",uploadToken);
 
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
-    NSData *imageData = UIImageJPEGRepresentation((UIImage *) image, 85);
+    NSData *imageData = [self imageDataWithUploadResizingAndCompressToJpeg:image];
 
     NSError *serializationError = nil;
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer]
@@ -634,7 +637,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
     for (id image in mImages) {
         NSData *imageData;
         if ([image isKindOfClass:[UIImage class]]) {
-            imageData = UIImageJPEGRepresentation((UIImage *) image, 85);
+            imageData = [self imageDataWithUploadResizingAndCompressToJpeg:image];
 
         } else {
             imageData = (NSData *) image;
