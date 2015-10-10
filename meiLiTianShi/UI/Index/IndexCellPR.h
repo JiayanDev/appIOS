@@ -17,6 +17,8 @@
 @property(nonatomic, strong) UILabel *doctorDescLabel;
 @property(nonatomic, strong) UILabel *statusLabel;
 
+- (void)setStatusBackColorIsRed:(BOOL)isRed;
+
 + (int)cellHeight;
 
 

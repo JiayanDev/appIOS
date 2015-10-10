@@ -199,7 +199,9 @@ return 1;
 
         cell.doctorNameLabel.text=data.doctorName;
         cell.doctorDescLabel.text=data.doctorDesc;
-        cell.statusLabel.text=data.status;
+        cell.statusLabel.text= [data statusForRead];
+
+        [cell setStatusBackColorIsRed:[data isActiveStatus]];
 
 
         return cell;

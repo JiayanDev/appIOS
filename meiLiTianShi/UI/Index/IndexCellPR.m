@@ -37,7 +37,7 @@
         [self.footView addSubview:self.doctorNameLabel];
         [self.footView addSubview:self.doctorDescLabel];
 
-        self.statusBackImage.image=[UIImage imageNamed:@"活动状态标签－底.png"];
+        self.statusBackImage.image= [[UIImage imageNamed:@"活动状态标签－底.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(14,36,11,34)];
         self.backImage.clipsToBounds=YES;
         self.backImage.contentMode=UIViewContentModeScaleAspectFill;
         self.doctorDescLabel.textAlignment=NSTextAlignmentRight;
@@ -61,14 +61,16 @@
         [self.statusBackImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.backImage).offset(16);
             make.right.equalTo(self.backImage);
-            make.size.mas_equalTo([UIImage imageNamed:@"活动状态标签－底.png"].size);
+            make.height.mas_equalTo([UIImage imageNamed:@"活动状态标签－底.png"].size.height);
+            make.width.mas_greaterThanOrEqualTo([UIImage imageNamed:@"活动状态标签－底.png"].size.width);
 //            make.height.equalTo();
 //            make.width.equalTo();
         }];
 
         [self.statusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.statusBackImage);
-            make.right.equalTo(self.statusBackImage).offset(-14);
+            make.right.lessThanOrEqualTo(self.statusBackImage).offset(-10);
+            make.left.greaterThanOrEqualTo(self.statusBackImage).offset(14);
         }];
 
         [self.doctorAvatar mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -101,6 +103,14 @@
     }
     return self;
 }
+
+-(void)setStatusBackColorIsRed:(BOOL)isRed{
+    if(isRed){
+        self.statusBackImage.image= [[UIImage imageNamed:@"活动状态标签－底.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(14,36,11,34)];
+    }else{
+        self.statusBackImage.image= [[UIImage imageNamed:@"活动状态标签－底－灰.zip.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(14,36,11,34)];
+    }
+};
 
 
 +(int)cellHeight{

@@ -24,4 +24,16 @@
     return e;
 
 };
+
+-(BOOL)isActiveStatus{
+    //red
+    return [self.status isEqualToString:@"发布"];
+}
+
+-(NSString *)statusForRead{
+    if([self.status isEqualToString:@"发布"]){
+        return @"招募中";
+    }
+    return self.status;
+}
 @end

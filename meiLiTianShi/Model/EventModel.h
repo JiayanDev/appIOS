@@ -11,7 +11,7 @@
 @property (nonatomic, assign) NSUInteger id;
 @property (nonatomic, strong)NSNumber <Optional>*eventId;// for index
 @property (nonatomic, strong) NSString <Optional>*categoryName;
-//@property (nonatomic, assign) NSNumber <Optional>* hospitalId;
+//@property (nonatomic, strong) NSNumber <Optional>* hospitalId;
 @property (nonatomic, strong) NSNumber <Optional>* hasLike;
 @property (nonatomic, strong) NSArray<Optional> *categoryIds;
 @property (nonatomic, strong) NSString <Optional>*province;
@@ -53,4 +53,8 @@
 @property (nonatomic, strong) NSString  <Optional>* userName;
 //@property (nonatomic, strong)NSString <Optional>*desc;
 + (EventModel *)randomOne;
+
+- (BOOL)isActiveStatus;
+
+- (NSString *)statusForRead;
 @end
