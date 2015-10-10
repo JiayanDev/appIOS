@@ -10,6 +10,7 @@
 @interface UserModel : JSONModel
 @property (nonatomic, assign)NSUInteger id;
 @property (nonatomic, strong)NSString <Optional>* name;
+@property (nonatomic, strong)NSString <Optional>* role;
 @property (nonatomic, strong)NSString <Optional>*avatar;
 @property (nonatomic, strong)NSNumber <Optional>*gender;
 @property (nonatomic, strong)NSString <Optional>*province;

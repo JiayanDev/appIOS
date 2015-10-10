@@ -39,6 +39,11 @@
     [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
     // Do any additional setup after loading the view from its nib.
     self.title=@"我的";
+//    if([[MLSession current].currentUser.role isEqualToString:@"angel"]){
+//
+//    }else{
+//        [self.form formRowWithTag:kMyTimeline].hidden=@YES;
+//    }
     [MLStyleManager removeBackTextForNextScene:self];
 
 
@@ -65,6 +70,10 @@
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kMyTimeline rowType:XLFormRowDescriptorTypeSelectorPush title:@"我的主页"];
     row.cellConfigAtConfigure[@"imageView.image"]=[UIImage imageNamed:@"我的_我的日志.png"];
+    if(![[MLSession current].currentUser.role isEqualToString:@"angel"]){
+        row.hidden=@YES;
+
+    }
     [section addFormRow:row];
 
 
@@ -167,6 +176,14 @@
 
         }];
     }
+
+
+    if([[MLSession current].currentUser.role isEqualToString:@"angel"]){
+        [self.form formRowWithTag:kMyTimeline].hidden=@NO;
+    }else{
+        [self.form formRowWithTag:kMyTimeline].hidden=@YES;
+    }
+
     [self.tableView reloadData];
 
 }
