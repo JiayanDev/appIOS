@@ -139,6 +139,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self getData];
 }
 
@@ -190,6 +191,7 @@
                                                  tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
                                                      if (buttonIndex == alert.cancelButtonIndex) {
                                                          NSLog(@"Cancel Tapped");
+                                                         [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
                                                      } else if (buttonIndex >= alert.firstOtherButtonIndex) {
 
                                                          [MLSession current].presentingWxLoginVC=self;

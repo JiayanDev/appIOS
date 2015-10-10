@@ -28,11 +28,11 @@ PODS:
   - HCSStarRatingView (1.4.2)
   - HexColors (2.2.1)
   - JMImageCache (0.4.0)
-  - JSONModel (1.1)
+  - JSONModel (1.1.0)
   - JVFloatLabeledTextField (1.1.0)
   - Masonry (0.6.3)
   - MBProgressHUD (0.9.1)
-  - MJRefresh (2.4.11)
+  - MJRefresh (2.4.12)
   - pop (1.0.8)
   - RegExCategories (1.0)
   - RMUniversalAlert (0.7):
@@ -65,7 +65,7 @@ DEPENDENCIES:
   - FXBlurView
   - HCSStarRatingView (~> 1.4.2)
   - JMImageCache
-  - JSONModel (from `https://github.com/hfossli/JSONModel.git`, branch `patch-1`)
+  - JSONModel
   - JVFloatLabeledTextField
   - Masonry
   - MBProgressHUD (~> 0.9.1)
@@ -85,17 +85,11 @@ DEPENDENCIES:
 EXTERNAL SOURCES:
   AXRatingView:
     :git: https://github.com/xmartlabs/AXRatingView.git
-  JSONModel:
-    :branch: patch-1
-    :git: https://github.com/hfossli/JSONModel.git
 
 CHECKOUT OPTIONS:
   AXRatingView:
     :commit: 3b80946adda6bb37d73ec712be3b9a6f78fc6d00
     :git: https://github.com/xmartlabs/AXRatingView.git
-  JSONModel:
-    :commit: 33548fd7aa00fe7b15f898469d5ae28ab26d0ceb
-    :git: https://github.com/hfossli/JSONModel.git
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
@@ -107,11 +101,11 @@ SPEC CHECKSUMS:
   HCSStarRatingView: 6157471eff9fe3ec7240e131a5b0aba39f097e57
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   JMImageCache: fac25eb168a25b29ac130fee6a6b17ea463c1d86
-  JSONModel: f7c057e3da7839e47e4174735ae5f38fdfb2a34d
+  JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  MJRefresh: b327947f35ab3eb16ca42646b26f7347e6aa7186
+  MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   RegExCategories: e68befacacd5bda853c88f70ec745cb2d0cfb89c
   RMUniversalAlert: bce2ca406c24065b76665725c83e48006e8f65f8
