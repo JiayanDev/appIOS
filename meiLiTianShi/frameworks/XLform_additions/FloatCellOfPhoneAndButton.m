@@ -8,6 +8,7 @@
 #import "JVFloatLabeledTextField.h"
 #import "UIView+XLFormAdditions.h"
 #import "UIImage+Color.h"
+#import "JKCountDownButton.h"
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -60,7 +61,7 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     [self.contentView addSubview:self.floatLabeledTextField];
     [self.floatLabeledTextField setDelegate:self];
 
-    self.postfixButton= [[UIButton alloc] init];
+    self.postfixButton= [[JKCountDownButton alloc] init];
     [self.postfixButton setTitle:@"发送验证码" forState:UIControlStateNormal];
     [self.postfixButton setTitle:@"已发送"
                          forState:UIControlStateDisabled];
@@ -72,7 +73,20 @@ const static CGFloat kFloatingLabelFontSize = 11.0f;
     [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT_BUTTON] forState:UIControlStateHighlighted];
     [self.postfixButton setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
 
-    [self.postfixButton addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchUpInside];
+    __weak FloatCellOfPhoneAndButton *weakSelf = self;
+    [self.postfixButton addToucheHandler:^(JKCountDownButton*sender, NSInteger tag) {
+        sender.enabled = NO;
+
+
+        [weakSelf buttonPress:sender];
+
+    }];
+
+    [self.postfixButton didFinished:^NSString *(JKCountDownButton *countDownButton, int second) {
+        countDownButton.enabled=YES;
+        return @"重新发送";
+    }];
+//    [self.postfixButton addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchUpInside];
 
 
     self.prefixLabel=[[UILabel alloc] init];

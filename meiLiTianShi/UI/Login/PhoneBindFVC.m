@@ -19,6 +19,7 @@
 #import "ChangePasswordSecondStepFTV.h"
 #import "MLStyleManager.h"
 #import "PhoneRegisterSecondStepFVC.h"
+#import "JKCountDownButton.h"
 
 
 @interface PhoneBindFVC()
@@ -168,6 +169,8 @@
                                           success:^(NSString *confirmId) {
 
                                               ((FloatCellOfPhoneAndButton *) [rowDescriptor cellForFormController:self]).postfixButton.enabled = NO;
+                                              [((FloatCellOfPhoneAndButton *) [rowDescriptor cellForFormController:self]).postfixButton startWithSecond:60];
+
                                               self.confirmId = confirmId;
                                           } fail:^(NSInteger i, id o) {
                 [TSMessage showNotificationInViewController:self.navigationController

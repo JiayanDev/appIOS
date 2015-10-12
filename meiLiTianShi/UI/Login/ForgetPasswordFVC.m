@@ -13,6 +13,7 @@
 #import "MLSession.h"
 #import "FloatCellOfPassword.h"
 #import "UIAlertView+Blocks.h"
+#import "JKCountDownButton.h"
 
 
 @interface ForgetPasswordFVC()
@@ -114,7 +115,9 @@
     [[MLSession current] sendConfirmCodeWithPhone:getValue(kPhone)
                                           success:^(NSString *confirmId) {
 
-                                              ((FloatCellOfPhoneAndButton *)[rowDescriptor cellForFormController:self]).postfixButton.enabled=NO;
+                                              ((FloatCellOfPhoneAndButton *) [rowDescriptor cellForFormController:self]).postfixButton.enabled = NO;
+                                              [((FloatCellOfPhoneAndButton *) [rowDescriptor cellForFormController:self]).postfixButton startWithSecond:60];
+
                                               self.confirmId=confirmId;
                                           } fail:^(NSInteger i, id o) {
                 [TSMessage showNotificationInViewController:self.navigationController
