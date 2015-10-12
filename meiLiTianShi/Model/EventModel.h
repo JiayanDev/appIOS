@@ -40,7 +40,7 @@
 @property (nonatomic, strong) NSNumber <Optional>* commentCount;
 @property (nonatomic, strong) NSNumber <Optional>* likeCount;
 @property (nonatomic, strong) NSNumber  <Optional>*beginTime;
-
+@property (nonatomic, strong) NSNumber  <Optional>*createTime;
 
 @property (nonatomic, strong) NSArray <Optional>*photo;
 
