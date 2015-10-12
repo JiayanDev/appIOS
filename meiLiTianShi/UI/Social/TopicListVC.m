@@ -361,7 +361,9 @@
         }
         dcell.nameLabel.text=diary.userName;
 
+
         [dcell.nameLabel appendIconOfGender:[diary.gender unsignedIntegerValue]];
+        [dcell.nameLabel appendIconOfTag:diary.role];
 
 //        dcell.catogoriesLabel.text=@"项目名字";
         if(diary.prevCategoryIds && diary.prevCategoryIds.count>0){

@@ -22,8 +22,9 @@
     NSAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
 
 
-    self.text=[NSString stringWithFormat:@"%@ ",self.text];
+//    self.text=[NSString stringWithFormat:@"%@ ",self.text];
     NSMutableAttributedString *myString= [self.attributedText mutableCopy];
+    [myString insertAttributedString:[[NSAttributedString alloc] initWithString:@"  "] atIndex:[myString length]];
     [myString appendAttributedString:attachmentString];
 
     self.attributedText = myString;
@@ -48,6 +49,18 @@
     }
 
 };
+
+
+-(void)appendIconOfTag:(NSString *)tag{
+    if([tag isEqualToString:@"angel"]){
+
+        [self appendIcon:[UIImage imageNamed:@"标签_美丽天使.png"]];
+    }else if([tag isEqualToString:@"official"]){
+        [self appendIcon:[UIImage imageNamed:@"标签_官方.png"]];
+    }else if([tag isEqualToString:@"company"]){
+        [self appendIcon:[UIImage imageNamed:@"标签_伴美.png"]];
+    }
+}
 
 
 -(void)prependIcon:(UIImage *)icon{

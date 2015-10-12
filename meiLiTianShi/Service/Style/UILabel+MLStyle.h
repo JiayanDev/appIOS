@@ -16,6 +16,8 @@
 
 - (void)prependIconOfGender:(NSUInteger)gender;
 
+- (void)appendIconOfTag:(NSString *)tag;
+
 - (void)prependIcon:(UIImage *)icon;
 
 //- (void)prependIcon:(UIImage *)icon withBounds:(CGRect)bound;
