@@ -56,6 +56,13 @@
 
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    CGRect r=self.tableView.tableFooterView.frame;
+    r.size.height=MAX(64, self.tableView.frame.size.height-r.origin.y-64);
+    self.tableView.tableFooterView.frame=r;
+}
+
 
 -(void)submitButtonPress {
     RatingCell_ATitleAndTwoRates*cell= (RatingCell_ATitleAndTwoRates *) [[self.form formRowWithTag:kStarCell] cellForFormController:self];
@@ -117,7 +124,7 @@
     [formDescriptor addFormSection:section];
 
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kWordsCell rowType:XLFormRowDescriptorTypeTextView];
-
+    row.cellConfigAtConfigure[@"textView.placeholder"] = @"请输入评论";
     [section addFormRow:row];
 
 
