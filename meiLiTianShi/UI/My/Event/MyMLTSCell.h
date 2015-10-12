@@ -9,4 +9,5 @@
 @interface MyMLTSCell : UITableViewCell
 @property(nonatomic, strong) NSMutableArray *lefts;
 @property(nonatomic, strong) NSMutableArray *rights;
+@property(nonatomic, strong) UILabel *statusLabel;
 @end

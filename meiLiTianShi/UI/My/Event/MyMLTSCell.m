@@ -6,6 +6,7 @@
 #import <Masonry/View+MASAdditions.h>
 #import "MyMLTSCell.h"
 #import "MASConstraintMaker.h"
+#import "UILabel+MLStyle.h"
 
 
 @implementation MyMLTSCell {
@@ -21,6 +22,12 @@
        self.lefts=[NSMutableArray new];
         self.rights=[NSMutableArray new];
 
+        self.statusLabel=[UILabel newMLStyleWithSize:15 isGrey:YES];
+        [self.contentView addSubview:self.statusLabel];
+        [self.statusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView).offset(-7);
+            make.centerY.equalTo(self.contentView);
+        }];
 
         for (int i = 0; i < 3; ++i) {
 

@@ -136,7 +136,7 @@
     ((UILabel *)cell.rights[1]).text= [data.hospitalName selfOrNilNullWithReplacing:@"暂未确定医院"];
     ((UILabel *)cell.rights[2]).text= [[NSDate dateWithTimeIntervalSince1970:[data.createTime unsignedIntegerValue]] displayTextWithDateAndHHMM];
 
-
+    cell.statusLabel.text= [data statusForRead];
 
 
 //
