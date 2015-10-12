@@ -4,6 +4,7 @@
 //
 
 #import <Masonry/View+MASAdditions.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "EventRatingFVC.h"
 #import "EventIntroCell_atRating.h"
 #import "RatingCell_ATitleAndTwoRates.h"
@@ -13,6 +14,9 @@
 #import "XLform_getAndSetValue.h"
 #import "TSMessage.h"
 #import "MLSession.h"
+#import "CategoryModel.h"
+#import "NSNumber+MLUtil.h"
+#import "UILabel+MLStyle.h"
 
 #define kIntroCell @"intro"
 #define kStarCell @"star"
@@ -40,6 +44,25 @@
     [self.submitButton addTarget:self
                           action:@selector(submitButtonPress)
                 forControlEvents:UIControlEventTouchUpInside];
+
+    [[MLSession current] getEventDetailWithEventId:self.eventId
+                                           success:^(EventModel *model) {
+                                               if(model.thumbnailImg && model.thumbnailImg.length>0){
+                                                   [((EventIntroCell_atRating *) [[self.form formRowWithTag:kIntroCell] cellForFormController:self]).thumbImageView sd_setImageWithURL:model.thumbnailImg];
+                                               }else{
+                                                   ((EventIntroCell_atRating*) [[self.form formRowWithTag:kIntroCell] cellForFormController:self]).thumbImageView.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
+                                               }
+
+                                               ((EventIntroCell_atRating*) [[self.form formRowWithTag:kIntroCell] cellForFormController:self]).titleLabel.text=model.title;
+                                               ((EventIntroCell_atRating*) [[self.form formRowWithTag:kIntroCell] cellForFormController:self]).descLabel.text= [CategoryModel stringWithIdAndNameObjectsArray:model.categoryIds];
+                                               ((EventIntroCell_atRating*) [[self.form formRowWithTag:kIntroCell] cellForFormController:self]).timeLabel.text= [model.beginTime stringOfDateSince1970_blankTip:@""];
+                                               [((EventIntroCell_atRating *) [[self.form formRowWithTag:kIntroCell] cellForFormController:self]).timeLabel prependIcon:[UIImage imageNamed:@"评价伴美_时间.png"]];
+
+                                           } fail:^(NSInteger i, id o) {
+                [TSMessage showNotificationWithTitle:@"出错了"
+                                            subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                type:TSMessageNotificationTypeError];
+            }];
 }
 
 
