@@ -86,6 +86,11 @@
 
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    [self scrollViewDidScroll:self.tableView];
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGRect frame = self.fixedBottomView.frame;
