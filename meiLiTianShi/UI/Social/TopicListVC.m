@@ -88,6 +88,7 @@
     self.imagePager= [[WKIImagePager alloc] initWithFrame:CGRectMake(0,0, [UIScreen mainScreen].bounds.size.width,(int)([UIScreen mainScreen].bounds.size.width*(380/750.0)))];
     self.imagePager.delegate=self;
     self.imagePager.dataSource=self;
+    self.imagePager.slideshowTimeInterval=5;
 
     self.tableView.tableHeaderView=self.imagePager;
 

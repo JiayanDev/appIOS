@@ -23,9 +23,11 @@
 #import "IndexCellOfOthers.h"
 #import "UIImageView+MLStyle.h"
 #import "UIImage+Resizing.h"
+#import "MJRefreshNormalHeader.h"
 
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
+@property (strong, nonatomic)NSMutableArray *tableDataDisplayCaching;
 @end
 #define kIndexCellEvent @"indexcellevent"
 #define kIndexCellOther @"indexcellother"
@@ -35,6 +37,7 @@
     [super viewDidLoad];
     self.navigationItem.title=@"佳妍";
     self.tableData=[NSMutableArray array];
+    self.tableDataDisplayCaching=[NSMutableArray new];
     [self.tableView registerClass:[IndexCellPR class] forCellReuseIdentifier:kIndexCellEvent];
     [self.tableView registerClass:[IndexCellOfOthers class] forCellReuseIdentifier:kIndexCellOther];
     [self getData];
@@ -45,9 +48,20 @@
     // self.clearsSelectionOnViewWillAppear = NO;
     [MLStyleManager removeBackTextForNextScene:self];
 
+
+    self.tableView.header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(dragDown)];
+    ((MJRefreshNormalHeader*)self.tableView.header).lastUpdatedTimeLabel.hidden = YES;
+
 //    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
 
+
+}
+
+
+-(void)dragDown{
+    self.tableData=[NSMutableArray array];
+    [self getData];
 
 }
 
@@ -70,7 +84,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.tableData.count;
+    return self.tableDataDisplayCaching.count;
 
 }
 
@@ -81,21 +95,25 @@ return 1;
 -(void)getData{
     [[MLSession current] getIndexList_success:^(NSArray *array) {
         self.tableData= [array mutableCopy];
+        self.tableDataDisplayCaching=self.tableData;
+        [self.tableView.header endRefreshing];
         [self.tableView reloadData];
+
     } fail:^(NSInteger i, id o) {
         [TSMessage showNotificationWithTitle:@"出错了"
                                     subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                         type:TSMessageNotificationTypeError];
+        [self.tableView.header endRefreshing];
     }];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
+    if([self.tableDataDisplayCaching[indexPath.section] isKindOfClass:[TopicModel class]]){
 
         IndexCellOfOthers*cell= [self.tableView dequeueReusableCellWithIdentifier:kIndexCellOther];
-        TopicModel *data=self.tableData[indexPath.section];
+        TopicModel *data=self.tableDataDisplayCaching[indexPath.section];
 //        cell.title.text=[NSString stringWithFormat:@"huati: %@",data.title];
 //        cell.desc.text=[NSString stringWithFormat:@"huati: %@",data.desc];
         if(data.coverImg){
@@ -145,7 +163,7 @@ return 1;
         }
         return cell;
     }else{
-        EventModel *data=self.tableData[indexPath.section];
+        EventModel *data=self.tableDataDisplayCaching[indexPath.section];
 
         IndexCellPR  *cell=[self.tableView dequeueReusableCellWithIdentifier:kIndexCellEvent];
         if(data.coverImg){
@@ -214,7 +232,7 @@ return 1;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
+    if([self.tableDataDisplayCaching[indexPath.section] isKindOfClass:[TopicModel class]]){
         return [IndexCellOfOthers cellHeight];
         return [tableView fd_heightForCellWithIdentifier:kIndexCellOther cacheByIndexPath:indexPath configuration:nil];
         return [tableView fd_heightForCellWithIdentifier:kIndexCellOther cacheByIndexPath:indexPath configuration:^(id cell) {
@@ -237,15 +255,15 @@ return 1;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if([self.tableData[indexPath.section] isKindOfClass:[TopicModel class]]){
-        TopicModel *data=self.tableData[indexPath.section];
+    if([self.tableDataDisplayCaching[indexPath.section] isKindOfClass:[TopicModel class]]){
+        TopicModel *data=self.tableDataDisplayCaching[indexPath.section];
         DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
         vc.type=WebviewWithCommentVcDetailTypeTopic;
         vc.topic=data;
         [self.navigationController pushViewController:vc animated:YES];
 
     }else{
-        EventModel *data=self.tableData[indexPath.section];
+        EventModel *data=self.tableDataDisplayCaching[indexPath.section];
 
         EventDetailVC *vc=[[EventDetailVC alloc]init];
         vc.eventId= [data.eventId unsignedIntegerValue];
