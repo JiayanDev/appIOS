@@ -22,6 +22,7 @@
 #import "NotificationListTVC.h"
 #import "TimeLineVCB.h"
 #import "UserModel.h"
+#import "UserDetailModel.h"
 
 @interface MyIndexVC ()
 @property (nonatomic, strong)XLFormDescriptor *logginedFormDescriptor;
@@ -166,23 +167,24 @@
         self.form=self.noLoginFormDescriptor;
     }
 
-    if([MLSession current].currentUserDetail){
-        setValue(kUser,[MLSession current].currentUserDetail);
-    }else{
+//    if([MLSession current].currentUserDetail){
+//        setValue(kUser,[MLSession current].currentUserDetail);
+//    }else{
         [[MLSession current] getUserDetail_success:^(UserDetailModel *model) {
             setValue(kUser,model);
             [self.tableView reloadData];
+            if([model.role isEqualToString:@"angel"]){
+                [self.form formRowWithTag:kMyTimeline].hidden=@NO;
+            }else{
+                [self.form formRowWithTag:kMyTimeline].hidden=@YES;
+            }
         } fail:^(NSInteger i, id o) {
 
         }];
-    }
+//    }
 
 
-    if([[MLSession current].currentUser.role isEqualToString:@"angel"]){
-        [self.form formRowWithTag:kMyTimeline].hidden=@NO;
-    }else{
-        [self.form formRowWithTag:kMyTimeline].hidden=@YES;
-    }
+
 
     [self.tableView reloadData];
 

@@ -28,7 +28,8 @@ target 'meiLiTianShi' do
   pod 'HCSStarRatingView', '~> 1.4.2'
   pod "UIViewController-KeyboardAdditions"
   pod 'UMengAnalytics'
-  pod 'PHFComposeBarView', '~> 2.0.1'
+  # pod 'PHFComposeBarView', '~> 2.0.1'
+  pod 'PHFDelegateChain', '~> 1.0'
 end
 
 target 'meiLiTianShiTests' do

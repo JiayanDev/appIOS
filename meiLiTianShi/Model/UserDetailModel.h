@@ -16,6 +16,7 @@
 @property (nonatomic, strong)NSString <Optional>*city;
 @property (nonatomic, strong)NSNumber <Optional>*birthday;
 @property (nonatomic, strong)NSString *phone;
+@property (nonatomic, strong)NSString <Optional>* role;
 @property (nonatomic, strong)NSNumber <Optional>* bindWX;
 @property (nonatomic, strong)NSNumber <Optional>* bindWB;
 @property (nonatomic, strong)NSNumber <Optional>* bindQQ;

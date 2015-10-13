@@ -33,8 +33,6 @@ PODS:
   - Masonry (0.6.3)
   - MBProgressHUD (0.9.1)
   - MJRefresh (2.4.12)
-  - PHFComposeBarView (2.0.2):
-    - PHFDelegateChain (~> 1.0)
   - PHFDelegateChain (1.0.1)
   - pop (1.0.8)
   - RegExCategories (1.0)
@@ -73,7 +71,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD (~> 0.9.1)
   - MJRefresh
-  - PHFComposeBarView (~> 2.0.1)
+  - PHFDelegateChain (~> 1.0)
   - pop
   - RegExCategories (~> 1.0)
   - RMUniversalAlert
@@ -110,7 +108,6 @@ SPEC CHECKSUMS:
   Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: ca8e9589895977df32d379d46e6b8a5450b3ff44
-  PHFComposeBarView: 758c73ce54be681df97223bc61543dd8828ae0d3
   PHFDelegateChain: 491f9cd8a3fb8761f390ff05f74a0e168d48d285
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   RegExCategories: e68befacacd5bda853c88f70ec745cb2d0cfb89c
