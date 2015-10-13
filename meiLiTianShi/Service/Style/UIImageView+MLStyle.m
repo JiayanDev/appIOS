@@ -30,7 +30,7 @@
 }
 
 -(void)setImageWithScalingToSelfSizeWithUrl:(NSURL *)url AndWillAnimate:(BOOL)animated withSize:(CGSize)size{
-    __block CGSize s;
+//    __block CGSize s;
     CGFloat  scale=[UIScreen mainScreen].scale;
 
     __weak UIImageView * weakSelf=self;
@@ -40,7 +40,9 @@
         [self sd_setImageWithURL:url
                 placeholderImage:nil
                          options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        CGSize s;
                         if(CGSizeEqualToSize(size,CGSizeZero)){
                             s=CGSizeMake(weakSelf.frame.size.width * scale, weakSelf.frame.size.height * scale);
 
@@ -61,6 +63,7 @@
                 placeholderImage:nil
                          options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        CGSize s;
                         if(CGSizeEqualToSize(size,CGSizeZero)){
                             s=CGSizeMake(weakSelf.frame.size.width * scale, weakSelf.frame.size.height * scale);
 
