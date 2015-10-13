@@ -66,7 +66,7 @@
 //    [vc2.tabBarController.tabBarItem setImage:[SYLSession imageWithColor:UIColorFromRGB(0x777777)]];
 
 
-    tabBarController.viewControllers = @[vc1,vc2,vc3,vc4];
+    tabBarController.viewControllers = @[vc1,vc2,vc4];
     tabBarController.tabBar.tintColor=THEME_COLOR;
     vc1.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"伴美"
                                                   image:[[UIImage imageNamed:@"home－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]

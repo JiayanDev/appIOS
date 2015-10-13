@@ -197,6 +197,8 @@ constructingBodyWithBlock:constructingBodyWithBlock
     if(self.deviceToken){
         d[@"deviceToken"]=self.deviceToken;
     }
+    
+    self.token=nil;
     [self sendPost:@"app/init"
              param:d
            success:^(NSDictionary * user){
