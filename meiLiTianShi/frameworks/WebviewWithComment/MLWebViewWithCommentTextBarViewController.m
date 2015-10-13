@@ -50,6 +50,9 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
 //    [self setEdgesForExtendedLayout:UIRectEdgeNone];
 
     [self setView:view];
+    [self.composeBarView.likeButton addTarget:self
+                                       action:@selector(likeButtonPress:)
+                             forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidLoad {
@@ -87,8 +90,21 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
     [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey]          getValue:&endFrame];
 
     NSInteger signCorrection = 1;
-    if (startFrame.origin.y < 0 || startFrame.origin.x < 0 || endFrame.origin.y < 0 || endFrame.origin.x < 0)
+    if (startFrame.origin.y < 0 || startFrame.origin.x < 0 || endFrame.origin.y < 0 || endFrame.origin.x < 0){
        signCorrection = -1;
+
+    }else{
+
+    }
+
+
+    if([notification.name isEqualToString:UIKeyboardWillShowNotification]){
+        self.composeBarView.submitButton.hidden=NO;
+        self.composeBarView.likeButton.hidden=YES;
+    }else{
+        self.composeBarView.submitButton.hidden=YES;
+        self.composeBarView.likeButton.hidden=NO;
+    }
 
     CGFloat widthChange  = (endFrame.origin.x - startFrame.origin.x) * signCorrection;
     CGFloat heightChange = (endFrame.origin.y - startFrame.origin.y) * signCorrection;
@@ -103,16 +119,22 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
                         options:(animationCurve << 16)|UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
                          [[self container] setFrame:newContainerFrame];
-                         [self.webView.scrollView setContentOffset:CGPointMake(0, self.webView.scrollView.contentOffset.y-heightChange)];
+                         if([notification.name isEqualToString:UIKeyboardWillShowNotification]) {
+                             [self.webView.scrollView setContentOffset:CGPointMake(0, self.webView.scrollView.contentOffset.y - heightChange)];
+                         }
                      }
                      completion:NULL];
 }
 
 - (void)composeBarViewDidPressButton:(PHFComposeBarView *)composeBarView {
-    NSString *text = [NSString stringWithFormat:@"Main button pressed. Text:\n%@", [composeBarView text]];
-    [self prependTextToTextView:text];
+//    NSString *text = [NSString stringWithFormat:@"Main button pressed. Text:\n%@", [composeBarView text]];
+//    [self prependTextToTextView:text];
     [composeBarView setText:@"" animated:YES];
     [composeBarView resignFirstResponder];
+}
+
+-(void)likeButtonPress:(UIButton *)sender{
+
 }
 
 - (void)composeBarViewDidPressUtilityButton:(PHFComposeBarView *)composeBarView {
@@ -155,13 +177,13 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
 }
 
 
-- (PHFComposeBarView *)composeBarView {
+- (MLComposeBarView *)composeBarView {
     if (!_composeBarView) {
         CGRect frame = CGRectMake(0.0f,
                                   kInitialViewFrame.size.height - PHFComposeBarViewInitialHeight,
                                   kInitialViewFrame.size.width,
                                   PHFComposeBarViewInitialHeight);
-        _composeBarView = [[PHFComposeBarView alloc] initWithFrame:frame];
+        _composeBarView = [[MLComposeBarView alloc] initWithFrame:frame];
 //        [_composeBarView setMaxCharCount:160];
         [_composeBarView setMaxLinesCount:5];
         [_composeBarView setPlaceholder:@"评论"];
@@ -185,7 +207,7 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
 //        [_webView setAlwaysBounceVertical:YES];
 //        [_webView setFont:[UIFont systemFontOfSize:[UIFont labelFontSize]]];
         UIEdgeInsets insets = UIEdgeInsetsMake(0.0f, 0.0f, PHFComposeBarViewInitialHeight, 0.0f);
-        [_webView loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://news.qq.com/"]]];
+//        [_webView loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://news.qq.com/"]]];
         _webView.scrollView.contentInset=insets;
         _webView.scrollView.scrollsToTop=YES;
 //        [_webView setContentInset:insets];

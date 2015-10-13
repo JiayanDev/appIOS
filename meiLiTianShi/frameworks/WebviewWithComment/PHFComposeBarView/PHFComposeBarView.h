@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-
+#import <PHFDelegateChain/PHFDelegateChain.h>
 
 // Height of the view when text view is empty. Ideally, you should use this in
 // -initWithFrame:.
@@ -23,7 +23,12 @@ extern NSString *const PHFComposeBarViewFrameEndUserInfoKey;          // NSValue
 
 
 @interface PHFComposeBarView : UIView <UITextViewDelegate>
-
+@property (strong, nonatomic, readonly) UIToolbar *backgroundView;
+@property (strong, nonatomic, readonly) UIView *topLineView;
+@property (strong, nonatomic, readonly) UILabel *charCountLabel;
+@property (strong, nonatomic) PHFDelegateChain *delegateChain;
+@property (strong, nonatomic, readonly) UIButton *textContainer;
+@property (assign, nonatomic) CGFloat previousTextHeight;
 // Default is YES. When YES, the auto resizing top margin will be flexible.
 // Whenever the height changes due to text length, the top offset will
 // automatically be adjusted such that the view grows upwards while the bottom
@@ -77,6 +82,7 @@ extern NSString *const PHFComposeBarViewFrameEndUserInfoKey;          // NSValue
 
 - (void)setText:(NSString *)text animated:(BOOL)animated;
 
+- (void)didPressButton;
 @end
 
 

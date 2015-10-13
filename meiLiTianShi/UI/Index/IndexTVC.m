@@ -15,7 +15,7 @@
 //#import "IndexCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
 #import "EventDetailVC.h"
-#import "DiaryDetailVC.h"
+#import "DiaryDetailVCB.h"
 #import "UIImage+Color.h"
 #import "HexColor.h"
 #import "MLStyleManager.h"
@@ -257,7 +257,7 @@ return 1;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if([self.tableDataDisplayCaching[indexPath.section] isKindOfClass:[TopicModel class]]){
         TopicModel *data=self.tableDataDisplayCaching[indexPath.section];
-        DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
+        DiaryDetailVCB *vc= [[DiaryDetailVCB alloc] init];
         vc.type=WebviewWithCommentVcDetailTypeTopic;
         vc.topic=data;
         [self.navigationController pushViewController:vc animated:YES];

@@ -53,12 +53,7 @@ static CGFloat kTextViewToSuperviewHeightDelta;
 
 
 @interface PHFComposeBarView ()
-@property (strong, nonatomic, readonly) UIToolbar *backgroundView;
-@property (strong, nonatomic, readonly) UIView *topLineView;
-@property (strong, nonatomic, readonly) UILabel *charCountLabel;
-@property (strong, nonatomic) PHFDelegateChain *delegateChain;
-@property (strong, nonatomic, readonly) UIButton *textContainer;
-@property (assign, nonatomic) CGFloat previousTextHeight;
+
 @end
 
 
@@ -284,7 +279,7 @@ static CGFloat kTextViewToSuperviewHeightDelta;
     return _backgroundView;
 }
 
-@synthesize button = _button;
+
 - (UIButton *)button {
     if (!_button) {
         _button = [PHFComposeBarView_Button buttonWithType:UIButtonTypeCustom];

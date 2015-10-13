@@ -164,6 +164,7 @@
 		3CDC547BFE78FE8CF487D18F /* 我的_美丽天使.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC50DC2FA0C4AD16F84156 /* 我的_美丽天使.png */; };
 		3CDC548F92694470DE7BCA4E /* ELCAssetTablePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */; };
 		3CDC54B58CB0EC5B3B8A75F7 /* PhoneRegisterSecondStepVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5FE027B581508AAC749E /* PhoneRegisterSecondStepVC.m */; };
+		3CDC54B8B448F143EE5987A3 /* DiaryDetailVCB.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC594AFBF71C16EB1E1A28 /* DiaryDetailVCB.m */; };
 		3CDC54D591AA2E9D0354CED2 /* 添加图片－相机.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC57F170B7AC3177088DAF /* 添加图片－相机.png */; };
 		3CDC54DA84EB95BCD68FB62B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC536DAEAAFC54554AAAF0 /* Localizable.strings */; };
 		3CDC54DCACCDCF90F1FBD638 /* 我的_我的伴美.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC580FD3E528A085DF996A /* 我的_我的伴美.png */; };
@@ -780,6 +781,7 @@
 		3CDC58399FD8F8C4E8C9B584 /* timeline_分享.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_分享.png"; sourceTree = "<group>"; };
 		3CDC584EF2F375F4225CF24B /* MyMLTSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMLTSCell.h; sourceTree = "<group>"; };
 		3CDC585B776E5EE9F9AF1D49 /* 添加图片－相机@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "添加图片－相机@2x.png"; sourceTree = "<group>"; };
+		3CDC585D044CD44B1DE20748 /* DiaryDetailVCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailVCB.h; sourceTree = "<group>"; };
 		3CDC5861E34BA6A4975DB1B4 /* 分享_朋友圈@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享_朋友圈@2x.png"; sourceTree = "<group>"; };
 		3CDC586FDFD8F112ACE01400 /* 气泡.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡.png"; sourceTree = "<group>"; };
 		3CDC58702DDE2D85441B4FFD /* 添加图片－相机@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "添加图片－相机@3x.png"; sourceTree = "<group>"; };
@@ -800,6 +802,7 @@
 		3CDC592229E51A7D98EA62D8 /* MLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLSession.m; sourceTree = "<group>"; };
 		3CDC592A5585788E18CA6605 /* MessageNoticingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageNoticingModel.m; sourceTree = "<group>"; };
 		3CDC594A32CE3DA94FF8382C /* PhoneLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneLoginVC.m; sourceTree = "<group>"; };
+		3CDC594AFBF71C16EB1E1A28 /* DiaryDetailVCB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailVCB.m; sourceTree = "<group>"; };
 		3CDC594BBAFE71BECBE1EF55 /* DiaryInListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryInListCell.h; sourceTree = "<group>"; };
 		3CDC594E31CB68DAA3F612EC /* MLXLFormSelectorCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormSelectorCell.h; sourceTree = "<group>"; };
 		3CDC59659707C01E4412DD98 /* 返回@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@2x.png"; sourceTree = "<group>"; };
@@ -1581,6 +1584,8 @@
 				070E2ED51B5B76A40041847A /* DiaryListCell.xib */,
 				3CDC5AEBA4448A318C6E0952 /* DiaryInListCell.m */,
 				3CDC594BBAFE71BECBE1EF55 /* DiaryInListCell.h */,
+				3CDC594AFBF71C16EB1E1A28 /* DiaryDetailVCB.m */,
+				3CDC585D044CD44B1DE20748 /* DiaryDetailVCB.h */,
 			);
 			path = Social;
 			sourceTree = "<group>";
@@ -2720,6 +2725,7 @@
 				3CDC596E22AADF4FD97FEF06 /* PHFComposeBarView.m in Sources */,
 				3CDC5474F7ACA7768C4858B6 /* PHFComposeBarView_Button.m in Sources */,
 				3CDC5706464875255354C5AE /* PHFComposeBarView_TextView.m in Sources */,
+				3CDC54B8B448F143EE5987A3 /* DiaryDetailVCB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

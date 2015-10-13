@@ -6,4 +6,9 @@
 
 @property (strong, nonatomic) MLComposeBarView *composeBarView;
 @property (strong, nonatomic) UIView *container;
+
+- (void)composeBarViewDidPressButton:(PHFComposeBarView *)composeBarView;
+
+
+- (void)likeButtonPress:(UIButton *)sender;
 @end

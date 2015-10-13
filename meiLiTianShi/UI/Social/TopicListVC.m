@@ -21,7 +21,7 @@
 #import "CreateDiaryBookFVC.h"
 #import "ProjectSelectVC.h"
 #import "DiaryModel.h"
-#import "DiaryDetailVC.h"
+#import "DiaryDetailVCB.h"
 //#import "DiaryListCell.h"
 #import "UIImageView+WebCache.h"
 #import "CategoryModel.h"
@@ -171,7 +171,7 @@
 
 //- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
 //    if(self.recommendedTopic){
-//        DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
+//        DiaryDetailVCB *vc= [[DiaryDetailVCB alloc] init];
 //        vc.type=WebviewWithCommentVcDetailTypeTopic;
 //        vc.topic=self.recommendedTopic;
 //        [self.navigationController pushViewController:vc animated:YES];
@@ -197,10 +197,10 @@
 - (void)imagePager:(KIImagePager *)imagePager didSelectImageAtIndex:(NSUInteger)index {
     NSLog(@"%@,didSelectImageAtIndex  %@",imagePager,@(index));
     TopicModel *topicModel=self.recommendedTopicList[index];
-    DiaryDetailVC *diaryDetailVC=[DiaryDetailVC new];
-    diaryDetailVC.type=WebviewWithCommentVcDetailTypeTopic;
-    diaryDetailVC.topic=topicModel;
-    [self.navigationController pushViewController:diaryDetailVC animated:YES];
+    DiaryDetailVCB *vc=[DiaryDetailVCB new];
+    vc.type=WebviewWithCommentVcDetailTypeTopic;
+    vc.topic=topicModel;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -532,7 +532,7 @@
 
 -(void)gotoDiaryDetail:(DiaryModel *)diary{
 
-    DiaryDetailVC *vc= [[DiaryDetailVC alloc] init];
+    DiaryDetailVCB *vc= [[DiaryDetailVCB alloc] init];
     vc.diary=diary;
     [self.navigationController pushViewController:vc animated:YES];
 }

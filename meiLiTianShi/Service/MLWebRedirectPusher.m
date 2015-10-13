@@ -4,7 +4,7 @@
 //
 
 #import "MLWebRedirectPusher.h"
-#import "DiaryDetailVC.h"
+#import "DiaryDetailVCB.h"
 #import "DiaryModel.h"
 #import "URLParser.h"
 #import "TopicModel.h"
@@ -22,7 +22,7 @@
 
 +(BOOL)pushWithUrl:(NSURL*)url viewController:(UIViewController *)vc{
     if([url.path isEqualToString:@"/html/diary.html"]){
-        DiaryDetailVC *svc= [[DiaryDetailVC alloc] init];
+        DiaryDetailVCB *svc= [[DiaryDetailVCB alloc] init];
         svc.type=WebviewWithCommentVcDetailTypeDiary;
         DiaryModel *diary= [[DiaryModel alloc] init];
         diary.id= (NSUInteger) [[[[URLParser alloc] initWithURLString:[url absoluteString]] valueForVariable:@"id"] longLongValue];
@@ -30,7 +30,7 @@
         [vc.navigationController pushViewController:svc animated:YES];
         return YES;
     }else if([url.path isEqualToString:@"/html/diary.html"]){
-        DiaryDetailVC *svc= [[DiaryDetailVC alloc] init];
+        DiaryDetailVCB *svc= [[DiaryDetailVCB alloc] init];
         svc.type=WebviewWithCommentVcDetailTypeDiary;
         TopicModel *topic= [[TopicModel alloc] init];
         topic.id= (NSUInteger) [[[[URLParser alloc] initWithURLString:[url absoluteString]] valueForVariable:@"id"] longLongValue];
@@ -38,7 +38,7 @@
         [vc.navigationController pushViewController:svc animated:YES];
         return YES;
     }else if([url.path isEqualToString:@"/html/topic.html"]){
-        DiaryDetailVC *svc= [[DiaryDetailVC alloc] init];
+        DiaryDetailVCB *svc= [[DiaryDetailVCB alloc] init];
         svc.type=WebviewWithCommentVcDetailTypeTopic;
         TopicModel *topic= [[TopicModel alloc] init];
         topic.id= (NSUInteger) [[[[URLParser alloc] initWithURLString:[url absoluteString]] valueForVariable:@"id"] longLongValue];
@@ -78,7 +78,7 @@
         NSString *name=data[@"page"];
         if([name isEqualToString:@"diary_detail"]){
 
-            DiaryDetailVC *vc=[DiaryDetailVC new];
+            DiaryDetailVCB *vc=[DiaryDetailVCB new];
             vc.type=WebviewWithCommentVcDetailTypeDiary;
             DiaryModel *diaryModel=[DiaryModel new];
             diaryModel.id= [data[@"id"] unsignedIntegerValue];
@@ -86,7 +86,7 @@
             [viewController.navigationController pushViewController:vc animated:YES];
             return YES;
         }else if([name isEqualToString:@"topic_detail"]){
-            DiaryDetailVC *vc=[DiaryDetailVC new];
+            DiaryDetailVCB *vc=[DiaryDetailVCB new];
             vc.type=WebviewWithCommentVcDetailTypeTopic;
             TopicModel *topicModel=[TopicModel new];
             topicModel.id= [data[@"id"] unsignedIntegerValue];
