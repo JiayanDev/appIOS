@@ -103,6 +103,7 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
                         options:(animationCurve << 16)|UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
                          [[self container] setFrame:newContainerFrame];
+                         [self.webView.scrollView setContentOffset:CGPointMake(0, self.webView.scrollView.contentOffset.y-heightChange)];
                      }
                      completion:NULL];
 }
@@ -125,9 +126,10 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
         animationCurve:(UIViewAnimationCurve)animationCurve
 {
     [self prependTextToTextView:[NSString stringWithFormat:@"Height changing by %ld", (long)(endFrame.size.height - startFrame.size.height)]];
-    UIEdgeInsets insets = UIEdgeInsetsMake(0.0f, 0.0f, endFrame.size.height, 0.0f);
+    UIEdgeInsets insets = self.webView.scrollView.contentInset;//UIEdgeInsetsMake(0.0f, 0.0f, endFrame.size.height, 0.0f);
+    insets.bottom=endFrame.size.height;
     UIWebView *webView = [self webView];
-//    [webView setContentInset:insets];
+    [webView.scrollView setContentInset:insets];
 //    [webView setScrollIndicatorInsets:insets];
 }
 
@@ -175,7 +177,7 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
         CGRect frame = CGRectMake(0.0f,
                                   0.0f,
                                   kInitialViewFrame.size.width,
-                                  kInitialViewFrame.size.height - 20.0f);
+                                  kInitialViewFrame.size.height);
         _webView = [[UIWebView alloc] initWithFrame:frame];
         [_webView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
 //        [_webView setEditable:NO];
