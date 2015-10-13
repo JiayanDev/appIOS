@@ -314,6 +314,7 @@
 		3CDC5C1F41BB0C44DC0E5FBD /* SZTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5896332D47A9F0498351 /* SZTextView.m */; };
 		3CDC5C3E8F2240D510AF2DD9 /* FloatCellOfName.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5B65DBF8147BD8DC3CF1 /* FloatCellOfName.m */; };
 		3CDC5C4FE3C3971142904792 /* 赞－灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5C5BDC74094A6BC99380 /* 赞－灰.png */; };
+		3CDC5C53CEF8C189CEB6CA26 /* MLWebViewWithCommentTextBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5C2D28465EA1C11280DF /* MLWebViewWithCommentTextBarViewController.m */; };
 		3CDC5C55ED116674BDF2B609 /* 取消@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC53454A4CD5DD01BEAA4B /* 取消@2x.png */; };
 		3CDC5C56D98511B4C58B9DCA /* MLCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC50F8FDFADD69806DA598 /* MLCheckBox.m */; };
 		3CDC5C67B8BC8D825AD1BA14 /* 还没评论@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5B63E4653C0110C568CF /* 还没评论@3x.png */; };
@@ -872,6 +873,7 @@
 		3CDC5C18BA83F13AA44AD6BE /* IDMCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMCaptionView.h; sourceTree = "<group>"; };
 		3CDC5C1E81DA4A488EE6CC30 /* XLform_getAndSetValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLform_getAndSetValue.h; sourceTree = "<group>"; };
 		3CDC5C2B44511275F06A32DA /* 标签_官方@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标签_官方@3x.png"; sourceTree = "<group>"; };
+		3CDC5C2D28465EA1C11280DF /* MLWebViewWithCommentTextBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLWebViewWithCommentTextBarViewController.m; sourceTree = "<group>"; };
 		3CDC5C2D2A5C691EBE63B047 /* 我的_我的通知@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_我的通知@3x.png"; sourceTree = "<group>"; };
 		3CDC5C3CC03BD7FA3CE6F1FB /* 评价伴美_时间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评价伴美_时间.png"; sourceTree = "<group>"; };
 		3CDC5C433694EB64E0DF8DDC /* EventJoinApplyFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventJoinApplyFVC.h; sourceTree = "<group>"; };
@@ -898,6 +900,7 @@
 		3CDC5D07BB9A399A29F55BDF /* UITabBarController+statusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+statusBar.h"; sourceTree = "<group>"; };
 		3CDC5D1BB818D71CD583340B /* WebviewRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebviewRequestModel.m; sourceTree = "<group>"; };
 		3CDC5D1CC79FC0BDA1F81503 /* 评价伴美_时间@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "评价伴美_时间@2x.png"; sourceTree = "<group>"; };
+		3CDC5D34B8A90BFADE7CF8AD /* MLWebViewWithCommentTextBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLWebViewWithCommentTextBarViewController.h; sourceTree = "<group>"; };
 		3CDC5D3B8732CB0F18558B30 /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLKAdditions.m"; sourceTree = "<group>"; };
 		3CDC5D50CEAF04400D2A6CDF /* PageIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageIndicator.m; sourceTree = "<group>"; };
 		3CDC5D544238B38E305442DD /* XLFormRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XLFormRatingCell.xib; sourceTree = "<group>"; };
@@ -1822,6 +1825,7 @@
 				3CDC5C0CA5F24DDBD42EDCDC /* RSKImageCropper */,
 				3CDC509E52FEC7FC55E2D86B /* KIImagePager */,
 				3CDC52C661335F282D40539D /* JKCountDownButton */,
+				3CDC59F1018E7F3BD1226EB7 /* WebviewWithComment */,
 			);
 			path = frameworks;
 			sourceTree = "<group>";
@@ -1837,6 +1841,15 @@
 				3CDC5CD7140F630F8D7B3398 /* zh-Hans.lproj */,
 			);
 			path = IDMPBLocalizations.bundle;
+			sourceTree = "<group>";
+		};
+		3CDC59F1018E7F3BD1226EB7 /* WebviewWithComment */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5C2D28465EA1C11280DF /* MLWebViewWithCommentTextBarViewController.m */,
+				3CDC5D34B8A90BFADE7CF8AD /* MLWebViewWithCommentTextBarViewController.h */,
+			);
+			path = WebviewWithComment;
 			sourceTree = "<group>";
 		};
 		3CDC5A509067EF810B6FBBAA /* Service */ = {
@@ -2674,6 +2687,7 @@
 				3CDC5E84CA284FB71A80328D /* NSString+jsonUtil.m in Sources */,
 				3CDC5A531B2F4E667480D512 /* UITableViewCellWhiteAtSelect.m in Sources */,
 				3CDC59A60C692972EE5B326B /* JKCountDownButton.m in Sources */,
+				3CDC5C53CEF8C189CEB6CA26 /* MLWebViewWithCommentTextBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
