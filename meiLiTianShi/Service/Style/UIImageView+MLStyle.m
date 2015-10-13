@@ -35,44 +35,72 @@
 
 
     if (animated) {
-        [self sd_setImageWithURL:url
-                placeholderImage:nil
-                         options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        if(CGSizeEqualToSize(size,CGSizeZero)){
-                            s=CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
-                        }else{
-                            s=size;
-                        }
-                        UIImage *scaledImage = [image scaleToCoverSize:s];
-                        dispatch_async(dispatch_get_main_queue(),^{
-                            [self setImageWithFadeIn:scaledImage];
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            UIImage *image = [UIImage imageWithData:data];
 
 
-                        });
-                    });
-                }];
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                s = CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
+
+            } else {
+                s = size;
+            }
+            UIImage *scaledImage = [image scaleToCoverSize:s];
+            image=nil;
+            data=nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self setImageWithFadeIn:scaledImage];
+
+
+            });
+
+        });
 
     } else {
-        [self sd_setImageWithURL:url
-                placeholderImage:nil
-                         options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        if(CGSizeEqualToSize(size,CGSizeZero)){
-                            s=CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
-                        }else{
-                            s=size;
-                        }
-                        UIImage *scaledImage = [image scaleToCoverSize:s];
-                        dispatch_async(dispatch_get_main_queue(),^{
-                            self.image = scaledImage;
+            NSData *data = [NSData dataWithContentsOfURL:url];
+            UIImage *image = [UIImage imageWithData:data];
 
 
-                        });
-                    });
-                }];
+            if (CGSizeEqualToSize(size, CGSizeZero)) {
+                s = CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
+
+            } else {
+                s = size;
+            }
+            UIImage *scaledImage = [image scaleToCoverSize:s];
+            image=nil;
+            data=nil;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.image = scaledImage;
+
+
+
+
+            });
+
+        });
+//        [self sd_setImageWithURL:url
+//                placeholderImage:nil
+//                         options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//                        if(CGSizeEqualToSize(size,CGSizeZero)){
+//                            s=CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
+//
+//                        }else{
+//                            s=size;
+//                        }
+//                        UIImage *scaledImage = [image scaleToCoverSize:s];
+//                        dispatch_async(dispatch_get_main_queue(),^{
+//                            self.image = scaledImage;
+//
+//
+//                        });
+//                    });
+//                }];
 
 //        [self sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
 //            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

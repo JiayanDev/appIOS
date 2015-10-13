@@ -93,7 +93,7 @@
 //            [oldViews addObject:view];
 //        }
 //    }
-    BOOL useOldViews= self.imageViews.count==images.count;
+    BOOL useOldViews=NO;// self.imageViews.count==images.count;
 
     if(!useOldViews){
         [self.imageViews makeObjectsPerformSelector: @selector(removeFromSuperview)];

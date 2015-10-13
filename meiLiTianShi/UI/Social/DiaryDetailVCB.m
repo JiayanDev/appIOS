@@ -25,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.delegate=self;
+    self.webView.opaque = NO;
+    self.webView.backgroundColor = [UIColor whiteColor];
 
 
     if(self.type==WebviewWithCommentVcDetailTypeDiary){

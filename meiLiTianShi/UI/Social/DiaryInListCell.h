@@ -8,7 +8,7 @@
 
 
 @interface DiaryInListCell : UITableViewCellWhiteAtSelect
-@property(nonatomic, strong) NSArray *images;
+@property(nonatomic, weak) NSArray *images;
 @property(nonatomic, strong) NSMutableArray *imageViews;
 @property(nonatomic, strong) UIImageView *avatarView;
 @property(nonatomic, strong) UILabel *nameLabel;
