@@ -23,6 +23,7 @@
 #import "CreateDiaryFVC.h"
 #import "UIViewController+requireLogin.h"
 #import "MLWebRedirectPusher.h"
+#import "MLWebViewWithCommentTextBarViewController.h"
 
 @interface FirstVC ()
 
@@ -53,7 +54,7 @@
     vc2.title=@"发现";
 
     UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:
-            [[CreateDiaryFVC alloc]init]];
+            [[MLWebViewWithCommentTextBarViewController alloc]init]];
     vc3.title=@"活动";
 
     UINavigationController *vc4= [[UINavigationController alloc] initWithRootViewController:
@@ -65,7 +66,7 @@
 //    [vc2.tabBarController.tabBarItem setImage:[SYLSession imageWithColor:UIColorFromRGB(0x777777)]];
 
 
-    tabBarController.viewControllers = @[vc1,vc2,vc4];
+    tabBarController.viewControllers = @[vc1,vc2,vc3,vc4];
     tabBarController.tabBar.tintColor=THEME_COLOR;
     vc1.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"伴美"
                                                   image:[[UIImage imageNamed:@"home－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]

@@ -1,3 +1,4 @@
+#import <Masonry/View+MASAdditions.h>
 #import "MLWebViewWithCommentTextBarViewController.h"
 
 CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
@@ -31,7 +32,7 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -46,9 +47,32 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
     [container addSubview:[self webView]];
     [container addSubview:[self composeBarView]];
     [view addSubview:container];
-    [self setEdgesForExtendedLayout:UIRectEdgeNone];
+//    [self setEdgesForExtendedLayout:UIRectEdgeNone];
 
     [self setView:view];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self setScrollTopToNOToView:self.view];
+    _webView.scrollView.scrollsToTop=YES;
+}
+
+
+- (void)setScrollTopToNOToView:(UIView *)view
+{
+    NSLog(@"%@", self);
+
+    for (UIView *sub  in view.subviews)
+    {
+        if ([sub isKindOfClass:[UIScrollView class]]) {
+            ((UIScrollView *)sub).scrollsToTop = NO;
+
+        }
+
+        [self setScrollTopToNOToView:sub];
+    }
 }
 
 - (void)keyboardWillToggle:(NSNotification *)notification {
@@ -136,10 +160,10 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
                                   kInitialViewFrame.size.width,
                                   PHFComposeBarViewInitialHeight);
         _composeBarView = [[PHFComposeBarView alloc] initWithFrame:frame];
-        [_composeBarView setMaxCharCount:160];
+//        [_composeBarView setMaxCharCount:160];
         [_composeBarView setMaxLinesCount:5];
-        [_composeBarView setPlaceholder:@"Type something..."];
-        [_composeBarView setUtilityButtonImage:[UIImage imageNamed:@"Camera"]];
+        [_composeBarView setPlaceholder:@"评论"];
+//        [_composeBarView setUtilityButtonImage:[UIImage imageNamed:@"Camera"]];
         [_composeBarView setDelegate:self];
     }
 
@@ -149,7 +173,7 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
 - (UIWebView *)webView {
     if (!_webView) {
         CGRect frame = CGRectMake(0.0f,
-                                  20.0f,
+                                  0.0f,
                                   kInitialViewFrame.size.width,
                                   kInitialViewFrame.size.height - 20.0f);
         _webView = [[UIWebView alloc] initWithFrame:frame];
@@ -161,17 +185,22 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
         UIEdgeInsets insets = UIEdgeInsetsMake(0.0f, 0.0f, PHFComposeBarViewInitialHeight, 0.0f);
         [_webView loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://news.qq.com/"]]];
         _webView.scrollView.contentInset=insets;
+        _webView.scrollView.scrollsToTop=YES;
 //        [_webView setContentInset:insets];
 //        [_webView setScrollIndicatorInsets:insets];
 //        [_webView setText:@"Welcome to the Demo!\n\nThis is just some placeholder text to give you a better feeling of how the compose bar can be used along other components."];
 
-        UIView *bubbleView = [[UIView alloc] initWithFrame:CGRectMake(80.0f, 480.0f, 220.0f, 60.0f)];
-        [bubbleView setBackgroundColor:[UIColor colorWithHue:206.0f/360.0f saturation:0.81f brightness:0.99f alpha:1]];
-        [[bubbleView layer] setCornerRadius:25.0f];
+//        UIView *bubbleView = [[UIView alloc] initWithFrame:CGRectMake(80.0f, 480.0f, 220.0f, 60.0f)];
+//        [bubbleView setBackgroundColor:[UIColor colorWithHue:206.0f/360.0f saturation:0.81f brightness:0.99f alpha:1]];
+//        [[bubbleView layer] setCornerRadius:25.0f];
 //        [_webView addSubview:bubbleView];
     }
 
     return _webView;
+}
+
+- (BOOL)hidesBottomBarWhenPushed {
+    return YES;
 }
 
 @end
