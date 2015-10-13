@@ -43,7 +43,7 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
     [view setBackgroundColor:[UIColor whiteColor]];
 
     UIView *container = [self container];
-    [container addSubview:[self textView]];
+    [container addSubview:[self webView]];
     [container addSubview:[self composeBarView]];
     [view addSubview:container];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
@@ -102,9 +102,9 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
 {
     [self prependTextToTextView:[NSString stringWithFormat:@"Height changing by %ld", (long)(endFrame.size.height - startFrame.size.height)]];
     UIEdgeInsets insets = UIEdgeInsetsMake(0.0f, 0.0f, endFrame.size.height, 0.0f);
-    UIWebView *textView = [self textView];
-//    [textView setContentInset:insets];
-//    [textView setScrollIndicatorInsets:insets];
+    UIWebView *webView = [self webView];
+//    [webView setContentInset:insets];
+//    [webView setScrollIndicatorInsets:insets];
 }
 
 - (void)composeBarView:(PHFComposeBarView *)composeBarView
@@ -115,8 +115,8 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
 }
 
 - (void)prependTextToTextView:(NSString *)text {
-//    NSString *newText = [text stringByAppendingFormat:@"\n\n%@", [[self textView] text]];
-//    [[self textView] setText:newText];
+//    NSString *newText = [text stringByAppendingFormat:@"\n\n%@", [[self webView] text]];
+//    [[self webView] setText:newText];
 }
 
 - (UIView *)container {
@@ -146,32 +146,32 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
     return _composeBarView;
 }
 
-- (UIWebView *)textView {
-    if (!_textView) {
+- (UIWebView *)webView {
+    if (!_webView) {
         CGRect frame = CGRectMake(0.0f,
                                   20.0f,
                                   kInitialViewFrame.size.width,
                                   kInitialViewFrame.size.height - 20.0f);
-        _textView = [[UIWebView alloc] initWithFrame:frame];
-        [_textView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-//        [_textView setEditable:NO];
-        [_textView setBackgroundColor:[UIColor clearColor]];
-//        [_textView setAlwaysBounceVertical:YES];
-//        [_textView setFont:[UIFont systemFontOfSize:[UIFont labelFontSize]]];
+        _webView = [[UIWebView alloc] initWithFrame:frame];
+        [_webView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+//        [_webView setEditable:NO];
+        [_webView setBackgroundColor:[UIColor clearColor]];
+//        [_webView setAlwaysBounceVertical:YES];
+//        [_webView setFont:[UIFont systemFontOfSize:[UIFont labelFontSize]]];
         UIEdgeInsets insets = UIEdgeInsetsMake(0.0f, 0.0f, PHFComposeBarViewInitialHeight, 0.0f);
-        [_textView loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://news.qq.com/"]]];
-        _textView.scrollView.contentInset=insets;
-//        [_textView setContentInset:insets];
-//        [_textView setScrollIndicatorInsets:insets];
-//        [_textView setText:@"Welcome to the Demo!\n\nThis is just some placeholder text to give you a better feeling of how the compose bar can be used along other components."];
+        [_webView loadRequest:[[NSURLRequest alloc] initWithURL:[[NSURL alloc] initWithString:@"http://news.qq.com/"]]];
+        _webView.scrollView.contentInset=insets;
+//        [_webView setContentInset:insets];
+//        [_webView setScrollIndicatorInsets:insets];
+//        [_webView setText:@"Welcome to the Demo!\n\nThis is just some placeholder text to give you a better feeling of how the compose bar can be used along other components."];
 
         UIView *bubbleView = [[UIView alloc] initWithFrame:CGRectMake(80.0f, 480.0f, 220.0f, 60.0f)];
         [bubbleView setBackgroundColor:[UIColor colorWithHue:206.0f/360.0f saturation:0.81f brightness:0.99f alpha:1]];
         [[bubbleView layer] setCornerRadius:25.0f];
-//        [_textView addSubview:bubbleView];
+//        [_webView addSubview:bubbleView];
     }
 
-    return _textView;
+    return _webView;
 }
 
 @end
