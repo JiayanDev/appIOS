@@ -33,56 +33,48 @@
     __block CGSize s;
     CGFloat  scale=[UIScreen mainScreen].scale;
 
+    __weak UIImageView * weakSelf=self;
+
 
     if (animated) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self sd_setImageWithURL:url
+                placeholderImage:nil
+                         options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        if(CGSizeEqualToSize(size,CGSizeZero)){
+                            s=CGSizeMake(weakSelf.frame.size.width * scale, weakSelf.frame.size.height * scale);
 
-            NSData *data = [NSData dataWithContentsOfURL:url];
-            UIImage *image = [UIImage imageWithData:data];
-
-
-            if (CGSizeEqualToSize(size, CGSizeZero)) {
-                s = CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
-
-            } else {
-                s = size;
-            }
-            UIImage *scaledImage = [image scaleToCoverSize:s];
-            image=nil;
-            data=nil;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self setImageWithFadeIn:scaledImage];
+                        }else{
+                            s=size;
+                        }
+                        UIImage *scaledImage = [image scaleToCoverSize:s];
+                        dispatch_async(dispatch_get_main_queue(),^{
+                            [weakSelf setImageWithFadeIn:scaledImage];
 
 
-            });
-
-        });
+                        });
+                    });
+                }];
 
     } else {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self sd_setImageWithURL:url
+                placeholderImage:nil
+                         options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                        if(CGSizeEqualToSize(size,CGSizeZero)){
+                            s=CGSizeMake(weakSelf.frame.size.width * scale, weakSelf.frame.size.height * scale);
 
-            NSData *data = [NSData dataWithContentsOfURL:url];
-            UIImage *image = [UIImage imageWithData:data];
-
-
-            if (CGSizeEqualToSize(size, CGSizeZero)) {
-                s = CGSizeMake(self.frame.size.width * scale, self.frame.size.height * scale);
-
-            } else {
-                s = size;
-            }
-            UIImage *scaledImage = [image scaleToCoverSize:s];
-            image=nil;
-            data=nil;
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.image = scaledImage;
+                        }else{
+                            s=size;
+                        }
+                        UIImage *scaledImage = [image scaleToCoverSize:s];
+                        dispatch_async(dispatch_get_main_queue(),^{
+                            weakSelf.image = scaledImage;
 
 
-
-
-            });
-
-        });
+                        });
+                    });
+                }];
 //        [self sd_setImageWithURL:url
 //                placeholderImage:nil
 //                         options:SDWebImageAvoidAutoSetImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
