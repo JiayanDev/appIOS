@@ -43,6 +43,7 @@
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
 
+    [((MJRefreshAutoNormalFooter*)self.tableView.footer) setTitle:@"" forState:MJRefreshStateNoMoreData];
     [self.tableView registerClass:[MyBanMeiCellB class] forCellReuseIdentifier:kBanmeiCell];
 
     [self getDataWithScrollingToTop:NO];
@@ -71,7 +72,11 @@
                                                            [self.tableView.footer endRefreshing];
 
                                                            [self.tableData addObjectsFromArray:array];
-                                                           if(array.count==0){[self.tableView.footer noticeNoMoreData];}
+                                                           if(array.count==0){
+                                                               [self.tableView.footer endRefreshingWithNoMoreData];
+//                                                               self.tableView.footer.hidden=YES;
+
+                                                           }
                                                            else{
                                                            self.pageIndicator=[PageIndicator initWithMaxId:@(((EventModel *)self.tableData[self.tableData.count-1]).id)];
                                                                [self.tableView reloadData];

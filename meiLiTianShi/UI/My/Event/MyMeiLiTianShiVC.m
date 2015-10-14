@@ -56,7 +56,7 @@
     self.tableView.dataSource=self;
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
-
+    [((MJRefreshAutoNormalFooter*)self.tableView.footer) setTitle:@"" forState:MJRefreshStateNoMoreData];
     [self.tableView registerClass:[MyMLTSCell class] forCellReuseIdentifier:kBanmeiCell];
 //    [self.tableView registerNib:[UINib nibWithNibName:@"MyBanMeiCell"
 //                                               bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kBanmeiCell];

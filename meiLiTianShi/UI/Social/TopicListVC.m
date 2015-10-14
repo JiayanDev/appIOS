@@ -73,6 +73,7 @@
     self.pageIndicator= [[PageIndicator alloc] init];
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
+    [((MJRefreshAutoNormalFooter*)self.tableView.footer) setTitle:@"" forState:MJRefreshStateNoMoreData];
 
     self.tableView.header=[MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(dragDown)];
     ((MJRefreshNormalHeader*)self.tableView.header).lastUpdatedTimeLabel.hidden = YES;
