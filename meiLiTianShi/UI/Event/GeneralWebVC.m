@@ -34,6 +34,9 @@
         make.edges.equalTo(self.view);
     }];
 
+    self.webView.opaque = NO;
+    self.webView.backgroundColor = [UIColor whiteColor];
+
 
 }
 

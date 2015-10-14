@@ -26,6 +26,8 @@
     [super loadView];
     self.automaticallyAdjustsScrollViewInsets=NO;
     self.mainView= [[MLBlurImageHeaderedWebview alloc] init];
+    self.mainView.webView.opaque = NO;
+    self.mainView.webView.backgroundColor = [UIColor whiteColor];
 
 //    self.mainView.backgroundImageOrigin=[UIImage imageNamed:@"meinvtupianbizhi_813_051.jpg"];
     [self.view addSubview:self.mainView];

@@ -256,6 +256,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
 
 
     }else{
+        self.token=nil;
         [self appInitGetSessionSuccess:success
                                   fail:failure];
     }
