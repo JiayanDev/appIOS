@@ -22,11 +22,11 @@
 
 @interface ELCAsset : NSObject
 
-@property (nonatomic, strong) NSObject *asset;
+@property (nonatomic, strong) ALAsset *asset;
 @property (nonatomic, weak) id<ELCAssetDelegate> parent;
 @property (nonatomic, assign) BOOL selected;
 @property (nonatomic,assign) int index;
 
-- (id)initWithAsset:(NSObject *)asset;
+- (id)initWithAsset:(ALAsset *)asset;
 - (NSComparisonResult)compareWithIndex:(ELCAsset *)_ass;
 @end
