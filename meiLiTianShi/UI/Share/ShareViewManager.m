@@ -9,6 +9,7 @@
 #import "WXApi.h"
 #import "MLSession.h"
 #import "TSMessage.h"
+#import "SDWebImageManager.h"
 
 
 @interface ShareViewManager ()
@@ -165,17 +166,19 @@
     [panel addSubview:pyq];
     [pyq addTarget:self
             action:@selector(sendToPYQ) forControlEvents:UIControlEventTouchUpInside];
+    [wxb addTarget:self
+            action:@selector(sendToWXFriend) forControlEvents:UIControlEventTouchUpInside];
 
 
-    UIButton *wbb = [[UIButton alloc] init];
-    [self settleShareButton:wbb
-                  withImage:[UIImage imageNamed:@"分享_微博.png"] text:@"新浪微博"];
-    [panel addSubview:wbb];
-
-    UIButton *qqk = [[UIButton alloc] init];
-    [self settleShareButton:qqk
-                  withImage:[UIImage imageNamed:@"分享_qq空间.png"] text:@"QQ空间"];
-    [panel addSubview:qqk];
+//    UIButton *wbb = [[UIButton alloc] init];
+//    [self settleShareButton:wbb
+//                  withImage:[UIImage imageNamed:@"分享_微博.png"] text:@"新浪微博"];
+//    [panel addSubview:wbb];
+//
+//    UIButton *qqk = [[UIButton alloc] init];
+//    [self settleShareButton:qqk
+//                  withImage:[UIImage imageNamed:@"分享_qq空间.png"] text:@"QQ空间"];
+//    [panel addSubview:qqk];
 
     UIView* v1= [[UIView alloc] init];
     [panel addSubview:v1];
@@ -189,7 +192,7 @@
 
 
     [wxb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(panel).with.offset(24);
+//        make.left.equalTo(panel).with.offset(24);
         make.centerY.equalTo(panel).offset(-11);
     }];
 
@@ -197,18 +200,18 @@
         make.centerY.equalTo(panel).offset(-11);
     }];
 
-    [wbb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(panel).offset(-11);
-    }];
-
-    [qqk mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(panel).offset(-11);
-        make.right.equalTo(panel).with.offset(-24);
-    }];
+//    [wbb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(panel).offset(-11);
+//    }];
+//
+//    [qqk mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.equalTo(panel).offset(-11);
+//        make.right.equalTo(panel).with.offset(-24);
+//    }];
 
     [v1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_greaterThanOrEqualTo(@1);
-        make.width.equalTo(v2.mas_width);
+        make.width.equalTo(v2.mas_width).multipliedBy(2);
         make.centerY.equalTo(panel);
         make.left.equalTo(wxb.mas_right);
         make.right.equalTo(pyq.mas_left);
@@ -218,16 +221,16 @@
     [v2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(v3.mas_width);
         make.centerY.equalTo(panel);
-        make.left.equalTo(pyq.mas_right);
-        make.right.equalTo(wbb.mas_left);
+        make.left.equalTo(panel);
+        make.right.equalTo(wxb.mas_left);
 
     }];
 
     [v3 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.equalTo(v1.mas_width);
+        make.width.equalTo(v1.mas_width).multipliedBy(0.5);
         make.centerY.equalTo(panel);
-        make.left.equalTo(wbb.mas_right);
-        make.right.equalTo(qqk.mas_left);
+        make.left.equalTo(pyq.mas_right);
+        make.right.equalTo(panel);
 
     }];
 
@@ -266,23 +269,52 @@
 
 
 -(void)sendToPYQ{
-    WXMediaMessage *message = [WXMediaMessage message];
-    message.title = @"专访张小龙：产品之上的世界观";
-    message.description = @"微信的平台化发展方向是否真的会让这个原本简洁的产品变得臃肿？在国际化发展方向上，微信面临的问题真的是文化差异壁垒吗？腾讯高级副总裁、微信产品负责人张小龙给出了自己的回复。";
-    [message setThumbImage:[UIImage imageNamed:@"微信.png"]];
+    [self shareToWxWithType:WXSceneTimeline];
 
-    WXWebpageObject *ext = [WXWebpageObject object];
-    ext.webpageUrl = @"http://tech.qq.com/zt2012/tmtdecode/252.htm";
 
-    message.mediaObject = ext;
-    message.mediaTagName = @"WECHAT_TAG_JUMP_SHOWRANK";
+}
 
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;
-    req.message = message;
-    req.scene = WXSceneTimeline;
-    [MLSession current].wxMessageRespHandler=self;
-    [WXApi sendReq:req];
+-(void)sendToWXFriend{
+    [self shareToWxWithType:WXSceneSession];
+
+
+}
+
+
+
+
+-(void)shareToWxWithType:(enum WXScene)type{
+    if(!self.shareTitle || !self.shareIconUrl ||!self.shareUrl){
+        return;
+    }
+
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadImageWithURL:[[NSURL alloc] initWithString:self.shareIconUrl]
+                          options:0
+                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                             // progression tracking code
+                         }
+                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                            if (image) {
+                                WXMediaMessage *message = [WXMediaMessage message];
+                                message.title = self.shareTitle;
+                                message.description = self.shareDesc;
+                                [message setThumbImage:image];
+
+                                WXWebpageObject *ext = [WXWebpageObject object];
+                                ext.webpageUrl = self.shareUrl;
+
+                                message.mediaObject = ext;
+                                message.mediaTagName = @"WECHAT_TAG_JUMP_SHOWRANK";
+
+                                SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
+                                req.bText = NO;
+                                req.message = message;
+                                req.scene = type;
+                                [MLSession current].wxMessageRespHandler=self;
+                                [WXApi sendReq:req];
+                            }
+                        }];
 
 
 

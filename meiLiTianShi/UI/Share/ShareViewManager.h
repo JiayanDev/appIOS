@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong)UIImage *shareIcon;
 
+@property (nonatomic, strong)NSString *shareIconUrl;
+
 + (ShareViewManager *)showSharePanelOnto:(UIView *)view;
 
 - (void)disappearAll;

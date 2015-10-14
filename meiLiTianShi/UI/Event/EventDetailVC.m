@@ -37,6 +37,7 @@
     self.webView.delegate=self;
     self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
+    self.share= [ShareViewManager new];
     self.url=[NSURL URLWithString:[NSString stringWithFormat:
             @"http://apptest.jiayantech.com/html/eventdetail.html?id=%@",@(self.eventId)]];
 
@@ -57,7 +58,7 @@
 }
 
 -(void)sharePress{
-    self.share=[ShareViewManager showSharePanelOnto:self.navigationController.view];
+    [self.share showSharePanelOnto:self.navigationController.view];
 }
 
 
@@ -127,6 +128,13 @@
         }
 
 
+
+    }else if([requestModel.action isEqualToString:@"getShareInfo"]){
+
+        self.share.shareTitle=requestModel.data[@"title"];
+        self.share.shareDesc=requestModel.data[@"content"];
+        self.share.shareIconUrl=requestModel.data[@"thumbnail"];
+        self.share.shareUrl= [self.url absoluteString];
 
     }else if([requestModel.action isEqualToString:@"setNavigationBarTitle"]){
 

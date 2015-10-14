@@ -59,8 +59,6 @@
 		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
 		07A6992B1B67626C00A9D2EF /* LoginWaySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */; };
 		07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */; };
-		07A699511B69BC5A00A9D2EF /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A6994D1B69BC5A00A9D2EF /* libWeChatSDK.a */; };
-		07A699521B69BC5A00A9D2EF /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 07A6994E1B69BC5A00A9D2EF /* read_me.txt */; };
 		07A699541B69BC8C00A9D2EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */; };
 		07A699561B69BCA100A9D2EF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699551B69BCA100A9D2EF /* libz.dylib */; };
 		07A699581B69BCAD00A9D2EF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699571B69BCAD00A9D2EF /* libsqlite3.0.dylib */; };
@@ -108,6 +106,7 @@
 		3CDC512B1E993D7DB46E993E /* UIImageView+MLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC54BD94295EA7BB3708BC /* UIImageView+MLStyle.m */; };
 		3CDC512F53F4743B2ADB7936 /* 活动状态标签－底@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5480D706EE779D629BFB /* 活动状态标签－底@3x.png */; };
 		3CDC5152856C5B951773CF11 /* 我的－亮.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC558E72A69757887B8DB1 /* 我的－亮.png */; };
+		3CDC5155BB4671F14D35465E /* read_me.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5287385E27FCF992BBC2 /* read_me.txt */; };
 		3CDC515C71354E7C403D0012 /* 女@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC598E4E674327D926A9CF /* 女@2x.png */; };
 		3CDC5161676289E127A16FF6 /* 评价伴美_时间.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5C3CC03BD7FA3CE6F1FB /* 评价伴美_时间.png */; };
 		3CDC5164916A07E2D5BD2835 /* 我的_我的日志@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC51949D8E890318EF96B4 /* 我的_我的日志@3x.png */; };
@@ -159,6 +158,7 @@
 		3CDC5424A55C107A5796128A /* 微信.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5533301A12BE6154BB44 /* 微信.png */; };
 		3CDC542BEF2E5D339CEB4260 /* NYXImagesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC54B619F7FCE851102282 /* NYXImagesHelper.m */; };
 		3CDC54390F67981A104CAAC8 /* 活动状态标签－底@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC546423D2FF70D89F7078 /* 活动状态标签－底@2x.png */; };
+		3CDC544867B6BC065D6224D1 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDC559C1E8C759BC0A0B540 /* libWeChatSDK.a */; };
 		3CDC546A13DD15A894080ABF /* 标签_官方@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5C2B44511275F06A32DA /* 标签_官方@3x.png */; };
 		3CDC5474F7ACA7768C4858B6 /* PHFComposeBarView_Button.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC57EA0788E3A79637566A /* PHFComposeBarView_Button.m */; };
 		3CDC547BFE78FE8CF487D18F /* 我的_美丽天使.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC50DC2FA0C4AD16F84156 /* 我的_美丽天使.png */; };
@@ -498,10 +498,6 @@
 		07A699281B67626C00A9D2EF /* LoginWaySelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWaySelectVC.h; sourceTree = "<group>"; };
 		07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWaySelectVC.m; sourceTree = "<group>"; };
 		07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWaySelectVC.xib; sourceTree = "<group>"; };
-		07A6994D1B69BC5A00A9D2EF /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		07A6994E1B69BC5A00A9D2EF /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
-		07A6994F1B69BC5A00A9D2EF /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		07A699501B69BC5A00A9D2EF /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		07A699551B69BCA100A9D2EF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		07A699571B69BCAD00A9D2EF /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
@@ -574,6 +570,7 @@
 		3CDC514844E2ADCF9F053BD9 /* checkbox_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkbox_checked@2x.png"; sourceTree = "<group>"; };
 		3CDC515EF7C0F25FAB63E766 /* IDMTapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMTapDetectingView.h; sourceTree = "<group>"; };
 		3CDC516026F3C67052FA474A /* 我的_设置@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_设置@3x.png"; sourceTree = "<group>"; };
+		3CDC5162866F357F84652F78 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		3CDC5166531073E2FFF12B48 /* MLStyledTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLStyledTableVC.h; sourceTree = "<group>"; };
 		3CDC51671FD3503BB0D26E42 /* PhoneLoginFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneLoginFVC.h; sourceTree = "<group>"; };
 		3CDC516D57D2B097B0F83CF2 /* 我的_设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的_设置.png"; sourceTree = "<group>"; };
@@ -613,6 +610,7 @@
 		3CDC5269BECA6E37708CBF47 /* WKIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKIImagePager.h; sourceTree = "<group>"; };
 		3CDC527B1A5792F867B42AF4 /* MLXLFormDateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLXLFormDateCell.m; sourceTree = "<group>"; };
 		3CDC52855F8BABABADCA3B2B /* UIApplication+RSKImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+RSKImageCropper.h"; sourceTree = "<group>"; };
+		3CDC5287385E27FCF992BBC2 /* read_me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = read_me.txt; sourceTree = "<group>"; };
 		3CDC528C198174F9AE57E15B /* 赞－灰@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赞－灰@2x.png"; sourceTree = "<group>"; };
 		3CDC5291BC43CE8C407DBD71 /* 活动地点@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "活动地点@2x.png"; sourceTree = "<group>"; };
 		3CDC529CE0A654BC71587739 /* 标签_伴美@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标签_伴美@3x.png"; sourceTree = "<group>"; };
@@ -711,10 +709,12 @@
 		3CDC556C1CCC674862354608 /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
 		3CDC556C7B6E4EFA890BBCFE /* ImageRowCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRowCollectionCell.h; sourceTree = "<group>"; };
 		3CDC557A71E559B2ACC42AC8 /* IndexCellOfOthers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexCellOfOthers.m; sourceTree = "<group>"; };
+		3CDC557B99E816BDF6262622 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		3CDC5580E573067AD09509F6 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		3CDC55822B21A893B538C0DF /* MLXLFormTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLXLFormTextFieldCell.h; sourceTree = "<group>"; };
 		3CDC558E72A69757887B8DB1 /* 我的－亮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的－亮.png"; sourceTree = "<group>"; };
 		3CDC559B1F0683E9CBEF96DB /* AFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFTableViewCell.m; sourceTree = "<group>"; };
+		3CDC559C1E8C759BC0A0B540 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		3CDC559E20231836137161B5 /* SAMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMTextField.m; sourceTree = "<group>"; };
 		3CDC55BF2784166CA4EE1E1A /* SLKTextInputbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextInputbar.h; sourceTree = "<group>"; };
 		3CDC55C23738550774AB748D /* UploadTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadTokenModel.h; sourceTree = "<group>"; };
@@ -1007,8 +1007,8 @@
 				07A699541B69BC8C00A9D2EF /* SystemConfiguration.framework in Frameworks */,
 				077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */,
 				707B061389615A8BCE04BC32 /* libPods-meiLiTianShi.a in Frameworks */,
-				07A699511B69BC5A00A9D2EF /* libWeChatSDK.a in Frameworks */,
 				3CDC5718D0183EB570522492 /* libUMessage_Sdk_1.1.0.a in Frameworks */,
+				3CDC544867B6BC065D6224D1 /* libWeChatSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1093,10 +1093,10 @@
 		07A6994C1B69BC5A00A9D2EF /* WeChatSDK_1.5 */ = {
 			isa = PBXGroup;
 			children = (
-				07A6994D1B69BC5A00A9D2EF /* libWeChatSDK.a */,
-				07A6994E1B69BC5A00A9D2EF /* read_me.txt */,
-				07A6994F1B69BC5A00A9D2EF /* WXApi.h */,
-				07A699501B69BC5A00A9D2EF /* WXApiObject.h */,
+				3CDC5162866F357F84652F78 /* WXApi.h */,
+				3CDC559C1E8C759BC0A0B540 /* libWeChatSDK.a */,
+				3CDC5287385E27FCF992BBC2 /* read_me.txt */,
+				3CDC557B99E816BDF6262622 /* WXApiObject.h */,
 			);
 			path = WeChatSDK_1.5;
 			sourceTree = "<group>";
@@ -2298,7 +2298,6 @@
 				071AE18D1B60D25900CF149F /* AvatarTCell.xib in Resources */,
 				07FB9C371B4E145B000CCC45 /* CreateDiaryBookFVC.xib in Resources */,
 				072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */,
-				07A699521B69BC5A00A9D2EF /* read_me.txt in Resources */,
 				07FB9C3C1B4E1471000CCC45 /* CreateDiaryFVC.xib in Resources */,
 				072DCC491B43A1CE0091CBDE /* Images.xcassets in Resources */,
 				071F2CDD1B7AF2DF00A081FE /* TimelineVC.xib in Resources */,
@@ -2507,6 +2506,7 @@
 				3CDC5683B0068D1D9D80B4B1 /* 评价伴美_时间@2x.png in Resources */,
 				3CDC5161676289E127A16FF6 /* 评价伴美_时间.png in Resources */,
 				3CDC5E0DCBE017110907A69B /* 评价伴美_时间@3x.png in Resources */,
+				3CDC5155BB4671F14D35465E /* read_me.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2902,6 +2902,7 @@
 					"${PROJECT_DIR}/meiLiTianShi/frameworks/UMessage_Sdk_1.1.0/**",
 					"$(PROJECT_DIR)/meiLiTianShi/frameworks/WeChatSDK_1.5",
 					"$(PROJECT_DIR)/Pods/UMengAnalytics/umsdk_IOS_analytics_idfa_v3.6.4/UMAnalytics_Sdk_3.6.4",
+					"\"${PROJECT_DIR}/meiLiTianShi/frameworks/WeChatSDK_1.5\"/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
@@ -2923,6 +2924,7 @@
 					"${PROJECT_DIR}/meiLiTianShi/frameworks/UMessage_Sdk_1.1.0/**",
 					"$(PROJECT_DIR)/meiLiTianShi/frameworks/WeChatSDK_1.5",
 					"$(PROJECT_DIR)/Pods/UMengAnalytics/umsdk_IOS_analytics_idfa_v3.6.4/UMAnalytics_Sdk_3.6.4",
+					"\"${PROJECT_DIR}/meiLiTianShi/frameworks/WeChatSDK_1.5\"/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
