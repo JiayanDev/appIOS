@@ -35,6 +35,8 @@
     [super viewDidLoad];
 
     self.webView.delegate=self;
+    self.webView.opaque = NO;
+    self.webView.backgroundColor = [UIColor whiteColor];
     self.url=[NSURL URLWithString:[NSString stringWithFormat:
             @"http://apptest.jiayantech.com/html/eventdetail.html?id=%@",@(self.eventId)]];
 
