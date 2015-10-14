@@ -75,6 +75,7 @@ NSString * const XLFormRowDescriptorType_AvatarAndNameAndDescCell = @"XLFormRowD
                              }];
 
         nameLabel.text=detailModel.name;
+        [nameLabel appendIconOfTag:detailModel.role];
         descLabel.text= [detailModel descOfGenderAreaAge];
     }
 

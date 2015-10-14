@@ -75,8 +75,8 @@
 // Selector Push
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kSex rowType:XLFormRowDescriptorTypeSelectorPush title:@"性别"];
     row.action.viewControllerClass=[MLXLFormOptionsViewController class];
-    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"男"],
-            [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"女"],
+    row.selectorOptions = @[[XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"男"],
+            [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"女"],
     ];
     [section addFormRow:row];
 
@@ -152,9 +152,9 @@
         setValue(kNickname, model.name);
         setValue(kSex, [model.gender boolValue]
                 ?
-                [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"男"]
+                [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"男"]
                 :
-                [XLFormOptionsObject formOptionsObjectWithValue:@(1) displayText:@"女"]);
+                [XLFormOptionsObject formOptionsObjectWithValue:@(0) displayText:@"女"]);
         setValue(kArea,[AreaSelectModel initAndFindPositionForName:model.city]);
         if(model.birthday){
             setValue(kBirthday,[NSDate dateWithTimeIntervalSince1970:[model.birthday unsignedIntegerValue]])
@@ -250,7 +250,7 @@
     if(self.inSetValue){return;}
     void (^succ)(void) =^{
         [TSMessage showNotificationWithTitle:@"修改成功" type:TSMessageNotificationTypeSuccess];
-
+        [self getData];
     };
 
     void (^fail)(NSInteger i, id o) =^(NSInteger i, id o) {
