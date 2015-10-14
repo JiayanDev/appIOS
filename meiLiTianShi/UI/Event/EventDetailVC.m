@@ -136,6 +136,12 @@
         self.share.shareIconUrl=requestModel.data[@"thumbnail"];
         self.share.shareUrl= [self.url absoluteString];
 
+    }else if([requestModel.action isEqualToString:@"shareEventToWechatFriends"]){
+
+        [self.share sendToWXFriend];
+    }else if([requestModel.action isEqualToString:@"shareEventToWechatTimeline"]){
+
+        [self.share sendToPYQ];
     }else if([requestModel.action isEqualToString:@"setNavigationBarTitle"]){
 
         self.title=requestModel.data[@"title"];

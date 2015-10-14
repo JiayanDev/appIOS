@@ -23,5 +23,9 @@
 
 - (void)disappearAll;
 
+- (void)sendToPYQ;
+
+- (void)sendToWXFriend;
+
 - (void)showSharePanelOnto:(UIView *)view;
 @end
