@@ -12,11 +12,13 @@
 #import "URLParser.h"
 #import "WebviewRespondModel.h"
 #import "UserModel.h"
+#import "ShareViewManager.h"
 
 @interface DiaryDetailVCB()
 
 @property (strong, nonatomic)NSURL *url;
 @property (strong, nonatomic)WebviewRequestModel *commentRequest;
+@property ShareViewManager* share;
 @end
 @implementation DiaryDetailVCB {
 
@@ -27,7 +29,7 @@
     self.webView.delegate=self;
     self.webView.opaque = NO;
     self.webView.backgroundColor = [UIColor whiteColor];
-
+    self.share= [ShareViewManager new];
 
     if(self.type==WebviewWithCommentVcDetailTypeDiary){
 
@@ -42,12 +44,19 @@
 
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
 
-
+    self.navigationItem.rightBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"分享.png"]
+                                                                             style:UIBarButtonItemStylePlain target:self
+                                                                            action:@selector(sharePress)];
 
 
 
 //    self.view.backgroundColor=THEME_COLOR_BACKGROUND;
 }
+
+-(void)sharePress{
+    [self.share showSharePanelOnto:self.navigationController.view];
+}
+
 
 - (void)likeButtonPress:(UIButton *)sender {
     NSNumber *iden;
@@ -125,6 +134,13 @@
                                          }] respondToWebview:self.webView
                                                  withReqeust:requestModel
                                                    isSuccess:YES];
+    }else if([requestModel.action isEqualToString:@"getShareInfo"]){
+
+        self.share.shareTitle=requestModel.data[@"title"];
+        self.share.shareDesc=requestModel.data[@"content"];
+        self.share.shareIconUrl=requestModel.data[@"thumbnail"];
+        self.share.shareUrl= [self.url absoluteString];
+
     }else if([requestModel.action isEqualToString:@"openCommentPanel"]){
         self.commentRequest=requestModel;
         [self.composeBarView.textView becomeFirstResponder];

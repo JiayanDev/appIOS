@@ -17,8 +17,11 @@
 #import "UserDetailModel.h"
 #import "MLSession.h"
 #import "MLStyleManager.h"
+#import "ShareViewManager.h"
 
-
+@interface TimeLineVCB()
+@property ShareViewManager* share;
+@end
 @implementation TimeLineVCB {
 
 }
@@ -26,6 +29,7 @@
     [super loadView];
     self.automaticallyAdjustsScrollViewInsets=NO;
     self.mainView= [[MLBlurImageHeaderedWebview alloc] init];
+    self.share= [ShareViewManager new];
     self.mainView.webView.opaque = NO;
     self.mainView.webView.backgroundColor = [UIColor whiteColor];
 
@@ -43,6 +47,7 @@
     [self.mainView.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
     [MLStyleManager removeBackTextForNextScene:self];
 
+
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -58,8 +63,9 @@
 }
 
 -(void)sharePress{
-
+    [self.share showSharePanelOnto:self.navigationController.view];
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     NSLog(@"viewwillapear");
@@ -133,6 +139,13 @@
         NSUInteger posYtop=posY-self.mainView.webView.frame.size.height;
         [self.mainView.webView.scrollView setContentOffset:CGPointMake(0, posYtop) animated:YES];
 
+
+    }else if([requestModel.action isEqualToString:@"getShareInfo"]){
+
+        self.share.shareTitle=requestModel.data[@"title"];
+        self.share.shareDesc=requestModel.data[@"content"];
+        self.share.shareIconUrl=requestModel.data[@"thumbnail"];
+        self.share.shareUrl= [self.url absoluteString];
 
     }else if([requestModel.action isEqualToString:@"addPost"]){
         CreateDiaryFVC *vc= [[CreateDiaryFVC alloc] init];
