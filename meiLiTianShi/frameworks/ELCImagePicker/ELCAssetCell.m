@@ -63,9 +63,13 @@
 
             if (i < [_imageViewArray count]) {
                 UIImageView *imageView = [_imageViewArray objectAtIndex:i];
+                imageView.contentMode=UIViewContentModeScaleAspectFill;
+                imageView.clipsToBounds=YES;
                 imageView.image = [UIImage imageWithCGImage:((ALAsset*)asset.asset).thumbnail];
             } else {
                 UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithCGImage:((ALAsset*)asset.asset).thumbnail]];
+                imageView.contentMode=UIViewContentModeScaleAspectFill;
+                imageView.clipsToBounds=YES;
                 [_imageViewArray addObject:imageView];
             }
             
@@ -105,13 +109,17 @@
             
             if (i < [_imageViewArray count]) {
                 UIImageView *imageView = [_imageViewArray objectAtIndex:i];
+                imageView.contentMode=UIViewContentModeScaleAspectFill;
+                imageView.clipsToBounds=YES;
                 PHAsset *phAsset = (PHAsset *)asset.asset;
                 [self.imageManager requestImageForAsset:phAsset targetSize:CGSizeMake((int ) ((SCREEN_WIDTH+7)/3.0 -7)*POINT_PX_SCALE, (int ) ((SCREEN_WIDTH+7)/3.0 -7)*POINT_PX_SCALE) contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * result, NSDictionary * info) {
                     imageView.image = result;
                 }];
                 
             } else {
-                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 70, 70)];
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0,  (int ) ((SCREEN_WIDTH+7)/3.0 -7), (int ) ((SCREEN_WIDTH+7)/3.0 -7))];
+                imageView.contentMode=UIViewContentModeScaleAspectFill;
+                imageView.clipsToBounds=YES;
                 PHAsset *phAsset = (PHAsset *)asset.asset;
                 [self.imageManager requestImageForAsset:phAsset targetSize:CGSizeMake((int ) ((SCREEN_WIDTH+7)/3.0 -7)*POINT_PX_SCALE, (int ) ((SCREEN_WIDTH+7)/3.0 -7)*POINT_PX_SCALE) contentMode:PHImageContentModeAspectFill options:options resultHandler:^(UIImage * result, NSDictionary * info) {
                     imageView.image = result;
