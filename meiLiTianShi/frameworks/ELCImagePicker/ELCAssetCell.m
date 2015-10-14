@@ -21,6 +21,73 @@
 
 @implementation ELCAssetCell
 
+
+typedef struct {
+    void *assetRepresentation;
+    int decodingIterationCount;
+} ThumbnailDecodingContext;
+static const int kThumbnailDecodingContextMaxIterationCount = 16;
+
+static size_t getAssetBytesCallback(void *info, void *buffer, off_t position, size_t count) {
+    ThumbnailDecodingContext *decodingContext = (ThumbnailDecodingContext *)info;
+    ALAssetRepresentation *assetRepresentation = (__bridge ALAssetRepresentation *)decodingContext->assetRepresentation;
+    if (decodingContext->decodingIterationCount == kThumbnailDecodingContextMaxIterationCount) {
+        NSLog(@"WARNING: Image %@ is too large for thumbnail extraction.", [assetRepresentation url]);
+        return 0;
+    }
+    ++decodingContext->decodingIterationCount;
+    NSError *error = nil;
+    size_t countRead = [assetRepresentation getBytes:(uint8_t *)buffer fromOffset:position length:count error:&error];
+    if (countRead == 0 || error != nil) {
+        NSLog(@"ERROR: Failed to decode image %@: %@", [assetRepresentation url], error);
+        return 0;
+    }
+    return countRead;
+}
+
+
+- (UIImage *)thumbnailForAsset:(ALAsset *)asset maxPixelSize:(CGFloat)size {
+    NSParameterAssert(asset);
+    NSParameterAssert(size > 0);
+    ALAssetRepresentation *representation = [asset defaultRepresentation];
+    if (!representation) {
+        return nil;
+    }
+    CGDataProviderDirectCallbacks callbacks = {
+            .version = 0,
+            .getBytePointer = NULL,
+            .releaseBytePointer = NULL,
+            .getBytesAtPosition = getAssetBytesCallback,
+            .releaseInfo = NULL
+    };
+    ThumbnailDecodingContext decodingContext = {
+            .assetRepresentation = (__bridge void *)representation,
+            .decodingIterationCount = 0
+    };
+    CGDataProviderRef provider = CGDataProviderCreateDirect((void *)&decodingContext, [representation size], &callbacks);
+    NSParameterAssert(provider);
+    if (!provider) {
+        return nil;
+    }
+    CGImageSourceRef source = CGImageSourceCreateWithDataProvider(provider, NULL);
+    NSParameterAssert(source);
+    if (!source) {
+        CGDataProviderRelease(provider);
+        return nil;
+    }
+    CGImageRef imageRef = CGImageSourceCreateThumbnailAtIndex(source, 0, (__bridge CFDictionaryRef) @{(NSString *)kCGImageSourceCreateThumbnailFromImageAlways : @YES,
+            (NSString *)kCGImageSourceThumbnailMaxPixelSize          : [NSNumber numberWithFloat:size],
+            (NSString *)kCGImageSourceCreateThumbnailWithTransform   : @YES});
+    UIImage *image = nil;
+    if (imageRef) {
+        image = [UIImage imageWithCGImage:imageRef];
+        CGImageRelease(imageRef);
+    }
+    CFRelease(source);
+    CGDataProviderRelease(provider);
+    return image;
+}
+
 //Using auto synthesizers
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

@@ -19,6 +19,7 @@
 #import "TimeLineVCB.h"
 #import "MBProgressHUD.h"
 #import "MLStyleManager.h"
+#import "XLform_getAndSetValue.h"
 
 @interface CreateDiaryFVC ()
 @property (nonatomic, strong)DiaryModel *diaryWithoutImage;
@@ -33,7 +34,7 @@
 #define kDate @"date"
 #define kImages @"images"
 
-#define getValue(k) [self.form formRowWithTag:k].value
+//#define getValue(k) [self.form formRowWithTag:k].value
 
 
 - (void)viewDidLoad {
@@ -58,6 +59,10 @@
 //    DiaryBookModel *book= [[DiaryBookModel alloc] init];
 //    book.categories= getValue(kcates);
 //    book.operationTimeNSDate= getValue(kDate);
+    if(getValueS(kcontent).length<1){
+        [TSMessage showNotificationWithTitle:@"请填写内容" type:TSMessageNotificationTypeWarning];
+        return ;
+    }
 
     DiaryModel *diary=[[DiaryModel alloc]init];
     diary.content= getValue(kcontent);
