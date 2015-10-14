@@ -10,6 +10,9 @@
 #import "MLSession.h"
 #import "TSMessage.h"
 #import "SDWebImageManager.h"
+#import "WXMediaMessage+messageConstruct.h"
+#import "SendMessageToWXReq+requestWithTextOrMediaMessage.h"
+#import "UIImage+Resizing.h"
 
 
 @interface ShareViewManager ()
@@ -296,23 +299,43 @@
                          }
                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                             if (image) {
-                                WXMediaMessage *message = [WXMediaMessage message];
-                                message.title = self.shareTitle;
-                                message.description = self.shareDesc;
-                                [message setThumbImage:image];
+                                dispatch_async(dispatch_get_main_queue(), ^{
+                                    WXWebpageObject *ext = [WXWebpageObject object];
+                                    ext.webpageUrl = self.shareUrl;
 
-                                WXWebpageObject *ext = [WXWebpageObject object];
-                                ext.webpageUrl = self.shareUrl;
+                                    WXMediaMessage *message = [WXMediaMessage messageWithTitle:self.shareTitle
+                                                                                   Description:self.shareDesc
+                                                                                        Object:ext
+                                                                                    MessageExt:nil
+                                                                                 MessageAction:nil
+                                                                                    ThumbImage:[image scaleDownToCoverSizeAndNoZoomForSmall:CGSizeMake(128,128)]
+                                                                                      MediaTag:@"WECHAT_TAG_JUMP_SHOWRANK"];
 
-                                message.mediaObject = ext;
-                                message.mediaTagName = @"WECHAT_TAG_JUMP_SHOWRANK";
+                                    SendMessageToWXReq* req = [SendMessageToWXReq requestWithText:nil
+                                                                                   OrMediaMessage:message
+                                                                                            bText:NO
+                                                                                          InScene:type];
 
-                                SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-                                req.bText = NO;
-                                req.message = message;
-                                req.scene = type;
-                                [MLSession current].wxMessageRespHandler=self;
-                                [WXApi sendReq:req];
+
+
+//                                    WXMediaMessage *message = [WXMediaMessage message];
+//                                    message.title = self.shareTitle;
+//                                    message.description = self.shareDesc;
+//                                    [message setThumbImage:image];
+//
+//                                    WXWebpageObject *ext = [WXWebpageObject object];
+//                                    ext.webpageUrl = self.shareUrl;
+//
+//                                    message.mediaObject = ext;
+//                                    message.mediaTagName = @"WECHAT_TAG_JUMP_SHOWRANK";
+//
+//                                    SendMessageToWXReq *req = [[SendMessageToWXReq alloc] init];
+//                                    req.bText = NO;
+//                                    req.message = message;
+//                                    req.scene = type;
+//                                    [MLSession current].wxMessageRespHandler = self;
+                                    [WXApi sendReq:req];
+                                });
                             }
                         }];
 

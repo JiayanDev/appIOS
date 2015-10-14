@@ -44,7 +44,8 @@
 	</dict>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-		<string>weixin</string>
+        <string>weixin</string>
+        <string>wechat</string>
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<true/>
