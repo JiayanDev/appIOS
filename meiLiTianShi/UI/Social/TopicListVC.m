@@ -102,15 +102,7 @@
             [[UITapGestureRecognizer alloc] initWithTarget:self
                                                     action:@selector(handleSingleTap:)];
 
-    [[MLSession current] getRecommendTopicList_success:^(NSArray *array) {
-        self.recommendedTopicList=array;
-        [self.imagePager reloadData];
-        self.imagePager.scrollView.scrollsToTop=NO;
-    } fail:^(NSInteger i, id o) {
-        [TSMessage showNotificationWithTitle:@"出错了"
-                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
-                                        type:TSMessageNotificationTypeError];
-    }];
+    [self getRecommendTopicsList];
 //    [self.headerRecommendedTopicView addGestureRecognizer:singleFingerTap];
 //    [[MLSession current] getRecommendTopic_success:^(TopicModel *model) {
 //
@@ -233,7 +225,7 @@
     self.pageIndicator= [[PageIndicator alloc] init];
     self.tableData=[NSMutableArray array];
     [self getDataWithScrollingToTop:YES];
-
+    [self getRecommendTopicsList];
 }
 
 
@@ -245,6 +237,19 @@
                                              animated:YES];
     }
 
+}
+
+
+-(void)getRecommendTopicsList{
+    [[MLSession current] getRecommendTopicList_success:^(NSArray *array) {
+        self.recommendedTopicList=array;
+        [self.imagePager reloadData];
+        self.imagePager.scrollView.scrollsToTop=NO;
+    } fail:^(NSInteger i, id o) {
+        [TSMessage showNotificationWithTitle:@"出错了"
+                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                        type:TSMessageNotificationTypeError];
+    }];
 }
 
 - (void)getDataWithScrollingToTop:(BOOL)gotoTop {
