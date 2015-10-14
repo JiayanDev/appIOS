@@ -198,7 +198,7 @@ constructingBodyWithBlock:constructingBodyWithBlock
         d[@"deviceToken"]=self.deviceToken;
     }
     
-    self.token=nil;
+//    self.token=nil;
     [self sendPost:@"app/init"
              param:d
            success:^(NSDictionary * user){
@@ -245,7 +245,9 @@ constructingBodyWithBlock:constructingBodyWithBlock
             }];
 
         } fail:^(NSInteger i, id o) {
+            NSLog(@"quick login failed: %d, %@",i,o);
             self.isLogined=NO;
+            self.token=nil;
             [self appInitGetSessionSuccess:success
                                       fail:failure];
         }];
