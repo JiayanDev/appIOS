@@ -52,6 +52,7 @@
     [self getData];
 
 
+    self.title=@"报名";
 
 }
 

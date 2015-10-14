@@ -119,8 +119,8 @@ CGFloat const distance_W_LabelHeader = 31.0;
 
 - (void)setBackgroundImageOrigin:(UIImage *)backgroundImageOrigin {
     _backgroundImageOrigin=backgroundImageOrigin;
-    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageDarkerWithRadius:50
-                                                                        iterations:10
+    self.backgroundImageBlured= [self.backgroundImageOrigin blurredImageDarkerWithRadius:30
+                                                                        iterations:5
                                                                          tintColor:[UIColor colorWithHexString:@"333333" alpha:0.05]];
 
 //    self.imageView.image=self.backgroundImageBlured;
