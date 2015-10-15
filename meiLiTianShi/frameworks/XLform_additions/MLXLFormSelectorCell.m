@@ -32,6 +32,12 @@
             make.left.equalTo(self.imageView.mas_right).offset(16);
             make.left.equalTo(self.contentView).offset(16).priority(500);
         }];
+
+        [self.detailTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.contentView);
+            make.right.equalTo(self.contentView).offset(-5);
+//            make.left.equalTo(self.contentView).offset(16).priority(500);
+        }];
     }
 
     return self;

@@ -27,6 +27,7 @@
 #define kChangePassword @"changepassword"
 #define kLogout @"logout"
 #define kHelp @"bangzhu"
+#define kPhone @"phnone"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,8 +82,10 @@
     [section addFormRow:row];
 
 
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:@"kefudianhua"
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kPhone
                                                 rowType:XLFormRowDescriptorTypeSelectorPush title:@"客服电话"];
+    row.cellConfig[@"detailTextLabel.text"] = PHONE_JIAYAN;
+//    [UITableViewCell new].detailTextLabel
 
     //row.action.viewControllerClass=[MyDiaryBookListTVC class];
     [section addFormRow:row];
@@ -130,6 +133,10 @@
         vc.url=[NSURL URLWithString:@"http://apptest.jiayantech.com/html/help.html"];
         vc.title=@"帮助";
         [self.navigationController pushViewController:vc animated:YES];
+
+    }else if([formRow.tag isEqualToString:kPhone]){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",PHONE_JIAYAN]]];
+
 
     }
 }

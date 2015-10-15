@@ -43,7 +43,7 @@ b.clipsToBounds = YES;\
 [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_HIGHLIGHT_BUTTON] forState:UIControlStateHighlighted];\
 [b setBackgroundImage:[UIImage imageWithColor:THEME_COLOR_DISABLED_BUTTON] forState:UIControlStateDisabled];
 
-
+#define PHONE_JIAYAN @"4009635969"
 
 #endif
 

@@ -27,7 +27,7 @@
     self.versionLabel=[UILabel newMLStyleWithSize:15 isGrey:NO];
     self.qqButton=[UIButton newBorderedColorButtonWithTitle:@"12345678" fontSize:13];
     [self.qqButton setTitleColor:THEME_COLOR forState:UIControlStateNormal];
-    self.phoneButton=[UIButton newBorderedColorButtonWithTitle:@"40012341234" fontSize:13];
+    self.phoneButton=[UIButton newBorderedColorButtonWithTitle:PHONE_JIAYAN fontSize:13];
     [self.phoneButton setTitleColor:THEME_COLOR forState:UIControlStateNormal];
     self.bottomCLabel=[UILabel newMLStyleWithSize:12 isGrey:YES];
     self.bottomCLabel.text=@"©JIAYAN TECH, ALL RIGHTS RESERVED";
@@ -68,10 +68,17 @@
     }];
 
 
+    self.qqButton.hidden=YES;
+    [self.phoneButton addTarget:self action:@selector(gotoPhone) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (BOOL)hidesBottomBarWhenPushed {
     return YES;
+}
+
+-(void)gotoPhone{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",PHONE_JIAYAN]]];
+
 }
 
 
