@@ -10,6 +10,7 @@
 #import "AboutUsVC.h"
 #import "UILabel+MLStyle.h"
 #import "UIButton+MLStyle.h"
+#import "RMUniversalAlert.h"
 
 @interface AboutUsVC ()
 
@@ -77,8 +78,18 @@
 }
 
 -(void)gotoPhone{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",PHONE_JIAYAN]]];
+    [RMUniversalAlert showAlertInViewController:self
+                                      withTitle:@"提示"
+                                        message:[NSString stringWithFormat: @"要拨打我们的客服电话 %@ 吗?",PHONE_JIAYAN]
+                              cancelButtonTitle:@"取消"
+                         destructiveButtonTitle:nil
+                              otherButtonTitles:@[@"确定"]
+                                       tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+                                           if(buttonIndex==2){
+                                               [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",PHONE_JIAYAN]]];
+                                           }
 
+                                       }];
 }
 
 
