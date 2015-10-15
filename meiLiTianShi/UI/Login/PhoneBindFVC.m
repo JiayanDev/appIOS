@@ -41,9 +41,9 @@
     if (self.type==PhoneBindVcType_registerFirstStep){
         self.title=@"注册";
     }else if (self.type==PhoneBindVcType_afterWechatLogin){
-        self.title=@"忘记密码";
-    }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
         self.title=@"绑定手机";
+    }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
+        self.title=@"忘记密码";
     }else if (self.type==PhoneBindVcType_bindWechatFirstStep){
         self.title=@"微信绑定";
     }else if (self.type==PhoneBindVcType_changePasswordFirstStep){
