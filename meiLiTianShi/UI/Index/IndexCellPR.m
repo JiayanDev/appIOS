@@ -69,6 +69,7 @@
 
         [self.statusLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.statusBackImage);
+            make.centerX.equalTo(self.statusBackImage).offset(4);
             make.right.lessThanOrEqualTo(self.statusBackImage).offset(-10);
             make.left.greaterThanOrEqualTo(self.statusBackImage).offset(14);
         }];
