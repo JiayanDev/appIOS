@@ -368,7 +368,7 @@ static CGFloat kTextViewToSuperviewHeightDelta;
         [[self placeholderLabel] setFrame:placeholderFrame];
         [_textContainer addSubview:[self placeholderLabel]];
 
-        [_textContainer addTarget:self action:@selector(willTextBecomeFirstResponder) forControlEvents:UIControlEventTouchUpInside];
+        [_textContainer addTarget:[self textView] action:@selector(becomeFirstResponder) forControlEvents:UIControlEventTouchUpInside];
     }
 
     return _textContainer;
