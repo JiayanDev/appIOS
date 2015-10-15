@@ -7,5 +7,7 @@
 #import "MLXLformVC.h"
 
 
-@interface SuggestionsVCB : MLXLformVC
+@interface SuggestionsVCB : MLXLformVC<XLFormRowDescriptorViewController>
+@property (nonatomic) XLFormRowDescriptor * rowDescriptor;
+@property(nonatomic, strong) UIButton *buttonSubmit;
 @end

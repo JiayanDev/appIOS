@@ -16,6 +16,7 @@
 #import "GeneralWebVC.h"
 #import "MLStyleManager.h"
 #import "ChangePasswordFVC.h"
+#import "SuggestionsVCB.h"
 
 @interface ConfigIndexVC ()
 
@@ -68,7 +69,7 @@
     row = [XLFormRowDescriptor formRowDescriptorWithTag:@"yijian"
                                                 rowType:XLFormRowDescriptorTypeSelectorPush title:@"意见反馈"];
 
-    row.action.viewControllerClass=[SuggestionsVC class];
+    row.action.viewControllerClass=[SuggestionsVCB class];
     [section addFormRow:row];
 
 

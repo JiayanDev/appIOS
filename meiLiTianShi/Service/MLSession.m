@@ -1075,6 +1075,17 @@ constructingBodyWithBlock:constructingBodyWithBlock
             } failure:failure];
 }
 
+
+-(void)submitFeedbackWithContent:(NSString *)content contact:(NSString *)contact  success:(void (^)(void))success fail:(void (^)(NSInteger, id))failure{
+    [self sendPost:@"user/feedback"
+             param:@{@"content":content,@"contact":contact?contact:@""}
+           success:^(id o) {
+//               NSUInteger id= [o[@"id"] unsignedIntValue];
+               success();
+           } failure:failure];
+}
+
+
 #pragma mark - shouye
 
 -(void)getIndexList_success:(void(^)(NSArray *))success  fail:(void (^)(NSInteger, id))failure{
