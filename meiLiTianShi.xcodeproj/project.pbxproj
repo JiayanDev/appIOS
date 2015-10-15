@@ -301,6 +301,7 @@
 		3CDC5ACAD05B75D3E490B2B8 /* UIApplication+RSKImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5EEC53A748B61DAECA71 /* UIApplication+RSKImageCropper.m */; };
 		3CDC5AE2B9001DF5A5E2A575 /* home－灰.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC58BAC33D905B66839601 /* home－灰.png */; };
 		3CDC5AFA966109CD9934B1EB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5C3228FE9C2D3D37175D /* Localizable.strings */; };
+		3CDC5B0571E8E896F82DD8F2 /* SuggestionsVCB.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC58EDA92604BD32277152 /* SuggestionsVCB.m */; };
 		3CDC5B070F918767802430D0 /* timeline_返回-@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC57F87134CB81A38E40DD /* timeline_返回-@3x.png */; };
 		3CDC5B0CEC05DD5EC0E61BB4 /* ForgetPasswordSecondStepVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC58DEBBF4F913701AC6EC /* ForgetPasswordSecondStepVC.xib */; };
 		3CDC5B1F9934E1D796FC253E /* ELCAssetPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5116948248EA8B39AFCF /* ELCAssetPicker.xib */; };
@@ -639,6 +640,7 @@
 		3CDC52DEBF530DB4E73DAB9B /* FloatCellOfGender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatCellOfGender.h; sourceTree = "<group>"; };
 		3CDC5301039E95A45EE8950E /* IDMPhotoBrowser_arrowRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IDMPhotoBrowser_arrowRight.png; sourceTree = "<group>"; };
 		3CDC5303D4AA91E14F4EFCDA /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
+		3CDC53083AC9503BF1E9F404 /* SuggestionsVCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestionsVCB.h; sourceTree = "<group>"; };
 		3CDC530ED1448F41295231BF /* 分享@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分享@2x.png"; sourceTree = "<group>"; };
 		3CDC53152925CBAA23FE43E6 /* MLSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLSession.h; sourceTree = "<group>"; };
 		3CDC531756E63DE800130A98 /* IDMTapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMTapDetectingView.m; sourceTree = "<group>"; };
@@ -808,6 +810,7 @@
 		3CDC58DAAB94CF73CB33DC17 /* 发现－灰.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发现－灰.png"; sourceTree = "<group>"; };
 		3CDC58DD20D38D9D818A26BB /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKInputAccessoryView.h; sourceTree = "<group>"; };
 		3CDC58DEBBF4F913701AC6EC /* ForgetPasswordSecondStepVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasswordSecondStepVC.xib; sourceTree = "<group>"; };
+		3CDC58EDA92604BD32277152 /* SuggestionsVCB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionsVCB.m; sourceTree = "<group>"; };
 		3CDC58F3CE21869816BB0977 /* IDMPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDMPhotoBrowser.m; sourceTree = "<group>"; };
 		3CDC58F73478E5A0F4CC44B5 /* ELCAssetTablePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAssetTablePicker.m; sourceTree = "<group>"; };
 		3CDC590761C4F1E530209A41 /* Y80Y09B4Y73E.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Y80Y09B4Y73E.jpg; sourceTree = "<group>"; };
@@ -2113,6 +2116,8 @@
 				072C3AA01B653EBD0032849C /* AboutUsVC.m */,
 				075AC8C51B6E7E1900C917B5 /* ChangePasswordSecondStepFTV.h */,
 				075AC8C61B6E7E1900C917B5 /* ChangePasswordSecondStepFTV.m */,
+				3CDC58EDA92604BD32277152 /* SuggestionsVCB.m */,
+				3CDC53083AC9503BF1E9F404 /* SuggestionsVCB.h */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -2766,6 +2771,7 @@
 				3CDC5CB82794E6FB80172770 /* GetMessageFromWXResp+responseWithTextOrMediaMessage.m in Sources */,
 				3CDC5360E2A5E23235CDE828 /* WXMediaMessage+messageConstruct.m in Sources */,
 				3CDC53E84962C4E515A8651A /* SendMessageToWXReq+requestWithTextOrMediaMessage.m in Sources */,
+				3CDC5B0571E8E896F82DD8F2 /* SuggestionsVCB.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

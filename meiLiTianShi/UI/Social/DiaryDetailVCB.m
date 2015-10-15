@@ -48,6 +48,9 @@
                                                                              style:UIBarButtonItemStylePlain target:self
                                                                             action:@selector(sharePress)];
 
+    self.commentRequest= [[WebviewRequestModel alloc] initWithDictionary:@{@"action":@"openCommentPanel",@"success":@"G_renderPostComment"} error:nil];
+
+
 
 
 //    self.view.backgroundColor=THEME_COLOR_BACKGROUND;
@@ -158,12 +161,10 @@
 
     }else if([requestModel.action isEqualToString:@"getUserInfo"]){
         if([MLSession current].isLogined){
-            NSDictionary *d=@{
-                    @"id":@([MLSession current].currentUser.id),
-                    @"name":[MLSession current].currentUser.name,
-                    @"phone":[MLSession current].currentUser.phoneNum,
-                    @"token":[MLSession current].token,
-            };
+            NSMutableDictionary  *d= [[[MLSession current].currentUser toDictionary] mutableCopy];
+            d[@"token"]=[MLSession current].token;
+            d[@"phone"]=[MLSession current].currentUser.phoneNum;
+
 
             [[WebviewRespondModel respondWithCode:@0
                                               msg:@"ok"

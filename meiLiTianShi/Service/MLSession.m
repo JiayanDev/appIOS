@@ -813,6 +813,8 @@ constructingBodyWithBlock:constructingBodyWithBlock
     d[@"phoneNum"]=phone;
     d[@"psw"]= [rawPassword MD5String];
 
+//    self.token=nil;
+
 
     [self sendPost:@"user/login"
              param:d
@@ -844,6 +846,8 @@ constructingBodyWithBlock:constructingBodyWithBlock
         d[@"deviceToken"]=self.deviceToken;
     }
     d[@"wxCode"]=wxCode;
+
+//    self.token=nil;
 
     [self sendPost:@"user/login"
              param:d
