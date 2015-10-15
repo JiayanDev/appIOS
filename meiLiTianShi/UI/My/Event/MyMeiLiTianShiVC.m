@@ -28,6 +28,7 @@
 #import "MyMLTSCell.h"
 #import "NSNumber+MLUtil.h"
 #import "NSObject+MLUtil.h"
+#import "NSString+jsonUtil.h"
 
 @interface MyMeiLiTianShiVC ()
 
@@ -132,8 +133,12 @@
     ((UIImageView *)cell.lefts[0]).image=[UIImage imageNamed:@"活动名称.png"];
     ((UIImageView *)cell.lefts[1]).image=[UIImage imageNamed:@"活动地点.png"];
     ((UIImageView *)cell.lefts[2]).image=[UIImage imageNamed:@"活动时间.png"];
-    ((UILabel *)cell.rights[0]).text= [data.title selfOrNilNullWithReplacing:[CategoryModel stringWithIdArray:data.categoryIds]];//[NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
-    ((UILabel *)cell.rights[1]).text= [data.hospitalName selfOrNilNullWithReplacing:@"暂未确定医院"];
+    ((UILabel *)cell.rights[0]).text= [data.title selfOrBlankWithReplacing:[CategoryModel stringWithIdArray:data.categoryIds]];//[NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
+    NSString *t=[data.hospitalName selfOrBlankWithReplacing:@"暂未确定医院"];
+    if(!t){
+        t=@"暂未确定医院";
+    }
+    ((UILabel *)cell.rights[1]).text= t;
     ((UILabel *)cell.rights[2]).text= [[NSDate dateWithTimeIntervalSince1970:[data.createTime unsignedIntegerValue]] displayTextWithDateAndHHMM];
 
     cell.statusLabel.text= [data statusForRead];
@@ -157,6 +162,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     EventModel *d=self.tableData[indexPath.section];
+    if(![d isValidatedOk]){
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+        return;
+    }
     EventDetailVC *vc= [[EventDetailVC alloc] init];
     vc.eventId=[d.eventId unsignedIntegerValue];
     [self.navigationController pushViewController:vc

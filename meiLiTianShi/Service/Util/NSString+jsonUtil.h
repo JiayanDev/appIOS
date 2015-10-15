@@ -12,4 +12,7 @@
 - (id)toJsonObject;
 
 - (id)toJsonObjectWithSimpleReplacingSimleQuoteToDoubleQuote;
+
+- (id)selfOrBlankWithReplacing:(id)replacing;
+
 @end

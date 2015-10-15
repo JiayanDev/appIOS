@@ -30,6 +30,10 @@
     return [self.status isEqualToString:@"发布"];
 }
 
+-(BOOL)isValidatedOk{
+    return !([self.status isEqualToString:@"待审核"]||[self.status isEqualToString:@"审核不通过"]);
+}
+
 -(NSString *)statusForRead{
     if([self.status isEqualToString:@"发布"]){
         return @"招募中";

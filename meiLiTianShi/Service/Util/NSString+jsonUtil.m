@@ -21,4 +21,15 @@
 -(id)toJsonObjectWithSimpleReplacingSimleQuoteToDoubleQuote{
     return [[self stringByReplacingOccurrencesOfString:@"'" withString:@"\""] toJsonObject];
 }
+
+-(id)selfOrBlankWithReplacing:(id)replacing{
+    if(self && self!= (id) [NSNull null]){
+        if(!self.length || self.length<1){
+            return replacing;
+        }
+        return self;
+    }else{
+        return replacing;
+    }
+}
 @end

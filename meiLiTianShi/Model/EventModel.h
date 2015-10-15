@@ -56,5 +56,7 @@
 
 - (BOOL)isActiveStatus;
 
+- (BOOL)isValidatedOk;
+
 - (NSString *)statusForRead;
 @end
