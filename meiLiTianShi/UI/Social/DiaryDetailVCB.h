@@ -18,4 +18,6 @@ typedef NS_ENUM(NSUInteger,WebviewWithCommentVcDetailType){
 @property (nonatomic, assign)WebviewWithCommentVcDetailType type;
 @property (nonatomic, strong)DiaryModel *diary;
 @property (nonatomic, strong)TopicModel *topic;
+
+- (BOOL)textViewWillBecomeFirstResponder;
 @end

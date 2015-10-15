@@ -20,6 +20,7 @@ extern NSString *const PHFComposeBarViewFrameEndUserInfoKey;          // NSValue
 
 
 @protocol PHFComposeBarViewDelegate;
+@class MLWebViewWithCommentTextBarViewController;
 
 
 @interface PHFComposeBarView : UIView <UITextViewDelegate>
@@ -29,6 +30,9 @@ extern NSString *const PHFComposeBarViewFrameEndUserInfoKey;          // NSValue
 @property (strong, nonatomic) PHFDelegateChain *delegateChain;
 @property (strong, nonatomic, readonly) UIButton *textContainer;
 @property (assign, nonatomic) CGFloat previousTextHeight;
+
+@property (nonatomic, weak)MLWebViewWithCommentTextBarViewController *viewController;
+
 // Default is YES. When YES, the auto resizing top margin will be flexible.
 // Whenever the height changes due to text length, the top offset will
 // automatically be adjusted such that the view grows upwards while the bottom

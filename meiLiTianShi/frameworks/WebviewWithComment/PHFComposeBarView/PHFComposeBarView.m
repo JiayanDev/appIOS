@@ -3,6 +3,7 @@
 #import "PHFComposeBarView.h"
 #import "PHFComposeBarView_TextView.h"
 #import "PHFComposeBarView_Button.h"
+#import "MLWebViewWithCommentTextBarViewController.h"
 
 
 CGFloat const PHFComposeBarViewInitialHeight = 44.0f;
@@ -126,6 +127,9 @@ static CGFloat kTextViewToSuperviewHeightDelta;
     [self handleTextViewChangeAnimated:NO];
 }
 
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    return [self.viewController textViewWillBecomeFirstResponder];
+}
 #pragma mark - Public Properties
 
 - (void)setAutoAdjustTopOffset:(BOOL)autoAdjustTopOffset {
@@ -364,10 +368,16 @@ static CGFloat kTextViewToSuperviewHeightDelta;
         [[self placeholderLabel] setFrame:placeholderFrame];
         [_textContainer addSubview:[self placeholderLabel]];
 
-        [_textContainer addTarget:[self textView] action:@selector(becomeFirstResponder) forControlEvents:UIControlEventTouchUpInside];
+        [_textContainer addTarget:self action:@selector(willTextBecomeFirstResponder) forControlEvents:UIControlEventTouchUpInside];
     }
 
     return _textContainer;
+}
+
+-(void)willTextBecomeFirstResponder{
+    if([self.viewController textViewWillBecomeFirstResponder]){
+        [[self textView] becomeFirstResponder];
+    }
 }
 
 @synthesize textView = _textView;

@@ -11,4 +11,8 @@
 
 
 - (void)likeButtonPress:(UIButton *)sender;
+
+- (void)keyboardGoesUped;
+
+- (BOOL)textViewWillBecomeFirstResponder;
 @end

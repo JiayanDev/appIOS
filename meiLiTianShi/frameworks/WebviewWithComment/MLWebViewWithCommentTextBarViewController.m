@@ -101,6 +101,7 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
     if([notification.name isEqualToString:UIKeyboardWillShowNotification]){
         self.composeBarView.submitButton.hidden=NO;
         self.composeBarView.likeButton.hidden=YES;
+        [self keyboardGoesUped];
     }else{
         self.composeBarView.submitButton.hidden=YES;
         self.composeBarView.likeButton.hidden=NO;
@@ -123,7 +124,9 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
                              [self.webView.scrollView setContentOffset:CGPointMake(0, self.webView.scrollView.contentOffset.y - heightChange)];
                          }
                      }
-                     completion:NULL];
+                     completion:^(BOOL finished){
+
+                     }];
 }
 
 - (void)composeBarViewDidPressButton:(PHFComposeBarView *)composeBarView {
@@ -184,6 +187,7 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
                                   kInitialViewFrame.size.width,
                                   PHFComposeBarViewInitialHeight);
         _composeBarView = [[MLComposeBarView alloc] initWithFrame:frame];
+        _composeBarView.viewController=self;
 //        [_composeBarView setMaxCharCount:160];
         [_composeBarView setMaxLinesCount:5];
         [_composeBarView setPlaceholder:@"评论"];
@@ -227,4 +231,14 @@ CGRect const kInitialViewFrame = { 0.0f, 0.0f, 320.0f, 480.0f };
     return YES;
 }
 
+
+-(void)keyboardGoesUped{
+
+}
+
+
+-(BOOL)textViewWillBecomeFirstResponder{
+
+    return YES;
+}
 @end

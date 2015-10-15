@@ -13,6 +13,7 @@
 #import "WebviewRespondModel.h"
 #import "UserModel.h"
 #import "ShareViewManager.h"
+#import "UIViewController+requireLogin.h"
 
 @interface DiaryDetailVCB()
 
@@ -51,6 +52,8 @@
     self.commentRequest= [[WebviewRequestModel alloc] initWithDictionary:@{@"action":@"openCommentPanel",@"success":@"G_renderPostComment"} error:nil];
 
 
+//    [self.composeBarView.textContainer addTarget:self
+//                                          action:@selector(keyboardGoesUped) forControlEvents:UIControlEventTouchUpInside];
 
 
 //    self.view.backgroundColor=THEME_COLOR_BACKGROUND;
@@ -147,7 +150,11 @@
     }else if([requestModel.action isEqualToString:@"openCommentPanel"]){
         self.commentRequest=requestModel;
         [self.composeBarView.textView becomeFirstResponder];
-        self.composeBarView.placeholder=[NSString stringWithFormat:@"回复%@:",requestModel.data[@"toUserName"]];
+        if(requestModel.data[@"toUserName"]){
+            self.composeBarView.placeholder=[NSString stringWithFormat:@"回复%@:",requestModel.data[@"toUserName"]];
+        }else{
+            self.composeBarView.placeholder=[NSString stringWithFormat:@"评论"];
+        }
     }else if([requestModel.action isEqualToString:@"setNavigationBarTitle"]){
 
         self.title=requestModel.data[@"title"];
@@ -201,6 +208,18 @@
     return NO;
 }
 
+- (BOOL)textViewWillBecomeFirstResponder {
+
+    if(![MLSession current].isLogined){
+//        [self.composeBarView.textView resignFirstResponder];
+//        [self.view endEditing:YES];
+        [self requireLogin];
+
+        return NO;
+    }
+
+    return YES;
+}
 
 #pragma mark - specific handles
 
