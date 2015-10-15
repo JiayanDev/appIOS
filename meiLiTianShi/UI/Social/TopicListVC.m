@@ -13,6 +13,7 @@
 #import "TopicModel.h"
 #import "MLSession.h"
 #import "PageIndicator.h"
+#import "DiaryModel.h"
 #import "TSMessage.h"
 #import "DiaryBookModel.h"
 #import "MBProgressHUD.h"
@@ -41,7 +42,6 @@
 @property (nonatomic, strong)PageIndicator *pageIndicator;
 @property (nonatomic, assign)NSInteger type;
 @property (nonatomic, strong)KIImagePager *imagePager;
-
 //@property (strong, nonatomic) IBOutlet UIView *headerRecommendedTopicView;
 //@property (weak, nonatomic) IBOutlet UILabel *headerTitle;
 //@property (weak, nonatomic) IBOutlet UILabel *headerDesc;
@@ -203,6 +203,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+
 }
 
 
@@ -530,6 +531,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     id data=self.tableDataDisplayCaching[indexPath.section];
+    self.openingDiary=data;
     if([data isKindOfClass:[DiaryModel class]]){
         [self gotoDiaryDetail:data];
     }
@@ -540,7 +542,10 @@
 
     DiaryDetailVCB *vc= [[DiaryDetailVCB alloc] init];
     vc.diary=diary;
+    vc.listVC=self;
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+
 
 @end

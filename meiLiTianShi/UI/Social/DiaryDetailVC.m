@@ -19,6 +19,7 @@
 #import "IDMPhoto.h"
 #import "IDMPhotoBrowser.h"
 #import "TopicModel.h"
+#import "TopicListVC.h"
 
 @interface DiaryDetailVC ()
 //@property (strong, nonatomic) IBOutlet UIScrollView *scroll;

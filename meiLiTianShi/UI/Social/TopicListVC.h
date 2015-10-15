@@ -10,6 +10,9 @@
 #import "KIImagePager.h"
 #import "MLStyledTableVC.h"
 
+@class DiaryModel;
+
 @interface TopicListVC : MLStyledTableVC <KIImagePagerDelegate, KIImagePagerDataSource>
 
+@property (nonatomic, strong)DiaryModel *openingDiary;
 @end

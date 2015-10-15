@@ -13,11 +13,12 @@ typedef NS_ENUM(NSUInteger,WebviewWithCommentVcDetailType){
 
 @class DiaryModel;
 @class TopicModel;
+@class TopicListVC;
 
 @interface DiaryDetailVCB : MLWebViewWithCommentTextBarViewController<UIWebViewDelegate, IDMPhotoBrowserDelegate>
 @property (nonatomic, assign)WebviewWithCommentVcDetailType type;
 @property (nonatomic, strong)DiaryModel *diary;
 @property (nonatomic, strong)TopicModel *topic;
-
+@property (nonatomic, weak)TopicListVC *listVC;
 - (BOOL)textViewWillBecomeFirstResponder;
 @end

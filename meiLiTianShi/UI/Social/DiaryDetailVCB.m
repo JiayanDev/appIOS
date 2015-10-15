@@ -14,6 +14,7 @@
 #import "UserModel.h"
 #import "ShareViewManager.h"
 #import "UIViewController+requireLogin.h"
+#import "TopicListVC.h"
 
 @interface DiaryDetailVCB()
 
@@ -66,6 +67,16 @@
 
 - (void)likeButtonPress:(UIButton *)sender {
     NSNumber *iden;
+    if(![MLSession current].isLogined){
+//        [self.composeBarView.textView resignFirstResponder];
+//        [self.view endEditing:YES];
+        [self requireLogin];
+
+        return ;
+    }
+
+
+
     if(self.type==WebviewWithCommentVcDetailTypeDiary){
         iden= @(self.diary.id);
     }else{
@@ -73,6 +84,8 @@
     }
     if(sender.selected){
         sender.selected=NO;
+        self.listVC.openingDiary.likeCount= @([self.listVC.openingDiary.likeCount unsignedIntegerValue]-1);
+        [self.listVC.tableView reloadData];
         [[MLSession current] cancelLikePostId:iden
                                       success:^{
 
@@ -84,7 +97,8 @@
                 }];
     }else{
         sender.selected=YES;
-
+        self.listVC.openingDiary.likeCount= @([self.listVC.openingDiary.likeCount unsignedIntegerValue]+1);
+        [self.listVC.tableView reloadData];
         [[MLSession current] likePostId:iden
                                 success:^{
 
@@ -273,6 +287,9 @@
                                               [composeBarView setText:@"" animated:YES];
                                               [composeBarView resignFirstResponder];
                                               self.composeBarView.placeholder=[NSString stringWithFormat:@"评论"];
+
+                                              self.listVC.openingDiary.commentCount= @([self.listVC.openingDiary.commentCount unsignedIntegerValue]+1);
+                                              [self.listVC.tableView reloadData];
 
                                           } fail:^(NSInteger i, id o) {
                 [TSMessage showNotificationWithTitle:@"出错了"
