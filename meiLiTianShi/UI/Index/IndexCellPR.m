@@ -27,6 +27,7 @@
         
         self.doctorNameLabel=[UILabel newMLStyleWithSize:12 isGrey:NO];
         self.doctorDescLabel=[UILabel newMLStyleWithSize:12 isGrey:YES];
+        self.doctorDescLabel.textColor=THEME_COLOR_TEXT_DARKER_GRAY;
 
         [self.contentView addSubview:self.backImage];
         [self.backImage addSubview:self.statusBackImage];

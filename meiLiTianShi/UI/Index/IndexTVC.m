@@ -36,6 +36,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title=@"佳妍";
+    UIImageView *imageView=[UIImageView new];
+    imageView.image=[UIImage imageNamed:@"首页_logo.png"];
+
+    self.navigationItem.titleView=imageView;
+    CGRect frame=imageView.frame;
+    frame.size=[UIImage imageNamed:@"首页_logo.png"].size;
+    imageView.frame=frame;
     self.tableData=[NSMutableArray array];
     self.tableDataDisplayCaching=[NSMutableArray new];
     [self.tableView registerClass:[IndexCellPR class] forCellReuseIdentifier:kIndexCellEvent];

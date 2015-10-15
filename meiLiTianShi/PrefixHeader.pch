@@ -34,6 +34,7 @@
 
 #define THEME_COLOR_TEXT [UIColor colorWithHexString:@"3a3a3a"]
 #define THEME_COLOR_TEXT_LIGHT_GRAY [UIColor colorWithHexString:@"bdbdbd"]
+#define THEME_COLOR_TEXT_DARKER_GRAY [UIColor colorWithHexString:@"8a8a8a"]
 
 #define THEME_BUTTON(b) b.backgroundColor=THEME_COLOR;\
 b.titleLabel.font=[UIFont systemFontOfSize:15];\
