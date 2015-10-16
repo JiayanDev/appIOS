@@ -94,7 +94,7 @@
     }];
 
     [b setTitle:@"确认报名" forState:UIControlStateNormal];
-    l.text=@"确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名确认报名";
+    l.text=@"信息确认无误并提交后，亲们将会在1~3个工作日内收到系统信息通知。可在“我的”-“我的通知”当中查看通知信息喔。";
     l.lineBreakMode=NSLineBreakByCharWrapping;
     l.numberOfLines=0;
 
