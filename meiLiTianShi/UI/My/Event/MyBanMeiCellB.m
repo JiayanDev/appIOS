@@ -18,6 +18,7 @@
 
         self.thumbImageView=[UIImageView new];
         self.thumbImageView.contentMode=UIViewContentModeScaleAspectFill;
+        self.thumbImageView.clipsToBounds=YES;
 
         self.titleLabel=[UILabel newMLStyleWithSize:14 isGrey:NO];
 

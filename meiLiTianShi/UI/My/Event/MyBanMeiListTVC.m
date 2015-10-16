@@ -24,6 +24,7 @@
 #import "MyBanMeiCellB.h"
 #import "MLStyleManager.h"
 #import "EventRatingFVC.h"
+#import "UIImageView+MLStyle.h"
 
 
 @interface MyBanMeiListTVC ()
@@ -114,6 +115,8 @@
     cell.thumbImageView.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
     if(data.thumbnailImg){
         [cell.thumbImageView sd_setImageWithURL:[NSURL URLWithString:data.thumbnailImg]];
+    }else{
+        [cell.thumbImageView setImageWithScalingToSelfSizeWithUrl:[NSURL URLWithString:data.coverImg] AndWillAnimate:NO withSize:CGSizeZero];
     }
     cell.titleLabel.text= [NSString stringWithFormat:@"%@-%@",data.userName,[CategoryModel stringWithIdArray:data.categoryIds]];
     cell.descLabel.text=[CategoryModel stringWithIdArray:data.categoryIds];
