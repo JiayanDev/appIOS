@@ -18,6 +18,8 @@
 #import "ChangePasswordFVC.h"
 #import "SuggestionsVCB.h"
 #import "RMUniversalAlert.h"
+#import "SDImageCache.h"
+#import "NSNumber+MLUtil.h"
 
 @interface ConfigIndexVC ()
 
@@ -29,6 +31,7 @@
 #define kLogout @"logout"
 #define kHelp @"bangzhu"
 #define kPhone @"phnone"
+#define kCache @"cache"
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -86,6 +89,15 @@
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kPhone
                                                 rowType:XLFormRowDescriptorTypeSelectorPush title:@"客服电话"];
     row.cellConfig[@"detailTextLabel.text"] = PHONE_JIAYAN;
+//    [UITableViewCell new].detailTextLabel
+
+    //row.action.viewControllerClass=[MyDiaryBookListTVC class];
+    [section addFormRow:row];
+
+
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCache
+                                                rowType:XLFormRowDescriptorTypeSelectorPush title:@"缓存"];
+    row.cellConfig[@"detailTextLabel.text"] = [@([[SDImageCache sharedImageCache] getSize]) sizeValueInKbMbGb];
 //    [UITableViewCell new].detailTextLabel
 
     //row.action.viewControllerClass=[MyDiaryBookListTVC class];
@@ -150,6 +162,30 @@
 
                                            }];
 
+
+    }else if([formRow.tag isEqualToString:kCache]){
+        [RMUniversalAlert showAlertInViewController:self
+                                          withTitle:@"提示"
+                                            message:@"要清理缓存吗"
+                                  cancelButtonTitle:@"取消"
+                             destructiveButtonTitle:nil
+                                  otherButtonTitles:@[@"确定"]
+                                           tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
+                                               if(buttonIndex==2){
+                                                   SDImageCache *imageCache = [SDImageCache sharedImageCache];
+
+                                                   [imageCache clearMemory];
+                                                   [imageCache clearDisk];
+
+                                                   XLFormRowDescriptor *row= [self.form formRowWithTag:kCache];
+
+                                                   row.cellConfig[@"detailTextLabel.text"] = [@([[SDImageCache sharedImageCache] getSize]) sizeValueInKbMbGb];
+                                                   [self.tableView reloadData];
+
+
+                                               }
+
+                                           }];
 
     }
 }
