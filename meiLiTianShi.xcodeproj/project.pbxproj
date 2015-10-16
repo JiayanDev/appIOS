@@ -13,6 +13,7 @@
 		070E2ED21B58E7A20041847A /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E2ED01B58E7A20041847A /* EventCell.xib */; };
 		070E2ED61B5B76A40041847A /* DiaryListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 070E2ED41B5B76A40041847A /* DiaryListCell.m */; };
 		070E2ED71B5B76A40041847A /* DiaryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070E2ED51B5B76A40041847A /* DiaryListCell.xib */; };
+		070E434A1BD0DBA500F62BFF /* launchScreenFor7.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070E43491BD0DBA500F62BFF /* launchScreenFor7.xcassets */; settings = {ASSET_TAGS = (); }; };
 		071AE18C1B60D25900CF149F /* AvatarTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 071AE18A1B60D25900CF149F /* AvatarTCell.m */; };
 		071AE18D1B60D25900CF149F /* AvatarTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 071AE18B1B60D25900CF149F /* AvatarTCell.xib */; };
 		071F2CD21B784E9E00A081FE /* IndexTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 071F2CD01B784E9E00A081FE /* IndexTVC.m */; };
@@ -436,6 +437,7 @@
 		070E2ED31B5B76A40041847A /* DiaryListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryListCell.h; sourceTree = "<group>"; };
 		070E2ED41B5B76A40041847A /* DiaryListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryListCell.m; sourceTree = "<group>"; };
 		070E2ED51B5B76A40041847A /* DiaryListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DiaryListCell.xib; sourceTree = "<group>"; };
+		070E43491BD0DBA500F62BFF /* launchScreenFor7.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = launchScreenFor7.xcassets; sourceTree = "<group>"; };
 		071AE1891B60D25900CF149F /* AvatarTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarTCell.h; sourceTree = "<group>"; };
 		071AE18A1B60D25900CF149F /* AvatarTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarTCell.m; sourceTree = "<group>"; };
 		071AE18B1B60D25900CF149F /* AvatarTCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarTCell.xib; sourceTree = "<group>"; };
@@ -1093,6 +1095,7 @@
 				3CDC559B4CE010BC7BF3BFCE /* Model */,
 				3CDC57AAD7EE7BF85356F427 /* Resource */,
 				3CDC59D8FFE7FA743F30F5FB /* frameworks */,
+				070E43491BD0DBA500F62BFF /* launchScreenFor7.xcassets */,
 			);
 			path = meiLiTianShi;
 			sourceTree = "<group>";
@@ -2392,6 +2395,7 @@
 				3CDC54DA84EB95BCD68FB62B /* Localizable.strings in Resources */,
 				3CDC5A5B72CE8FC29351F7F0 /* Localizable.strings in Resources */,
 				3CDC56BBCA2BD635C460E01C /* Localizable.strings in Resources */,
+				070E434A1BD0DBA500F62BFF /* launchScreenFor7.xcassets in Resources */,
 				3CDC503D12C1AABC645C9F35 /* Localizable.strings in Resources */,
 				3CDC5AFA966109CD9934B1EB /* Localizable.strings in Resources */,
 				3CDC5269EC26AC2CD7B3C513 /* Localizable.strings in Resources */,
@@ -2962,6 +2966,7 @@
 			baseConfigurationReference = 04824D0C260B948B14E70861 /* Pods-meiLiTianShi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "${PROJECT_DIR}/meiLiTianShi/PrefixHeader.pch";
@@ -2984,6 +2989,7 @@
 			baseConfigurationReference = B6119EACC3758C4C93EEB3EE /* Pods-meiLiTianShi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = "${PROJECT_DIR}/meiLiTianShi/PrefixHeader.pch";

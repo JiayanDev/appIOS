@@ -7,4 +7,6 @@
 
 @interface NSNumber (MLUtil)
 - (NSString *)stringOfDateSince1970_blankTip:(NSString *)blankTip;
+
+- (NSString *)sizeValueInKbMbGb;
 @end
