@@ -51,6 +51,7 @@
 
     [self getDataWithScrollingToTop:NO];
     [MLStyleManager removeBackTextForNextScene:self];
+    self.tableView.tableFooterView = [UIView new];
 
 }
 

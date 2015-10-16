@@ -144,7 +144,7 @@ forControlEvents:UIControlEventTouchUpInside];
                                                                          otherButtonTitles:nil
                                                                                   tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex){
                                                                                       [self.parentVC getDataWithScrollingToTop:YES];
-                                                                                      [self.navigationController popViewControllerAnimated:YES];
+                                                                                      [self.navigationController popToRootViewControllerAnimated:YES];
                                                                                   }];
                                            } fail:^(NSInteger i, id o) {
                 [TSMessage showNotificationWithTitle:@"出错了"

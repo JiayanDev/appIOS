@@ -35,6 +35,7 @@
 @property (strong, nonatomic)NSMutableArray *tableData;
 @property (nonatomic, strong)PageIndicator *pageIndicator;
 @property (nonatomic, strong)UIButton *button;
+@property (nonatomic, strong)UIWebView *blankPageView;
 
 @end
 #define kBanmeiCell @"banmeicell"
@@ -55,6 +56,8 @@
     self.pageIndicator= [[PageIndicator alloc] init];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
+    self.tableView.emptyDataSetSource = self;
+    self.tableView.emptyDataSetDelegate = self;
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self
                                                                  refreshingAction:@selector(dragUp)];
     [((MJRefreshAutoNormalFooter*)self.tableView.footer) setTitle:@"" forState:MJRefreshStateNoMoreData];
@@ -62,7 +65,7 @@
 //    [self.tableView registerNib:[UINib nibWithNibName:@"MyBanMeiCell"
 //                                               bundle:[NSBundle mainBundle]] forCellReuseIdentifier:kBanmeiCell];
 
-    [self getDataWithScrollingToTop:NO];
+
 
 
     self.button=[UIButton newSquareSolidButtonWithTitle:@"成为美丽天使"];
@@ -75,7 +78,10 @@
     [MLStyleManager removeBackTextForNextScene:self];
 }
 
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getDataWithScrollingToTop:NO];
+}
 
 
 -(void)dragUp{
@@ -89,14 +95,20 @@
 
     [[MLSession current] getMyMeilitianshiEventListWithPageIndicator:self.pageIndicator
                                                        success:^(NSArray *array) {
-                                                           [MBProgressHUD hideHUDForView:self.view
+                                                           [MBProgressHUD hideAllHUDsForView:self.view
                                                                                 animated:YES];
                                                            [self.tableView.footer endRefreshing];
 
                                                            [self.tableData addObjectsFromArray:array];
-                                                           if(array.count==0){[self.tableView.footer noticeNoMoreData];}
-                                                           else{
+                                                           if(array.count==0){
+                                                               [self.tableView.footer noticeNoMoreData];
+                                                           }else{
                                                                self.pageIndicator=[PageIndicator initWithMaxId:@(((EventModel *)self.tableData[self.tableData.count-1]).id)];
+                                                               self.tableView.scrollEnabled=YES;
+                                                               self.blankPageView.frame=CGRectZero;
+                                                               self.blankPageView.hidden=YES;
+                                                               //todo still can not remove the webview
+                                                               [self.blankPageView removeFromSuperview];
                                                                [self.tableView reloadData];
                                                            }
 
@@ -187,11 +199,28 @@
 - (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
     UIWebView *webView=[UIWebView new];
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://apptest.jiayantech.com/html/aboutmlts.html"]]];
-    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.mas_equalTo(SCREEN_HEIGHT);
-    }];
-    return webView;
+
+
+    [self.view addSubview:webView];
+//    [webView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.view);
+//        make.left.equalTo(self.view);
+//        make.right.equalTo(self.view);
+//        make.bottom.equalTo(self.button.mas_top);
+//    }];
+    CGRect rect=self.view.frame;
+    rect.size.height -= 49+44;
+    rect.origin.y = 0;
+
+    webView.frame = rect;
+    self.tableView.scrollEnabled = NO;
+    self.blankPageView=webView;
+    return [UIView new];
 }
 
+- (void)emptyDataSetDidAppear:(UIScrollView *)view {
+
+
+}
 
 @end
