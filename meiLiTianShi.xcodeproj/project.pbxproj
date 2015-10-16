@@ -61,6 +61,9 @@
 		076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076767A71B4E601500F73D00 /* ProjectSelectVC.xib */; };
 		077C67351B52C6BB00619740 /* ImageRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077C67341B52C6BB00619740 /* ImageRowCell.m */; };
 		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
+		079A6DAE1BD09C3000BDAE32 /* lanuch_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAB1BD09C3000BDAE32 /* lanuch_logo@3x.png */; settings = {ASSET_TAGS = (); }; };
+		079A6DAF1BD09C3000BDAE32 /* lanuch_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAC1BD09C3000BDAE32 /* lanuch_logo@2x.png */; settings = {ASSET_TAGS = (); }; };
+		079A6DB01BD09C3000BDAE32 /* lanuch_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAD1BD09C3000BDAE32 /* lanuch_logo.png */; settings = {ASSET_TAGS = (); }; };
 		07A6992B1B67626C00A9D2EF /* LoginWaySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */; };
 		07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */; };
 		07A699541B69BC8C00A9D2EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */; };
@@ -508,6 +511,9 @@
 		077C67331B52C6BB00619740 /* ImageRowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageRowCell.h; sourceTree = "<group>"; };
 		077C67341B52C6BB00619740 /* ImageRowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageRowCell.m; sourceTree = "<group>"; };
 		077C67361B536B6E00619740 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		079A6DAB1BD09C3000BDAE32 /* lanuch_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanuch_logo@3x.png"; sourceTree = "<group>"; };
+		079A6DAC1BD09C3000BDAE32 /* lanuch_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanuch_logo@2x.png"; sourceTree = "<group>"; };
+		079A6DAD1BD09C3000BDAE32 /* lanuch_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lanuch_logo.png; sourceTree = "<group>"; };
 		07A699281B67626C00A9D2EF /* LoginWaySelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWaySelectVC.h; sourceTree = "<group>"; };
 		07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWaySelectVC.m; sourceTree = "<group>"; };
 		07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWaySelectVC.xib; sourceTree = "<group>"; };
@@ -1686,6 +1692,9 @@
 		3CDC57AAD7EE7BF85356F427 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				079A6DAB1BD09C3000BDAE32 /* lanuch_logo@3x.png */,
+				079A6DAC1BD09C3000BDAE32 /* lanuch_logo@2x.png */,
+				079A6DAD1BD09C3000BDAE32 /* lanuch_logo.png */,
 				3CDC53A8C62F9A7808DAC7B2 /* black@2x.png */,
 				3CDC5B63426FE4A04BE7F99C /* blue@2x.png */,
 				3CDC5E9A5D7962A9A3B71D89 /* area.json */,
@@ -2409,6 +2418,7 @@
 				3CDC562BE0BCD6DDCD278982 /* logo@2x.png in Resources */,
 				3CDC5A32CEED5A45D1F9D189 /* logo@3x.png in Resources */,
 				3CDC5E478B5DF9C040CDB2B1 /* logo.png in Resources */,
+				079A6DB01BD09C3000BDAE32 /* lanuch_logo.png in Resources */,
 				3CDC5EA58FADA4EABB3546DF /* checkbox_blank.png in Resources */,
 				3CDC501A7B4C5188E67222B1 /* checkbox_blank@3x.png in Resources */,
 				3CDC53D7FB3C69721515678F /* checkbox_checked.png in Resources */,
@@ -2441,6 +2451,7 @@
 				3CDC5D8E1CDA6D68B83640D0 /* 我的_我的日志@2x.png in Resources */,
 				3CDC5658451BA893AD902A07 /* 我的_我的通知@3x.png in Resources */,
 				3CDC5769D04F9795E1FCE9F5 /* 我的_我的评论.png in Resources */,
+				079A6DAF1BD09C3000BDAE32 /* lanuch_logo@2x.png in Resources */,
 				3CDC5164916A07E2D5BD2835 /* 我的_我的日志@3x.png in Resources */,
 				3CDC5B9C52D6B9A1F4590063 /* 我的_我的日志.png in Resources */,
 				3CDC580F32FC0069D1E1A845 /* 我的_设置.png in Resources */,
@@ -2556,6 +2567,7 @@
 				3CDC56E7E1700E6DC062CD9B /* icon_日期@3x.png in Resources */,
 				3CDC5683B0068D1D9D80B4B1 /* 评价伴美_时间@2x.png in Resources */,
 				3CDC5161676289E127A16FF6 /* 评价伴美_时间.png in Resources */,
+				079A6DAE1BD09C3000BDAE32 /* lanuch_logo@3x.png in Resources */,
 				3CDC5E0DCBE017110907A69B /* 评价伴美_时间@3x.png in Resources */,
 				3CDC5155BB4671F14D35465E /* read_me.txt in Resources */,
 				3CDC5C0E21D2ABBBF2B97E42 /* 首页_logo@2x.png in Resources */,

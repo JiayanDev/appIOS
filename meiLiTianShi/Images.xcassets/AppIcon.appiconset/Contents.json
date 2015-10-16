@@ -23,13 +23,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "矢量智能对象@2x.png",
+      "filename" : "app图标.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "矢量智能对象@3x.png",
+      "filename" : "app图标_180.png",
       "scale" : "3x"
     }
   ],

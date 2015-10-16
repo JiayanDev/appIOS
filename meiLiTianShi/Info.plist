@@ -35,6 +35,11 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>weixin</string>
+		<string>wechat</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -42,11 +47,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-        <string>weixin</string>
-        <string>wechat</string>
-	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
