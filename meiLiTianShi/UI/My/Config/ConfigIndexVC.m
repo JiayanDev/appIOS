@@ -160,6 +160,8 @@
                                                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",PHONE_JIAYAN]]];
                                                }
 
+                                               [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+
                                            }];
 
 
@@ -184,6 +186,9 @@
 
 
                                                }
+
+                                               [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+
 
                                            }];
 

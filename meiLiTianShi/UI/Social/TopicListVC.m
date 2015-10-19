@@ -190,6 +190,7 @@
 - (void)imagePager:(KIImagePager *)imagePager didSelectImageAtIndex:(NSUInteger)index {
     NSLog(@"%@,didSelectImageAtIndex  %@",imagePager,@(index));
     TopicModel *topicModel=self.recommendedTopicList[index];
+    topicModel.id= [topicModel.topicId unsignedIntegerValue];
     DiaryDetailVCB *vc=[DiaryDetailVCB new];
     vc.type=WebviewWithCommentVcDetailTypeTopic;
     vc.topic=topicModel;

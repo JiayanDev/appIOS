@@ -30,12 +30,14 @@
     self.detailTextLabel.font=[UIFont systemFontOfSize:15];
 }
 
-//
-//- (void)update {
-//    [super update];
-//    self.textField.font = [UIFont systemFontOfSize:15];
-//    self.textField.textColor=THEME_COLOR_TEXT;
-//}
+
+- (void)update {
+    [super update];
+    [self.detailTextLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.contentView);
+        make.centerX.equalTo(self.contentView);
+    }];
+}
 
 
 + (CGFloat)formDescriptorCellHeightForRowDescriptor:(XLFormRowDescriptor *)rowDescriptor {

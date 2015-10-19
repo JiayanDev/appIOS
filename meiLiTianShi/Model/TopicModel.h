@@ -9,6 +9,7 @@
 
 @interface TopicModel : JSONModel
 @property (nonatomic, assign)NSUInteger id;
+@property (nonatomic, strong)NSNumber <Optional>* topicId;
 @property (nonatomic, strong)NSString<Optional> * content;
 @property (nonatomic, strong)NSArray <Optional>*photoes;
 @property (nonatomic, strong)NSNumber <Optional>* commentCount;

@@ -264,6 +264,7 @@ return 1;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if([self.tableDataDisplayCaching[indexPath.section] isKindOfClass:[TopicModel class]]){
         TopicModel *data=self.tableDataDisplayCaching[indexPath.section];
+        data.id= [data.topicId unsignedIntegerValue];
         DiaryDetailVCB *vc= [[DiaryDetailVCB alloc] init];
         vc.type=WebviewWithCommentVcDetailTypeTopic;
         vc.topic=data;
