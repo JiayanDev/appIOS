@@ -59,7 +59,17 @@
                                                         type:TSMessageNotificationTypeError];
                     }];
         }else{
-
+            [[MLSession current] changeUserPasswordWithOriginalRawPassword:nil
+                                                            newRawPassword:getValueS(kPassNew1)
+                                                                   success:^{
+                                                                       [TSMessage showNotificationWithTitle:@"修改密码成功"
+                                                                                                       type:TSMessageNotificationTypeSuccess];
+                                                                       [self.navigationController popViewControllerAnimated:YES];
+                                                                   } fail:^(NSInteger i, id o) {
+                        [TSMessage showNotificationWithTitle:@"出错了"
+                                                    subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
+                                                        type:TSMessageNotificationTypeError];
+                    }];
         };
 
     }else{
