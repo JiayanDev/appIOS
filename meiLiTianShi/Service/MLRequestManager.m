@@ -3,7 +3,6 @@
 #import "MLRequestManager.h"
 #import "MLSession.h"
 
-static NSString* BASE_URL = @"http://apptest.jiayantech.com/";
 
 
 static MLRequestManager* instance = nil;
@@ -20,7 +19,7 @@ static MLRequestManager* instance = nil;
     if (!instance) {
         @synchronized(BASE_URL) {
             if (!instance) {
-                instance = [[MLRequestManager alloc] initWithBaseURL:BASE_URL];
+                instance = [[MLRequestManager alloc] initWithBaseURL:BASE_URL_STRING];
             }
         }
     }

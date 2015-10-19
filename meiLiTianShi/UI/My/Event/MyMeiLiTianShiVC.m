@@ -198,7 +198,7 @@
 
 - (UIView *)customViewForEmptyDataSet:(UIScrollView *)scrollView {
     UIWebView *webView=[UIWebView new];
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://apptest.jiayantech.com/html/aboutmlts.html"]]];
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"html/aboutmlts.html"  relativeToURL:BASE_URL]]];
 
 
     [self.view addSubview:webView];

@@ -21,6 +21,9 @@
 
 #define NOT_LOGIN_CODE (-17)
 
+#define BASE_URL_STRING  @"http://app.jiayantech.com/"
+#define BASE_URL [[NSURL alloc] initWithString:BASE_URL_STRING]
+
 #define THE1PX_CONST (CGFloat)(1.0 / [UIScreen mainScreen].scale)
 #define POINT_PX_SCALE [UIScreen mainScreen].scale
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width

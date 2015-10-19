@@ -39,7 +39,7 @@
     self.webView.backgroundColor = [UIColor whiteColor];
     self.share= [ShareViewManager new];
     self.url=[NSURL URLWithString:[NSString stringWithFormat:
-            @"http://apptest.jiayantech.com/html/eventdetail.html?id=%@",@(self.eventId)]];
+            @"html/eventdetail.html?id=%@",@(self.eventId)] relativeToURL:BASE_URL];
 
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -67,7 +67,7 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSLog(@"%@",request.URL);
     NSURL *url=request.URL;
-    if([url isEqual:self.url]){
+    if([url.absoluteString isEqualToString:[self.url absoluteString]]){
         return YES;
     }
     if([url.scheme isEqualToString:@"jiayan"]){

@@ -37,7 +37,7 @@
 
     self.webView.delegate=self;
     self.url=[NSURL URLWithString:[NSString stringWithFormat:
-            @"http://apptest.jiayantech.com/html/timeline.html?id=%@",self.userId]];
+            @"html/timeline.html?id=%@",self.userId]  relativeToURL:BASE_URL];
 
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
 }
@@ -50,7 +50,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSURL *url=request.URL;
-    if([url isEqual:self.url]){
+    if([url.absoluteString isEqualToString:[self.url absoluteString]]){
         return YES;
     }
     if([url.scheme isEqualToString:@"jiayan"]){

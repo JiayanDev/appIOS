@@ -15,6 +15,7 @@
 #import "ShareViewManager.h"
 #import "UIViewController+requireLogin.h"
 #import "TopicListVC.h"
+#import "MLWebRedirectPusher.h"
 
 @interface DiaryDetailVCB()
 
@@ -36,10 +37,10 @@
     if(self.type==WebviewWithCommentVcDetailTypeDiary){
 
         self.url=[NSURL URLWithString:[NSString stringWithFormat:
-                @"http://apptest.jiayantech.com/html/diary.html?id=%@",@(self.diary.id)]];
+                @"html/diary.html?id=%@",@(self.diary.id)] relativeToURL:BASE_URL];
     }else{
         self.url=[NSURL URLWithString:[NSString stringWithFormat:
-                @"http://apptest.jiayantech.com/html/topic.html?id=%@",@(self.topic.id)]];
+                @"html/topic.html?id=%@",@(self.topic.id)] relativeToURL:BASE_URL];
     }
     NSLog(@"self.url: %@",self.url);
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
@@ -119,7 +120,7 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSURL *url=request.URL;
-    if([url isEqual:self.url]){
+    if([url.absoluteString isEqualToString:[self.url absoluteString]]){
         return YES;
     }
     if([url.scheme isEqualToString:@"jiayan"]){
@@ -219,7 +220,8 @@
 
 -(BOOL)handleRedirectRequests:(NSURL *)url{
 
-    return NO;
+    return ![MLWebRedirectPusher pushWithUrl:url
+                              viewController:self];
 }
 
 - (BOOL)textViewWillBecomeFirstResponder {

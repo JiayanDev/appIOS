@@ -42,7 +42,7 @@
 //    self.mainView.descLabel.text=@"hahahaha";
     self.mainView.webView.delegate=self;
     self.url=[NSURL URLWithString:[NSString stringWithFormat:
-            @"http://apptest.jiayantech.com/html/timeline.html?id=%@",self.userId]];
+            @"html/timeline.html?id=%@",self.userId] relativeToURL:BASE_URL];
 
     [self.mainView.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
     [MLStyleManager removeBackTextForNextScene:self];
@@ -91,7 +91,7 @@
 
     NSURL *url=request.URL;
     NSLog(@"URL:%@",url);
-    if([url isEqual:self.url]){
+    if([url.absoluteString isEqualToString:[self.url absoluteString]]){
         return YES;
     }
     if([url.scheme isEqualToString:@"jiayan"]){

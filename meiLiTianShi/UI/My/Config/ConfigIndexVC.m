@@ -143,7 +143,7 @@
         }];
     }else if([formRow.tag isEqualToString:kHelp]){
         GeneralWebVC *vc=[GeneralWebVC new];
-        vc.url=[NSURL URLWithString:@"http://apptest.jiayantech.com/html/help.html"];
+        vc.url=[NSURL URLWithString:@"html/help.html"  relativeToURL:BASE_URL];
         vc.title=@"帮助";
         [self.navigationController pushViewController:vc animated:YES];
 

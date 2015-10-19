@@ -53,7 +53,7 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     NSLog(@"%@",request.URL);
     NSURL *url=request.URL;
-    if([url isEqual:self.url]){
+    if([url.absoluteString isEqualToString:[self.url absoluteString]]){
         return YES;
     }
     if([url.scheme isEqualToString:@"jiayan"]){
