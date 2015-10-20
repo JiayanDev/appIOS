@@ -11,4 +11,5 @@
 @interface FirstVC : UIViewController
 @property (nonatomic, strong)NSDictionary *appLanuchOptions;
 
+@property(nonatomic, strong) UIImageView *logo;
 @end

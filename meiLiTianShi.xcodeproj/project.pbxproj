@@ -33,7 +33,6 @@
 		072DCC4C1B43A1CE0091CBDE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072DCC4A1B43A1CE0091CBDE /* LaunchScreen.xib */; };
 		072DCC581B43A1CE0091CBDE /* meiLiTianShiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 072DCC571B43A1CE0091CBDE /* meiLiTianShiTests.m */; };
 		072F30AE1B46427B001A14E6 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30AC1B46427B001A14E6 /* FirstVC.m */; };
-		072F30AF1B46427B001A14E6 /* FirstVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30AD1B46427B001A14E6 /* FirstVC.xib */; };
 		072F30B31B468536001A14E6 /* TopicListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30B11B468536001A14E6 /* TopicListVC.m */; };
 		072F30B81B4A702E001A14E6 /* TopicListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 072F30B61B4A702E001A14E6 /* TopicListCell.m */; };
 		072F30B91B4A702E001A14E6 /* TopicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 072F30B71B4A702E001A14E6 /* TopicListCell.xib */; };
@@ -471,7 +470,6 @@
 		072DCC571B43A1CE0091CBDE /* meiLiTianShiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = meiLiTianShiTests.m; sourceTree = "<group>"; };
 		072F30AB1B46427B001A14E6 /* FirstVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
 		072F30AC1B46427B001A14E6 /* FirstVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
-		072F30AD1B46427B001A14E6 /* FirstVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstVC.xib; sourceTree = "<group>"; };
 		072F30B01B468536001A14E6 /* TopicListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListVC.h; sourceTree = "<group>"; };
 		072F30B11B468536001A14E6 /* TopicListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicListVC.m; sourceTree = "<group>"; };
 		072F30B51B4A702E001A14E6 /* TopicListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicListCell.h; sourceTree = "<group>"; };
@@ -1663,7 +1661,6 @@
 			children = (
 				072F30AB1B46427B001A14E6 /* FirstVC.h */,
 				072F30AC1B46427B001A14E6 /* FirstVC.m */,
-				072F30AD1B46427B001A14E6 /* FirstVC.xib */,
 				3CDC55E15650651E6EE584A6 /* Social */,
 				3CDC5E90FA7401823429E2FB /* My */,
 				3CDC554C8E12B30D27EFC5D2 /* Event */,
@@ -2369,7 +2366,6 @@
 				074607881B4BB5540035E08D /* MyIndexVC.xib in Resources */,
 				07FB9C411B4E1486000CCC45 /* CreateTopicFVC.xib in Resources */,
 				3CDC5A5432E4AA34229EA7BB /* blue@2x.png in Resources */,
-				072F30AF1B46427B001A14E6 /* FirstVC.xib in Resources */,
 				072C3A9E1B653D820032849C /* SuggestionsVC.xib in Resources */,
 				076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */,
 				3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */,

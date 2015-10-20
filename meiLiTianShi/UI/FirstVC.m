@@ -6,6 +6,7 @@
 //  Copyright (c) 2015年 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "FirstVC.h"
 #import "MLSession.h"
 #import "AppDelegate.h"
@@ -30,6 +31,46 @@
 @end
 
 @implementation FirstVC
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+
+- (void)loadView {
+    [super loadView];
+    CGFloat h=SCREEN_HEIGHT;
+    CGFloat t=133;
+    if(SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")){
+        t = 210;
+    } else {
+        if (h > 720) {
+            t = 210;
+        } else if (h > 560) {
+            t = 171;
+        }
+    }
+
+    self.view.backgroundColor=[UIColor whiteColor];
+    self.logo=[UIImageView new];
+    self.logo.image=[UIImage imageNamed:@"lanuch_logo.png"];
+    [self.view addSubview:self.logo];
+    [self.logo mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.size.mas_equalTo([UIImage imageNamed:@"lanuch_logo.png"].size);
+        make.top.equalTo(self.view).offset(t);
+    }];
+
+
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [self.view addSubview:spinner];
+    [spinner mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(30,30));
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.logo.mas_bottom).offset(30);
+    }];
+
+    [spinner startAnimating];
+
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
