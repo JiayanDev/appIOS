@@ -26,6 +26,7 @@
 #import "LoginWaySelectVC.h"
 #import "MessageNoticingModel.h"
 #import "UIImage+Resizing.h"
+#import "UIViewController+requireLogin.h"
 
 static MLSession *session;
 @interface MLSession()
@@ -45,6 +46,10 @@ static MLSession *session;
 
 #define USE_DEBUG_MOCK 0
 #define USE_TRY_FOR_SUCCESS 0
+
+#define RETCODE_OVERDUE (-36)
+#define RETCODE_NOT_LOGIN (-17)
+
 
 
 + (MLSession *)current {
@@ -166,6 +171,11 @@ constructingBodyWithBlock:constructingBodyWithBlock
 }
 
 - (void)onFailure:(NSInteger)code responseObject:(id)responseObject failure:(void (^)(NSInteger code, id responseObject))failure {
+
+    if(code ==RETCODE_NOT_LOGIN || code==RETCODE_OVERDUE){
+        [[UIViewController currentViewController] requireLogin];
+        return ;
+    }
 
 
     if (failure) {
