@@ -179,7 +179,11 @@
         return;
     }
     EventDetailVC *vc= [[EventDetailVC alloc] init];
-    vc.eventId=[d.eventId unsignedIntegerValue];
+    if(d.eventId){
+        vc.eventId=[d.eventId unsignedIntegerValue];
+    }else{
+        vc.eventId=d.id;
+    }
     [self.navigationController pushViewController:vc
                                          animated:YES];
 }
