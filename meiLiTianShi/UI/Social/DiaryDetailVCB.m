@@ -89,7 +89,12 @@
         [self.listVC.tableView reloadData];
         [[MLSession current] cancelLikePostId:iden
                                       success:^{
-
+                                          WebviewRespondModel *respondModel=[WebviewRespondModel respondWithCode:@0
+                                                                                                             msg:@""
+                                                                                                            data:@{@"hasLike":@NO}];
+//
+                                          [respondModel respondToWebview:self.webView
+                                                        withFunctionName:@"G_switchLike"];
                                       } fail:^(NSInteger i, id o) {
                     sender.selected=YES;
                     [TSMessage showNotificationWithTitle:@"出错了"
@@ -103,6 +108,12 @@
         [[MLSession current] likePostId:iden
                                 success:^{
 
+                                    WebviewRespondModel *respondModel=[WebviewRespondModel respondWithCode:@0
+                                                                                                       msg:@""
+                                                                                                      data:@{@"hasLike":@YES}];
+//
+                                    [respondModel respondToWebview:self.webView
+                                                  withFunctionName:@"G_switchLike"];
                                 } fail:^(NSInteger i, id o) {
                     sender.selected=NO;
                     [TSMessage showNotificationWithTitle:@"出错了"

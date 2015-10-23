@@ -28,4 +28,12 @@
     NSString *calling=[NSString stringWithFormat:@"%@(%@);",isSucc?requestModel.success:requestModel.error, [self toJSONString]];
     return [webview stringByEvaluatingJavaScriptFromString:calling];
 }
+
+
+-(NSString *)respondToWebview:(UIWebView *)webview withFunctionName:(NSString *)functionName
+{
+    NSMutableDictionary *d= [[self toDictionary] mutableCopy];
+    NSString *calling=[NSString stringWithFormat:@"%@(%@);",functionName, [self toJSONString]];
+    return [webview stringByEvaluatingJavaScriptFromString:calling];
+}
 @end

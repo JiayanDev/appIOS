@@ -74,7 +74,8 @@
     [super viewWillAppear:animated];
     [self setNeedsStatusBarAppearanceUpdate];
     if(self.needUpdateContent){
-        [self.mainView.webView reload];
+        NSString *calling=[NSString stringWithFormat:@"%@();",@"G_refreshTimeline"];
+        [self.mainView.webView stringByEvaluatingJavaScriptFromString:calling];
         self.needUpdateContent=NO;
     }
 }

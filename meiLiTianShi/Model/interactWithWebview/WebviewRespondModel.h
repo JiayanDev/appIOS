@@ -18,4 +18,6 @@
 + (WebviewRespondModel *)respondWithCode:(NSNumber *)code msg:(NSString *)msg data:(id)data;
 
 - (NSString *)respondToWebview:(UIWebView *)webview withReqeust:(WebviewRequestModel *)requestModel isSuccess:(BOOL)isSucc;
+
+- (NSString *)respondToWebview:(UIWebView *)webview withFunctionName:(NSString *)functionName;
 @end
