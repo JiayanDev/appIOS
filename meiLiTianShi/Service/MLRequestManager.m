@@ -17,7 +17,7 @@ static MLRequestManager* instance = nil;
 
 + (MLRequestManager*)sharedInstance {
     if (!instance) {
-        @synchronized(BASE_URL) {
+        @synchronized(BASE_URL_STRING) {
             if (!instance) {
                 instance = [[MLRequestManager alloc] initWithBaseURL:BASE_URL_STRING];
             }

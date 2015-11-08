@@ -366,7 +366,7 @@
         if (diary.avatar){
             [dcell.avatarView sd_setImageWithURL:[NSURL URLWithString:diary.avatar]];
         }else{
-            dcell.avatarView.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
+            dcell.avatarView.image=[UIImage imageNamed:@"默认头像－灰.png"];
         }
         dcell.nameLabel.text=diary.userName;
 

@@ -60,9 +60,9 @@
 		076767A91B4E601500F73D00 /* ProjectSelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 076767A71B4E601500F73D00 /* ProjectSelectVC.xib */; };
 		077C67351B52C6BB00619740 /* ImageRowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 077C67341B52C6BB00619740 /* ImageRowCell.m */; };
 		077C67371B536B6E00619740 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 077C67361B536B6E00619740 /* AssetsLibrary.framework */; };
-		079A6DAE1BD09C3000BDAE32 /* lanuch_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAB1BD09C3000BDAE32 /* lanuch_logo@3x.png */; settings = {ASSET_TAGS = (); }; };
-		079A6DAF1BD09C3000BDAE32 /* lanuch_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAC1BD09C3000BDAE32 /* lanuch_logo@2x.png */; settings = {ASSET_TAGS = (); }; };
-		079A6DB01BD09C3000BDAE32 /* lanuch_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAD1BD09C3000BDAE32 /* lanuch_logo.png */; settings = {ASSET_TAGS = (); }; };
+		079A6DAE1BD09C3000BDAE32 /* lanuch_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAB1BD09C3000BDAE32 /* lanuch_logo@3x.png */; };
+		079A6DAF1BD09C3000BDAE32 /* lanuch_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAC1BD09C3000BDAE32 /* lanuch_logo@2x.png */; };
+		079A6DB01BD09C3000BDAE32 /* lanuch_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 079A6DAD1BD09C3000BDAE32 /* lanuch_logo.png */; };
 		07A6992B1B67626C00A9D2EF /* LoginWaySelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A699291B67626C00A9D2EF /* LoginWaySelectVC.m */; };
 		07A6992C1B67626C00A9D2EF /* LoginWaySelectVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A6992A1B67626C00A9D2EF /* LoginWaySelectVC.xib */; };
 		07A699541B69BC8C00A9D2EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A699531B69BC8C00A9D2EF /* SystemConfiguration.framework */; };

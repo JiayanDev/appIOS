@@ -122,6 +122,7 @@
                                                   image:[[UIImage imageNamed:@"我的－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                           selectedImage:[[UIImage imageNamed:@"我的－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
+    tabBarController.selectedViewController=vc2;
     AppDelegate *testAppDelegate = [UIApplication sharedApplication].delegate;
 
 
