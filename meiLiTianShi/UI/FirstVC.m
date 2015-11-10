@@ -25,6 +25,7 @@
 #import "UIViewController+requireLogin.h"
 #import "MLWebRedirectPusher.h"
 #import "MLWebViewWithCommentTextBarViewController.h"
+#import "NSString+MD5.h"
 
 @interface FirstVC ()
 
@@ -122,7 +123,7 @@
                                                   image:[[UIImage imageNamed:@"我的－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                           selectedImage:[[UIImage imageNamed:@"我的－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
-    tabBarController.selectedViewController=vc2;
+//    tabBarController.selectedViewController=vc2;
     AppDelegate *testAppDelegate = [UIApplication sharedApplication].delegate;
 
 
@@ -134,6 +135,8 @@
     if(self.appLanuchOptions && self.appLanuchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]){
         [MLWebRedirectPusher pushWithNotificationData:self.appLanuchOptions[UIApplicationLaunchOptionsRemoteNotificationKey] viewController:[UIViewController currentViewController]];
     }
+
+    NSLog(@"MD5:%@", [@"jiayan123aaabbb" MD5String]);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -366,5 +366,9 @@
             }];
 }
 
+- (void)imageCropViewControllerDidCancelCrop:(RSKImageCropViewController *)controller{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 @end
