@@ -21,4 +21,7 @@ typedef NS_ENUM(NSUInteger , PhoneBindVcType){
 
 @property (nonatomic, strong)NSString *wxReceipt_afterWechatLogin;
 
+@property(nonatomic, strong) UILabel *licenseLabelLeft;
+@property(nonatomic, strong) UIButton *licenseButton;
+@property(nonatomic, strong) UIView *licenseContainer;
 @end

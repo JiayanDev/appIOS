@@ -9,4 +9,7 @@
 
 
 @interface PhoneLoginFVC : MLXLformVC <wxAuthRespondVC>
+@property(nonatomic, strong) UILabel *licenseLabelLeft;
+@property(nonatomic, strong) UIButton *licenseButton;
+@property(nonatomic, strong) UIView *licenseContainer;
 @end

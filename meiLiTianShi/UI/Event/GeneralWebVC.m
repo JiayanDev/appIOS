@@ -46,8 +46,14 @@
     self.webView.delegate=self;
 
     [self.webView loadRequest:[[NSURLRequest alloc] initWithURL:self.url]];
+    [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+}
 
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {

@@ -33,23 +33,6 @@ NSString * const KILabelLinkKey = @"link";
 
 @interface KILabel()
 
-// Used to control layout of glyphs and rendering
-@property (nonatomic, retain) NSLayoutManager *layoutManager;
-
-// Specifies the space in which to render text
-@property (nonatomic, retain) NSTextContainer *textContainer;
-
-// Backing storage for text that is rendered by the layout manager
-@property (nonatomic, retain) NSTextStorage *textStorage;
-
-// Dictionary of detected links and their ranges in the text
-@property (nonatomic, copy) NSArray *linkRanges;
-
-// State used to trag if the user has dragged during a touch
-@property (nonatomic, assign) BOOL isTouchMoved;
-
-// During a touch, range of text that is displayed as selected
-@property (nonatomic, assign) NSRange selectedRange;
 
 @end
 

@@ -20,6 +20,8 @@
 #import "MLStyleManager.h"
 #import "PhoneRegisterSecondStepFVC.h"
 #import "JKCountDownButton.h"
+#import "UILabel+MLStyle.h"
+#import "GeneralWebVC.h"
 
 
 @interface PhoneBindFVC()
@@ -40,6 +42,8 @@
 
     if (self.type==PhoneBindVcType_registerFirstStep){
         self.title=@"注册";
+
+        
     }else if (self.type==PhoneBindVcType_afterWechatLogin){
         self.title=@"绑定手机";
     }else if (self.type==PhoneBindVcType_forgetPasswordFirstStep){
@@ -56,8 +60,61 @@
 
     self.submitButton=[self addStyledBigButtonAtTableFooter_title:@"完成验证"];
     [self.submitButton addTarget:self action:@selector(submitButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+    if(self.type==PhoneBindVcType_registerFirstStep){
+
+        {
+            self.licenseLabelLeft=[UILabel newMLStyleWithSize:14 isGrey:YES];
+            self.licenseButton=[UIButton new];
+            self.licenseLabelLeft.text=@"点击按钮注册代表已经同意";
+//    [self.licenseButton setTitle:@"123sasd" forState:UIControlStateNormal];
+
+
+            [self.licenseButton setAttributedTitle:
+                            [[NSAttributedString alloc] initWithString:@"用户协议"
+                                                            attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14],
+                                                                    NSForegroundColorAttributeName: THEME_COLOR_TEXT_DARKER_GRAY,
+                                                                    NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle)}]
+                                          forState:UIControlStateNormal];
+//    [self.licenseButton setTitleColor:THEME_COLOR_TEXT_DARKER_GRAY forState:UIControlStateNormal];
+            self.licenseButton.titleLabel.font=[UIFont systemFontOfSize:14];
+
+            self.licenseContainer=[UIView new];
+            [self.view addSubview:self.licenseContainer];
+            [self.licenseContainer addSubview:self.licenseLabelLeft];
+            [self.licenseContainer addSubview:self.licenseButton];
+            [self.licenseButton addTarget:self
+                                   action:@selector(licenseTouch) forControlEvents:UIControlEventTouchUpInside];
+            [self.licenseLabelLeft mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.licenseContainer);
+                make.left.equalTo(self.licenseContainer);
+                make.right.equalTo(self.licenseButton.mas_left);
+                make.centerY.equalTo(self.licenseContainer);
+            }];
+
+            [self.licenseButton mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.right.equalTo(self.licenseContainer);
+                make.top.equalTo(self.licenseContainer);
+                make.centerY.equalTo(self.licenseContainer);
+            }];
+
+            [self.licenseContainer mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.equalTo(self.view);
+                make.height.equalTo(self.licenseButton);
+                make.top.equalTo(self.submitButton.mas_bottom).offset(8);
+            }];
+        }
+    }
 }
 
+
+-(void)licenseTouch{
+    NSLog(@"licenseTouch");
+    GeneralWebVC *vc=[[GeneralWebVC alloc]init];
+    vc.url=[NSURL URLWithString:@"http://jiayantech.com/mob/agreement.html"];
+    vc.title=@"用户协议";
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
 
 
 - (void)viewWillAppear:(BOOL)animated {

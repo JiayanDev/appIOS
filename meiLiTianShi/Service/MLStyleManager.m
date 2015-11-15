@@ -3,6 +3,7 @@
 // Copyright (c) 2015 Jiayan Technologies Co., Ltd. All rights reserved.
 //
 
+#import <Masonry/View+MASAdditions.h>
 #import "MLStyleManager.h"
 #import "HexColor.h"
 
@@ -39,7 +40,14 @@
     UIView* sv= [[UIView alloc] initWithFrame:[self findHairlineImageViewUnder:navigationBar].frame];
     sv.backgroundColor=[UIColor colorWithHexString:@"d9d9d9"];
     sv.tag=myHairLineTag;
-    [[self findHairlineImageViewUnder:navigationBar].superview addSubview:sv];
+    UIView *v=[self findHairlineImageViewUnder:navigationBar].superview;
+    [v addSubview:sv];
+    [sv mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(v).offset(THE1PX_CONST);
+        make.left.equalTo(v);
+        make.right.equalTo(v);
+        make.height.mas_equalTo(THE1PX_CONST);
+    }];
 
 
 

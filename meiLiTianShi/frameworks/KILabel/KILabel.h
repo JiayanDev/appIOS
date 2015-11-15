@@ -157,9 +157,13 @@ IB_DESIGNABLE
  */
 - (void)setAttributes:(nullable NSDictionary*)attributes forLinkType:(KILinkType)linkType;
 
+- (NSArray *)getRangesForLinks:(NSAttributedString *)text;
+
 /** ****************************************************************************************** **
  * @name Callbacks
  ** ****************************************************************************************** **/
+
+- (void)receivedActionForLinkType:(KILinkType)linkType string:(NSString *)string range:(NSRange)range;
 
 /**
  * Callback block for KILinkTypeUserHandle link tap.
@@ -180,6 +184,8 @@ IB_DESIGNABLE
  * @name Geometry
  ** ****************************************************************************************** **/
 
+- (void)setupTextSystem;
+
 /**
  * Returns a dictionary of data about the link that it at the location. Returns nil if there is no link.
  *
@@ -193,6 +199,26 @@ IB_DESIGNABLE
  * @return A dictionary containing the link.
  */
 - (nullable NSDictionary*)linkAtPoint:(CGPoint)point;
+
+
+// Used to control layout of glyphs and rendering
+@property (nonatomic, retain) NSLayoutManager *layoutManager;
+
+// Specifies the space in which to render text
+@property (nonatomic, retain) NSTextContainer *textContainer;
+
+// Backing storage for text that is rendered by the layout manager
+@property (nonatomic, retain) NSTextStorage *textStorage;
+
+// Dictionary of detected links and their ranges in the text
+@property (nonatomic, copy) NSArray *linkRanges;
+
+// State used to trag if the user has dragged during a touch
+@property (nonatomic, assign) BOOL isTouchMoved;
+
+// During a touch, range of text that is displayed as selected
+@property (nonatomic, assign) NSRange selectedRange;
+
 
 @end
 

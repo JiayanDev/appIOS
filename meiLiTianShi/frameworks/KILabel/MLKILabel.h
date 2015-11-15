@@ -10,5 +10,9 @@
 
 @interface MLKILabel : KILabel
 @property (nonatomic, strong)NSString *detectString;
+@property (nullable, nonatomic, copy) KILinkTapHandler detectStringTapHandler;
 
++ (MLKILabel *)newMLStyleWithSize:(CGFloat)size isGrey:(BOOL)isGrey string:(NSString *)s DetectString:(NSString *)ds;
+
+- (instancetype)initWithString:(NSString *)s DetectString:(NSString *)ds;
 @end

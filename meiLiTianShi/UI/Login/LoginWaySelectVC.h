@@ -10,8 +10,15 @@
 #import "MLSession.h"
 
 @class SendAuthResp;
+@class MLKILabel;
 
 @interface LoginWaySelectVC : UIViewController <wxAuthRespondVC>
+
+@property(nonatomic, strong) MLKILabel *licenseLabel;
+
+@property(nonatomic, strong) UIButton *licenseButton;
+
+@property(nonatomic, strong) UILabel *licenseLabelLeft;
 
 - (void)handleWxAuthRespond:(SendAuthResp *)resp;
 @end
