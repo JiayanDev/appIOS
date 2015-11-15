@@ -27,7 +27,8 @@ target 'meiLiTianShi' do
   pod 'DZNEmptyDataSet'
   pod 'HCSStarRatingView', '~> 1.4.2'
   pod "UIViewController-KeyboardAdditions"
-  pod 'UMengAnalytics'
+  # pod 'UMengAnalytics'
+  pod 'UMengAnalytics-NO-IDFA'
   # pod 'PHFComposeBarView', '~> 2.0.1'
   pod 'PHFDelegateChain', '~> 1.0'
 end
