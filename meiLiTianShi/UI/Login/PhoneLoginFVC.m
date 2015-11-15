@@ -33,7 +33,10 @@
     [MLStyleManager styleTheNavigationBar:self.navigationController.navigationBar];
     [MLStyleManager removeBackTextForNextScene:self];
 
-
+    if(self==self.navigationController.viewControllers[0]){
+        self.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self
+                                                                               action:@selector(cancel)];
+    }
 
 
 
@@ -172,6 +175,9 @@
 
 }
 
+-(IBAction)cancel{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
 -(void)licenseTouch{
     NSLog(@"licenseTouch");
     GeneralWebVC *vc=[[GeneralWebVC alloc]init];
