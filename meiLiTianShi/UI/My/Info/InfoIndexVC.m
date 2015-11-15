@@ -207,8 +207,8 @@
         imagePickerController.delegate=self;
         [self presentViewController:imagePickerController
                            animated:YES completion:^{
-                    [MLStyleManager styleTheNavigationBar:imagePickerController.navigationController.navigationBar];
-                    [MLStyleManager styleTheNavigationBar:imagePickerController.navigationBar];
+//                    [MLStyleManager styleTheNavigationBar:imagePickerController.navigationController.navigationBar];
+//                    [MLStyleManager styleTheNavigationBar:imagePickerController.navigationBar];
                 }];
 //        [MLStyleManager styleTheNavigationBar:imagePickerController.navigationController.navigationBar];
 //        [MLStyleManager styleTheNavigationBar:imagePickerController.navigationBar];
@@ -303,6 +303,10 @@
 
 
 
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
