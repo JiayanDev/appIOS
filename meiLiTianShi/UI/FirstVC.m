@@ -122,8 +122,8 @@
                                                   image:[[UIImage imageNamed:@"发现－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                           selectedImage:[[UIImage imageNamed:@"发现－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     vc3.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"百科"
-                                                  image:[UIImage imageNamed:@"百科书－灰.png"]
-                                          selectedImage:[UIImage imageNamed:@"百科书－红.png"]];
+                                                  image:[[UIImage imageNamed:@"百科书－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
+                                          selectedImage:[[UIImage imageNamed:@"百科书－红.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     vc4.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"我的"
                                                   image:[[UIImage imageNamed:@"我的－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                           selectedImage:[[UIImage imageNamed:@"我的－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
