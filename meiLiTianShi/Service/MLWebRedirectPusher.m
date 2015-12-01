@@ -13,6 +13,7 @@
 #import "MLSession.h"
 #import "UserModel.h"
 #import "MyBanMeiListTVC.h"
+#import "WikiGeneralWebVC.h"
 
 
 @implementation MLWebRedirectPusher {
@@ -51,6 +52,11 @@
 
 
         [vc.navigationController pushViewController:svc animated:YES];
+        return YES;
+    }else if([url.path hasPrefix:@"/pedia"]){
+        WikiGeneralWebVC *wvc= [[WikiGeneralWebVC alloc] init];
+        wvc.url=url;
+        [vc.navigationController pushViewController:wvc animated:YES];
         return YES;
     }else{
         GeneralWebVC *wvc= [[GeneralWebVC alloc] init];

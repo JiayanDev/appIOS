@@ -26,6 +26,8 @@
 #import "MLWebRedirectPusher.h"
 #import "MLWebViewWithCommentTextBarViewController.h"
 #import "NSString+MD5.h"
+#import "WikiGeneralWebVC.h"
+#import "WikiIndexWebVC.h"
 
 @interface FirstVC ()
 
@@ -95,9 +97,12 @@
             [[TopicListVC alloc] initWithStyle:UITableViewStyleGrouped]];
     vc2.title=@"发现";
 
-    UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:
-            [[MLWebViewWithCommentTextBarViewController alloc]init]];
-    vc3.title=@"活动";
+//    UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:
+//            [[MLWebViewWithCommentTextBarViewController alloc]init]];
+    WikiIndexWebVC *wikiVC=[WikiIndexWebVC new];
+    wikiVC.url=[NSURL URLWithString:@"/pedia/html/index.html" relativeToURL:BASE_URL];
+    UINavigationController *vc3= [[UINavigationController alloc] initWithRootViewController:wikiVC];
+    vc3.title=@"百科";
 
     UINavigationController *vc4= [[UINavigationController alloc] initWithRootViewController:
             [[MyIndexVC alloc] init]];
@@ -108,7 +113,7 @@
 //    [vc2.tabBarController.tabBarItem setImage:[SYLSession imageWithColor:UIColorFromRGB(0x777777)]];
 
 
-    tabBarController.viewControllers = @[vc1,vc2,vc4];
+    tabBarController.viewControllers = @[vc1,vc2,vc3,vc4];
     tabBarController.tabBar.tintColor=THEME_COLOR;
     vc1.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"伴美"
                                                   image:[[UIImage imageNamed:@"home－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
@@ -116,9 +121,9 @@
     vc2.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"发现"
                                                   image:[[UIImage imageNamed:@"发现－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                           selectedImage:[[UIImage imageNamed:@"发现－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    vc3.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"活动"
-//                                                  image:[UIImage imageNamed:@"black.png"]
-//                                          selectedImage:[UIImage imageNamed:@"blue.png"]];
+    vc3.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"百科"
+                                                  image:[UIImage imageNamed:@"百科书－灰.png"]
+                                          selectedImage:[UIImage imageNamed:@"百科书－红.png"]];
     vc4.tabBarItem= [[UITabBarItem alloc] initWithTitle:@"我的"
                                                   image:[[UIImage imageNamed:@"我的－灰.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
                                           selectedImage:[[UIImage imageNamed:@"我的－亮.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];

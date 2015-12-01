@@ -33,6 +33,7 @@
 #import "NSDate+XLformPushDisplay.h"
 #import "UILabel+MLStyle.h"
 #import "MJRefreshNormalHeader.h"
+#import "UIImageView+MLStyle.h"
 
 @interface TopicListVC ()
 //@property (strong, nonatomic) IBOutlet UISegmentedControl *typeSwitcher;
@@ -364,7 +365,9 @@
         //[dcell.avatarView sd_setImageWithURL:diary.];
 
         if (diary.avatar){
-            [dcell.avatarView sd_setImageWithURL:[NSURL URLWithString:diary.avatar]];
+            [dcell.avatarView setImageWithScalingToSelfSizeWithUrl:[NSURL URLWithString:diary.avatar]
+                                     AndWillAnimate:NO
+                                           withSize:CGSizeZero];
         }else{
             dcell.avatarView.image=[UIImage imageNamed:@"默认头像－灰.png"];
         }
