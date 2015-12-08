@@ -10,6 +10,12 @@
 
 }
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.navigationItem.title=@"医美百科";
+}
+
+
 - (BOOL)hidesBottomBarWhenPushed {
     return NO;
 }
