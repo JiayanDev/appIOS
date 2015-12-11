@@ -24,10 +24,13 @@
 #import "UIImageView+MLStyle.h"
 #import "UIImage+Resizing.h"
 #import "MJRefreshNormalHeader.h"
+#import "MLCacheWebviewVC.h"
+#import "View+MASAdditions.h"
 
 @interface IndexTVC ()
 @property (strong, nonatomic)NSMutableArray *tableData;
 @property (strong, nonatomic)NSMutableArray *tableDataDisplayCaching;
+@property (strong, nonatomic)MLCacheWebviewVC *cacheVC;
 @end
 #define kIndexCellEvent @"indexcellevent"
 #define kIndexCellOther @"indexcellother"
@@ -106,6 +109,27 @@ return 1;
         [self.tableView.header endRefreshing];
         [self.tableView reloadData];
 
+
+
+
+        __weak IndexTVC *weakSelf=self;
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            weakSelf.cacheVC=[MLCacheWebviewVC new];
+            weakSelf.cacheVC.url=[NSURL URLWithString:@"/pedia/html/index.html" relativeToURL:BASE_URL];
+
+            [weakSelf addChildViewController:weakSelf.cacheVC];
+            [self.tableView addSubview:weakSelf.cacheVC.view];
+            [weakSelf didMoveToParentViewController:weakSelf];
+            weakSelf.cacheVC.view.frame=CGRectMake(0,0,SCREEN_WIDTH,THE1PX_CONST);
+            weakSelf.cacheVC.view.layer.opacity=0.01;
+
+            NSURLRequest *request =[NSURLRequest requestWithURL:weakSelf.cacheVC.url];
+            [weakSelf.cacheVC.webView loadRequest:request];
+            [weakSelf.cacheVC.view setNeedsLayout];
+            [weakSelf.cacheVC.view layoutIfNeeded];
+
+        });
     } fail:^(NSInteger i, id o) {
         [TSMessage showNotificationWithTitle:@"出错了"
                                     subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
@@ -221,6 +245,7 @@ return 1;
         }else{
             cell.doctorAvatar.backgroundColor=THEME_COLOR_TEXT_LIGHT_GRAY;
         }
+
 
         cell.doctorNameLabel.text=data.doctorName;
         cell.doctorDescLabel.text=data.doctorDesc;

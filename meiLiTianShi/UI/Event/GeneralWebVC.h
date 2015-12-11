@@ -9,4 +9,5 @@
 
 @interface GeneralWebVC : UIViewController <UIWebViewDelegate, IDMPhotoBrowserDelegate>
 @property (nonatomic, strong)NSURL *url;
+@property (strong, nonatomic)  UIWebView *webView;
 @end

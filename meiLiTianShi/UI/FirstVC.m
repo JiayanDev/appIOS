@@ -79,7 +79,8 @@
     [super viewDidLoad];
     [[MLSession current] restoreLoginOrAppinit_Success:^{
         [self gotoMainInterface];
-    }                                             fail:^(NSInteger i, id o) {
+    }
+                                                  fail:^(NSInteger i, id o) {
         [TSMessage showNotificationWithTitle:@"出错了"
                                     subtitle:[NSString stringWithFormat:@"%d - %@", i, o]
                                         type:TSMessageNotificationTypeError];
@@ -142,6 +143,10 @@
     }
 
     NSLog(@"MD5:%@", [@"jiayan123aaabbb" MD5String]);
+
+//    vc3.view;
+//            [vc3.view setNeedsLayout];
+//            [vc3.view layoutIfNeeded];
 }
 
 - (void)didReceiveMemoryWarning {

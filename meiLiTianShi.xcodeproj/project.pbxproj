@@ -138,6 +138,7 @@
 		3CDC52C01299D6418D8EB82A /* 确定@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5228ED0E3549A6CA2706 /* 确定@3x.png */; };
 		3CDC52C379BEFED26B4E9587 /* 活动时间@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5FBD748F4EB965B6DC79 /* 活动时间@2x.png */; };
 		3CDC52D5F89A8918E7B22144 /* 标签_官方@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC554A3E9B14617EC3E240 /* 标签_官方@2x.png */; };
+		3CDC52DD0E331F33F535332E /* MLCacheWebviewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5CE9187BBF6AAD3CBD41 /* MLCacheWebviewVC.m */; };
 		3CDC52E17519FE6B507BE8AA /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC5CBA3D38057AB8CCB7F0 /* Overlay.png */; };
 		3CDC52E26D2ADD492E3AFDBE /* UIResponder+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CDC5DD1ABCAE261D249F615 /* UIResponder+SLKAdditions.m */; };
 		3CDC52E852D3F9BECEE0EB45 /* 内容清除@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CDC54F4CF81D6F958140CED /* 内容清除@3x.png */; };
@@ -778,6 +779,7 @@
 		3CDC5672CA4158EBD0C19C57 /* UITabBarController+statusBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+statusBar.m"; sourceTree = "<group>"; };
 		3CDC567BD9741BC4DAB98D48 /* ELCAssetSelectionDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetSelectionDelegate.h; sourceTree = "<group>"; };
 		3CDC567FDD89D1B0B0E1063C /* 活动状态标签－底－灰.zip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "活动状态标签－底－灰.zip.png"; sourceTree = "<group>"; };
+		3CDC5686AC61D5FD656DB025 /* MLCacheWebviewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLCacheWebviewVC.h; sourceTree = "<group>"; };
 		3CDC5686ADA71FE33A952649 /* ELCConsole.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCConsole.h; sourceTree = "<group>"; };
 		3CDC568907B6E37D99674084 /* 标签_美丽天使@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标签_美丽天使@3x.png"; sourceTree = "<group>"; };
 		3CDC568DD217DBE46686D38B /* InfoIndexVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoIndexVC.m; sourceTree = "<group>"; };
@@ -960,6 +962,7 @@
 		3CDC5CCF3632CE3C1C13BB85 /* 还没评论.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "还没评论.png"; sourceTree = "<group>"; };
 		3CDC5CD839CA828726D624E4 /* GeneralWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralWebVC.h; sourceTree = "<group>"; };
 		3CDC5CE873EFFFC1530BA2D2 /* 赞－亮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "赞－亮@2x.png"; sourceTree = "<group>"; };
+		3CDC5CE9187BBF6AAD3CBD41 /* MLCacheWebviewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLCacheWebviewVC.m; sourceTree = "<group>"; };
 		3CDC5CF5A6319C12E2B536BA /* IDMPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDMPhoto.h; sourceTree = "<group>"; };
 		3CDC5CFEE41D869E92555350 /* NSObject+MLUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MLUtil.m"; sourceTree = "<group>"; };
 		3CDC5D07BB9A399A29F55BDF /* UITabBarController+statusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+statusBar.h"; sourceTree = "<group>"; };
@@ -1990,6 +1993,7 @@
 				3CDC531D690D9F97CC50EBD6 /* MLStyleManager.m */,
 				3CDC53FE4E82611186E33AE3 /* MLStyleManager.h */,
 				3CDC58166893A8CA9BF2BED8 /* Style */,
+				3CDC5C2CF1A870F340A999F2 /* cache */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -2091,6 +2095,15 @@
 				3CDC5915955F159F03CCE2EB /* IndexCellOfOthers.h */,
 			);
 			path = Index;
+			sourceTree = "<group>";
+		};
+		3CDC5C2CF1A870F340A999F2 /* cache */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC5CE9187BBF6AAD3CBD41 /* MLCacheWebviewVC.m */,
+				3CDC5686AC61D5FD656DB025 /* MLCacheWebviewVC.h */,
+			);
+			path = cache;
 			sourceTree = "<group>";
 		};
 		3CDC5C5DF9A6535DD20AED4E /* WXhelper */ = {
@@ -2884,6 +2897,7 @@
 				3CDC56BC7B0B67F8EC3E597F /* MLKILabel.m in Sources */,
 				3CDC5250D1B58C03A155AC7D /* WikiGeneralWebVC.m in Sources */,
 				3CDC50270005F2A36336DE1C /* WikiIndexWebVC.m in Sources */,
+				3CDC52DD0E331F33F535332E /* MLCacheWebviewVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

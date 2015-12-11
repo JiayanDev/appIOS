@@ -19,7 +19,7 @@
 
 
 @interface GeneralWebVC()
-@property (strong, nonatomic)  UIWebView *webView;
+
 
 @end
 @implementation GeneralWebVC {
