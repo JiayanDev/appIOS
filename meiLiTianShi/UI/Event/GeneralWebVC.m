@@ -17,6 +17,7 @@
 #import "IDMPhoto.h"
 #import "IDMPhotoBrowser.h"
 
+#define CACHE_REQUEST_URL_QUERY_INDICATOR @"intention=caching"
 
 @interface GeneralWebVC()
 
@@ -60,14 +61,21 @@
     NSLog(@"%@",request.URL);
     NSURL *url=request.URL;
 
-//    if([url.absoluteString isEqualToString:[self.url absoluteString]]){
-//        return YES;
-//    }else
+    if([url.absoluteString isEqualToString:[self.url absoluteString]]){
+        return YES;
+    }else
     if([url.scheme isEqualToString:@"jiayan"]){
         return [self handleInteractionRequests:url];
-    }else if(!navigationType==UIWebViewNavigationTypeLinkClicked){
+    }
+//    else
+//    if(!navigationType==UIWebViewNavigationTypeLinkClicked){
+//        return YES;
+//    }
+
+        else if( [url.query rangeOfString:CACHE_REQUEST_URL_QUERY_INDICATOR].location != NSNotFound){
         return YES;
-    }else if([url.scheme isEqualToString:@"http"]){
+    }
+    else if([url.scheme isEqualToString:@"http"]){
         return [self handleRedirectRequests:url];
     }
 
